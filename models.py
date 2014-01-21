@@ -11,6 +11,7 @@ class Terms(Model):
 
     class Meta:
         database = term_db # this model uses the people database
+        primary_key = CompositeKey('ontology', 'termid', 'cui', 'tid')
 
 
 sarc = Terms.get(Terms.term == 'sarcoidosis')
