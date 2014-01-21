@@ -10,7 +10,7 @@ def related_terms(term_query):
 	tms = Terms.select().where(Terms.term == term_query).join(t1, on=(t1.tid==Terms.tid)).join(i1, on=(t1.cid==i1.cid1)).join(i2, on=(i1.cid1==i2.cid2)).join(t2, on=(t2.cid==i2.cid2)).join(st, on=(t2.tid==st.tid)).distinct(Terms.term).limit(20)
 	res = tms.execute()
 	for r in res:
-		print res.term	
+		print r.term	
 
 if __name__ == "__main__":
 	rt = related_terms(sys.argv[1])
