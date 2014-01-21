@@ -15,4 +15,4 @@ class Terms(Model):
 
 
 sarc = Terms.get(Terms.term == 'sarcoidosis')
-print sarc
+print sarc.term
