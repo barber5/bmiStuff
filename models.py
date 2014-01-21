@@ -56,6 +56,7 @@ class Tid2cid(Model):
         primary_key = CompositeKey('tid', 'cid', 'grp', 'source', 'suppress')
 
 
+term_query = 'sarcoidosis'
 t1 = Tid2cid.alias()
 t2 = Tid2cid.alias()
 i1 = Isaclosure.alias()
