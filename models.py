@@ -1,5 +1,5 @@
 from peewee import *
-from utils import getDbs
+from util import getDbs
 term_db, stride_db = getDbs()
 
 class Term(Model):
