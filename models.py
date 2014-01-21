@@ -2,7 +2,7 @@ from peewee import *
 from db import getDbs
 term_db, stride_db = getDbs()
 
-class Term(Model):
+class Terms(Model):
     ontology = CharField()
     termid = CharField()
     term = CharField()
@@ -13,5 +13,5 @@ class Term(Model):
         database = term_db # this model uses the people database
 
 
-sarc = Term.get(Term.term == 'sarcoidosis')
+sarc = Terms.get(Terms.term == 'sarcoidosis')
 print sarc
