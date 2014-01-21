@@ -11,3 +11,7 @@ class Term(Model):
 
     class Meta:
         database = term_db # this model uses the people database
+
+
+sarc = Term.get(Term.term == 'sarcoidosis')
+print sarc
