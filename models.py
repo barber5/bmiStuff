@@ -1,7 +1,7 @@
 from peewee import *
 
 mysql_db = None
-with open('~/.my.cnf', 'r') as f:
+with open('/home/barber5/.my.cnf', 'r') as f:
 	for line in f:
 		if line.find('user') == 0:
 			user = line.split()[-1]
