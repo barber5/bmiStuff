@@ -11,7 +11,7 @@ def getDbs():
 				password = line.split()[-1]
 			if line.find('host') == 0:
 				host = line.split()[-1]		
-		term_db = MySQLDatabase('terminology3', user=user, host=host, password=password)
-		stride_db = MySQLDatabase('stride5', user=user, host=host, password=password)
+		term_db = MySQLDatabase('terminology3', user=user, host=host, passwd=password)
+		stride_db = MySQLDatabase('stride5', user=user, host=host, passwd=password)
 
 		return term_db, stride_db
