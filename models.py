@@ -56,15 +56,6 @@ class Tid2cid(Model):
         primary_key = CompositeKey('tid', 'cid', 'grp', 'source', 'suppress')
 
 
-term_query = 'sarcoidosis'
-t1 = Tid2cid.alias()
-t2 = Tid2cid.alias()
-i1 = Isaclosure.alias()
-i2 = Isaclosure.alias()
-st = Str2tid.alias()
-tms = Terms.select(t2).where(Terms.term == term_query).join(t1, on=(t1.tid==Terms.tid)).join(i1, on=(t1.cid==i1.cid1)).join(i2, on=(i1.cid1==i2.cid2)).join(t2, on=(t2.cid==i2.cid2)).join(st, on=(t2.tid==st.tid)).limit(20)
-print tms
-res = tms.execute()
-for r in res:
-	print r.str	
+        
+
 
