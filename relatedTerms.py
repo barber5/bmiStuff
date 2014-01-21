@@ -11,6 +11,8 @@ def related_terms(term_query):
 	print tms
 	res = tms.execute()
 	for r in res:
+		print r
+		print r.t2
 		print r.str	
 
 if __name__ == "__main__":
