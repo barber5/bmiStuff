@@ -29,7 +29,7 @@ def getMultiplePatientVec(pids):
 	return result
 
 if __name__ == "__main__":
-	if len(sys.argv) == 2
+	if len(sys.argv) == 2:
 		vec = getPatientVec(sys.argv[1])
 	elif len(sys.argv) > 2:
 		vec = getMultiplePatientVec(sys.argv[1:])
