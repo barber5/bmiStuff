@@ -10,6 +10,7 @@ def related_terms(term_query):
 	rows = tryQuery(term_db, query, [term_query])
 	for row in rows:
 		print row
+	print len(rows)
 	
 if __name__ == "__main__":
 	rt = related_terms(sys.argv[1])	
