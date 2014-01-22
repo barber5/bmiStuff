@@ -26,3 +26,4 @@ def getPatientVec(pid):
 if __name__ == "__main__":
 	vec = getPatientVec(sys.argv[1])
 	pprint.pprint(vec)
+	print sys.argv
