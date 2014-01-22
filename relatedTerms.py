@@ -1,20 +1,16 @@
-from models import *
+from db import *
 import sys
 
-def related_terms(term_query):
-	t1 = Tid2cid.alias()
-	t2 = Tid2cid.alias()
-	i1 = Isaclosure.alias()
-	i2 = Isaclosure.alias()
-	st = Str2tid.alias()
-	tms = (Terms.select(Terms, st).where(Terms.term == term_query).join(t1, on=(t1.tid==Terms.tid)).join(i1, on=(t1.cid==i1.cid1)).join(i2, on=(i1.cid1==i2.cid2)).join(t2, on=(t2.cid==i2.cid2)).join(st, on=(t2.tid==st.tid)).limit(20))
-	print tms
-	res = tms.execute()
-	for r in res:
-		print dir(r)
-		print r.st
-		print r.str	
 
+(term_db, stride_db) = getDbs()
+
+def related_terms(term_query):
+	query = "SELECT t1.`ontology`, t1.`termid`, t1.`term`, t1.`cui`, t1.`tid`, t5.`tid`, t5.`str`, t5.`freq`, t5.`suppress`, t5.`source` FROM `terms` AS t1 INNER JOIN `tid2cid` AS t2 ON (t2.`tid` = t1.`tid`) INNER JOIN `isaclosure` AS t3 ON (t2.`cid` = t3.`cid1`) INNER JOIN `isaclosure` AS t6 ON (t3.`cid1` = t6.`cid2`) INNER JOIN `tid2cid` AS t4 ON (t4.`cid` = t6.`cid2`) INNER JOIN `str2tid` AS t5 ON (t4.`tid` = t5.`tid`) WHERE (t1.`term` = %s) LIMIT 20"
+
+	rows = tryQuery(term_db, query, [term_query])
+	for row in rows:
+		print row
+	
 if __name__ == "__main__":
 	rt = related_terms(sys.argv[1])
 	for r in rt:
