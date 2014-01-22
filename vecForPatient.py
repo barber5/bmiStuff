@@ -21,9 +21,16 @@ def getPatientVec(pid):
 		'notes': notes.values()
 	}
 
-	
+def getMultiplePatientVec(pids):
+	result = []
+	for pid in pids:
+		result.append(getPatientVec(pid))
+		print pid
+	return result
 
 if __name__ == "__main__":
-	vec = getPatientVec(sys.argv[1])
-	pprint.pprint(vec)
-	print sys.argv
+	if len(sys.argv) == 2
+		vec = getPatientVec(sys.argv[1])
+	elif len(sys.argv) > 2:
+		vec = getMultiplePatientVec(sys.argv[1:])
+	pprint.pprint(vec)	
