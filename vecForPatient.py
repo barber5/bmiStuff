@@ -23,7 +23,7 @@ def getPatientVec(pid):
 				7: 'year',
 				8: 'duration',
 				9: 'cpt',
-				10: 'icd9'
+				10: 'icd9',
 				'terms': [{
 					11: 'tid',
 					12: 'negated',
@@ -76,7 +76,7 @@ def getPatientVec(pid):
 	}
 	result = joinResult(rows, nameMapping)
 	return result
-	
+
 def getMultiplePatientVec(pids):
 	result = []
 	for pid in pids:
