@@ -25,7 +25,7 @@ def getMultiplePatientVec(pids):
 	result = []
 	for pid in pids:
 		result.append(getPatientVec(pid))
-		print pid
+		print >> sys.stderr, pid
 	return result
 
 if __name__ == "__main__":
