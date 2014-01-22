@@ -17,7 +17,6 @@ def related_terms(term_query):
 		}
 		result.append(d)
 	return result
-
 	
 if __name__ == "__main__":
 	rt = related_terms(sys.argv[1])	
