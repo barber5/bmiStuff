@@ -4,7 +4,7 @@ import sys,pprint
 (term_db, stride_db) = getDbs()
 
 def getPatientVec(pid):
-	query = "SELECT * FROM note as n inner join mgrep as m on n.nid=m.nid WHERE n.pid=%s"
+	query = "SELECT * FROM note as n inner join mgrep as m on n.nid=m.nid WHERE n.pid=%s AND n.tid > 0"
 	rows = tryQuery(stride_db, query, [pid])
 	print rows[0]
 
