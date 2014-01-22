@@ -19,4 +19,4 @@ def getPatientsForTerms(terms):
 if __name__ == "__main__":
 	terms = related_terms(sys.argv[1])
 	patients = getPatientsForTerms(terms)
-	pprint.pprint(patients)
+	pprint.pprint(patients.keys())
