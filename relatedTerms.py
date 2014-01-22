@@ -4,8 +4,8 @@ import sys, pprint
 
 (term_db, stride_db) = getDbs()
 
-def related_terms(term_query):
-	query = "SELECT t1.tid as tid, s1.str as str, t4.cid as cid FROM terms AS t1 INNER JOIN tid2cid AS t2 ON (t2.tid = t1.tid) INNER JOIN isaclosure AS i1 ON (t2.cid = i1.cid1) INNER JOIN isaclosure AS i2 ON (i1.cid1 = i2.cid2) INNER JOIN tid2cid AS t4 ON (t4.cid = i2.cid2) INNER JOIN str2tid AS s1 ON (t4.tid = s1.tid) WHERE (t1.term = %s) group by s1.tid"
+def related_terms(term_query):	
+	query = "SELECT s1.tid, s1.str, t2.cid FROM terms INNER JOIN tid2cid t1 on terms.tid=t1.tid INNER JOIN tid2cid t2 on t1.cid=t2.cid inner join str2tid s1 on s1.tid=t2.tid where(terms.term=%s) group by s1.tid"
 
 	rows = tryQuery(term_db, query, [term_query])
 	result = []
