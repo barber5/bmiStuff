@@ -30,7 +30,7 @@ def getNotes(pid):
 	return result
 
 def getPatientVec(pid):
-	query = "SELECT v.pid, v.patient, v.visit, v.src, v.src_type, v.age, v.timeoffset, v.year, v.duration, v.cpt, v.icd9, v.vid, l.lid, l.src, l.age, l.timeoffset, l.description, l.proc, l.proc_cat, l.line, l.component, l.ord, l.ord_num, l.result_flag, l.ref_low, l.ref_high, l.ref_unit, l.result_inrange, l.ref_norm, p.rxid, p.src, p.age, p.timeoffset, p.drug_description, p.route, p.order_status, p.ingr_set_id, d.gender, d.race, d.ethnicity, d.death FROM visit as v on v.pid=n.pid left outer join prescription p on p.pid=n.pid left outer join lab l on l.pid=n.pid left outer join demographics d on d.pid=n.pid  WHERE v.pid=%s"
+	query = "SELECT v.pid, v.patient, v.visit, v.src, v.src_type, v.age, v.timeoffset, v.year, v.duration, v.cpt, v.icd9, v.vid, l.lid, l.src, l.age, l.timeoffset, l.description, l.proc, l.proc_cat, l.line, l.component, l.ord, l.ord_num, l.result_flag, l.ref_low, l.ref_high, l.ref_unit, l.result_inrange, l.ref_norm, p.rxid, p.src, p.age, p.timeoffset, p.drug_description, p.route, p.order_status, p.ingr_set_id, d.gender, d.race, d.ethnicity, d.death FROM visit as v left outer join prescription p on p.pid=v.pid left outer join lab l on l.pid=v.pid left outer join demographics d on d.pid=v.pid  WHERE v.pid=%s"
 	
 	rows = tryQuery(stride_db, query, [pid])
 	print >> sys.stderr, 'got the rows!'
