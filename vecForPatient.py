@@ -3,20 +3,45 @@ from db import *
 import sys,pprint
 (term_db, stride_db) = getDbs()
 
+
+def getNotes(pid):
+	query = "SELECT n.nid, n.src, n.src_type, n.age, n.timeoffset, n.year, n.duration, n.cpt, n.icd9, m.tid, m.negated, m.familyHistory, t.term FROM notes as n inner join mgrep as m on m.nid=n.nid inner join terminology3.terms as t"
+	nameMapping = {
+		'notes': [{
+			0: 'nid',
+			1: 'src',
+			2: 'src_type',
+			3: 'age',
+			4: 'timeoffset',
+			5: 'year',
+			6: 'duration',
+			7: 'cpt',
+			8: 'icd9',
+			'terms': [{
+				9: 'tid',
+				10: 'negated',
+				11: 'familyHistory',
+				12: 'term'
+			}]
+		}]
+	}
+	return []
+
 def getPatientVec(pid):
-	query = "SELECT n.pid, n.patient, n.nid, n.src, n.src_type, n.age, n.timeoffset, n.year, n.duration, n.cpt, n.icd9, m.tid, m.negated, m.familyHistory, t.term, v.visit, v.src, v.src_type, v.age, v.timeoffset, v.year, v.duration, v.cpt, v.icd9, v.vid, l.lid, l.src, l.age, l.timeoffset, l.description, l.proc, l.proc_cat, l.line, l.component, l.ord, l.ord_num, l.result_flag, l.ref_low, l.ref_high, l.ref_unit, l.result_inrange, l.ref_norm, p.rxid, p.src, p.age, p.timeoffset, p.drug_description, p.route, p.order_status, p.ingr_set_id, d.gender, d.race, d.ethnicity, d.death FROM note as n left outer join mgrep as m on n.nid=m.nid left outer join visit as v on v.pid=n.pid left outer join prescription p on p.pid=n.pid left outer join lab l on l.pid=n.pid left outer join demographics d on d.pid=n.pid left outer join terminology3.terms as t on t.tid=m.tid WHERE n.pid=%s"
+	query = "SELECT v.pid, v.patient, v.visit, v.src, v.src_type, v.age, v.timeoffset, v.year, v.duration, v.cpt, v.icd9, v.vid, l.lid, l.src, l.age, l.timeoffset, l.description, l.proc, l.proc_cat, l.line, l.component, l.ord, l.ord_num, l.result_flag, l.ref_low, l.ref_high, l.ref_unit, l.result_inrange, l.ref_norm, p.rxid, p.src, p.age, p.timeoffset, p.drug_description, p.route, p.order_status, p.ingr_set_id, d.gender, d.race, d.ethnicity, d.death FROM note as n left outer join mgrep as m on n.nid=m.nid left outer join visit as v on v.pid=n.pid left outer join prescription p on p.pid=n.pid left outer join lab l on l.pid=n.pid left outer join demographics d on d.pid=n.pid left outer join terminology3.terms as t on t.tid=m.tid WHERE n.pid=%s"
+	
 	rows = tryQuery(stride_db, query, [pid])
 	print >> sys.stderr, 'got the rows!'
 	nameMapping = {
 		'patients': [{
 			0: 'pid',
 			1: 'patient',
-			50: 'gender',
-			51: 'race',
-			52: 'ethnicity',
-			53: 'death',
-			'notes': [{
-				2: 'nid',
+			37: 'gender',
+			38: 'race',
+			39: 'ethnicity',
+			40: 'death',			
+			'visits': [{
+				2: 'visit',
 				3: 'src',
 				4: 'src_type',
 				5: 'age',
@@ -25,57 +50,41 @@ def getPatientVec(pid):
 				8: 'duration',
 				9: 'cpt',
 				10: 'icd9',
-				'terms': [{
-					11: 'tid',
-					12: 'negated',
-					13: 'familyHistory',
-					14: 'term'
-				}]
-			}],
-			'visits': [{
-				15: 'visit',
-				16: 'src',
-				17: 'src_type',
-				18: 'age',
-				19: 'timeoffset',
-				20: 'year',
-				21: 'duration',
-				22: 'cpt',
-				23: 'icd9',
-				24: 'vid'
+				11: 'vid'
 			}],
 			'labs': [{
-				25: 'lid',
-				26: 'src',
-				27: 'age',
-				28: 'timeoffset',
-				29: 'description',
-				30: 'proc',
-				31: 'proc_cat',
-				32: 'line',
-				33: 'component',
-				34: 'ord',
-				35: 'ord_num',
-				36: 'result_flag',
-				37: 'ref_low',
-				38: 'ref_high',
-				39: 'ref_unit',
-				40: 'result_inrange',
-				41: 'ref_norm'
+				12: 'lid',
+				13: 'src',
+				14: 'age',
+				15: 'timeoffset',
+				16: 'description',
+				17: 'proc',
+				18: 'proc_cat',
+				19: 'line',
+				20: 'component',
+				21: 'ord',
+				22: 'ord_num',
+				23: 'result_flag',
+				24: 'ref_low',
+				25: 'ref_high',
+				26: 'ref_unit',
+				27: 'result_inrange',
+				28: 'ref_norm'
 			}],
 			'prescriptions': [{
-				42: 'rxid',
-				43: 'src',
-				44: 'age',
-				45: 'timeoffset',
-				46: 'drug_description',
-				47: 'route',
-				48: 'order_status',
-				49: 'ingr_set_id'
+				29: 'rxid',
+				30: 'src',
+				31: 'age',
+				32: 'timeoffset',
+				33: 'drug_description',
+				34: 'route',
+				35: 'order_status',
+				36: 'ingr_set_id'
 			}]
 		}]
 	}
 	result = joinResult(rows, nameMapping)
+	result['notes'] = getNotes(pid)
 	return result
 
 def getMultiplePatientVec(pids):
