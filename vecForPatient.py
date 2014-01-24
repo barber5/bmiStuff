@@ -25,10 +25,12 @@ def getNotes(pid):
 			}]
 		}]
 	}
-	return []
+	rows = tryQuery(stride_db, query, [pid])
+	result = joinResult(rows, nameMapping)
+	return result
 
 def getPatientVec(pid):
-	query = "SELECT v.pid, v.patient, v.visit, v.src, v.src_type, v.age, v.timeoffset, v.year, v.duration, v.cpt, v.icd9, v.vid, l.lid, l.src, l.age, l.timeoffset, l.description, l.proc, l.proc_cat, l.line, l.component, l.ord, l.ord_num, l.result_flag, l.ref_low, l.ref_high, l.ref_unit, l.result_inrange, l.ref_norm, p.rxid, p.src, p.age, p.timeoffset, p.drug_description, p.route, p.order_status, p.ingr_set_id, d.gender, d.race, d.ethnicity, d.death FROM note as n left outer join mgrep as m on n.nid=m.nid left outer join visit as v on v.pid=n.pid left outer join prescription p on p.pid=n.pid left outer join lab l on l.pid=n.pid left outer join demographics d on d.pid=n.pid left outer join terminology3.terms as t on t.tid=m.tid WHERE n.pid=%s"
+	query = "SELECT v.pid, v.patient, v.visit, v.src, v.src_type, v.age, v.timeoffset, v.year, v.duration, v.cpt, v.icd9, v.vid, l.lid, l.src, l.age, l.timeoffset, l.description, l.proc, l.proc_cat, l.line, l.component, l.ord, l.ord_num, l.result_flag, l.ref_low, l.ref_high, l.ref_unit, l.result_inrange, l.ref_norm, p.rxid, p.src, p.age, p.timeoffset, p.drug_description, p.route, p.order_status, p.ingr_set_id, d.gender, d.race, d.ethnicity, d.death FROM visit as v on v.pid=n.pid left outer join prescription p on p.pid=n.pid left outer join lab l on l.pid=n.pid left outer join demographics d on d.pid=n.pid  WHERE v.pid=%s"
 	
 	rows = tryQuery(stride_db, query, [pid])
 	print >> sys.stderr, 'got the rows!'
