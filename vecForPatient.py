@@ -104,10 +104,10 @@ def getPatientVec(pid):
 		'patients': [{
 			0: 'pid',
 			1: 'patient',
-			3: 'gender',
-			4: 'race',
-			5: 'ethnicity',
-			6: 'death'
+			2: 'gender',
+			3: 'race',
+			4: 'ethnicity',
+			5: 'death'
 		}]
 	}
 	result = joinResult(rows, nameMapping)
