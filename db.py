@@ -26,6 +26,29 @@ def tryQuery(db, query, replace=None):
 		c.execute(query)
 	return c.fetchall()
 
+def getPkFromMapping(row, mapping):
+    li = []
+    anyVals = False
+    for k,v in mapping.iteritems():
+        if type(k) == type(23):
+            li.append(row[k]) 
+            if row[k]:
+                anyVals = True   
+    if anyVals:
+        return tuple(li)
+    else:
+        return False
+
+def hasSublist(mapping):
+    for k,v in mapping.iteritems():
+        if type(k) == type('fnord') and type(v) == type([]):
+            return True
+        elif type(v) == type({}):
+            if hasSublist(v):
+                return True
+    return False
+
+
 
 def extractIt(row, mapping, result, idxs, attrName):   
     #print 'ROW IS {}'.format(row) 
