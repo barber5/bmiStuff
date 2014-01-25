@@ -5,7 +5,7 @@ import sys,pprint
 
 
 def getNotes(pid):
-	query = "SELECT n.nid, n.src, n.src_type, n.age, n.timeoffset, n.year, n.duration, n.cpt, n.icd9, m.tid, m.negated, m.familyHistory, t.term FROM notes as n inner join mgrep as m on m.nid=n.nid inner join terminology3.terms as t"
+	query = "SELECT n.nid, n.src, n.src_type, n.age, n.timeoffset, n.year, n.duration, n.cpt, n.icd9, m.tid, m.negated, m.familyHistory, t.term FROM notes as n inner join mgrep as m on m.nid=n.nid inner join terminology3.terms as t WHERE n.pid=%s"
 	nameMapping = {
 		'notes': [{
 			0: 'nid',
