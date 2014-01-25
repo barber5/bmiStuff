@@ -29,8 +29,74 @@ def getNotes(pid):
 	result = joinResult(rows, nameMapping)
 	return result
 
+def getVisits(pid):
+	query = "SELECT v.visit, v.src, v.src_type, v.age, v.timeoffset, v.year, v.duration, v.cpt, v.icd9, v.vid from visit as v where v.pid=%s"
+	rows = tryQuery(stride_db, query, [pid])
+	nameMapping = {
+		'visits': [{
+			0: 'visit',
+			1: 'src',
+			2: 'src_type',
+			3: 'age',
+			4: 'timeoffset',
+			5: 'year',
+			6: 'duration',
+			7: 'cpt',
+			8: 'icd9',
+			9: 'vid'
+		}]
+	}
+	result = joinResult(rows, nameMapping)
+	return result
+
+def getLabs(pid):
+	query = "SELECT l.lid, l.src, l.age, l.timeoffset, l.description, l.proc, l.proc_cat, l.line, l.component, l.ord, l.ord_num, l.result_flag, l.ref_low, l.ref_high, l.ref_unit, l.result_inrange, l.ref_norm from labs as l where l.pid=%s"
+	rows = tryQuery(stride_db, query, [pid])
+	nameMapping = {
+		'labs': [{
+			0: 'lid',
+			1: 'src',
+			2: 'age',
+			3: 'timeoffset',
+			4: 'description',
+			5: 'proc',
+			6: 'proc_cat',
+			7: 'line',
+			8: 'component',
+			9: 'ord',
+			10: 'ord_num',
+			11: 'result_flag',
+			12: 'ref_low',
+			13: 'ref_high',
+			14: 'ref_unit',
+			15: 'result_inrange',
+			16: 'ref_norm'
+		}]
+	}
+	result = joinResult(rows, nameMapping)
+	return result
+
+def getPrescriptions(pid):
+	query = "SELECT p.rxid, p.src, p.age, p.timeoffset, p.drug_description, p.route, p.order_status, p.ingr_set_id from prescriptions as p where p.pid=%s"
+	rows = tryQuery(stride_db, query, [pid])
+	nameMapping = {
+		'prescriptions': [{
+			0: 'rxid',
+			1: 'src',
+			2: 'age',
+			3: 'timeoffset',
+			4: 'drug_description',
+			5: 'route',
+			6: 'order_status',
+			7: 'ingr_set_id'
+		}]
+	}
+	result = joinResult(rows, nameMapping)
+	return result
+	
+
 def getPatientVec(pid):
-	query = "SELECT v.pid, v.patient, v.visit, v.src, v.src_type, v.age, v.timeoffset, v.year, v.duration, v.cpt, v.icd9, v.vid, l.lid, l.src, l.age, l.timeoffset, l.description, l.proc, l.proc_cat, l.line, l.component, l.ord, l.ord_num, l.result_flag, l.ref_low, l.ref_high, l.ref_unit, l.result_inrange, l.ref_norm, p.rxid, p.src, p.age, p.timeoffset, p.drug_description, p.route, p.order_status, p.ingr_set_id, d.gender, d.race, d.ethnicity, d.death FROM visit as v left outer join prescription p on p.pid=v.pid left outer join lab l on l.pid=v.pid left outer join demographics d on d.pid=v.pid  WHERE v.pid=%s"
+	query = "SELECT d.pid, d.gender, d.race, d.ethnicity, d.death from demographics as d where d.pid=%s"	
 	
 	rows = tryQuery(stride_db, query, [pid])
 	print >> sys.stderr, 'got the rows!'
@@ -41,48 +107,7 @@ def getPatientVec(pid):
 			37: 'gender',
 			38: 'race',
 			39: 'ethnicity',
-			40: 'death',			
-			'visits': [{
-				2: 'visit',
-				3: 'src',
-				4: 'src_type',
-				5: 'age',
-				6: 'timeoffset',
-				7: 'year',
-				8: 'duration',
-				9: 'cpt',
-				10: 'icd9',
-				11: 'vid'
-			}],
-			'labs': [{
-				12: 'lid',
-				13: 'src',
-				14: 'age',
-				15: 'timeoffset',
-				16: 'description',
-				17: 'proc',
-				18: 'proc_cat',
-				19: 'line',
-				20: 'component',
-				21: 'ord',
-				22: 'ord_num',
-				23: 'result_flag',
-				24: 'ref_low',
-				25: 'ref_high',
-				26: 'ref_unit',
-				27: 'result_inrange',
-				28: 'ref_norm'
-			}],
-			'prescriptions': [{
-				29: 'rxid',
-				30: 'src',
-				31: 'age',
-				32: 'timeoffset',
-				33: 'drug_description',
-				34: 'route',
-				35: 'order_status',
-				36: 'ingr_set_id'
-			}]
+			40: 'death'
 		}]
 	}
 	result = joinResult(rows, nameMapping)
