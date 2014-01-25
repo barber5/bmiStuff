@@ -111,9 +111,9 @@ def getPatientVec(pid):
 	}
 	result = joinResult(rows, nameMapping)
 	result['notes'] = getNotes(pid)
-	result['prescriptions'] = getPrescriptions(pid)
-	result['visits'] = getVisits(pid)
-	result['labs'] = getLabs(pid)
+	#result['prescriptions'] = getPrescriptions(pid)
+	#result['visits'] = getVisits(pid)
+	#result['labs'] = getLabs(pid)
 	return result
 
 def getMultiplePatientVec(pids):
