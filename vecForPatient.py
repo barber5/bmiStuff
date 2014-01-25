@@ -51,7 +51,7 @@ def getVisits(pid):
 	return result
 
 def getLabs(pid):
-	query = "SELECT l.lid, l.src, l.age, l.timeoffset, l.description, l.proc, l.proc_cat, l.line, l.component, l.ord, l.ord_num, l.result_flag, l.ref_low, l.ref_high, l.ref_unit, l.result_inrange, l.ref_norm from labs as l where l.pid=%s"
+	query = "SELECT l.lid, l.src, l.age, l.timeoffset, l.description, l.proc, l.proc_cat, l.line, l.component, l.ord, l.ord_num, l.result_flag, l.ref_low, l.ref_high, l.ref_unit, l.result_inrange, l.ref_norm from lab as l where l.pid=%s"
 	rows = tryQuery(stride_db, query, [pid])
 	nameMapping = {
 		'labs': [{
@@ -78,7 +78,7 @@ def getLabs(pid):
 	return result
 
 def getPrescriptions(pid):
-	query = "SELECT p.rxid, p.src, p.age, p.timeoffset, p.drug_description, p.route, p.order_status, p.ingr_set_id from prescriptions as p where p.pid=%s"
+	query = "SELECT p.rxid, p.src, p.age, p.timeoffset, p.drug_description, p.route, p.order_status, p.ingr_set_id from prescription as p where p.pid=%s"
 	rows = tryQuery(stride_db, query, [pid])
 	nameMapping = {
 		'prescriptions': [{
