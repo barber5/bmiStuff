@@ -26,6 +26,7 @@ def getNotes(pid):
 		}]
 	}
 	rows = tryQuery(stride_db, query, [pid])
+	print >> sys.stderr, 'got the notes!'
 	result = joinResult(rows, nameMapping)
 	return result
 
@@ -96,10 +97,8 @@ def getPrescriptions(pid):
 	
 
 def getPatientVec(pid):
-	query = "SELECT d.pid, d.patient, d.gender, d.race, d.ethnicity, d.death from demographics as d where d.pid=%s"	
-	
-	rows = tryQuery(stride_db, query, [pid])
-	print >> sys.stderr, 'got the rows!'
+	query = "SELECT d.pid, d.patient, d.gender, d.race, d.ethnicity, d.death from demographics as d where d.pid=%s"		
+	rows = tryQuery(stride_db, query, [pid])	
 	nameMapping = {
 		'patients': [{
 			0: 'pid',
@@ -112,6 +111,9 @@ def getPatientVec(pid):
 	}
 	result = joinResult(rows, nameMapping)
 	result['notes'] = getNotes(pid)
+	result['prescriptions'] = getPrescriptions(pid)
+	result['visits'] = getVisits(pid)
+	result['labs'] = getLabs(pid)
 	return result
 
 def getMultiplePatientVec(pids):
