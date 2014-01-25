@@ -28,6 +28,7 @@ def getNotes(pid):
 	rows = tryQuery(stride_db, query, [pid])
 	print >> sys.stderr, 'got the notes!'
 	result = joinResult(rows, nameMapping)
+	print >> sys.stderr, 'merged the notes!'
 	return result
 
 def getVisits(pid):
@@ -111,15 +112,19 @@ def getPatientVec(pid):
 	}
 	result = joinResult(rows, nameMapping)
 	result['notes'] = getNotes(pid)
-	#result['prescriptions'] = getPrescriptions(pid)
-	#result['visits'] = getVisits(pid)
-	#result['labs'] = getLabs(pid)
+	result['prescriptions'] = getPrescriptions(pid)
+	result['visits'] = getVisits(pid)
+	result['labs'] = getLabs(pid)
 	return result
 
 def getMultiplePatientVec(pids):
 	result = []
 	for pid in pids:
-		result.append(getPatientVec(pid))
+		next = getPatientVec(pid)
+		fi = open(str(pid)+'.txt', 'w')
+		fi.write(next.__repr__())
+		fi.close()
+		result.append(next)
 		print >> sys.stderr, pid
 	return result
 
