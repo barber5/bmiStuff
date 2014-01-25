@@ -96,7 +96,7 @@ def getPrescriptions(pid):
 	
 
 def getPatientVec(pid):
-	query = "SELECT d.pid, d.gender, d.race, d.ethnicity, d.death from demographics as d where d.pid=%s"	
+	query = "SELECT d.pid, d.patient, d.gender, d.race, d.ethnicity, d.death from demographics as d where d.pid=%s"	
 	
 	rows = tryQuery(stride_db, query, [pid])
 	print >> sys.stderr, 'got the rows!'
@@ -104,10 +104,10 @@ def getPatientVec(pid):
 		'patients': [{
 			0: 'pid',
 			1: 'patient',
-			37: 'gender',
-			38: 'race',
-			39: 'ethnicity',
-			40: 'death'
+			3: 'gender',
+			4: 'race',
+			5: 'ethnicity',
+			6: 'death'
 		}]
 	}
 	result = joinResult(rows, nameMapping)
