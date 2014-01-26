@@ -1,6 +1,7 @@
 from relatedTerms import *
 from db import *
 import sys,pprint
+import os
 (term_db, stride_db) = getDbs()
 
 
