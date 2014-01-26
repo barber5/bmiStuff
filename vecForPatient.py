@@ -120,11 +120,11 @@ def getPatientVec(pid):
 def getMultiplePatientVec(pids):
 	result = []
 	for pid in pids:
-		if os.path.exists(str(pid)+'.txt'):
+		if os.path.exists('sarcpatients/'+str(pid)+'.txt'):
 			print >> sys.stderr, pid
 			continue
 		next = getPatientVec(pid)
-		fi = open(str(pid)+'.txt', 'w')
+		fi = open('sarcpatients/'+str(pid)+'.txt', 'w')
 		fi.write(next.__repr__())
 		fi.close()
 		result.append(next)
