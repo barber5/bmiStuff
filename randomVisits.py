@@ -5,7 +5,7 @@ import sys
 def getRandomVisits(num):
 	visits = []
 	for i in range(num):
-		pid = randRange(1, 1257139)
+		pid = randint(1, 1257139)
 		visits.extend(getVisits([visit]))
 	return visits
 
