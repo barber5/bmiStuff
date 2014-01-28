@@ -1,11 +1,13 @@
 from autismClusters import getInput, loadCodes, conditionsBinnedYear, condDictsForAges
 import sys, pprint
+from random import random
 
 
-
-def countCodes(patientConds, collapse=False):
+def countCodes(patientConds, collapse=False, sample=False):
 	condPatients = {}
-	for patient, conds in patientConds.iteritems():		
+	for patient, conds in patientConds.iteritems():	
+		if sample and random() > sample:
+			continue
 		for age, ageConds in conds.iteritems():
 			for cond in ageConds:
 				if collapse and cond.find('.') != -1:
@@ -15,6 +17,17 @@ def countCodes(patientConds, collapse=False):
 				condPatients[cond].add(patient)
 	return condPatients
 
+def patientsWithout(patientConds, code):
+	result = []
+	for patient, conds in patientConds.iteritems():			
+		without = True
+		for age, ageConds in conds.iteritems():
+			for cond in ageConds:
+				if cond == code:
+					without = False
+		if without:
+			result.append(patient)
+	return result
 
 if __name__ == "__main__":
 	patients = getInput(sys.argv[1])
