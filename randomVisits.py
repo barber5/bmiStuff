@@ -1,5 +1,6 @@
 from patientsForcode import getVisits
 from random import random
+import sys
 
 def getRandomVisits(num):
 	visits = []
