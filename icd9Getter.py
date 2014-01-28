@@ -17,9 +17,9 @@ def getVisits(pids):
 	for pid in pids:
 		query = "SELECT * FROM visit WHERE pid=%s";
 		rows = tryQuery(stride_db, query, [pid])
-		for row in rows:		
-			result.append('\t'.join(row))
-		print result
+		for row in rows:	
+			print row	
+			result.append(row)		
 	return result
 
 if __name__ == "__main__":
