@@ -22,10 +22,11 @@ def getVisits(pids):
 			for r in row:
 				line += str(r)+'\t'
 			line = line[:-1]
-			result.append(line)
-			print line		
+			result.append(line)					
 	return result
 
 if __name__ == "__main__":
 	pids = getPids(sys.argv[1])
 	visits = getVisits(pids)
+	for v in visits:
+		print v
