@@ -6,7 +6,7 @@ def getRandomVisits(num, src_type):
 	visits = []
 	for i in range(num):
 		pid = randint(1, 1257139)
-		visits.extend(getVisits([pid]), src_type)
+		visits.extend(getVisits([pid], src_type))
 	return visits
 
 if __name__ == "__main__":
