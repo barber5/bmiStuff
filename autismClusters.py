@@ -5,6 +5,9 @@ from sklearn.decomposition import KernelPCA
 from sklearn.cluster import DBSCAN as cluster
 import re
 
+
+blacklist = set(['299.00', '783.40', '315.9', '299.80', '783.42', '299.90', 'V20.2', 'V79.3', 'V72.6', '88.91', 'V70.7'])
+
 def getInput(fileName):
 	patients = {}
 	with open(fileName, 'r') as fi:
@@ -71,8 +74,8 @@ def conditionsBinnedYear(patients):
 			if age not in patientConds[pid]:
 				patientConds[pid][age] = {}
 			for cond in visit['conditions']:	
-				if cond == '299.00' or cond == '299.01':
-					None
+				if cond in blacklist:
+					continue
 				if cond not in patientConds[pid][age]:
 					patientConds[pid][age][cond] = 0
 				patientConds[pid][age][cond] += 1
@@ -84,8 +87,7 @@ def condDictsForAges(patientConds, ageVec, countFrequencies=True):
 	patientCondSets = {}
 	for pid, ages in patientConds.iteritems():
 		conds = {}
-		for age in ageVec:
-			age = int(age)
+		for age in ageVec:			
 			if age not in ages:
 				continue
 			for cond in ages[age]:
@@ -102,7 +104,8 @@ def condDictsForAges(patientConds, ageVec, countFrequencies=True):
 		patientCondSets[pid] = conds
 	return patientCondSets
 
-def clusterConditionsByAge(patientConds, ageVec, collapse=False, countFrequencies=True):	
+def clusterConditionsByAge(patientConds, lo, hi, collapse=False, countFrequencies=True):	
+	ageVec = range(lo, hi+1)
 	patientCondDicts = condDictsForAges(patientConds, ageVec, countFrequencies)
 	patientFeatures = {}
 	measurements = []
@@ -133,7 +136,7 @@ def clusterConditionsByAge(patientConds, ageVec, collapse=False, countFrequencie
 	dimReducer = KernelPCA(n_components=300)
 	#reducedFeatArray = dimReducer.fit_transform(tfidfArray)
 	reducedFeatArray = featArray
-	c = cluster(metric='cosine', algorithm='brute', min_samples=5, eps=.4)
+	c = cluster(metric='correlation', algorithm='brute', min_samples=10, eps=.2)
 	labels = c.fit_predict(reducedFeatArray)	
 	clusters = {}
 	clusterPatients = {}
@@ -145,7 +148,12 @@ def clusterConditionsByAge(patientConds, ageVec, collapse=False, countFrequencie
 			clusterPatients[l] = []
 		clusters[l].append(i)
 		pid = pidIndexer[i]
-		clusterPatients[l].append(patientCondDicts[pid])
+		condDicts = patientCondDicts[pid]
+		clpat = {
+			'pid': pid,
+			'conditions': condDicts
+		}
+		clusterPatients[l].append(clpat)
 	return clusterPatients
 
 def loadCodes(codeFile):
@@ -200,7 +208,7 @@ def patientClusterCodesCollapsed(clusterPatients, codes, collapse=False, countFr
 		patientCollapse = {}
 		for patient in patients:
 			collapsedSeen = {}
-			for code,cnt in patient.iteritems():
+			for code,cnt in patient['conditions'].iteritems():
 				if collapse and code.find('.') != -1:
 					collapsed = code.split('.')[0]
 				else:
@@ -229,14 +237,60 @@ def patientClusterCodesCollapsed(clusterPatients, codes, collapse=False, countFr
 		
 	return clusterCodes
 
+def clusterFlow(early, late):
+	flowDict = {}
+	for clu, patients in early.iteritems():
+		for patient in patients:
+			flowDict[patient['pid']] = {
+				'early': clu
+			}
+	for clu, patients in late.iteritems():
+		for patient in patients:
+			if patient['pid'] in flowDict:
+				flowDict[patient['pid']]['late'] = clu
+			else:
+				flowDict[patient['pid']] = {
+				'late': clu
+			}	
+	for pid, flow in flowDict.iteritems():
+		if 'early' not in flow:
+			flow['early'] = -1
+		if 'late' not in flow:
+			flow['late'] = -1
+	return flowDict
+
+def countFlows(flowDict):
+	counts = {}
+	for pid, flow in flowDict.iteritems():
+		early = flow['early'] + 1
+		late = flow['late'] + 1
+		if (early, late) not in counts:
+			counts[(early,late)] = 0
+		counts[(early, late)] += 1
+	return counts
+
+
 if __name__ == "__main__":
 	patients = getInput(sys.argv[1])
 	codes = loadCodes(sys.argv[2])		
-	#diagAges = firstDiag(patients)
+	
 	
 	patientConds = conditionsBinnedYear(patients)
-	clusterPatients = clusterConditionsByAge(patientConds, sys.argv[3:], False)
-	#clusterCodes = patientClusterCodes(clusterPatients, codes)
-	clusterCodes = patientClusterCodesCollapsed(clusterPatients, codes, False, False)
-	pprint.pprint(clusterCodes)
+	early = clusterConditionsByAge(patientConds, int(sys.argv[3]), int(sys.argv[4]), False)
+	late = 	clusterConditionsByAge(patientConds, int(sys.argv[5]), int(sys.argv[6]), False)
+
+	earlyCodes = patientClusterCodesCollapsed(early, codes, True, False)
+	print 'early: {}-{}'.format(sys.argv[3], sys.argv[4])
+	pprint.pprint(earlyCodes)
+	lateCodes = patientClusterCodesCollapsed(late, codes, True, False)
+	print '\n\n\n\nlate: {}-{}'.format(sys.argv[5], sys.argv[6])
+	pprint.pprint(lateCodes)
+
+	flowDict = clusterFlow(early, late)
+	counts = countFlows(flowDict)
+	print '\n\n\n\n\nflows'
+	pprint.pprint(counts)
+	
+	
+	
 
