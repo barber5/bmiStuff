@@ -15,11 +15,15 @@ def getPids(icd9):
 def getVisits(pids):
 	result = []
 	for pid in pids:
-		query = "SELECT * FROM visit WHERE pid=%s";
+		query = "SELECT pid, age, timeoffset, year, icd9 FROM visit WHERE pid=%s";
 		rows = tryQuery(stride_db, query, [pid])
 		for row in rows:	
-			print row	
-			result.append(row)		
+			line = ''
+			for r in row:
+				line += str(r)+'\t'
+			line = line[:-1]
+			result.append(line)
+			print line		
 	return result
 
 if __name__ == "__main__":
