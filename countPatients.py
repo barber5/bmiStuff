@@ -1,4 +1,4 @@
-from autismClusters import getInput, loadCodes, conditionsBinnedYear, condDictsForAges
+from autismClusters import getInput
 import sys, pprint
 
 if __name__ == "__main__":
