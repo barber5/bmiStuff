@@ -1,5 +1,5 @@
 from patientsForcode import getVisits
-from random import random
+from random import randRange
 import sys
 
 def getRandomVisits(num):
