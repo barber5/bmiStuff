@@ -15,8 +15,8 @@ def getPids(icd9):
 def getVisits(pids):
 	result = []
 	for pid in pids:
-		query = "SELECT pid FROM visit WHERE icd9 like '%%"+icd9+"%%' or icd9=%s"
-		rows = tryQuery(stride_db, query, [icd9])
+		query = "SELECT * FROM visit WHERE pid=%s";
+		rows = tryQuery(stride_db, query, [pid])
 		for row in rows:		
 			result.append('\t'.join(row))
 		print result
