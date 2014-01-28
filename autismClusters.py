@@ -61,7 +61,7 @@ def firstDiag(patients):
 		diagAges.append(diagAge)
 	return diagAges
 
-def conditionsBinnedYear(patients):
+def conditionsBinnedYear(patients, filterFlag=False):
 	patientConds = {}
 	for pid, patient in patients.iteritems():		
 		minOffset = minOffsetForPatient(patient)
@@ -74,7 +74,7 @@ def conditionsBinnedYear(patients):
 			if age not in patientConds[pid]:
 				patientConds[pid][age] = {}
 			for cond in visit['conditions']:	
-				if cond in blacklist:
+				if filterFlag and cond in blacklist:
 					continue
 				if cond not in patientConds[pid][age]:
 					patientConds[pid][age][cond] = 0

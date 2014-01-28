@@ -12,11 +12,11 @@ def getPids(icd9):
 		result.append(row[0])
 	return result
 
-def getVisits(pids):
+def getVisits(pids, src_type):
 	result = []
 	for pid in pids:
-		query = "SELECT pid, age, timeoffset, year, icd9 FROM visit WHERE pid=%s";
-		rows = tryQuery(stride_db, query, [pid])
+		query = "SELECT pid, age, timeoffset, year, icd9 FROM visit WHERE pid=%s AND src_type=%s";
+		rows = tryQuery(stride_db, query, [pid, src_type])
 		for row in rows:	
 			line = ''
 			for r in row:
@@ -27,6 +27,6 @@ def getVisits(pids):
 
 if __name__ == "__main__":
 	pids = getPids(sys.argv[1])
-	visits = getVisits(pids)
+	visits = getVisits(pids, sys.argv[2])
 	for v in visits:
 		print v
