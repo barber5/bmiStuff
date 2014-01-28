@@ -1,3 +1,5 @@
 *.pyc
 virtualenv-1.11.1/*
 *.txt
+*.csv
+*.tsv
