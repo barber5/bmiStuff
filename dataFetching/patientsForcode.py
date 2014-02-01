@@ -16,7 +16,7 @@ def getVisits(pids, src_type=None):
 	result = []
 	for pid in pids:
 		query = "SELECT pid, age, timeoffset, year, icd9 FROM visit WHERE pid=%s"
-		repls = [pid]
+		repls = [int(pid)]
 		if src_type:			
 			query += " AND src_type=%s"
 			repls.append(src_type)
