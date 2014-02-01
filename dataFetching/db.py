@@ -19,6 +19,7 @@ def getDbs():
 
 
 def tryQuery(db, query, replace=None):        
+    print query
     c = db.cursor()
     if replace:
         c.execute(query, replace)
