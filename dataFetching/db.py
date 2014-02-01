@@ -18,9 +18,7 @@ def getDbs():
 		return term_db, stride_db
 
 
-def tryQuery(db, query, replace=None):
-    print query
-    print replace
+def tryQuery(db, query, replace=None):        
     c = db.cursor()
     if replace:
         c.execute(query, replace)
