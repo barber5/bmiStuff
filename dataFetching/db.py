@@ -24,7 +24,9 @@ def tryQuery(db, query, replace=None):
         c.execute(query, replace)
     else:
         c.execute(query)
-    return c.fetchall()
+    res = c.fetchall()
+    print res
+    return res
 
 def getPkFromMapping(row, mapping):
     li = []
