@@ -22,11 +22,11 @@ def tryQuery(db, query, replace=None):
     print query
     print replace
     c = db.cursor()
-	if replace:
-		c.execute(query, replace)
-	else:
-		c.execute(query)
-	return c.fetchall()
+    if replace:
+        c.execute(query, replace)
+    else:
+        c.execute(query)
+    return c.fetchall()
 
 def getPkFromMapping(row, mapping):
     li = []
