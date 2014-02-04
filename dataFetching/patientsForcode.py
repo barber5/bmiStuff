@@ -44,7 +44,7 @@ def getNoteIds(pids):
 
 if __name__ == "__main__":
 	pids = getPids(sys.argv[1])
-	print pids
+	print >> sys.stderr, pids
 	if len(sys.argv) > 2:
 		visits = getVisits(pids, sys.argv[2])
 	else:
