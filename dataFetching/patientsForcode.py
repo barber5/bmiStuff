@@ -32,7 +32,7 @@ def getVisits(pids, src_type=None):
 def getNoteIds(pids):
 	result = []
 	for pid in pids:
-		query = "SELECT pid, patient, nid, src, src_type, age, timeoffset, year, duration, cpt, icd9 FROM notes where pid=%s"
+		query = "SELECT pid, patient, nid, src, src_type, age, timeoffset, year, duration, cpt, icd9 FROM note where pid=%s"
 		print query
 		rows = tryQuery(stride_db, query, [int(pid)])
 		for row in rows:	
