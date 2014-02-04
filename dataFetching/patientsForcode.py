@@ -29,8 +29,22 @@ def getVisits(pids, src_type=None):
 			result.append(line)					
 	return result
 
+def getNoteIds(pids):
+	result = []
+	for pid in pids:
+		query = "SELECT pid, patient, nid, src, src_type, age, timeoffset, year, duration, cpt, icd9 FROM notes where pid=%s"
+		rows = tryQuery(stride_db, query, [int(pid)])
+		for row in rows:	
+			line = ''
+			for r in row:
+				line += str(r)+'\t'
+			line = line[:-1]
+			result.append(line)					
+	return result
+
 if __name__ == "__main__":
 	pids = getPids(sys.argv[1])
+	print pids
 	if len(sys.argv) > 2:
 		visits = getVisits(pids, sys.argv[2])
 	else:
