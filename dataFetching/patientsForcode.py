@@ -33,6 +33,7 @@ def getNoteIds(pids):
 	result = []
 	for pid in pids:
 		query = "SELECT pid, patient, nid, src, src_type, age, timeoffset, year, duration, cpt, icd9 FROM notes where pid=%s"
+		print query
 		rows = tryQuery(stride_db, query, [int(pid)])
 		for row in rows:	
 			line = ''
@@ -49,5 +50,8 @@ if __name__ == "__main__":
 		visits = getVisits(pids, sys.argv[2])
 	else:
 		visits = getVisits(pids)
-	for v in visits:
-		print v
+	notes = getNoteIds(pids)
+	for n in notes:
+		print n
+	'''for v in visits:
+		print v'''
