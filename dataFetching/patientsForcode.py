@@ -32,7 +32,7 @@ def getNoteIds(pids, src_type=None):
 	for i, pid in enumerate(pids):
 		if i%10 == 0:
 			print >> sys.stderr, 'working on notes %s of %s, pid %s' % (i, len(pids), pid)
-		query = "SELECT pid, src, src_type, age, timeoffset, year, duration, cpt, icd9 FROM note where pid=%s"
+		query = "SELECT pid, nid, src, src_type, age, timeoffset, year, duration, cpt, icd9 FROM note where pid=%s"
 		repls = [int(pid)]
 		if src_type:			
 			query += " AND src_type=%s"
@@ -69,6 +69,19 @@ def getLabs(pids):
 		for row in rows:	
 			result.append(row)
 	return result
+
+def getfullNotes(nids):
+	result = []
+	for i, n in enumerate(nids):
+		nid = n[1]		
+		print >> sys.stderr, 'working on fullnote %s of %s, nid %s' % (i, len(nids), nid)
+		query = "SELECT tid, negated, familyHistory from mgrep where nid=%s"
+		rows = tryQuery(stride_db, query, str(nid))
+		for row in rows:
+			result.append(row)
+	return result
+
+
 
 def getFullPatients(code, src_type):
 	pids = getPids(code)
