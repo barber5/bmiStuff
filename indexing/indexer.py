@@ -26,7 +26,7 @@ print >> sys.stderr, "Currently there are %d documents in the index..." % writer
 
 # Make a bunch of fake, simple hello world type of documents. Add some numbers in there as well (so we can search for them later).
 # Tell Lucene to store the contents and index it as well.
-for i in range(500):
+for i in range(5000):
   doc = Document()
   fieldName = "text"
   fieldContent = i*(" hello # " +str(i)+ " this is my text and I'm sticking to it ! ")
