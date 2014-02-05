@@ -14,7 +14,8 @@ def getPids(icd9):
 
 def getVisits(pids, src_type=None):
 	result = []
-	for pid in pids:
+	for i, pid in enumerate(pids):
+		print >> sys.stderr, 'working on visit {} of {} (pid: {})'.format(i, len(pids), pid)
 		query = "SELECT pid, age, timeoffset, year, icd9 FROM visit WHERE pid=%s"
 		repls = [int(pid)]
 		if src_type:			
@@ -22,36 +23,62 @@ def getVisits(pids, src_type=None):
 			repls.append(src_type)
 		rows = tryQuery(stride_db, query, repls)
 		for row in rows:	
-			line = ''
-			for r in row:
-				line += str(r)+'\t'
-			line = line[:-1]
-			result.append(line)					
+			result.append(row)		
 	return result
 
-def getNoteIds(pids):
+def getNoteIds(pids, src_type=None):
 	result = []
 	for pid in pids:
-		query = "SELECT pid, patient, nid, src, src_type, age, timeoffset, year, duration, cpt, icd9 FROM note where pid=%s"
-		print query
-		rows = tryQuery(stride_db, query, [int(pid)])
+		print >> sys.stderr, 'working on note {} of {} (pid: {})'.format(i, len(pids), pid)
+		query = "SELECT pid, nid, src, src_type, age, timeoffset, year, duration, cpt, icd9 FROM note where pid=%s"
+		repls = [int(pid)]
+		if src_type:			
+			query += " AND src_type=%s"
+			repls.append(src_type)		
+		rows = tryQuery(stride_db, query, repls)
 		for row in rows:	
-			line = ''
-			for r in row:
-				line += str(r)+'\t'
-			line = line[:-1]
-			result.append(line)					
+			result.append(row)	
 	return result
 
+def getPrescriptions(pids, src_type=None):
+	result = []
+	for pid in pids:
+		print >> sys.stderr, 'working on prescription {} of {} (pid: {})'.format(i, len(pids), pid)
+		query = "SELECT pid, rxid, src, age, offset,  where pid=%s"
+		repls = [int(pid)]
+		if src_type:			
+			query += " AND src_type=%s"
+			repls.append(src_type)
+		rows = tryQuery(stride_db, query, repls)
+		for row in rows:	
+			result.append(row)
+	return result
+
+def getFullPatients(code, src_type):
+	pids = getPids(code)
+	
+	visits = getVisits(pids, src_type)
+	notes = getNoteIds(pids, src_type)
+	prescriptions = getPrescriptions(pids, src_type)
+
+def getCodedVisitsOnly(code, src_type):
+	pids = getPids(code)
+	visits = getVisits(pids, src_type)
+	for v in visits:
+		print '\t'.join(v)
+
 if __name__ == "__main__":
-	pids = getPids(sys.argv[1])
-	print >> sys.stderr, pids
 	if len(sys.argv) > 2:
-		visits = getVisits(pids, sys.argv[2])
+		src_type = sys.argv[2]
 	else:
-		visits = getVisits(pids)
-	notes = getNoteIds(pids)
-	for n in notes:
-		print n
-	'''for v in visits:
-		print v'''
+		src_type = None
+	getCodedVisitsOnly(sys.argv[1], src_type)
+
+
+
+
+
+
+
+
+		
