@@ -37,7 +37,8 @@ def getNoteIds(pids, src_type=None):
 			repls.append(src_type)		
 		rows = tryQuery(stride_db, query, repls)
 		for row in rows:	
-			result.append(row)	
+			rowStr = [str(i) for i in row]
+			result.append(rowStr)	
 	return result
 
 def getPrescriptions(pids, src_type=None):
