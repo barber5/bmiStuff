@@ -93,7 +93,7 @@ def getFullPatients(code, src_type):
 	result = {
 		'visits': visits,
 		'notes': notes,
-		'prescriptions', prescriptions,
+		'prescriptions': prescriptions,
 		'labs': labs
 	}
 	return result
