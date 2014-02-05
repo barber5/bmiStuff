@@ -90,6 +90,13 @@ def getFullPatients(code, src_type):
 	notes = getNoteIds(pids, src_type)
 	prescriptions = getPrescriptions(pids, src_type)
 	labs = getLabs(pids)
+	result = {
+		'visits': visits,
+		'notes': notes,
+		'prescriptions', prescriptions,
+		'labs': labs
+	}
+	return result
 	#getfullNotes(notes)
 
 def getCodedVisitsOnly(code, src_type):
@@ -98,13 +105,30 @@ def getCodedVisitsOnly(code, src_type):
 	for v in visits:
 		print '\t'.join(v)
 
+
+def rowsToFile(rows, fiName):
+	fi = open(fiName, 'w')
+	for r in rows:
+		row = [str(i) for i in r]
+		fi.write('\t'.join(row))
+		fi.write('\n')
+	fi.close()
+
+def patientsToFile(patients, filePrefix):	
+	rowsToFile(patients['visits'], filePrefix+'-visits.txt')
+	rowsToFile(patients['notes'], filePrefix+'-notes.txt')
+	rowsToFile(patients['prescriptions'], filePrefix+'-prescriptions.txt')
+	rowsToFile(patients['labs'], filePrefix+'-labs.txt')
+
+
 if __name__ == "__main__":
-	if len(sys.argv) > 2:
-		src_type = sys.argv[2]
+	if len(sys.argv) > 3:
+		src_type = sys.argv[3]
 	else:
 		src_type = None
 	#getCodedVisitsOnly(sys.argv[1], src_type)
-	getFullPatients(sys.argv[1], src_type)
+	patients = getFullPatients(sys.argv[1], src_type)
+	patientsToFile(patients, sys.argv[2])
 
 
 
