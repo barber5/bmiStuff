@@ -15,6 +15,9 @@ def getPids(icd9):
 def getVisits(pids, src_type=None):
 	result = []
 	for i, pid in enumerate(pids):
+		print i
+		print pid
+		print len(pids)
 		print >> sys.stderr, 'working on visit {} of {} (pid: {})'.format(i, len(pids), pid)
 		query = "SELECT pid, age, timeoffset, year, icd9 FROM visit WHERE pid=%s"
 		repls = [int(pid)]
