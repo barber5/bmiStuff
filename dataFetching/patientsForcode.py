@@ -14,7 +14,7 @@ def getPids(icd9):
 
 def getVisits(pids, src_type=None):
 	result = []
-	for i, pid in enumerate(pids):		
+	for i, pid in enumerate(pids):
 		if i%10 == 0:
 			print >> sys.stderr, 'working on visits %s of %s, pid %s' % (i, len(pids), pid)
 		query = "SELECT pid, src, src_type, age, timeoffset, year, duration, cpt, icd9 FROM visit WHERE pid=%s"
@@ -29,7 +29,7 @@ def getVisits(pids, src_type=None):
 
 def getNoteIds(pids, src_type=None):
 	result = []
-	for pid in pids:
+	for i, pid in enumerate(pids):
 		if i%10 == 0:
 			print >> sys.stderr, 'working on notes %s of %s, pid %s' % (i, len(pids), pid)
 		query = "SELECT pid, src, src_type, age, timeoffset, year, duration, cpt, icd9 FROM note where pid=%s"
@@ -45,7 +45,7 @@ def getNoteIds(pids, src_type=None):
 
 def getPrescriptions(pids, src_type=None):
 	result = []
-	for pid in pids:
+	for i, pid in enumerate(pids):
 		if i%10 == 0:
 			print >> sys.stderr, 'working on prescriptions %s of %s, pid %s' % (i, len(pids), pid)
 		query = "SELECT pid, rxid, src, age, timeoffset, drug_description, route, order_status, ingr_set_id FROM prescription where pid=%s"
@@ -60,7 +60,7 @@ def getPrescriptions(pids, src_type=None):
 
 def getLabs(pids):
 	result = []
-	for pid in pids:
+	for i, pid in enumerate(pids):
 		if i%10 == 0:
 			print >> sys.stderr, 'working on labs %s of %s, pid %s' % (i, len(pids), pid)
 		query = "SELECT l.lid, l.src, l.age, l.timeoffset, l.description, l.proc, l.proc_cat, l.line, l.component, l.ord, l.ord_num, l.result_flag, l.ref_low, l.ref_high, l.ref_unit, l.result_inrange, l.ref_norm from lab as l where l.pid=%s"
