@@ -86,11 +86,11 @@ def getfullNotes(nids):
 def getFullPatients(code, src_type):
 	pids = getPids(code)
 	
-	#visits = getVisits(pids, src_type)
+	visits = getVisits(pids, src_type)
 	notes = getNoteIds(pids, src_type)
-	#prescriptions = getPrescriptions(pids, src_type)
-	#labs = getLabs(pids)
-	getfullNotes(notes)
+	prescriptions = getPrescriptions(pids, src_type)
+	labs = getLabs(pids)
+	#getfullNotes(notes)
 
 def getCodedVisitsOnly(code, src_type):
 	pids = getPids(code)
