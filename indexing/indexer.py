@@ -29,7 +29,7 @@ print >> sys.stderr, "Currently there are %d documents in the index..." % writer
 for i in range(5000):
   doc = Document()
   fieldName = "text"
-  fieldContent = i*(" hello # " +str(i)+ " this is my text and I'm sticking to it ! ")
+  fieldContent = (" hello # " +str(i)+ " this is my text and I'm sticking to it ! ")
   doc.add(Field(fieldName, fieldContent, Field.Store.YES, Field.Index.ANALYZED))
   writer.addDocument(doc)
 
