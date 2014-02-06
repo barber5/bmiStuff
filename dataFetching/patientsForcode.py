@@ -139,19 +139,25 @@ class myThread (threading.Thread):
 
 		else:
 			thing = []
-		rowsToFile(thing, filePrefix+'-'+name+'.txt')		
+		rowsToFile(thing, filePrefix+'-'+name+'.txt')	
+		print 'finished '+self.name	
         
 
 def printAndGetFull(code, src_type, filePrefix):
 	pids = getPids(code)
 
 	vt = myThread('visits')
-	vt.run(pids, filePrefix)
+	
 	nt = myThread('notes')
-	nt.run(pids, filePrefix)
+	
 	pt = myThread('prescriptions')
-	pt.run(pids, filePrefix)
+	
 	lt = myThread('labs')
+	
+
+	vt.run(pids, filePrefix)
+	nt.run(pids, filePrefix)
+	pt.run(pids, filePrefix)
 	lt.run(pids, filePrefix)
 
 	vt.join()
