@@ -121,9 +121,11 @@ def patientsToFile(patients, filePrefix):
 	rowsToFile(patients['labs'], filePrefix+'-labs.txt')
 
 class myThread (threading.Thread):
-    def __init__(self, name):
+    def __init__(self, threadID, name, counter):
+
         threading.Thread.__init__(self)
-        
+        self.threadID = threadID
+        self.counter = counter
         self.name = name
         
     def run(self, pids, filePrefix, src_type=None):
