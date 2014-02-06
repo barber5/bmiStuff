@@ -5,12 +5,12 @@ import sys, pprint, threading
 (term_db, stride_db) = getDbs()
 
 def getPids(icd9, src_type=None):
-	query = "SELECT pid FROM visit WHERE icd9 like '%%"+icd9+"%%' or icd9=%s"
+	query = "SELECT pid FROM visit WHERE (icd9 like '%%"+icd9+"%%' or icd9=%s)"
 	repls = [icd9]
 	if src_type:
 		query += " and src_type=%s"
 		repls.append(src_type)
-	print repls
+	print query
 	rows = tryQuery(stride_db, query, repls)
 	result = []
 	for row in rows:		
