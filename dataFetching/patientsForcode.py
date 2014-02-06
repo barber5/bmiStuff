@@ -138,7 +138,7 @@ class myThread (threading.Thread):
 			thing = getLabs(pids)
 
 		else:
-			thing = []]
+			thing = []
 		rowsToFile(thing, filePrefix+'-'+name+'.txt')		
         
 
