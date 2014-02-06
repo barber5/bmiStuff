@@ -148,13 +148,13 @@ class myThread (threading.Thread):
 def printAndGetFull(code, src_type, filePrefix):
 	pids = getPids(code)
 
-	vt = myThread('visits')
+	vt = myThread(1, 'visits', 1)
 	
-	nt = myThread('notes')
+	nt = myThread(2, 'notes', 2)
 	
-	pt = myThread('prescriptions')
+	pt = myThread(3, 'prescriptions', 3)
 	
-	lt = myThread('labs')
+	lt = myThread(4, 'labs', 4)
 	
 
 	vt.run(pids, filePrefix)
