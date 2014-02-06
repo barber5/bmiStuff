@@ -19,6 +19,8 @@ def getInput(fileName):
 			}
 			if len(lineArr) > 4:
 				record['conditions'] = lineArr[4].strip().split(',')
+				if len(record['conditions']) == 0:
+					continue
 			if record['id'] not in patients:
 				patients[record['id']] = {}
 			if record['offset'] not in patients[record['id']]:
