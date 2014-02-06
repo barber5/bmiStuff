@@ -9,7 +9,7 @@ def getInput(fileName):
 			line = fi.readline()
 			if line == '':
 				break
-			lineArr = line.strip().split('\t')			
+			lineArr = line.strip().split('\t')						
 			record = {
 				'id': lineArr[0],
 				'age': int(lineArr[1]),
@@ -23,7 +23,6 @@ def getInput(fileName):
 				patients[record['id']] = {}
 			if record['offset'] not in patients[record['id']]:
 				patients[record['id']][record['offset']] = record
-			print record
 		fi.close()
 	return patients
 
@@ -138,8 +137,8 @@ def binnedTransform(patients, collapse=False, bernoulli=False, ignore=None, popu
 	for pid, conds in result.iteritems():		
 		if populationFreqThreshold:
 			newConds = {}
-			for cond,cc in conds.iteritems():
-				if float(conditionsPatientsIdx[cond]) / len(patients) > populationFreqThreshold:
+			for cond,cc in conds.iteritems():				
+				if float(conditionsPatientsIdx[cond]) / len(patients) > float(populationFreqThreshold):
 					newConds[cond] = cc
 			conds = newConds		
 		if len(conds) == 0:

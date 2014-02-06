@@ -157,10 +157,10 @@ def printAndGetFull(code, src_type, filePrefix):
 	lt = myThread(4, 'labs', 4)
 	
 
-	vt.run(pids, filePrefix)
-	nt.run(pids, filePrefix)
-	pt.run(pids, filePrefix)
-	lt.run(pids, filePrefix)
+	vt.run(pids, filePrefix, src_type)
+	nt.run(pids, filePrefix, src_type)
+	pt.run(pids, filePrefix, src_type)
+	lt.run(pids, filePrefix, src_type)
 
 	vt.join()
 	nt.join()
