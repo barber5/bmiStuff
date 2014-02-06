@@ -17,7 +17,7 @@ def getVisits(pids, src_type=None):
 	for i, pid in enumerate(pids):
 		if i%10 == 0:
 			print >> sys.stderr, 'working on visits %s of %s, pid %s' % (i, len(pids), pid)
-		query = "SELECT pid, age, timeoffset, year icd9, src, src_type, duration, cpt FROM visit WHERE pid=%s"
+		query = "SELECT pid, age, timeoffset, year, icd9, src, src_type, duration, cpt FROM visit WHERE pid=%s"
 		repls = [int(pid)]
 		if src_type:			
 			query += " AND src_type=%s"

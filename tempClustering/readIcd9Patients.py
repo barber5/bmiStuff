@@ -23,6 +23,7 @@ def getInput(fileName):
 				patients[record['id']] = {}
 			if record['offset'] not in patients[record['id']]:
 				patients[record['id']][record['offset']] = record
+			print record
 		fi.close()
 	return patients
 
