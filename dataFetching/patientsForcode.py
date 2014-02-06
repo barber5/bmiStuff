@@ -127,16 +127,19 @@ class myThread (threading.Thread):
         self.name = name
         
     def run(self, pids, filePrefix, src_type=None):
-        print "Starting " + self.name
-        if name == 'visits':
-        	thing = getVisits(pids, src_type)
-        elif name == 'notes':
-        	thing = getNoteIds(pids, src_type)
-        elif name == 'prescriptions':
-        	prescriptions = getPrescriptions(pids, src_type)
-        elif name == 'labs':
-			labs = getLabs(pids)
-		rowsToFile(thing, filePrefix+'-'+name+'.txt')
+		print "Starting " + self.name
+		if name == 'visits':
+			thing = getVisits(pids, src_type)
+		elif name == 'notes':
+			thing = getNoteIds(pids, src_type)
+		elif name == 'prescriptions':
+			thing = getPrescriptions(pids, src_type)
+		elif name == 'labs':
+			thing = getLabs(pids)
+
+		else:
+			thing = None
+		rowsToFile(thing, filePrefix+'-'+name+'.txt')		
         
 
 def printAndGetFull(code, src_type, filePrefix):
