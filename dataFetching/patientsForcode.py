@@ -10,6 +10,7 @@ def getPids(icd9, src_type=None):
 	if src_type:
 		query += " and src_type=%s"
 		repls.append(src_type)
+	print repls
 	rows = tryQuery(stride_db, query, repls)
 	result = []
 	for row in rows:		
