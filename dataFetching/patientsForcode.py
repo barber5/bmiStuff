@@ -1,5 +1,5 @@
 from db import *
-import sys, pprint
+import sys, pprint, threading
 
 
 (term_db, stride_db) = getDbs()
@@ -48,7 +48,7 @@ def getPrescriptions(pids, src_type=None):
 	for i, pid in enumerate(pids):
 		if i%10 == 0:
 			print >> sys.stderr, 'working on prescriptions %s of %s, pid %s' % (i, len(pids), pid)
-		query = "SELECT pid, rxid, src, age, timeoffset, drug_description, route, order_status, ingr_set_id FROM prescription where pid=%s"
+		query = "SELECT pid, rxid, src, age, timeoffset, drug_description, route, order_status, ingr_set_id FROM prescription where pid=%s"		
 		repls = [int(pid)]
 		if src_type:			
 			query += " AND src_type=%s"
@@ -120,6 +120,42 @@ def patientsToFile(patients, filePrefix):
 	rowsToFile(patients['prescriptions'], filePrefix+'-prescriptions.txt')
 	rowsToFile(patients['labs'], filePrefix+'-labs.txt')
 
+class myThread (threading.Thread):
+    def __init__(self, name):
+        threading.Thread.__init__(self)
+        
+        self.name = name
+        
+    def run(self, pids, filePrefix, src_type=None):
+        print "Starting " + self.name
+        if name == 'visits':
+        	thing = getVisits(pids, src_type)
+        elif name == 'notes':
+        	thing = getNoteIds(pids, src_type)
+        elif name == 'prescriptions':
+        	prescriptions = getPrescriptions(pids, src_type)
+        elif name == 'labs':
+			labs = getLabs(pids)
+		rowsToFile(thing, filePrefix+'-'+name+'.txt')        
+        
+
+def printAndGetFull(code, src_type, filePrefix):
+	pids = getPids(code)
+
+	vt = myThread('visits')
+	vt.run(pids, filePrefix)
+	nt = myThread('notes')
+	nt.run(pids, filePrefix)
+	pt = myThread('prescriptions')
+	pt.run(pids, filePrefix)
+	lt = myThread('labs')
+	lt.run(pids, filePrefix)
+
+	vt.join()
+	nt.join()
+	pt.join()
+	lt.join()
+	print 'done done done'
 
 if __name__ == "__main__":
 	if len(sys.argv) > 3:
