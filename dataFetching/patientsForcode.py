@@ -150,7 +150,7 @@ class myThread (threading.Thread):
         
 
 def printAndGetFull(code, src_type, filePrefix):
-	pids = getPids(code)
+	pids = getPids(code, src_type)
 
 	vt = myThread(1, 'visits', 1)
 	
