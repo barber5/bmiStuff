@@ -4,9 +4,13 @@ import sys, pprint, threading
 
 (term_db, stride_db) = getDbs()
 
-def getPids(icd9):
+def getPids(icd9, src_type=None):
 	query = "SELECT pid FROM visit WHERE icd9 like '%%"+icd9+"%%' or icd9=%s"
-	rows = tryQuery(stride_db, query, [icd9])
+	repls = [icd9]
+	if src_type:
+		query += " and src_type=%s"
+		repls.append(src_type)
+	rows = tryQuery(stride_db, query, repls)
 	result = []
 	for row in rows:		
 		result.append(row[0])
@@ -84,7 +88,7 @@ def getfullNotes(nids):
 
 
 def getFullPatients(code, src_type):
-	pids = getPids(code)
+	pids = getPids(code, src_type)
 	
 	visits = getVisits(pids, src_type)
 	notes = getNoteIds(pids, src_type)
