@@ -136,7 +136,7 @@ class myThread (threading.Thread):
         	prescriptions = getPrescriptions(pids, src_type)
         elif name == 'labs':
 			labs = getLabs(pids)
-		rowsToFile(thing, filePrefix+'-'+name+'.txt')        
+		rowsToFile(thing, filePrefix+'-'+name+'.txt')
         
 
 def printAndGetFull(code, src_type, filePrefix):
