@@ -17,7 +17,7 @@ def getVisits(pids, src_type=None):
 	for i, pid in enumerate(pids):
 		if i%10 == 0:
 			print >> sys.stderr, 'working on visits %s of %s, pid %s' % (i, len(pids), pid)
-		query = "SELECT pid, src, src_type, age, timeoffset, year, duration, cpt, icd9 FROM visit WHERE pid=%s"
+		query = "SELECT pid, age, timeoffset, year icd9, src, src_type, duration, cpt FROM visit WHERE pid=%s"
 		repls = [int(pid)]
 		if src_type:			
 			query += " AND src_type=%s"
@@ -141,7 +141,7 @@ class myThread (threading.Thread):
 
 		else:
 			thing = []
-		rowsToFile(thing, filePrefix+'-'+name+'.txt')	
+		rowsToFile(thing, filePrefix+'-'+self.name+'.txt')	
 		print 'finished '+self.name	
         
 
