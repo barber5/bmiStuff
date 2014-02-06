@@ -128,17 +128,17 @@ class myThread (threading.Thread):
         
     def run(self, pids, filePrefix, src_type=None):
 		print "Starting " + self.name
-		if name == 'visits':
+		if self.name == 'visits':
 			thing = getVisits(pids, src_type)
-		elif name == 'notes':
+		elif self.name == 'notes':
 			thing = getNoteIds(pids, src_type)
-		elif name == 'prescriptions':
+		elif self.name == 'prescriptions':
 			thing = getPrescriptions(pids, src_type)
-		elif name == 'labs':
+		elif self.name == 'labs':
 			thing = getLabs(pids)
 
 		else:
-			thing = None
+			thing = []]
 		rowsToFile(thing, filePrefix+'-'+name+'.txt')		
         
 
