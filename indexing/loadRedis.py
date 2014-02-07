@@ -14,7 +14,8 @@ def loadRedis(filename, startpoint):
 		val = ' '.join(lineArr[1:]).strip()	
 		r.lpush(key, val)
 		i+=1
-		print i
+		if i%1000:
+			print i
 
 	fi.close()
 
