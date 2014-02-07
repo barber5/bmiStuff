@@ -1,6 +1,6 @@
 from relatedTerms import *
 from db import *
-import sys,pprint
+import sys,pprint, pickle
 import os
 (term_db, stride_db) = getDbs()
 
@@ -135,6 +135,9 @@ def getMultiplePatientVec(fileName, dirr):
 		next = getPatientVec(pid)
 		fi = open(dirr+'/'+str(pid)+'.txt', 'w')
 		fi.write(next.__repr__())
+		fi.close()
+		fi = open(dirr+'/'+str(pid)+'.pkl', 'wb')
+		pickle.dump(next, fi)
 		fi.close()
 		result.append(next)
 		
