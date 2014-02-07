@@ -7,18 +7,18 @@ def conditionFrequencies(patients, sampleSize, sample=None):
 	result = {}	
 	if sample:
 		sampleSize = sample*sampleSize
-	for pid, conds in patients.iteritems():
+	for pid, conds in patients.iteritems():		
 		rnd = random.random()
 		#	print rnd, sample
 		if sample and rnd > sample:
 			continue		
-		for cond, cc in conds.iteritems():			
+		for cond, cc in conds.iteritems():							
 			if cond not in result:
 				result[cond] = {
 					'frequency': 0.0,
 					'desc': cc['desc']
 				}			
-			result[cond]['frequency'] += 1.0/float(sampleSize)
+			result[cond]['frequency'] += 1.0/float(sampleSize)		
 	return result
 
 def printFreqs(freqs):

@@ -21,27 +21,31 @@ def getInput(fileName):
 				record['conditions'] = lineArr[4].strip().split(',')
 				if len(record['conditions']) == 0:
 					continue
+				if len(record['conditions']) == 1 and record['conditions'][0] == '':
+					continue
 			if record['id'] not in patients:
 				patients[record['id']] = {}
 			if record['offset'] not in patients[record['id']]:
-				patients[record['id']][record['offset']] = record
+				patients[record['id']][record['offset']] = []
+			patients[record['id']][record['offset']].append(record)
 		fi.close()
 	return patients
 
-# input: {pid -> {offset->{record}}}
+# input: {pid -> {offset->[{record}}]}
 # output: {pid -> {age ->[{cond -> count}]}}
 def binConditionsByAge(patients):
 	result = {}
 	for pid, patient in patients.iteritems():
 		if pid not in result:
 			result[pid] = {}
-			for offset, record in patient.iteritems():
-				if record['age'] not in result[pid]:
-					result[pid][record['age']] = {}
-				for cond in record['conditions']:	
-					if cond not in result[pid][record['age']]:
-						result[pid][record['age']][cond] = 0
-					result[pid][record['age']][cond] += 1								
+			for offset, records in patient.iteritems():
+				for record in records:
+					if record['age'] not in result[pid]:
+						result[pid][record['age']] = {}
+					for cond in record['conditions']:	
+						if cond not in result[pid][record['age']]:
+							result[pid][record['age']][cond] = 0
+						result[pid][record['age']][cond] += 1								
 	return result
 
 # input: {pid -> {age ->[{cond -> count}]}}
@@ -52,7 +56,7 @@ def selectByAge(patients, minAge, maxAge):
 		if pid not in result:
 			result[pid] = {}
 		for age, conditions in patient.iteritems():
-			if age > minAge and age < maxAge:
+			if age >= minAge and age < maxAge:
 				for cond in conditions:
 					if cond not in result[pid]:
 						result[pid][cond] = 0
