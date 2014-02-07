@@ -133,7 +133,7 @@ def getMultiplePatientVec(fileName, dirr):
 			print >> sys.stderr, pid
 			continue
 		next = getPatientVec(pid)
-		fi = open('sarcpatients/'+str(pid)+'.txt', 'w')
+		fi = open(dirr+'/'+str(pid)+'.txt', 'w')
 		fi.write(next.__repr__())
 		fi.close()
 		result.append(next)
