@@ -126,8 +126,7 @@ def getMultiplePatientVec(fileName, dirr):
 		line = fi.readline().strip()
 		if line == '':
 			break
-		pids.append(line)
-	os.mkdir(dirr)
+		pids.append(line)	
 	for pid in pids:
 		print >> sys.stderr, pid
 		if os.path.exists(dirr+'/'+str(pid)+'.txt'):
