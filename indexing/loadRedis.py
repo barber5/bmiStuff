@@ -1,4 +1,4 @@
-import redis
+import redis, sys
 
 
 def loadRedis(filename, startpoint):
