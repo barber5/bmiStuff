@@ -11,7 +11,7 @@ def loadRedis(filename, startpoint):
 			break
 		lineArr = line.split('\t')
 		key = lineArr[0]
-		val = ' '.join(lineArr[1:])		
+		val = ' '.join(lineArr[1:]).strip()	
 		r.lpush(key, val)
 		i+=1
 		print i
