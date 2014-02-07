@@ -118,10 +118,11 @@ def getPatientVec(pid):
 	result['labs'] = getLabs(pid)
 	return result
 
-def getMultiplePatientVec(pids):
+def getMultiplePatientVec(pids, dirr):
 	result = []
 	for pid in pids:
-		if os.path.exists('sarcpatients/'+str(pid)+'.txt'):
+		os.mkdir(dirr)
+		if os.path.exists(dirr+'/'+str(pid)+'.txt'):
 			print >> sys.stderr, pid
 			continue
 		next = getPatientVec(pid)
@@ -135,6 +136,6 @@ def getMultiplePatientVec(pids):
 if __name__ == "__main__":
 	if len(sys.argv) == 2:
 		vec = getPatientVec(sys.argv[1])
-	elif len(sys.argv) > 2:
-		vec = getMultiplePatientVec(sys.argv[1:])
+	elif len(sys.argv) > 3:
+		vec = getMultiplePatientVec(sys.argv[3:], sys.argv[2])
 	pprint.pprint(vec)	
