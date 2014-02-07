@@ -138,4 +138,7 @@ if __name__ == "__main__":
 		vec = getPatientVec(sys.argv[1])
 	elif len(sys.argv) > 2:
 		vec = getMultiplePatientVec(sys.argv[1:])
+	else:
+		print 'wtf'
+		sys.exit(0)
 	pprint.pprint(vec)	
