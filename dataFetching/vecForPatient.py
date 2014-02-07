@@ -127,17 +127,17 @@ def getMultiplePatientVec(fileName, dirr):
 		if line == '':
 			break
 		pids.append(line)	
-	for pid in pids:
-		print >> sys.stderr, pid
+	for i, pid in enumerate(pids):
+		print >> sys.stderr, pid +' is '+str(i) +' of '+str(len(pids))
 		if os.path.exists(dirr+'/'+str(pid)+'.txt'):
-			print >> sys.stderr, pid
+			print 'exists, moving on'			
 			continue
 		next = getPatientVec(pid)
 		fi = open(dirr+'/'+str(pid)+'.txt', 'w')
 		fi.write(next.__repr__())
 		fi.close()
 		result.append(next)
-		print >> sys.stderr, pid
+		
 	return result
 
 if __name__ == "__main__":
