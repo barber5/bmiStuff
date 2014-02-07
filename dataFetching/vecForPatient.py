@@ -118,7 +118,7 @@ def getPatientVec(pid):
 	result['labs'] = getLabs(pid)
 	return result
 
-def getMultiplePatientVec(fileName, dir):
+def getMultiplePatientVec(fileName, dirr):
 	result = []
 	fi = open(fileName, 'r')
 	pids = []
