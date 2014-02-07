@@ -13,7 +13,7 @@ def loadRedis(filename, startpoint):
 		key = lineArr[0]
 		val = ' '.join(lineArr[1:])		
 		r.lpush(key, val)
-		i++
+		i+=1
 		print i
 
 	fi.close()
