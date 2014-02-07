@@ -7,6 +7,7 @@ def getPatientsForTerms(terms):
 	patients = {}
 	for t in terms:
 		term = t['tid']
+		print >> sys.stderr, t['tid']
 		query = "SELECT n.pid from mgrep as m inner join note as n on m.nid=n.nid  WHERE m.tid=%s group by n.pid"
 		rows = tryQuery(stride_db, query, [term])
 		for row in rows:			
