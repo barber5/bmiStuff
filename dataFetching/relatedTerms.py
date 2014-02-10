@@ -40,7 +40,7 @@ if __name__ == "__main__":
 	rt = related_terms(sys.argv[1])	
 	result = []
 	for t in rt:
-		result.extend(closure_term(t))
+		result.extend(closure_term(t['cid']))
 
 	pprint.pprint(result)
 
