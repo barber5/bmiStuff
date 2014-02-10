@@ -22,7 +22,7 @@ def closure_term(cid):
 	query = "SELECT DISTINCT i1.cid2 AS cid_norm, s1.cui AS cui_norm, s1.str AS str_norm, i2.cid1 AS cid_exp, s2.cui AS cui_exp, s2.str AS str_exp FROM terminology3.str2cid s1, terminology3.str2cid s2, terminology3.isaclosure i1, terminology3.isaclosure i2 WHERE i2.cid1 = s2.cid AND i1.cid2 = s1.cid AND i2.cid2 = i1.cid1 AND s1.cui IN (%s)"
 	print >> sys.stderr, 'working in cid {}'.format(cid)
 	result = []
-	rows = tryQuery(term_db, query, [term_query])
+	rows = tryQuery(term_db, query, [cid])
 	
 	for row in rows:
 		d = {
