@@ -246,7 +246,7 @@ class patientThread(threading.Thread):
 def parallelPatients(code, src_type, filePrefix):
 	pids = getPids(code, src_type)
 	for pid in pids:
-		print 'working on {}'.format(pid)
+		print 'working on '+pid
 		pt = patientThread(pid, filePrefix, src_type)
 		pt.start()
 
