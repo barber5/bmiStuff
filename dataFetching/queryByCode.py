@@ -2,9 +2,10 @@ from db import *
 import sys, pprint, threading
 
 
-(term_db, stride_db) = getDbs()
+
 
 def getPids(icd9, src_type=None):
+	(term_db, stride_db) = getDbs()
 	query = "SELECT pid FROM visit WHERE (icd9 like '%%"+icd9+"%%' or icd9=%s)"
 	repls = [icd9]
 	if src_type:
@@ -18,6 +19,7 @@ def getPids(icd9, src_type=None):
 	return result
 
 def getVisits(pids, src_type=None):
+	(term_db, stride_db) = getDbs()
 	result = []
 	for i, pid in enumerate(pids):
 		if i%10 == 0:
@@ -33,6 +35,7 @@ def getVisits(pids, src_type=None):
 	return result
 
 def getNoteIds(pids, src_type=None):
+	(term_db, stride_db) = getDbs()
 	result = []
 	for i, pid in enumerate(pids):
 		if i%10 == 0:
@@ -49,6 +52,7 @@ def getNoteIds(pids, src_type=None):
 	return result
 
 def getPrescriptions(pids, src_type=None):
+	(term_db, stride_db) = getDbs()
 	result = []
 	for i, pid in enumerate(pids):
 		if i%10 == 0:
@@ -64,6 +68,7 @@ def getPrescriptions(pids, src_type=None):
 	return result
 
 def getLabs(pids):
+	(term_db, stride_db) = getDbs()
 	result = []
 	for i, pid in enumerate(pids):
 		if i%10 == 0:
@@ -76,6 +81,7 @@ def getLabs(pids):
 	return result
 
 def getfullNotes(nids):
+	(term_db, stride_db) = getDbs()
 	result = []
 	for i, n in enumerate(nids):
 		nid = n[1]		
@@ -143,7 +149,6 @@ class myThread (threading.Thread):
 			thing = getPrescriptions(self.pids, self.src_type)
 		elif self.name == 'labs':
 			thing = getLabs(self.pids)
-
 		else:
 			thing = []
 		rowsToFile(thing, filePrefix+'-'+self.name+'.txt')	
