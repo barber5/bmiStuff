@@ -162,10 +162,10 @@ def printAndGetFull(code, src_type, filePrefix):
 	lt = myThread(4, 'labs', 4)
 	
 	print 'threads initialized'
-	vt.start()
-	nt.start()
-	pt.start()
-	lt.start()
+	vt.start(pids, filePrefix, src_type)
+	nt.start(pids, filePrefix, src_type)
+	pt.start(pids, filePrefix, src_type)
+	lt.start(pids, filePrefix, src_type)
 
 	
 	print 'done done done'
