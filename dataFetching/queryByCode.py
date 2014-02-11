@@ -221,8 +221,7 @@ def writeSinglePatientFile(pat, pid, filePrefix):
 
 class patientThread(threading.Thread):
 	def __init__(self, pid, filePrefix, src_type=None):
-		threading.Thread.__init__(self)
-        self.name = name
+		threading.Thread.__init__(self)        
         self.pid = pid
         self.filePrefix = filePrefix
         self.src_type = src_type
