@@ -257,7 +257,8 @@ if __name__ == "__main__":
 	#getCodedVisitsOnly(sys.argv[1], src_type)
 	#patients = getFullPatients(sys.argv[1], src_type)
 	#patientsToFile(patients, sys.argv[2])
-	printAndGetFull(sys.argv[1], src_type, sys.argv[2])
+	#printAndGetFull(sys.argv[1], src_type, sys.argv[2])
+	parallelPatients(sys.argv[1], src_type, sys.argv[2])
 
 
 
