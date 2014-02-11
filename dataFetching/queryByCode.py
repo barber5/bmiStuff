@@ -246,7 +246,7 @@ class patientThread(threading.Thread):
 def parallelPatients(code, src_type, filePrefix):
 	pids = getPids(code, src_type)
 	for i, pid in enumerate(pids):
-		if os.path.isfile(filePrefix+pid+'.pkl'):
+		if os.path.isfile(filePrefix+str(pid)+'.pkl'):
 			continue
 		print 'working on '+str(pid)
 		print 'which is '+str(i)+' of '+len(pids)
