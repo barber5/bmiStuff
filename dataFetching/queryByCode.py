@@ -212,7 +212,7 @@ def getSingleLabs(pid):
 
 def writeSinglePatientFile(pat, pid, filePrefix):
 	fi = open(filePrefix+pid+'.txt', 'w')
-	fi.write(pat)
+	fi.write(pat.__repr__())
 	fi.close()
 	fi = open(filePrefix+pid+'.pkl', 'wb')
 	pickle.dump(pat, fi)
