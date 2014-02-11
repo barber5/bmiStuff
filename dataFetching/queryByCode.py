@@ -151,7 +151,7 @@ class myThread (threading.Thread):
 			thing = getLabs(self.pids)
 		else:
 			thing = []
-		rowsToFile(thing, filePrefix+'-'+self.name+'.txt')	
+		rowsToFile(thing, self.filePrefix+'-'+self.name+'.txt')	
 		print 'finished '+self.name	
         
 
