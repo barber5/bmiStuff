@@ -133,11 +133,11 @@ def patientsToFile(patients, filePrefix):
 
 class myThread (threading.Thread):
     def __init__(self, name, pids, filePrefix, src_type=None):
-        threading.Thread.__init__(self)
-        self.name = name
-        self.pids = pids
-        self.filePrefix = filePrefix
-        self.src_type = src_type
+		threading.Thread.__init__(self)
+		self.name = name
+		self.pids = pids
+		self.filePrefix = filePrefix
+		self.src_type = src_type
         
     def run(self):
 		print "Starting " + self.name
@@ -221,10 +221,10 @@ def writeSinglePatientFile(pat, pid, filePrefix):
 
 class patientThread(threading.Thread):
 	def __init__(self, pidd, filePrefix, src_type=None):		   
-        self.pid = pidd
-        self.filePrefix = filePrefix
-        self.src_type = src_type
-        threading.Thread.__init__(self)     
+		self.pid = pidd
+		self.filePrefix = filePrefix
+		self.src_type = src_type
+		threading.Thread.__init__(self)     
         
 	def run(self):		
 		visits = getVisits(self.pid, self.src_type)		
