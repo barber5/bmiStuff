@@ -152,7 +152,7 @@ class myThread (threading.Thread):
 
 def printAndGetFull(code, src_type, filePrefix):
 	pids = getPids(code, src_type)
-
+	print 'initializing threads'
 	vt = myThread(1, 'visits', 1)
 	
 	nt = myThread(2, 'notes', 2)
