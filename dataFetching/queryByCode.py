@@ -221,13 +221,13 @@ def writeSinglePatientFile(pat, pid, filePrefix):
 
 class patientThread(threading.Thread):
 	def __init__(self, pid, filePrefix, src_type=None):
-        threading.Thread.__init__(self)
+		threading.Thread.__init__(self)
         self.name = name
         self.pid = pid
         self.filePrefix = filePrefix
         self.src_type = src_type
         
-    def run(self):		
+	def run(self):		
 		visits = getVisits(self.pid, self.src_type)		
 		notes = getNoteIds(self.pid, self.src_type)		
 		prescriptions = getPrescriptions(self.pid, self.src_type)		
