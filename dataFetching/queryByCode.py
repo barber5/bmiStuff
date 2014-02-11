@@ -162,15 +162,12 @@ def printAndGetFull(code, src_type, filePrefix):
 	lt = myThread(4, 'labs', 4)
 	
 	print 'threads initialized'
-	vt.run(pids, filePrefix, src_type)
-	nt.run(pids, filePrefix, src_type)
-	pt.run(pids, filePrefix, src_type)
-	lt.run(pids, filePrefix, src_type)
+	vt.start()
+	nt.start()
+	pt.start()
+	lt.start()
 
-	vt.join()
-	nt.join()
-	pt.join()
-	lt.join()
+	
 	print 'done done done'
 
 if __name__ == "__main__":
