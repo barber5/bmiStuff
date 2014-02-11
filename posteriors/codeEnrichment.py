@@ -24,8 +24,48 @@ def getData(codeFile, patientFile, randomFile, minAge, maxAge, freqThreshold):
 		'patients': codedPat,
 		'patientCount': len(codedPat),
 		'random': codedRnd,
-		'randomCount': len(codedRnd)
+		'randomCount': len(codedRnd),
+		'xformedRnd': xformedRnd,
+		'xformedPat': xformedPat,
+		'codes': codes
 	}		
+
+def getEnrichments(codeFile, patientFile, randomFile, minAge, maxAge, freqThreshold, patientSample, randomSample):
+	data = getData(codeFile, patientFile, randomFile, minAge, maxAge, freqThreshold)			
+	patientCount = conditionFrequencies(data['patients'], data['patientCount'], sample=patientSample)		
+	randomCount = conditionFrequencies(data['random'], data['randomCount'], sample=randomSample)
+	result = {}
+	for code in (set(patientCount.keys()) | set(randomCount.keys())):
+		pat = 0.0
+		rnd = 0.0
+		codeDesc = ''
+		if code in patientCount:
+			pat = patientCount[code]['frequency']
+			codeDesc = patientCount[code]['desc']
+		if code in randomCount:
+			rnd = randomCount[code]['frequency']
+			codeDesc = randomCount[code]['desc']
+		if rnd < .001 and pat < .01:
+			continue
+		if rnd == 0 and pat > .05: # didn't appear in the random data at all but in more than 5% of condition patients
+			incr = float('inf')
+		elif rnd == 0:
+			continue		
+		else:
+			incr = 100*float(pat-rnd)/rnd
+		if pat == 0 and rnd > .005:
+			incr = float('-inf')
+		elif pat == 0:
+			continue
+
+		result[code] = {
+			'code': code,
+			'enrichment': incr,
+			'patientFreq': pat,
+			'randomFreq': rnd,
+			'desc': codeDesc[:100]+'...'
+			}		
+	return result, data
 
 def printEnrichments(patientCount, randomCount):
 	for code in (set(patientCount.keys()) | set(randomCount.keys())):

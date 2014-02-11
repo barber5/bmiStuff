@@ -1,4 +1,5 @@
 import sys, pprint, re
+from collections import defaultdict
 
 # intput: filename
 # output: {pid -> {offset->{record}}}
@@ -155,7 +156,7 @@ def binnedTransform(patients, collapse=False, bernoulli=False, ignore=None, popu
 # intput: filename
 # output: {code -> desc}
 def loadCodes(codeFile):
-	codes = {}
+	codes = defaultdict(str)
 	with open(codeFile, 'r') as fi:		
 		while True:
 			line = fi.readline()
@@ -205,12 +206,32 @@ def binnedWithCodes(patients, codes):
 			}
 	return result
 
+def filterPatients(patients, filt):
+	nextResult = {}
+	for pid, patient in patients.iteritems():
+		if filt(pid, patient):
+			nextResult[pid] = patient
+	return result
+
+# input: {pid -> [{cond -> count}]
+# output: {pid -> [{cond -> {count}]
+def filterCodes(patients, filt):
+	nextResult = {}
+	for pat, conds in patients.iteritems():
+		nextConds = []
+		for cond in conds:
+			if filt(cond):
+				nextConds.append(cond)
+		nextResult[pat] = nextConds
+	return nextResult
+
+
 if __name__ == "__main__":
 	patients = getInput(sys.argv[1])
 	codes = loadCodes(sys.argv[2])
 	binned = binConditionsByAge(patients)
 	selected = selectByAge(binned, int(sys.argv[3]), int(sys.argv[4]))
 	xformed = binnedTransform(selected, collapse=True, populationFreqThreshold=.2)
-	coded = binnedWithCodes(xformed, codes)
-	pprint.pprint(coded)
+	print filterCodes(xformed, lambda x: False)
+	
 

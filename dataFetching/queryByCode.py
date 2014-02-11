@@ -161,7 +161,7 @@ def printAndGetFull(code, src_type, filePrefix):
 	
 	lt = myThread(4, 'labs', 4)
 	
-
+	print 'threads initialized'
 	vt.run(pids, filePrefix, src_type)
 	nt.run(pids, filePrefix, src_type)
 	pt.run(pids, filePrefix, src_type)
