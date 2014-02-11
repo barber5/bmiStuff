@@ -227,10 +227,10 @@ class patientThread(threading.Thread):
 		threading.Thread.__init__(self)     
         
 	def run(self):		
-		visits = getVisits(self.pid, self.src_type)		
-		notes = getNoteIds(self.pid, self.src_type)		
-		prescriptions = getPrescriptions(self.pid, self.src_type)		
-		labs = getLabs(self.pid)		
+		visits = getSingleVisits(self.pid, self.src_type)		
+		notes = getSingleNotes(self.pid, self.src_type)		
+		prescriptions = getSinglePrescriptions(self.pid, self.src_type)		
+		labs = getSingleLabs(self.pid)		
 		patient = {
 			'pid': self.pid,
 			'src_type': self.src_type,
