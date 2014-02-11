@@ -126,23 +126,23 @@ def patientsToFile(patients, filePrefix):
 	rowsToFile(patients['labs'], filePrefix+'-labs.txt')
 
 class myThread (threading.Thread):
-    def __init__(self, threadID, name, counter):
-
+    def __init__(self, name, pids, filePrefix, src_type=None):
         threading.Thread.__init__(self)
-        self.threadID = threadID
-        self.counter = counter
         self.name = name
+        self.pids = pids
+        self.filePrefix = filePrefix
+        self.src_type = src_type
         
-    def run(self, pids, filePrefix, src_type=None):
+    def run(self):
 		print "Starting " + self.name
 		if self.name == 'visits':
-			thing = getVisits(pids, src_type)
+			thing = getVisits(self.pids, self.src_type)
 		elif self.name == 'notes':
-			thing = getNoteIds(pids, src_type)
+			thing = getNoteIds(self.pids, self.src_type)
 		elif self.name == 'prescriptions':
-			thing = getPrescriptions(pids, src_type)
+			thing = getPrescriptions(self.pids, self.src_type)
 		elif self.name == 'labs':
-			thing = getLabs(pids)
+			thing = getLabs(self.pids)
 
 		else:
 			thing = []
@@ -153,19 +153,19 @@ class myThread (threading.Thread):
 def printAndGetFull(code, src_type, filePrefix):
 	pids = getPids(code, src_type)
 	print 'initializing threads'
-	vt = myThread(1, 'visits', 1)
+	vt = myThread('visits', pids, filePrefix, src_type)
 	
-	nt = myThread(2, 'notes', 2)
+	nt = myThread('notes', pids, filePrefix, src_type)
 	
-	pt = myThread(3, 'prescriptions', 3)
+	pt = myThread('prescriptions', pids, filePrefix, src_type)
 	
-	lt = myThread(4, 'labs', 4)
+	lt = myThread('labs', pids, filePrefix, src_type)
 	
 	print 'threads initialized'
-	vt.start(pids, filePrefix, src_type)
-	nt.start(pids, filePrefix, src_type)
-	pt.start(pids, filePrefix, src_type)
-	lt.start(pids, filePrefix, src_type)
+	vt.start()
+	nt.start()
+	pt.start()
+	lt.start()
 
 	
 	print 'done done done'
