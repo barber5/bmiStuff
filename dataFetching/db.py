@@ -76,10 +76,10 @@ def extractIt(row, mapping, result, idxs, attrName):
                 attrName = ''
             attrName = str(pk)+attrName
         for k,v in mapping.iteritems():
-            if(type(k) == type(23)):
+            if(type(k) == type(0)):
                 if v not in result:
                     result[v] = row[k]
-            elif type(k) == type('fnord'):
+            elif type(k) == type(''):
                 if k not in result:
                     if type(v) == type({}):
                         result[k] = {}

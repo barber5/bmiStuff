@@ -177,7 +177,21 @@ def getSingleVisits(pid, src_type=None):
 		query += " AND src_type=%s"
 		repls.append(src_type)
 	rows = tryQuery(stride_db, query, repls)
-	return rows
+	nameMapping = {
+		'visits': [{
+			'pid': 0,
+			'age': 1,
+			'timeoffset': 2
+			'year': 3,
+			'icd9': 4,
+			'src': 5,
+			'src_type': 6,
+			'duration': 7,
+			'cpt': 8
+		}]		
+	}
+	res = joinResult(rows, nameMapping)
+	return res
 
 def getSingleNotes(pid, src_type=None):
 	(term_db, stride_db) = getDbs()
@@ -187,11 +201,22 @@ def getSingleNotes(pid, src_type=None):
 		query += " AND src_type=%s"
 		repls.append(src_type)		
 	rows = tryQuery(stride_db, query, repls)
-	result = []
-	for row in rows:	
-		rowStr = [str(i) for i in row]
-		result.append(rowStr)
-	return result
+	nameMapping = {
+		'notes': [{
+			'pid': 0,
+			'nid': 1,
+			'src': 2,
+			'src_type': 3,
+			'age': 4,
+			'timeoffset': 5,
+			'year': 6,
+			'duration': 7,
+			'cpt': 8,
+			'icd9': 9
+		}]
+	}
+	res = joinResult(rows, nameMapping)
+	return res
 
 def getSinglePrescriptions(pid, src_type=None):
 	(term_db, stride_db) = getDbs()
@@ -201,13 +226,44 @@ def getSinglePrescriptions(pid, src_type=None):
 		query += " AND src_type=%s"
 		repls.append(src_type)
 	rows = tryQuery(stride_db, query, repls)
-	return rows
+	nameMapping = {
+		'pid': 0,
+		'rxid': 1,
+		'src': 2,
+		'age': 3,
+		'timeoffset': 4,
+		'drug_description': 5,
+		'route': 6,
+		'order_status': 7,
+		'ingr_set_id': 8
+	}
+	res = joinResult(rows, nameMapping)
+	return res
 
 def getSingleLabs(pid):
 	(term_db, stride_db) = getDbs()
 	query = "SELECT l.lid, l.src, l.age, l.timeoffset, l.description, l.proc, l.proc_cat, l.line, l.component, l.ord, l.ord_num, l.result_flag, l.ref_low, l.ref_high, l.ref_unit, l.result_inrange, l.ref_norm from lab as l where l.pid=%s"
 	repls = [int(pid)]		
 	rows = tryQuery(stride_db, query, repls)
+	nameMapping = {
+		'lid': 0,
+		'src': 1,
+		'age': 2,
+		'timeoffset': 3,
+		'description': 4,
+		'proc': 5,
+		'proc_cat': 6,
+		'line': 7,
+		'component': 8,
+		'ord': 9,
+		'ord_num': 10,
+		'result_flag': 11,
+		'ref_low': 12,
+		'ref_high': 13,
+		'ref_unit': 14,
+		'result_inrange': 15,
+		'ref_norm': 16
+	}
 	return rows
 
 def writeSinglePatientFile(pat, pid, filePrefix):
