@@ -41,7 +41,7 @@ def getPkFromMapping(row, mapping):
 
 def hasSublist(mapping):
     for k,v in mapping.iteritems():
-        if type(k) == type('fnord') and type(v) == type([]):
+        if type(k) == type('') and type(v) == type([]):
             return True
         elif type(v) == type({}):
             if hasSublist(v):
@@ -113,6 +113,7 @@ def joinResult(rows, nameMapping):
                 result[key] = []
     for row in rows:
         print row
+        row = list(row)
         extractIt(row, nameMapping, result, idxs, attrName)    
     print 'joinResult result: '+result.__repr__()
     return result
