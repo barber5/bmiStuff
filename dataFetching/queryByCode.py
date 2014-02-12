@@ -292,7 +292,7 @@ class patientThread(threading.Thread):
 			'visits': visits['visits'],
 			'notes': notes['notes'],
 			'prescriptions': prescriptions['prescriptions'],
-			'labs': labs['labs']
+			'labs': labs
 		}
 		writeSinglePatientFile(patient, self.pid, self.filePrefix)
 		
