@@ -344,8 +344,8 @@ def parallelPatients(code, src_type, filePrefix, concurrency):
 		pt.start()
 
 if __name__ == "__main__":
-	if len(sys.argv) > 3:
-		src_type = sys.argv[3]
+	if len(sys.argv) > 4:
+		src_type = sys.argv[4]
 	else:
 		src_type = None
 	#getCodedVisitsOnly(sys.argv[1], src_type)
