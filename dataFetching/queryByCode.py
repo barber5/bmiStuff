@@ -223,7 +223,7 @@ def getSingleNotes(pid, stride_db, src_type=None):
 	rows = tryQuery(stride_db, query, repls)
 	result = []
 	for row in rows:
-		terms = getSingleTerms(row[1])
+		terms = getSingleTerms(row[1], stride_db)
 		nextNote = {
 			'pid': row[0],
 			'nid': row[1],
