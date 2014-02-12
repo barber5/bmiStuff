@@ -334,11 +334,12 @@ def parallelPatients(code, src_type, filePrefix):
 			continue		
 		try:
 			(term_db, stride_db) = getDbs()
+			term_db.close()
 		except Exception as e:
 			time.sleep(.1)
-		pt = patientThread(pid, filePrefix, stride_db, src_type)
-		term_db.close()
+		pt = patientThread(pid, filePrefix, stride_db, src_type)		
 		pt.start()
+
 
 if __name__ == "__main__":
 	if len(sys.argv) > 3:
