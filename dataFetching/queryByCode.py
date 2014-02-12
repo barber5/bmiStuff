@@ -327,8 +327,10 @@ def parallelPatients(code, src_type, filePrefix):
 		print 'working on '+str(pid)
 		print 'which is '+str(i)+' of '+str(len(pids))		
 		if os.path.isfile(filePrefix+str(pid)+'.pkl'):
-			continue		
+			print 'already have it, moving on'
+			continue				
 		try:
+			print 'grabbing connections'
 			(term_db, stride_db) = getDbs()
 			term_db.close()
 		except Exception as e:
