@@ -179,15 +179,7 @@ def getSingleVisits(pid, src_type=None):
 	rows = tryQuery(stride_db, query, repls)
 	nameMapping = {
 		'visits': [{
-			'pid': 0,
-			'age': 1,
-			'timeoffset': 2,
-			'year': 3,
-			'icd9': 4,
-			'src': 5,
-			'src_type': 6,
-			'duration': 7,
-			'cpt': 8
+			'pid': 0			
 		}]		
 	}
 	print rows
