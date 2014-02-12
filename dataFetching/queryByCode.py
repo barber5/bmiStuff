@@ -323,6 +323,7 @@ class patientThread(threading.Thread):
 
 def parallelPatients(code, src_type, filePrefix):
 	pids = getPids(code, src_type)	
+	pids.sort()
 	for i, pid in enumerate(pids):
 		print 'working on '+str(pid)
 		print 'which is '+str(i)+' of '+str(len(pids))		
