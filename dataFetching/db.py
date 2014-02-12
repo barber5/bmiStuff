@@ -1,7 +1,7 @@
 import MySQLdb, time
 
 def getDbs():
-	with open('/home/barber5/.my.cnf', 'r') as f:
+    with open('/home/barber5/.my.cnf', 'r') as f:
         while True:
             try:
         		for line in f:
