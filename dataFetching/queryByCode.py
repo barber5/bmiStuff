@@ -115,7 +115,8 @@ def getCodedVisitsOnly(code, src_type):
 	pids = getPids(code)
 	visits = getVisits(pids, src_type)
 	for v in visits:
-		print '\t'.join(v)
+		strv = [str(i) for i in v]
+		print '\t'.join(strv)
 
 
 def rowsToFile(rows, fiName):
