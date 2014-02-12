@@ -337,11 +337,10 @@ class patientThread(threading.Thread):
 def parallelPatients(code, src_type, filePrefix, concurrency):
 	pids = getPids(code, src_type)	
 	for i, pid in enumerate(pids):
-		print pid
-		if os.path.isfile(filePrefix+str(pid)+'.pkl'):
-			continue
 		print 'working on '+str(pid)
 		print 'which is '+str(i)+' of '+str(len(pids))		
+		if os.path.isfile(filePrefix+str(pid)+'.pkl'):
+			continue		
 		while threading.active_count() > concurrency:
 			time.sleep(.1)
 		pt = patientThread(pid, filePrefix, src_type)
