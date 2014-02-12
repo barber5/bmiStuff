@@ -113,7 +113,7 @@ def joinResult(rows, nameMapping):
                 result[key] = []
     for row in rows:
         print row
-        row = list(row)
+        
         extractIt(row, nameMapping, result, idxs, attrName)    
     print 'joinResult result: '+result.__repr__()
     return result

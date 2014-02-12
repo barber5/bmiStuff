@@ -239,29 +239,31 @@ def getSingleLabs(pid):
 	query = "SELECT l.lid, l.src, l.age, l.timeoffset, l.description, l.proc, l.proc_cat, l.line, l.component, l.ord, l.ord_num, l.result_flag, l.ref_low, l.ref_high, l.ref_unit, l.result_inrange, l.ref_norm from lab as l where l.pid=%s"
 	repls = [int(pid)]		
 	rows = tryQuery(stride_db, query, repls)
-	nameMapping = {
-		'labs': [{
-			'lid': 0,
-			'src': 1,
-			'age': 2,
-			'timeoffset': 3,
-			'description': 4,
-			'proc': 5,
-			'proc_cat': 6,
-			'line': 7,
-			'component': 8,
-			'ord': 9,
-			'ord_num': 10,
-			'result_flag': 11,
-			'ref_low': 12,
-			'ref_high': 13,
-			'ref_unit': 14,
-			'result_inrange': 15,
-			'ref_norm': 16
-		}]		
+	result = []
+	for row in rows:
+		result.append({
+			'lid': row[0],
+			'src': row[1],
+			'age': row[2],
+			'timeoffset': row[3],
+			'description': row[4],
+			'proc': row[5],
+			'proc_cat': row[6],
+			'line': row[7],
+			'component': row[8],
+			'ord': row[9],
+			'ord_num': row[10],
+			'result_flag': row[11],
+			'ref_low': row[12],
+			'ref_high': row[13],
+			'ref_unit': row[14],
+			'result_inrange': row[15],
+			'ref_norm': row[16]
+			})					
+		
 	}
-	res = joinResult(rows, nameMapping)
-	return res
+	
+	return result
 
 def writeSinglePatientFile(pat, pid, filePrefix):
 	fi = open(filePrefix+pid+'.txt', 'w')
