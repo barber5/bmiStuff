@@ -303,7 +303,7 @@ class patientThread(threading.Thread):
 		self.pid = str(pidd)
 		self.filePrefix = filePrefix
 		self.src_type = src_type
-		this.stride_db = stride_db
+		self.stride_db = stride_db
 		threading.Thread.__init__(self)     
         
 	def run(self):		
