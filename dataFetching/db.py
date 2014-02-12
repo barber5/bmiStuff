@@ -105,6 +105,7 @@ def joinResult(rows, nameMapping):
     result = {}
     idxs = {}
     attrName = None
+    print rows
     if len(nameMapping) == 1:
         key = nameMapping.keys()[0]
         if type(nameMapping[key]) == type([]):

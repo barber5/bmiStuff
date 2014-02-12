@@ -181,8 +181,7 @@ def getSingleVisits(pid, src_type=None):
 		'visits': [{
 			'pid': 0			
 		}]		
-	}
-	print rows
+	}	
 	res = joinResult(rows, nameMapping)
 	return res
 
