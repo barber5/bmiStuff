@@ -249,7 +249,7 @@ def parallelPatients(code, src_type, filePrefix):
 		if os.path.isfile(filePrefix+str(pid)+'.pkl'):
 			continue
 		print 'working on '+str(pid)
-		print 'which is '+str(i)+' of '+len(pids)
+		print 'which is '+str(i)+' of '+str(len(pids))
 		pt = patientThread(pid, filePrefix, src_type)
 		pt.start()
 
