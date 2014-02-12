@@ -105,7 +105,6 @@ def joinResult(rows, nameMapping):
     result = {}
     idxs = {}
     attrName = None
-    print rows
     if len(nameMapping) == 1:
         key = nameMapping.keys()[0]
         if type(nameMapping[key]) == type([]):
@@ -113,6 +112,7 @@ def joinResult(rows, nameMapping):
             if len(rows) == 0:
                 result[key] = []
     for row in rows:
+        print row
         extractIt(row, nameMapping, result, idxs, attrName)    
     print 'joinResult result: '+result.__repr__()
     return result
