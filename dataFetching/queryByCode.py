@@ -190,6 +190,8 @@ def getSingleVisits(pid, src_type=None):
 			'duration': row[7],
 			'cpt': row[8]
 			})
+	term_db.close()
+	stride_db.close()
 	return result
 
 
@@ -209,6 +211,8 @@ def getSingleTerms(nid):
 			'negated': row[2],
 			'familyHistory': row[3]			
 			})
+	term_db.close()
+	stride_db.close()
 	return result
 
 
@@ -238,7 +242,8 @@ def getSingleNotes(pid, src_type=None):
 		}
 		result.append(nextNote)
 	
-	
+	term_db.close()
+	stride_db.close()
 	return result
 
 def getSinglePrescriptions(pid, src_type=None):
@@ -262,6 +267,8 @@ def getSinglePrescriptions(pid, src_type=None):
 			'order_status': row[7],
 			'ingr_set_id': row[8]
 			})
+	term_db.close()
+	stride_db.close()
 	return result
 
 def getSingleLabs(pid):
@@ -289,7 +296,9 @@ def getSingleLabs(pid):
 			'ref_unit': row[14],
 			'result_inrange': row[15],
 			'ref_norm': row[16]
-			})									
+			})			
+	term_db.close()
+	stride_db.close()							
 	return result
 
 def writeSinglePatientFile(pat, pid, filePrefix):
@@ -332,10 +341,9 @@ def parallelPatients(code, src_type, filePrefix, concurrency):
 		if os.path.isfile(filePrefix+str(pid)+'.pkl'):
 			continue
 		print 'working on '+str(pid)
-		print 'which is '+str(i)+' of '+str(len(pids))
-		print threading.active_count()
-		if threading.active_count() > concurrency:
-			time.sleep(1)
+		print 'which is '+str(i)+' of '+str(len(pids))		
+		while threading.active_count() > concurrency:
+			time.sleep(.1)
 		pt = patientThread(pid, filePrefix, src_type)
 		pt.start()
 
