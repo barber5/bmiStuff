@@ -261,7 +261,7 @@ def getSingleLabs(pid):
 			'ref_norm': row[16]
 			})					
 		
-	}
+	
 	
 	return result
 
