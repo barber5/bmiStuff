@@ -24,7 +24,9 @@ def tryQuery(db, query, replace=None):
         c.execute(query, replace)
     else:
         c.execute(query)
-    return c.fetchall()
+    result = c.fetchall()
+    c.close()
+    return result
 
 def getPkFromMapping(row, mapping):
     li = []
@@ -113,7 +115,7 @@ def joinResult(rows, nameMapping):
                 result[key] = []
     for row in rows:
         print row
-        
+
         extractIt(row, nameMapping, result, idxs, attrName)    
     print 'joinResult result: '+result.__repr__()
     return result
