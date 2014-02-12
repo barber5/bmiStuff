@@ -227,7 +227,7 @@ def getSinglePrescriptions(pid, src_type=None):
 		repls.append(src_type)
 	rows = tryQuery(stride_db, query, repls)
 	result = []
-	for row in row:
+	for row in rows:
 		result.append({
 			'pid': row[0],
 			'rxid': row[1],
