@@ -337,6 +337,7 @@ def parallelPatients(code, src_type, filePrefix):
 		except Exception as e:
 			time.sleep(.1)
 		pt = patientThread(pid, filePrefix, stride_db, src_type)
+		term_db.close()
 		pt.start()
 
 if __name__ == "__main__":
