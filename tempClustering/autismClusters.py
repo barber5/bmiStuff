@@ -7,6 +7,7 @@ import re
 
 
 blacklist = set(['299.00', '783.40', '315.9', '299.80', '783.42', '299.90', 'V20.2', 'V79.3', 'V72.6', '88.91', 'V70.7'])
+blacklist = set([])
 
 def getInput(fileName):
 	patients = {}
@@ -74,6 +75,8 @@ def conditionsBinnedYear(patients, filterFlag=False):
 			if age not in patientConds[pid]:
 				patientConds[pid][age] = {}
 			for cond in visit['conditions']:	
+				if cond == '':
+					continue
 				if filterFlag and cond in blacklist:
 					continue
 				if cond[0] == 'V':
@@ -87,11 +90,12 @@ def conditionsBinnedYear(patients, filterFlag=False):
 # and a vector of ages construct vectors for patients
 def condDictsForAges(patientConds, ageVec, countFrequencies=True):
 	patientCondSets = {}
+	print patientConds
 	for pid, ages in patientConds.iteritems():
 		conds = {}
 		for age in ageVec:			
 			if age not in ages:
-				continue
+				continue			
 			for cond in ages[age]:
 				if cond not in conds:
 					if countFrequencies:
@@ -108,7 +112,8 @@ def condDictsForAges(patientConds, ageVec, countFrequencies=True):
 
 def clusterConditionsByAge(patientConds, lo, hi, collapse=False, countFrequencies=True):	
 	ageVec = range(lo, hi+1)
-	patientCondDicts = condDictsForAges(patientConds, ageVec, countFrequencies)
+	patientCondDicts = condDictsForAges(patientConds, ageVec, countFrequencies)	
+	print len(patientCondDicts)
 	patientFeatures = {}
 	measurements = []
 	pidIndexer = {}
@@ -116,7 +121,7 @@ def clusterConditionsByAge(patientConds, lo, hi, collapse=False, countFrequencie
 	for patient, conds in patientCondDicts.iteritems():		
 		if collapse:
 			newConds = {}
-			for cond in conds:
+			for cond in conds:				
 				count = conds[cond]
 				if cond.find('.') != -1:
 					cond = cond.split('.')[0]
@@ -129,14 +134,15 @@ def clusterConditionsByAge(patientConds, lo, hi, collapse=False, countFrequencie
 					newConds[cond] += count
 			conds = newConds
 		pidIndexer[i] = patient
+		
 		measurements.append(conds)
 		i += 1
 	vec = DictVectorizer()
 	featArray = vec.fit_transform(measurements).toarray()
-	tfidf = TfidfTransformer()
-	tfidfArray = tfidf.fit_transform(featArray)
+	#tfidf = TfidfTransformer()
+	#tfidfArray = tfidf.fit_transform(featArray)
 	dimReducer = KernelPCA(n_components=300)
-	reducedFeatArray = dimReducer.fit_transform(tfidfArray)
+	reducedFeatArray = dimReducer.fit_transform(featArray)
 	#reducedFeatArray = featArray
 	c = cluster(metric='correlation', algorithm='brute', min_samples=10, eps=.2)
 	labels = c.fit_predict(reducedFeatArray)	

@@ -36,7 +36,7 @@ def doClustering(codeFile, patientFile, randomFile, minAge, maxAge, patientSampl
 	reducedFeatArray = dimReducer.fit_transform(tfidfArray)
 	print >> sys.stderr, "reduced dimensions"
 	#reducedFeatArray = featArray
-	c = cluster(metric='correlation', algorithm='brute', min_samples=3, eps=.5)
+	c = cluster(metric='correlation', algorithm='brute', min_samples=10, eps=.2)
 	labels = c.fit_predict(reducedFeatArray)	
 	print >> sys.stderr, 'clustering finished'
 	clusters = {}
