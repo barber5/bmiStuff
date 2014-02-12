@@ -22,6 +22,7 @@ def getPids(icd9, src_type=None):
 
 def getVisits(pids, src_type=None):	
 	result = []
+	(term_db, stride_db) = getDbs()
 	for i, pid in enumerate(pids):
 		if i%10 == 0:
 			print >> sys.stderr, 'working on visits %s of %s, pid %s' % (i, len(pids), pid)
@@ -36,6 +37,7 @@ def getVisits(pids, src_type=None):
 	return result
 
 def getNoteIds(pids, src_type=None):	
+	(term_db, stride_db) = getDbs()
 	result = []
 	for i, pid in enumerate(pids):
 		if i%10 == 0:
@@ -52,6 +54,7 @@ def getNoteIds(pids, src_type=None):
 	return result
 
 def getPrescriptions(pids, src_type=None):	
+	(term_db, stride_db) = getDbs()
 	result = []
 	for i, pid in enumerate(pids):
 		if i%10 == 0:
@@ -67,6 +70,7 @@ def getPrescriptions(pids, src_type=None):
 	return result
 
 def getLabs(pids):	
+	(term_db, stride_db) = getDbs()
 	result = []
 	for i, pid in enumerate(pids):
 		if i%10 == 0:
@@ -79,6 +83,7 @@ def getLabs(pids):
 	return result
 
 def getfullNotes(nids):	
+	(term_db, stride_db) = getDbs()
 	result = []
 	for i, n in enumerate(nids):
 		nid = n[1]		
