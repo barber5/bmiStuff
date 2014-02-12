@@ -325,7 +325,7 @@ class patientThread(threading.Thread):
 		
 
 
-def parallelPatients(code, src_type, filePrefix, concurrency):
+def parallelPatients(code, src_type, filePrefix):
 	pids = getPids(code, src_type)	
 	for i, pid in enumerate(pids):
 		print 'working on '+str(pid)
@@ -340,15 +340,15 @@ def parallelPatients(code, src_type, filePrefix, concurrency):
 		pt.start()
 
 if __name__ == "__main__":
-	if len(sys.argv) > 4:
-		src_type = sys.argv[4]
+	if len(sys.argv) > 3:
+		src_type = sys.argv[3]
 	else:
 		src_type = None
 	#getCodedVisitsOnly(sys.argv[1], src_type)
 	#patients = getFullPatients(sys.argv[1], src_type)
 	#patientsToFile(patients, sys.argv[2])
 	#printAndGetFull(sys.argv[1], src_type, sys.argv[2])
-	parallelPatients(sys.argv[1], src_type, sys.argv[2], int(sys.argv[3]))
+	parallelPatients(sys.argv[1], src_type, sys.argv[2])
 
 
 
