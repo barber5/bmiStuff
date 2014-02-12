@@ -177,13 +177,20 @@ def getSingleVisits(pid, src_type=None):
 		query += " AND src_type=%s"
 		repls.append(src_type)
 	rows = tryQuery(stride_db, query, repls)
-	nameMapping = {
-		'visits': [{
-			'pid': 0			
-		}]		
-	}	
-	res = joinResult(rows, nameMapping)
-	return res
+	result = []
+	for row in rows:
+		result.append({
+			'pid': row[0],
+			'age': row[1],
+			'timeoffset': row[2],
+			'year': row[3],
+			'icd9': row[4],
+			'src': row[5],
+			'src_type': row[6],
+			'duration': row[7],
+			'cpt': row[8]
+			})
+	return result
 
 def getSingleNotes(pid, src_type=None):
 	(term_db, stride_db) = getDbs()
@@ -193,22 +200,23 @@ def getSingleNotes(pid, src_type=None):
 		query += " AND src_type=%s"
 		repls.append(src_type)		
 	rows = tryQuery(stride_db, query, repls)
-	nameMapping = {
-		'notes': [{
-			'pid': 0,
-			'nid': 1,
-			'src': 2,
-			'src_type': 3,
-			'age': 4,
-			'timeoffset': 5,
-			'year': 6,
-			'duration': 7,
-			'cpt': 8,
-			'icd9': 9
-		}]
-	}
-	res = joinResult(rows, nameMapping)
-	return res
+	result = []
+	for row in rows:
+		result.append({
+				'pid': row[0],
+				'nid': row[1],
+				'src': row[2],
+				'src_type': row[3],
+				'age': row[4],
+				'timeoffset': row[5],
+				'year': row[6],
+				'duration': row[7],
+				'cpt': row[8],
+				'icd9': row[9]
+			})
+	
+	
+	return result
 
 def getSinglePrescriptions(pid, src_type=None):
 	(term_db, stride_db) = getDbs()
@@ -218,21 +226,20 @@ def getSinglePrescriptions(pid, src_type=None):
 		query += " AND src_type=%s"
 		repls.append(src_type)
 	rows = tryQuery(stride_db, query, repls)
-	nameMapping = {
-		'prescriptions': [{
-			'pid': 0,
-			'rxid': 1,
-			'src': 2,
-			'age': 3,
-			'timeoffset': 4,
-			'drug_description': 5,
-			'route': 6,
-			'order_status': 7,
-			'ingr_set_id': 8
-		}]		
-	}
-	res = joinResult(rows, nameMapping)
-	return res
+	result = []
+	for row in row:
+		result.append({
+			'pid': row[0],
+			'rxid': row[1],
+			'src': row[2],
+			'age': row[3],
+			'timeoffset': row[4],
+			'drug_description': row[5],
+			'route': row[6],
+			'order_status': row[7],
+			'ingr_set_id': row[8]
+			})
+	return result
 
 def getSingleLabs(pid):
 	(term_db, stride_db) = getDbs()
@@ -259,10 +266,7 @@ def getSingleLabs(pid):
 			'ref_unit': row[14],
 			'result_inrange': row[15],
 			'ref_norm': row[16]
-			})					
-		
-	
-	
+			})									
 	return result
 
 def writeSinglePatientFile(pat, pid, filePrefix):
@@ -289,9 +293,9 @@ class patientThread(threading.Thread):
 		patient = {
 			'pid': self.pid,
 			'src_type': self.src_type,
-			'visits': visits['visits'],
-			'notes': notes['notes'],
-			'prescriptions': prescriptions['prescriptions'],
+			'visits': visits,
+			'notes': notes,
+			'prescriptions': prescriptions,
 			'labs': labs
 		}
 		writeSinglePatientFile(patient, self.pid, self.filePrefix)
