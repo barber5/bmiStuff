@@ -227,15 +227,17 @@ def getSinglePrescriptions(pid, src_type=None):
 		repls.append(src_type)
 	rows = tryQuery(stride_db, query, repls)
 	nameMapping = {
-		'pid': 0,
-		'rxid': 1,
-		'src': 2,
-		'age': 3,
-		'timeoffset': 4,
-		'drug_description': 5,
-		'route': 6,
-		'order_status': 7,
-		'ingr_set_id': 8
+		'prescriptions': [{
+			'pid': 0,
+			'rxid': 1,
+			'src': 2,
+			'age': 3,
+			'timeoffset': 4,
+			'drug_description': 5,
+			'route': 6,
+			'order_status': 7,
+			'ingr_set_id': 8
+		}]		
 	}
 	res = joinResult(rows, nameMapping)
 	return res
@@ -246,23 +248,25 @@ def getSingleLabs(pid):
 	repls = [int(pid)]		
 	rows = tryQuery(stride_db, query, repls)
 	nameMapping = {
-		'lid': 0,
-		'src': 1,
-		'age': 2,
-		'timeoffset': 3,
-		'description': 4,
-		'proc': 5,
-		'proc_cat': 6,
-		'line': 7,
-		'component': 8,
-		'ord': 9,
-		'ord_num': 10,
-		'result_flag': 11,
-		'ref_low': 12,
-		'ref_high': 13,
-		'ref_unit': 14,
-		'result_inrange': 15,
-		'ref_norm': 16
+		'labs': [{
+			'lid': 0,
+			'src': 1,
+			'age': 2,
+			'timeoffset': 3,
+			'description': 4,
+			'proc': 5,
+			'proc_cat': 6,
+			'line': 7,
+			'component': 8,
+			'ord': 9,
+			'ord_num': 10,
+			'result_flag': 11,
+			'ref_low': 12,
+			'ref_high': 13,
+			'ref_unit': 14,
+			'result_inrange': 15,
+			'ref_norm': 16
+		}]		
 	}
 	return rows
 
@@ -290,10 +294,10 @@ class patientThread(threading.Thread):
 		patient = {
 			'pid': self.pid,
 			'src_type': self.src_type,
-			'visits': visits,
-			'notes': notes,
-			'prescriptions': prescriptions,
-			'labs': labs
+			'visits': visits['visits'],
+			'notes': notes['notes'],
+			'prescriptions': prescriptions['prescriptions'],
+			'labs': labs['labs']
 		}
 		writeSinglePatientFile(patient, self.pid, self.filePrefix)
 		
