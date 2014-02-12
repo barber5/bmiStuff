@@ -213,7 +213,7 @@ def getSingleTerms(nid):
 			'termid': row[6],
 			'cui': row[7]
 			})
-
+	return result
 
 
 def getSingleNotes(pid, src_type=None):
