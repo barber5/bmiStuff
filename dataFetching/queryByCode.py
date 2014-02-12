@@ -190,6 +190,7 @@ def getSingleVisits(pid, src_type=None):
 			'cpt': 8
 		}]		
 	}
+	print rows
 	res = joinResult(rows, nameMapping)
 	return res
 
