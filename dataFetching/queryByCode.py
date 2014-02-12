@@ -330,9 +330,9 @@ class patientThread(threading.Thread):
 
 
 def parallelPatients(code, src_type, filePrefix, concurrency):
-	pids = getPids(code, src_type)
-	print 'mooooo'
+	pids = getPids(code, src_type)	
 	for i, pid in enumerate(pids):
+		print pid
 		if os.path.isfile(filePrefix+str(pid)+'.pkl'):
 			continue
 		print 'working on '+str(pid)
