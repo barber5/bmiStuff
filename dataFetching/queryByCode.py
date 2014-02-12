@@ -1,5 +1,5 @@
 from db import *
-import sys, pprint, threading, pickle, os
+import sys, pprint, threading, pickle, os, time
 
 
 
@@ -329,13 +329,15 @@ class patientThread(threading.Thread):
 		
 
 
-def parallelPatients(code, src_type, filePrefix):
+def parallelPatients(code, src_type, filePrefix, concurrency):
 	pids = getPids(code, src_type)
 	for i, pid in enumerate(pids):
 		if os.path.isfile(filePrefix+str(pid)+'.pkl'):
 			continue
 		print 'working on '+str(pid)
 		print 'which is '+str(i)+' of '+str(len(pids))
+		if threading.active_count() > concurrency:
+			time.sleep(1)
 		pt = patientThread(pid, filePrefix, src_type)
 		pt.start()
 
@@ -348,7 +350,7 @@ if __name__ == "__main__":
 	#patients = getFullPatients(sys.argv[1], src_type)
 	#patientsToFile(patients, sys.argv[2])
 	#printAndGetFull(sys.argv[1], src_type, sys.argv[2])
-	parallelPatients(sys.argv[1], src_type, sys.argv[2])
+	parallelPatients(sys.argv[1], src_type, sys.argv[2], int(sys.argv[3]))
 
 
 
