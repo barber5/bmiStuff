@@ -197,7 +197,7 @@ def getSingleVisits(pid, src_type=None):
 
 def getSingleTerms(nid):
 	(term_db, stride_db) = getDbs()
-	query = "SELECT m.nid, m.tid, m.negated, m.familyHistory, t.term, t.ontology, t.termid, t.cui FROM mgrep as m inner join terminology3.terms as t on t.tid=m.tid where m.nid=%s"
+	query = "SELECT m.nid, m.tid, m.negated, m.familyHistory, t.term, t.ontology, t.termid, t.cui FROM mgrep as m where m.nid=%s"
 	repls = [int(nid)]	
 	rows = tryQuery(stride_db, query, repls)
 
@@ -207,11 +207,7 @@ def getSingleTerms(nid):
 			'nid': row[0],
 			'tid': row[1],
 			'negated': row[2],
-			'familyHistory': row[3],
-			'term': row[4],
-			'ontology': row[5],
-			'termid': row[6],
-			'cui': row[7]
+			'familyHistory': row[3]			
 			})
 	return result
 
