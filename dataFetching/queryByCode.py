@@ -208,7 +208,7 @@ def getSingleTerms(nid):
 			'tid': row[1],
 			'negated': row[2],
 			'familyHistory': row[3],
-			'term': row[4]
+			'term': row[4],
 			'ontology': row[5],
 			'termid': row[6],
 			'cui': row[7]
