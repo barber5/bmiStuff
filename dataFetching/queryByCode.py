@@ -181,7 +181,7 @@ def getSingleVisits(pid, src_type=None):
 		'visits': [{
 			'pid': 0,
 			'age': 1,
-			'timeoffset': 2
+			'timeoffset': 2,
 			'year': 3,
 			'icd9': 4,
 			'src': 5,
