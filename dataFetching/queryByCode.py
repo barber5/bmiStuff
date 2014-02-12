@@ -268,7 +268,8 @@ def getSingleLabs(pid):
 			'ref_norm': 16
 		}]		
 	}
-	return rows
+	res = joinResult(rows, nameMapping)
+	return res
 
 def writeSinglePatientFile(pat, pid, filePrefix):
 	fi = open(filePrefix+pid+'.txt', 'w')
