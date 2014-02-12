@@ -192,6 +192,30 @@ def getSingleVisits(pid, src_type=None):
 			})
 	return result
 
+
+
+
+def getSingleTerms(nid):
+	(term_db, stride_db) = getDbs()
+	query = "SELECT m.nid, m.tid, m.negated, m.familyHistory, t.term, t.ontology, t.termid, t.cui FROM mgrep as m inner join terminology3.terms as t on t.tid=m.tid where m.nid=%s"
+	repls = [int(nid)]	
+	rows = tryQuery(stride_db, query, repls)
+
+	result = []
+	for row in rows:
+		result.append({
+			'nid': row[0],
+			'tid': row[1],
+			'negated': row[2],
+			'familyHistory': row[3],
+			'term': row[4]
+			'ontology': row[5],
+			'termid': row[6],
+			'cui': row[7]
+			})
+
+
+
 def getSingleNotes(pid, src_type=None):
 	(term_db, stride_db) = getDbs()
 	query = "SELECT pid, nid, src, src_type, age, timeoffset, year, duration, cpt, icd9 FROM note where pid=%s"
@@ -202,18 +226,21 @@ def getSingleNotes(pid, src_type=None):
 	rows = tryQuery(stride_db, query, repls)
 	result = []
 	for row in rows:
-		result.append({
-				'pid': row[0],
-				'nid': row[1],
-				'src': row[2],
-				'src_type': row[3],
-				'age': row[4],
-				'timeoffset': row[5],
-				'year': row[6],
-				'duration': row[7],
-				'cpt': row[8],
-				'icd9': row[9]
-			})
+		terms = getSingleTerms(row[1])
+		nextNote = {
+			'pid': row[0],
+			'nid': row[1],
+			'src': row[2],
+			'src_type': row[3],
+			'age': row[4],
+			'timeoffset': row[5],
+			'year': row[6],
+			'duration': row[7],
+			'cpt': row[8],
+			'icd9': row[9],
+			'terms': terms
+		}
+		result.append(nextNote)
 	
 	
 	return result
