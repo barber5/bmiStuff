@@ -16,10 +16,11 @@ def getPids(icd9, src_type=None):
 	result = []
 	for row in rows:		
 		result.append(row[0])
+	stride_db.close()
+	term_db.close()
 	return result
 
-def getVisits(pids, src_type=None):
-	(term_db, stride_db) = getDbs()
+def getVisits(pids, src_type=None):	
 	result = []
 	for i, pid in enumerate(pids):
 		if i%10 == 0:
@@ -34,8 +35,7 @@ def getVisits(pids, src_type=None):
 			result.append(row)		
 	return result
 
-def getNoteIds(pids, src_type=None):
-	(term_db, stride_db) = getDbs()
+def getNoteIds(pids, src_type=None):	
 	result = []
 	for i, pid in enumerate(pids):
 		if i%10 == 0:
@@ -51,8 +51,7 @@ def getNoteIds(pids, src_type=None):
 			result.append(rowStr)	
 	return result
 
-def getPrescriptions(pids, src_type=None):
-	(term_db, stride_db) = getDbs()
+def getPrescriptions(pids, src_type=None):	
 	result = []
 	for i, pid in enumerate(pids):
 		if i%10 == 0:
@@ -67,8 +66,7 @@ def getPrescriptions(pids, src_type=None):
 			result.append(row)
 	return result
 
-def getLabs(pids):
-	(term_db, stride_db) = getDbs()
+def getLabs(pids):	
 	result = []
 	for i, pid in enumerate(pids):
 		if i%10 == 0:
@@ -80,8 +78,7 @@ def getLabs(pids):
 			result.append(row)
 	return result
 
-def getfullNotes(nids):
-	(term_db, stride_db) = getDbs()
+def getfullNotes(nids):	
 	result = []
 	for i, n in enumerate(nids):
 		nid = n[1]		
@@ -96,7 +93,6 @@ def getfullNotes(nids):
 
 def getFullPatients(code, src_type):
 	pids = getPids(code, src_type)
-	
 	visits = getVisits(pids, src_type)
 	notes = getNoteIds(pids, src_type)
 	prescriptions = getPrescriptions(pids, src_type)
