@@ -169,8 +169,7 @@ def printAndGetFull(code, src_type, filePrefix):
 	lt.start()	
 	print 'done done done'
 
-def getSingleVisits(pid, src_type=None):
-	(term_db, stride_db) = getDbs()
+def getSingleVisits(pid, stride_db, src_type=None):	
 	query = "SELECT pid, age, timeoffset, year, icd9, src, src_type, duration, cpt FROM visit WHERE pid=%s"
 	repls = [int(pid)]
 	if src_type:			
@@ -189,17 +188,14 @@ def getSingleVisits(pid, src_type=None):
 			'src_type': row[6],
 			'duration': row[7],
 			'cpt': row[8]
-			})
-	term_db.close()
-	stride_db.close()
+			})	
 	return result
 
 
 
 
-def getSingleTerms(nid):
-	(term_db, stride_db) = getDbs()
-	query = "SELECT m.nid, m.tid, m.negated, m.familyHistory FROM mgrep as m where m.nid=%s"
+def getSingleTerms(nid, stride_db):	
+	query = "SELECT m.nid, m.tid, m.negated, m.familyHistory, t.term, t.ontology, t.cui, t.termid FROM mgrep as m inner join terminology3.terms as t on m.tid=t.tid where m.nid=%s"
 	repls = [int(nid)]	
 	rows = tryQuery(stride_db, query, repls)
 
@@ -209,15 +205,16 @@ def getSingleTerms(nid):
 			'nid': row[0],
 			'tid': row[1],
 			'negated': row[2],
-			'familyHistory': row[3]			
-			})
-	term_db.close()
-	stride_db.close()
+			'familyHistory': row[3],
+			'term': row[4],
+			'ontology': row[5],
+			'cui': row[6],
+			'termid': row[7]	
+			})	
 	return result
 
 
-def getSingleNotes(pid, src_type=None):
-	(term_db, stride_db) = getDbs()
+def getSingleNotes(pid, stride_db, src_type=None):	
 	query = "SELECT pid, nid, src, src_type, age, timeoffset, year, duration, cpt, icd9 FROM note where pid=%s"
 	repls = [int(pid)]
 	if src_type:			
@@ -240,14 +237,10 @@ def getSingleNotes(pid, src_type=None):
 			'icd9': row[9],
 			'terms': terms
 		}
-		result.append(nextNote)
-	
-	term_db.close()
-	stride_db.close()
+		result.append(nextNote)	
 	return result
 
-def getSinglePrescriptions(pid, src_type=None):
-	(term_db, stride_db) = getDbs()
+def getSinglePrescriptions(pid, stride_db, src_type=None):	
 	query = "SELECT pid, rxid, src, age, timeoffset, drug_description, route, order_status, ingr_set_id FROM prescription where pid=%s"		
 	repls = [int(pid)]
 	if src_type:			
@@ -266,13 +259,10 @@ def getSinglePrescriptions(pid, src_type=None):
 			'route': row[6],
 			'order_status': row[7],
 			'ingr_set_id': row[8]
-			})
-	term_db.close()
-	stride_db.close()
+			})	
 	return result
 
-def getSingleLabs(pid):
-	(term_db, stride_db) = getDbs()
+def getSingleLabs(pid, stride_db):	
 	query = "SELECT l.lid, l.src, l.age, l.timeoffset, l.description, l.proc, l.proc_cat, l.line, l.component, l.ord, l.ord_num, l.result_flag, l.ref_low, l.ref_high, l.ref_unit, l.result_inrange, l.ref_norm from lab as l where l.pid=%s"
 	repls = [int(pid)]		
 	rows = tryQuery(stride_db, query, repls)
@@ -296,9 +286,7 @@ def getSingleLabs(pid):
 			'ref_unit': row[14],
 			'result_inrange': row[15],
 			'ref_norm': row[16]
-			})			
-	term_db.close()
-	stride_db.close()							
+			})				
 	return result
 
 def writeSinglePatientFile(pat, pid, filePrefix):
@@ -311,17 +299,18 @@ def writeSinglePatientFile(pat, pid, filePrefix):
 
 
 class patientThread(threading.Thread):
-	def __init__(self, pidd, filePrefix, src_type=None):		   
+	def __init__(self, pidd, filePrefix, stride_db, src_type=None):		   
 		self.pid = str(pidd)
 		self.filePrefix = filePrefix
 		self.src_type = src_type
+		this.stride_db = stride_db
 		threading.Thread.__init__(self)     
         
 	def run(self):		
-		visits = getSingleVisits(self.pid, self.src_type)		
-		notes = getSingleNotes(self.pid, self.src_type)		
-		prescriptions = getSinglePrescriptions(self.pid, self.src_type)		
-		labs = getSingleLabs(self.pid)		
+		visits = getSingleVisits(self.pid, self.stride_db, self.src_type)		
+		notes = getSingleNotes(self.pid, self.stride_db, self.src_type)		
+		prescriptions = getSinglePrescriptions(self.pid, self.stride_db, self.src_type)		
+		labs = getSingleLabs(self.pid, self.stride_db)		
 		patient = {
 			'pid': self.pid,
 			'src_type': self.src_type,
@@ -330,7 +319,9 @@ class patientThread(threading.Thread):
 			'prescriptions': prescriptions,
 			'labs': labs
 		}
+		self.stride_db.close()
 		writeSinglePatientFile(patient, self.pid, self.filePrefix)
+
 		
 
 
@@ -341,9 +332,11 @@ def parallelPatients(code, src_type, filePrefix, concurrency):
 		print 'which is '+str(i)+' of '+str(len(pids))		
 		if os.path.isfile(filePrefix+str(pid)+'.pkl'):
 			continue		
-		while threading.active_count() > concurrency:
+		try:
+			(term_db, stride_db) = getDbs()
+		except Exception as e:
 			time.sleep(.1)
-		pt = patientThread(pid, filePrefix, src_type)
+		pt = patientThread(pid, filePrefix, stride_db, src_type)
 		pt.start()
 
 if __name__ == "__main__":
