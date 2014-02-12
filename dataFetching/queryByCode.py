@@ -329,12 +329,12 @@ def parallelPatients(code, src_type, filePrefix):
 		if os.path.isfile(filePrefix+str(pid)+'.pkl'):
 			print 'already have it, moving on'
 			continue				
-		try:
-			print 'grabbing connections'
-			(term_db, stride_db) = getDbs()
-			term_db.close()
-		except Exception as e:
-			time.sleep(.1)
+		
+		print 'grabbing connections'
+		(term_db, stride_db) = getDbs()
+		term_db.close()
+		
+		
 		pt = patientThread(pid, filePrefix, stride_db, src_type)		
 		pt.start()
 
