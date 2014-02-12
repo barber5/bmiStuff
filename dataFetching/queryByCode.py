@@ -197,7 +197,7 @@ def getSingleVisits(pid, src_type=None):
 
 def getSingleTerms(nid):
 	(term_db, stride_db) = getDbs()
-	query = "SELECT m.nid, m.tid, m.negated, m.familyHistory, t.term, t.ontology, t.termid, t.cui FROM mgrep as m where m.nid=%s"
+	query = "SELECT m.nid, m.tid, m.negated, m.familyHistory FROM mgrep as m where m.nid=%s"
 	repls = [int(nid)]	
 	rows = tryQuery(stride_db, query, repls)
 
