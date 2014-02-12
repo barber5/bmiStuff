@@ -336,6 +336,7 @@ def parallelPatients(code, src_type, filePrefix, concurrency):
 			continue
 		print 'working on '+str(pid)
 		print 'which is '+str(i)+' of '+str(len(pids))
+		print threading.active_count()
 		if threading.active_count() > concurrency:
 			time.sleep(1)
 		pt = patientThread(pid, filePrefix, src_type)
