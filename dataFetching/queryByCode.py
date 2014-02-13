@@ -344,7 +344,7 @@ class patientThread(threading.Thread):
 def writeResults(code):
 	print 'writing results'*20
 	global patList
-	fi = open(str(code)+'.pkl', 'w')
+	fi = open(str(code)+'.pkl', 'wb')
 	with lock:
 		print 'lock acquired'*20
 		pickle.dump(patList, fi)
