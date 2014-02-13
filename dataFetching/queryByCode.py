@@ -331,10 +331,9 @@ def parallelPatients(code, src_type, filePrefix, minpid):
 	pidInt = [int(i) for i in pids]	
 	pidInt.sort()	
 	pids = [str(s) for s in pidInt]
-	print pids	
+	
 	for i, pid in enumerate(pids):
-		print filePrefix+str(pid)+'.pkl'
-		continue
+		print filePrefix+str(pid)+'.pkl'		
 		if int(pid) < minpid:
 			print 'skipping'
 			continue		
@@ -349,11 +348,10 @@ def parallelPatients(code, src_type, filePrefix, minpid):
 		print 'which is '+str(i)+' of '+str(len(pids))		
 		print 'grabbing connections'
 		(term_db, stride_db) = getDbs()
-		term_db.close()
-		
-		
+		term_db.close()				
 		pt = patientThread(pid, filePrefix, stride_db, src_type)		
 		pt.start()
+		time.sleep(10)
 
 
 if __name__ == "__main__":
