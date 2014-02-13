@@ -337,12 +337,10 @@ def parallelPatients(code, src_type, filePrefix, minpid):
 		if int(pid) < minpid:
 			print 'skipping'
 			continue		
-		if os.path.isfile(filePrefix+str(pid)+'.pkl'):
-			print 'already have it, moving on'*100
+		if os.path.isfile(filePrefix+str(pid)+'.pkl'):			
 			continue				
 		else:
-			
-			print 'not exists'*20
+			print 'not exists'						
 			print filePrefix+str(pid)+'.pkl'
 		print 'working on '+str(pid)
 		print 'which is '+str(i)+' of '+str(len(pids))		
@@ -350,8 +348,7 @@ def parallelPatients(code, src_type, filePrefix, minpid):
 		(term_db, stride_db) = getDbs()
 		term_db.close()				
 		pt = patientThread(pid, filePrefix, stride_db, src_type)		
-		pt.start()
-		time.sleep(1)
+		pt.start()		
 
 
 if __name__ == "__main__":
