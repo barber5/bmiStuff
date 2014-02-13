@@ -329,12 +329,13 @@ class patientThread(threading.Thread):
 			'prescriptions': prescriptions,
 			'labs': labs
 		}
-		self.stride_db.close()
-		writeSinglePatientFile(patient, self.pid, self.filePrefix)
 		print 'finished '+str(self.pid)
 		with lock:
 			count -= 1
 			print 'decrementing: count is '+str(count)
+		self.stride_db.close()
+		writeSinglePatientFile(patient, self.pid, self.filePrefix)
+		
 
 		
 
@@ -350,11 +351,12 @@ def parallelPatients(code, src_type, filePrefix, minpid):
 		cnt = 0
 		with lock:
 			cnt = count
-		while cnt > 10:		
+		while cnt > 50:		
 			print threading.enumerate()
 			print 'too many threads'
-			print cnt
+			print str(cnt) + 'total threads'
 			time.sleep(5)
+			global count
 			with lock:
 				cnt = count
 			print 'awake'
