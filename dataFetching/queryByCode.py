@@ -322,6 +322,7 @@ class patientThread(threading.Thread):
 		}
 		self.stride_db.close()
 		writeSinglePatientFile(patient, self.pid, self.filePrefix)
+		print 'finished '+str(self.pid)
 
 		
 
