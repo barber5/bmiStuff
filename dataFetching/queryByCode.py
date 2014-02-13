@@ -398,8 +398,7 @@ def parallelPatients(code, src_type, filePrefix, minpid):
 		print 'grabbing connections'
 		(term_db, stride_db) = getDbs()
 		term_db.close()				
-		pt = patientThread(pid, filePrefix, stride_db, src_type)		
-		pt.daemon = True
+		pt = patientThread(pid, filePrefix, stride_db, src_type)				
 		pt.start()		
 	for thr in threading.enumerate():
 		t.join()
