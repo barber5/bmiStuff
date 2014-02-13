@@ -332,7 +332,7 @@ def parallelPatients(code, src_type, filePrefix, minpid):
 	pidInt.sort()	
 	pids = [str(s) for s in pidInt]
 	print pids
-	
+	return
 	for i, pid in enumerate(pids):
 		
 		if int(pid) < minpid:
