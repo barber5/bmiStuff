@@ -334,6 +334,11 @@ def parallelPatients(code, src_type, filePrefix, minpid):
 	pids = [str(s) for s in pidInt]
 	
 	for i, pid in enumerate(pids):
+		while threading.active_count() > 10:
+			print 'too many threads'
+			print threading.active_count()
+			time.sleep(5)
+			print 'awake'
 		print filePrefix+str(pid)+'.pkl'		
 		if int(pid) < minpid:
 			print 'skipping'

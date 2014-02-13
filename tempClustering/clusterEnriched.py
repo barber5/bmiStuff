@@ -59,10 +59,18 @@ def doClustering(codeFile, patientFile, randomFile, minAge, maxAge, patientSampl
 		clusterPatients[l].append(clpat)
 	return clusterPatients
 
+def writeClusters(clu, fileName):
+	fi = open(fileName, 'w')
+	for clid, patients in clu.iteritems():
+		for pat in patients:
+			fi.write('{}\t{}'.format(pat['pid'], clid))
+	fi.close()
+
 if __name__ == "__main__":
-	if len(sys.argv) != 10:
-		print >> sys.stderr, 'usage: python {} {} {} {} {} {} {} {} {} {}'.format(sys.argv[0], 'icd9codefile', 'conditionVisits', 'randomVisits', 'minAge', 'maxAge', 'patientSampleRate', 'randomSampleRate', 'freqRequired', 'enrichmentThreshold')
+	if len(sys.argv) != 11:
+		print >> sys.stderr, 'usage: python {} {} {} {} {} {} {} {} {} {} {}'.format(sys.argv[0], 'icd9codefile', 'conditionVisits', 'randomVisits', 'minAge', 'maxAge', 'patientSampleRate', 'randomSampleRate', 'freqRequired', 'enrichmentThreshold', 'outputFile')
 		sys.exit(0)
 	clu = doClustering(sys.argv[1], sys.argv[2], sys.argv[3], int(sys.argv[4]), int(sys.argv[5]), float(sys.argv[6]), float(sys.argv[7]), float(sys.argv[8]), float(sys.argv[9]))
+	writeClusters(clu, sys.argv[10])
 	pprint.pprint(clu)
 	
