@@ -347,7 +347,9 @@ def writeResults(code):
 	fi = open(str(code)+'.pkl', 'w')
 	with lock:
 		pickle.dump(patList, fi)
-		fi.close()
+		print 'dumped'
+	print 'lock released'
+	fi.close()
 
 
 def parallelPatients(code, src_type, filePrefix, minpid):
