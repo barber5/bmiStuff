@@ -327,8 +327,9 @@ def parallelPatients(code, src_type, filePrefix, minpid):
 		print 'which is '+str(i)+' of '+str(len(pids))		
 		print 'grabbing connections'
 		(term_db, stride_db) = getDbs()
-		term_db.close()				
+				
 		p = Process(target=run, args=(pid, stride_db, src_type, filePrefix))
+		term_db.close()		
 		p.start()
 
 
