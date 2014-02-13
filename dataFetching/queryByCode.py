@@ -296,7 +296,7 @@ lock = threading.Lock()
 
 def writeSinglePatientFile(pat, pid, filePrefix):
 	fi = open(filePrefix+str(pid)+'.txt', 'w')
-	fi.write(json.dumps(pat))
+	fi.write(pat.__repr__())
 	fi.close()
 	'''fi = open(filePrefix+str(pid)+'.pkl', 'wb')
 	pickle.dump(pat, fi)
