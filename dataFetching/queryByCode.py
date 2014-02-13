@@ -340,9 +340,9 @@ def parallelPatients(code, src_type, filePrefix, minpid):
 			print 'already have it, moving on'*100
 			continue				
 		else:
-			for j in range(100):
-				print 'not exists'
-				print filePrefix+str(pid)+'.pkl'
+			
+			print 'not exists'*20
+			print filePrefix+str(pid)+'.pkl'
 		print 'working on '+str(pid)
 		print 'which is '+str(i)+' of '+str(len(pids))		
 		print 'grabbing connections'
