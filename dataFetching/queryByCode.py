@@ -1,10 +1,5 @@
 from db import *
-import sys, pprint, pickle, os, time
-from multiprocessing import Process
-from multiprocessing import Pool
-import multiprocessing
-
-
+import sys, pprint, threading, pickle, os, time
 
 
 
@@ -136,6 +131,29 @@ def patientsToFile(patients, filePrefix):
 	rowsToFile(patients['notes'], filePrefix+'-notes.txt')
 	rowsToFile(patients['prescriptions'], filePrefix+'-prescriptions.txt')
 	rowsToFile(patients['labs'], filePrefix+'-labs.txt')
+
+class myThread (threading.Thread):
+    def __init__(self, name, pids, filePrefix, src_type=None):
+		threading.Thread.__init__(self)
+		self.name = name
+		self.pids = pids
+		self.filePrefix = filePrefix
+		self.src_type = src_type
+        
+    def run(self):
+		print "Starting " + self.name
+		if self.name == 'visits':
+			thing = getVisits(self.pids, self.src_type)
+		elif self.name == 'notes':
+			thing = getNoteIds(self.pids, self.src_type)
+		elif self.name == 'prescriptions':
+			thing = getPrescriptions(self.pids, self.src_type)
+		elif self.name == 'labs':
+			thing = getLabs(self.pids)
+		else:
+			thing = []
+		rowsToFile(thing, self.filePrefix+'-'+self.name+'.txt')	
+		print 'finished '+self.name	
         
 
 def printAndGetFull(code, src_type, filePrefix):
@@ -281,24 +299,30 @@ def writeSinglePatientFile(pat, pid, filePrefix):
 	fi.close()
 
 
-
+class patientThread(threading.Thread):
+	def __init__(self, pidd, filePrefix, stride_db, src_type=None):		   
+		self.pid = str(pidd)
+		self.filePrefix = filePrefix
+		self.src_type = src_type
+		self.stride_db = stride_db
+		threading.Thread.__init__(self)     
         
-def run(pid, stride_db, src_type, filePrefix):		
-	visits = getSingleVisits(pid, stride_db, src_type)		
-	notes = getSingleNotes(pid, stride_db, src_type)		
-	prescriptions = getSinglePrescriptions(pid, stride_db, src_type)		
-	labs = getSingleLabs(pid, stride_db)		
-	patient = {
-		'pid': pid,
-		'src_type': src_type,
-		'visits': visits,
-		'notes': notes,
-		'prescriptions': prescriptions,
-		'labs': labs
-	}
-	stride_db.close()
-	writeSinglePatientFile(patient, pid, filePrefix)
-	print 'finished '+str(pid)
+	def run(self):		
+		visits = getSingleVisits(self.pid, self.stride_db, self.src_type)		
+		notes = getSingleNotes(self.pid, self.stride_db, self.src_type)		
+		prescriptions = getSinglePrescriptions(self.pid, self.stride_db, self.src_type)		
+		labs = getSingleLabs(self.pid, self.stride_db)		
+		patient = {
+			'pid': self.pid,
+			'src_type': self.src_type,
+			'visits': visits,
+			'notes': notes,
+			'prescriptions': prescriptions,
+			'labs': labs
+		}
+		self.stride_db.close()
+		writeSinglePatientFile(patient, self.pid, self.filePrefix)
+		print 'finished '+str(self.pid)
 
 		
 
@@ -309,11 +333,12 @@ def parallelPatients(code, src_type, filePrefix, minpid):
 	pidInt.sort()	
 	pids = [str(s) for s in pidInt]
 	
-	for i, pid in enumerate(pids):	
-		while len(multiprocessing.active_children()) > 10:
-			print 'too many processes'
-			print multiprocessing.active_children()
-			time.sleep(5)				
+	for i, pid in enumerate(pids):
+		while threading.active_count() > 10:
+			print 'too many threads'
+			print threading.active_count()
+			time.sleep(5)
+			print 'awake'
 		print filePrefix+str(pid)+'.pkl'		
 		if int(pid) < minpid:
 			print 'skipping'
@@ -327,10 +352,9 @@ def parallelPatients(code, src_type, filePrefix, minpid):
 		print 'which is '+str(i)+' of '+str(len(pids))		
 		print 'grabbing connections'
 		(term_db, stride_db) = getDbs()
-				
-		p = Process(target=run, args=(pid, stride_db, src_type, filePrefix))
-		term_db.close()		
-		p.start()
+		term_db.close()				
+		pt = patientThread(pid, filePrefix, stride_db, src_type, daemon=True)		
+		pt.start()		
 
 
 if __name__ == "__main__":
