@@ -298,9 +298,9 @@ def writeSinglePatientFile(pat, pid, filePrefix):
 	fi = open(filePrefix+str(pid)+'.txt', 'w')
 	fi.write(pat.__repr__())
 	fi.close()
-	fi = open(filePrefix+str(pid)+'.pkl', 'wb')
+	'''fi = open(filePrefix+str(pid)+'.pkl', 'wb')
 	pickle.dump(pat, fi)
-	fi.close()
+	fi.close()'''
 
 
 class patientThread(threading.Thread):
@@ -351,23 +351,22 @@ def parallelPatients(code, src_type, filePrefix, minpid):
 		cnt = 0
 		with lock:
 			cnt = count
-		while cnt > 50:		
-			print threading.enumerate()
+		while cnt > 50:					
 			print 'too many threads'
 			print str(cnt) + 'total threads'
 			time.sleep(5)			
 			with lock:
 				cnt = count
 			print 'awake'
-		print filePrefix+str(pid)+'.pkl'		
+		print filePrefix+str(pid)+'.txt'		
 		if int(pid) < minpid:
 			print 'skipping'
 			continue		
-		if os.path.isfile(filePrefix+str(pid)+'.pkl'):			
+		if os.path.isfile(filePrefix+str(pid)+'.txt'):			
 			continue				
 		else:
 			print 'not exists'						
-			print filePrefix+str(pid)+'.pkl'
+			print filePrefix+str(pid)+'.txt'
 		print 'working on '+str(pid)
 		print 'which is '+str(i)+' of '+str(len(pids))		
 		print 'grabbing connections'
