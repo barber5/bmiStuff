@@ -6,7 +6,7 @@ import sys, pprint, threading, pickle, os, time
 
 def getPids(icd9, src_type=None):
 	(term_db, stride_db) = getDbs()
-	query = "SELECT pid FROM visit WHERE (icd9 like '%%"+icd9+"%%' or icd9=%s)"
+	query = "SELECT distinct pid FROM visit WHERE (icd9 like '%%"+icd9+"%%' or icd9=%s)"
 	repls = [icd9]
 	if src_type:
 		query += " and src_type=%s"
@@ -327,7 +327,7 @@ class patientThread(threading.Thread):
 
 
 def parallelPatients(code, src_type, filePrefix, minpid):
-	pids = getPids(code, src_type)		
+	pids = getPids(code, src_type)
 	pids.sort()
 	print pids
 	for i, pid in enumerate(pids):
