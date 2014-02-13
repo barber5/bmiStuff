@@ -346,9 +346,10 @@ def writeResults(code):
 	global patList
 	fi = open(str(code)+'.pkl', 'w')
 	with lock:
+		print 'lock acquired'*20
 		pickle.dump(patList, fi)
-		print 'dumped'
-	print 'lock released'
+		print 'dumped'*20
+	print 'lock released'*20
 	fi.close()
 
 
