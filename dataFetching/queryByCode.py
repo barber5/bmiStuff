@@ -337,8 +337,12 @@ def parallelPatients(code, src_type, filePrefix, minpid):
 			print 'skipping'
 			continue		
 		if os.path.isfile(filePrefix+str(pid)+'.pkl'):
-			print 'already have it, moving on'
+			print 'already have it, moving on'*100
 			continue				
+		else:
+			for j in range(100):
+				print 'not exists'
+				print filePrefix+str(pid)+'.pkl'
 		print 'working on '+str(pid)
 		print 'which is '+str(i)+' of '+str(len(pids))		
 		print 'grabbing connections'
