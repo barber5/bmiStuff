@@ -372,7 +372,7 @@ def parallelPatients(code, src_type, filePrefix, minpid):
 		print filePrefix+str(pid)+'.txt'	
 		
 		if i%20 == 1:
-		writeResults(code)			
+			writeResults(code)			
 
 		if int(pid) < minpid:
 			print 'skipping'
