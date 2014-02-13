@@ -358,7 +358,7 @@ if __name__ == "__main__":
 	#patientsToFile(patients, sys.argv[2])
 	#printAndGetFull(sys.argv[1], src_type, sys.argv[2])
 	print >> sys.stderr, "usage is python "+sys.argv[0]+" <code> <saveDir> <minimumPidForRestart> <optional|src_type>"
-	parallelPatients(sys.argv[1], src_type, sys.argv[2], sys.argv[3])
+	parallelPatients(sys.argv[1], src_type, sys.argv[2], int(sys.argv[3]))
 
 
 
