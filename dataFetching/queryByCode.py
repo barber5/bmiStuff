@@ -1,5 +1,5 @@
 from db import *
-import sys, pprint, threading, json, os, time
+import sys, pprint, threading, json, os, time, copy
 
 
 
@@ -357,11 +357,12 @@ def writeResults(code, filePrefix):
 	print 'attempting to acquire lock'
 	lock.acquire()
 	print 'lock acquired'
-	fi.write(json.dumps(patList))
-	print 'dumped'*20
+	dl = copy.deepcopy(patList)	
 	print 'attempting to release lock'
 	lock.release()
 	print 'lock released'
+	fi.write(json.dumps(dl))
+	print 'dumped'*20
 	fi.close()
 
 
