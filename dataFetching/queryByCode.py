@@ -326,10 +326,13 @@ class patientThread(threading.Thread):
 		
 
 
-def parallelPatients(code, src_type, filePrefix):
+def parallelPatients(code, src_type, filePrefix, minpid):
 	pids = getPids(code, src_type)	
 	pids.sort()
 	for i, pid in enumerate(pids):
+		if int(pid) < minpid:
+			print 'skipping'
+			continue
 		print 'working on '+str(pid)
 		print 'which is '+str(i)+' of '+str(len(pids))		
 		if os.path.isfile(filePrefix+str(pid)+'.pkl'):
@@ -346,15 +349,16 @@ def parallelPatients(code, src_type, filePrefix):
 
 
 if __name__ == "__main__":
-	if len(sys.argv) > 3:
-		src_type = sys.argv[3]
+	if len(sys.argv) > 4:
+		src_type = sys.argv[4]
 	else:
 		src_type = None
-	getCodedVisitsOnly(sys.argv[1], src_type)
+	#getCodedVisitsOnly(sys.argv[1], src_type)
 	#patients = getFullPatients(sys.argv[1], src_type)
 	#patientsToFile(patients, sys.argv[2])
 	#printAndGetFull(sys.argv[1], src_type, sys.argv[2])
-	#parallelPatients(sys.argv[1], src_type, sys.argv[2])
+	print >> sys.stderr, "usage is python "+sys.argv[0]+" <code> <saveDir> <minimumPidForRestart> <optional|src_type>"
+	parallelPatients(sys.argv[1], src_type, sys.argv[2], sys.argv[3])
 
 
 

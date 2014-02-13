@@ -153,6 +153,6 @@ if __name__ == "__main__":
 	elif len(sys.argv) == 4:
 		vec = getMultiplePatientVec(sys.argv[1], sys.argv[2], int(sys.argv[3]))
 	else:
-		print 'usage python '+sys.argv[0]+' <code> <saveDirectory> <firstPid>'
+		print 'usage python '+sys.argv[0]+' <patientsFile> <saveDirectory> <firstPid>'
 		sys.exit(0)
 	pprint.pprint(vec)	
