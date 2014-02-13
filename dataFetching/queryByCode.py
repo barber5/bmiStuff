@@ -344,7 +344,7 @@ class patientThread(threading.Thread):
 def writeResults(code):
 	print 'writing results'*20
 	global patList
-	fi = open(str(code)+'.pkl')
+	fi = open(str(code)+'.pkl', 'w')
 	with lock:
 		pickle.dump(patList, fi)
 		fi.close()
@@ -371,7 +371,7 @@ def parallelPatients(code, src_type, filePrefix, minpid):
 			print 'awake'
 		print filePrefix+str(pid)+'.txt'	
 		
-		if i%20 == 1:
+		if i%20 == 19:
 			writeResults(code)			
 
 		if int(pid) < minpid:
