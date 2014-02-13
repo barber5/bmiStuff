@@ -357,7 +357,12 @@ def writeResults(code, filePrefix):
 	print 'attempting to acquire lock'
 	lock.acquire()
 	print 'lock acquired'
-	dl = copy.deepcopy(patList)	
+	dl = []
+	for i, p in enumerate(patList):
+		print 'copying '+str(i)
+		pc = copy.deepcopy(p)
+		print 'done'
+		dl.append(pc)	
 	print 'attempting to release lock'
 	lock.release()
 	print 'lock released'
