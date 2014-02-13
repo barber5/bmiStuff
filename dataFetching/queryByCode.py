@@ -351,7 +351,7 @@ def parallelPatients(code, src_type, filePrefix, minpid):
 		term_db.close()				
 		pt = patientThread(pid, filePrefix, stride_db, src_type)		
 		pt.start()
-		time.sleep(10)
+		time.sleep(1)
 
 
 if __name__ == "__main__":
