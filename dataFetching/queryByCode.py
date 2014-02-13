@@ -1,5 +1,5 @@
 from db import *
-import sys, pprint, threading, json, os, time
+import sys, pprint, threading, pickle, os, time
 
 
 
@@ -292,6 +292,7 @@ def getSingleLabs(pid, stride_db):
 
 
 count = 0
+patList = []
 lock = threading.Lock()
 
 def writeSinglePatientFile(pat, pid, filePrefix):
@@ -314,6 +315,7 @@ class patientThread(threading.Thread):
         
 	def run(self):		
 		global count
+		global patList
 		with lock:			
 			count += 1
 			print 'incrementing: count is '+str(count)
@@ -332,12 +334,20 @@ class patientThread(threading.Thread):
 		print 'finished '+str(self.pid)
 		with lock:
 			count -= 1
+			patList.append(patient)
 			print 'decrementing: count is '+str(count)
+
 		self.stride_db.close()
 		writeSinglePatientFile(patient, self.pid, self.filePrefix)
 		
 
-		
+def writeResults(code):
+	print 'writing results'*20
+	global patList
+	fi = open(str(code)+'.pkl')
+	with lock:
+		pickle.dump(patList, fi)
+		fi.close()
 
 
 def parallelPatients(code, src_type, filePrefix, minpid):
@@ -348,6 +358,7 @@ def parallelPatients(code, src_type, filePrefix, minpid):
 	
 	for i, pid in enumerate(pids):
 		global count
+		global patList
 		cnt = 0
 		with lock:
 			cnt = count
@@ -358,7 +369,11 @@ def parallelPatients(code, src_type, filePrefix, minpid):
 			with lock:
 				cnt = count
 			print 'awake'
-		print filePrefix+str(pid)+'.txt'		
+		print filePrefix+str(pid)+'.txt'	
+		
+		if i%20 == 1:
+		writeResults(code)			
+
 		if int(pid) < minpid:
 			print 'skipping'
 			continue		
@@ -375,6 +390,9 @@ def parallelPatients(code, src_type, filePrefix, minpid):
 		pt = patientThread(pid, filePrefix, stride_db, src_type)		
 		pt.daemon = True
 		pt.start()		
+	for thr in threading.enumerate():
+		t.join()
+	writeResults(code)
 
 
 if __name__ == "__main__":
