@@ -350,18 +350,18 @@ class patientThread(threading.Thread):
 		writeSinglePatientFile(patient, self.pid, self.filePrefix)
 		
 
-def writeResults(code):
+def writeResults(code, filePrefix):
 	print 'writing results'*20
 	global patList
-	fi = open(str(code)+'.pkl', 'w')
+	fi = open(filePrefix+str(code)+'.json', 'w')
 	print 'attempting to acquire lock'
 	lock.acquire()
-	print 'lock acquired'*20
+	print 'lock acquired'
 	fi.write(json.dumps(patList))
 	print 'dumped'*20
 	print 'attempting to release lock'
 	lock.release()
-	print 'lock released'*20
+	print 'lock released'
 	fi.close()
 
 
@@ -396,8 +396,8 @@ def parallelPatients(code, src_type, filePrefix, minpid):
 			print 'awake'
 		print filePrefix+str(pid)+'.txt'	
 		
-		if i%20 == 19:
-			writeResults(code)			
+		if i%100 == 99:
+			writeResults(code, filePrefix)			
 
 		if int(pid) < minpid:
 			print 'skipping'
@@ -416,7 +416,7 @@ def parallelPatients(code, src_type, filePrefix, minpid):
 		pt.start()		
 	for thr in threading.enumerate():
 		t.join()
-	writeResults(code)
+	writeResults(code, filePrefix)
 
 
 if __name__ == "__main__":
