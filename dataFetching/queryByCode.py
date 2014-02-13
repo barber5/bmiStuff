@@ -291,10 +291,10 @@ def getSingleLabs(pid, stride_db):
 	return result
 
 def writeSinglePatientFile(pat, pid, filePrefix):
-	fi = open(filePrefix+pid+'.txt', 'w')
+	fi = open(filePrefix+str(pid)+'.txt', 'w')
 	fi.write(pat.__repr__())
 	fi.close()
-	fi = open(filePrefix+pid+'.pkl', 'wb')
+	fi = open(filePrefix+str(pid)+'.pkl', 'wb')
 	pickle.dump(pat, fi)
 	fi.close()
 
@@ -331,10 +331,10 @@ def parallelPatients(code, src_type, filePrefix, minpid):
 	pidInt = [int(i) for i in pids]	
 	pidInt.sort()	
 	pids = [str(s) for s in pidInt]
-	print pids
-	return
+	print pids	
 	for i, pid in enumerate(pids):
-		
+		print filePrefix+str(pid)+'.pkl'
+		continue
 		if int(pid) < minpid:
 			print 'skipping'
 			continue		
