@@ -118,7 +118,7 @@ def getPatientVec(pid):
 	result['labs'] = getLabs(pid)
 	return result
 
-def getMultiplePatientVec(fileName, dirr):
+def getMultiplePatientVec(fileName, dirr, minpid):
 	result = []
 	fi = open(fileName, 'r')
 	pids = []
@@ -127,8 +127,12 @@ def getMultiplePatientVec(fileName, dirr):
 		if line == '':
 			break
 		pids.append(line)	
+	pids.sort()
 	for i, pid in enumerate(pids):
 		print >> sys.stderr, pid +' is '+str(i) +' of '+str(len(pids))
+		if int(pid) < minpid:
+			print 'skipping....'
+			continue
 		if os.path.exists(dirr+'/'+str(pid)+'.txt'):
 			print 'exists, moving on'			
 			continue
@@ -146,9 +150,9 @@ def getMultiplePatientVec(fileName, dirr):
 if __name__ == "__main__":
 	if len(sys.argv) == 2:
 		vec = getPatientVec(sys.argv[1])
-	elif len(sys.argv) > 2:
-		vec = getMultiplePatientVec(sys.argv[1], sys.argv[2])
+	elif len(sys.argv) == 4:
+		vec = getMultiplePatientVec(sys.argv[1], sys.argv[2], int(sys.arv[3]))
 	else:
-		print 'wtf'
+		print 'usage python '+sys.argv[0]+' <code> <saveDirectory> <firstPid>'
 		sys.exit(0)
 	pprint.pprint(vec)	

@@ -7,6 +7,7 @@ from sklearn.feature_extraction import DictVectorizer
 from sklearn.feature_extraction.text import TfidfTransformer
 from sklearn.decomposition import KernelPCA
 from sklearn.cluster import DBSCAN as cluster
+from sklearn import preprocessing
 
 
 
@@ -28,6 +29,7 @@ def doClustering(codeFile, patientFile, randomFile, minAge, maxAge, patientSampl
 		i += 1
 	vec = DictVectorizer()
 	featArray = vec.fit_transform(measurements).toarray()	
+	#featArray = preprocessing.scale(featArray)
 	print >> sys.stderr, 'got features'
 	tfidf = TfidfTransformer()
 	tfidfArray = tfidf.fit_transform(featArray)

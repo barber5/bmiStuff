@@ -4,6 +4,7 @@ from sklearn.feature_extraction.text import TfidfTransformer
 from sklearn.decomposition import KernelPCA
 from sklearn.cluster import DBSCAN as cluster
 import re
+from sklearn import preprocessing
 
 
 blacklist = set(['299.00', '783.40', '315.9', '299.80', '783.42', '299.90', 'V20.2', 'V79.3', 'V72.6', '88.91', 'V70.7'])
@@ -90,7 +91,7 @@ def conditionsBinnedYear(patients, filterFlag=False):
 # and a vector of ages construct vectors for patients
 def condDictsForAges(patientConds, ageVec, countFrequencies=True):
 	patientCondSets = {}
-	print patientConds
+	
 	for pid, ages in patientConds.iteritems():
 		conds = {}
 		for age in ageVec:			
@@ -113,7 +114,6 @@ def condDictsForAges(patientConds, ageVec, countFrequencies=True):
 def clusterConditionsByAge(patientConds, lo, hi, collapse=False, countFrequencies=True):	
 	ageVec = range(lo, hi+1)
 	patientCondDicts = condDictsForAges(patientConds, ageVec, countFrequencies)	
-	print len(patientCondDicts)
 	patientFeatures = {}
 	measurements = []
 	pidIndexer = {}
@@ -139,10 +139,9 @@ def clusterConditionsByAge(patientConds, lo, hi, collapse=False, countFrequencie
 		i += 1
 	vec = DictVectorizer()
 	featArray = vec.fit_transform(measurements).toarray()
-	#tfidf = TfidfTransformer()
-	#tfidfArray = tfidf.fit_transform(featArray)
+	data2 = preprocessing.scale(featArray)
 	dimReducer = KernelPCA(n_components=300)
-	reducedFeatArray = dimReducer.fit_transform(featArray)
+	reducedFeatArray = dimReducer.fit_transform(data2)
 	#reducedFeatArray = featArray
 	c = cluster(metric='correlation', algorithm='brute', min_samples=10, eps=.2)
 	labels = c.fit_predict(reducedFeatArray)	
