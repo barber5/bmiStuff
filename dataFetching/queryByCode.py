@@ -316,10 +316,12 @@ class patientThread(threading.Thread):
 	def run(self):		
 		global count
 		global patList
+		print 'attempting to acquire lock'
 		lock.acquire()
 		print 'acquired lock'		
 		count += 1
-		print 'incrementing: count is '+str(count)		
+		print 'incrementing: count is '+str(count)	
+		print 'releasing lock'	
 		lock.release()
 		print 'released lock'
 		visits = getSingleVisits(self.pid, self.stride_db, self.src_type)		
@@ -335,11 +337,13 @@ class patientThread(threading.Thread):
 			'labs': labs
 		}
 		print 'finished '+str(self.pid)
+		print 'attempting to acquire lock'
 		lock.acquire()
 		print 'got lock'
 		count -= 1
 		patList.append(patient)
-		print 'decrementing: count is '+str(count)		
+		print 'decrementing: count is '+str(count)	
+		print 'releasing lock'	
 		lock.release()
 		print 'releasing lock'
 		self.stride_db.close()
@@ -350,10 +354,12 @@ def writeResults(code):
 	print 'writing results'*20
 	global patList
 	fi = open(str(code)+'.pkl', 'wb')
+	print 'attempting to acquire lock'
 	lock.acquire()
 	print 'lock acquired'*20
 	pickle.dump(patList, fi)
 	print 'dumped'*20
+	print 'attempting to release lock'
 	lock.release()
 	print 'lock released'*20
 	fi.close()
@@ -369,16 +375,24 @@ def parallelPatients(code, src_type, filePrefix, minpid):
 		global count
 		global patList
 		cnt = 0
+		print 'attempting to acquire lock'
 		lock.acquire()
+		print 'lock acquired'
 		cnt = count
+		print 'releasing lock'
 		lock.release()
+		print 'lock released'
 		while cnt > 50:					
 			print 'too many threads'
 			print str(cnt) + 'total threads'
-			time.sleep(5)			
+			time.sleep(5)	
+			print 'attempting to acquire lock'		
 			lock.acquire()
+			print 'lock acquired'
 			cnt = count
+			print 'attempting to release lock'
 			lock.release()
+			print 'lock released'
 			print 'awake'
 		print filePrefix+str(pid)+'.txt'	
 		
@@ -393,9 +407,9 @@ def parallelPatients(code, src_type, filePrefix, minpid):
 		else:
 			print 'not exists'						
 			print filePrefix+str(pid)+'.txt'
-		print 'working on '+str(pid)
-		print 'which is '+str(i)+' of '+str(len(pids))		
-		print 'grabbing connections'
+		#print 'working on '+str(pid)
+		#print 'which is '+str(i)+' of '+str(len(pids))		
+		#print 'grabbing connections'
 		(term_db, stride_db) = getDbs()
 		term_db.close()				
 		pt = patientThread(pid, filePrefix, stride_db, src_type)				
