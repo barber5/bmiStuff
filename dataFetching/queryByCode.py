@@ -353,7 +353,7 @@ class patientThread(threading.Thread):
 def writeResults(code, filePrefix):
 	print 'writing results'*20
 	global patList
-	fi = open(filePrefix+str(code)+'.json', 'w')
+	
 	print 'attempting to acquire lock'
 	lock.acquire()
 	print 'lock acquired'
@@ -366,6 +366,7 @@ def writeResults(code, filePrefix):
 	print 'attempting to release lock'
 	lock.release()
 	print 'lock released'
+	fi = open(filePrefix+str(code)+'.json', 'w')
 	fi.write(json.dumps(dl))
 	print 'dumped'*20
 	fi.close()
