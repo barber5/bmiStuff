@@ -300,12 +300,12 @@ def writeSinglePatientFile(pat, pid, filePrefix):
 
 
 class patientThread(threading.Thread):
-	def __init__(self, pidd, filePrefix, stride_db, src_type=None, daemon=False):		   
+	def __init__(self, pidd, filePrefix, stride_db, src_type=None):		   
 		self.pid = str(pidd)
 		self.filePrefix = filePrefix
 		self.src_type = src_type
 		self.stride_db = stride_db
-		threading.Thread.__init__(self, daemon=daemon)     
+		threading.Thread.__init__(self)     
         
 	def run(self):		
 		visits = getSingleVisits(self.pid, self.stride_db, self.src_type)		
@@ -353,7 +353,8 @@ def parallelPatients(code, src_type, filePrefix, minpid):
 		print 'grabbing connections'
 		(term_db, stride_db) = getDbs()
 		term_db.close()				
-		pt = patientThread(pid, filePrefix, stride_db, src_type, daemon=True)		
+		pt = patientThread(pid, filePrefix, stride_db, src_type)		
+		pt.daemon = True
 		pt.start()		
 
 
