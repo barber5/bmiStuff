@@ -330,15 +330,15 @@ def parallelPatients(code, src_type, filePrefix, minpid):
 	pids = getPids(code, src_type)	
 	pids.sort()
 	for i, pid in enumerate(pids):
-		print 'working on '+str(pid)
-		print 'which is '+str(i)+' of '+str(len(pids))		
+		
 		if int(pid) < minpid:
 			print 'skipping'
 			continue		
 		if os.path.isfile(filePrefix+str(pid)+'.pkl'):
 			print 'already have it, moving on'
 			continue				
-		
+		print 'working on '+str(pid)
+		print 'which is '+str(i)+' of '+str(len(pids))		
 		print 'grabbing connections'
 		(term_db, stride_db) = getDbs()
 		term_db.close()
