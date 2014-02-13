@@ -329,7 +329,7 @@ def parallelPatients(code, src_type, filePrefix, minpid):
 		(term_db, stride_db) = getDbs()
 		term_db.close()				
 		p = Process(target=run, args=(pid, stride_db, src_type, filePrefix))
-		pt.start()		
+		p.start()
 
 
 if __name__ == "__main__":

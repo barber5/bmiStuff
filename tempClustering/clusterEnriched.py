@@ -63,7 +63,7 @@ def writeClusters(clu, fileName):
 	fi = open(fileName, 'w')
 	for clid, patients in clu.iteritems():
 		for pat in patients:
-			fi.write('{}\t{}'.format(pat['pid'], clid))
+			fi.write('{}\t{}\n'.format(pat['pid'], clid))
 	fi.close()
 
 if __name__ == "__main__":
