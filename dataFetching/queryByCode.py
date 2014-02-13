@@ -300,12 +300,12 @@ def writeSinglePatientFile(pat, pid, filePrefix):
 
 
 class patientThread(threading.Thread):
-	def __init__(self, pidd, filePrefix, stride_db, src_type=None):		   
+	def __init__(self, pidd, filePrefix, stride_db, src_type=None, daemon=False):		   
 		self.pid = str(pidd)
 		self.filePrefix = filePrefix
 		self.src_type = src_type
 		self.stride_db = stride_db
-		threading.Thread.__init__(self)     
+		threading.Thread.__init__(self, daemon=daemon)     
         
 	def run(self):		
 		visits = getSingleVisits(self.pid, self.stride_db, self.src_type)		
