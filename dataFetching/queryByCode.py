@@ -1,5 +1,5 @@
 from db import *
-import sys, pprint, threading, pickle, os, time
+import sys, pprint, threading, json, os, time
 
 
 
@@ -353,11 +353,11 @@ class patientThread(threading.Thread):
 def writeResults(code):
 	print 'writing results'*20
 	global patList
-	fi = open(str(code)+'.pkl', 'wb')
+	fi = open(str(code)+'.pkl', 'w')
 	print 'attempting to acquire lock'
 	lock.acquire()
 	print 'lock acquired'*20
-	pickle.dump(patList, fi)
+	fi.write(json.dumps(patList))
 	print 'dumped'*20
 	print 'attempting to release lock'
 	lock.release()
