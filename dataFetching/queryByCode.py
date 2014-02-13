@@ -335,6 +335,7 @@ def parallelPatients(code, src_type, filePrefix, minpid):
 	
 	for i, pid in enumerate(pids):
 		while threading.active_count() > 10:
+			print threading.enumerate()
 			print 'too many threads'
 			print threading.active_count()
 			time.sleep(5)
