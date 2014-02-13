@@ -310,7 +310,7 @@ def parallelPatients(code, src_type, filePrefix, minpid):
 	pids = [str(s) for s in pidInt]
 	
 	for i, pid in enumerate(pids):	
-		while multiprocessing.active_children() > 10:
+		while len(multiprocessing.active_children()) > 10:
 			print 'too many processes'
 			print multiprocessing.active_children()
 			time.sleep(5)				
