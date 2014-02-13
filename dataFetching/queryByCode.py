@@ -403,8 +403,7 @@ def parallelPatients(code, src_type, filePrefix, minpid):
 			print 'awake'
 		print filePrefix+str(pid)+'.txt'	
 		
-		if i%100 == 99:
-			writeResults(code, filePrefix)			
+		
 
 		if int(pid) < minpid:
 			print 'skipping'
