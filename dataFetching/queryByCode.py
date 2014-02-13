@@ -1,5 +1,5 @@
 from db import *
-import sys, pprint, threading, pickle, os, time
+import sys, pprint, threading, json, os, time
 
 
 
@@ -296,7 +296,7 @@ lock = threading.Lock()
 
 def writeSinglePatientFile(pat, pid, filePrefix):
 	fi = open(filePrefix+str(pid)+'.txt', 'w')
-	fi.write(pat.__repr__())
+	fi.write(json.dumps(pat))
 	fi.close()
 	'''fi = open(filePrefix+str(pid)+'.pkl', 'wb')
 	pickle.dump(pat, fi)
