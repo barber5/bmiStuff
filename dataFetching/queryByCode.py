@@ -290,6 +290,10 @@ def getSingleLabs(pid, stride_db):
 			})				
 	return result
 
+
+count = 0
+lock = threading.Lock()
+
 def writeSinglePatientFile(pat, pid, filePrefix):
 	fi = open(filePrefix+str(pid)+'.txt', 'w')
 	fi.write(pat.__repr__())
@@ -305,9 +309,14 @@ class patientThread(threading.Thread):
 		self.filePrefix = filePrefix
 		self.src_type = src_type
 		self.stride_db = stride_db
-		threading.Thread.__init__(self)     
+		threading.Thread.__init__(self)    
+
         
 	def run(self):		
+		global count
+		with lock:			
+			count += 1
+			print 'incrementing: count is '+str(count)
 		visits = getSingleVisits(self.pid, self.stride_db, self.src_type)		
 		notes = getSingleNotes(self.pid, self.stride_db, self.src_type)		
 		prescriptions = getSinglePrescriptions(self.pid, self.stride_db, self.src_type)		
@@ -323,6 +332,9 @@ class patientThread(threading.Thread):
 		self.stride_db.close()
 		writeSinglePatientFile(patient, self.pid, self.filePrefix)
 		print 'finished '+str(self.pid)
+		with lock:
+			count -= 1
+			print 'decrementing: count is '+str(count)
 
 		
 
