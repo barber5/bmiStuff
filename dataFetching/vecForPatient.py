@@ -151,7 +151,7 @@ if __name__ == "__main__":
 	if len(sys.argv) == 2:
 		vec = getPatientVec(sys.argv[1])
 	elif len(sys.argv) == 4:
-		vec = getMultiplePatientVec(sys.argv[1], sys.argv[2], int(sys.arv[3]))
+		vec = getMultiplePatientVec(sys.argv[1], sys.argv[2], int(sys.argv[3]))
 	else:
 		print 'usage python '+sys.argv[0]+' <code> <saveDirectory> <firstPid>'
 		sys.exit(0)
