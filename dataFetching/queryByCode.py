@@ -328,6 +328,7 @@ class patientThread(threading.Thread):
 
 def parallelPatients(code, src_type, filePrefix, minpid):
 	pids = getPids(code, src_type)	
+	print pids
 	pids.sort()
 	for i, pid in enumerate(pids):
 		
