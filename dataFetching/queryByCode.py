@@ -355,8 +355,7 @@ def parallelPatients(code, src_type, filePrefix, minpid):
 			print threading.enumerate()
 			print 'too many threads'
 			print str(cnt) + 'total threads'
-			time.sleep(5)
-			global count
+			time.sleep(5)			
 			with lock:
 				cnt = count
 			print 'awake'
