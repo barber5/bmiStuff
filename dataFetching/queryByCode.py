@@ -316,9 +316,12 @@ class patientThread(threading.Thread):
 	def run(self):		
 		global count
 		global patList
-		with lock:			
-			count += 1
-			print 'incrementing: count is '+str(count)
+		lock.acquire()
+		print 'acquired lock'		
+		count += 1
+		print 'incrementing: count is '+str(count)		
+		lock.release()
+		print 'released lock'
 		visits = getSingleVisits(self.pid, self.stride_db, self.src_type)		
 		notes = getSingleNotes(self.pid, self.stride_db, self.src_type)		
 		prescriptions = getSinglePrescriptions(self.pid, self.stride_db, self.src_type)		
@@ -332,11 +335,13 @@ class patientThread(threading.Thread):
 			'labs': labs
 		}
 		print 'finished '+str(self.pid)
-		with lock:
-			count -= 1
-			patList.append(patient)
-			print 'decrementing: count is '+str(count)
-
+		lock.acquire()
+		print 'got lock'
+		count -= 1
+		patList.append(patient)
+		print 'decrementing: count is '+str(count)		
+		lock.release()
+		print 'releasing lock'
 		self.stride_db.close()
 		writeSinglePatientFile(patient, self.pid, self.filePrefix)
 		
@@ -345,10 +350,11 @@ def writeResults(code):
 	print 'writing results'*20
 	global patList
 	fi = open(str(code)+'.pkl', 'wb')
-	with lock:
-		print 'lock acquired'*20
-		pickle.dump(patList, fi)
-		print 'dumped'*20
+	lock.acquire()
+	print 'lock acquired'*20
+	pickle.dump(patList, fi)
+	print 'dumped'*20
+	lock.release()
 	print 'lock released'*20
 	fi.close()
 
@@ -363,14 +369,16 @@ def parallelPatients(code, src_type, filePrefix, minpid):
 		global count
 		global patList
 		cnt = 0
-		with lock:
-			cnt = count
+		lock.acquire()
+		cnt = count
+		lock.release()
 		while cnt > 50:					
 			print 'too many threads'
 			print str(cnt) + 'total threads'
 			time.sleep(5)			
-			with lock:
-				cnt = count
+			lock.acquire()
+			cnt = count
+			lock.release()
 			print 'awake'
 		print filePrefix+str(pid)+'.txt'	
 		
