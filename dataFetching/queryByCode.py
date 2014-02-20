@@ -418,10 +418,15 @@ def getAllSerial(code, src_type=None):
 	pids = [str(s) for s in pidInt]
 	(term_db, stride_db) = getDbs()
 	for pid in pids:
+		print pid
 		visits = getSingleVisits(pid, stride_db, src_type)		
+		print 'got visits'
 		notes = getSingleNotes(pid, stride_db, src_type)		
+		print 'got notes'
 		prescriptions = getSinglePrescriptions(pid, stride_db, src_type)		
+		print 'got prescriptions'
 		labs = getSingleLabs(pid, stride_db)		
+		print 'got labs'
 		patient = {
 			'pid': pid,
 			'src_type': src_type,
