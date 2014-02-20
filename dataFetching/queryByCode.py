@@ -408,7 +408,7 @@ def parallelPatients(code, src_type, filePrefix, minpid):
 			print 'skipping'
 			continue		
 		if os.path.isfile(filePrefix+str(pid)+'.txt'):			
-							
+			continue							
 		else:
 			print 'not exists'						
 			print filePrefix+str(pid)+'.txt'
