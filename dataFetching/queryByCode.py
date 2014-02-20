@@ -346,7 +346,7 @@ class patientThread(threading.Thread):
 		lock.release()
 		print 'releasing lock'
 		self.stride_db.close()
-		print 'persisting'*100
+		print ('persisting '+self.pid+'\n')*100
 		writeSinglePatientFile(patient, self.pid, self.filePrefix)
 		
 
