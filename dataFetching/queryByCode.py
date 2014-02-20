@@ -416,6 +416,7 @@ def getAllSerial(code, src_type=None):
 	pidInt = [int(i) for i in pids]	
 	pidInt.sort()	
 	pids = [str(s) for s in pidInt]
+	(term_db, stride_db) = getDbs()
 	for pid in pids:
 		visits = getSingleVisits(pid, stride_db, src_type)		
 		notes = getSingleNotes(pid, stride_db, src_type)		
