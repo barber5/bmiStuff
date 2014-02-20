@@ -154,19 +154,6 @@ class myThread (threading.Thread):
 		print 'finished '+self.name	
         
 
-def printAndGetFull(code, src_type, filePrefix):
-	pids = getPids(code, src_type)
-	print 'initializing threads'
-	vt = myThread('visits', pids, filePrefix, src_type)	
-	nt = myThread('notes', pids, filePrefix, src_type)	
-	pt = myThread('prescriptions', pids, filePrefix, src_type)	
-	lt = myThread('labs', pids, filePrefix, src_type)	
-	print 'threads initialized'
-	vt.start()
-	nt.start()
-	pt.start()
-	lt.start()	
-	print 'done done done'
 
 def getSingleVisits(pid, stride_db, src_type=None):	
 	query = "SELECT pid, age, timeoffset, year, icd9, src, src_type, duration, cpt FROM visit WHERE pid=%s"
@@ -293,12 +280,12 @@ count = 0
 patList = []
 lock = threading.Lock()
 
-def writeSinglePatientFile(pat, pid, filePrefix):		
+def writeSinglePatientFile(pat, pid):		
 	pstr = json.dumps(pat)
 	print pid
-	print pat
-	r.set(pid, pstr)
-	print 'done'*100
+	print pstr
+	r.set(pid, pstr)	
+	print 'done'*10
 	'''fi = open(filePrefix+str(pid)+'.pkl', 'wb')
 	pickle.dump(pat, fi)
 	fi.close()'''
@@ -424,20 +411,33 @@ def parallelPatients(code, src_type, filePrefix, minpid):
 	for thr in threading.enumerate():
 		t.join()
 	writeResults(code, filePrefix)
-
+def getAllSerial(code, src_type=None):
+	pids = getPids(code, src_type)
+	pidInt = [int(i) for i in pids]	
+	pidInt.sort()	
+	pids = [str(s) for s in pidInt]
+	for pid in pids:
+		visits = getSingleVisits(pid, stride_db, src_type)		
+		notes = getSingleNotes(pid, stride_db, src_type)		
+		prescriptions = getSinglePrescriptions(spid, stride_db, src_type)		
+		labs = getSingleLabs(pid, stride_db)		
+		patient = {
+			'pid': pid,
+			'src_type': src_type,
+			'visits': visits,
+			'notes': notes,
+			'prescriptions': prescriptions,
+			'labs': labs
+		}
+		print ('persisting '+str(pid))*10
+		writeSinglePatientFile(patient, pid)
 
 if __name__ == "__main__":
-	if len(sys.argv) > 4:
-		src_type = sys.argv[4]
+	if len(sys.argv) == 3:
+		src_type = sys.argv[2]
 	else:
 		src_type = None
-	#getCodedVisitsOnly(sys.argv[1], src_type)
-	#patients = getFullPatients(sys.argv[1], src_type)
-	#patientsToFile(patients, sys.argv[2])
-	#printAndGetFull(sys.argv[1], src_type, sys.argv[2])
-	print >> sys.stderr, "usage is python "+sys.argv[0]+" <code> <saveDir> <minimumPidForRestart> <optional|src_type>"
-	parallelPatients(sys.argv[1], src_type, sys.argv[2], int(sys.argv[3]))
-
+	getAllSerial(sys.argv[1], src_type)
 
 
 
