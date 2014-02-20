@@ -9,7 +9,7 @@ from cohortStats import conditionFrequencies
 
 def missingCodes(codeFile, patientFile, code):
 	codes = loadCodes(codeFile)
-	patients = getInput(patientFile)	
+	patients = getInput(patientFile)		
 	binnedPat = binConditionsByAge(patients)	
 	selectedPat = selectByAge(binnedPat, 0, 100)		
 	codedPat = binnedWithCodes(selectedPat, codes)
@@ -21,7 +21,7 @@ def missingCodes(codeFile, patientFile, code):
 				foundIt = True
 				break
 		if not foundIt:
-			missing.append((pat, conds))
+			missing.append((pat,patients[pat]))
 	return missing
 
 if __name__ == "__main__":

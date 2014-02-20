@@ -5,20 +5,22 @@ from readIcd9Patients import getInput, loadCodes, binConditionsByAge, selectByAg
 # output: {cond -> freq}
 def conditionFrequencies(patients, sampleSize, sample=None):
 	result = {}	
-	if sample:
-		sampleSize = sample*sampleSize
+	count = 0	
 	for pid, conds in patients.iteritems():		
 		rnd = random.random()
 		#	print rnd, sample
 		if sample and rnd > sample:
-			continue		
+			continue
+		count += 1		
 		for cond, cc in conds.iteritems():							
 			if cond not in result:
 				result[cond] = {
 					'frequency': 0.0,
 					'desc': cc['desc']
 				}			
-			result[cond]['frequency'] += 1.0/float(sampleSize)		
+			result[cond]['frequency'] += 1.0
+	for cond, condDict in result.iteritems():
+		result[cond]['frequency'] = result[cond]['frequency']/count
 	return result
 
 def printFreqs(freqs):
