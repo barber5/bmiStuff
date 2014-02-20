@@ -294,7 +294,7 @@ patList = []
 lock = threading.Lock()
 
 def writeSinglePatientFile(pat, pid, filePrefix):		
-	pstr = bson.dumps(pat)
+	pstr = json.dumps(pat)
 	print pid
 	print pat
 	r.set(pid, pstr)
