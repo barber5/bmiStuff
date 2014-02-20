@@ -420,7 +420,7 @@ def getAllSerial(code, src_type=None):
 	for pid in pids:
 		visits = getSingleVisits(pid, stride_db, src_type)		
 		notes = getSingleNotes(pid, stride_db, src_type)		
-		prescriptions = getSinglePrescriptions(spid, stride_db, src_type)		
+		prescriptions = getSinglePrescriptions(pid, stride_db, src_type)		
 		labs = getSingleLabs(pid, stride_db)		
 		patient = {
 			'pid': pid,
