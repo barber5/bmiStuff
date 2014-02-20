@@ -1,6 +1,6 @@
 from db import *
 import sys, pprint, threading, json, os, time, copy, redis, bson
-
+r = redis.StrictRedis(host='localhost', port=6379, db=0)
 
 def getPids(icd9, src_type=None):
 	(term_db, stride_db) = getDbs()
@@ -293,12 +293,12 @@ count = 0
 patList = []
 lock = threading.Lock()
 
-def writeSinglePatientFile(pat, pid, filePrefix):	
-	r = redis.StrictRedis(host='localhost', port=6379, db=0)
+def writeSinglePatientFile(pat, pid, filePrefix):		
 	pstr = bson.dumps(pat)
 	print pid
 	print pat
 	r.set(pid, pstr)
+	print 'done'*100
 	'''fi = open(filePrefix+str(pid)+'.pkl', 'wb')
 	pickle.dump(pat, fi)
 	fi.close()'''
