@@ -2,8 +2,6 @@ from db import *
 import sys, pprint, threading, json, os, time, copy, redis, bson
 
 
-pool = redis.ConnectionPool(host='localhost', port=6379, db=0)
-
 def getPids(icd9, src_type=None):
 	(term_db, stride_db) = getDbs()
 	query = "SELECT distinct pid FROM visit WHERE (icd9 like '%%"+icd9+"%%' or icd9=%s)"
@@ -296,6 +294,7 @@ patList = []
 lock = threading.Lock()
 
 def writeSinglePatientFile(pat, pid, filePrefix):	
+	pool = redis.ConnectionPool(host='localhost', port=6379, db=0)
 	r = redis.Redis(connection_pool=pool)
 	r.set(pid, bson.dumps(pat))
 	'''fi = open(filePrefix+str(pid)+'.pkl', 'wb')
