@@ -1,8 +1,8 @@
 from db import *
-import sys, pprint, threading, json, os, time, copy
+import sys, pprint, threading, json, os, time, copy, redis, bson
 
 
-
+pool = redis.ConnectionPool(host='localhost', port=6379, db=0)
 
 def getPids(icd9, src_type=None):
 	(term_db, stride_db) = getDbs()
@@ -295,10 +295,9 @@ count = 0
 patList = []
 lock = threading.Lock()
 
-def writeSinglePatientFile(pat, pid, filePrefix):
-	fi = open(filePrefix+str(pid)+'.txt', 'w')
-	fi.write(pat.__repr__())
-	fi.close()
+def writeSinglePatientFile(pat, pid, filePrefix):	
+	r = redis.Redis(connection_pool=pool)
+	r.set(pid, bson.dumps(pat))
 	'''fi = open(filePrefix+str(pid)+'.pkl', 'wb')
 	pickle.dump(pat, fi)
 	fi.close()'''
@@ -365,7 +364,7 @@ def writeResults(code, filePrefix):
 		dl.append(pc)	
 	print 'attempting to release lock'
 	lock.release()
-	print 'lock released'
+	print 'lock released'	
 	fi = open(filePrefix+str(code)+'.json', 'w')
 	fi.write(json.dumps(dl))
 	print 'dumped'*20
@@ -409,7 +408,7 @@ def parallelPatients(code, src_type, filePrefix, minpid):
 			print 'skipping'
 			continue		
 		if os.path.isfile(filePrefix+str(pid)+'.txt'):			
-			continue				
+							
 		else:
 			print 'not exists'						
 			print filePrefix+str(pid)+'.txt'
