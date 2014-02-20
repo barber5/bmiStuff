@@ -294,8 +294,7 @@ patList = []
 lock = threading.Lock()
 
 def writeSinglePatientFile(pat, pid, filePrefix):	
-	pool = redis.ConnectionPool(host='localhost', port=6379, db=0)
-	r = redis.Redis(connection_pool=pool)
+	r = redis.StrictRedis(host='localhost', port=6379, db=0)
 	r.set(pid, bson.dumps(pat))
 	'''fi = open(filePrefix+str(pid)+'.pkl', 'wb')
 	pickle.dump(pat, fi)
