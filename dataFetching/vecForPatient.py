@@ -8,17 +8,17 @@ def getVecForPid(pid):
 	if r.exists(pid):
 		print 'exists already'
 		return
-	visits = getSingleVisits(pid, stride_db, src_type)		
+	visits = getSingleVisits(pid, stride_db, None)		
 	print 'got visits'
-	notes = getSingleNotes(pid, stride_db, src_type)		
+	notes = getSingleNotes(pid, stride_db, None)		
 	print 'got notes'
-	prescriptions = getSinglePrescriptions(pid, stride_db, src_type)		
+	prescriptions = getSinglePrescriptions(pid, stride_db, None)		
 	print 'got prescriptions'
 	labs = getSingleLabs(pid, stride_db)		
 	print 'got labs'
 	patient = {
 		'pid': pid,
-		'src_type': src_type,
+		'src_type': None,
 		'visits': visits,
 		'notes': notes,
 		'prescriptions': prescriptions,
