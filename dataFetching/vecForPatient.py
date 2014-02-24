@@ -1,4 +1,6 @@
 from queryByCode import getSingleVisits, getSingleVisits, getSinglePrescriptions, getSingleLabs, writeSinglePatientFile
+import sys
+
 
 def getVecForPid(pid):
 	(term_db, stride_db) = getDbs()
