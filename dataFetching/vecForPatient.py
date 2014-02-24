@@ -27,4 +27,4 @@ def getVecForPid(pid):
 
 
 if __name__ == "__main__":	
-	getAllSerial(sys.argv[1])
+	getVecForPid(sys.argv[1])
