@@ -23,6 +23,24 @@ def conditionFrequencies(patients, sampleSize, sample=None):
 		result[cond]['frequency'] = result[cond]['frequency']/count
 	return result
 
+def conditionCounts(patients, sampleSize, sample=None):
+	result = {}	
+	count = 0	
+	for pid, conds in patients.iteritems():		
+		rnd = random.random()
+		#	print rnd, sample
+		if sample and rnd > sample:
+			continue
+		count += 1		
+		for cond, cc in conds.iteritems():							
+			if cond not in result:
+				result[cond] = {
+					'frequency': 0.0,
+					'desc': cc['desc']
+				}			
+			result[cond]['frequency'] += 1.0	
+	return result
+	
 def printFreqs(freqs):
 	for cond, fd in freqs.iteritems():
 		print '{}\t{}\t{}'.format(cond, fd['frequency'], fd['desc'][:100]+'...')

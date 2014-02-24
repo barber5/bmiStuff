@@ -1,0 +1,1 @@
+SELECT table_name AS "Table", round(((data_length + index_length) / 1024 / 1024 / 1024), 2) "Total Size in GB", round(((data_length) / 1024 / 1024 / 1024), 2) "Data Size in GB", round(((index_length) / 1024 / 1024 / 1024), 2) "Index Size in GB" FROM information_schema.TABLES order by data_length;

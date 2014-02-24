@@ -100,7 +100,6 @@ if __name__ == "__main__":
 	data = getData(sys.argv[1], sys.argv[2], sys.argv[3], int(sys.argv[4]), int(sys.argv[5]), float(sys.argv[8]))			
 	patientCount = conditionFrequencies(data['patients'], data['patientCount'], sample=float(sys.argv[6]))		
 	randomCount = conditionFrequencies(data['random'], data['randomCount'], sample=float(sys.argv[7]))
-
 		
 	printEnrichments(patientCount, randomCount)
 

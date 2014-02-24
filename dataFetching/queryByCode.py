@@ -417,8 +417,11 @@ def getAllSerial(code, src_type=None):
 	pidInt.sort()	
 	pids = [str(s) for s in pidInt]
 	(term_db, stride_db) = getDbs()
-	for pid in pids:
+	for pid in pids:		
 		print pid
+		if r.exists(pid):
+			print 'exists already'
+			continue
 		visits = getSingleVisits(pid, stride_db, src_type)		
 		print 'got visits'
 		notes = getSingleNotes(pid, stride_db, src_type)		
@@ -435,7 +438,7 @@ def getAllSerial(code, src_type=None):
 			'prescriptions': prescriptions,
 			'labs': labs
 		}
-		print ('persisting '+str(pid))*10
+		print ('persisting '+str(pid)+' ')*10
 		writeSinglePatientFile(patient, pid)
 
 if __name__ == "__main__":
