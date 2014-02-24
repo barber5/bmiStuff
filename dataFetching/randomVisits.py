@@ -6,10 +6,9 @@ def getRandomVisits(num):
 	visits = []
 	for i in range(num):
 		pid = randint(1, 1257139)
-		visits.extend(getVecForPid(pid))
-	return visits
+		getVecForPid(pid)
+	
 
 if __name__ == "__main__":
-	visits = getRandomVisits(int(sys.argv[1]))
-	for v in visits:
-		print v
+	getRandomVisits(int(sys.argv[1]))
+	
