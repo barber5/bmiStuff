@@ -1,4 +1,4 @@
-from queryByCode import getSingleVisits, getSingleVisits, getSinglePrescriptions, getSingleLabs, writeSinglePatientFile
+from queryByCode import getSingleVisits, getSingleVisits, getSinglePrescriptions, getSingleLabs, writeSinglePatientFile, r
 import sys
 from db import *
 
