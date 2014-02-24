@@ -280,8 +280,8 @@ count = 0
 patList = []
 lock = threading.Lock()
 
-def writeSinglePatientFile(pat, pid):		
-	pstr = json.dumps(pat)
+def writeSinglePatientFile(pat, pid):		    
+	pstr = json.dumps(pat, encoding='latin1')
 	print 'persisted '+str(pid)
 	print 'value length was '+str(len(pstr))
 	r.set(pid, pstr)	
@@ -411,6 +411,8 @@ def parallelPatients(code, src_type, filePrefix, minpid):
 	for thr in threading.enumerate():
 		t.join()
 	writeResults(code, filePrefix)
+
+
 def getAllSerial(code, src_type=None):
 	pids = getPids(code, src_type)
 	pidInt = [int(i) for i in pids]	
