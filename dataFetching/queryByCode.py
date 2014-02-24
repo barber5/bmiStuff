@@ -282,8 +282,8 @@ lock = threading.Lock()
 
 def writeSinglePatientFile(pat, pid):		
 	pstr = json.dumps(pat)
-	print pid
-	print pstr
+	print 'persisted '+str(pid)
+	print 'value length was '+str(len(pstr))
 	r.set(pid, pstr)	
 	print 'done'*10
 	'''fi = open(filePrefix+str(pid)+'.pkl', 'wb')
