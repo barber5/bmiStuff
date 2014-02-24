@@ -1,158 +1,30 @@
-from relatedTerms import *
-from db import *
-import sys,pprint, pickle
-import os
-(term_db, stride_db) = getDbs()
+from queryByCode import getSingleVisits, getSingleVisits, getSinglePrescriptions, getSingleLabs, writeSinglePatientFile
 
-
-def getNotes(pid):
-	query = "SELECT n.nid, n.src, n.src_type, n.age, n.timeoffset, n.year, n.duration, n.cpt, n.icd9, m.tid, m.negated, m.familyHistory, t.term FROM note as n inner join mgrep as m on m.nid=n.nid inner join terminology3.terms as t on t.tid=m.tid WHERE n.pid=%s"
-	nameMapping = {
-		'notes': [{
-			0: 'nid',
-			1: 'src',
-			2: 'src_type',
-			3: 'age',
-			4: 'timeoffset',
-			5: 'year',
-			6: 'duration',
-			7: 'cpt',
-			8: 'icd9',
-			'terms': [{
-				9: 'tid',
-				10: 'negated',
-				11: 'familyHistory',
-				12: 'term'
-			}]
-		}]
+def getVecForPid(pid):
+	(term_db, stride_db) = getDbs()
+	if r.exists(pid):
+		print 'exists already'
+		return
+	visits = getSingleVisits(pid, stride_db, src_type)		
+	print 'got visits'
+	notes = getSingleNotes(pid, stride_db, src_type)		
+	print 'got notes'
+	prescriptions = getSinglePrescriptions(pid, stride_db, src_type)		
+	print 'got prescriptions'
+	labs = getSingleLabs(pid, stride_db)		
+	print 'got labs'
+	patient = {
+		'pid': pid,
+		'src_type': src_type,
+		'visits': visits,
+		'notes': notes,
+		'prescriptions': prescriptions,
+		'labs': labs
 	}
-	rows = tryQuery(stride_db, query, [pid])
-	print >> sys.stderr, 'got the notes!'
-	result = joinResult(rows, nameMapping)
-	print >> sys.stderr, 'merged the notes!'
-	return result
+	print ('persisting '+str(pid)+' ')*10
+	writeSinglePatientFile(patient, pid)
 
-def getVisits(pid):
-	query = "SELECT v.visit, v.src, v.src_type, v.age, v.timeoffset, v.year, v.duration, v.cpt, v.icd9, v.vid from visit as v where v.pid=%s"
-	rows = tryQuery(stride_db, query, [pid])
-	nameMapping = {
-		'visits': [{
-			0: 'visit',
-			1: 'src',
-			2: 'src_type',
-			3: 'age',
-			4: 'timeoffset',
-			5: 'year',
-			6: 'duration',
-			7: 'cpt',
-			8: 'icd9',
-			9: 'vid'
-		}]
-	}
-	result = joinResult(rows, nameMapping)
-	return result
 
-def getLabs(pid):
-	query = "SELECT l.lid, l.src, l.age, l.timeoffset, l.description, l.proc, l.proc_cat, l.line, l.component, l.ord, l.ord_num, l.result_flag, l.ref_low, l.ref_high, l.ref_unit, l.result_inrange, l.ref_norm from lab as l where l.pid=%s"
-	rows = tryQuery(stride_db, query, [pid])
-	nameMapping = {
-		'labs': [{
-			0: 'lid',
-			1: 'src',
-			2: 'age',
-			3: 'timeoffset',
-			4: 'description',
-			5: 'proc',
-			6: 'proc_cat',
-			7: 'line',
-			8: 'component',
-			9: 'ord',
-			10: 'ord_num',
-			11: 'result_flag',
-			12: 'ref_low',
-			13: 'ref_high',
-			14: 'ref_unit',
-			15: 'result_inrange',
-			16: 'ref_norm'
-		}]
-	}
-	result = joinResult(rows, nameMapping)
-	return result
 
-def getPrescriptions(pid):
-	query = "SELECT p.rxid, p.src, p.age, p.timeoffset, p.drug_description, p.route, p.order_status, p.ingr_set_id from prescription as p where p.pid=%s"
-	rows = tryQuery(stride_db, query, [pid])
-	nameMapping = {
-		'prescriptions': [{
-			0: 'rxid',
-			1: 'src',
-			2: 'age',
-			3: 'timeoffset',
-			4: 'drug_description',
-			5: 'route',
-			6: 'order_status',
-			7: 'ingr_set_id'
-		}]
-	}
-	result = joinResult(rows, nameMapping)
-	return result
-	
-
-def getPatientVec(pid):
-	query = "SELECT d.pid, d.patient, d.gender, d.race, d.ethnicity, d.death from demographics as d where d.pid=%s"		
-	rows = tryQuery(stride_db, query, [pid])	
-	nameMapping = {
-		'patients': [{
-			0: 'pid',
-			1: 'patient',
-			2: 'gender',
-			3: 'race',
-			4: 'ethnicity',
-			5: 'death'
-		}]
-	}
-	result = joinResult(rows, nameMapping)
-	result['notes'] = getNotes(pid)
-	result['prescriptions'] = getPrescriptions(pid)
-	result['visits'] = getVisits(pid)
-	result['labs'] = getLabs(pid)
-	return result
-
-def getMultiplePatientVec(fileName, dirr, minpid):
-	result = []
-	fi = open(fileName, 'r')
-	pids = []
-	while True:
-		line = fi.readline().strip()
-		if line == '':
-			break
-		pids.append(line)	
-	pids.sort()
-	for i, pid in enumerate(pids):
-		print >> sys.stderr, pid +' is '+str(i) +' of '+str(len(pids))
-		if int(pid) < minpid:
-			print 'skipping....'
-			continue
-		if os.path.exists(dirr+'/'+str(pid)+'.txt'):
-			print 'exists, moving on'			
-			continue
-		next = getPatientVec(pid)
-		fi = open(dirr+'/'+str(pid)+'.txt', 'w')
-		fi.write(next.__repr__())
-		fi.close()
-		fi = open(dirr+'/'+str(pid)+'.pkl', 'wb')
-		pickle.dump(next, fi)
-		fi.close()
-		result.append(next)
-		
-	return result
-
-if __name__ == "__main__":
-	if len(sys.argv) == 2:
-		vec = getPatientVec(sys.argv[1])
-	elif len(sys.argv) == 4:
-		vec = getMultiplePatientVec(sys.argv[1], sys.argv[2], int(sys.argv[3]))
-	else:
-		print 'usage python '+sys.argv[0]+' <patientsFile> <saveDirectory> <firstPid>'
-		sys.exit(0)
-	pprint.pprint(vec)	
+if __name__ == "__main__":	
+	getAllSerial(sys.argv[1])
