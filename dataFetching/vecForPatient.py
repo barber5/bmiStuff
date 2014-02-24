@@ -1,6 +1,6 @@
 from queryByCode import getSingleVisits, getSingleVisits, getSinglePrescriptions, getSingleLabs, writeSinglePatientFile
 import sys
-from util import getDbs
+from db import *
 
 
 def getVecForPid(pid):
