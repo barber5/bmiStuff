@@ -10,4 +10,4 @@ def expForCode(code):
 	print pids
 
 if __name__ == "__main__":
-	expForCode(int(sys.argv[1]))
+	expForCode(sys.argv[1])
