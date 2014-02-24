@@ -419,7 +419,8 @@ def getAllSerial(code, src_type=None):
 	pidInt.sort()	
 	pids = [str(s) for s in pidInt]
 	(term_db, stride_db) = getDbs()
-	for pid in pids:		
+	for i, pid in enumerate(pids):		
+		print str(i)+' of '+str(len(pids))
 		print pid
 		if r.exists(pid):
 			print 'exists already'
