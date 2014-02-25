@@ -426,12 +426,14 @@ def parallelPatients(code, src_type, filePrefix, minpid):
 
 def getAllSerial(code, src_type=None):
 	pids = r.hget('codes', code)
-	print pids
-	return
-	pids = getPids(code, src_type)
-	pidInt = [int(i) for i in pids]	
-	pidInt.sort()	
-	pids = [str(s) for s in pidInt]
+	if not pids:
+		pids = getPids(code, src_type)
+		pidInt = [int(i) for i in pids]	
+		pidInt.sort()	
+		pids = [str(s) for s in pidInt]
+		r.hset('codes', code, compIt(pids))
+	else:
+		pids = decomp(pids)
 	(term_db, stride_db) = getDbs()
 	for i, pid in enumerate(pids):		
 		print str(i)+' of '+str(len(pids))
