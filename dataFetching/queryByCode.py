@@ -3,15 +3,15 @@ import sys, pprint, threading, json, os, time, copy, redis, bson
 r = redis.StrictRedis(host='localhost', port=6379, db=0)
 
 
-import marshal
+import marshal, zlib
 
 MARSHAL_VERSION = 2
-
+COMPRESS_LEVEL = 1
 def compIt(res):
-	return marshal.dumps(res, MARSHAL_VERSION)
+	return zlib.compress(marshal.dumps(res, MARSHAL_VERSION), COMPRESS_LEVEL)
 
 def decomp(res):
-	return marshal.loads(res)
+	return zlib.decompress(marshal.loads(res))
 
 def getPids(icd9, src_type=None):
 	(term_db, stride_db) = getDbs()
