@@ -279,7 +279,7 @@ patList = []
 lock = threading.Lock()
 
 def writeSinglePatientFile(pat, pid):		    
-	pstr = bson.dumps(pat, encoding='latin1')
+	pstr = bson.dumps(pat)
 	print 'persisted '+str(pid)
 	print 'value length was '+str(len(pstr))
 	r.set(pid, pstr)	
