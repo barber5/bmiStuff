@@ -7,6 +7,7 @@ from queryByCode import getPids, r
 
 def expForCode(code):
 	pids = getPids(code)
+	r.hset('codes', str(code), json.dumps(pids))
 	print 'got pids'
 	result = {}
 	for pid in pids:
