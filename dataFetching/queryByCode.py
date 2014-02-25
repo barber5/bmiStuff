@@ -2,6 +2,18 @@ from db import *
 import sys, pprint, threading, json, os, time, copy, redis, bson
 r = redis.StrictRedis(host='localhost', port=6379, db=0)
 
+
+import marshal
+
+MARSHAL_VERSION = 2
+COMPRESSION_LEVEL = 1
+
+def compIt(res):
+	return marshal.dumps(res, MARSHAL_VERSION, COMPRESSION_LEVEL)
+
+def decomp(res):
+	return marshal.loads(res)
+
 def getPids(icd9, src_type=None):
 	(term_db, stride_db) = getDbs()
 	query = "SELECT distinct pid FROM visit WHERE (icd9 like '%%"+icd9+"%%' or icd9=%s)"
@@ -279,10 +291,11 @@ patList = []
 lock = threading.Lock()
 
 def writeSinglePatientFile(pat, pid):		    
-	pstr = bson.dumps(pat)
+	pstr = compIt(pat)
+	r.set(pid, pstr)	
 	print 'persisted '+str(pid)
 	print 'value length was '+str(len(pstr))
-	r.set(pid, pstr)	
+	
 	print 'done'*10
 	'''fi = open(filePrefix+str(pid)+'.pkl', 'wb')
 	pickle.dump(pat, fi)
