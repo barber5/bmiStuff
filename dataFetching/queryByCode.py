@@ -181,7 +181,7 @@ def getSingleVisits(pid, stride_db, src_type=None):
 
 
 def getSingleTerms(nid, stride_db):	
-	query = "SELECT m.nid, m.tid, m.negated, m.familyHistory, t.term, t.ontology, t.cui, t.termid FROM mgrep as m inner join terminology3.terms as t on m.tid=t.tid where m.nid=%s"
+	query = "SELECT m.nid, m.tid, m.negated, m.familyHistory, t.cui, t.termid FROM mgrep as m inner join terminology3.terms as t on m.tid=t.tid where m.nid=%s"
 	repls = [int(nid)]	
 	rows = tryQuery(stride_db, query, repls)
 
@@ -191,11 +191,9 @@ def getSingleTerms(nid, stride_db):
 			'nid': row[0],
 			'tid': row[1],
 			'negated': row[2],
-			'familyHistory': row[3],
-			'term': row[4],
-			'ontology': row[5],
-			'cui': row[6],
-			'termid': row[7]	
+			'familyHistory': row[3],			
+			'cui': row[4],
+			'termid': row[5]	
 			})	
 	return result
 
@@ -281,7 +279,7 @@ patList = []
 lock = threading.Lock()
 
 def writeSinglePatientFile(pat, pid):		    
-	pstr = json.dumps(pat, encoding='latin1')
+	pstr = bson.dumps(pat, encoding='latin1')
 	print 'persisted '+str(pid)
 	print 'value length was '+str(len(pstr))
 	r.set(pid, pstr)	
