@@ -290,9 +290,10 @@ count = 0
 patList = []
 lock = threading.Lock()
 
-def writeSinglePatientFile(pat, pid):		    
+def writeSinglePatientFile(pat, pid, code):		    
 	pstr = compIt(pat)
-	r.set(pid, pstr)	
+	r.hset('pats', pid, pstr)	
+	r.hset('codes', code, pid)
 	print 'persisted '+str(pid)
 	print 'value length was '+str(len(pstr))
 	
@@ -425,6 +426,9 @@ def parallelPatients(code, src_type, filePrefix, minpid):
 
 
 def getAllSerial(code, src_type=None):
+	pids = r.hget('codes', code)
+	print pids
+	return
 	pids = getPids(code, src_type)
 	pidInt = [int(i) for i in pids]	
 	pidInt.sort()	
@@ -453,7 +457,7 @@ def getAllSerial(code, src_type=None):
 			'labs': labs
 		}
 		print ('persisting '+str(pid)+' ')*10
-		writeSinglePatientFile(patient, pid)
+		writeSinglePatientFile(patient, pid, code)
 
 if __name__ == "__main__":
 	if len(sys.argv) == 3:
