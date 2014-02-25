@@ -6,10 +6,9 @@ r = redis.StrictRedis(host='localhost', port=6379, db=0)
 import marshal
 
 MARSHAL_VERSION = 2
-COMPRESSION_LEVEL = 1
 
 def compIt(res):
-	return marshal.dumps(res, MARSHAL_VERSION, COMPRESSION_LEVEL)
+	return marshal.dumps(res, MARSHAL_VERSION)
 
 def decomp(res):
 	return marshal.loads(res)
