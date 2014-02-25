@@ -11,6 +11,8 @@ def expForCode(code):
 	for pid in pids:
 		if r.exists(pid):
 			result[pid] = json.loads(r.get(pid))
+			print >> sys.stderr, pid
+			
 	return result
 
 if __name__ == "__main__":
