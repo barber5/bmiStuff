@@ -7,12 +7,13 @@ from queryByCode import getPids, r
 
 def expForCode(code):
 	pids = getPids(code)
+	print 'got pids'
 	result = {}
 	for pid in pids:
 		if r.exists(pid):
 			result[pid] = json.loads(r.get(pid))
 			print >> sys.stderr, pid
-			
+
 	return result
 
 if __name__ == "__main__":
