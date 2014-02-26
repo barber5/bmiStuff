@@ -36,4 +36,5 @@ def termsEnriched(patients):
 
 if __name__ == "__main__":
 	pats = expForCode(sys.argv[1])
-	termsEnriched(pats)
+	pprint.pprint(pats[pats.keys()[0]])
+	#termsEnriched(pats)
