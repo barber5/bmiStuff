@@ -16,7 +16,7 @@ def expForCode(code):
 	result = {}
 	for pid in pids:
 		if r.hexists('pats', pid):
-			result[pid] = json.loads(r.get(pid))
+			result[pid] = json.loads(r.hget('pats', pid))
 			print >> sys.stderr, pid
 		else:
 			print >> sys.stderr, 'dont have '+str(pid)
