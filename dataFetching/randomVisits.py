@@ -1,7 +1,7 @@
 from vecForPatient import getVecForPid
 from queryByCode import r
 from random import randint
-import sys
+import sys, json
 
 def getRandomVisits(num):
 	visits = []
