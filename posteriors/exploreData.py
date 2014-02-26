@@ -28,14 +28,19 @@ def expForCode(code):
 	return result
 
 # patients is pid -> {pid, src_type, labs -> [{age, , component, description, lid, line, ord, ord_num, proc, proc_cat, ref_high, ref_low, ref_norm, ref_unit, result_flag, result_inrange, src, timeoffset}], notes -> [{age, cpt, duration, icd9, nid, pid, src, src_type, timeoffset, year, terms -> [{cui, familyHistory, negated, nid, termid, tid}]}], prescriptions -> [{age, drug_description, ingr_set_id, order_status, pid, route, rxid, src, timeoffset}], visits -> [{age, cpt, duration, icd9, pid, src, src_type, timeoffset, year}] }
-def termsEnriched(patients):
+def termFrequencies(patients):
+	terms = {}
 	for pat,patDict in patients.iteritems():
 		print pat
 		for n in patDict['notes']:
 			for t in n['terms']:
-				print t.keys()
-
+				term = (t['termid'], t['negated'], t['familyHistory'])
+				if term not in terms:
+					terms[term] = 0
+				terms[term] += 1
+	return terms
 if __name__ == "__main__":
 	pats = expForCode(sys.argv[1])
-	pprint.pprint(pats[pats.keys()[0]])
-	#termsEnriched(pats)
+	#rnd = expForCode(sys.argv[2])
+	terms = termFrequencies(pats)
+	pprint.pprint(terms)
