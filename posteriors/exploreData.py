@@ -54,7 +54,7 @@ def printTerms(pats, rnds):
 		print trm
 		term = getTerm(trm[0])
 		print term
-		print '{} negated: {}, history: {}\t{}\t{}'.format(term, trm[1], trm[2], cnt, rndcnt)	
+		print '%s negated: %s history: %s\t%s\t%s' % (term, str(trm[1]), str(trm[2]), str(cnt), str(rndcnt))
 
 if __name__ == "__main__":
 	pats = expForCode(sys.argv[1])
