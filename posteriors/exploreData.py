@@ -17,7 +17,7 @@ def expForCode(code):
 	for pid in pids:
 		if r.hexists('pats', pid):
 			resp = r.hget('pats', pid)
-			print resp
+			#print resp
 			result[pid] = decomp(resp)
 			print >> sys.stderr, pid
 		else:
