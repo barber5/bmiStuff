@@ -4,6 +4,7 @@ sys.path.append(os.path.realpath('./tempClustering'))
 sys.path.append(os.path.realpath('../dataFetching'))
 sys.path.append(os.path.realpath('./dataFetching'))
 from queryByCode import getPids, r, decomp
+from getTermByID import getTerm
 
 def expForCode(code):
 	pids = r.hget('codes', str(code))
@@ -43,8 +44,19 @@ def termFrequencies(patients):
 				terms[term] = 0
 			terms[term] += 1
 	return terms
+
+def printTerms(pats, rnds):	
+	for trm,cnt in pats.iteritems():
+		if trm not in rnds:
+			rndcnt = 0
+		else:
+			rndcnt = rnds[trm[0]]
+		term = getTerm(trm)
+		print '{} negated: {}, history: {}\t{}\t{}'.format(term, trm[1], trm[2], cnt, rndcnt)	
+
 if __name__ == "__main__":
 	pats = expForCode(sys.argv[1])
-	#rnd = expForCode(sys.argv[2])
-	terms = termFrequencies(pats)
-	pprint.pprint(terms)
+	rnd = expForCode(sys.argv[2])
+	patTerms = termFrequencies(pats)
+	rndTerms = termFrequencies(rnd)
+	printTerms(pats, rnds)
