@@ -30,7 +30,8 @@ def expForCode(code):
 def termsEnriched(patients):
 	for pat,patDict in patients.iteritems():
 		print pat
-		print patDict['notes'].keys()
+		for n in patDict['notes']:
+			print n.keys()
 
 if __name__ == "__main__":
 	pats = expForCode(sys.argv[1])
