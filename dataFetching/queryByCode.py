@@ -11,7 +11,7 @@ def compIt(res):
 	return zlib.compress(marshal.dumps(res, MARSHAL_VERSION), COMPRESS_LEVEL)
 
 def decomp(res):
-	return zlib.decompress(marshal.loads(res))
+	return marshal.loads(zlib.decompress(res))
 
 def getPids(icd9, src_type=None):
 	(term_db, stride_db) = getDbs()
