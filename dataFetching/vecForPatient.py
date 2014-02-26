@@ -3,7 +3,7 @@ import sys
 from db import *
 
 
-def getVecForPid(pid):
+def getVecForPid(pid, code):
 	(term_db, stride_db) = getDbs()
 	if r.exists(pid):
 		print 'exists already'
@@ -25,7 +25,7 @@ def getVecForPid(pid):
 		'labs': labs
 	}
 	print ('persisting '+str(pid)+' ')*10
-	writeSinglePatientFile(patient, pid)
+	writeSinglePatientFile(patient, pid, code)
 
 
 

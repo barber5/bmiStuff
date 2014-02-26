@@ -6,7 +6,7 @@ def getRandomVisits(num):
 	visits = []
 	for i in range(num):
 		pid = randint(1, 1257139)
-		getVecForPid(pid)
+		getVecForPid(pid, 'random')
 	
 
 if __name__ == "__main__":
