@@ -28,7 +28,7 @@ def expForCode(code):
 	return result
 
 def termsEnriched(patients):
-	for pat,patDict in patients:
+	for pat,patDict in patients.iteritems():
 		print pat
 		print patDict
 
