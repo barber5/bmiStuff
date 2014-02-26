@@ -9,9 +9,10 @@ def expForCode(code):
 	pids = r.hget('codes', str(code))
 	if not pids:
 		pids = getPids(code)
-		r.hset('codes', str(code), json.dumps(pids))
+		r.hset('codes', str(code), json.dumps(pids))	
+	else:
+		pids = json.loads(pids)
 	print 'got pids'
-	print pids
 	result = {}
 	for pid in pids:
 		if r.exists(pid):
