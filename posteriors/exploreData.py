@@ -49,9 +49,9 @@ def printTerms(pats, rnds):
 	for trm,cnt in pats.iteritems():
 		if trm not in rnds:
 			rndcnt = 0
-		else:
-			rndcnt = rnds[trm[0]]
-		term = getTerm(trm)
+		else:			
+			rndcnt = rnds[trm
+		term = getTerm(trm[0])
 		print '{} negated: {}, history: {}\t{}\t{}'.format(term, trm[1], trm[2], cnt, rndcnt)	
 
 if __name__ == "__main__":
