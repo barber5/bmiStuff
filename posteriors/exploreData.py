@@ -14,6 +14,8 @@ def expForCode(code):
 		if r.exists(pid):
 			result[pid] = json.loads(r.get(pid))
 			print >> sys.stderr, pid
+		else:
+			print >> sys.stderr, 'dont have '+str(pid)
 
 	return result
 
