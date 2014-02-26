@@ -31,7 +31,8 @@ def termsEnriched(patients):
 	for pat,patDict in patients.iteritems():
 		print pat
 		for n in patDict['notes']:
-			print n.keys()
+			for t in n['terms']:
+				print t.keys()
 
 if __name__ == "__main__":
 	pats = expForCode(sys.argv[1])
