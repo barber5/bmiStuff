@@ -5,7 +5,7 @@ import sys, pprint
 (term_db, stride_db) = getDbs()
 
 def getTerm(term_id):
-	print 'trying to get {}'.format(term_id)
+	print term_id
 	query = "SELECT term from terms where termid=%s"
 	rows = tryQuery(term_db, query, [term_id])
 	print rows
