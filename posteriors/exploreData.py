@@ -11,6 +11,7 @@ def expForCode(code):
 		pids = getPids(code)
 		r.hset('codes', str(code), json.dumps(pids))
 	print 'got pids'
+	print pids
 	result = {}
 	for pid in pids:
 		if r.exists(pid):
