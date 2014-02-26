@@ -51,6 +51,7 @@ def printTerms(pats, rnds):
 			rndcnt = 0
 		else:			
 			rndcnt = rnds[trm]
+		print trm
 		term = getTerm(trm[0])
 		print '{} negated: {}, history: {}\t{}\t{}'.format(term, trm[1], trm[2], cnt, rndcnt)	
 
