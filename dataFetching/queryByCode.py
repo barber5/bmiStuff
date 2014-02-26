@@ -292,7 +292,7 @@ lock = threading.Lock()
 def writeSinglePatientFile(pat, pid, code):		    
 	pstr = compIt(pat)
 	r.hset('pats', pid, pstr)	
-	r.hset('codes', code, pid)
+	#r.hset('codes', code, pid)
 	print 'persisted '+str(pid)
 	print 'value length was '+str(len(pstr))
 	
