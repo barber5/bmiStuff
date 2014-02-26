@@ -8,7 +8,7 @@ def getTerm(term_id):
 	print term_id
 	query = "SELECT term from terms where termid=%s"
 	rows = tryQuery(term_db, query, [term_id])
-	print rows
+	return rows[0][0]
 
 
 if __name__ == "__main__":
