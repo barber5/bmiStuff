@@ -59,4 +59,4 @@ if __name__ == "__main__":
 	rnd = expForCode(sys.argv[2])
 	patTerms = termFrequencies(pats)
 	rndTerms = termFrequencies(rnd)
-	printTerms(pats, rnds)
+	printTerms(patTerms, rndTerms)
