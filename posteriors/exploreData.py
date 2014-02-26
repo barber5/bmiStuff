@@ -31,13 +31,17 @@ def expForCode(code):
 def termFrequencies(patients):
 	terms = {}
 	for pat,patDict in patients.iteritems():
-		print pat
+		patTerms = {}
 		for n in patDict['notes']:
 			for t in n['terms']:
 				term = (t['termid'], t['negated'], t['familyHistory'])
-				if term not in terms:
-					terms[term] = 0
-				terms[term] += 1
+				if term not in patTerms:
+					patTerms[term] = 0
+				patTerms[term] += 1
+		for term,cnt in patTerms.iteritems():
+			if term not in terms:
+				terms[term] = 0
+			terms[term] += 1
 	return terms
 if __name__ == "__main__":
 	pats = expForCode(sys.argv[1])
