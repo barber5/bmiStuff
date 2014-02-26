@@ -14,7 +14,9 @@ def expForCode(code):
 		pids = json.loads(pids)
 	print 'got pids'
 	result = {}
-	for pid in pids:
+	for i, pid in enumerate(pids):
+		if i > 5:
+			break
 		if r.hexists('pats', pid):
 			resp = r.hget('pats', pid)
 			#print resp
@@ -25,5 +27,11 @@ def expForCode(code):
 
 	return result
 
+def termsEnriched(patients):
+	for pat,patDict in patients:
+		print pat
+		print patDict
+
 if __name__ == "__main__":
-	expForCode(sys.argv[1])
+	pats = expForCode(sys.argv[1])
+	termsEnriched(pats)
