@@ -6,8 +6,10 @@ sys.path.append(os.path.realpath('./dataFetching'))
 from queryByCode import getPids, r
 
 def expForCode(code):
-	pids = getPids(code)
-	r.hset('codes', str(code), json.dumps(pids))
+	pids = r.hget('codes', str(code))
+	if not pids:
+		pids = getPids(code)
+		r.hset('codes', str(code), json.dumps(pids))
 	print 'got pids'
 	result = {}
 	for pid in pids:
