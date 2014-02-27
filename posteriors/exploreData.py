@@ -51,7 +51,7 @@ def printTerms(pats, rnds):
 			rndcnt = 0
 		else:			
 			rndcnt = rnds[trm]
-		print >> std.err, trm
+		print >> sys.stderr, trm
 		term = getTerm(trm[0])
 		#print term
 		print '%s negated: %s history: %s\t%s\t%s' % (term, str(trm[1]), str(trm[2]), str(cnt), str(rndcnt))
