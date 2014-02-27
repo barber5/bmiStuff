@@ -62,16 +62,27 @@ def printTerms(pats, rnds):
 		term = getTerm(trm[0])
 		#print term
 		if rndcnt == 0:
-			increase = 999999999999
+			increase = 9999
 		else:
 			increase = float(cnt - rndcnt)/float(rndcnt)
 		print '%s negated: %s history: %s\t%s\t%s\t%s' % (term, str(trm[1]), str(trm[2]), str(cnt), str(rndcnt), str(increase))
+	for trm, cnt, in rnds.iteritems():
+		if trm not in pats:
+			patcnt = 0
+		else:
+			patcnt = pats[trm]
+		term = getTerm(trm[0])
+		if patcnt == 0:
+			increase = -9999
+		else:
+			increase = float(cnt - rndcnt)/float(rndcnt)
+		print '%s negated: %s history: %s\t%s\t%s\t%s' % (term, str(trm[1]), str(trm[2]), str(patcnt), str(rndcnt), str(increase))
 
 if __name__ == "__main__":
 	pats = expForCode(sys.argv[1])
 	rnd = expForCode(sys.argv[2])
 	patTerms = termFrequencies(pats, float(sys.argv[3]))
-	rndTerms = termFrequencies(rnd, .001)
+	rndTerms = termFrequencies(rnd, float(sys.argv[4]))
 	#pprint.pprint(rndTerms)
 	printTerms(patTerms, rndTerms)
 
