@@ -49,7 +49,7 @@ def termFrequencies(patients, freqThreshold=0.0):
 		if float(cnt)/ len(patients.keys()) < freqThreshold:
 			continue
 		else:
-			newResult[trm] = cnt
+			newResult[trm] = float(cnt)/ len(patients.keys())
 	return newResult
 
 def printTerms(pats, rnds):	
@@ -67,6 +67,7 @@ def printTerms(pats, rnds):
 		else:
 			increase = float(cnt - rndcnt)/float(rndcnt)
 		print '%s negated: %s history: %s\t%s\t%s\t%s' % (term, str(trm[1]), str(trm[2]), str(cnt), str(rndcnt), str(increase))
+	'''
 	for trm, cnt, in rnds.iteritems():
 		#print trm
 		if trm not in pats:
@@ -79,7 +80,7 @@ def printTerms(pats, rnds):
 			increase = -9999
 		else:
 			increase = float(cnt - rndcnt)/float(patcnt)
-		print '%s negated: %s history: %s\t%s\t%s\t%s' % (term, str(trm[1]), str(trm[2]), str(patcnt), str(cnt), str(increase))
+		print '%s negated: %s history: %s\t%s\t%s\t%s' % (term, str(trm[1]), str(trm[2]), str(patcnt), str(cnt), str(increase))'''
 
 if __name__ == "__main__":
 	pats = expForCode(sys.argv[1])
