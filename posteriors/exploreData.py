@@ -17,7 +17,7 @@ def expForCode(code):
 	print >> sys.stderr, 'got pids'
 	result = {}
 	for i, pid in enumerate(pids):
-		if i > 20:
+		if i > 200:
 			break
 		if r.hexists('pats', pid):
 			resp = r.hget('pats', pid)
