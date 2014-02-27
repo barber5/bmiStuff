@@ -29,7 +29,7 @@ def expForCode(code):
 	return result
 
 # patients is pid -> {pid, src_type, labs -> [{age, , component, description, lid, line, ord, ord_num, proc, proc_cat, ref_high, ref_low, ref_norm, ref_unit, result_flag, result_inrange, src, timeoffset}], notes -> [{age, cpt, duration, icd9, nid, pid, src, src_type, timeoffset, year, terms -> [{cui, familyHistory, negated, nid, termid, tid}]}], prescriptions -> [{age, drug_description, ingr_set_id, order_status, pid, route, rxid, src, timeoffset}], visits -> [{age, cpt, duration, icd9, pid, src, src_type, timeoffset, year}] }
-def termFrequencies(patients):
+def termFrequencies(patients, freqThreshold=1.0):
 	terms = {}
 	for pat,patDict in patients.iteritems():
 		patTerms = {}
@@ -43,7 +43,13 @@ def termFrequencies(patients):
 			if term not in terms:
 				terms[term] = 0
 			terms[term] += 1
-	return terms
+	newResult = {}
+	for trm, cnt in terms.iteritems():
+		if float(cnt)/ len(patients.keys()) < freqThreshold:
+			continue
+		else:
+			newResult[trm] = cnt
+	return newResult
 
 def printTerms(pats, rnds):	
 	for trm,cnt in pats.iteritems():
@@ -59,6 +65,6 @@ def printTerms(pats, rnds):
 if __name__ == "__main__":
 	pats = expForCode(sys.argv[1])
 	rnd = expForCode(sys.argv[2])
-	patTerms = termFrequencies(pats)
+	patTerms = termFrequencies(pats, float(sys.argv[3]))
 	rndTerms = termFrequencies(rnd)
 	printTerms(patTerms, rndTerms)
