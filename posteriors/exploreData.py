@@ -7,12 +7,13 @@ from queryByCode import getPids, r, decomp, compIt
 from getTermByID import getTerm
 
 def expForCode(code):
-	pids = json.loads(decomp(r.hget('codes', str(code))))	
+	pids = r.hget('codes', str(code))
 	if not pids:
 		pids = getPids(code)
 		r.hset('codes', str(code), compIt(json.dumps(pids)))
 	else:
 		pids = decomp(pids)
+		pids = json.loads(pids)
 	print >> sys.stderr, 'got pids'
 	result = {}
 	for i, pid in enumerate(pids):
