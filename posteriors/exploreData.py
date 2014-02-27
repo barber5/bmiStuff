@@ -22,7 +22,7 @@ def expForCode(code):
 			resp = r.hget('pats', pid)
 			#print resp
 			result[pid] = decomp(resp)
-			print >> sys.stderr, pid
+			print >> sys.stderr, str(i)+' '+str(pid)
 		else:
 			print >> sys.stderr, 'dont have '+str(pid)
 
