@@ -71,8 +71,8 @@ if __name__ == "__main__":
 	pats = expForCode(sys.argv[1])
 	rnd = expForCode(sys.argv[2])
 	patTerms = termFrequencies(pats, float(sys.argv[3]))
-	#rndTerms = termFrequencies(rnd)
-	#printTerms(patTerms, rndTerms)
+	rndTerms = termFrequencies(rnd)
+	printTerms(patTerms, rndTerms)
 
 
 
