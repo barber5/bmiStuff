@@ -7,7 +7,8 @@ from queryByCode import getPids, r, decomp
 from getTermByID import getTerm
 
 def expForCode(code):
-	pids = r.hget('codes', str(code))
+	#pids = r.hget('codes', str(code))
+	pids = None
 	if not pids:
 		pids = getPids(code)
 		r.hset('codes', str(code), json.dumps(pids))	
