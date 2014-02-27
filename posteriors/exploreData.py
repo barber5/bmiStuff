@@ -7,8 +7,7 @@ from queryByCode import getPids, r, decomp, compIt
 from getTermByID import getTerm
 
 def expForCode(code):
-	#pids = r.hget('codes', str(code))
-	pids = None
+	pids = json.loads(decomp(r.hget('codes', str(code))))	
 	if not pids:
 		pids = getPids(code)
 		r.hset('codes', str(code), compIt(json.dumps(pids)))
@@ -22,7 +21,7 @@ def expForCode(code):
 		if r.hexists('pats', pid):
 			resp = r.hget('pats', pid)
 			#print resp
-			result[pid] = json.loads(decomp(resp))
+			result[pid] = decomp(resp)
 			print >> sys.stderr, str(i)+' '+str(pid)
 		else:
 			print >> sys.stderr, 'dont have '+str(pid)
@@ -77,4 +76,3 @@ if __name__ == "__main__":
 
 
 
-	
