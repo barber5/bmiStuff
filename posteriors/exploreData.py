@@ -16,7 +16,7 @@ def expForCode(code):
 	print >> sys.stderr, 'got pids'
 	result = {}
 	for i, pid in enumerate(pids):
-		if i > 5:
+		if i > 100:
 			break
 		if r.hexists('pats', pid):
 			resp = r.hget('pats', pid)
@@ -60,7 +60,11 @@ def printTerms(pats, rnds):
 		print >> sys.stderr, trm
 		term = getTerm(trm[0])
 		#print term
-		print '%s negated: %s history: %s\t%s\t%s' % (term, str(trm[1]), str(trm[2]), str(cnt), str(rndcnt))
+		if rndcnt == 0:
+			increase = 999999999999
+		else:
+			increase = float(trm - rndcnt)/float(rndcnt)
+		print '%s negated: %s history: %s\t%s\t%s\t%s' % (term, str(trm[1]), str(trm[2]), str(cnt), str(rndcnt), str(increase))
 
 if __name__ == "__main__":
 	pats = expForCode(sys.argv[1])
