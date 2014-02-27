@@ -58,7 +58,7 @@ def printTerms(pats, rnds):
 			rndcnt = 0
 		else:			
 			rndcnt = rnds[trm]
-		print >> sys.stderr, trm
+		#print >> sys.stderr, trm
 		term = getTerm(trm[0])
 		#print term
 		if rndcnt == 0:
