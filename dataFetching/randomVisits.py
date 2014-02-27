@@ -10,7 +10,7 @@ def getRandomVisits(num):
 		pid = randint(1, 1257139)
 		pids.append(pid)
 		getVecForPid(pid, 'random')
-	r.hset('codes', 'random', compItjson.dumps(pids)))
+	r.hset('codes', 'random', compItjson.dumps(pids))
 
 if __name__ == "__main__":
 	getRandomVisits(int(sys.argv[1]))
