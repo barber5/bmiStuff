@@ -68,12 +68,12 @@ def printTerms(pats, rnds):
 		print '%s negated: %s history: %s\t%s\t%s\t%s' % (term, str(trm[1]), str(trm[2]), str(cnt), str(rndcnt), str(increase))
 
 if __name__ == "__main__":
-	#pats = expForCode(sys.argv[1])
+	pats = expForCode(sys.argv[1])
 	rnd = expForCode(sys.argv[2])
-	#patTerms = termFrequencies(pats, float(sys.argv[3]))
-	rndTerms = termFrequencies(rnd)
+	patTerms = termFrequencies(pats, float(sys.argv[3]))
+	rndTerms = termFrequencies(rnd, .001)
 	pprint.pprint(rndTerms)
-	#printTerms(patTerms, rndTerms)
+	printTerms(patTerms, rndTerms)
 
 
 
