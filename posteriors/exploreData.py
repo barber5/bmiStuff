@@ -13,7 +13,7 @@ def expForCode(code):
 		r.hset('codes', str(code), json.dumps(pids))	
 	else:
 		pids = json.loads(pids)
-	print 'got pids'
+	print >> sys.stderr, 'got pids'
 	result = {}
 	for i, pid in enumerate(pids):
 		if i > 5:
@@ -51,7 +51,7 @@ def printTerms(pats, rnds):
 			rndcnt = 0
 		else:			
 			rndcnt = rnds[trm]
-		print trm
+		#print trm
 		term = getTerm(trm[0])
 		#print term
 		print '%s negated: %s history: %s\t%s\t%s' % (term, str(trm[1]), str(trm[2]), str(cnt), str(rndcnt))
