@@ -3,7 +3,7 @@ sys.path.append(os.path.realpath('../tempClustering'))
 sys.path.append(os.path.realpath('./tempClustering'))
 sys.path.append(os.path.realpath('../dataFetching'))
 sys.path.append(os.path.realpath('./dataFetching'))
-from queryByCode import getPids, r, decomp
+from queryByCode import getPids, r, decomp, compIt
 from getTermByID import getTerm
 
 def expForCode(code):
@@ -11,7 +11,7 @@ def expForCode(code):
 	pids = None
 	if not pids:
 		pids = getPids(code)
-		r.hset('codes', str(code), json.dumps(pids))	
+		r.hset('codes', str(code), compIt(json.dumps(pids)))
 	else:
 		pids = decomp(pids)
 	print >> sys.stderr, 'got pids'
