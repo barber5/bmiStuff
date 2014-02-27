@@ -12,7 +12,7 @@ def expForCode(code):
 		pids = getPids(code)
 		r.hset('codes', str(code), json.dumps(pids))	
 	else:
-		pids = json.loads(pids)
+		pids = decomp(pids)
 	print >> sys.stderr, 'got pids'
 	result = {}
 	for i, pid in enumerate(pids):
