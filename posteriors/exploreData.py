@@ -77,7 +77,7 @@ def printTerms(pats, rnds):
 			increase = -9999
 		else:
 			increase = float(cnt - rndcnt)/float(patcnt)
-		print '%s negated: %s history: %s\t%s\t%s\t%s' % (term, str(trm[1]), str(trm[2]), str(patcnt), str(rndcnt), str(increase))
+		print '%s negated: %s history: %s\t%s\t%s\t%s' % (term, str(trm[1]), str(trm[2]), str(patcnt), str(cnt), str(increase))
 
 if __name__ == "__main__":
 	pats = expForCode(sys.argv[1])
