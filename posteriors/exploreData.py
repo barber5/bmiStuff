@@ -56,6 +56,7 @@ def printTerms(pats, rnds):
 	for trm,cnt in pats.iteritems():
 		if trm not in rnds:
 			rndcnt = 0
+			continue
 		else:			
 			rndcnt = rnds[trm]
 		#print >> sys.stderr, trm
@@ -67,9 +68,10 @@ def printTerms(pats, rnds):
 			increase = float(cnt - rndcnt)/float(rndcnt)
 		print '%s negated: %s history: %s\t%s\t%s\t%s' % (term, str(trm[1]), str(trm[2]), str(cnt), str(rndcnt), str(increase))
 	for trm, cnt, in rnds.iteritems():
-		print trm
+		#print trm
 		if trm not in pats:
 			patcnt = 0
+			continue
 		else:
 			patcnt = pats[trm]
 		term = getTerm(trm[0])
