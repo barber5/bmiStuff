@@ -61,7 +61,7 @@ def printTerms(pats, rnds):
 		else:			
 			rndcnt = rnds[trm]
 		#print >> sys.stderr, trm
-		term = getTerm(trm[0])
+		term = trm[0]
 		#print term
 		if rndcnt == 0:
 			increase = 9999
