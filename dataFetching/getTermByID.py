@@ -10,6 +10,7 @@ def getTerm(term_id):
 	return rows[0][0]
 
 def getTermCui(cui):
+	print >> sys.stderr, 'cui: '+str(cui)
 	query = "SELECT str from str2cid where cui=%s"
 	rows = tryQuery(term_db, query, [cui])
 	return rows[0][0]
