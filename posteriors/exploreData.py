@@ -17,7 +17,7 @@ def expForCode(code):
 	print >> sys.stderr, 'got pids'
 	result = {}
 	for i, pid in enumerate(pids):
-		if i > 200:
+		if i > 20:
 			break
 		if r.hexists('pats', pid):
 			resp = r.hget('pats', pid)
@@ -41,6 +41,7 @@ def termFrequencies(patients, freqThreshold=0.0):
 					patTerms[term] = 0
 				patTerms[term] += 1
 		for term,cnt in patTerms.iteritems():
+			term = (getTerm(term[0]), term[1], term[2])
 			if term not in terms:
 				terms[term] = 0
 			terms[term] += 1
