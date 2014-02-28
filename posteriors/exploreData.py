@@ -84,7 +84,9 @@ def printTerms(pats, rnds):
 		print '%s negated: %s history: %s\t%s\t%s\t%s' % (term, str(trm[1]), str(trm[2]), str(patcnt), str(cnt), str(increase))'''
 
 if __name__ == "__main__":
-	print 'usage: python {} {} {} {} {} {} {}'.format(sys.argv[0], '<code1>', '<code2>', '<code1FreqCutoff>', '<code2FreqCutoff>', '<code1SampleRate>', '<code2SampleRate>')
+	if len(sys.argv) != 7:
+		print 'usage: python {} {} {} {} {} {} {}'.format(sys.argv[0], '<code1>', '<code2>', '<code1FreqCutoff>', '<code2FreqCutoff>', '<code1SampleRate>', '<code2SampleRate>')
+		sys.exit(1)
 	pats = expForCode(sys.argv[1], float(sys.argv[5]))
 	rnd = expForCode(sys.argv[2], float(sys.argv[6]))
 	patTerms = termFrequencies(pats, float(sys.argv[3]))
