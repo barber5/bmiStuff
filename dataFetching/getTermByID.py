@@ -13,6 +13,10 @@ def getTermCui(cui):
 	print >> sys.stderr, 'cui: '+str(cui)
 	query = "SELECT str from str2cid where cui=%s"
 	rows = tryQuery(term_db, query, [cui])
+	if len(rows) == 0:
+		return None
+	if len(rows[0]) == 0:
+		return None
 	return rows[0][0]
 
 if __name__ == "__main__":

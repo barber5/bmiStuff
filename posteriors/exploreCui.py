@@ -42,7 +42,10 @@ def cuiFrequencies(patients, freqThreshold=0.0):
 					patTerms[term] = 0
 				patTerms[term] += 1
 		for term,cnt in patTerms.iteritems():
-			term = (getTermCui(term[0]), term[1], term[2])
+			cui = getTermCui(term[0])
+			if not cui:
+				continue
+			term = (cui, term[1], term[2])
 			if term not in terms:
 				terms[term] = 0
 			terms[term] += 1
