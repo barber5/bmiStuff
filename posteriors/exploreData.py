@@ -1,4 +1,4 @@
-import sys,os, pprint, json
+import sys,os, pprint, json, random
 sys.path.append(os.path.realpath('../tempClustering'))
 sys.path.append(os.path.realpath('./tempClustering'))
 sys.path.append(os.path.realpath('../dataFetching'))
@@ -6,7 +6,7 @@ sys.path.append(os.path.realpath('./dataFetching'))
 from queryByCode import getPids, r, decomp, compIt
 from getTermByID import getTerm
 
-def expForCode(code):
+def expForCode(code, sampleRate):
 	pids = r.hget('codes', str(code))
 	if not pids:
 		pids = getPids(code)
@@ -17,8 +17,8 @@ def expForCode(code):
 	print >> sys.stderr, 'got pids'
 	result = {}
 	for i, pid in enumerate(pids):
-		if i > 20:
-			break
+		if random.random() < sampleRate:
+			continue
 		if r.hexists('pats', pid):
 			resp = r.hget('pats', pid)
 			#print resp
@@ -84,8 +84,9 @@ def printTerms(pats, rnds):
 		print '%s negated: %s history: %s\t%s\t%s\t%s' % (term, str(trm[1]), str(trm[2]), str(patcnt), str(cnt), str(increase))'''
 
 if __name__ == "__main__":
-	pats = expForCode(sys.argv[1])
-	rnd = expForCode(sys.argv[2])
+	print 'usage: python {} {} {} {} {} {} {}'.format(sys.argv[0], '<code1>', '<code2>', '<code1FreqCutoff>', '<code2FreqCutoff>', '<code1SampleRate>', '<code2SampleRate>')
+	pats = expForCode(sys.argv[1], float(sys.argv[5]))
+	rnd = expForCode(sys.argv[2], float(sys.argv[6]))
 	patTerms = termFrequencies(pats, float(sys.argv[3]))
 	rndTerms = termFrequencies(rnd, float(sys.argv[4]))
 	#pprint.pprint(rndTerms)
