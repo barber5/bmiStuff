@@ -35,6 +35,8 @@ def cuiFrequencies(patients, freqThreshold=0.0):
 		patTerms = {}
 		for n in patDict['notes']:
 			for t in n['terms']:
+				if not t['cui']:
+					continue
 				term = (t['cui'], t['negated'], t['familyHistory'])
 				if term not in patTerms:
 					patTerms[term] = 0
