@@ -14,7 +14,7 @@ def expForCode(code, sampleRate):
 	else:
 		pids = decomp(pids)
 		pids = json.loads(pids)
-	print >> sys.stderr, 'got pids'
+	print >> sys.stderr, 'got %s pids' % str(len(pids))
 	result = {}
 	for i, pid in enumerate(pids):
 		if random.random() > sampleRate:
