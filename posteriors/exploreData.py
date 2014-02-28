@@ -17,7 +17,7 @@ def expForCode(code, sampleRate):
 	print >> sys.stderr, 'got pids'
 	result = {}
 	for i, pid in enumerate(pids):
-		if random.random() < sampleRate:
+		if random.random() > sampleRate:
 			continue
 		if r.hexists('pats', pid):
 			resp = r.hget('pats', pid)
