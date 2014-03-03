@@ -26,13 +26,10 @@ def getCuis(queryTerm, src_type=None):
 	for r1 in rows:		
 		cui = r1[0]
 		if not cui:
-			continue		
-		rows = tryQuery(term_db, query2, [cui])
-		print >> sys.stderr, 'matching cids: '+str(rows)
-		cids = []
-		for r in rows:
-			related = closure_term(r[0])
-			print >> sys.stderr, "related to "+str(r[0])+" is: "+str(related)
+			continue
+		
+		related = closure_term(cui)
+		print >> sys.stderr, "related to "+str(r[0])+" is: "+str(related)
 
 	stride_db.close()
 	term_db.close()
