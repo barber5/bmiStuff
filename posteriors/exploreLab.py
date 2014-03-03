@@ -60,8 +60,7 @@ def labFrequencies(patients, freqThreshold=0.0):
 def printTerms(pats, rnds):	
 	for trm,cnt in pats.iteritems():
 		if trm not in rnds:
-			rndcnt = 0
-			continue
+			rndcnt = 0			
 		else:			
 			rndcnt = rnds[trm]
 		#print >> sys.stderr, trm
