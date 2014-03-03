@@ -23,14 +23,15 @@ def getCuis(queryTerm, src_type=None):
 		repls.append(src_type)	
 	rows = tryQuery(term_db, query, repls)
 	print >> sys.stderr, 'matching terms: '+str(rows)
-	cui = rows[0][0]
-	query2 = "SELECT distinct cid from tid2cid tc1 where tc1.tid=%s"
-	rows = tryQuery(term_db, query2, [cui])
-	print >> sys.stderr, 'matching cids: '+str(rows)
-	cids = []
-	for r in rows:
-		related = closure_term(r[0])
-		print >> sys.stderr, "related to "+str(r[0])+" is: "+str(related)
+	for r1 in rows:		
+		cui = r1[0]
+		query2 = "SELECT distinct cid from tid2cid tc1 where tc1.tid=%s"
+		rows = tryQuery(term_db, query2, [cui])
+		print >> sys.stderr, 'matching cids: '+str(rows)
+		cids = []
+		for r in rows:
+			related = closure_term(r[0])
+			print >> sys.stderr, "related to "+str(r[0])+" is: "+str(related)
 
 	stride_db.close()
 	term_db.close()
