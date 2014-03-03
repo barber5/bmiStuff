@@ -31,7 +31,7 @@ def getCuis(queryTerm, src_type=None):
 		
 		terms = closure_term(cui)
 		for t in terms:
-			related.add(t['cid_norm'])
+			related.add(t['cid_exp'])
 		print >> sys.stderr, "related to "+str(cui)+" is: "+str(related)
 
 	stride_db.close()
