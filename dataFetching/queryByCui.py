@@ -23,12 +23,15 @@ def getCuis(queryTerm, src_type=None):
 		repls.append(src_type)	
 	rows = tryQuery(term_db, query, repls)
 	print >> sys.stderr, 'matching terms: '+str(rows)
+	related = set([])
 	for r1 in rows:		
 		cui = r1[0]
 		if not cui:
 			continue
 		
-		related = closure_term(cui)
+		terms = closure_term(cui)
+		for t in terms:
+			related.add(t['cid_norm'])
 		print >> sys.stderr, "related to "+str(cui)+" is: "+str(related)
 
 	stride_db.close()
