@@ -196,17 +196,20 @@ def writeSinglePatientFile(pat, pid, code):
 
 
 def getAllSerial(queryTerm, src_type=None):
-	pids = None
+	pids = decomp(r.hget('cuis', queryTerm))
 	if not pids:
 		pids = getCuis(queryTerm, src_type)
 		pidInt = [int(i) for i in pids]	
 		pidInt.sort()	
 		pids = [str(s) for s in pidInt]
-		#r.hset('cuis', cui, compIt(pids))
+		r.hset('cuis', cui, compIt(pids))
 	else:
 		pids = decomp(pids)
 	(term_db, stride_db) = getDbs()
 	for i, pid in enumerate(pids):		
+		if r.hexists('pats', pid):
+			print 'exists already'
+			continue
 		print str(i)+' of '+str(len(pids))
 		print pid
 		if r.exists(pid):
