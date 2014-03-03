@@ -17,6 +17,8 @@ def getTermCui(cui):
 		return None
 	if len(rows[0]) == 0:
 		return None
+	if not rows[0][0]:
+		return None
 	return rows[0][0].upper()
 
 if __name__ == "__main__":
