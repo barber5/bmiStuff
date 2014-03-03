@@ -68,7 +68,7 @@ def printTerms(pats, rnds):
 	for trm, cnt in pats.iteritems():
 		rndidx[trm[0]] = cnt
 	for trm,cnt in pats.iteritems():
-		if trm not in rnds:
+		if trm[0] not in rndidx:
 			rndcnt = 0			
 		else:			
 			rndcnt = rndidx[trm[0]]
