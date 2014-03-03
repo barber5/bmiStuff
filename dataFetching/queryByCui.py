@@ -41,7 +41,7 @@ def getCuis(queryTerm, src_type=None):
 			terms.add(row[0])
 	nids = set([])
 	for term in terms:
-		nidQuery = "SELECT nid from mgrep where tid=%s"
+		nidQuery = "SELECT nid from mgrep where negated=0 and familyHistory = 0 and tid=%s"
 		rows = tryQuery(stride_db, nidQuery, [term])
 		print >> sys.stderr, 'got '+str(len(rows))+' notes for '+str(term)
 		for row in rows:
