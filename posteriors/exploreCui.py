@@ -54,7 +54,11 @@ def cuiFrequencies(patients, freqThreshold=0.0):
 			terms[term] += 1			
 	newResult = {}
 	print >> sys.stderr, "Got "+str(len(terms.keys())) +" cuis"
+	i = 0
 	for trm, cnt in terms.iteritems():
+		i += 1
+		if i%1000 == 0:
+			print >> sys.stderr, str(i) +' of '+str(len(terms.keys()))
 		if float(cnt)/ len(patients.keys()) < freqThreshold:
 			continue
 		else:
