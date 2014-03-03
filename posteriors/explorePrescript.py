@@ -39,7 +39,7 @@ def prescriptionFrequencies(patients, freqThreshold=0.0):
 	for pat,patDict in patients.iteritems():
 		patTerms = {}
 		for n in patDict['prescriptions']:						
-			term = n['rxid']
+			term = n['ingr_set_id']
 			if term not in descripts:
 				descripts[term] = n['drug_description']
 			if term not in patTerms:
