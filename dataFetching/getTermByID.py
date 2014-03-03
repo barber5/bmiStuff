@@ -7,7 +7,7 @@ import sys, pprint
 def getTerm(term_id):	
 	query = "SELECT term from terms where termid=%s"
 	rows = tryQuery(term_db, query, [term_id])
-	return rows[0][0]
+	return rows[0][0].upper()
 
 def getTermCui(cui):
 	print >> sys.stderr, 'cui: '+str(cui)
@@ -17,7 +17,7 @@ def getTermCui(cui):
 		return None
 	if len(rows[0]) == 0:
 		return None
-	return rows[0][0]
+	return rows[0][0].upper()
 
 if __name__ == "__main__":
 	getTerm(sys.argv[1])
