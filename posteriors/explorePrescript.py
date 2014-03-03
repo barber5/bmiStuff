@@ -51,6 +51,7 @@ def prescriptionFrequencies(patients, freqThreshold=0.0):
 	for trm, cnt in terms.iteritems():
 		print trm
 		print cnt
+		print float(cnt) / len(patients.keys())		
 		if float(cnt)/ len(patients.keys()) < freqThreshold:
 			continue
 		else:
