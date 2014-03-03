@@ -47,6 +47,7 @@ def labFrequencies(patients, freqThreshold=0.0):
 			if term not in terms:
 				terms[term] = 0
 			terms[term] += 1
+	print >> sys.stderr, "Got "+str(len(terms.keys())) +" labs"
 	newResult = {}
 	for trm, cnt in terms.iteritems():
 		if float(cnt)/ len(patients.keys()) < freqThreshold:
