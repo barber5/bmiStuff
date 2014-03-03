@@ -73,7 +73,8 @@ def cuiFrequencies(patients, freqThreshold=0.0):
 def printTerms(pats, rnds):	
 	for trm,cnt in pats.iteritems():
 		if trm not in rnds:
-			rndcnt = 0			
+			rndcnt = 0		
+			continue	
 		else:			
 			rndcnt = rnds[trm]
 		#print >> sys.stderr, trm
