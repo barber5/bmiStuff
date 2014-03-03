@@ -205,7 +205,7 @@ def getAllSerial(queryTerm, src_type=None):
 		pidInt = [int(i) for i in pids]	
 		pidInt.sort()	
 		pids = [str(s) for s in pidInt]
-		r.hset('cuis', cui, compIt(pids))
+		r.hset('cuis', queryTerm, compIt(pids))
 	else:
 		pids = decomp(pids)
 	(term_db, stride_db) = getDbs()
