@@ -15,7 +15,7 @@ def decomp(res):
 
 def getCuis(queryTerm, src_type=None):
 	(term_db, stride_db) = getDbs()
-	query = "SELECT distinct tid,term from terms t1 where t1.term=%s'
+	query = "SELECT distinct tid,term from terms t1 where t1.term=%s"
 	#query = "SELECT distinct cid from terms t1 inner join tid2cid tc1 on t1.tid=tc1.tid where t1.term like '%%"+queryTerm+"%%'"
 	repls = [queryTerm]
 	if src_type:
