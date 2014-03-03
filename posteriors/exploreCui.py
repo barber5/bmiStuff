@@ -60,7 +60,7 @@ def cuiFrequencies(patients, freqThreshold=0.0):
 		if float(cnt)/ len(patients.keys()) < freqThreshold:
 			continue
 		else:
-			cui = getTermCui(t['cui'])
+			cui = getTermCui(trm[0])			
 			if not cui:
 				continue
 			term = (cui, trm[1], trm[2])
