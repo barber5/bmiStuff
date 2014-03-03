@@ -20,7 +20,7 @@ def getCuis(queryTerm, src_type=None):
 	if src_type:
 		query += " and src_type=%s"
 		repls.append(src_type)	
-	rows = tryQuery(stride_db, query, repls)
+	rows = tryQuery(term_db, query, repls)
 	result = []
 	for row in rows:		
 		result.append(row[0])
