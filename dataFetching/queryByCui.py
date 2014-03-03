@@ -29,7 +29,7 @@ def getCuis(queryTerm, src_type=None):
 			continue
 		
 		related = closure_term(cui)
-		print >> sys.stderr, "related to "+str(r[0])+" is: "+str(related)
+		print >> sys.stderr, "related to "+str(cui)+" is: "+str(related)
 
 	stride_db.close()
 	term_db.close()
