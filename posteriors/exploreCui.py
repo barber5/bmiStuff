@@ -15,8 +15,8 @@ def expForCode(code, sampleRate):
 		pids = decomp(pids)
 		try:
 			pids = json.loads(pids)
-		except exception as e:
-			print 'was not json'
+		except Exception as e:
+			print >> sys.stderr, 'was not json'
 	print >> sys.stderr, 'got %s pids' % str(len(pids))
 	result = {}
 	for i, pid in enumerate(pids):
