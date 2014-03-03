@@ -23,8 +23,8 @@ def getCuis(queryTerm, src_type=None):
 	rows = tryQuery(term_db, query, repls)
 	print >> sys.stderr, 'matching terms: '+str(rows)
 	tid = rows[0][0]
-	query2 = "SELECT distinct cid tid2cid tc1 where tc1.tid=%s"
-	rows = tryQuery(term_db, query2, [tid])
+	query2 = "SELECT distinct cid tid2cid tc1 where tc1.tid="+str(tid)
+	rows = tryQuery(term_db, query2, [])
 	print >> sys.stderr, 'matching cids: '+str(rows)
 	stride_db.close()
 	term_db.close()
