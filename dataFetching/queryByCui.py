@@ -22,12 +22,13 @@ def getCuis(queryTerm, src_type=None):
 		query += " and src_type=%s"
 		repls.append(src_type)	
 	rows = tryQuery(term_db, query, repls)
+	print rows
 	result = []
 	for row in rows:		
 		result.append(row[0])
 	stride_db.close()
 	term_db.close()
-	print result
+	
 	#return result
 
 
