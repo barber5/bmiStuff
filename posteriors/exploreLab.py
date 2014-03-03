@@ -32,23 +32,18 @@ def expForCode(code, sampleRate):
 	return result
 
 # patients is pid -> {pid, src_type, labs -> [{age, , component, description, lid, line, ord, ord_num, proc, proc_cat, ref_high, ref_low, ref_norm, ref_unit, result_flag, result_inrange, src, timeoffset}], notes -> [{age, cpt, duration, icd9, nid, pid, src, src_type, timeoffset, year, terms -> [{cui, familyHistory, negated, nid, termid, tid}]}], prescriptions -> [{age, drug_description, ingr_set_id, order_status, pid, route, rxid, src, timeoffset}], visits -> [{age, cpt, duration, icd9, pid, src, src_type, timeoffset, year}] }
-def cuiFrequencies(patients, freqThreshold=0.0):
+def labFrequencies(patients, freqThreshold=0.0):
 	terms = {}
 	for pat,patDict in patients.iteritems():
 		patTerms = {}
-		for n in patDict['notes']:
-			for t in n['terms']:
-				if not t['cui'] or t['cui'] == 0:
-					continue
-				term = (t['cui'], t['negated'], t['familyHistory'])
-				if term not in patTerms:
-					patTerms[term] = 0
-				patTerms[term] += 1
-		for term,cnt in patTerms.iteritems():
-			cui = getTermCui(term[0])
-			if not cui:
+		for n in patDict['labs']:		
+			if 'result_flag' not in n or not n['result_flag'] or n['result_flag'] == '':
 				continue
-			term = (cui, term[1], term[2])
+			term = (n['description'], n['component'], n['result_flag'])
+			if term not in patTerms:
+				patTerms[term] = 0
+			patTerms[term] += 1
+		for term,cnt in patTerms.iteritems():			
 			if term not in terms:
 				terms[term] = 0
 			terms[term] += 1
@@ -96,8 +91,8 @@ if __name__ == "__main__":
 		sys.exit(1)
 	pats = expForCode(sys.argv[1], float(sys.argv[5]))
 	rnd = expForCode(sys.argv[2], float(sys.argv[6]))
-	patTerms = cuiFrequencies(pats, float(sys.argv[3]))
-	rndTerms = cuiFrequencies(rnd, float(sys.argv[4]))
+	patTerms = labFrequencies(pats, float(sys.argv[3]))
+	rndTerms = labFrequencies(rnd, float(sys.argv[4]))
 	#pprint.pprint(rndTerms)
 	printTerms(patTerms, rndTerms)
 
