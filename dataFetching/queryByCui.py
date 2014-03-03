@@ -29,7 +29,7 @@ def getCuis(queryTerm, src_type=None):
 	print >> sys.stderr, 'matching cids: '+str(rows)
 	cids = []
 	for r in rows:
-		related = closure_terms(r[0])
+		related = closure_term(r[0])
 		print >> sys.stderr, "related to "+str(r[0])+" is: "+related
 
 	stride_db.close()
