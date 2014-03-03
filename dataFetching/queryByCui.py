@@ -32,11 +32,14 @@ def getCuis(queryTerm, src_type=None):
 		terms = closure_term(cui)
 		for t in terms:
 			related.add(t['cui_exp'])
-	for rel in related:
-		print rel
-		tidQuery = "SELECT distinct tid from terms where cui=%s"
+	terms = set([])
+	for rel in related:		
+		tidQuery = "SELECT distinct tid,term from terms where cui=%s"
 		rows = tryQuery(term_db, tidQuery, [rel])		
-		print rows
+		print sys.stderr >> 'terms: '+str(rows)
+		for row in rows:
+			terms.add(row[0])
+	print terms
 
 	stride_db.close()
 	term_db.close()
