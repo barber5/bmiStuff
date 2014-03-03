@@ -197,7 +197,7 @@ def writeSinglePatientFile(pat, pid):
 
 def getAllSerial(queryTerm, src_type=None):
 	try:
-		pids = decomp(r.hget('cuis', queryTerm))
+		pids = r.hget('cuis', queryTerm)
 	except Exception as e:
 		pids = None
 	if not pids:
