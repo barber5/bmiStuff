@@ -31,7 +31,7 @@ def getCuis(queryTerm, src_type=None):
 		
 		terms = closure_term(cui)
 		for t in terms:
-			related.add(t['cid_exp'])
+			related.add(t['cui_exp'])
 	for rel in related:
 		print rel
 		tidQuery = "SELECT distinct tid from terms where cui=%s"
