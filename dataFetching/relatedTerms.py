@@ -18,11 +18,11 @@ def related_terms(term_query):
 		result.append(d)
 	return result
 
-def closure_term(cid):
+def closure_term(cui):
 	query = "SELECT DISTINCT i1.cid2 AS cid_norm, s1.cui AS cui_norm, s1.str AS str_norm, i2.cid1 AS cid_exp, s2.cui AS cui_exp, s2.str AS str_exp FROM terminology3.str2cid s1, terminology3.str2cid s2, terminology3.isaclosure i1, terminology3.isaclosure i2 WHERE i2.cid1 = s2.cid AND i1.cid2 = s1.cid AND i2.cid2 = i1.cid1 AND s1.cui IN (%s)"
-	print >> sys.stderr, 'working in cid '+str(cid)
+	print >> sys.stderr, 'working in cui '+str(cui)
 	result = []
-	rows = tryQuery(term_db, query, [cid])
+	rows = tryQuery(term_db, query, [cui])
 	
 	for row in rows:
 		d = {
@@ -40,7 +40,7 @@ if __name__ == "__main__":
 	rt = related_terms(sys.argv[1])	
 	result = []
 	for t in rt:
-		result.extend(closure_term(t['cid']))
+		result.extend(closure_term(t['cui']))
 
 	pprint.pprint(result)
 
