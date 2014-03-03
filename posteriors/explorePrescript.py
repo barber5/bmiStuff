@@ -60,12 +60,18 @@ def prescriptionFrequencies(patients, freqThreshold=0.0):
 	print >> sys.stderr, "After filtering, have "+str(len(terms.keys())) +" prescriptions"
 	return newResult
 
-def printTerms(pats, rnds):	
+def printTerms(pats, rnds):
+	patidx = {}
+	for trm,cnt in pats.iteritems():
+		patidx[trm[0]] = cnt
+	rndidx = {}
+	for trm, cnt in pats.iteritems():
+		rndidx[trm[0]] = cnt
 	for trm,cnt in pats.iteritems():
 		if trm not in rnds:
 			rndcnt = 0			
 		else:			
-			rndcnt = rnds[trm]
+			rndcnt = rndidx[trm[0]]
 		#print >> sys.stderr, trm
 		term = trm[0]
 		#print term
