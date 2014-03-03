@@ -47,8 +47,10 @@ def prescriptionFrequencies(patients, freqThreshold=0.0):
 				terms[term] = 0
 			terms[term] += 1
 	newResult = {}
-	print >> sys.stderr, "Got "+str(len(terms.keys())) +" prescriptions"
+	print >> sys.stderr, "Got "+str(len(terms.keys())) +" prescriptions"	
 	for trm, cnt in terms.iteritems():
+		print trm
+		print cnt
 		if float(cnt)/ len(patients.keys()) < freqThreshold:
 			continue
 		else:
