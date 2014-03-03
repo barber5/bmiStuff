@@ -56,7 +56,7 @@ def getCuis(queryTerm, src_type=None):
 	stride_db.close()
 	term_db.close()
 	
-	#return result
+	return list(pids)
 
 
 def getSingleVisits(pid, stride_db, src_type=None):	
