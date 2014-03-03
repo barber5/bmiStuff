@@ -1,5 +1,6 @@
 from db import *
 import sys, pprint, threading, json, os, time, copy, redis, bson
+from relatedTerms import *
 r = redis.StrictRedis(host='localhost', port=6379, db=0)
 
 
@@ -26,6 +27,11 @@ def getCuis(queryTerm, src_type=None):
 	query2 = "SELECT distinct cid from tid2cid tc1 where tc1.tid="+str(tid)
 	rows = tryQuery(term_db, query2, [])
 	print >> sys.stderr, 'matching cids: '+str(rows)
+	cids = []
+	for r in rows:
+		related = closure_terms(r[0])
+		print >> sys.stderr, "related to "+str(r[0])+" is: "+related
+
 	stride_db.close()
 	term_db.close()
 	
