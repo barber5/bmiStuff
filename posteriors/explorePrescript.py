@@ -35,10 +35,13 @@ def expForCode(code, sampleRate):
 # patients is pid -> {pid, src_type, labs -> [{age, , component, description, lid, line, ord, ord_num, proc, proc_cat, ref_high, ref_low, ref_norm, ref_unit, result_flag, result_inrange, src, timeoffset}], notes -> [{age, cpt, duration, icd9, nid, pid, src, src_type, timeoffset, year, terms -> [{cui, familyHistory, negated, nid, termid, tid}]}], prescriptions -> [{age, drug_description, ingr_set_id, order_status, pid, route, rxid, src, timeoffset}], visits -> [{age, cpt, duration, icd9, pid, src, src_type, timeoffset, year}] }
 def prescriptionFrequencies(patients, freqThreshold=0.0):
 	terms = {}
+	descripts = {}
 	for pat,patDict in patients.iteritems():
 		patTerms = {}
 		for n in patDict['prescriptions']:						
-			term = (n['rxid'], n['drug_description'])
+			term = n['rxid']
+			if term not in descripts:
+				descripts[term] = n['drug_description']
 			if term not in patTerms:
 				patTerms[term] = 0
 			patTerms[term] += 1
@@ -55,7 +58,8 @@ def prescriptionFrequencies(patients, freqThreshold=0.0):
 		if float(cnt)/ len(patients.keys()) < freqThreshold:
 			continue
 		else:
-			newResult[trm] = float(cnt)/ len(patients.keys())
+			term = (trm, descripts[trm])
+			newResult[term] = float(cnt)/ len(patients.keys())
 	print >> sys.stderr, "After filtering, have "+str(len(terms.keys())) +" prescriptions"
 	return newResult
 
