@@ -166,14 +166,14 @@ def writeSinglePatientFile(pat, pid, code):
 	fi.close()'''
 
 
-def getAllSerial(cui, src_type=None):
-	pids = r.hget('cuis', cui)
+def getAllSerial(queryTerm, src_type=None):
+	pids = None
 	if not pids:
-		pids = getCuis(code, src_type)
+		pids = getCuis(queryTerm, src_type)
 		pidInt = [int(i) for i in pids]	
 		pidInt.sort()	
 		pids = [str(s) for s in pidInt]
-		r.hset('cuis', cui, compIt(pids))
+		#r.hset('cuis', cui, compIt(pids))
 	else:
 		pids = decomp(pids)
 	(term_db, stride_db) = getDbs()
