@@ -196,7 +196,10 @@ def writeSinglePatientFile(pat, pid, code):
 
 
 def getAllSerial(queryTerm, src_type=None):
-	pids = decomp(r.hget('cuis', queryTerm))
+	try:
+		pids = decomp(r.hget('cuis', queryTerm))
+	except Exception as e:
+		pids = None
 	if not pids:
 		pids = getCuis(queryTerm, src_type)
 		pidInt = [int(i) for i in pids]	
