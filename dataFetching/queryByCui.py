@@ -36,7 +36,7 @@ def getCuis(queryTerm, src_type=None):
 	for rel in related:		
 		tidQuery = "SELECT distinct tid,term from terms where cui=%s"
 		rows = tryQuery(term_db, tidQuery, [rel])		
-		print sys.stderr >> 'terms: '+str(rows)
+		print >> sys.stderr, 'terms: '+str(rows)
 		for row in rows:
 			terms.add(row[0])
 	print terms
