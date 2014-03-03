@@ -40,7 +40,7 @@ def cuiFrequencies(patients, freqThreshold=0.0):
 			for t in n['terms']:
 				if not t['cui'] or t['cui'] == 0:
 					continue
-				cui = getTerm(t['cui'])
+				cui = getTermCui(t['cui'])
 				if not cui:
 					continue
 				term = (cui, t['negated'], t['familyHistory'])
