@@ -13,8 +13,10 @@ def expForCode(code, sampleRate):
 		r.hset('codes', str(code), compIt(json.dumps(pids)))
 	else:
 		pids = decomp(pids)
-		print pids
-		pids = json.loads(pids)
+		try:
+			pids = json.loads(pids)
+		except exception as e:
+			print 'was not json'
 	print >> sys.stderr, 'got %s pids' % str(len(pids))
 	result = {}
 	for i, pid in enumerate(pids):
