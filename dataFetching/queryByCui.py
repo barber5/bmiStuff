@@ -46,9 +46,13 @@ def getCuis(queryTerm, src_type=None):
 		print >> sys.stderr, 'got '+str(len(rows))+' notes for '+str(term)
 		for row in rows:
 			nids.add(row[0])
-		
-	
-
+	pids = set([])
+	for nid in nids:
+		pidQuery = "SELECT pid from notes where nid=%s"
+		rows = tryQuery(stride_db, pidQuery, [nid])
+		for row in rows:
+			pids.add(row[0])
+	print >> sys.stderr, 'got '+str(len(pids))+ ' pids'
 	stride_db.close()
 	term_db.close()
 	
