@@ -77,7 +77,7 @@ def printTerms(pats, rnds):
 			increase = 9999
 		else:
 			increase = float(cnt - rndcnt)/float(rndcnt)
-		print '%s negated: %s history: %s\t%s\t%s\t%s' % (term, str(trm[1]), str(trm[2]), str(cnt), str(rndcnt), str(increase))
+		print '%s\t%s\t%s\t%s' % (trm[1], str(cnt), str(rndcnt), str(increase))
 	'''
 	for trm, cnt, in rnds.iteritems():
 		#print trm
