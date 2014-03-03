@@ -25,6 +25,8 @@ def getCuis(queryTerm, src_type=None):
 	print >> sys.stderr, 'matching terms: '+str(rows)
 	for r1 in rows:		
 		cui = r1[0]
+		if not cui:
+			continue
 		query2 = "SELECT distinct cid from tid2cid tc1 where tc1.tid=%s"
 		rows = tryQuery(term_db, query2, [cui])
 		print >> sys.stderr, 'matching cids: '+str(rows)
