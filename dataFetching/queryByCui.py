@@ -16,16 +16,16 @@ def decomp(res):
 def getCuis(queryTerm, src_type=None):
 	(term_db, stride_db) = getDbs()
 	query = "SELECT distinct tid,term from terms t1 where t1.term=%s"
-	#query = "SELECT distinct cid from terms t1 inner join tid2cid tc1 on t1.tid=tc1.tid where t1.term like '%%"+queryTerm+"%%'"
 	repls = [queryTerm]
 	if src_type:
 		query += " and src_type=%s"
 		repls.append(src_type)	
 	rows = tryQuery(term_db, query, repls)
-	print rows
-	result = []
-	for row in rows:		
-		result.append(row[0])
+	print >> sys.stderr, 'matching terms: '+str(rows)
+	tid = rows[0][0]
+	query2 = "SELECT distinct cid tid2cid tc1 where tc1.tid=%s"
+	rows = tryQuery(term_db, [tid])
+	print >> sys.stderr, 'matching cids: '+str(rows)
 	stride_db.close()
 	term_db.close()
 	
