@@ -39,6 +39,13 @@ def getCuis(queryTerm, src_type=None):
 		print >> sys.stderr, 'terms: '+str(rows)
 		for row in rows:
 			terms.add(row[0])
+	nids = set([])
+	for term in terms:
+		nidQuery = "SELECT distinct nid from mgrep where tid=%s"
+		rows = tryQuery(stride_db, nidQuery, [term])
+		for row in rows:
+			nids.add(row[0])
+		print nids
 	print terms
 
 	stride_db.close()
