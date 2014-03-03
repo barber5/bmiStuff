@@ -25,7 +25,8 @@ def expForCode(code, sampleRate):
 		if r.hexists('pats', pid):
 			resp = r.hget('pats', pid)
 			#print resp
-			result[pid] = decomp(resp)
+			dd = decomp(resp)
+			result[pid] = {'notes': dd['notes']}
 			print >> sys.stderr, str(i)+' '+str(pid)
 		else:
 			print >> sys.stderr, 'dont have '+str(pid)
