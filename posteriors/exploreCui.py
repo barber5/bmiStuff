@@ -40,14 +40,14 @@ def cuiFrequencies(patients, freqThreshold=0.0):
 			for t in n['terms']:
 				if not t['cui'] or t['cui'] == 0:
 					continue
-				term = (t['cui'], t['negated'], t['familyHistory'])
+				cui = getTerm(t['cui'])
+				if not cui:
+					continue
+				term = (cui, t['negated'], t['familyHistory'])
 				if term not in patTerms:
 					patTerms[term] = 0
 				patTerms[term] += 1
-		for term,cnt in patTerms.iteritems():
-			cui = getTermCui(term[0])
-			if not cui:
-				continue
+		for term,cnt in patTerms.iteritems():						
 			term = (cui, term[1], term[2])
 			if term not in terms:
 				terms[term] = 0
