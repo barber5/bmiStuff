@@ -48,7 +48,7 @@ def getCuis(queryTerm, src_type=None):
 			nids.add(row[0])
 	pids = set([])
 	for nid in nids:
-		pidQuery = "SELECT pid from notes where nid=%s"
+		pidQuery = "SELECT pid from note where nid=%s"
 		rows = tryQuery(stride_db, pidQuery, [nid])
 		for row in rows:
 			pids.add(row[0])
