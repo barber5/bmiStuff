@@ -53,6 +53,7 @@ def prescriptionFrequencies(patients, freqThreshold=0.0):
 			continue
 		else:
 			newResult[trm] = float(cnt)/ len(patients.keys())
+	print >> sys.stderr, "After filtering, have "+str(len(terms.keys())) +" prescriptions"
 	return newResult
 
 def printTerms(pats, rnds):	
