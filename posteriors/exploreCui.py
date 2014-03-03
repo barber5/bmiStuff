@@ -64,7 +64,9 @@ def cuiFrequencies(patients, freqThreshold=0.0):
 			if not cui:
 				continue
 			term = (cui, trm[1], trm[2])
-			newResult[term] = float(cnt)/ len(patients.keys())
+			if term not in newResult:
+				newResult[term] = 0
+			newResult[term] += float(cnt)/ len(patients.keys())
 	print >> sys.stderr, "Survived "+str(len(terms.keys())) +" cuis"
 	return newResult
 

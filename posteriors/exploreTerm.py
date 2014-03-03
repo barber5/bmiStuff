@@ -36,7 +36,7 @@ def termFrequencies(patients, freqThreshold=0.0):
 		patTerms = {}
 		for n in patDict['notes']:
 			for t in n['terms']:
-				term = (getTerm(t['termid']), t['termid'], t['negated'], t['familyHistory'])
+				term = (t['termid'], t['termid'], t['negated'], t['familyHistory'])
 				if term not in patTerms:
 					patTerms[term] = 0
 				patTerms[term] += 1
@@ -50,7 +50,11 @@ def termFrequencies(patients, freqThreshold=0.0):
 		if float(cnt)/ len(patients.keys()) < freqThreshold:
 			continue
 		else:
-			newResult[trm] = float(cnt)/ len(patients.keys())
+			termStr = getTerm(trm[0])
+			term = (termStr, trm[1], trm[2])
+			if term not in newResult:
+				newResult[term] = 0
+			newResult[trm] += float(cnt)/ len(patients.keys())
 	return newResult
 
 def printTerms(pats, rnds):	
