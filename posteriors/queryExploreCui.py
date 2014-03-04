@@ -27,7 +27,13 @@ def expForCode(code, sampleRate):
 			resp = r.hget('pats', pid)
 			#print resp
 			dd = decomp(resp)
-			result[pid] = {'notes': dd['notes']}
+			nextRes = {'notes': []}
+			for n in dd['notes']:
+				nextRes['notes'].append({'terms': []})
+				for t in n['terms']:
+					nextRes['notes'][-1]['terms'].append(t)
+
+			result[pid] = nextRes
 			print >> sys.stderr, str(i)+' '+str(pid)
 		else:
 			print >> sys.stderr, 'dont have '+str(pid)
@@ -53,7 +59,13 @@ def expForCui(code, sampleRate):
 			resp = r.hget('pats', pid)
 			#print resp
 			dd = decomp(resp)
-			result[pid] = {'notes': dd['notes']}
+			nextRes = {'notes': []}
+			for n in dd['notes']:
+				nextRes['notes'].append({'terms': []})
+				for t in n['terms']:
+					nextRes['notes'][-1]['terms'].append(t)
+
+			result[pid] = nextRes
 			print >> sys.stderr, str(i)+' '+str(pid)
 		else:
 			print >> sys.stderr, 'dont have '+str(pid)
