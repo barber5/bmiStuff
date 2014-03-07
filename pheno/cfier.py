@@ -1,4 +1,4 @@
-import sys,os, pprint, json, random
+import sys,os, pprint, json, random, pprint
 sys.path.append(os.path.realpath('../tempClustering'))
 sys.path.append(os.path.realpath('./tempClustering'))
 sys.path.append(os.path.realpath('../dataFetching'))
@@ -180,8 +180,8 @@ def runCfier(trainFile, testFile):
 
 if __name__ == "__main__":
 	data = {'863321': 1, '99884': 0}
-	vectorizePids(data)
-
+	p = vectorizePids(data)
+	pprint.pprint(p)
 
 
 
