@@ -21,5 +21,13 @@ def getTermCui(cui):
 		return None
 	return rows[0][0].upper()
 
+def getIngredients(ingr_set_id):
+	query = "SELECT rxcui from ingredient where ingr_set_id=%s"
+	rows = tryQuery(stride_db, query, [ingr_set_id])
+	ingredients = []
+	for row in rows:
+		ingredients.append(row[0])
+	return ingredients
+
 if __name__ == "__main__":
 	getTerm(sys.argv[1])
