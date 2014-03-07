@@ -141,7 +141,7 @@ def vectorizePids(data, includeCid=False, includeLab=True, includeTerm=True, inc
 					for c in codes:						
 						if 'codeCollapse' in meta and meta['codeCollapse']:
 							c = code.split('.')[0]
-						feat = getFeatName({'type': 'code', 'visit': c})	
+						feat = getFeatName({'type': 'code', 'code': c})	
 						if meta['codeCounting'] == 'boolean':
 							nextPerson[feat] = 1
 						elif meta['codeCounting'] == 'bag':
