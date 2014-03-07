@@ -176,7 +176,7 @@ def runCfier(trainFile, testFile):
 	None
 
 if __name__ == "__main__":
-	data = {'505': 1, '23889': 0}
+	data = {'863321': 1, '99884': 0}
 	vectorizePids(data)
 
 
