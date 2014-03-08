@@ -6,7 +6,7 @@ sys.path.append(os.path.realpath('./dataFetching'))
 from queryByCui import getCuis, r, decomp, compIt
 from getTermByID import getTerm, getTermCui, getIngredients
 from queryByCode import getPids
-from sklearn.feature_extraction import DictVectorizer as FH
+from sklearn.feature_extraction import FeatureHasher as FH
 
 meta = {
 	'termCounting': 'noteboolean',
