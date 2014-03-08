@@ -6,7 +6,7 @@ sys.path.append(os.path.realpath('./dataFetching'))
 from queryByCui import getCuis, r, decomp, compIt
 from getTermByID import getTerm, getTermCui, getIngredients
 from queryByCode import getPids
-from sklearn.feature_extraction import FeatureHasher as FH
+from sklearn.feature_extraction import DictVectorizer as FH
 
 meta = {
 	'termCounting': 'noteboolean',
@@ -176,10 +176,10 @@ def trainModel(trainData):
 	pprint.pprint(vectPos)
 	print 'neg:'
 	pprint.pprint(vectNeg)
-	fhPos = FH(input_type='dict')
-	posArray = fhPos.fit_transform(trainPos)
-	fhNeg = FH(input_type='dict')
-	negArray = fhNeg.fit_transform(trainNeg)
+	fhPos = FH()
+	posArray = fhPos.fit_transform(trainPos).toarray()
+	fhNeg = FH()
+	negArray = fhNeg.fit_transform(trainNeg).toarray()
 
 	#train the model
 	# return
