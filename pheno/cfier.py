@@ -9,10 +9,11 @@ from queryByCode import getPids
 from sklearn.feature_extraction import FeatureHasher as FH
 
 meta = {
-	'termCounting': 'boolean',
-	'labCounting': 'boolean',
-	'prescriptionCounting': 'boolean',
-	'codeCounting': 'boolean'
+	'termCounting': 'noteboolean',
+	'labCounting': 'categorical_status',
+	'labCounting2': 'bag'
+	'prescriptionCounting': 'bag',
+	'codeCounting': 'bag'
 }
 
 def getPidsFromFile(fname):
