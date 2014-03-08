@@ -3,7 +3,7 @@ import sys
 from db import *
 
 
-def getVecForPid(pid, code):
+def getVecForPid(pid, code=None):
 	(term_db, stride_db) = getDbs()
 	if r.exists(pid):
 		print 'exists already'
