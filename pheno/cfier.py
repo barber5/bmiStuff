@@ -173,9 +173,10 @@ def trainModel(trainData):
 	fh = FH()
 	trainArray = fh.fit_transform(trainVect).toarray()	
 	tree = rfc(verbose=100)
+	print trainData.values()
 	tree.fit(trainArray, trainData.values())
-	print tree.apply(trainArray[0])
-	print tree.apply(trainArray[1])
+	print tree.predict(trainArray[0])
+	print tree.predict(trainArray[1])
 		
 	#train the model
 	# return
