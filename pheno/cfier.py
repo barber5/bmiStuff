@@ -177,15 +177,18 @@ def trainModel(trainData):
 	tree.fit(trainArray, trainData.values())
 	print tree.predict(trainArray[0])
 	print tree.predict(trainArray[1])
-		
+	return (tree, fh)
 	#train the model
 	# return
 
-def runCfier(trainFile, testFile):
-	trainPidDict = getPidsFromFile(trainFile)  # {pid -> pos/neg}
-	mod = trainModel(trainPidDict)
-	testPidDict = getPidsFromFile(testFile)
-	testVect = vectorizePids(testPidDict)
+def runCfier(trainData, testData):	
+	(model, featurizer) = trainModel(trainData)	
+	testVect = vectorizePids(testData)	
+	for tv,l in testVect.iteritems():
+		tvArray = featurizer.transform(tv)
+		print 'prediction: '+str(model.predict(tvArray))
+		print 'actual: '+str(l)
+
 	# for each in training, predict with our mod and see if we're right or not
 	# calculate stats and see what the news is
 
@@ -193,7 +196,8 @@ def runCfier(trainFile, testFile):
 
 if __name__ == "__main__":
 	data = {'863321': 1, '99884': 0}
-	trainModel(data)
+	testData = {'303030': 1, '2462': 0}
+	runCfier(data, testData)
 	
 
 
