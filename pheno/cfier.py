@@ -7,6 +7,7 @@ from queryByCui import getCuis, r, decomp, compIt
 from getTermByID import getTerm, getTermCui, getIngredients
 from queryByCode import getPids
 from sklearn.feature_extraction import DictVectorizer as FH
+from sklearn.ensemble import RandomForestClassifier as rfc
 
 meta = {
 	'termCounting': 'noteboolean',
@@ -167,12 +168,13 @@ def filterDataByLabel(data, label):
 			result[pid] = lab
 	return result
 
-def trainModel(trainData):	
+def trainModel(trainData):		
+	trainVect = vectorizePids(trainData)	
+	fh = FH()
+	trainArray = fh.fit_transform(trainVect).toarray()	
+	tree = rfc()
+	tree.fit(trainArray, trainData.values())
 	
-	vectPos = vectorizePids(trainData)	
-	fhPos = FH()
-	posArray = fhPos.fit_transform(vectPos).toarray()	
-	print posArray
 		
 	#train the model
 	# return
