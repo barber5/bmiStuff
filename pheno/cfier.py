@@ -168,14 +168,10 @@ def filterDataByLabel(data, label):
 	return result
 
 def trainModel(trainData):	
-	trainPos = filterDataByLabel(trainData, 1)
-	trainNeg = filterDataByLabel(trainData, 0)
-	vectPos = vectorizePids(trainPos)
-	vectNeg = vectorizePids(trainNeg)	
+	
+	vectPos = vectorizePids(trainData)	
 	fhPos = FH()
-	posArray = fhPos.fit_transform(vectPos).toarray()
-	fhNeg = FH()
-	negArray = fhNeg.fit_transform(vectNeg).toarray()
+	posArray = fhPos.fit_transform(vectPos).toarray()	
 	for pat in posArray:
 		for fe in pat:
 			print fe
