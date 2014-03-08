@@ -9,6 +9,7 @@ def getPidsFromFile(fName):
 			if line == '':
 				break
 			lineArr = line.split(' ')
+			print lineArr
 			pid = lineArr[2]
 			getVecForPid(pid)
 
