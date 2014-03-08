@@ -11,7 +11,7 @@ from sklearn.feature_extraction import FeatureHasher as FH
 meta = {
 	'termCounting': 'noteboolean',
 	'labCounting': 'categorical_status',
-	'labCounting2': 'bag'
+	'labCounting2': 'bag',
 	'prescriptionCounting': 'bag',
 	'codeCounting': 'bag'
 }
