@@ -160,11 +160,22 @@ def vectorizePids(data, includeCid=False, includeLab=True, includeTerm=True, inc
 
 
 
-		
+def filterDataByLabel(data, label):
+	result = {}
+	for pid,lab in data.iteritems():
+		if lab == label:
+			result[pid] = lab
+	return result
 
 def trainModel(trainData):	
-	vectData = vectorizePids(trainData)
-
+	trainPos = filterDataByLabel(trainData, 1)
+	trainNeg = filterDataByLabel(trainData, 0)
+	vectPos = vectorizePids(trainPos)
+	vectNeg = vectorizePids(trainNeg)
+	fhPos = FH()
+	posArray = fhPos.fit_transform(trainPos)
+	fhNeg = FH()
+	negArray = fhNeg.fit_transform(trainNeg)
 
 	#train the model
 	# return
@@ -181,8 +192,8 @@ def runCfier(trainFile, testFile):
 
 if __name__ == "__main__":
 	data = {'863321': 1, '99884': 0}
-	p = vectorizePids(data)
-	pprint.pprint(p)
+	trainModel(data)
+	
 
 
 
