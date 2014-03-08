@@ -177,6 +177,7 @@ def trainModel(trainData):
 	fhNeg = FH()
 	negArray = fhNeg.fit_transform(trainNeg).toarray()
 	print posArray
+	print negArray
 	#train the model
 	# return
 
