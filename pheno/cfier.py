@@ -172,9 +172,7 @@ def trainModel(trainData):
 	vectPos = vectorizePids(trainData)	
 	fhPos = FH()
 	posArray = fhPos.fit_transform(vectPos).toarray()	
-	for pat in posArray:
-		for fe in pat:
-			print fe
+	print posArray
 		
 	#train the model
 	# return
