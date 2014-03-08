@@ -172,7 +172,7 @@ def trainModel(trainData):
 	trainVect = vectorizePids(trainData)	
 	fh = FH()
 	trainArray = fh.fit_transform(trainVect).toarray()	
-	tree = rfc(verbosity=100)
+	tree = rfc(verbose=100)
 	tree.fit(trainArray, trainData.values())
 
 		
