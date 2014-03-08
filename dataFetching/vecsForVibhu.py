@@ -4,6 +4,7 @@ import sys
 
 def getPidsFromFile(fName):
 	with open(fName, 'r') as fi:
+		firstline = fi.readline()
 		while True:
 			line = fi.readline()
 			if line == '':
