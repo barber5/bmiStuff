@@ -6,7 +6,7 @@ def getPidsFromFile(fName):
 	with open(fName, 'r') as fi:
 		firstline = fi.readline()
 		while True:
-			line = fi.readline()
+			line = fi.readline().strip()
 			if line == '':
 				break
 			lineArr = line.split(' ')
