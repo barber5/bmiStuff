@@ -176,8 +176,10 @@ def trainModel(trainData):
 	posArray = fhPos.fit_transform(vectPos).toarray()
 	fhNeg = FH()
 	negArray = fhNeg.fit_transform(vectNeg).toarray()
-	print posArray
-	print negArray
+	for pat in posArray:
+		for fe in pat:
+			print fe
+		
 	#train the model
 	# return
 
