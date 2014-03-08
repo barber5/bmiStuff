@@ -171,16 +171,12 @@ def trainModel(trainData):
 	trainPos = filterDataByLabel(trainData, 1)
 	trainNeg = filterDataByLabel(trainData, 0)
 	vectPos = vectorizePids(trainPos)
-	vectNeg = vectorizePids(trainNeg)
-	print 'pos:'
-	pprint.pprint(vectPos)
-	print 'neg:'
-	pprint.pprint(vectNeg)
+	vectNeg = vectorizePids(trainNeg)	
 	fhPos = FH()
 	posArray = fhPos.fit_transform(trainPos).toarray()
 	fhNeg = FH()
 	negArray = fhNeg.fit_transform(trainNeg).toarray()
-
+	print posArray
 	#train the model
 	# return
 
