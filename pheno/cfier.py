@@ -72,7 +72,7 @@ def vectorizePids(data, diagTerm=None, includeCid=False, includeLab=True, includ
 			minOffset = float('inf')
 			for n in dd['notes']:
 				for t in n['terms']:
-					if t['tid'] == diagTerm and t['negated'] == 0 and t['familyHistory'] == 0:
+					if str(t['tid']) == diagTerm and int(t['negated']) == 0 and int(t['familyHistory']) == 0:
 						if float(n['timeoffset']) < minOffset:
 							minOffset = float(n['timeoffset'])
 			print 'minOffset: '+str(minOffset)	
