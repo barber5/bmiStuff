@@ -182,8 +182,7 @@ def trainModel(trainData, featureFilter={},includeCid=False, includeLab=True, in
 	trainVect = vectorizePids(trainData,featureFilter=featureFilter, includeLab=includeLab, includeCode=includeCode, includeTerm=includeTerm, includePrescription=includePrescription)	
 	fh = FH()
 	trainArray = fh.fit_transform(trainVect).toarray()	
-	tree = rfc(verbose=100, n_estimators=32, n_jobs=10)	
-	pprint.pprint(trainData.values())
+	tree = rfc(verbose=100, n_estimators=32, n_jobs=10)		
 	tree.fit(trainArray, trainData.values())	
 	return (tree, fh)
 	#train the model
@@ -243,8 +242,7 @@ def runCfier(trainData, testData, ignoreFile, featurefile, featSets):
 		includeCode=True
 
 	(model, featurizer) = trainModel(trainData, featureFilter=ignore, includeLab=includeLab, includeCode=includeCode, includeTerm=includeTerm, includePrescription=includePrescription)	
-	testVect = vectorizePids(testData)	
-	pprint.pprint(testVect)	
+	testVect = vectorizePids(testData)		
 	testArray = featurizer.transform(testVect).toarray()	
 	tn = 0
 	fn = 0
