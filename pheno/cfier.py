@@ -219,6 +219,7 @@ def getIgnoreCodes(ignoreFile):
 
 def runCfier(trainData, testData, ignoreFile, featurefile):	
 	ignore = getIgnoreCodes(ignoreFile)
+	print 'ignoring: '+str(ignore)
 	(model, featurizer) = trainModel(trainData, ignore)	
 	testVect = vectorizePids(testData)		
 	testArray = featurizer.transform(testVect).toarray()	
