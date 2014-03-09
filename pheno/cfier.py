@@ -182,7 +182,7 @@ def trainModel(trainData, featureFilter={},includeCid=False, includeLab=True, in
 	trainVect = vectorizePids(trainData,featureFilter=featureFilter, includeLab=includeLab, includeCode=includeCode, includeTerm=includeTerm, includePrescription=includePrescription)	
 	fh = FH()
 	trainArray = fh.fit_transform(trainVect).toarray()	
-	tree = rfc(verbose=100, n_estimators=10, n_jobs=10)	
+	tree = rfc(verbose=100, n_estimators=32, n_jobs=10)	
 	tree.fit(trainArray, trainData.values())	
 	return (tree, fh)
 	#train the model
