@@ -299,6 +299,7 @@ def getFromFile(num, fileName):
 	for i in range(num):
 		next = str(random.choice(pids))
 		result[next] = 1
+	return result
 
 
 if __name__ == "__main__":	
