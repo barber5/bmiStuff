@@ -56,7 +56,7 @@ def vectorizePids(data, includeCid=False, includeLab=True, includeTerm=True, inc
 	patients = []
 	print featureFilter
 	for pid, label in data.iteritems():
-		print pid
+		#print pid
 		resp = r.hget('pats', pid)
 		#print resp
 
@@ -151,8 +151,7 @@ def vectorizePids(data, includeCid=False, includeLab=True, includeTerm=True, inc
 						if 'codeCollapse' in meta and meta['codeCollapse']:
 							c = code.split('.')[0]
 						feat = getFeatName({'type': 'code', 'code': c})	
-						if feat in featureFilter:
-							print 'ignoring: '+str(feat)
+						if feat in featureFilter:						
 							continue
 						if meta['codeCounting'] == 'boolean':
 							nextPerson[feat] = 1
