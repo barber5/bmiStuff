@@ -171,8 +171,8 @@ def filterDataByLabel(data, label):
 			result[pid] = lab
 	return result
 
-def trainModel(trainData):		
-	trainVect = vectorizePids(trainData)	
+def trainModel(trainData, ignore={}):		
+	trainVect = vectorizePids(trainData,featureFilter=ignore)	
 	fh = FH()
 	trainArray = fh.fit_transform(trainVect).toarray()	
 	tree = rfc(verbose=100, n_estimators=128, n_jobs=10)	
@@ -207,13 +207,19 @@ def writeFeatureImportance(fimp, fileName):
 			f = resolveFeature(f)
 			fi.write(str(f)+'\t'+str(imp)+'\n')
 
+def getIgnoreCodes(ignoreFile):
+	result = set([])
+	with open(ignoreFile, 'r') as fi:
+		while True:
+			line = fi.readline().strip()
+			result.add(line)
+	return result
 
-def runCfier(trainData, testData, featurefile):	
-	(model, featurizer) = trainModel(trainData)	
-	testVect = vectorizePids(testData)	
-	pprint.pprint(testVect)
-	testArray = featurizer.transform(testVect).toarray()
-	print testArray
+def runCfier(trainData, testData, ignoreFile, featurefile):	
+	ignore = getIgnoreCodes(ignoreFile)
+	(model, featurizer) = trainModel(trainData, ignore)	
+	testVect = vectorizePids(testData)		
+	testArray = featurizer.transform(testVect).toarray()	
 	tn = 0
 	fn = 0
 	tp = 0
@@ -246,12 +252,10 @@ def runCfier(trainData, testData, featurefile):
 	
 
 if __name__ == "__main__":
-	
-
 	data = {'491512': 1, '363104': 1, '687334': 1, '465695': 0, '368359': 0, '715955': 1, '1025817': 1, '947471': 1, '53569': 1, '318952': 0, '501351': 0, '869342': 0, '8010': 1, '457234': 1, '1223694': 0, '412637': 1, '1021005': 0, '926586': 0, '673097': 1, '821398': 0, '565079': 1, '316813': 0, '461488': 0, '520317': 0, '859577': 0, '1162551': 0, '121698': 1, '892446': 0, '263038': 1, '1179135': 0, '182757': 1, '270': 0, '587916': 1, '823286': 1, '222400': 1, '326577': 1, '942247': 1, '190299': 1, '558668': 1, '781835': 1, '853327': 0, '989105': 0, '10421': 1, '660937': 0, '603203': 1, '242190': 0, '1178234': 0, '601270': 0, '1253366': 0, '54434': 1, '771630': 1, '612334': 0, '607007': 1, '121275': 0, '935990': 1, '1089454': 0, '1184571': 1, '487478': 0, '713091': 1, '1228859': 1, '835341': 0, '35885': 0, '1007602': 0, '1208331': 1, '1152170': 1, '893959': 1, '645630': 0, '691779': 1, '705917': 1, '1088020': 0, '1166113': 0, '869005': 1, '956474': 1, '1201458': 1, '817463': 0, '1146762': 0, '242481': 1, '71161': 0, '899279': 0, '1176047': 0, '375987': 0, '228897': 1, '243477': 0, '67745': 0, '624169': 0, '228286': 1, '138994': 1, '1144388': 0, '109449': 0, '813245': 1, '219340': 1, '935608': 0, '356220': 1, '988700': 0, '695214': 1, '1142528': 0, '875436': 0, '270658': 1, '1161185': 1}
 
 	testData = {'1124803': 1, '731110': 0, '1176047': 0, '77296': 1, '1125430': 1, '425224': 0, '451665': 0, '891315': 0, '1172204': 1, '866081': 1}
-	runCfier(data, testData, sys.argv[1])
+	runCfier(data, testData, sys.argv[1], sys.argv[2])
 	
 
 
