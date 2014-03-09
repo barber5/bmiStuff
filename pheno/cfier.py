@@ -55,8 +55,10 @@ def getFeatName(metaDict):
 def vectorizePids(data, includeCid=False, includeLab=True, includeTerm=True, includeCode=True, includePrescription=True, featureFilter={}, timeSlices=None):
 	patients = []
 	for pid, label in data.iteritems():
+		print pid
 		resp = r.hget('pats', pid)
 		#print resp
+
 		dd = decomp(resp)
 		nextPerson = {}
 		if meta['termCounting'] == 'noteboolean':  # we add 1 to a term count for each note it appears in
