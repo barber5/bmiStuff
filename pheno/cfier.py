@@ -224,10 +224,24 @@ def getIgnoreCodes(ignoreFile):
 			result.add(line)
 	return result
 
-def runCfier(trainData, testData, ignoreFile, featurefile):	
+def runCfier(trainData, testData, ignoreFile, featurefile, featSets):	
 	ignore = getIgnoreCodes(ignoreFile)
 	print 'ignoring: '+str(ignore)
-	(model, featurizer) = trainModel(trainData, ignore)	
+	includeCid=False
+	includeLab=False
+	includeTerm=False
+	includeCode=False
+	includePrescription=False	
+	if 'labs' in featSets:
+		includeLab=True
+	if 'meds' in featSets:
+		includePrescription=True
+	if 'terms' in featSets:
+		includeTerm=True
+	if 'codes' in featSets:
+		includeCode=True
+
+	(model, featurizer) = trainModel(trainData, ignore, includeLab=includeLab, includeCode=includeCode, includeTerm=includeTerm, includePrescription=includePrescription)	
 	testVect = vectorizePids(testData)		
 	testArray = featurizer.transform(testVect).toarray()	
 	tn = 0
@@ -285,13 +299,25 @@ def getFromFile(num, fileName):
 
 
 if __name__ == "__main__":	
-	if len(sys.argv) != 7:
-		print 'usage: <posFile> <posNum> <negNum> <testProportion> <ignoreFile> <featureOutputFile>'
+	if len(sys.argv) < 8:
+		print 'usage: <posFile> <posNum> <negNum> <testProportion> <ignoreFile> <featureOutputFile> <[featureSets] labs|meds|terms|codes|cids>'
 		sys.exit(1)
+	test = {}
+	train = {}
 	negs = getRandoms(int(sys.argv[3]))
 	pos = getFromFile(int(sys.argv[2]), sys.argv[1])
+	for n, label in negs.iteritems():
+		if random.random() < float(sys.argv[4]):
+			test[n] = label
+		else:
+			train[n] = label
+	for p, label in pos.iteritems():
+		if random.random() < float(sys.argv[4]):
+			test[p] = label
+		else:
+			train[p] = label
 
-	runCfier(data, testData, sys.argv[5], sys.argv[6])
+	runCfier(train, test, sys.argv[5], sys.argv[6], sys.argv[7:])
 	
 
 
