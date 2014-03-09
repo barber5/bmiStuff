@@ -214,8 +214,7 @@ def runCfier(trainData, testData, featurefile):
 	print 'tp: '+str(tp)
 	print 'fn: '+str(fn)
 	print 'fp: '+str(fp)
-	fimp = featurizer.inverse_transform(model.feature_importances_)
-	pprint.pprint(fimp)
+	fimp = featurizer.inverse_transform(model.feature_importances_)	
 	writeFeatureImportance(fimp[0], featurefile)
 
 
