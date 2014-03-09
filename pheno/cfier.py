@@ -178,8 +178,8 @@ def filterDataByLabel(data, label):
 			result[pid] = lab
 	return result
 
-def trainModel(trainData, ignore={}):		
-	trainVect = vectorizePids(trainData,featureFilter=ignore)	
+def trainModel(trainData, featureFilter={},includeCid=False, includeLab=True, includeTerm=False, includeCode=True, includePrescription=True):		
+	trainVect = vectorizePids(trainData,featureFilter=featureFilter, includeLab=includeLab, includeCode=includeCode, includeTerm=includeTerm, includePrescription=includePrescription)	
 	fh = FH()
 	trainArray = fh.fit_transform(trainVect).toarray()	
 	tree = rfc(verbose=100, n_estimators=10, n_jobs=10)	
