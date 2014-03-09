@@ -175,7 +175,7 @@ def trainModel(trainData):
 	trainVect = vectorizePids(trainData)	
 	fh = FH()
 	trainArray = fh.fit_transform(trainVect).toarray()	
-	tree = rfc(verbose=100)	
+	tree = rfc(verbose=100, n_estimators=128, jobs=10)	
 	tree.fit(trainArray, trainData.values())	
 	return (tree, fh)
 	#train the model
