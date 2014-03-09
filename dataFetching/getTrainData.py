@@ -4,7 +4,7 @@ import sys, random, json
 
 def getPidsByCode(code1, code2, num1, num2):
 	res1 = r.hget('codes', code1)
-	li1 = decomp(res1)
+	li1 = json.loads(decomp(res1))
 	res2 = r.hget('codes', code2)
 	li2 = json.loads(decomp(res2))
 	result = {}
