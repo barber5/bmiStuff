@@ -52,7 +52,7 @@ def getFeatName(metaDict):
 		return 'code:'+str(v)
 
 # patients is pid -> {pid, src_type, labs -> [{age, , component, description, lid, line, ord, ord_num, proc, proc_cat, ref_high, ref_low, ref_norm, ref_unit, result_flag, result_inrange, src, timeoffset}], notes -> [{age, cpt, duration, icd9, nid, pid, src, src_type, timeoffset, year, terms -> [{cui, familyHistory, negated, nid, termid, tid}]}], prescriptions -> [{age, drug_description, ingr_set_id, order_status, pid, route, rxid, src, timeoffset}], visits -> [{age, cpt, duration, icd9, pid, src, src_type, timeoffset, year}] }
-def vectorizePids(data, includeCid=False, includeLab=True, includeTerm=True, includeCode=True, includePrescription=True, featureFilter={}, timeSlices=None):
+def vectorizePids(data, includeCid=False, includeLab=True, includeTerm=False, includeCode=True, includePrescription=True, featureFilter={}, timeSlices=None):
 	patients = []
 	print featureFilter
 	for pid, label in data.iteritems():
@@ -268,7 +268,7 @@ if __name__ == "__main__":
 
 	testData = {'1114789': 0, '627892': 0, '589132': 1, '256455': 1, '727952': 1, '713805': 1, '281192': 1, '819201': 1, '1047995': 0, '21': 1, '558080': 1, '274945': 1, '797806': 1, '653146': 0, '620679': 1, '57433': 0, '34729': 0, '475065': 0, '831646': 1, '1080205': 1, '442833': 1, '323115': 1, '698116': 1, '1179135': 0, '548531': 0, '555908': 0, '68013': 0, '1007717': 0, '446062': 0, '1164347': 0, '1240871': 0, '484938': 0, '1197436': 1, '447095': 0, '630028': 1, '85627': 0, '341977': 0, '1210339': 0, '607798': 1, '1006900': 0, '914556': 0, '1254012': 1, '943371': 0, '46792': 1, '301712': 0, '456400': 0, '33306': 1, '423696': 0, '612334': 0, '754387': 0, '517988': 0, '1146598': 1, '34611': 1, '39918': 0, '900582': 0, '149870': 1, '974076': 0, '214420': 1, '998469': 1, '1243232': 1, '632474': 0, '123408': 0, '467925': 1, '297619': 0, '1230114': 1, '961393': 0, '220694': 0, '365762': 1, '782152': 0, '911706': 1, '121275': 0, '423265': 0, '1044553': 1, '745233': 0, '76247': 1, '783002': 1, '39326': 1, '108247': 0, '1043679': 1, '1164890': 0, '357638': 1, '968189': 1, '404404': 0, '549764': 1, '1151728': 1, '568962': 1, '711930': 1, '88071': 0, '1057259': 1, '568779': 1, '21413': 1, '782920': 0, '990620': 1, '1154801': 1, '506941': 1, '1127424': 0, '145739': 1}
 
-	runCfier(data, testData, sys.argv[1], sys.argv[2], includeTerm=False)
+	runCfier(data, testData, sys.argv[1], sys.argv[2])
 	
 
 
