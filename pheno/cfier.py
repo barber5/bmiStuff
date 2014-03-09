@@ -216,7 +216,7 @@ def runCfier(trainData, testData, featurefile):
 	print 'fp: '+str(fp)
 	fimp = featurizer.inverse_transform(model.feature_importances_)
 	pprint.pprint(fimp)
-	writeFeatureImportance(fimp, featurefile)
+	writeFeatureImportance(fimp[0], featurefile)
 
 
 	# for each in training, predict with our mod and see if we're right or not
