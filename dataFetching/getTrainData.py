@@ -6,7 +6,7 @@ def getPidsByCode(code1, code2, num1, num2):
 	res1 = r.hget('codes', code1)
 	li1 = decomp(res1)
 	res2 = r.hget('codes', code2)
-	li2 = decomp(res2)
+	li2 = json.loads(decomp(res2))
 	pos = {}
 	neg = {}
 	for i in range(num1):
