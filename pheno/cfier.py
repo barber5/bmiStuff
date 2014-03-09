@@ -152,6 +152,7 @@ def vectorizePids(data, includeCid=False, includeLab=True, includeTerm=True, inc
 							c = code.split('.')[0]
 						feat = getFeatName({'type': 'code', 'code': c})	
 						if feat in featureFilter:
+							print 'ignoring: '+str(feat)
 							continue
 						if meta['codeCounting'] == 'boolean':
 							nextPerson[feat] = 1
