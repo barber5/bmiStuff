@@ -52,10 +52,21 @@ def getFeatName(metaDict):
 		return 'code:'+str(v)
 
 # patients is pid -> {pid, src_type, labs -> [{age, , component, description, lid, line, ord, ord_num, proc, proc_cat, ref_high, ref_low, ref_norm, ref_unit, result_flag, result_inrange, src, timeoffset}], notes -> [{age, cpt, duration, icd9, nid, pid, src, src_type, timeoffset, year, terms -> [{cui, familyHistory, negated, nid, termid, tid}]}], prescriptions -> [{age, drug_description, ingr_set_id, order_status, pid, route, rxid, src, timeoffset}], visits -> [{age, cpt, duration, icd9, pid, src, src_type, timeoffset, year}] }
-def vectorizePids(data, includeCid=False, includeLab=True, includeTerm=True, includeCode=True, includePrescription=True, featureFilter={}, timeSlices=None):
+def vectorizePids(data, diagTerm=None, includeCid=False, includeLab=True, includeTerm=True, includeCode=True, includePrescription=True, featureFilter={}, timeSlices=None):
 	patients = []
 	print featureFilter
+	
 	for pid, label in data.iteritems():
+		print 'patient: '+str(pid)
+		minOffset = float('inf')
+		if diagTerm:
+			for n in dd['notes']:
+				for t in n['terms']:
+					if t['tid'] == diagTerm and t['negated'] == 0 and t['familyHistory'] == 0:
+						if float(n['timeoffset']) < minOffset:
+							minOffset = float(n['timeoffset'])
+			print 'minOffset: '+str(minOffset)			
+
 		#print pid
 		resp = r.hget('pats', pid)
 		#print resp
@@ -67,6 +78,8 @@ def vectorizePids(data, includeCid=False, includeLab=True, includeTerm=True, inc
 
 		if includeTerm:
 			for n in dd['notes']:
+				if diagTerm and float(n['timeoffset']) >= minOffset:
+					continue				
 				for t in n['terms']:
 					feat = getFeatName({'type': 'term', 'term': t})
 					if feat in featureFilter:
@@ -90,6 +103,8 @@ def vectorizePids(data, includeCid=False, includeLab=True, includeTerm=True, inc
 			if meta['labCounting'] == 'average':
 				labCounts = {}
 			for l in dd['labs']:
+				if diagTerm and float(l['timeoffset']) >= minOffset:
+					continue
 				if 'ord_num' not in l or not l['ord_num'] or l['ord_num'] == '':
 					continue
 				feat = getFeatName({'type': 'lab', 'lab': l})
@@ -128,6 +143,8 @@ def vectorizePids(data, includeCid=False, includeLab=True, includeTerm=True, inc
 					nextPerson[k] = float(v['total']) / float(v['count'])
 		if includePrescription:
 			for p in dd['prescriptions']:
+				if diagTerm and float(p['timeoffset']) >= minOffset:
+					continue
 				ings = getIngredients(p['ingr_set_id'])
 				for i in ings:
 					feat = getFeatName({'type': 'prescription', 'prescription': p, 'ingredient': i})
@@ -145,6 +162,8 @@ def vectorizePids(data, includeCid=False, includeLab=True, includeTerm=True, inc
 						nextPerson[feat] += kernelize(meta['prescriptionKernel'], 1, p['timeoffset'], timeSlices[pid])
 		if includeCode:
 			for v in dd['visits']:
+				if diagTerm and float(v['timeoffset']) >= minOffset:
+					continue
 				if 'icd9' in v and len(v['icd9']) > 0:
 					codes = v['icd9'].split(',')
 					for c in codes:						
@@ -178,8 +197,8 @@ def filterDataByLabel(data, label):
 			result[pid] = lab
 	return result
 
-def trainModel(trainData, featureFilter={},includeCid=False, includeLab=True, includeTerm=True, includeCode=True, includePrescription=True):		
-	trainVect = vectorizePids(trainData,featureFilter=featureFilter, includeLab=includeLab, includeCode=includeCode, includeTerm=includeTerm, includePrescription=includePrescription)	
+def trainModel(trainData, diagTerm=None, featureFilter={},includeCid=False, includeLab=True, includeTerm=True, includeCode=True, includePrescription=True):		
+	trainVect = vectorizePids(trainData, diagTerm, featureFilter=featureFilter, includeLab=includeLab, includeCode=includeCode, includeTerm=includeTerm, includePrescription=includePrescription)	
 	fh = FH()
 	trainArray = fh.fit_transform(trainVect).toarray()	
 	tree = rfc(verbose=100, n_estimators=32, n_jobs=10)		
@@ -224,7 +243,7 @@ def getIgnoreCodes(ignoreFile):
 			result.add(line)
 	return result
 
-def runCfier(trainData, testData, ignoreFile, featurefile, featSets):	
+def runCfier(trainData, testData, ignoreFile, featurefile, diagTerm, featSets):	
 	ignore = getIgnoreCodes(ignoreFile)
 	print 'ignoring: '+str(ignore)
 	includeCid=False
@@ -241,7 +260,7 @@ def runCfier(trainData, testData, ignoreFile, featurefile, featSets):
 	if 'codes' in featSets:
 		includeCode=True
 
-	(model, featurizer) = trainModel(trainData, featureFilter=ignore, includeLab=includeLab, includeCode=includeCode, includeTerm=includeTerm, includePrescription=includePrescription)	
+	(model, featurizer) = trainModel(trainData, diagTerm, featureFilter=ignore, includeLab=includeLab, includeCode=includeCode, includeTerm=includeTerm, includePrescription=includePrescription)	
 	testVect = vectorizePids(testData)		
 	testArray = featurizer.transform(testVect).toarray()	
 	tn = 0
@@ -303,8 +322,8 @@ def getFromFile(num, fileName):
 
 
 if __name__ == "__main__":	
-	if len(sys.argv) < 8:
-		print 'usage: <posFile> <posNum> <negNum> <testProportion> <ignoreFile> <featureOutputFile> <[featureSets] labs|meds|terms|codes|cids>'
+	if len(sys.argv) < 9:
+		print 'usage: <posFile> <posNum> <negNum> <testProportion> <ignoreFile> <featureOutputFile> <diagTerm> <[featureSets] labs|meds|terms|codes|cids>'
 		sys.exit(1)
 	test = {}
 	train = {}
@@ -321,7 +340,7 @@ if __name__ == "__main__":
 		else:
 			train[p] = label
 	pprint.pprint(train)
-	runCfier(train, test, sys.argv[5], sys.argv[6], sys.argv[7:])
+	runCfier(train, test, sys.argv[5], sys.argv[6], sys.argv[7], sys.argv[8:])
 	
 
 
