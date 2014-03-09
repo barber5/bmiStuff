@@ -292,6 +292,7 @@ def getFromFile(num, fileName):
 			if line == '':
 				break
 			lineArr = line.split(' ')
+			print lineArr
 			pid = lineArr[2]
 			pids.add(pid)
 	for i in range(num):
