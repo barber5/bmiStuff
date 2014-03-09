@@ -5,7 +5,7 @@ from db import *
 
 def getVecForPid(pid, code=None):
 	(term_db, stride_db) = getDbs()
-	if r.exists(pid):
+	if r.hexists('pats',pid):
 		print 'exists already'
 		return
 	visits = getSingleVisits(pid, stride_db, None)		
