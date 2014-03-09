@@ -211,7 +211,7 @@ def writeFeatureImportance(fimp, fileName):
 	with open(fileName, 'w') as fi:
 		for f, imp in fimp.iteritems():
 			f = resolveFeature(f)
-			fi.write(str(f)+'\t'+str(imp)+'\n')
+			fi.write(str(f)+'\t%.8f\n'%imp)
 
 def getIgnoreCodes(ignoreFile):
 	result = set([])
