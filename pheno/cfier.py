@@ -181,7 +181,9 @@ def trainModel(trainData):
 def runCfier(trainData, testData):	
 	(model, featurizer) = trainModel(trainData)	
 	testVect = vectorizePids(testData)	
+	print testVect
 	testArray = featurizer.transform(testVect)
+	print testArray
 	for i, tv in enumerate(testArray):		
 		print tv
 		l = trainData[trainData.keys()[i]]
