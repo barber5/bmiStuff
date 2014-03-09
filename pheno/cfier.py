@@ -288,7 +288,7 @@ def getFromFile(num, fileName):
 	with open(fileName, 'r') as fi:
 		fi.readline()
 		while True:
-			line = fi.readline()
+			line = fi.readline().strip()
 			if line == '':
 				break
 			lineArr = line.split(' ')
