@@ -172,11 +172,8 @@ def trainModel(trainData):
 	trainVect = vectorizePids(trainData)	
 	fh = FH()
 	trainArray = fh.fit_transform(trainVect).toarray()	
-	tree = rfc(verbose=100)
-	print trainData.values()
-	tree.fit(trainArray, trainData.values())
-	print tree.predict(trainArray[0])
-	print tree.predict(trainArray[1])
+	tree = rfc(verbose=100)	
+	tree.fit(trainArray, trainData.values())	
 	return (tree, fh)
 	#train the model
 	# return
