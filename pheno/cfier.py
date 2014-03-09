@@ -183,6 +183,7 @@ def trainModel(trainData, featureFilter={},includeCid=False, includeLab=True, in
 	fh = FH()
 	trainArray = fh.fit_transform(trainVect).toarray()	
 	tree = rfc(verbose=100, n_estimators=32, n_jobs=10)	
+	pprint.pprint(trainData.values())
 	tree.fit(trainArray, trainData.values())	
 	return (tree, fh)
 	#train the model
