@@ -212,6 +212,8 @@ def getIgnoreCodes(ignoreFile):
 	with open(ignoreFile, 'r') as fi:
 		while True:
 			line = fi.readline().strip()
+			if line == '':
+				break
 			result.add(line)
 	return result
 
