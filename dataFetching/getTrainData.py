@@ -9,7 +9,7 @@ def getPidsByCode(code1, code2, num1, num2):
 	li2 = json.loads(decomp(res2))
 	result = {}
 	for i in range(num1):
-		next = random.choice(li1)
+		next = str(random.choice(li1))
 		result[next] = 1
 	for i in range(num2):
 		next = str(random.choice(li2))
