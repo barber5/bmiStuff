@@ -154,7 +154,7 @@ def vectorizePids(data, includeCid=False, includeLab=True, includeTerm=True, inc
 							if feat not in nextPerson:
 								nextPerson[feat] = 0
 							nextPerson[feat] += kernelize(meta['codeKernel'], 1, v['timeoffset'], timeSlices[pid])		
-		pprint.pprint(nextPerson)	
+
 		patients.append(nextPerson)
 	
 
@@ -208,6 +208,7 @@ def runCfier(trainData, testData):
 	print 'tp: '+str(tp)
 	print 'fn: '+str(fn)
 	print 'fp: '+str(fp)
+	print 'feature importances': str(model.feature_importances_)
 
 	# for each in training, predict with our mod and see if we're right or not
 	# calculate stats and see what the news is
