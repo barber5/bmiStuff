@@ -189,7 +189,7 @@ def runCfier(trainData, testData):
 	tp = 0
 	fp = 0
 	for i, tv in enumerate(testArray):				
-		l = trainData[trainData.keys()[i]]
+		l = testData[testData.keys()[i]]
 		pred = model.predict(tv)[0]
 		print 'prediction: '+str(pred)
 		print 'actual: '+str(l)
