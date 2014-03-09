@@ -196,7 +196,7 @@ def runCfier(trainData, testData):
 
 if __name__ == "__main__":
 	data = {'934205': 1, '555908': 0}
-	testData = {'934205': 1, '1177207': 0}
+	testData = {'1027018': 1, '1177207': 0}
 	runCfier(data, testData)
 	
 
