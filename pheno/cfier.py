@@ -295,6 +295,7 @@ def getFromFile(num, fileName):
 			print lineArr
 			pid = lineArr[2]
 			pids.add(pid)
+	pids = list(pids)
 	for i in range(num):
 		next = str(random.choice(pids))
 		result[next] = 1
