@@ -13,7 +13,7 @@ def getPidsByCode(code1, code2, num1, num2):
 		next = random.choice(li1)
 		pos[next] = 1
 	for i in range(num2):
-		next = random.choice(li2)
+		next = str(random.choice(li2))
 		neg[next] = 0
 	return (pos, neg)
 
