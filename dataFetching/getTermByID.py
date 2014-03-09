@@ -6,7 +6,7 @@ import sys, pprint
 
 def getTerm(term_id):	
 	print term_id
-	query = "SELECT term from terms where termid=%s"
+	query = "SELECT term from terms where tid=%s"
 	rows = tryQuery(term_db, query, [term_id])
 	return rows[0][0].upper()
 
