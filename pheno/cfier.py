@@ -117,6 +117,8 @@ def vectorizePids(data, includeCid=False, includeLab=True, includeTerm=True, inc
 					else:
 						val = l['result_flag']
 					feat += ':'+str(val)
+					if feat in featureFilter:
+						continue
 					if feat not in nextPerson:
 						nextPerson[feat] = 0
 					nextPerson[feat] += kernelize(meta['labKernel'], 1, l['timeoffset'], timeSlices[pid])  # timeSlices is a mapping from pids to timeoffsets of interest
@@ -128,6 +130,8 @@ def vectorizePids(data, includeCid=False, includeLab=True, includeTerm=True, inc
 				ings = getIngredients(p['ingr_set_id'])
 				for i in ings:
 					feat = getFeatName({'type': 'prescription', 'prescription': p, 'ingredient': i})
+					if feat in featureFilter:
+						continue
 					if meta['prescriptionCounting'] == 'boolean':
 						nextPerson[feat] = 1
 					elif meta['prescriptionCounting'] == 'bag':
@@ -146,6 +150,8 @@ def vectorizePids(data, includeCid=False, includeLab=True, includeTerm=True, inc
 						if 'codeCollapse' in meta and meta['codeCollapse']:
 							c = code.split('.')[0]
 						feat = getFeatName({'type': 'code', 'code': c})	
+						if feat in featureFilter:
+							continue
 						if meta['codeCounting'] == 'boolean':
 							nextPerson[feat] = 1
 						elif meta['codeCounting'] == 'bag':
