@@ -182,7 +182,7 @@ def runCfier(trainData, testData):
 	(model, featurizer) = trainModel(trainData)	
 	testVect = vectorizePids(testData)	
 	pprint.pprint(testVect)
-	testArray = featurizer.transform(testVect)
+	testArray = featurizer.transform(testVect).toarray()
 	print testArray
 	for i, tv in enumerate(testArray):		
 		print tv
