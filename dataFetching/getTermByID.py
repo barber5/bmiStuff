@@ -9,6 +9,16 @@ def getTerm(term_id):
 	rows = tryQuery(term_db, query, [term_id])
 	return rows[0][0].upper()
 
+def getLab(component):
+	query = "SELECT name from component where component=%s"
+	rows = tryQuery(stride_db, query, [component])
+	return rows[0][0].upper()	
+
+def getIngredient(rxcui):
+	query = "SELECT ingredient from ingredient where rxcui=%s"
+	rows = tryQuery(stride_db, query, [rxcui])
+	return rows[0][0].upper()		
+
 def getTermCui(cui):
 	#print >> sys.stderr, 'cui: '+str(cui)
 	query = "SELECT str from str2cid where cui=%s"

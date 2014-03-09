@@ -4,7 +4,7 @@ sys.path.append(os.path.realpath('./tempClustering'))
 sys.path.append(os.path.realpath('../dataFetching'))
 sys.path.append(os.path.realpath('./dataFetching'))
 from queryByCui import getCuis, r, decomp, compIt
-from getTermByID import getTerm, getTermCui, getIngredients
+from getTermByID import getTerm, getTermCui, getIngredients, getIngredient, getLab
 from queryByCode import getPids
 from sklearn.feature_extraction import DictVectorizer as FH
 from sklearn.ensemble import RandomForestClassifier as rfc
@@ -181,9 +181,30 @@ def trainModel(trainData):
 	#train the model
 	# return
 
+def resolveFeature(f):
+	if f.find('term') == 0:
+		tArr = f.split(':')
+		term = getTerm(tArr[1])
+		tArr[1] = term
+		return ':'.join(tArr)
+	elif f.find('lab') == 0:
+		tArr = f.split(':')
+		lab = getLab(tArr[2])
+		tArr[2] = lab
+		return ':'.join(tArr)
+
+	elif f.find('prescription') == 0:
+		tArr = f.split(':')
+		ing = getIngredient(tArr[1])
+		tArr[1] = ing
+		return ':'.join(tArr)
+	else:
+		return f
+
 def writeFeatureImportance(fimp, fileName):
 	with open(fileName, 'w') as fi:
 		for f, imp in fimp.iteritems():
+			f = resolveFeature(f)
 			fi.write(str(f)+'\t'+str(imp)+'\n')
 
 
@@ -222,8 +243,7 @@ def runCfier(trainData, testData, featurefile):
 
 	# for each in training, predict with our mod and see if we're right or not
 	# calculate stats and see what the news is
-
-	None
+	
 
 if __name__ == "__main__":
 	
