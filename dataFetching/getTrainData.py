@@ -1,5 +1,5 @@
 from queryByCui import r, decomp, compIt
-import sys, random
+import sys, random, json
 
 
 def getPidsByCode(code1, code2, num1, num2):
