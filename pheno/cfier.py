@@ -184,12 +184,11 @@ def trainModel(trainData):
 def runCfier(trainData, testData):	
 	(model, featurizer) = trainModel(trainData)	
 	testVect = vectorizePids(testData)	
-	for i, tv in enumerate(testVect):
+	testArray = featurizer.transform(testVect)
+	for i, tv in enumerate(testArray):		
 		print tv
-		tvArray = featurizer.transform(tv)
-		print tvArray
 		l = trainData[trainData.keys()[i]]
-		print 'prediction: '+str(model.predict(tvArray))
+		print 'prediction: '+str(model.predict(tv))
 		print 'actual: '+str(l)
 
 	# for each in training, predict with our mod and see if we're right or not
