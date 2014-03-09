@@ -184,8 +184,9 @@ def trainModel(trainData):
 def runCfier(trainData, testData):	
 	(model, featurizer) = trainModel(trainData)	
 	testVect = vectorizePids(testData)	
-	for tv,l in testVect.iteritems():
+	for i, tv in enumerate(testVect):
 		tvArray = featurizer.transform(tv)
+		l = trainData[trainData.keys()[i]]
 		print 'prediction: '+str(model.predict(tvArray))
 		print 'actual: '+str(l)
 
