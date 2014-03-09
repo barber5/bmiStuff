@@ -79,7 +79,7 @@ def vectorizePids(data, diagTerm=None, includeCid=False, includeLab=True, includ
 
 		if includeTerm:
 			for n in dd['notes']:
-				if diagTerm and float(n['timeoffset']) >= minOffset:
+				if diagTerm and float(n['timeoffset']) > minOffset:
 					continue				
 				for t in n['terms']:
 					feat = getFeatName({'type': 'term', 'term': t})
@@ -104,7 +104,7 @@ def vectorizePids(data, diagTerm=None, includeCid=False, includeLab=True, includ
 			if meta['labCounting'] == 'average':
 				labCounts = {}
 			for l in dd['labs']:
-				if diagTerm and float(l['timeoffset']) >= minOffset:
+				if diagTerm and float(l['timeoffset']) > minOffset:
 					continue
 				if 'ord_num' not in l or not l['ord_num'] or l['ord_num'] == '':
 					continue
@@ -144,7 +144,7 @@ def vectorizePids(data, diagTerm=None, includeCid=False, includeLab=True, includ
 					nextPerson[k] = float(v['total']) / float(v['count'])
 		if includePrescription:
 			for p in dd['prescriptions']:
-				if diagTerm and float(p['timeoffset']) >= minOffset:
+				if diagTerm and float(p['timeoffset']) > minOffset:
 					continue
 				ings = getIngredients(p['ingr_set_id'])
 				for i in ings:
@@ -163,7 +163,7 @@ def vectorizePids(data, diagTerm=None, includeCid=False, includeLab=True, includ
 						nextPerson[feat] += kernelize(meta['prescriptionKernel'], 1, p['timeoffset'], timeSlices[pid])
 		if includeCode:
 			for v in dd['visits']:
-				if diagTerm and float(v['timeoffset']) >= minOffset:
+				if diagTerm and float(v['timeoffset']) > minOffset:
 					continue
 				if 'icd9' in v and len(v['icd9']) > 0:
 					codes = v['icd9'].split(',')
