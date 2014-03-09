@@ -185,18 +185,18 @@ def resolveFeature(f):
 	if f.find('term') == 0:
 		tArr = f.split(':')
 		term = getTerm(tArr[1])
-		tArr[1] = term
+		tArr[1] = str(tArr[1])+'('+str(term)+')'
 		return ':'.join(tArr)
 	elif f.find('lab') == 0:
 		tArr = f.split(':')
 		lab = getLab(tArr[2])
-		tArr[2] = lab
+		tArr[2] = str(tArr[2])+'('+str(lab)+')'
 		return ':'.join(tArr)
 
 	elif f.find('prescription') == 0:
 		tArr = f.split(':')
 		ing = getIngredient(tArr[1])
-		tArr[1] = ing
+		tArr[1] = str(tArr[1])+'('+str(ing)+')'
 		return ':'.join(tArr)
 	else:
 		return f
