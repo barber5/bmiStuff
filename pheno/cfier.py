@@ -193,7 +193,7 @@ def runCfier(trainData, testData):
 		pred = model.predict(tv)[0]
 		print 'prediction: '+str(pred)
 		print 'actual: '+str(l)
-		if pred == pred:
+		if pred == l:
 			if pred == 0:
 				tn += 1
 			else:
