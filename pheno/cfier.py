@@ -56,17 +56,7 @@ def vectorizePids(data, diagTerm=None, includeCid=False, includeLab=True, includ
 	patients = []
 	print featureFilter
 	
-	for pid, label in data.iteritems():
-		print 'patient: '+str(pid)
-		minOffset = float('inf')
-		if diagTerm:
-			for n in dd['notes']:
-				for t in n['terms']:
-					if t['tid'] == diagTerm and t['negated'] == 0 and t['familyHistory'] == 0:
-						if float(n['timeoffset']) < minOffset:
-							minOffset = float(n['timeoffset'])
-			print 'minOffset: '+str(minOffset)			
-
+	for pid, label in data.iteritems():						
 		#print pid
 		resp = r.hget('pats', pid)
 		#print resp
@@ -75,6 +65,17 @@ def vectorizePids(data, diagTerm=None, includeCid=False, includeLab=True, includ
 		nextPerson = {}
 		if meta['termCounting'] == 'noteboolean':  # we add 1 to a term count for each note it appears in
 			noteTerms = set([])
+
+
+		if diagTerm:
+			print 'patient: '+str(pid)
+			minOffset = float('inf')
+			for n in dd['notes']:
+				for t in n['terms']:
+					if t['tid'] == diagTerm and t['negated'] == 0 and t['familyHistory'] == 0:
+						if float(n['timeoffset']) < minOffset:
+							minOffset = float(n['timeoffset'])
+			print 'minOffset: '+str(minOffset)	
 
 		if includeTerm:
 			for n in dd['notes']:
