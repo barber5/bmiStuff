@@ -184,10 +184,29 @@ def runCfier(trainData, testData):
 	pprint.pprint(testVect)
 	testArray = featurizer.transform(testVect).toarray()
 	print testArray
+	tn = 0
+	fn = 0
+	tp = 0
+	fp = 0
 	for i, tv in enumerate(testArray):				
 		l = trainData[trainData.keys()[i]]
-		print 'prediction: '+str(model.predict(tv))
+		pred = model.predict(tv)[0]
+		print 'prediction: '+str(pred)
 		print 'actual: '+str(l)
+		if pred == pred:
+			if pred == 0:
+				tn += 1
+			else:
+				tp += 1
+		else:
+			if pred == 0:
+				fn += 1
+			else:
+				fp += 1
+	print 'tn: '+str(tn)
+	print 'tp: '+str(tp)
+	print 'fn: '+str(fn)
+	print 'fp: '+str(fp)
 
 	# for each in training, predict with our mod and see if we're right or not
 	# calculate stats and see what the news is
