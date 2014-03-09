@@ -8,6 +8,7 @@ def getPidsByCode(code1, code2, num1, num2):
 	res2 = r.hget('codes', code2)
 	li2 = decomp(res2)
 	pos = {}
+	neg = {}
 	for i in range(num1):
 		next = random.choice(li1)
 		pos[next] = 1
