@@ -286,6 +286,7 @@ def getFromFile(num, fileName):
 	pids = set([])
 	result = {}
 	with open(fileName, 'r') as fi:
+		fi.readline()
 		while True:
 			line = fi.readline()
 			if line == '':
