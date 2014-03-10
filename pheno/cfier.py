@@ -71,6 +71,8 @@ def vectorizePids(data, diagTerms=None, includeCid=False, includeLab=True, inclu
 		print pid				
 		#print pid
 		resp = r.hget('pats', pid)
+		if resp == None:
+			continue
 		#print resp
 
 		dd = decomp(resp)
