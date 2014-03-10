@@ -186,7 +186,7 @@ def vectorizePids(data, diagTerms=None, includeCid=False, includeLab=True, inclu
 			for v in dd['visits']:
 				if diagTerms and float(v['timeoffset']) > minOffset:
 					continue
-				if diagTerms and float(p['timeoffset']) == minOffset:
+				if diagTerms and float(v['timeoffset']) == minOffset:
 					presentation = True
 				else:
 					presentation = False
