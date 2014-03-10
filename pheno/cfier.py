@@ -100,7 +100,7 @@ def vectorizePids(data, diagTerms=None, includeCid=False, includeLab=True, inclu
 				if diagTerms and float(n['timeoffset']) > minOffset:
 					continue
 				if diagTerms and float(n['timeoffset']) == minOffset:					
-					presentation = True
+					presentation = False
 				else:
 					presentation = False
 				for t in n['terms']:
