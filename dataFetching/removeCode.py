@@ -1,4 +1,5 @@
 from queryByCui import getCuis, r, decomp, compIt
+import sys
 
 def remCode(code):
 	res = r.hget('codes', code)	
