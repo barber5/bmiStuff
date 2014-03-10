@@ -18,8 +18,7 @@ def remFile(fName):
 			line = fi.readline().strip()
 			if line == '':
 				break
-			lineArr = line.split('\t')
-			print lineArr
+			lineArr = line.split('\t')			
 			pid = lineArr[0]
 			result.add(pid)
 	return result
@@ -34,7 +33,9 @@ def remAllBut():
 	files = ['pancreatitis.txt']
 	for fi in files:
 		result = result | remFile(fi)
-	print len(result)
+	resp = r.keys('pats')
+	for pid in resp:
+		print pid
 
 if __name__ == "__main__":
 	remAllBut()
