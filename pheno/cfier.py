@@ -348,8 +348,7 @@ if __name__ == "__main__":
 		if random.random() < float(sys.argv[4]):
 			test[p] = label
 		else:
-			train[p] = label
-	pprint.pprint(train)
+			train[p] = label	
 	runCfier(train, test, sys.argv[5], sys.argv[6], sys.argv, sys.argv)
 	
 
