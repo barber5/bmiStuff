@@ -10,7 +10,7 @@ def remCode(code):
 	return result
 
 
-def remFile(file):
+def remFile(fName):
 	result = set([])
 	with open(fName, 'r') as fi:
 		firstline = fi.readline()
