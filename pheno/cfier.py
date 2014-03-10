@@ -91,6 +91,7 @@ def vectorizePids(data, diagTerms=None, includeCid=False, includeLab=True, inclu
 				if diagTerms and float(n['timeoffset']) > minOffset:
 					continue
 				if diagTerms and float(n['timeoffset']) == minOffset:
+					print 'presentation note - pid: '+str(pid)+' nid: '+str(n['nid'])
 					presentation = True
 				else:
 					presentation = False
