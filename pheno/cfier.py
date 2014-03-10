@@ -67,7 +67,8 @@ def getFeatName(metaDict, presentation=False):
 def vectorizePids(data, diagTerms=None, includeCid=False, includeLab=True, includeTerm=True, includeCode=True, includePrescription=True, featureFilter={}, timeSlices=None):
 	patients = []	
 	
-	for pid, label in data.iteritems():						
+	for pid, label in data.iteritems():		
+		print pid				
 		#print pid
 		resp = r.hget('pats', pid)
 		#print resp
