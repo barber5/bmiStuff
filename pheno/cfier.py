@@ -53,8 +53,7 @@ def getFeatName(metaDict):
 
 # patients is pid -> {pid, src_type, labs -> [{age, , component, description, lid, line, ord, ord_num, proc, proc_cat, ref_high, ref_low, ref_norm, ref_unit, result_flag, result_inrange, src, timeoffset}], notes -> [{age, cpt, duration, icd9, nid, pid, src, src_type, timeoffset, year, terms -> [{cui, familyHistory, negated, nid, termid, tid}]}], prescriptions -> [{age, drug_description, ingr_set_id, order_status, pid, route, rxid, src, timeoffset}], visits -> [{age, cpt, duration, icd9, pid, src, src_type, timeoffset, year}] }
 def vectorizePids(data, diagTerms=None, includeCid=False, includeLab=True, includeTerm=True, includeCode=True, includePrescription=True, featureFilter={}, timeSlices=None):
-	patients = []
-	print featureFilter
+	patients = []	
 	
 	for pid, label in data.iteritems():						
 		#print pid
@@ -68,14 +67,14 @@ def vectorizePids(data, diagTerms=None, includeCid=False, includeLab=True, inclu
 
 
 		if diagTerms:
-			print 'patient: '+str(pid)
+			print >> sys.stderr, 'patient: '+str(pid)
 			minOffset = float('inf')
 			for n in dd['notes']:
 				for t in n['terms']:
 					if str(t['tid']) in diagTerms and int(t['negated']) == 0 and int(t['familyHistory']) == 0:
 						if float(n['timeoffset']) < minOffset:
 							minOffset = float(n['timeoffset'])
-			print 'minOffset: '+str(minOffset)	
+			print >> sys.stderr, 'minOffset: '+str(minOffset)	
 
 		if includeTerm:
 			for n in dd['notes']:
@@ -251,7 +250,7 @@ def getIgnoreCodes(ignoreFile):
 
 def runCfier(trainData, testData, ignoreFile, featurefile, diagTerms, featSets):	
 	ignore = getIgnoreCodes(ignoreFile)
-	print 'ignoring: '+str(ignore)
+	print >> sys.stderr, 'ignoring: '+str(ignore)
 	includeCid=False
 	includeLab=False
 	includeTerm=False
@@ -284,11 +283,11 @@ def runCfier(trainData, testData, ignoreFile, featurefile, diagTerms, featSets):
 			else:
 				tp += 1
 		else:
-			miss = featurizer.inverse_transform(tv)
-			for f, imp in miss.iteritems():
-				print 'missed!'
-				f = resolveFeature(f)
-				print str(f)+'\t%.8f\n'%float(imp)
+			miss = featurizer.inverse_transform(tv)			
+			print 'missed!'
+			pprint.pprint(miss)
+				
+				
 			if pred == 0:
 				fn += 1
 			else:
