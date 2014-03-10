@@ -206,7 +206,7 @@ def trainModel(trainData, diagTerm=None, featureFilter={},includeCid=False, incl
 		print trainArray.shape
 	except Exception as e:
 		None
-	tree = rfc(verbose=100, n_estimators=50, n_jobs=10)		
+	tree = rfc(n_estimators=50, n_jobs=10)		
 	tree.fit(trainArray, trainData.values())	
 	return (tree, fh)
 	#train the model
