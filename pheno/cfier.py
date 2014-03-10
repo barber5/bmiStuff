@@ -52,7 +52,7 @@ def getFeatName(metaDict):
 		return 'code:'+str(v)
 
 # patients is pid -> {pid, src_type, labs -> [{age, , component, description, lid, line, ord, ord_num, proc, proc_cat, ref_high, ref_low, ref_norm, ref_unit, result_flag, result_inrange, src, timeoffset}], notes -> [{age, cpt, duration, icd9, nid, pid, src, src_type, timeoffset, year, terms -> [{cui, familyHistory, negated, nid, termid, tid}]}], prescriptions -> [{age, drug_description, ingr_set_id, order_status, pid, route, rxid, src, timeoffset}], visits -> [{age, cpt, duration, icd9, pid, src, src_type, timeoffset, year}] }
-def vectorizePids(data, diagTerm=None, includeCid=False, includeLab=True, includeTerm=True, includeCode=True, includePrescription=True, featureFilter={}, timeSlices=None):
+def vectorizePids(data, diagTerms=None, includeCid=False, includeLab=True, includeTerm=True, includeCode=True, includePrescription=True, featureFilter={}, timeSlices=None):
 	patients = []
 	print featureFilter
 	
@@ -67,19 +67,19 @@ def vectorizePids(data, diagTerm=None, includeCid=False, includeLab=True, includ
 			noteTerms = set([])
 
 
-		if diagTerm:
+		if diagTerms:
 			print 'patient: '+str(pid)
 			minOffset = float('inf')
 			for n in dd['notes']:
 				for t in n['terms']:
-					if str(t['tid']) == diagTerm and int(t['negated']) == 0 and int(t['familyHistory']) == 0:
+					if str(t['tid']) in diagTerms and int(t['negated']) == 0 and int(t['familyHistory']) == 0:
 						if float(n['timeoffset']) < minOffset:
 							minOffset = float(n['timeoffset'])
 			print 'minOffset: '+str(minOffset)	
 
 		if includeTerm:
 			for n in dd['notes']:
-				if diagTerm and float(n['timeoffset']) > minOffset:
+				if diagTerms and float(n['timeoffset']) > minOffset:
 					continue				
 				for t in n['terms']:
 					feat = getFeatName({'type': 'term', 'term': t})
@@ -104,7 +104,7 @@ def vectorizePids(data, diagTerm=None, includeCid=False, includeLab=True, includ
 			if meta['labCounting'] == 'average':
 				labCounts = {}
 			for l in dd['labs']:
-				if diagTerm and float(l['timeoffset']) > minOffset:
+				if diagTerms and float(l['timeoffset']) > minOffset:
 					continue
 				if 'ord_num' not in l or not l['ord_num'] or l['ord_num'] == '':
 					continue
@@ -144,7 +144,7 @@ def vectorizePids(data, diagTerm=None, includeCid=False, includeLab=True, includ
 					nextPerson[k] = float(v['total']) / float(v['count'])
 		if includePrescription:
 			for p in dd['prescriptions']:
-				if diagTerm and float(p['timeoffset']) > minOffset:
+				if diagTerms and float(p['timeoffset']) > minOffset:
 					continue
 				ings = getIngredients(p['ingr_set_id'])
 				for i in ings:
@@ -163,7 +163,7 @@ def vectorizePids(data, diagTerm=None, includeCid=False, includeLab=True, includ
 						nextPerson[feat] += kernelize(meta['prescriptionKernel'], 1, p['timeoffset'], timeSlices[pid])
 		if includeCode:
 			for v in dd['visits']:
-				if diagTerm and float(v['timeoffset']) > minOffset:
+				if diagTerms and float(v['timeoffset']) > minOffset:
 					continue
 				if 'icd9' in v and len(v['icd9']) > 0:
 					codes = v['icd9'].split(',')
@@ -244,7 +244,7 @@ def getIgnoreCodes(ignoreFile):
 			result.add(line)
 	return result
 
-def runCfier(trainData, testData, ignoreFile, featurefile, diagTerm, featSets):	
+def runCfier(trainData, testData, ignoreFile, featurefile, diagTerms, featSets):	
 	ignore = getIgnoreCodes(ignoreFile)
 	print 'ignoring: '+str(ignore)
 	includeCid=False
@@ -261,7 +261,7 @@ def runCfier(trainData, testData, ignoreFile, featurefile, diagTerm, featSets):
 	if 'codes' in featSets:
 		includeCode=True
 
-	(model, featurizer) = trainModel(trainData, diagTerm, featureFilter=ignore, includeLab=includeLab, includeCode=includeCode, includeTerm=includeTerm, includePrescription=includePrescription)	
+	(model, featurizer) = trainModel(trainData, diagTerms, featureFilter=ignore, includeLab=includeLab, includeCode=includeCode, includeTerm=includeTerm, includePrescription=includePrescription)	
 	testVect = vectorizePids(testData, diagTerm)		
 	testArray = featurizer.transform(testVect).toarray()	
 	tn = 0
@@ -341,7 +341,7 @@ if __name__ == "__main__":
 		else:
 			train[p] = label
 	pprint.pprint(train)
-	runCfier(train, test, sys.argv[5], sys.argv[6], sys.argv[7], sys.argv[8:])
+	runCfier(train, test, sys.argv[5], sys.argv[6], sys.argv, sys.argv)
 	
 
 
