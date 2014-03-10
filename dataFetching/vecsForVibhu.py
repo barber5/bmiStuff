@@ -9,9 +9,9 @@ def getPidsFromFile(fName):
 			line = fi.readline().strip()
 			if line == '':
 				break
-			lineArr = line.split('\t')
+			lineArr = line.split(' ')
 			print lineArr
-			pid = lineArr[0]
+			pid = lineArr[2]
 			getVecForPid(pid)
 
 if __name__ == "__main__":
