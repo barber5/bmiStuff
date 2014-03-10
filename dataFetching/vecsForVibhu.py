@@ -11,7 +11,7 @@ def getPidsFromFile(fName):
 				break
 			lineArr = line.split(' ')
 			print lineArr
-			pid = lineArr[2]
+			pid = lineArr[1]
 			getVecForPid(pid)
 
 if __name__ == "__main__":
