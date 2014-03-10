@@ -34,11 +34,12 @@ def remAllBut():
 	for fi in files:
 		result = result | remFile(fi)
 	resp = r.hkeys('pats')
+	print len(resp)
 	dels = set([])
 	for pid in resp:
 		
 		if pid not in result:
-			print pid
+			#print pid
 			dels.add(pid)
 	print len(dels)
 
