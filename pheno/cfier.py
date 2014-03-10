@@ -36,13 +36,13 @@ def getFeatName(metaDict, presentation=False):
 		if not presentation:
 			return 'term:'+str(term['tid'])+':'+str(term['negated'])+':'+str(term['familyHistory'])
 		else:
-			return 'term-presentation'+str(term['tid'])+':'+str(term['negated'])+':'+str(term['familyHistory'])
+			return 'term-presentation:'+str(term['tid'])+':'+str(term['negated'])+':'+str(term['familyHistory'])
 	if metaDict['type'] == 'lab':
 		lab = metaDict['lab']
 		if not presentation:
 			name = 'lab:'+lab['proc']+':'+str(lab['component'])
 		else:
-			name = 'lab-presentation'+lab['proc']+':'+str(lab['component'])
+			name = 'lab-presentation:'+lab['proc']+':'+str(lab['component'])
 		return name
 	if metaDict['type'] == 'prescription':
 		p = metaDict['prescription']
@@ -54,7 +54,7 @@ def getFeatName(metaDict, presentation=False):
 		if not presentation:
 			return 'prescription:'+str(i)+':'+val
 		else:
-			return 'prescription-presentation'+str(i)+':'+val
+			return 'prescription-presentation:'+str(i)+':'+val
 	if metaDict['type'] == 'code':
 		v = metaDict['code'].strip()
 		if not presentation:
