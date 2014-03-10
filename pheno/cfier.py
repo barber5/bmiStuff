@@ -346,7 +346,7 @@ def getRandoms(num):
 	res = r.hget('codes', 'random')
 	li = json.loads(decomp(res))
 	result = {}
-	for i in range(num):
+	while len(result) < num:
 		next = str(random.choice(li))
 		result[next] = 0
 	return result
@@ -365,7 +365,7 @@ def getFromFile(num, fileName):
 			pid = lineArr[2]
 			pids.add(pid)
 	pids = list(pids)
-	for i in range(num):
+	while len(result) < num:
 		next = str(random.choice(pids))
 		resp = r.hget('pats', next)
 		if not resp:
@@ -388,7 +388,7 @@ if __name__ == "__main__":
 		else:
 			train[n] = label
 	for p, label in pos.iteritems():
-		if random.random() < float(sys.argv[4]):
+		if random.random() < float(sys.argv[4]):			
 			test[p] = label
 		else:
 			train[p] = label	
