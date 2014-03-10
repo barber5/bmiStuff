@@ -319,7 +319,7 @@ def runCfier(trainData, testData, ignoreFile, featurefile, diagTerms, featSets):
 		else:
 			miss = featurizer.inverse_transform(tv)			
 			print 'missed!'
-			print 'probabilities: '+str(model.predict_probs(tv))
+			print 'probabilities: '+str(model.predict_proba(tv))
 			miss = miss[0]
 			for f, imp in miss.iteritems():
 				f = resolveFeature(f)
