@@ -18,4 +18,4 @@ def remAllBut():
 	files = 'pancreatitis.txt'
 
 if __name__ == "__main__":
-	remAllBut
+	remAllBut()
