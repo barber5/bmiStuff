@@ -33,7 +33,7 @@ def remAllBut():
 	files = ['pancreatitis.txt']
 	for fi in files:
 		result = result | remFile(fi)
-	resp = r.keys('pats')
+	resp = r.hkeys('pats')
 	for pid in resp:
 		print pid
 
