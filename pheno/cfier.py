@@ -280,7 +280,7 @@ def runCfier(trainData, testData, ignoreFile, featurefile, diagTerms, featSets):
 				tp += 1
 		else:
 			miss = featurizer.inverse_transform(tv)
-			for f, imp in fimp.iteritems():
+			for f, imp in miss.iteritems():
 				print 'missed!'
 				f = resolveFeature(f)
 				print str(f)+'\t%.8f\n'%float(imp)
