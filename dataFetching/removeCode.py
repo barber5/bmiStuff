@@ -40,7 +40,9 @@ def remAllBut():
 		if pid not in result:
 			#print pid
 			dels.add(str(pid))
-	print len(dels)
+	for d in dels:
+		print 'deleting: '+str(d)
+		r.hdel('pats', str(d))
 
 if __name__ == "__main__":
 	remAllBut()
