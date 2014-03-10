@@ -34,7 +34,7 @@ def getPidsFromFile(fname):
 def getFeatName(metaDict, presentation=False):
 	if metaDict['type'] == 'term':
 		term = metaDict['term']
-		if not presentation:
+		if not presentation or str(term['familyHistory']) == '1':
 			return 'term:'+str(term['tid'])+':'+str(term['negated'])+':'+str(term['familyHistory'])
 		else:
 			return 'term-presentation:'+str(term['tid'])+':'+str(term['negated'])+':'+str(term['familyHistory'])
