@@ -202,6 +202,11 @@ def trainModel(trainData, diagTerm=None, featureFilter={},includeCid=False, incl
 	trainVect = vectorizePids(trainData, diagTerm, featureFilter=featureFilter, includeLab=includeLab, includeCode=includeCode, includeTerm=includeTerm, includePrescription=includePrescription)	
 	fh = FH()
 	trainArray = fh.fit_transform(trainVect).toarray()	
+	try:
+		print 'feature dimensions n_samples x n_features'
+		print trainArray.shape
+	except Exception as e:
+		None
 	tree = rfc(verbose=100, n_estimators=50, n_jobs=10)		
 	tree.fit(trainArray, trainData.values())	
 	return (tree, fh)
