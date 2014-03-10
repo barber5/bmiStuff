@@ -1,4 +1,5 @@
 import sys,os, pprint, json, random, pprint
+from math import sqrt
 sys.path.append(os.path.realpath('../tempClustering'))
 sys.path.append(os.path.realpath('./tempClustering'))
 sys.path.append(os.path.realpath('../dataFetching'))
@@ -237,7 +238,8 @@ def trainModel(trainData, diagTerm=None, featureFilter={},includeCid=False, incl
 		print trainArray.shape
 	except Exception as e:
 		None
-	tree = rfc(n_estimators=512, n_jobs=30)		
+	n_estimators = int(round(sqrt(trainArray.shape[1])))*2
+	tree = rfc(n_estimators=n_estimators, n_jobs=(n_estimators/10))		
 	tree.fit(trainArray, trainData.values())	
 	return (tree, fh)
 	#train the model
