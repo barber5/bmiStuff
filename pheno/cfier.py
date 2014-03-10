@@ -30,14 +30,19 @@ def getPidsFromFile(fname):
 			pids[pid] = label
 	return pids
 
-def getFeatName(metaDict):
+def getFeatName(metaDict, presentation=False):
 	if metaDict['type'] == 'term':
 		term = metaDict['term']
-	
-		return 'term:'+str(term['tid'])+':'+str(term['negated'])+':'+str(term['familyHistory'])
+		if not presentation:
+			return 'term:'+str(term['tid'])+':'+str(term['negated'])+':'+str(term['familyHistory'])
+		else:
+			return 'term-presentation'+str(term['tid'])+':'+str(term['negated'])+':'+str(term['familyHistory'])
 	if metaDict['type'] == 'lab':
 		lab = metaDict['lab']
-		name = 'lab:'+lab['proc']+':'+str(lab['component'])									
+		if not presentation:
+			name = 'lab:'+lab['proc']+':'+str(lab['component'])
+		else:
+			name = 'lab-presentation'+lab['proc']+':'+str(lab['component'])
 		return name
 	if metaDict['type'] == 'prescription':
 		p = metaDict['prescription']
@@ -46,10 +51,16 @@ def getFeatName(metaDict):
 			val = 'disco'
 		else:
 			val = 'ongoing'
-		return 'prescription:'+str(i)+':'+val
+		if not presentation:
+			return 'prescription:'+str(i)+':'+val
+		else:
+			return 'prescription-presentation'+str(i)+':'+val
 	if metaDict['type'] == 'code':
 		v = metaDict['code'].strip()
-		return 'code:'+str(v)
+		if not presentation:
+			return 'code:'+str(v)
+		else:
+			return 'code-presentation:'+str(v)
 
 # patients is pid -> {pid, src_type, labs -> [{age, , component, description, lid, line, ord, ord_num, proc, proc_cat, ref_high, ref_low, ref_norm, ref_unit, result_flag, result_inrange, src, timeoffset}], notes -> [{age, cpt, duration, icd9, nid, pid, src, src_type, timeoffset, year, terms -> [{cui, familyHistory, negated, nid, termid, tid}]}], prescriptions -> [{age, drug_description, ingr_set_id, order_status, pid, route, rxid, src, timeoffset}], visits -> [{age, cpt, duration, icd9, pid, src, src_type, timeoffset, year}] }
 def vectorizePids(data, diagTerms=None, includeCid=False, includeLab=True, includeTerm=True, includeCode=True, includePrescription=True, featureFilter={}, timeSlices=None):
@@ -74,14 +85,17 @@ def vectorizePids(data, diagTerms=None, includeCid=False, includeLab=True, inclu
 					if str(t['tid']) in diagTerms and int(t['negated']) == 0 and int(t['familyHistory']) == 0:
 						if float(n['timeoffset']) < minOffset:
 							minOffset = float(n['timeoffset'])
-			print >> sys.stderr, 'minOffset: '+str(minOffset)	
-
+			print >> sys.stderr, 'minOffset: '+str(minOffset)			
 		if includeTerm:
 			for n in dd['notes']:
 				if diagTerms and float(n['timeoffset']) > minOffset:
-					continue				
+					continue
+				if diagTerms and float(n['timeoffset']) == minOffset:
+					presentation = True
+				else:
+					presentation = False
 				for t in n['terms']:
-					feat = getFeatName({'type': 'term', 'term': t})
+					feat = getFeatName({'type': 'term', 'term': t}, presentation)
 					if feat in featureFilter:
 						continue
 					if feat not in nextPerson:
@@ -105,9 +119,13 @@ def vectorizePids(data, diagTerms=None, includeCid=False, includeLab=True, inclu
 			for l in dd['labs']:
 				if diagTerms and float(l['timeoffset']) > minOffset:
 					continue
+				if diagTerms and float(l['timeoffset']) == minOffset:
+					presentation = True
+				else:
+					presentation = False
 				if 'ord_num' not in l or not l['ord_num'] or l['ord_num'] == '':
 					continue
-				feat = getFeatName({'type': 'lab', 'lab': l})
+				feat = getFeatName({'type': 'lab', 'lab': l}, presentation)
 				if feat in featureFilter:
 					continue
 				if meta['labCounting'] == 'average':
@@ -145,9 +163,13 @@ def vectorizePids(data, diagTerms=None, includeCid=False, includeLab=True, inclu
 			for p in dd['prescriptions']:
 				if diagTerms and float(p['timeoffset']) > minOffset:
 					continue
+				if diagTerms and float(p['timeoffset']) == minOffset:
+					presentation = True
+				else:
+					presentation = False
 				ings = getIngredients(p['ingr_set_id'])
 				for i in ings:
-					feat = getFeatName({'type': 'prescription', 'prescription': p, 'ingredient': i})
+					feat = getFeatName({'type': 'prescription', 'prescription': p, 'ingredient': i}, presentation)
 					if feat in featureFilter:
 						continue
 					if meta['prescriptionCounting'] == 'boolean':
@@ -164,12 +186,16 @@ def vectorizePids(data, diagTerms=None, includeCid=False, includeLab=True, inclu
 			for v in dd['visits']:
 				if diagTerms and float(v['timeoffset']) > minOffset:
 					continue
+				if diagTerms and float(p['timeoffset']) == minOffset:
+					presentation = True
+				else:
+					presentation = False
 				if 'icd9' in v and len(v['icd9']) > 0:
 					codes = v['icd9'].split(',')
 					for c in codes:						
 						if 'codeCollapse' in meta and meta['codeCollapse']:
 							c = code.split('.')[0]
-						feat = getFeatName({'type': 'code', 'code': c})	
+						feat = getFeatName({'type': 'code', 'code': c}, presentation)	
 						if feat in featureFilter:						
 							continue
 						if meta['codeCounting'] == 'boolean':
