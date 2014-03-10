@@ -367,6 +367,9 @@ def getFromFile(num, fileName):
 	pids = list(pids)
 	for i in range(num):
 		next = str(random.choice(pids))
+		resp = r.hget('pats', next)
+		if not resp:
+			continue
 		result[next] = 1
 	return result
 
