@@ -288,7 +288,7 @@ def runCfier(trainData, testData, ignoreFile, featurefile, diagTerms, featSets):
 			miss = miss[0]
 			for f, imp in miss.iteritems():
 				f = resolveFeature(f)
-				print str(f)+'\t%.8f\n'%float(imp)
+				print str(f)+'\t'+str(imp)
 				
 			if pred == 0:
 				fn += 1
