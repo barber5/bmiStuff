@@ -27,9 +27,7 @@ def remAllBut():
 	codes = ['299', '135', 'random']
 	result = set([])
 	for code in codes:
-		result = result | remCode(code)
-
-	
+		result = result | remCode(code)	
 	files = ['pancreatitis.txt']
 	for fi in files:
 		result = result | remFile(fi)
@@ -41,7 +39,7 @@ def remAllBut():
 		pid = str(pid)
 		if pid not in result:
 			#print pid
-			dels.add(pid)
+			dels.add(str(pid))
 	print len(dels)
 
 if __name__ == "__main__":
