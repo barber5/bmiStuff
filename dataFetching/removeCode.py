@@ -6,7 +6,7 @@ def remCode(code):
 	res = r.hget('codes', code)	
 	li = json.loads(decomp(res))	
 	for l in li:
-		result.add(l)
+		result.add(str(l))
 	return result
 
 
@@ -20,7 +20,7 @@ def remFile(fName):
 				break
 			lineArr = line.split('\t')			
 			pid = lineArr[0]
-			result.add(pid)
+			result.add(str(pid))
 	return result
 
 def remAllBut():
@@ -38,7 +38,7 @@ def remAllBut():
 	print len(resp)
 	dels = set([])
 	for pid in resp:
-		
+		pid = str(pid)
 		if pid not in result:
 			#print pid
 			dels.add(pid)
