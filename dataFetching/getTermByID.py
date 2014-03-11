@@ -21,7 +21,7 @@ def getIngredient(rxcui):
 
 def getTermCui(cui):
 	#print >> sys.stderr, 'cui: '+str(cui)
-	query = "SELECT str from str2cid where cui=%s"
+	query = "SELECT cid from str2cid where cui=%s"
 	rows = tryQuery(term_db, query, [cui])
 	if len(rows) == 0:
 		return None
@@ -29,7 +29,7 @@ def getTermCui(cui):
 		return None
 	if not rows[0][0]:
 		return None
-	return rows[0][0].upper()
+	return rows[0][0]
 
 def getIngredients(ingr_set_id):
 	query = "SELECT rxcui from ingredient where ingr_set_id=%s"

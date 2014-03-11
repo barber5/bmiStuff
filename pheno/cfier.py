@@ -21,6 +21,8 @@ meta = {
 stop_terms = range(10)
 stop_terms.extend([11, 13, 20, 21, 26, 39, 32, 40, 43, 46, 54, 18, 1028, 116, 339, 31, 40, 183, 1355])
 
+cuiCache = {}
+
 def getPidsFromFile(fname):
 	pids = {}
 	with open(fname, 'r') as fi:
@@ -65,6 +67,12 @@ def getFeatName(metaDict, presentation=False):
 			return 'code:'+str(v)
 		else:
 			return 'code-presentation:'+str(v)
+	if metaDict['type'] == 'cid':
+		cui = metaDict['term']['cui']
+		if cui not in cuiCache:			
+			cid = getTermCui(cui)
+			cuiCache[cui] = cid
+		return 'cid:'+str(cuiCache[cui])
 
 # patients is pid -> {pid, src_type, labs -> [{age, , component, description, lid, line, ord, ord_num, proc, proc_cat, ref_high, ref_low, ref_norm, ref_unit, result_flag, result_inrange, src, timeoffset}], notes -> [{age, cpt, duration, icd9, nid, pid, src, src_type, timeoffset, year, terms -> [{cui, familyHistory, negated, nid, termid, tid}]}], prescriptions -> [{age, drug_description, ingr_set_id, order_status, pid, route, rxid, src, timeoffset}], visits -> [{age, cpt, duration, icd9, pid, src, src_type, timeoffset, year}] }
 def vectorizePids(data, diagTerms=None, includeCid=False, includeLab=True, includeTerm=True, includeCode=True, includePrescription=True, featureFilter={}, timeSlices=None):
@@ -112,6 +120,33 @@ def vectorizePids(data, diagTerms=None, includeCid=False, includeLab=True, inclu
 					if int(t['tid']) in stop_terms:
 						continue
 					feat = getFeatName({'type': 'term', 'term': t}, presentation)
+					if feat in featureFilter:
+						continue
+					if feat not in nextPerson:
+						nextPerson[feat] = 0
+					if meta['termCounting'] == 'bag':
+						nextPerson[feat] += 1
+					elif meta['termCounting'] == 'boolean':
+						nextPerson[feat] = 1
+					elif meta['termCounting'] == 'noteboolean':
+						lookup = (n['nid'], feat)
+						if lookup in noteTerms:
+							continue
+						else:
+							nextPerson[feat] += 1
+							noteTerms.add(lookup)
+					elif meta['termCounting'] == 'kernel':
+						nextPerson[feat] += kernelize(meta['termKernel'], 1, n['timeoffset'], timeSlices[pid])
+		if includeCid:
+			for n in dd['notes']:
+				if diagTerms and float(n['timeoffset']) > minOffset:
+					continue
+				if diagTerms and float(n['timeoffset']) == minOffset:					
+					presentation = False
+				else:
+					presentation = False
+				for t in n['terms']:					
+					feat = getFeatName({'type': 'cid', 'term': t}, presentation)
 					if feat in featureFilter:
 						continue
 					if feat not in nextPerson:
