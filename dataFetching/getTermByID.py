@@ -43,8 +43,7 @@ def getConcept(cid):
 		return None
 	if not rows[0][0]:
 		print 'if not rows[0][0]:'
-		return None
-	print rows[0][0]
+		return None	
 	return rows[0][0]
 
 def getIngredients(ingr_set_id):
