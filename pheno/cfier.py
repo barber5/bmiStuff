@@ -402,7 +402,8 @@ def runCfier(trainData, testData, ignoreFile, featurefile, diagTerms, featSets):
 	print 'fn: '+str(fn)
 	print 'fp: '+str(fp)
 	print 'acc: '+str(float(tp+tn)/float(tp+tn+fn+fp))
-	print 'ppv: '+str(float(tp)/float(tp+fp))
+	if tp + fp > 0:
+		print 'ppv: '+str(float(tp)/float(tp+fp))
 	fimp = featurizer.inverse_transform(model.feature_importances_)	
 	writeFeatureImportance(fimp[0], featurefile)
 
