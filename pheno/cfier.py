@@ -89,7 +89,7 @@ def vectorizePids(data, diagTerms=None, includeCid=False, includeLab=True, inclu
 					if str(t['tid']) in diagTerms and int(t['negated']) == 0 and int(t['familyHistory']) == 0:					
 						if float(n['timeoffset']) < minOffset:
 							minOffset = float(n['timeoffset'])
-					elif label == 0:
+					elif label == 20:
 						if minOffset == float('inf'):
 							minOffset = n['timeoffset']
 						elif random.random() > .5:
