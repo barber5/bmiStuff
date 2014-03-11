@@ -19,7 +19,7 @@ meta = {
 }
 
 stop_terms = range(10)
-stop_terms.extend([11, 13, 20, 21, 26, 39, 32, 40, 43, 46, 54, 18, 1028, 116, 339, 31, 40, 183, 1355])
+stop_terms.extend([11, 13, 20, 21, 26, 39, 32, 40, 43, 46, 54, 18, 1028, 116, 339, 31, 40, 183, 1355, 407, 59, 252, 1763, 2423, 6053, 5818])
 
 cuiCache = {}
 
@@ -142,7 +142,9 @@ def vectorizePids(data, diagTerms=None, includeCid=False, includeLab=True, inclu
 					presentation = False
 				else:
 					presentation = False
-				for t in n['terms']:					
+				for t in n['terms']:
+					if int(t['tid']) in stop_terms:
+						continue					
 					feat = getFeatName({'type': 'term', 'term': t})
 					print 'tid: '+str(t['tid'])
 					if feat in featureFilter:
