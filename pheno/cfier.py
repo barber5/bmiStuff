@@ -18,6 +18,9 @@ meta = {
 	'codeCounting': 'bag'
 }
 
+stop_terms = range(10)
+stop.terms.extend([11, 13, 20, 21, 26, 39, 32, 40, 43, 46, 54, 18, 1028, 116, 339, 31, 40, 183, 1355])
+
 def getPidsFromFile(fname):
 	pids = {}
 	with open(fname, 'r') as fi:
@@ -86,6 +89,8 @@ def vectorizePids(data, diagTerms=None, includeCid=False, includeLab=True, inclu
 			minOffset = float('inf')
 			for n in dd['notes']:
 				for t in n['terms']:
+					if int(t['tid']) in stop_terms:
+						continue
 					if str(t['tid']) in diagTerms and int(t['negated']) == 0 and int(t['familyHistory']) == 0:					
 						if float(n['timeoffset']) < minOffset:
 							minOffset = float(n['timeoffset'])
