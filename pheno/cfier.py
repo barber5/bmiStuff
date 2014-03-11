@@ -86,7 +86,7 @@ def vectorizePids(data, diagTerms=None, includeCid=False, includeLab=True, inclu
 
 		if diagTerms:
 			print >> sys.stderr, 'patient: '+str(pid)+' label: '+str(label)
-			minOffset = float('inf')
+			minOffset = float('inf')			
 			for n in dd['notes']:
 				for t in n['terms']:
 					if int(t['tid']) in stop_terms:
@@ -408,7 +408,10 @@ if __name__ == "__main__":
 			test[p] = label
 		else:
 			train[p] = label	
-	runCfier(train, test, sys.argv[5], sys.argv[6], sys.argv[7:], sys.argv[7:])
+	dt = None
+	if '-dt' in sys.argv:
+		dt = sys.argv[7:]
+	runCfier(train, test, sys.argv[5], sys.argv[6], dt, sys.argv[7:])
 	
 
 
