@@ -112,7 +112,7 @@ def vectorizePids(data, diagTerms=None, includeCid=False, includeLab=True, inclu
 			print >> sys.stderr, 'minOffset: '+str(minOffset)			
 		if includeTerm:
 			for n in dd['notes']:
-				if diagTerms and float(n['timeoffset']) > minOffset:
+				if diagTerms and float(n['timeoffset']) < minOffset:
 					continue
 				if diagTerms and float(n['timeoffset']) == minOffset:					
 					presentation = False
@@ -141,7 +141,7 @@ def vectorizePids(data, diagTerms=None, includeCid=False, includeLab=True, inclu
 						nextPerson[feat] += kernelize(meta['termKernel'], 1, n['timeoffset'], timeSlices[pid])
 		if includeCid:
 			for n in dd['notes']:
-				if diagTerms and float(n['timeoffset']) > minOffset:
+				if diagTerms and float(n['timeoffset']) < minOffset:
 					continue
 				if diagTerms and float(n['timeoffset']) == minOffset:					
 					presentation = False
