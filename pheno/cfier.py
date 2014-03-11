@@ -238,7 +238,7 @@ def trainModel(trainData, diagTerm=None, featureFilter={},includeCid=False, incl
 	for patient in trainVect:
 		for feat, val in patient.iteritems():
 			if feat not in counts:
-				counts[feat] == 0
+				counts[feat] = 0
 			counts[feat] += 1
 	newTrain = []
 	for patient in trainVect:
