@@ -142,9 +142,7 @@ def vectorizePids(data, diagTerms=None, includeCid=False, includeLab=True, inclu
 					presentation = False
 				else:
 					presentation = False
-				for t in n['terms']:
-					if len(t['term']) < 3:
-						continue
+				for t in n['terms']:					
 					if int(t['tid']) in stop_terms:
 						continue					
 					feat = getFeatName({'type': 'term', 'term': t})
