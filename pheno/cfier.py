@@ -144,6 +144,7 @@ def vectorizePids(data, diagTerms=None, includeCid=False, includeLab=True, inclu
 					presentation = False
 				for t in n['terms']:					
 					feat = getFeatName({'type': 'term', 'term': t})
+					print 'tid: '+str(t['tid'])
 					if feat in featureFilter:
 						continue
 					feat = getFeatName({'type': 'cid', 'term': t}, presentation)
