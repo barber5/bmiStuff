@@ -19,7 +19,7 @@ meta = {
 }
 
 stop_terms = range(10)
-stop_terms.extend([11, 13, 20, 21, 26, 39, 32, 40, 43, 46, 54, 18, 1028, 116, 339, 31])
+stop_terms.extend([11, 13, 20, 21, 26, 39, 32, 40, 43, 46, 54, 18])
 
 def getPidsFromFile(fname):
 	pids = {}
