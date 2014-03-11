@@ -88,7 +88,9 @@ def vectorizePids(data, diagTerms=None, includeCid=False, includeLab=True, inclu
 			print >> sys.stderr, 'patient: '+str(pid)+' label: '+str(label)
 			minOffset = float('inf')
 			for n in dd['notes']:
-				for t in n['terms']:					
+				for t in n['terms']:
+					if int(t['tid']) in stop_terms:
+						continue
 					if str(t['tid']) in diagTerms and int(t['negated']) == 0 and int(t['familyHistory']) == 0:					
 						if float(n['timeoffset']) < minOffset:
 							minOffset = float(n['timeoffset'])
@@ -100,14 +102,13 @@ def vectorizePids(data, diagTerms=None, includeCid=False, includeLab=True, inclu
 			print >> sys.stderr, 'minOffset: '+str(minOffset)			
 		if includeTerm:
 			for n in dd['notes']:
-				if diagTerms and float(n['timeoffset']) < minOffset:
+				if diagTerms and float(n['timeoffset']) > minOffset:
 					continue
 				if diagTerms and float(n['timeoffset']) == minOffset:					
 					presentation = False
 				else:
 					presentation = False
 				for t in n['terms']:
-
 					feat = getFeatName({'type': 'term', 'term': t}, presentation)
 					if feat in featureFilter:
 						continue
@@ -259,7 +260,7 @@ def trainModel(trainData, diagTerm=None, featureFilter={},includeCid=False, incl
 		print trainArray.shape
 	except Exception as e:
 		None
-	n_estimators = int(round(sqrt(trainArray.shape[1])))
+	n_estimators = int(round(sqrt(trainArray.shape[1])))*2
 	print 'n_estimators: '+str(n_estimators)
 	tree = rfc(n_estimators=n_estimators, n_jobs=(n_estimators/10))		
 	tree.fit(trainArray, trainData.values())	
