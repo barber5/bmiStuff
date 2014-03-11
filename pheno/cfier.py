@@ -406,7 +406,7 @@ if __name__ == "__main__":
 			test[p] = label
 		else:
 			train[p] = label	
-	runCfier(train, test, sys.argv[5], sys.argv[6], sys.argv, sys.argv)
+	runCfier(train, test, sys.argv[5], sys.argv[6], sys.argv[7:], sys.argv[7:])
 	
 
 
