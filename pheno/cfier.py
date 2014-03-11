@@ -107,7 +107,7 @@ def vectorizePids(data, diagTerms=None, includeCid=False, includeLab=True, inclu
 				else:
 					presentation = False
 				for t in n['terms']:
-					
+
 					feat = getFeatName({'type': 'term', 'term': t}, presentation)
 					if feat in featureFilter:
 						continue
@@ -259,7 +259,7 @@ def trainModel(trainData, diagTerm=None, featureFilter={},includeCid=False, incl
 		print trainArray.shape
 	except Exception as e:
 		None
-	n_estimators = int(round(sqrt(trainArray.shape[1])))*2
+	n_estimators = int(round(sqrt(trainArray.shape[1])))
 	print 'n_estimators: '+str(n_estimators)
 	tree = rfc(n_estimators=n_estimators, n_jobs=(n_estimators/10))		
 	tree.fit(trainArray, trainData.values())	
