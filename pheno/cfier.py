@@ -83,7 +83,6 @@ def vectorizePids(data, diagTerms=None, includeCid=False, includeLab=True, inclu
 		if meta['termCounting'] == 'noteboolean':  # we add 1 to a term count for each note it appears in
 			noteTerms = set([])
 
-
 		if diagTerms:
 			print >> sys.stderr, 'patient: '+str(pid)+' label: '+str(label)
 			minOffset = float('inf')			
@@ -131,7 +130,7 @@ def vectorizePids(data, diagTerms=None, includeCid=False, includeLab=True, inclu
 			if meta['labCounting'] == 'average':
 				labCounts = {}
 			for l in dd['labs']:
-				if diagTerms and float(l['timeoffset']) < minOffset:
+				if diagTerms and float(l['timeoffset']) > minOffset:
 					continue
 				if diagTerms and float(l['timeoffset']) == minOffset:
 					presentation = True
