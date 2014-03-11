@@ -11,7 +11,7 @@ from sklearn.feature_extraction import DictVectorizer as FH
 from sklearn.ensemble import RandomForestClassifier as rfc
 
 meta = {
-	'termCounting': 'noteboolean',
+	'termCounting': 'boolean',
 	'labCounting': 'categorical_status',
 	'labCounting2': 'bag',
 	'prescriptionCounting': 'bag',
