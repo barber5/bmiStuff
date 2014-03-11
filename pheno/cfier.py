@@ -88,9 +88,7 @@ def vectorizePids(data, diagTerms=None, includeCid=False, includeLab=True, inclu
 			print >> sys.stderr, 'patient: '+str(pid)+' label: '+str(label)
 			minOffset = float('inf')
 			for n in dd['notes']:
-				for t in n['terms']:
-					if int(t['tid']) in stop_terms:
-						continue
+				for t in n['terms']:					
 					if str(t['tid']) in diagTerms and int(t['negated']) == 0 and int(t['familyHistory']) == 0:					
 						if float(n['timeoffset']) < minOffset:
 							minOffset = float(n['timeoffset'])
@@ -109,6 +107,8 @@ def vectorizePids(data, diagTerms=None, includeCid=False, includeLab=True, inclu
 				else:
 					presentation = False
 				for t in n['terms']:
+					if int(t['tid']) in stop_terms:
+						continue
 					feat = getFeatName({'type': 'term', 'term': t}, presentation)
 					if feat in featureFilter:
 						continue
