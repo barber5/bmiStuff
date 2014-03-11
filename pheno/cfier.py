@@ -94,7 +94,7 @@ def vectorizePids(data, diagTerms=None, includeCid=False, includeLab=True, inclu
 					if str(t['tid']) in diagTerms and int(t['negated']) == 0 and int(t['familyHistory']) == 0:					
 						if float(n['timeoffset']) < minOffset:
 							minOffset = float(n['timeoffset'])
-					elif label == 20:
+					elif label == 0:
 						if minOffset == float('inf'):
 							minOffset = n['timeoffset']
 						elif random.random() > .5:
@@ -341,9 +341,7 @@ def runCfier(trainData, testData, ignoreFile, featurefile, diagTerms, featSets):
 		else:
 			miss = featurizer.inverse_transform(tv)			
 			print 'missed!'
-			print 'probabilities: '+str(model.predict_proba(tv))
-			miss = miss[0]			
-				
+			print 'probabilities: '+str(model.predict_proba(tv))										
 			if pred == 0:
 				fn += 1
 			else:
