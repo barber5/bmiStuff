@@ -369,8 +369,10 @@ def runCfier(trainData, testData, ignoreFile, featurefile, diagTerms, featSets):
 		includeTerm=True
 	if 'codes' in featSets:
 		includeCode=True
+	if 'cids' in featSets:
+		includeCid=True
 
-	(model, featurizer) = trainModel(trainData, diagTerms, featureFilter=ignore, includeLab=includeLab, includeCode=includeCode, includeTerm=includeTerm, includePrescription=includePrescription)	
+	(model, featurizer) = trainModel(trainData, diagTerms, featureFilter=ignore, includeLab=includeLab, includeCode=includeCode, includeTerm=includeTerm, includePrescription=includePrescription, includeCid=includeCid)	
 	testVect = vectorizePids(testData, diagTerms)		
 	testArray = featurizer.transform(testVect).toarray()	
 	tn = 0
