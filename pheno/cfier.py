@@ -461,7 +461,7 @@ def getFromFile(num, fileName):
 
 
 if __name__ == "__main__":	
-	if len(sys.argv) < 9:
+	if len(sys.argv) < 8:
 		print 'usage: <dataFile> <samples> <testProportion> <ignoreFile> <featureOutputFile> <diagTerm> <[featureSets] labs|meds|terms|codes|cids>'
 		sys.exit(1)
 	test = {}
