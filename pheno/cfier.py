@@ -133,7 +133,7 @@ def vectorizePids(data, diagTerms=None, includeCid=False, includeLab=True, inclu
 			if meta['labCounting'] == 'average':
 				labCounts = {}
 			for l in dd['labs']:
-				if diagTerms and float(l['timeoffset']) > minOffset:
+				if diagTerms and float(l['timeoffset']) < minOffset:
 					continue
 				if diagTerms and float(l['timeoffset']) == minOffset:
 					presentation = True
@@ -177,7 +177,7 @@ def vectorizePids(data, diagTerms=None, includeCid=False, includeLab=True, inclu
 					nextPerson[k] = float(v['total']) / float(v['count'])
 		if includePrescription:
 			for p in dd['prescriptions']:
-				if diagTerms and float(p['timeoffset']) > minOffset:
+				if diagTerms and float(p['timeoffset']) < minOffset:
 					continue
 				if diagTerms and float(p['timeoffset']) == minOffset:
 					presentation = True
@@ -200,7 +200,7 @@ def vectorizePids(data, diagTerms=None, includeCid=False, includeLab=True, inclu
 						nextPerson[feat] += kernelize(meta['prescriptionKernel'], 1, p['timeoffset'], timeSlices[pid])
 		if includeCode:
 			for v in dd['visits']:
-				if diagTerms and float(v['timeoffset']) > minOffset:
+				if diagTerms and float(v['timeoffset']) < minOffset:
 					continue
 				if diagTerms and float(v['timeoffset']) == minOffset:
 					presentation = True
