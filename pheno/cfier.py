@@ -462,26 +462,22 @@ def getFromFile(num, fileName):
 
 if __name__ == "__main__":	
 	if len(sys.argv) < 9:
-		print 'usage: <dataFile> <posNum> <negNum> <testProportion> <ignoreFile> <featureOutputFile> <diagTerm> <[featureSets] labs|meds|terms|codes|cids>'
+		print 'usage: <dataFile> <samples> <testProportion> <ignoreFile> <featureOutputFile> <diagTerm> <[featureSets] labs|meds|terms|codes|cids>'
 		sys.exit(1)
 	test = {}
 	train = {}
 	
 	data = getFromFile(int(sys.argv[2]), sys.argv[1])
-	for n, label in negs.iteritems():
-		if random.random() < float(sys.argv[4]):
+	for n, label in data.iteritems():
+		if random.random() < float(sys.argv[3]):
 			test[n] = label
 		else:
 			train[n] = label
-	for p, label in pos.iteritems():
-		if random.random() < float(sys.argv[4]):			
-			test[p] = label
-		else:
-			train[p] = label	
+	
 	dt = None
 	if '-dt' in sys.argv:
-		dt = sys.argv[7:]
-	runCfier(train, test, sys.argv[5], sys.argv[6], dt, sys.argv[7:])
+		dt = sys.argv[6:]
+	runCfier(train, test, sys.argv[4], sys.argv[5], dt, sys.argv[6:])
 	
 
 
