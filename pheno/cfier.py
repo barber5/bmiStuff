@@ -126,7 +126,7 @@ def vectorizePids(data, diagTerms=None, includeCid=False, includeLab=True, inclu
 			if meta['labCounting'] == 'average':
 				labCounts = {}
 			for l in dd['labs']:
-				if diagTerms and float(l['timeoffset']) > minOffset:
+				if diagTerms and float(l['timeoffset']) < minOffset:
 					continue
 				if diagTerms and float(l['timeoffset']) == minOffset:
 					presentation = True
