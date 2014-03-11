@@ -234,8 +234,22 @@ def filterDataByLabel(data, label):
 
 def trainModel(trainData, diagTerm=None, featureFilter={},includeCid=False, includeLab=True, includeTerm=True, includeCode=True, includePrescription=True):		
 	trainVect = vectorizePids(trainData, diagTerm, featureFilter=featureFilter, includeLab=includeLab, includeCode=includeCode, includeTerm=includeTerm, includePrescription=includePrescription)	
+	counts = {}
+	for patient in trainVect:
+		for feat, val in patient.iteritems():
+			if feat not in counts:
+				counts[feat] == 0
+			counts[feat] += 1
+	newTrain = []
+	for patient in trainVect:
+		newPatient = {}
+		for feat, val in patient.iteritems():
+			if float(val) / float(len(trainVect)) > .05:
+				newPatient[feat] = val
+		
+		newTrain.append(newPatient)
 	fh = FH()
-	trainArray = fh.fit_transform(trainVect).toarray()	
+	trainArray = fh.fit_transform(newTrain).toarray()	
 	try:
 		print 'feature dimensions n_samples x n_features'
 		print trainArray.shape
