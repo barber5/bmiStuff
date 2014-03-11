@@ -19,7 +19,7 @@ meta = {
 }
 
 stop_terms = range(10)
-stop_terms.extend([11, 13, 20, 21, 26, 39, 32, 40, 43, 46, 54, 18])
+stop_terms.extend([11, 13, 20, 21, 26, 39, 32, 40, 43, 46, 54, 18, 1028, 116, 339, 31, 40, 183, 1355])
 
 def getPidsFromFile(fname):
 	pids = {}
@@ -107,8 +107,7 @@ def vectorizePids(data, diagTerms=None, includeCid=False, includeLab=True, inclu
 				else:
 					presentation = False
 				for t in n['terms']:
-					if int(t['tid']) in stop_terms:
-						continue
+					
 					feat = getFeatName({'type': 'term', 'term': t}, presentation)
 					if feat in featureFilter:
 						continue
