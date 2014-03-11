@@ -314,6 +314,7 @@ def trainModel(trainData, diagTerm=None, featureFilter={},includeCid=False, incl
 	# return
 
 def resolveFeature(f):
+	print f
 	if f.find('term') == 0:
 		tArr = f.split(':')
 		term = getTerm(tArr[1])
