@@ -426,7 +426,7 @@ def getRandoms(num):
 	return result
 
 def getFromFile(num, fileName):
-	pids = set([])
+	pids = {}
 	result = {}
 	with open(fileName, 'r') as fi:
 		fi.readline()
@@ -436,26 +436,38 @@ def getFromFile(num, fileName):
 				break
 			lineArr = line.split(' ')
 			#print lineArr
-			pid = lineArr[2]
-			pids.add(pid)
-	pids = list(pids)
-	while len(result) < num:
-		next = str(random.choice(pids))
-		resp = r.hget('pats', next)
+			pidNeg = lineArr[2]
+			pidPos = lineArr[1]
+			pids[pidNeg] = 0
+			pids[pidPos] = 1
+	pidKeys = pids.keys()
+	while len(result) < num/2:
+		next = random.choice(pidKeys)
+		if pids[next] != 1:
+			continue
+		resp = r.hget('pats', str(next))
 		if not resp:
 			continue
 		result[next] = 1
+	while len(result) < num:
+		next = random.choice(pidKeys)
+		if pids[next] != 0:
+			continue
+		resp = r.hget('pats', str(next))
+		if not resp:
+			continue
+		result[next] = 0
 	return result
 
 
 if __name__ == "__main__":	
 	if len(sys.argv) < 9:
-		print 'usage: <posFile> <posNum> <negNum> <testProportion> <ignoreFile> <featureOutputFile> <diagTerm> <[featureSets] labs|meds|terms|codes|cids>'
+		print 'usage: <dataFile> <posNum> <negNum> <testProportion> <ignoreFile> <featureOutputFile> <diagTerm> <[featureSets] labs|meds|terms|codes|cids>'
 		sys.exit(1)
 	test = {}
 	train = {}
-	negs = getRandoms(int(sys.argv[3]))
-	pos = getFromFile(int(sys.argv[2]), sys.argv[1])
+	
+	data = getFromFile(int(sys.argv[2]), sys.argv[1])
 	for n, label in negs.iteritems():
 		if random.random() < float(sys.argv[4]):
 			test[n] = label
