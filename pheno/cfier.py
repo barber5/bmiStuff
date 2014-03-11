@@ -251,7 +251,7 @@ def trainModel(trainData, diagTerm=None, featureFilter={},includeCid=False, incl
 	for patient in trainVect:
 		newPatient = {}
 		for feat, val in patient.iteritems():
-			if float(val) / float(len(trainVect)) > .05:
+			if float(val) / float(len(trainVect)) > -1:
 				newPatient[feat] = val
 		
 		newTrain.append(newPatient)
