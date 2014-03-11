@@ -223,7 +223,11 @@ def vectorizePids(data, diagTerms=None, includeCid=False, includeLab=True, inclu
 						elif meta['codeCounting'] == 'kernel':
 							if feat not in nextPerson:
 								nextPerson[feat] = 0
-							nextPerson[feat] += kernelize(meta['codeKernel'], 1, v['timeoffset'], timeSlices[pid])		
+							nextPerson[feat] += kernelize(meta['codeKernel'], 1, v['timeoffset'], timeSlices[pid])	
+		nextPerson['meta-visits'] = len(dd['visits'])	
+		nextPerson['meta-notes'] = len(dd['notes'])
+		nextPerson['meta-labs'] = len(dd['labs'])
+		nextPerson['meta-prescriptions'] = len(dd['prescriptions'])
 
 		patients.append(nextPerson)
 	
