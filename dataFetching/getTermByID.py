@@ -31,8 +31,7 @@ def getTermCui(cui):
 		return None
 	return rows[0][0]
 
-def getConcept(cid):
-	print 'getting cid: '+str(cid)
+def getConcept(cid):	
 	query = "SELECT str from str2cid where cid=%s"
 	rows = tryQuery(term_db, query, [cid])
 	if len(rows) == 0:
