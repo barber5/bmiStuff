@@ -332,7 +332,7 @@ def resolveFeature(f):
 		tArr = f.split(':')
 		cid = getTermCui(tArr[1])
 		if cid:
-			conc = getConcept(tArr[1])
+			conc = getConcept(cid)
 		else:
 			conc=None
 		tArr[1] = str(tArr[1])+'('+str(cid)+'('+str(conc)+')'
