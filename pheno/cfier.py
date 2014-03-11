@@ -5,7 +5,7 @@ sys.path.append(os.path.realpath('./tempClustering'))
 sys.path.append(os.path.realpath('../dataFetching'))
 sys.path.append(os.path.realpath('./dataFetching'))
 from queryByCui import getCuis, r, decomp, compIt
-from getTermByID import getTerm, getTermCui, getIngredients, getIngredient, getLab
+from getTermByID import getTerm, getTermCui, getIngredients, getIngredient, getLab, getConcept
 from queryByCode import getPids
 from sklearn.feature_extraction import DictVectorizer as FH
 from sklearn.ensemble import RandomForestClassifier as rfc
@@ -72,6 +72,8 @@ def getFeatName(metaDict, presentation=False):
 		if cui not in cuiCache:			
 			cid = getTermCui(cui)
 			cuiCache[cui] = cid
+		if not cuiCache[cui]:
+			return None
 		return 'cid:'+str(cuiCache[cui])
 
 # patients is pid -> {pid, src_type, labs -> [{age, , component, description, lid, line, ord, ord_num, proc, proc_cat, ref_high, ref_low, ref_norm, ref_unit, result_flag, result_inrange, src, timeoffset}], notes -> [{age, cpt, duration, icd9, nid, pid, src, src_type, timeoffset, year, terms -> [{cui, familyHistory, negated, nid, termid, tid}]}], prescriptions -> [{age, drug_description, ingr_set_id, order_status, pid, route, rxid, src, timeoffset}], visits -> [{age, cpt, duration, icd9, pid, src, src_type, timeoffset, year}] }
@@ -147,6 +149,8 @@ def vectorizePids(data, diagTerms=None, includeCid=False, includeLab=True, inclu
 					presentation = False
 				for t in n['terms']:					
 					feat = getFeatName({'type': 'cid', 'term': t}, presentation)
+					if not feat:
+						continue
 					if feat in featureFilter:
 						continue
 					if feat not in nextPerson:
@@ -326,6 +330,10 @@ def resolveFeature(f):
 		ing = getIngredient(tArr[1])
 		tArr[1] = str(tArr[1])+'('+str(ing)+')'
 		return ':'.join(tArr)
+	elif f.find('cid') == 0:
+		tArr = f.split(':')
+		conc = getConcept(tArr[1])
+		tArr[1] = str(tArr[1])+'('+str(conc)+')'
 	else:
 		return f
 
