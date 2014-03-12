@@ -425,7 +425,7 @@ def getRandoms(num):
 		result[next] = 0
 	return result
 
-def getFromFile(num, fileName):
+def getFromFile(num, fileName, rndSrc):
 	pids = {}
 	result = {}
 	with open(fileName, 'r') as fi:
@@ -449,14 +449,19 @@ def getFromFile(num, fileName):
 		if not resp:
 			continue
 		result[next] = 1
-	while len(result) < num:
-		next = random.choice(pidKeys)
-		if pids[next] != 0:
-			continue
-		resp = r.hget('pats', str(next))
-		if not resp:
-			continue
-		result[next] = 0
+	if rndSrc == 'file':
+		while len(result) < num:
+			next = random.choice(pidKeys)
+			if pids[next] != 0:
+				continue
+			resp = r.hget('pats', str(next))
+			if not resp:
+				continue
+			result[next] = 0
+	else:
+		rnds = getRandoms(num/2)
+		for rn in rnds:
+			result[rn] = 0
 	return result
 
 
@@ -466,8 +471,11 @@ if __name__ == "__main__":
 		sys.exit(1)
 	test = {}
 	train = {}
-	
-	data = getFromFile(int(sys.argv[2]), sys.argv[1])
+	rndSrc = 'file'
+	if '-rnd' in sys.argv:
+		rndSrc = 'cache'
+
+	data = getFromFile(int(sys.argv[2]), sys.argv[1], rndSrc)
 	for n, label in data.iteritems():
 		if random.random() < float(sys.argv[3]):
 			test[n] = label
