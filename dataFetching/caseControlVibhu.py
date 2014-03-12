@@ -21,7 +21,7 @@ def getPidsFromFile(fName, lo, hi):
 		print lineArr
 		pid = lineArr[1]
 		getVecForPid(pid)
-		pid = lineArr[2]
+		#pid = lineArr[2]
 		getVecForPid(pid)
 
 
