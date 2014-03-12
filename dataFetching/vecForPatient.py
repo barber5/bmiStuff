@@ -10,7 +10,7 @@ def getVecForPid(pid, code=None):
 		#return
 	visits = getSingleVisits(pid, stride_db, None)		
 	print 'got visits'
-	notes = getSingleNotes(pid, stride_db, None)		
+	notes = getSingleNotes(pid, stride_db, term_db, None)		
 	print 'got notes'
 	prescriptions = getSinglePrescriptions(pid, stride_db, None)		
 	print 'got prescriptions'
