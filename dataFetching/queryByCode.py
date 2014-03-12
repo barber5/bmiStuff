@@ -199,6 +199,8 @@ def getSingleTerms(nid, stride_db, term_db):
 
 	result = []
 	for row in rows:
+		if not row[4]:
+			continue
 		nextGuy = {
 			'nid': row[0],
 			'tid': row[1],
@@ -231,7 +233,7 @@ def getSingleNotes(pid, stride_db, term_db, src_type=None):
 		repls.append(src_type)		
 	rows = tryQuery(stride_db, query, repls)
 	result = []
-	for row in rows:
+	for row in rows:		
 		terms = getSingleTerms(row[1], stride_db, term_db)
 		nextNote = {
 			'pid': row[0],
