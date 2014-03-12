@@ -21,6 +21,10 @@ meta = {
 stop_terms = range(10)
 stop_terms.extend([11, 13, 20, 21, 26, 39, 32, 40, 43, 46, 54, 18, 1028, 116, 339, 31, 40, 183, 1355, 407, 59, 252, 1763, 2423, 6053, 5818, 7160, 47582, 3966, 3746, 130, 2795, 3593, 7865, 3779, 16, 4479, 20553, 55251, 3009, 26037, 1403, 4332, 6677, 214, 34485, 959, 19897, 2477, 2252, 68142, 2856, 2031, 1332, 9795, 22, 4700, 6521, 723])
 
+
+note_types = set([])
+
+
 cuiCache = {}
 
 def getPidsFromFile(fname):
@@ -58,9 +62,9 @@ def getFeatName(metaDict, presentation=False):
 		else:
 			val = 'ongoing'
 		if not presentation:
-			return 'prescription:'+str(i)+':'+val
+			return 'prescription:'+str(i)
 		else:
-			return 'prescription-presentation:'+str(i)+':'+val
+			return 'prescription-presentation:'+str(i)
 	if metaDict['type'] == 'code':
 		v = metaDict['code'].strip()
 		if not presentation:

@@ -99,6 +99,7 @@ def getfullNotes(nids):
 		query = "SELECT tid, negated, familyHistory from mgrep where nid=%s"
 		rows = tryQuery(stride_db, query, str(nid))
 		for row in rows:
+			
 			result.append(row)
 	return result
 
