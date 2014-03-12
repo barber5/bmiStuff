@@ -99,7 +99,7 @@ def getfullNotes(nids):
 		query = "SELECT tid, negated, familyHistory from mgrep where nid=%s"
 		rows = tryQuery(stride_db, query, str(nid))
 		for row in rows:
-			
+			query = "SELECT t.term, s2.cid, s2.grp FROM terms t inner join str2cid s2 on t.cui=s2.cui WHERE t.tid=%s"
 			result.append(row)
 	return result
 
@@ -192,25 +192,38 @@ def getSingleVisits(pid, stride_db, src_type=None):
 
 
 
-def getSingleTerms(nid, stride_db):	
-	query = "SELECT m.nid, m.tid, m.negated, m.familyHistory, t.cui, t.termid FROM mgrep as m inner join terminology3.terms as t on m.tid=t.tid where m.nid=%s"
+def getSingleTerms(nid, stride_db, term_db):	
+	query = "SELECT m.nid, m.tid, m.negated, m.familyHistory, t.cui, t.termid, t.term FROM mgrep as m inner join terminology3.terms as t on m.tid=t.tid where m.nid=%s"
 	repls = [int(nid)]	
 	rows = tryQuery(stride_db, query, repls)
 
 	result = []
 	for row in rows:
-		result.append({
+		nextGuy = {
 			'nid': row[0],
 			'tid': row[1],
 			'negated': row[2],
 			'familyHistory': row[3],			
 			'cui': row[4],
-			'termid': row[5]	
-			})	
+			'termid': row[5], 
+			'term': row[6]	
+			}
+		query = "SELECT cid, str, grp FROM str2cid where cui=%s"
+		rows = tryQuery(term_db, query, [nextGuy['cui']])		
+		if len(rows) == 0:
+			continue
+		if not rows[0][2]:
+			continue
+		if not rows[0][0]:
+			continue
+		nextGuy['cid'] = rows[0][0]
+		nextGuy['grp'] = rows[0][2]
+		nextGuy['concept'] = rows[0][1]
+		result.append(nextGuy)	
 	return result
 
 
-def getSingleNotes(pid, stride_db, src_type=None):	
+def getSingleNotes(pid, stride_db, term_db, src_type=None):	
 	query = "SELECT pid, nid, src, src_type, age, timeoffset, year, duration, cpt, icd9 FROM note where pid=%s"
 	repls = [int(pid)]
 	if src_type:			
@@ -219,7 +232,7 @@ def getSingleNotes(pid, stride_db, src_type=None):
 	rows = tryQuery(stride_db, query, repls)
 	result = []
 	for row in rows:
-		terms = getSingleTerms(row[1], stride_db)
+		terms = getSingleTerms(row[1], stride_db, term_db)
 		nextNote = {
 			'pid': row[0],
 			'nid': row[1],
@@ -444,7 +457,7 @@ def getAllSerial(code, src_type=None):
 			continue
 		visits = getSingleVisits(pid, stride_db, src_type)		
 		print 'got visits'
-		notes = getSingleNotes(pid, stride_db, src_type)		
+		notes = getSingleNotes(pid, stride_db, term_db, src_type)		
 		print 'got notes'
 		prescriptions = getSinglePrescriptions(pid, stride_db, src_type)		
 		print 'got prescriptions'
