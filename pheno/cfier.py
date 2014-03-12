@@ -88,9 +88,9 @@ def vectorizePids(data, diagTerms=None, includeCid=False, includeLab=True, inclu
 		nextPerson = {}
 		if meta['termCounting'] == 'noteboolean':  # we add 1 to a term count for each note it appears in
 			noteTerms = set([])
-
+		print >> sys.stderr, 'patient: '+str(pid)+' label: '+str(label)
 		if diagTerms:
-			print >> sys.stderr, 'patient: '+str(pid)+' label: '+str(label)
+			
 			minOffset = float('inf')			
 			for n in dd['notes']:
 				for t in n['terms']:
