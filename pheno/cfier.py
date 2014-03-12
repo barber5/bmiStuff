@@ -308,7 +308,7 @@ def trainModel(trainData, diagTerm=None, featureFilter={},includeCid=False, incl
 		None
 	n_estimators = int(round(sqrt(trainArray.shape[1])))*2
 	print 'n_estimators: '+str(n_estimators)
-	tree = rfc(n_estimators=n_estimators, n_jobs=(n_estimators/10))		
+	tree = rfc(n_estimators=n_estimators, n_jobs=10)		
 	tree.fit(trainArray, trainData.values())	
 	return (tree, fh)
 	#train the model
