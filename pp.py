@@ -10,7 +10,7 @@ def getPredPowers(fileName):
 			lineArr = line.split('\t')
 			print lineArr
 			feat = lineArr[0]
-			imp = lineArr[1]
+			imp = float(lineArr[1])
 			if feat.find('code:') == 0:
 				if 'code' not in result:
 					result['code'] = []
