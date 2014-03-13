@@ -491,16 +491,16 @@ if __name__ == "__main__":
 	dt = None
 	if '-dt' in sys.argv:
 		dt = sys.argv[6:]
-	for i in range(10):
-		print 'cross validation fold: '+str(i)
-		test = {}
-		train = {}
-		X_train, X_test, y_train, y_test = cross_validation.train_test_split(data.keys(), data.values(), test_size=0.2)
-		for i,f in enumerate(X_train):		
-			train[f] = y_train[i]
-		for i,f in enumerate(X_test):
-			test[f] = y_test[i]
-		runCfier(train, test, sys.argv[4], sys.argv[5], dt, sys.argv[6:])
+	
+	print 'cross validation fold: '+str(i)
+	test = {}
+	train = {}
+	X_train, X_test, y_train, y_test = cross_validation.train_test_split(data.keys(), data.values(), test_size=0.2)
+	for i,f in enumerate(X_train):		
+		train[f] = y_train[i]
+	for i,f in enumerate(X_test):
+		test[f] = y_test[i]
+	runCfier(train, test, sys.argv[4], sys.argv[5], dt, sys.argv[6:])
 
 	
 
