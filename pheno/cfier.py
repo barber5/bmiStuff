@@ -348,8 +348,8 @@ def resolveFeature(f):
 		return ':'.join(tArr)
 	elif f.find('cid') == 0:
 		tArr = f.split(':')
-		cid = getTermCui(tArr[1])		
-		tArr[1] = str(tArr[1])+'('+str(cid)+'('+str(conc)+'))'
+		conc = getTermCui(tArr[1])		
+		tArr[1] = str(tArr[1])+'('+str(conc)+')'
 		return ':'.join(tArr)
 	else:
 		return f
