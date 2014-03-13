@@ -26,6 +26,10 @@ def getPredPowers(fileName):
 				if 'lab' not in result:
 					result['lab'] = 0
 				result['lab'] += imp
+			if feat.find('meta') == 0:
+				if 'meta' not in result:
+					result['meta'] = 0
+				result['meta'] += imp
 
 	return result
 
