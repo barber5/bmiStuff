@@ -32,7 +32,7 @@ def getTermCui(cui):
 	return rows[0][0]
 
 def getConcept(cid):	
-	query = "SELECT str,grp from str2cid where cid=%s"
+	query = "SELECT str from str2cid where cid=%s"
 	rows = tryQuery(term_db, query, [cid])
 	if len(rows) == 0:
 		print 'len(rows) == 0'
@@ -42,10 +42,7 @@ def getConcept(cid):
 		return None
 	if not rows[0][0]:
 		print 'if not rows[0][0]:'
-		return None	
-	if not rows[0][1]:
-		print 'if not rows[0][1]:'
-		return None
+		return None		
 	return rows[0][0]
 
 def getIngredients(ingr_set_id):
