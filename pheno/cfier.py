@@ -73,7 +73,7 @@ def getFeatName(metaDict, presentation=False):
 			return 'code-presentation:'+str(v)
 	if metaDict['type'] == 'cid':
 		cui = metaDict['term']['cui']		
-		return 'cid:'+str(cui)
+		return 'cid:'+str(cid)
 
 # patients is pid -> {pid, src_type, labs -> [{age, , component, description, lid, line, ord, ord_num, proc, proc_cat, ref_high, ref_low, ref_norm, ref_unit, result_flag, result_inrange, src, timeoffset}], notes -> [{age, cpt, duration, icd9, nid, pid, src, src_type, timeoffset, year, terms -> [{cui, familyHistory, negated, nid, termid, tid}]}], prescriptions -> [{age, drug_description, ingr_set_id, order_status, pid, route, rxid, src, timeoffset}], visits -> [{age, cpt, duration, icd9, pid, src, src_type, timeoffset, year}] }
 def vectorizePids(data, diagTerms=None, includeCid=False, includeLab=True, includeTerm=True, includeCode=True, includePrescription=True, featureFilter={}, timeSlices=None):
@@ -348,11 +348,7 @@ def resolveFeature(f):
 		return ':'.join(tArr)
 	elif f.find('cid') == 0:
 		tArr = f.split(':')
-		cid = getTermCui(tArr[1])
-		if cid:
-			conc = getConcept(cid)
-		else:
-			conc=None
+		cid = getTermCui(tArr[1])		
 		tArr[1] = str(tArr[1])+'('+str(cid)+'('+str(conc)+'))'
 		return ':'.join(tArr)
 	else:
