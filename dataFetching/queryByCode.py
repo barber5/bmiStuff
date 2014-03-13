@@ -228,9 +228,7 @@ def getSingleTerms(nid, stride_db, term_db):
 			cacheIt['cid'] = rows[0][0]
 			cacheIt['grp'] = rows[0][2]
 			cacheIt['concept'] = rows[0][1]
-			cuiCache[row[1]] = cacheIt
-		else:
-			print 'cui cache hit!'
+			cuiCache[row[1]] = cacheIt		
 		
 		cc = cuiCache[row[1]]
 		if not cc:
