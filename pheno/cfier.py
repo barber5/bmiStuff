@@ -1,4 +1,5 @@
 import sys,os, pprint, json, random, pprint
+from sklearn import cross_validation
 from math import sqrt
 sys.path.append(os.path.realpath('../tempClustering'))
 sys.path.append(os.path.realpath('./tempClustering'))
@@ -486,16 +487,15 @@ if __name__ == "__main__":
 	if '-rnd' in sys.argv:
 		rndSrc = 'cache'
 
-	data = getFromFile(int(sys.argv[2]), sys.argv[1], rndSrc)
-	for n, label in data.iteritems():
-		if random.random() < float(sys.argv[3]):
-			test[n] = label
-		else:
-			train[n] = label
-	
+	data = getFromFile(int(sys.argv[2]), sys.argv[1], rndSrc)		
 	dt = None
 	if '-dt' in sys.argv:
 		dt = sys.argv[6:]
+	X_train, X_test, y_train, y_test = cross_validation.train_test_split(data.keys(), data.values(), test_size=0.2)
+	for i,f in enumerate(X_train):
+		train[f] = y_train[i]
+	for i,f in enumerate(X_test):
+		test[f] = y_test[i]
 	runCfier(train, test, sys.argv[4], sys.argv[5], dt, sys.argv[6:])
 	
 
