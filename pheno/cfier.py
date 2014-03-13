@@ -487,8 +487,7 @@ if __name__ == "__main__":
 	if '-rnd' in sys.argv:
 		rndSrc = 'cache'
 
-	data = getFromFile(int(sys.argv[2]), sys.argv[1], rndSrc)	
-	print 'got data'	
+	data = getFromFile(int(sys.argv[2]), sys.argv[1], rndSrc)		
 	dt = None
 	if '-dt' in sys.argv:
 		dt = sys.argv[6:]
