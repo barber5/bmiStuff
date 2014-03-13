@@ -188,7 +188,7 @@ def vectorizePids(data, diagTerms=None, includeCid=False, includeLab=True, inclu
 				if diagTerms and float(l['timeoffset']) < minOffset:
 					continue
 				if diagTerms and float(l['timeoffset']) == minOffset:
-					presentation = True
+					presentation = False
 				else:
 					presentation = False
 				if 'ord_num' not in l or not l['ord_num'] or l['ord_num'] == '':
@@ -232,7 +232,7 @@ def vectorizePids(data, diagTerms=None, includeCid=False, includeLab=True, inclu
 				if diagTerms and float(p['timeoffset']) > minOffset:
 					continue
 				if diagTerms and float(p['timeoffset']) == minOffset:
-					presentation = True
+					presentation = False
 				else:
 					presentation = False
 				ings = getIngredients(p['ingr_set_id'])
@@ -255,7 +255,7 @@ def vectorizePids(data, diagTerms=None, includeCid=False, includeLab=True, inclu
 				if diagTerms and float(v['timeoffset']) > minOffset:
 					continue
 				if diagTerms and float(v['timeoffset']) == minOffset:
-					presentation = True
+					presentation = False
 				else:
 					presentation = False
 				if 'icd9' in v and len(v['icd9']) > 0:
