@@ -99,7 +99,8 @@ def vectorizePids(data, diagTerms=None, includeCid=False, includeLab=True, inclu
 			minOffset = float('inf')			
 			for n in dd['notes']:
 				for t in n['terms']:
-					print t['grp']
+					if not t['grp']:
+						print 'no group'
 					if int(t['tid']) in stop_terms:
 						continue
 					if str(t['tid']) in diagTerms and int(t['negated']) == 0 and int(t['familyHistory']) == 0:					
