@@ -17,5 +17,7 @@ python pheno/cfier.py panccc.txt 1500 .2 panc.ignore panc/fimp_panc_full_cidster
 
 
 
-python pheno/cfier.py panccc.txt 1500 .2 panc.ignore panc/fimp_panc_part_nocids_rnd.txt -dt 10320 61045 2977 -rnd meds codes labs > panc/out_panc_part_nocids_rnd.txt
-python pheno/cfier.py panccc.txt 1500 .2 panc.ignore panc/fimp_panc_part_cids_rnd.txt -dt 10320 61045 2977 -rnd meds codes labs cids > panc/out_panc_part_cids_rnd.txt
+python pheno/cfier.py panccc.txt 1500 .2 panc.ignore panc/fimp_panc_part_nocids_rnd.txt -dt 2977 82092 784302 2085661 2329872 3086384 1156929  -rnd meds codes labs > panc/out_panc_part_nocids_rnd.txt
+python pheno/cfier.py panccc.txt 1500 .2 panc.ignore panc/fimp_panc_part_cids_rnd.txt -dt 2977 82092 784302 2085661 2329872 3086384 1156929  -rnd meds codes labs cids > panc/out_panc_part_cids_rnd.txt
+
+

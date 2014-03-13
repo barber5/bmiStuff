@@ -80,6 +80,7 @@ def vectorizePids(data, diagTerms=None, includeCid=False, includeLab=True, inclu
 	patients = []	
 	print 'diagnosis terms for timeoffset: '+str(diagTerms)
 	print 'stop terms: '+str(stop_terms)
+	filterNegs = {}
 	for pid, label in data.iteritems():		
 		print pid				
 		#print pid
@@ -120,6 +121,10 @@ def vectorizePids(data, diagTerms=None, includeCid=False, includeLab=True, inclu
 				for t in n['terms']:
 					if int(t['tid']) in stop_terms:
 						continue
+					if str(t['term']) in diagTerms and label == 0:
+						print 'bad negative!'
+						filterNegs[pid] = True
+
 					feat = getFeatName({'type': 'term', 'term': t}, presentation)
 					if feat in featureFilter:
 						continue
@@ -274,8 +279,7 @@ def vectorizePids(data, diagTerms=None, includeCid=False, includeLab=True, inclu
 		nextPerson['meta-prescriptions'] = len(dd['prescriptions'])
 
 		patients.append(nextPerson)
-	
-
+		
 	return patients
 
 
