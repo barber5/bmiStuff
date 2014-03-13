@@ -90,7 +90,7 @@ def vectorizePids(data, diagTerms=None, includeCid=False, includeLab=True, inclu
 		#print resp
 
 		dd = decomp(resp)
-		nextPerson = {}
+		nextPerson = {'pid': pid}
 		if meta['termCounting'] == 'noteboolean':  # we add 1 to a term count for each note it appears in
 			noteTerms = set([])
 		print >> sys.stderr, 'patient: '+str(pid)+' label: '+str(label)
@@ -279,8 +279,13 @@ def vectorizePids(data, diagTerms=None, includeCid=False, includeLab=True, inclu
 		nextPerson['meta-prescriptions'] = len(dd['prescriptions'])
 
 		patients.append(nextPerson)
-		
-	return patients
+	filtPatients = []
+	for p in patients:
+		if p['pid'] in filterNegs:
+			continue
+		del p['pid']
+		filtPatients.append(p)
+	return filtPatients
 
 
 
