@@ -492,7 +492,7 @@ if __name__ == "__main__":
 	if '-dt' in sys.argv:
 		dt = sys.argv[6:]
 	
-	print 'cross validation fold: '+str(i)
+	#print 'cross validation fold: '+str(i)
 	test = {}
 	train = {}
 	X_train, X_test, y_train, y_test = cross_validation.train_test_split(data.keys(), data.values(), test_size=0.2)
