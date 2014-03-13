@@ -351,7 +351,7 @@ def resolveFeature(f):
 			conc = getConcept(cid)
 		else:
 			conc=None
-		tArr[1] = str(tArr[1])+'('+str(cid)+'('+str(conc)+')'
+		tArr[1] = str(tArr[1])+'('+str(cid)+'('+str(conc)+'))'
 		return ':'.join(tArr)
 	else:
 		return f
