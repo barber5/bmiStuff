@@ -23,5 +23,6 @@ python pheno/cfier.py chfcc.txt 1500 .2 chf.ignore chf/fimp_chf_part_cids_rnd.tx
 
 
 
-    
-1514 1578 2576 14459 24123 30993 39393 49494 64337 123432 139473 150088 832113 832117 2009948 2246946 2246947 2246949 2888058 2888059 3048299 
+python pheno/cfier.py chfcc.txt 1500 .2 chf.ignore chf/fimp_chf_full_nocids_rnd.txt -rnd meds codes labs > chf/out_chf_full_nocids_rnd.txt
+python pheno/cfier.py chfcc.txt 1500 .2 chf.ignore chf/fimp_chf_full_cids_rnd.txt -rnd meds codes labs cids > chf/out_chf_full_cids_rnd.txt
+

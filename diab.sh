@@ -21,5 +21,5 @@ python pheno/cfier.py diabcc.txt 1500 .2 diab.ignore diab/fimp_diab_full_cidster
 python pheno/cfier.py diabcc.txt 1500 .2 diab.ignore diab/fimp_diab_part_nocids_rnd.txt -dt 400 2056 92750 827517 1302789 2093697 2093698 2800877 3129165 -rnd meds codes labs > diab/out_diab_part_nocids_rnd.txt
 python pheno/cfier.py diabcc.txt 1500 .2 diab.ignore diab/fimp_diab_part_cids_rnd.txt -dt 400 2056 92750 827517 1302789 2093697 2093698 2800877 3129165 -rnd meds codes labs cids > diab/out_diab_part_cids_rnd.txt
 
-
-400 2056 92750 827517 1302789 2093697 2093698 2800877 3129165 
+python pheno/cfier.py diabcc.txt 1500 .2 diab.ignore diab/fimp_diab_full_nocids_rnd.txt -rnd meds codes labs > diab/out_diab_full_nocids_rnd.txt
+python pheno/cfier.py diabcc.txt 1500 .2 diab.ignore diab/fimp_diab_full_cids_rnd.txt -rnd meds codes labs cids > diab/out_diab_full_cids_rnd.txt
