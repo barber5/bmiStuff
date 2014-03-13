@@ -4,7 +4,7 @@ def getPredPowers(fileName):
 	result = {}
 	with open(fileName, 'r') as fi:
 		while True:
-			line = fi.readline()
+			line = fi.readline().strip()
 			if line == '':
 				break
 			lineArr = line.split('\t')
