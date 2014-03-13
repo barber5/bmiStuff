@@ -493,6 +493,8 @@ if __name__ == "__main__":
 		dt = sys.argv[6:]
 	X_train, X_test, y_train, y_test = cross_validation.train_test_split(data.keys(), data.values(), test_size=0.2)
 	for i,f in enumerate(X_train):
+		print f
+		print y_train[i]
 		train[f] = y_train[i]
 	for i,f in enumerate(X_test):
 		test[f] = y_test[i]
