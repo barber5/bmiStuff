@@ -7,6 +7,8 @@ import marshal, zlib
 
 MARSHAL_VERSION = 2
 COMPRESS_LEVEL = 1
+
+cuiCache = {}
 def compIt(res):
 	return zlib.compress(marshal.dumps(res, MARSHAL_VERSION), COMPRESS_LEVEL)
 
@@ -199,7 +201,7 @@ def getSingleTerms(nid, stride_db, term_db):
 
 	result = []
 	for row in rows:
-		if not row[4]:
+		if not row[4]:			
 			continue
 		nextGuy = {
 			'nid': row[0],
@@ -210,17 +212,30 @@ def getSingleTerms(nid, stride_db, term_db):
 			'termid': row[5], 
 			'term': row[6]	
 			}
-		query = "SELECT cid, str, grp FROM str2cid where cui=%s"
-		rows = tryQuery(term_db, query, [nextGuy['cui']])		
-		if len(rows) == 0:
+		if row[1] not in cuiCache:						
+			query = "SELECT cid, str, grp FROM str2cid where cui=%s"
+			rows = tryQuery(term_db, query, [nextGuy['cui']])		
+			if len(rows) == 0:
+				cuiCache[row[1]] = None
+				continue
+			if not rows[0][2]:
+				cuiCache[row[1]] = None
+				continue
+			if not rows[0][0]:
+				cuiCache[row[1]] = None
+				continue
+			cacheIt = {}
+			cacheIt['cid'] = rows[0][0]
+			cacheIt['grp'] = rows[0][2]
+			cacheIt['concept'] = rows[0][1]
+			cuiCache[row[1]] = cacheIt
+		
+		cc = cuiCache[row[1]]
+		if not cc:
 			continue
-		if not rows[0][2]:
-			continue
-		if not rows[0][0]:
-			continue
-		nextGuy['cid'] = rows[0][0]
-		nextGuy['grp'] = rows[0][2]
-		nextGuy['concept'] = rows[0][1]
+		nextGuy['cid'] = cc['cid']
+		nextGuy['grp'] = cc['grp']
+		nextGuy['concept'] = cc['concept']
 		result.append(nextGuy)	
 	return result
 
