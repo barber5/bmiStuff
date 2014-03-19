@@ -83,7 +83,7 @@ def mineDict(inp, threshold):
 		lastFreq = len(frequent)
 		for pid, concs in inp.iteritems():
 			print 'for pid: '+str(pid)+' getting sets of size '+str(size)
-			print 'there are '+str(len(concs.keys()))+' concepts for this patient'
+			print 'there are '+str(len(concs.keys()))+' concepts for this patient and '+str(len(frequent.keys)) +' frequent items so far'
 			cands = candidates(concs.keys(), frequent, size)
 			print 'got candidates'
 			for c in cands:
