@@ -11,7 +11,7 @@ sys.path.append(os.path.realpath('./dataFetching'))
 def joinSets(st):
 	st = sorted(st)
 	result = set([])
-	for i in range(len(st)):
+	for i in range(len(st) - 1     ):
 		j = i+1
 		s1 = st[i]
 		s2 = st[j]			
