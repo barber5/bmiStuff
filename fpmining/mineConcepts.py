@@ -46,10 +46,15 @@ def patientToTimelessConcepts(patient):
 	None
 
 
-
+def mineIt(num, patientFile):
+	pats = getFromFile(num, patientFile)
+	conceptVects = []
+	for pat in pats:
+		conceptVects.append(patientToTimelessConcepts(pat))
+	return conceptVects
 
 if __name__ == "__main__":
-	getFromFile(int(sys.argv[1]), sys.argv[2])
+	print mineIt(int(sys.argv[1]), sys.argv[2])
 
 
 
