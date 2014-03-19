@@ -40,7 +40,11 @@ def getRandoms(num):
 	result = {}
 	while len(result) < num:
 		next = str(random.choice(li))
-		result[next] = 0
+		resp = getPatient(next)
+		if not resp:
+			continue
+		resp['label'] = 0
+		result[next] = resp	
 	return result
 
 # patients is pid -> {pid, src_type, labs -> [{age, , component, description, lid, line, ord, ord_num, proc, proc_cat, ref_high, ref_low, ref_norm, ref_unit, result_flag, result_inrange, src, timeoffset}], notes -> [{age, cpt, duration, icd9, nid, pid, src, src_type, timeoffset, year, terms -> [{cui, familyHistory, negated, nid, termid, tid, term, concept, grp, cid}]}], prescriptions -> [{age, drug_description, ingr_set_id, order_status, pid, route, rxid, src, timeoffset}], visits -> [{age, cpt, duration, icd9, pid, src, src_type, timeoffset, year}] }
@@ -61,10 +65,11 @@ def patientToTimelessConcepts(patient, conceptIdx):
 
 def mineIt(num, patientFile):
 	pats = getFromFile(num, patientFile)
-	conceptVects = []
+	conceptVects = {}
 	conceptIdx = {}
 	for pid, pat in pats.iteritems():
-		conceptVects.append(patientToTimelessConcepts(pat, conceptIdx))
+		concDict = patientToTimelessConcepts(pat, conceptIdx)
+		conceptVects[pid] = concDict
 	return conceptVects
 
 if __name__ == "__main__":
