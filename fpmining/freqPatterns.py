@@ -10,7 +10,7 @@ sys.path.append(os.path.realpath('./dataFetching'))
 
 def joinSets(st):
 	st = sorted(st)
-	result = []
+	result = set([])
 	for i in range(len(st)):
 		for j in range(i+1,len(st)):
 			s1 = st[i]
@@ -24,13 +24,13 @@ def joinSets(st):
 						l = list(s1)
 						l.append(s2[diffs[0]])
 						tup = tuple(l)
-						result.append(tup)
+						result.add(tup)
 			else:
 				l = [s1, s2]
 				l = sorted(l)
 				tup = tuple(l)
-				result.append(tup)
-	return result
+				result.add(tup)
+	return list(result)
 		
 
 
