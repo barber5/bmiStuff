@@ -43,12 +43,18 @@ def candidates(basket, frequent, size):
 		if item in frequent:
 			candBuilder.append(item)
 	i = 1
+	print candBuilder
+
 	while i < size:
+		print i
 		candBuilderTmp = joinSets(candBuilder)
 		candBuilder = []
-		for cb in candBuilderTmp:
-			if cb in frequent:
-				candBuilder.append(cb)
+		if i < size - 1:
+			for cb in candBuilderTmp:
+				if cb in frequent:
+					candBuilder.append(cb)
+		else:
+			candBuilder = candBuilderTmp
 		i += 1
 
 	return candBuilder
@@ -97,9 +103,4 @@ def mineDict(inp, threshold):
 
 if __name__ == "__main__":
 	st = [(1,3), (20,4), (119, 12)]
-	js = joinSets(st)
-	print js
-	js2 = joinSets(js)
-	print js2
-	js3 = joinSets(js2)
-	print js3
+	print candidates(st, st, 2)
