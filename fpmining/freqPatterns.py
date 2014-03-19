@@ -14,9 +14,7 @@ def joinSets(st):
 	for i in range(len(st)):
 		for j in range(i+1,len(st)):
 			s1 = st[i]
-			s2 = st[j]
-			print s1
-			print s2
+			s2 = st[j]			
 			if type(s1[0]) == type((4,5)):
 				diffs = []
 				for k in range(len(s1)):
@@ -49,7 +47,7 @@ def candidates(basket, frequent, size):
 		candBuilderTmp = joinSets(candBuilder)
 		candBuilder = []
 		for cb in candBuilderTmp:
-			if cb in freq:
+			if cb in frequent:
 				candBuilder.append(cb)
 		i += 1
 
