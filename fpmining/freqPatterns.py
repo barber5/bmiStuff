@@ -23,6 +23,7 @@ def joinSets(st):
 					if len(diffs) == 1:
 						l = list(s1)
 						l.append(s2[diffs[0]])
+						l = l.sorted()
 						tup = tuple(l)
 						result.add(tup)
 			else:
