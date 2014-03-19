@@ -15,7 +15,7 @@ def getPatient(pid, cacheOnly=False):
 	elif not pat:
 		getVecForPid(pid)
 	else:
-		return json.loads(decomp(pat))
+		return decomp(pat)
 
 def getPatsForCode(code):
 	li = r.hget('codes', code)
