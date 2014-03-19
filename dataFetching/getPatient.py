@@ -14,6 +14,7 @@ def getPatient(pid, cacheOnly=False):
 		return None
 	elif not pat:
 		getVecForPid(pid)
+		return getPatient(pid, cacheOnly=True)
 	else:
 		return decomp(pat)
 
