@@ -15,15 +15,17 @@ def joinSets(st):
 		for j in range(i+1,len(st)):
 			s1 = st[i]
 			s2 = st[j]
+			print s1
+			print s2
 			if type(s1[0]) == type((4,5)):
 				diffs = []
 				for k in range(len(s1)):
 					if s1[k] != s2[k]:
 						diffs.append(k)
 					if len(diffs) == 1:
-						l = list(s1)
-						l.append(s2[diffs[0]])
-						l = l.sorted()
+						s = set(s1) | set(s2)
+						l = list(s)
+						l = sorted(l)
 						tup = tuple(l)
 						result.add(tup)
 			else:
@@ -94,4 +96,10 @@ def mineDict(inp, threshold):
 
 
 if __name__ == "__main__":
-	print 'hi'
+	st = [(1,3), (20,4), (119, 12)]
+	js = joinSets(st)
+	print js
+	js2 = joinSets(js)
+	print js2
+	js3 = joinSets(js2)
+	print js3

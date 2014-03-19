@@ -4,7 +4,7 @@ sys.path.append(os.path.realpath('./tempClustering'))
 sys.path.append(os.path.realpath('../dataFetching'))
 sys.path.append(os.path.realpath('./dataFetching'))
 from getPatient import getPatient, getPatsForCode
-
+from freqPatterns import mineDict
 
 
 def getFromFile(num, fileName):
@@ -63,17 +63,17 @@ def patientToTimelessConcepts(patient, conceptIdx):
 	return result
 
 
-def mineIt(num, patientFile):
+def mineIt(num, patientFile, thrsh):
 	pats = getFromFile(num, patientFile)
 	conceptVects = {}
 	conceptIdx = {}
 	for pid, pat in pats.iteritems():
 		concDict = patientToTimelessConcepts(pat, conceptIdx)
 		conceptVects[pid] = concDict
-	return conceptVects
+	freq = mineDict(conceptVects, thrsh)
 
 if __name__ == "__main__":
-	pprint.pprint(mineIt(int(sys.argv[1]), sys.argv[2]))
+	pprint.pprint(mineIt(int(sys.argv[1]), sys.argv[2]), float(sys.argv[3]))
 
 
 
