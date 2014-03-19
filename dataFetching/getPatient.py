@@ -30,6 +30,6 @@ if __name__ == "__main__":
 	if '-c' in sys.argv:
 		getPatsForCode(sys.argv[-1])
 	elif '-p' in sys.argv:
-		getPatsForCode(sys.argv[-1])
+		getPatient(sys.argv[-1], cacheOnly=True)
 	else:
 		print 'usage is python getPatient.py -c <code>|-p <pid>'
