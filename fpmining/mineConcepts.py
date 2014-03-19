@@ -63,7 +63,7 @@ def mineIt(num, patientFile):
 	conceptVects = []
 	conceptIdx = {}
 	for pat in pats:
-		conceptVects.append(patientToTimelessConcepts(pat), conceptIdx)
+		conceptVects.append(patientToTimelessConcepts(pat, conceptIdx))
 	return conceptVects
 
 if __name__ == "__main__":
