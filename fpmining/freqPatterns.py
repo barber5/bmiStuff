@@ -43,7 +43,6 @@ def candidates(basket, frequent, size):
 		if item in frequent:
 			candBuilder.append(item)
 	i = 1
-	print candBuilder
 
 	while i < size:
 		print i
@@ -77,8 +76,7 @@ def mineDict(inp, threshold):
 	for ck, freq in counts.iteritems():
 
 		if float(freq) / float(len(inp.keys())) > float(threshold):
-			frequent.add(ck)
-	pprint.pprint(frequent)
+			frequent.add(ck)	
 
 	while len(frequent) - lastFreq > 0:
 		size += 1
@@ -92,9 +90,7 @@ def mineDict(inp, threshold):
 				counts[c] += 1
 		for ck, freq in counts.iteritems():
 			if float(freq) / float(len(inp.keys())) > float(threshold):
-				frequent.add(ck)
-		pprint.pprint(frequent)
-
+				frequent.add(ck)		
 
 	return frequent
 
