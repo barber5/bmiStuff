@@ -69,10 +69,10 @@ def mineDict(inp, threshold):
 				counts[ck] = 0
 			counts[ck] += 1
 	for ck, freq in counts.iteritems():
-		print freq
+
 		if float(freq) / float(len(inp.keys())) > float(threshold):
 			frequent.add(ck)
-
+	pprint.pprint(frequent)
 
 	while len(frequent) - lastFreq > 0:
 		size += 1
@@ -87,6 +87,7 @@ def mineDict(inp, threshold):
 		for ck, freq in counts.iteritems():
 			if float(freq) / float(len(inp.keys())) > float(threshold):
 				frequent.add(ck)
+		pprint.pprint(frequent)
 
 
 	return frequent
