@@ -44,8 +44,7 @@ def candidates(basket, frequent, size):
 			candBuilder.append(item)
 	i = 1
 
-	while i < size:
-		print i
+	while i < size:		
 		candBuilderTmp = joinSets(candBuilder)
 		candBuilder = []
 		if i < size - 1:
@@ -83,14 +82,18 @@ def mineDict(inp, threshold):
 		counts = {}
 		lastFreq = len(frequent)
 		for pid, concs in inp.iteritems():
+			print 'for pid: '+str(pid)+' getting sets of size '+str(size)
+			print 'there are '+str(len(concs.keys()))+' concepts for this patient'
 			cands = candidates(concs.keys(), frequent, size)
+			print 'got candidates'
 			for c in cands:
 				if c not in counts:
 					counts[c] = 0
 				counts[c] += 1
 		for ck, freq in counts.iteritems():
 			if float(freq) / float(len(inp.keys())) > float(threshold):
-				frequent.add(ck)		
+				frequent.add(ck)
+		print 'filtered candidates'		
 
 	return frequent
 
