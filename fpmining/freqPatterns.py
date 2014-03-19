@@ -12,25 +12,25 @@ def joinSets(st):
 	st = sorted(st)
 	result = set([])
 	for i in range(len(st)):
-		for j in range(i+1,len(st)):
-			s1 = st[i]
-			s2 = st[j]			
-			if type(s1[0]) == type((4,5)):
-				diffs = []
-				for k in range(len(s1)):
-					if s1[k] != s2[k]:
-						diffs.append(k)
-					if len(diffs) == 1:
-						s = set(s1) | set(s2)
-						l = list(s)
-						l = sorted(l)
-						tup = tuple(l)
-						result.add(tup)
-			else:
-				l = [s1, s2]
-				l = sorted(l)
-				tup = tuple(l)
-				result.add(tup)
+		j = i+1
+		s1 = st[i]
+		s2 = st[j]			
+		if type(s1[0]) == type((4,5)):
+			diffs = []
+			for k in range(len(s1)):
+				if s1[k] != s2[k]:
+					diffs.append(k)
+				if len(diffs) == 1:
+					s = set(s1) | set(s2)
+					l = list(s)
+					l = sorted(l)
+					tup = tuple(l)
+					result.add(tup)
+		else:
+			l = [s1, s2]
+			l = sorted(l)
+			tup = tuple(l)
+			result.add(tup)
 	return list(result)
 		
 
