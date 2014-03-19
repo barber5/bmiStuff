@@ -31,7 +31,8 @@ def getFromFile(num, fileName):
 		resp = getPatient(next)
 		if not resp:
 			continue
-		result[next] = 1	
+		resp['label'] = 1
+		result[next] = resp	
 	return result
 
 def getRandoms(num):
@@ -62,7 +63,7 @@ def mineIt(num, patientFile):
 	pats = getFromFile(num, patientFile)
 	conceptVects = []
 	conceptIdx = {}
-	for pat in pats:
+	for pid, pat in pats.iteritems():
 		conceptVects.append(patientToTimelessConcepts(pat, conceptIdx))
 	return conceptVects
 
