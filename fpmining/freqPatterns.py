@@ -45,6 +45,7 @@ def candidates(basket, frequent, size):
 	i = 1
 
 	while i < size:		
+		print 'joining a set of size: '+str(len(candBuilder))
 		candBuilderTmp = joinSets(candBuilder)
 		candBuilder = []
 		if i < size - 1:
