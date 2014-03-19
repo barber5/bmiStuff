@@ -15,7 +15,7 @@ def joinSets(st):
 		for j in range(i+1,len(st)):
 			s1 = st[i]
 			s2 = st[j]
-			if type(s1[0][0]) == type((4,5)):
+			if type(s1[0]) == type((4,5)):
 				diffs = []
 				for k in range(len(s1)):
 					if s1[k] != s2[k]:
