@@ -8,30 +8,42 @@ sys.path.append(os.path.realpath('./dataFetching'))
 
 
 
-def joinSets(st):
+def joinSets(st):	
 	st = sorted(st)
+	print st
 	result = set([])
-	for i in range(len(st) - 1     ):
-		j = i+1
-		s1 = st[i]
-		s2 = st[j]			
-		if type(s1[0]) == type((4,5)):
-			diffs = []
-			for k in range(len(s1)):
-				if s1[k] != s2[k]:
-					diffs.append(k)
-				if len(diffs) == 1:
-					s = set(s1) | set(s2)
-					l = list(s)
-					l = sorted(l)
-					tup = tuple(l)
-					result.add(tup)
-		else:
-			l = [s1, s2]
-			l = sorted(l)
-			tup = tuple(l)
-			result.add(tup)
-	return list(result)
+	for i in range(len(st)):
+		for j in range(i+1, len(st)):
+		
+			s1 = st[i]
+						
+			if type(s1[0]) == type((4,5)):
+				if i == len(st) - 1:
+					continue			
+				s2 = st[j]			
+				print '\n'
+				print s1
+				print s2						
+				s = set(s1) | set(s2)
+				if len(s) != len(s1) + 1:
+					print 'nope'
+					continue
+				l = list(s)
+				l = sorted(l)
+				tup = tuple(l)
+				print tup
+				result.add(tup)
+				
+			else:
+				
+				s2 = st[j]
+				l = [s1, s2]
+				l = sorted(l)
+				tup = tuple(l)
+				result.add(tup)
+	l = list(result)
+	l = sorted(l)
+	return l
 		
 
 
@@ -102,5 +114,10 @@ def mineDict(inp, threshold):
 
 
 if __name__ == "__main__":
-	st = [(1,3), (20,4), (119, 12)]
-	print candidates(st, st, 2)
+	st = [(1,3), (20,4), (119, 12), ('x', 43)]
+	s1 = joinSets(st)
+	print s1
+	s2 = joinSets(s1)
+	print s2
+	s3 = joinSets(s2)
+	print s3
