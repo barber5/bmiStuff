@@ -54,10 +54,10 @@ def patientToTimelessConcepts(patient, conceptIdx):
 	for note in patient['notes']:
 		for term in note['terms']:
 			cid = term['cid']
-			concept = term['concept']
+			concept = term['concept']			
 			if cid not in conceptIdx:
 				conceptIdx[cid] = concept
-			cidKey = (cid, term['negated'], term['familyHistory'])
+			
 			if cidKey not in result:
 				result[cidKey] = 0
 			result[cidKey] += 1
@@ -80,9 +80,9 @@ def printFreq(freq, conceptIdx):
 		if k not in conceptIdx:
 			conce = ""
 			for comp in k:
-				conce += conceptIdx[comp] +" "
+				conce += conceptIdx[comp[0]] +" "
 		else:
-			conce = conceptIdx[k]
+			conce = conceptIdx[k[0]]
 
 		print str(v)+'\t'+str(k)+'\t'+str(conce)
 
