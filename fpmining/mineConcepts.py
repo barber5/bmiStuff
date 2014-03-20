@@ -54,10 +54,10 @@ def patientToTimelessConcepts(patient, conceptIdx):
 	for note in patient['notes']:
 		for term in note['terms']:
 			cid = term['cid']
-			concept = term['concept']			
+			concept = term['concept']
 			if cid not in conceptIdx:
 				conceptIdx[cid] = concept
-			
+			cidKey = (cid, term['negated'], term['familyHistory'])
 			if cidKey not in result:
 				result[cidKey] = 0
 			result[cidKey] += 1
