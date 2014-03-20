@@ -8,41 +8,27 @@ sys.path.append(os.path.realpath('./dataFetching'))
 
 
 
-def joinSets(st):	
-	st = sorted(st)	
+def subSets(st, size, ignore=set([])):	
 	result = set([])
-	for i in range(len(st)):
-		for j in range(i+1, len(st)):
-		
-			s1 = st[i]
-						
-			if type(s1[0]) == type((4,5)):
-				if i == len(st) - 1:
-					continue			
-				s2 = st[j]			
-				#print '\n'
-				#print s1
-				#print s2						
-				s = set(s1) | set(s2)
-				if len(s) != len(s1) + 1:
-					#print 'nope'
-					continue
-				l = list(s)
-				l = sorted(l)
-				tup = tuple(l)
-				#print tup
-				result.add(tup)
+	if size == 0:
+		return []	
+	for i, s in enumerate(st):		
+		if i in ignore:
+			continue		
+
+		smallerSets = subSets(st, size-1, ignore | set([i]))			
+		if len(smallerSets) == 0:
+			result.add((s,))
+		smallerSets = set(smallerSets)
+		for ss in smallerSets:			
+			ss = set(ss)
+			ss.add(s)			
 				
-			else:
-				
-				s2 = st[j]
-				l = [s1, s2]
-				l = sorted(l)
-				tup = tuple(l)
-				result.add(tup)
-	l = list(result)
-	l = sorted(l)
-	return l
+			nextS = sorted(ss)
+			result.add(tuple(nextS))
+	result = list(result)
+	result = sorted(result)
+	return result
 		
 
 
@@ -57,7 +43,7 @@ def candidates(basket, frequent, size):
 
 	while i < size:		
 		print 'joining a set of size: '+str(len(candBuilder))
-		candBuilderTmp = joinSets(candBuilder)
+		subsets(candBuilder, size)
 		candBuilder = []
 		if i < size - 1:
 			for cb in candBuilderTmp:
@@ -113,10 +99,6 @@ def mineDict(inp, threshold):
 
 
 if __name__ == "__main__":
-	st = [(1,3), (20,4), (119, 12), ('x', 43)]
-	s1 = joinSets(st)
-	print s1
-	s2 = joinSets(s1)
-	print s2
-	s3 = joinSets(s2)
-	print s3
+	st = [1, 22, 88]
+	print subSets(st, 3)
+	
