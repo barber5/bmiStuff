@@ -62,7 +62,7 @@ def candidates(basket, frequent, size):
 def mineDict(inp, threshold):
 	# get frequent item singletons
 	counts = {}
-	frequent = set([])
+	frequent = {}
 	lastFreq = 0
 	size = 1
 	for pid, concs in inp.iteritems():
@@ -73,7 +73,7 @@ def mineDict(inp, threshold):
 	for ck, freq in counts.iteritems():
 
 		if float(freq) / float(len(inp.keys())) > float(threshold):
-			frequent.add(ck)	
+			frequent[ck] = freq
 
 	while len(frequent) - lastFreq > 0:
 		size += 1
@@ -90,7 +90,7 @@ def mineDict(inp, threshold):
 				counts[c] += 1
 		for ck, freq in counts.iteritems():
 			if float(freq) / float(len(inp.keys())) > float(threshold):
-				frequent.add(ck)
+				frequent[ck] = freq
 		print 'filtered candidates'		
 
 	return frequent
