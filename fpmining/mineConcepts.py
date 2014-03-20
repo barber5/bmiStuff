@@ -25,9 +25,10 @@ def getFromFile(num, fileName):
 	pidKeys = pids.keys()
 	while len(result) < num:
 		next = random.choice(pidKeys)
-		print 'grabbing pid: '+str(next)
+		
 		if pids[next] != 1:
 			continue
+		print 'grabbing pid: '+str(next)
 		resp = getPatient(next)
 		if not resp:
 			continue
