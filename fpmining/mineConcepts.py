@@ -77,7 +77,14 @@ def mineIt(num, patientFile, thrsh):
 
 def printFreq(freq, conceptIdx):
 	for k,v in freq.iteritems():
-		print str(v)+'\t'+str(k)+'\t'+str(conceptIdx[k])
+		if k not in conceptIdx:
+			conce = ""
+			for comp in k:
+				conce += conceptIdx[comp] +" "
+		else:
+			conce = conceptIdx[k]
+
+		print str(v)+'\t'+str(k)+'\t'+str(conce)
 
 if __name__ == "__main__":
 	freq = mineIt(int(sys.argv[1]), sys.argv[2], float(sys.argv[3]))
