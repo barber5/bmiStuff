@@ -9,8 +9,7 @@ sys.path.append(os.path.realpath('./dataFetching'))
 
 
 def joinSets(st):	
-	st = sorted(st)
-	print st
+	st = sorted(st)	
 	result = set([])
 	for i in range(len(st)):
 		for j in range(i+1, len(st)):
@@ -21,17 +20,17 @@ def joinSets(st):
 				if i == len(st) - 1:
 					continue			
 				s2 = st[j]			
-				print '\n'
-				print s1
-				print s2						
+				#print '\n'
+				#print s1
+				#print s2						
 				s = set(s1) | set(s2)
 				if len(s) != len(s1) + 1:
-					print 'nope'
+					#print 'nope'
 					continue
 				l = list(s)
 				l = sorted(l)
 				tup = tuple(l)
-				print tup
+				#print tup
 				result.add(tup)
 				
 			else:
