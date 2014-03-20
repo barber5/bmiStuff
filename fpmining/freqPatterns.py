@@ -80,10 +80,10 @@ def mineDict(inp, threshold):
 		counts = {}
 		lastFreq = len(frequent)
 		for pid, concs in inp.iteritems():
-			print 'for pid: '+str(pid)+' getting sets of size '+str(size)
-			print 'there are '+str(len(concs.keys()))+' concepts for this patient and '+str(len(frequent)) +' frequent items so far'
+			print >> sys.stderr, 'for pid: '+str(pid)+' getting sets of size '+str(size)
+			print >> sys.stderr, 'there are '+str(len(concs.keys()))+' concepts for this patient and '+str(len(frequent)) +' frequent items so far'
 			cands = candidates(concs.keys(), frequent, size)
-			print 'got candidates'
+			print >> sys.stderr, 'got candidates'
 			for c in cands:
 				if c not in counts:
 					counts[c] = 0
@@ -91,7 +91,7 @@ def mineDict(inp, threshold):
 		for ck, freq in counts.iteritems():
 			if float(freq) / float(len(inp.keys())) > float(threshold):
 				frequent[ck] = float(freq) / float(len(inp.keys()))
-		print 'filtered candidates'		
+		print >> sys.stderr, 'filtered candidates'		
 
 	return frequent
 
