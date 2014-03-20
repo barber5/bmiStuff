@@ -78,7 +78,7 @@ def mineIt(num, patientFile, thrsh):
 def printFreq(freq, conceptIdx):
 	for k,v in freq.iteritems():
 		print k
-		if k not in conceptIdx:
+		if k[0] not in conceptIdx:
 			conce = ""
 			for comp in k:
 				conce += conceptIdx[comp[0]] +" "
