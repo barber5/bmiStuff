@@ -80,7 +80,8 @@ def printFreq(freq, conceptIdx):
 		if k[0] not in conceptIdx:
 			conce = ""
 			for comp in k:
-				conce += conceptIdx[comp[0]] +" "
+				conce += conceptIdx[comp[0]] +" + "
+			conce = conce[:-3]
 		else:
 			conce = conceptIdx[k[0]]
 
