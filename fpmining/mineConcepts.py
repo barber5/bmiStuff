@@ -72,7 +72,7 @@ def mineIt(num, patientFile, thrsh):
 		concDict = patientToTimelessConcepts(pat, conceptIdx)
 		conceptVects[pid] = concDict
 	freq = mineDict(conceptVects, thrsh)
-
+	return freq
 if __name__ == "__main__":
 	pprint.pprint(mineIt(int(sys.argv[1]), sys.argv[2], float(sys.argv[3])))
 
