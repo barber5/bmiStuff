@@ -84,7 +84,7 @@ def printFreq(freq, conceptIdx):
 		else:
 			conce = conceptIdx[k[0]]
 
-		print str(v)+'\t'+str(k)+'\t'+str(conce)
+		print str(v)+'\t'+str(k[0])+'\t'+str(k[1])+'\t'+str(conce)
 
 if __name__ == "__main__":
 	freq = mineIt(int(sys.argv[1]), sys.argv[2], float(sys.argv[3]))
