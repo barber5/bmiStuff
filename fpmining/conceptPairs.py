@@ -26,8 +26,8 @@ def getPairs(num, patientFile, outFile):
 		concDict = patientToTimelessConcepts(pat, conceptIdx)
 		for i in range(len(concDict.keys())):
 			for j in range(i+1, len(concDict.keys())):
-				c1 = concDict.keys[i]
-				c2 = concDict.keys[j]
+				c1 = concDict.keys()[i]
+				c2 = concDict.keys()[j]
 				l = [c1, c2]
 				l = sorted(l)
 				t = tuple(l)
