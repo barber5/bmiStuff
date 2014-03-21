@@ -64,7 +64,8 @@ def patientToTimelessConcepts(patient, conceptIdx):
 
 
 def mineIt(num, patientFile, thrsh):
-	pats = getFromFile(num, patientFile)
+	#pats = getFromFile(num, patientFile)
+	pats = getRandoms(num)
 	conceptVects = {}
 	conceptIdx = {}
 	for pid, pat in pats.iteritems():
