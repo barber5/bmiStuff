@@ -26,7 +26,9 @@ def getPairs(num, patientFile, outFile):
 		prs = concs*(concs-1)/2
 		print >> sys.stderr, 'working on pid: '+str(pid)+' which has '+str(prs)+' concept pairs'
 		for i,c1 in enumerate(concDict.keys()):
-			for j,c2 in enumerate(concDict.keys(),start=i+1):						
+			for j,c2 in enumerate(concDict.keys()):						
+				if j <= i:
+					continue
 				if c1 < c2:
 					t = (c1, c2)
 				else:
