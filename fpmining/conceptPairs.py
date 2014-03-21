@@ -24,7 +24,9 @@ def getPairs(num, patientFile, outFile):
 	pairIdx = {}
 	for pid, pat in pats.iteritems():		
 		concDict = patientToTimelessConcepts(pat, conceptIdx)
-		print >> sys.stderr, 'working on pid: '+str(pid)+' which has '+str(len(concDict.keys()))+' concepts'
+		concs = len(concDict.keys())
+		prs = concs*(concs-1)/2
+		print >> sys.stderr, 'working on pid: '+str(pid)+' which has '+str(prs)+' concept pairs'
 		for i in range(len(concDict.keys())):
 			for j in range(i+1, len(concDict.keys())):
 				c1 = concDict.keys()[i]
@@ -35,7 +37,7 @@ def getPairs(num, patientFile, outFile):
 				if t not in pairIdx:
 					pairIdx[t] = []
 				pairIdx[t].append(pid)
-	writePairs(pairIdx, outFile)
+	writePairs(num, pairIdx, outFile)
 
 
 
