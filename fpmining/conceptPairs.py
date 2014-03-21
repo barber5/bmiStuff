@@ -22,8 +22,9 @@ def getPairs(num, patientFile, outFile):
 	pats = getFromFile(num, patientFile)	
 	conceptIdx = {}
 	pairIdx = {}
-	for pid, pat in pats.iteritems():
+	for pid, pat in pats.iteritems():		
 		concDict = patientToTimelessConcepts(pat, conceptIdx)
+		print >> sys.stderr, 'working on pid: '+str(pid)+' which has '+str(len(concDict.keys()))+' concepts'
 		for i in range(len(concDict.keys())):
 			for j in range(i+1, len(concDict.keys())):
 				c1 = concDict.keys()[i]
