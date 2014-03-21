@@ -25,13 +25,12 @@ def getPairs(num, patientFile, outFile):
 		concs = len(concDict.keys())
 		prs = concs*(concs-1)/2
 		print >> sys.stderr, 'working on pid: '+str(pid)+' which has '+str(prs)+' concept pairs'
-		for i in range(len(concDict.keys())):
-			for j in range(i+1, len(concDict.keys())):
-				c1 = concDict.keys()[i]
-				c2 = concDict.keys()[j]
-				l = [c1, c2]
-				l = sorted(l)
-				t = tuple(l)
+		for i,c1 in enumerate(concDict.keys()):
+			for j,c2 in enumerate(concDict.keys()):				
+				if c1 < c2:
+					t = (c1, c2)
+				else:
+					t = (c2, c1)								
 				if t not in pairIdx:
 					pairIdx[t] = []
 				pairIdx[t].append(pid)
