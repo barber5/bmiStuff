@@ -6,7 +6,7 @@ sys.path.append(os.path.realpath('./dataFetching'))
 from mineConcepts import getFromFile, getRandoms, patientToTimelessConcepts
 
 
-def writePairs(num, pairIdx, outFile):
+def writePairs(num, pairIdx, outFile, conceptIdx):
 	with open(outFile, 'w') as fi:
 		fi.write(str(num))
 		fi.write('\n')
@@ -14,7 +14,8 @@ def writePairs(num, pairIdx, outFile):
 			if float(len(idx))/float(num) < .2:
 				continue
 			idxStr = [str(i) for i in idx]			
-			fi.write(str(pr[0])+'\t'+str(pr[1])+'\t'+','.join(idxStr))
+			fi.write(str(pr[0])+'\t'+str(pr[1])+'\t'+','.join(idxStr)+'\t')
+			fi.write(conceptIdx[pr[0][0]]+' + '+conceptIdx[pr[1][0]])
 			fi.write('\n')
 
 
@@ -39,7 +40,7 @@ def getPairs(num, patientFile, outFile):
 					pairIdx[t] = []
 				pairIdx[t].append(pid)
 	print >> sys.stderr, 'done, writing to file...'
-	writePairs(num, pairIdx, outFile)
+	writePairs(num, pairIdx, outFile, conceptIdx)
 
 
 
