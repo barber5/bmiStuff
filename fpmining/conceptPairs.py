@@ -10,7 +10,7 @@ from mineConcepts import getFromFile, getRandoms, patientToTimelessConcepts
 
 def writePairs(num, pairIdx, outFile):
 	with open(outFile, 'w') as fi:
-		fi.write(num)
+		fi.write(str(num))
 		fi.write('\n')
 		for pr, idx in pairIdx.iteritems():
 			idxStr = [str(i) for i in idx]
