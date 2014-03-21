@@ -75,7 +75,7 @@ def mineDict(inp, threshold):
 		if float(freq) / float(len(inp.keys())) > float(threshold):
 			frequent[ck] = float(freq) / float(len(inp.keys()))
 
-	while len(frequent) - lastFreq > 0:
+	while len(frequent) - lastFreq > 0 and size < 2:
 		size += 1
 		counts = {}
 		lastFreq = len(frequent)
