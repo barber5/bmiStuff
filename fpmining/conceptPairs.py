@@ -6,15 +6,13 @@ sys.path.append(os.path.realpath('./dataFetching'))
 from mineConcepts import getFromFile, getRandoms, patientToTimelessConcepts
 
 
-
-
 def writePairs(num, pairIdx, outFile):
 	with open(outFile, 'w') as fi:
 		fi.write(str(num))
 		fi.write('\n')
 		for pr, idx in pairIdx.iteritems():
 			idxStr = [str(i) for i in idx]
-			fi.write(str(pr[0])+','+str(pr[1])+'\t'+','.join(idxStr))
+			fi.write(str(pr[0])+'\t'+str(pr[1])+'\t'+','.join(idxStr))
 			fi.write('\n')
 
 
