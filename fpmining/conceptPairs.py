@@ -11,7 +11,9 @@ def writePairs(num, pairIdx, outFile):
 		fi.write(str(num))
 		fi.write('\n')
 		for pr, idx in pairIdx.iteritems():
-			idxStr = [str(i) for i in idx]
+			if float(len(idx))/float(num) < .2:
+				continue
+			idxStr = [str(i) for i in idx]			
 			fi.write(str(pr[0])+'\t'+str(pr[1])+'\t'+','.join(idxStr))
 			fi.write('\n')
 
