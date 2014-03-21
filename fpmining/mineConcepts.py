@@ -84,6 +84,8 @@ def printFreq(freq, conceptIdx):
 			conce = conce[:-3]
 		else:
 			conce = conceptIdx[k[0]]
+		if type(k[0]) != type((4,5)):
+			continue
 
 		print str(v)+'\t'+str(k[0])+'\t'+str(k[1])+'\t'+str(conce)
 
