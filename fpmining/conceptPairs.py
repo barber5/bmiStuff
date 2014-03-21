@@ -34,6 +34,7 @@ def getPairs(num, patientFile, outFile):
 				if t not in pairIdx:
 					pairIdx[t] = []
 				pairIdx[t].append(pid)
+	print >> sys.stderr, 'done, writing to file...'
 	writePairs(num, pairIdx, outFile)
 
 
