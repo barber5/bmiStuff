@@ -16,8 +16,8 @@ def loadFromFile(fileName):
 				break
 			lineArr = line.split('\t')
 			nextRes = {
-				'freq': lineArr[0]
-				'pair': (lineArr[1][1:-1].split(', '), lineArr[2][1:-1].split(', '))
+				'freq': lineArr[0],
+				'pair': (lineArr[1][1:-1].split(', '), lineArr[2][1:-1].split(', ')),
 				'desc': lineArr[3]
 			}
 	return result
