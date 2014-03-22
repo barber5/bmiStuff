@@ -20,6 +20,7 @@ def loadFromFile(fileName):
 				'pair': (lineArr[1][1:-1].split(', '), lineArr[2][1:-1].split(', ')),
 				'desc': lineArr[3]
 			}
+			result[nextRes] = True
 	return result
 
 
