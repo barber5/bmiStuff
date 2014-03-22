@@ -31,3 +31,4 @@ def comparePatterns(caseFile, controlFile):
 
 if __name__ == "__main__":
 	print 'usage python fpCompare.py <caseFile> <controlFile>'
+	comparePatterns(sys.argv[1],sys.argv[2])
