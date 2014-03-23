@@ -17,7 +17,7 @@ def loadFromFile(fileName):
 			lineArr = line.split('\t')
 			pr = (tuple(lineArr[1][1:-1].split(', ')), tuple(lineArr[2][1:-1].split(', ')))
 			nextRes = {
-				'freq': lineArr[0],				
+				'freq': float(lineArr[0]),				
 				'desc': lineArr[3]
 			}
 			result[pr] = nextRes
