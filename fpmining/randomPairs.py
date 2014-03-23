@@ -6,8 +6,8 @@ sys.path.append(os.path.realpath('./dataFetching'))
 from mineConcepts import getFromFile, getRandoms, patientToTimelessConcepts
 from conceptPairs import writePairs
 
-def getPairs(num, patientFile, outFile):
-	pats = getRandoms(num, patientFile)	
+def getPairs(num, outFile):
+	pats = getRandoms(num)	
 	conceptIdx = {}
 	pairIdx = {}
 	for pid, pat in pats.iteritems():		
@@ -33,5 +33,5 @@ def getPairs(num, patientFile, outFile):
 
 
 if __name__ == "__main__":
-	print >> sys.stderr, 'usage python conceptPairs.py <number of patient> <patientFile> <outputFile>'
-	freq = getPairs(int(sys.argv[1]), sys.argv[2], sys.argv[3])
+	print >> sys.stderr, 'usage python conceptPairs.py <number of patient> <outputFile>'
+	freq = getPairs(int(sys.argv[1]), sys.argv[2])
