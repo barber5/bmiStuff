@@ -35,7 +35,7 @@ def comparePatterns(caseFile, controlFile):
 		else:
 			cs['enrichment'] = float(cs['freq'] - controls[pr]['freq']) / float(controls[pr]['freq'])
 			other = controls[pr]['freq']
-		print str(pr[0])+'\t'+str(pr[1])+'\t'+str(cs['enrichment']) + '\t'+str(cs['freq'])+'\t'+str(other)+'\t'+str(cs['desc'])
+		print str(pr[0])+'\t'+str(pr[1])+'\t'+str(cs['enrichment']*100) + '\t'+str(cs['freq'])+'\t'+str(other)+'\t'+str(cs['desc'])
 
 
 if __name__ == "__main__":
