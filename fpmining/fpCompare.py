@@ -15,12 +15,12 @@ def loadFromFile(fileName):
 			if line == '':
 				break
 			lineArr = line.split('\t')
+			pr = (lineArr[1][1:-1].split(', '), lineArr[2][1:-1].split(', '))
 			nextRes = {
-				'freq': lineArr[0],
-				'pair': (lineArr[1][1:-1].split(', '), lineArr[2][1:-1].split(', ')),
+				'freq': lineArr[0],				
 				'desc': lineArr[3]
 			}
-			result[nextRes] = True
+			result[pr] = nextRes
 	return result
 
 
