@@ -46,5 +46,5 @@ def getPairs(num, patientFile, outFile):
 
 
 if __name__ == "__main__":
-	print 'usage python conceptPairs.py <number of patient> <patientFile> <outputFile>'
+	print >> sys.stderr, 'usage python conceptPairs.py <number of patient> <patientFile> <outputFile>'
 	freq = getPairs(int(sys.argv[1]), sys.argv[2], sys.argv[3])
