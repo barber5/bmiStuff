@@ -28,16 +28,30 @@ def loadFromFile(fileName):
 def comparePatterns(caseFile, controlFile):
 	cases = loadFromFile(caseFile)
 	controls = loadFromFile(controlFile)
+	goodOnes = {}
 	for pr, cs in cases.iteritems():
 		if pr not in controls:
-			cs['enrichment'] = 0
+			cs['enrichment'] = 99999
+			cs['other'] = 0.0
 			other = 0.0
 		else:
-			cs['enrichment'] = float(cs['freq'] - controls[pr]['freq']) / float(controls[pr]['freq'])
+			cs['enrichment'] = 100*float(cs['freq'] - controls[pr]['freq']) / float(controls[pr]['freq'])
 			other = controls[pr]['freq']
-		print str(pr[0])+'\t'+str(pr[1])+'\t'+str(cs['enrichment']*100) + '\t'+str(cs['freq'])+'\t'+str(other)+'\t'+str(cs['desc'])
+			cs['other'] = other
+			
+			if cs['enrichment'] > 20:
+				goodOnes[pr] = cs
+	return goodOnes
 
+def writeToFile(sig, outFile):
+	with open(outFile, 'w') as fi:
+		for pr, cs in sig.iteritems():
+			fi.write(str(pr[0])+'\t'+str(pr[2])+'\t'+str(cs['enrichment'])+'\t'+str(cs['freq'])+'\t'+str(cs['other'])+'\t'+str(cs['desc']))
+			fi.write('\n')
 
 if __name__ == "__main__":
-	print >> sys.stderr, 'usage python fpCompare.py <caseFile> <controlFile>'
-	comparePatterns(sys.argv[1],sys.argv[2])
+	print >> sys.stderr, 'usage python fpCompare.py <caseFile> <controlFile> <outputFile>'
+	sig = comparePatterns(sys.argv[1],sys.argv[2])
+	writeToFile(sig, sys.argv[3])
+
+
