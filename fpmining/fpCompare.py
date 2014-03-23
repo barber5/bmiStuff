@@ -28,7 +28,13 @@ def loadFromFile(fileName):
 def comparePatterns(caseFile, controlFile):
 	cases = loadFromFile(caseFile)
 	controls = loadFromFile(controlFile)
-	pprint.pprint(cases)
+	for pr, cs in cases.iteritems():
+		if pr not in controls:
+			cs['enrichment'] = 999999
+		else:
+			cs['enrichment'] = float(cs['freq'] - controls[pr]['freq']) / float(controls[pr]['freq'])
+		print str(pr[0])+'\t'+str(pr[1])+'\t'+str(cs['enrichment']) + '\t'+str(cs['freq'])+'\t'+str(cs['desc'])
+
 
 if __name__ == "__main__":
 	print 'usage python fpCompare.py <caseFile> <controlFile>'
