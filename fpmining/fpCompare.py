@@ -30,7 +30,7 @@ def comparePatterns(caseFile, controlFile):
 	controls = loadFromFile(controlFile)
 	for pr, cs in cases.iteritems():
 		if pr not in controls:
-			cs['enrichment'] = 'inf'
+			cs['enrichment'] = 0
 			other = 0.0
 		else:
 			cs['enrichment'] = float(cs['freq'] - controls[pr]['freq']) / float(controls[pr]['freq'])
