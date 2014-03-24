@@ -90,6 +90,7 @@ def printFreq(freq, conceptIdx):
 		print str(v)+'\t'+str(k[0])+'\t'+str(k[1])+'\t'+str(conce)
 
 if __name__ == "__main__":
+	print >> sys.stderr, 'usage: <number> <patientFile> <threshold>'
 	freq = mineIt(int(sys.argv[1]), sys.argv[2], float(sys.argv[3]))
 	
 
