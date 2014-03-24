@@ -41,6 +41,7 @@ def getRandoms(num):
 	while len(result) < num:
 		next = str(random.choice(li))
 		resp = getPatient(next)
+		print >> sys.stderr, 'got '+str(next)+' have gotten '+str(len(result))+' so far'
 		if not resp:
 			continue
 		resp['label'] = 0
