@@ -29,7 +29,8 @@ def getPairs(num, outFile):
 				pairIdx[t].append(pid)
 	print >> sys.stderr, 'done, writing to file...'
 	for t, pids in pairIdx.iteritems():
-		conce = conceptIdx[t[0]] + " + " + conceptIdx[t[1]]
+
+		conce = conceptIdx[t[0][0]] + " + " + conceptIdx[t[1][0]]
 		freq = float(len(pids))/float(num)
 		print str(freq)+'\t'+str(t[0])+'\t'+str(t[1])+'\t'+conce
 
