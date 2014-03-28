@@ -52,6 +52,6 @@ def minePatients(goodPairs, candidates):
 if __name__ == "__main__":
 	print >> sys.stderr, 'usage: <casePairsFile> <controlPairsFile> <casePatientFile> <numberToSample>'
 	good = comparePatterns(sys.argv[1], sys.argv[2])
-	concs = getFromFile(sys.argv[3], int(sys.argv[4]))
+	concs = getFromFile(int(sys.argv[4]), sys.argv[3])
 
 	pprint.pprint(minePatients(good, concs))
