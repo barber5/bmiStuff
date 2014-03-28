@@ -29,13 +29,13 @@ def getPairs(num, outFile):
 				pairIdx[t].append(pid)
 	print >> sys.stderr, 'done, writing to file...'
 	for t, pids in pairIdx.iteritems():
-
 		conce = conceptIdx[t[0][0]] + " + " + conceptIdx[t[1][0]]
 		freq = float(len(pids))/float(num)
-		print str(freq)+'\t'+str(t[0])+'\t'+str(t[1])+'\t'+conce
+		if freq > .1:
+			print str(freq)+'\t'+str(t[0])+'\t'+str(t[1])+'\t'+conce
 
 
 
 if __name__ == "__main__":
-	print >> sys.stderr, 'usage python conceptPairs.py <number of patient> <outputFile>'
+	print >> sys.stderr, 'usage python randomPairs.py <number of patient> <outputFile>'
 	freq = getPairs(int(sys.argv[1]), sys.argv[2])
