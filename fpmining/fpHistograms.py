@@ -23,6 +23,7 @@ def minePatients(goodPairs, candidates):
 					invIdx[t['cid']] = set([])
 				invIdx[t['cid']].add(pid)
 		patIdxs[pid] = patIdx
+	pprint.pprint(invIdx)
 
 	for pr, cs in goodPairs.iteritems():
 		t1 = pr[0][0]
