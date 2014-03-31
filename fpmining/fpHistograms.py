@@ -28,9 +28,9 @@ def minePatients(goodPairs, candidates):
 		t1 = pr[0][0]
 		t2 = pr[1][0]
 		print t1		
-		if t1 not in invIdx:
-			print 'nope'
+		if t1 not in invIdx:			
 			continue 
+		print 'yes'
 		pairDeltas[pr] = []		
 
 		for pat in invIdx[t1]:
