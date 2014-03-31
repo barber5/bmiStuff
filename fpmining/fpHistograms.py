@@ -27,8 +27,7 @@ def minePatients(goodPairs, candidates):
 	for pr, cs in goodPairs.iteritems():		
 		t1 = pr[0][0]
 		t2 = pr[1][0]
-		print t1
-		print invIdx.keys()[0]
+		print t1		
 		if t1 not in invIdx:
 			print 'nope'
 			continue 
