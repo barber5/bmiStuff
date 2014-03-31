@@ -22,8 +22,7 @@ def minePatients(goodPairs, candidates):
 				if t['cid'] not in invIdx:
 					invIdx[t['cid']] = set([])
 				invIdx[t['cid']].add(pid)
-		patIdxs[pid] = patIdx
-	pprint.pprint(invIdx)
+		patIdxs[pid] = patIdx	
 
 	for pr, cs in goodPairs.iteritems():		
 		t1 = pr[0][0]
