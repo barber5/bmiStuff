@@ -27,10 +27,11 @@ def minePatients(goodPairs, candidates):
 	for pr, cs in goodPairs.iteritems():		
 		t1 = pr[0][0]
 		t2 = pr[1][0]
+		print t1
+		print invIdx.keys()[0]
 		if t1 not in invIdx:
 			continue 
-		pairDeltas[pr] = []
-		print t1
+		pairDeltas[pr] = []		
 
 		for pat in invIdx[t1]:
 			patIdx = patIdxs[pat]
