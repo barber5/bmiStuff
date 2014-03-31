@@ -30,6 +30,7 @@ def minePatients(goodPairs, candidates):
 		print t1
 		print invIdx.keys()[0]
 		if t1 not in invIdx:
+			print 'nope'
 			continue 
 		pairDeltas[pr] = []		
 
