@@ -53,7 +53,7 @@ def minePatients(goodPairs, candidates):
 		else:
 			pd = sorted(pairDeltas[pr])
 			pairDeltas[pr] = pd
-			print t1+'\t'+t2+'\t'+'\t'+str(cs['enrichment'])+'\t'+str(cs['freq'])+'\t'+str(cs['other'])+'\t'+str(pd)+'\t'+str(concIdx[t1]+' + '+concIdx[t2])
+			print t1+'\t'+t2+'\t'+str(cs['enrichment'])+'\t'+str(cs['freq'])+'\t'+str(cs['other'])+'\t'+str(pd)+'\t'+str(concIdx[t1]+' + '+concIdx[t2])
 	return pairDeltas
 
 
