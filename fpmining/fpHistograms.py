@@ -47,6 +47,9 @@ def minePatients(goodPairs, candidates):
 			pairDeltas[pr].append(delta)
 		if len(pairDeltas[pr]) == 0:
 			del pairDeltas[pr]
+		else:
+			pd = sorted(pairDeltas[pr])
+			pairDeltas[pr] = pd
 	return pairDeltas
 
 
