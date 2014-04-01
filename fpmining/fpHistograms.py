@@ -50,6 +50,7 @@ def minePatients(goodPairs, candidates):
 		else:
 			pd = sorted(pairDeltas[pr])
 			pairDeltas[pr] = pd
+			print t1+'\t'+t2+'\t'+str(pd)+'\t'+str(invIdx[t1]+'+'+invIdx[t2])
 	return pairDeltas
 
 
@@ -62,4 +63,4 @@ if __name__ == "__main__":
 	good = comparePatterns(sys.argv[1], sys.argv[2])
 	concs = getFromFile(int(sys.argv[4]), sys.argv[3])
 
-	pprint.pprint(minePatients(good, concs))
+	minePatients(good, concs)
