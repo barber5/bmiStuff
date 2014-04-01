@@ -39,7 +39,7 @@ def comparePatterns(caseFile, controlFile):
 			other = controls[pr]['freq']
 			cs['other'] = other
 			
-			if cs['enrichment'] > 2:
+			if cs['enrichment'] > 10:
 				goodOnes[pr] = cs
 	return goodOnes
 
