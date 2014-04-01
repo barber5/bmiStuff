@@ -17,8 +17,8 @@ def minePatients(goodPairs, candidates):
 		for n in pat['notes']:
 			for t in n['terms']:
 				if str(t['cid']) not in patIdx:
-					patIdx[t['cid']] = set([])
-				patIdx[t['cid']].add(n['timeoffset'])
+					patIdx[str(t['cid'])] = set([])
+				patIdx[str(t['cid'])].add(n['timeoffset'])
 				if str(t['cid']) not in invIdx:
 					invIdx[str(t['cid'])] = set([])
 				invIdx[str(t['cid'])].add(pid)
@@ -32,7 +32,9 @@ def minePatients(goodPairs, candidates):
 		pairDeltas[pr] = []		
 
 		for pat in invIdx[t1]:
-			patIdx = patIdxs[pat]			
+			patIdx = patIdxs[pat]
+			if t1 not in patIdx or t2 not in patIdx:
+				continue
 			p1 = patIdx[t1]
 			p2 = patIdx[t2]
 			l1 = list(p1)
@@ -43,6 +45,8 @@ def minePatients(goodPairs, candidates):
 			s2 = l2[0]
 			delta = s2 - s1
 			pairDeltas[pr].append(delta)
+		if len(pairDeltas[pr]) == 0:
+			del pairDeltas[pr]
 	return pairDeltas
 
 
