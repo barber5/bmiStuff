@@ -46,7 +46,7 @@ def minePatients(goodPairs, candidates):
 			l2 = sorted(l2)
 			s2 = l2[0]
 			delta = s2 - s1
-			pairDeltas.append(delta)
+			pairDeltas[pr].append(delta)
 	return pairDeltas
 
 
