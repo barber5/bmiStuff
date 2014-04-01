@@ -20,15 +20,14 @@ def minePatients(goodPairs, candidates):
 				if str(t['cid']) not in patIdx:
 					patIdx[t['cid']] = set([])
 				patIdx[t['cid']].add(n['timeoffset'])
-				if t['cid'] not in invIdx:
-					invIdx[t['cid']] = set([])
-				invIdx[t['cid']].add(pid)
+				if str(t['cid']) not in invIdx:
+					invIdx[str(t['cid'])] = set([])
+				invIdx[str(t['cid'])].add(pid)
 		patIdxs[pid] = patIdx	
 
 	for pr, cs in goodPairs.iteritems():		
 		t1 = str(pr[0][0])
-		t2 = str(pr[1][0])
-		print t1		
+		t2 = str(pr[1][0])		
 		if t1 not in invIdx:			
 			continue 
 		print 'yes'
