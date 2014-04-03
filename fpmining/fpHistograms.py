@@ -78,8 +78,6 @@ def minePatients(goodPairs, candidates):
 				count += 1
 				deltIdx += 1
 			pairBins[pr][b] = count
-
-
 	return pairBins
 
 
@@ -92,4 +90,4 @@ if __name__ == "__main__":
 	good = comparePatterns(sys.argv[1], sys.argv[2])
 	concs = getFromFile(int(sys.argv[4]), sys.argv[3])
 
-	minePatients(good, concs)
+	pprint.pprint(minePatients(good, concs))
