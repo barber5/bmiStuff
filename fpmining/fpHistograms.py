@@ -27,7 +27,8 @@ def minePatients(goodPairs, candidates):
 				if str(t['cid']) not in concIdx:
 					concIdx[str(t['cid'])] = t['concept']
 		patIdxs[pid] = patIdx	
-
+	maxDelta = 0
+	minDelta = 0
 	for pr, cs in goodPairs.iteritems():		
 		t1 = str(pr[0][0])
 		t2 = str(pr[1][0])		
@@ -48,6 +49,10 @@ def minePatients(goodPairs, candidates):
 			l2 = sorted(l2)
 			s2 = l2[0]
 			delta = s2 - s1
+			if delta > maxDelta:
+				maxDelta = delta
+			if delta < minDelta:
+				minDelta = delta
 			pairDeltas[pr].append(delta)
 		if len(pairDeltas[pr]) == 0:
 			del pairDeltas[pr]
@@ -55,7 +60,27 @@ def minePatients(goodPairs, candidates):
 			pd = sorted(pairDeltas[pr])
 			pairDeltas[pr] = pd
 			print t1+'\t'+t2+'\t'+str(cs['enrichment'])+'\t'+str(cs['freq'])+'\t'+str(cs['other'])+'\t'+str(pd)+'\t'+str(concIdx[t1]+' + '+concIdx[t2])
-	return pairDeltas
+	bins = []
+	for i in range(minDelta, maxDelta+100, 100):
+		bins.append((i, i+100))
+	pairBins = {}
+	for pr, deltas in pairDeltas.iteritems():
+		pairBins[pr] = {}
+		deltIdx = 0
+		for b in bins:
+			low = b[0]
+			hi = b[1]
+			count = 0
+			while deltIdx < len(deltas):
+				nextDelt = deltas[deltIdx]
+				if nextDelt > hi:
+					break
+				count += 1
+				deltIdx += 1
+			pairBins[pr][b] = count
+
+
+	return pairBins
 
 
 
