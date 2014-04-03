@@ -17,7 +17,7 @@ def minePatients(goodPairs, candidates):
 		patIdx = {}
 		for n in pat['notes']:
 			for t in n['terms']:
-				print t['grp']
+				#print t['grp']
 				if str(t['cid']) not in patIdx:
 					patIdx[str(t['cid'])] = set([])
 				patIdx[str(t['cid'])].add(n['timeoffset'])
