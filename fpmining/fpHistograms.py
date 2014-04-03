@@ -1,4 +1,4 @@
-import sys,os, pprint, json, random, pprint
+import sys,os, pprint, json, random, pprint, math
 sys.path.append(os.path.realpath('../tempClustering'))
 sys.path.append(os.path.realpath('./tempClustering'))
 sys.path.append(os.path.realpath('../dataFetching'))
@@ -61,7 +61,7 @@ def minePatients(goodPairs, candidates):
 			pairDeltas[pr] = pd
 			print t1+'\t'+t2+'\t'+str(cs['enrichment'])+'\t'+str(cs['freq'])+'\t'+str(cs['other'])+'\t'+str(pd)+'\t'+str(concIdx[t1]+' + '+concIdx[t2])
 	bins = []
-	for i in range(minDelta, maxDelta+100, 100):
+	for i in range(int(math.floor(minDelta)), int(math.ceil(maxDelta))+100, 100):
 		bins.append((i, i+100))
 	pairBins = {}
 	for pr, deltas in pairDeltas.iteritems():
