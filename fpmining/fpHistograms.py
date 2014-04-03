@@ -59,7 +59,7 @@ def minePatients(goodPairs, candidates):
 		else:
 			pd = sorted(pairDeltas[pr])
 			pairDeltas[pr] = pd
-			print t1+'\t'+t2+'\t'+str(cs['enrichment'])+'\t'+str(cs['freq'])+'\t'+str(cs['other'])+'\t'+str(pd)+'\t'+str(concIdx[t1]+' + '+concIdx[t2])
+			#print t1+'\t'+t2+'\t'+str(cs['enrichment'])+'\t'+str(cs['freq'])+'\t'+str(cs['other'])+'\t'+str(pd)+'\t'+str(concIdx[t1]+' + '+concIdx[t2])
 	bins = []
 	for i in range(int(math.floor(minDelta)), int(math.ceil(maxDelta))+100, 100):
 		bins.append((i, i+100))
