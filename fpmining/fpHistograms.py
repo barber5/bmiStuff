@@ -63,7 +63,7 @@ def minePatients(goodPairs, candidates):
 	bins = []
 	for i in range(int(math.floor(minDelta)), int(math.ceil(maxDelta))+100, 100):
 		bins.append((i, i+100))
-	pairBins = {}
+	pairBins = {}	
 	for pr, deltas in pairDeltas.iteritems():
 		pairBins[pr] = {}
 		deltIdx = 0
@@ -78,6 +78,7 @@ def minePatients(goodPairs, candidates):
 				count += 1
 				deltIdx += 1
 			pairBins[pr][b] = count
+	print len(pairBins.keys())
 	return pairBins
 
 
