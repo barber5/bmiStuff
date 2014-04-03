@@ -78,7 +78,30 @@ def minePatients(goodPairs, candidates):
 				count += 1
 				deltIdx += 1
 			pairBins[pr][b] = count
-	print len(pairBins.keys())
+	firstLinePrinted = False
+	firstLine = ''
+	secondLine = ''
+	for pr, feats in pairBins.iteritems():
+		for bin, count in feats.iteritems():
+			if not firstLinePrinted:
+				if len(firstLine) == 0:
+					firstLine = str(bin)
+					secondLine = str(count)
+				else:
+					firstLine += '\t'+str(bin)
+					secondLine += '\t'+str(count)
+			else: 
+				if len(secondLine) == 0:
+					secondLine = str(count)
+				else:
+					secondLine += '\t'+str(count)
+
+		if not firstLinePrinted:
+			print firstLine			
+			firstLinePrinted = True
+		print secondLine
+		secondLine = ''
+
 	return pairBins
 
 
@@ -91,4 +114,4 @@ if __name__ == "__main__":
 	good = comparePatterns(sys.argv[1], sys.argv[2])
 	concs = getFromFile(int(sys.argv[4]), sys.argv[3])
 
-	pprint.pprint(minePatients(good, concs))
+	minePatients(good, concs)
