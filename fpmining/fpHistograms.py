@@ -8,6 +8,11 @@ from fpCompare import comparePatterns
 from mineConcepts import getFromFile
 
 # patients is pid -> {pid, src_type, labs -> [{age, , component, description, lid, line, ord, ord_num, proc, proc_cat, ref_high, ref_low, ref_norm, ref_unit, result_flag, result_inrange, src, timeoffset}], notes -> [{age, cpt, duration, icd9, nid, pid, src, src_type, timeoffset, year, terms -> [{cui, familyHistory, negated, nid, termid, tid, term, concept, grp, cid}]}], prescriptions -> [{age, drug_description, ingr_set_id, order_status, pid, route, rxid, src, timeoffset}], visits -> [{age, cpt, duration, icd9, pid, src, src_type, timeoffset, year}] }
+
+
+# a different idea is to instead of looking at the first time a term appears, we could look at every appearance of a candidate term 
+
+# so is there entropy in the offsets here or not??
 def minePatients(goodPairs, candidates):	
 	pairDeltas = {}
 	invIdx = {}
@@ -59,7 +64,13 @@ def minePatients(goodPairs, candidates):
 		else:
 			pd = sorted(pairDeltas[pr])
 			pairDeltas[pr] = pd
-			#print t1+'\t'+t2+'\t'+str(cs['enrichment'])+'\t'+str(cs['freq'])+'\t'+str(cs['other'])+'\t'+str(pd)+'\t'+str(concIdx[t1]+' + '+concIdx[t2])
+			print t1+'\t'+t2+'\t'+str(cs['enrichment'])+'\t'+str(cs['freq'])+'\t'+str(cs['other'])+'\t'+str(pd)+'\t'+str(concIdx[t1]+' + '+concIdx[t2])
+	
+
+
+
+
+def getPairBins(minDelta, maxDelta, pairDeltas):
 	bins = []
 	for i in range(int(math.floor(minDelta)), int(math.ceil(maxDelta))+100, 100):
 		bins.append((i, i+100))
@@ -81,9 +92,10 @@ def minePatients(goodPairs, candidates):
 	firstLinePrinted = False
 	firstLine = ''
 	secondLine = ''
+	i = 1
 	for pr, feats in pairBins.iteritems():
 		for bin, count in feats.iteritems():
-			if not firstLinePrinted:
+			if not firstLinePrinted:				
 				if len(firstLine) == 0:
 					firstLine = str(bin)
 					secondLine = str(count)
@@ -104,14 +116,14 @@ def minePatients(goodPairs, candidates):
 
 	return pairBins
 
-
-
-
-
-
 if __name__ == "__main__":
 	print >> sys.stderr, 'usage: <casePairsFile> <controlPairsFile> <casePatientFile> <numberToSample>'
 	good = comparePatterns(sys.argv[1], sys.argv[2])
 	concs = getFromFile(int(sys.argv[4]), sys.argv[3])
 
 	minePatients(good, concs)
+
+
+
+
+	
