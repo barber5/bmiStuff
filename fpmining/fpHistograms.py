@@ -74,7 +74,7 @@ def minePatients(goodPairs, candidates):
 			stdDevSq = float(totalDev)/float(len(pds) - 1.0)
 			stdDev = math.sqrt(stdDevSq)
 
-			print t1+'\t'+t2+'\t'+str(cs['enrichment'])+'\t'+str(cs['freq'])+'\t'+str(cs['other'])+'\t'+str(avg)+'\t'+str(stdDev)+'\t'+str(pd)+'\t'+str(concIdx[t1]+' + '+concIdx[t2])
+			print t1+'\t'+t2+'\t'+str(cs['enrichment'])+'\t'+str(cs['freq'])+'\t'+str(cs['other'])+'\t'+str(avg)+'\t'+str(stdDev)+'\t'+str(pds)+'\t'+str(concIdx[t1]+' + '+concIdx[t2])
 	
 
 
