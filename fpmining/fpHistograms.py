@@ -62,9 +62,19 @@ def minePatients(goodPairs, candidates):
 		if len(pairDeltas[pr]) == 0:
 			del pairDeltas[pr]
 		else:
-			pd = sorted(pairDeltas[pr])
-			pairDeltas[pr] = pd
-			print t1+'\t'+t2+'\t'+str(cs['enrichment'])+'\t'+str(cs['freq'])+'\t'+str(cs['other'])+'\t'+str(pd)+'\t'+str(concIdx[t1]+' + '+concIdx[t2])
+			pds = sorted(pairDeltas[pr])
+			pairDeltas[pr] = pds
+			total = 0.0
+			for pd in pds:
+				total += pd
+			avg = float(total)/float(len(pds))
+			totalDev = 0.0			
+			for pd in pds:
+				totalDev += (pd - avg)*(pd-avg)
+			stdDevSq = float(totalDev)/float(len(pds) - 1.0)
+			stdDev = math.sqrt(stdDevSq)
+
+			print t1+'\t'+t2+'\t'+str(cs['enrichment'])+'\t'+str(cs['freq'])+'\t'+str(cs['other'])+'\t'+str(avg)+'\t'+str(stdDev)+'\t'+str(pd)+'\t'+str(concIdx[t1]+' + '+concIdx[t2])
 	
 
 
@@ -126,4 +136,3 @@ if __name__ == "__main__":
 
 
 
-	
