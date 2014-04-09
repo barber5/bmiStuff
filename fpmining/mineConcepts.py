@@ -97,7 +97,7 @@ def printFreq(freq, featIdx):
 		if len(k) != 2:
 			continue
 
-		print str(v)+'\t'+str(k[0])+'\t'+str(k[1])+'\t'+str(conce)
+		#print str(v)+'\t'+str(k[0])+'\t'+str(k[1])+'\t'+str(conce)
 
 if __name__ == "__main__":
 	print >> sys.stderr, 'usage: <number> <patientFile> <threshold>'
