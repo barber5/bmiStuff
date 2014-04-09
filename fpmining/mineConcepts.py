@@ -5,6 +5,7 @@ sys.path.append(os.path.realpath('../dataFetching'))
 sys.path.append(os.path.realpath('./dataFetching'))
 from getPatient import getPatient, getPatsForCode
 from freqPatterns import mineDict
+from getTermById import getLab
 
 
 def getFromFile(num, fileName):
@@ -71,7 +72,7 @@ def patientToTimelessConcepts(patient):
 		labKey = ('lab', l['proc'], l['component'], val)
 		if labKey not in result:
 			result[labKey] = 0
-			featIdx[labKey] = l['description']
+			featIdx[labKey] = getLab(l['component'])
 		result[labKey] += 1
 	return result, featIdx
 
