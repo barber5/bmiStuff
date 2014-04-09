@@ -95,9 +95,10 @@ def printFreq(freq, featIdx):
 	for k,v in freq.iteritems():				
 		if len(k) != 2:
 			continue
-		print k
-		print featIdx[k[0]]
-		print featIdx[k[1]]
+		if k[0][0] == 'lab' or k[1][0] == 'lab':
+			print k
+			print featIdx[k[0]]
+			print featIdx[k[1]]
 		#print str(v)+'\t'+str(k[0])+'\t'+str(k[1])+'\t'+str(conce)
 
 if __name__ == "__main__":
