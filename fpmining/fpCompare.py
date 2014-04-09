@@ -29,7 +29,11 @@ def comparePatterns(caseFile, controlFile):
 	cases = loadFromFile(caseFile)
 	controls = loadFromFile(controlFile)
 	goodOnes = {}
+	i = 0
 	for pr, cs in cases.iteritems():
+		i+=1
+		if i%1000==0:
+			print >> sys.stderr, str(i)+' of '+str(len(cases))
 		if pr not in controls:
 			cs['enrichment'] = 99999
 			cs['other'] = 0.0
