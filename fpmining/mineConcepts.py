@@ -49,42 +49,57 @@ def getRandoms(num):
 	return result
 
 # patients is pid -> {pid, src_type, labs -> [{age, , component, description, lid, line, ord, ord_num, proc, proc_cat, ref_high, ref_low, ref_norm, ref_unit, result_flag, result_inrange, src, timeoffset}], notes -> [{age, cpt, duration, icd9, nid, pid, src, src_type, timeoffset, year, terms -> [{cui, familyHistory, negated, nid, termid, tid, term, concept, grp, cid}]}], prescriptions -> [{age, drug_description, ingr_set_id, order_status, pid, route, rxid, src, timeoffset}], visits -> [{age, cpt, duration, icd9, pid, src, src_type, timeoffset, year}] }
-def patientToTimelessConcepts(patient, conceptIdx):
+def patientToTimelessConcepts(patient):
 	result = {}
+	featIdx = {}
 	for note in patient['notes']:
 		for term in note['terms']:
 			cid = term['cid']
-			concept = term['concept']
-			if cid not in conceptIdx:
-				conceptIdx[cid] = concept
-			cidKey = (cid, term['negated'], term['familyHistory'])
+			concept = term['concept']			
+			cidKey = ('cid', cid, term['negated'], term['familyHistory'])
 			if cidKey not in result:
 				result[cidKey] = 0
+				featIdx[cidKey] = term['concept']
 			result[cidKey] += 1
-	return result
+	for l in patient['labs']:
+		if 'ord_num' not in l or not l['ord_num'] or l['ord_num'] == '':
+			continue
+		if 'result_flag' not in l or not l['result_flag'] or l['result_flag'] == '':
+			val = 'normal'
+		else:
+			val = l['result_flag']
+		labKey = ('lab', l['proc'], l['component'], val)
+		if labKey not in result:
+			result[labKey] = 0
+			featIdx[labKey] = l['description']
+		result[labKey] += 1
+	return result, featIdx
 
 
 def mineIt(num, patientFile, thrsh):
 	#pats = getFromFile(num, patientFile)
 	pats = getRandoms(num)
-	conceptVects = {}
-	conceptIdx = {}
+	conceptVects = {}	
+	featIdx = {}
 	for pid, pat in pats.iteritems():
-		concDict = patientToTimelessConcepts(pat, conceptIdx)
+		(concDict, feats) = patientToTimelessConcepts(pat)
+		for f,desc in feats.iteritems():
+			if f not in featIdx:
+				featIdx[f] = desc
 		conceptVects[pid] = concDict
 	freq = mineDict(conceptVects, thrsh)
-	printFreq(freq, conceptIdx)
+	printFreq(freq, featIdx)
 	return freq
 
-def printFreq(freq, conceptIdx):
+def printFreq(freq, featIdx):
 	for k,v in freq.iteritems():		
-		if k[0] not in conceptIdx:
+		if k[0] not in featIdx:
 			conce = ""
 			for comp in k:
-				conce += conceptIdx[comp[0]] +" + "
+				conce += featIdx[comp[0]] +" + "
 			conce = conce[:-3]
 		else:
-			conce = conceptIdx[k[0]]
+			conce = featIdx[k[0]]
 		if len(k) != 2:
 			continue
 
