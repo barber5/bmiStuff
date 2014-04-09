@@ -96,7 +96,7 @@ def printFreq(freq, featIdx):
 		if k[0] not in featIdx:
 			conce = ""
 			for comp in k:
-				conce += featIdx[comp[0]] +" + "
+				conce += featIdx[comp] +" + "
 			conce = conce[:-3]
 		else:
 			conce = featIdx[k[0]]
