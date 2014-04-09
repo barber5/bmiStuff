@@ -79,7 +79,10 @@ def patientToTimelessConcepts(patient):
 
 def mineIt(num, patientFile, thrsh):
 	#pats = getFromFile(num, patientFile)
-	pats = getRandoms(num)
+	if patientFile == 'random':
+		pats = getRandoms(num)
+	else:
+		pats = getFromFile(num, patientFile)
 	conceptVects = {}	
 	featIdx = {}
 	for pid, pat in pats.iteritems():
@@ -100,7 +103,7 @@ def printFreq(freq, featIdx):
 		print str(v)+'\t'+str(k[0])+'\t'+str(k[1])+'\t'+str(conce)
 
 if __name__ == "__main__":
-	print >> sys.stderr, 'usage: <number> <patientFile> <threshold>'
+	print >> sys.stderr, 'usage: <number> <patientFile|random> <threshold>'
 	freq = mineIt(int(sys.argv[1]), sys.argv[2], float(sys.argv[3]))
 	
 
