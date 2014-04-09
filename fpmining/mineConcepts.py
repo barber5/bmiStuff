@@ -83,6 +83,7 @@ def mineIt(num, patientFile, thrsh):
 	featIdx = {}
 	for pid, pat in pats.iteritems():
 		(concDict, feats) = patientToTimelessConcepts(pat)
+		pprint.pprint(concDict)
 		for f,desc in feats.iteritems():
 			if f not in featIdx:
 				featIdx[f] = desc
@@ -92,6 +93,7 @@ def mineIt(num, patientFile, thrsh):
 	return freq
 
 def printFreq(freq, featIdx):
+	pprint.pprint(freq)
 	for k,v in freq.iteritems():		
 		print k		
 		if len(k) != 2:
