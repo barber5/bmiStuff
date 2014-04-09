@@ -42,6 +42,8 @@ def comparePatterns(caseFile, controlFile):
 			cs['enrichment'] = 99999
 			cs['other'] = 0.0
 			other = 0.0
+			if cs['freq'] > .1:
+				goodOnes[pr] = cs
 		else:
 			cs['enrichment'] = 100*float(cs['freq'] - controls[pr]['freq']) / float(controls[pr]['freq'])
 			other = controls[pr]['freq']
