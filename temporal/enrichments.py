@@ -6,6 +6,8 @@ sys.path.append(os.path.realpath('./dataFetching'))
 sys.path.append(os.path.realpath('../fpmining'))
 sys.path.append(os.path.realpath('./fpmining'))
 
+from queryByCui import r, decomp, compIt
+
 def getRandoms(num):
 	res = r.hget('codes', 'random')
 	li = json.loads(decomp(res))
