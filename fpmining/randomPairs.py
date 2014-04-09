@@ -8,10 +8,13 @@ from conceptPairs import writePairs
 
 def getPairs(num, outFile):
 	pats = getRandoms(num)	
-	conceptIdx = {}
+	featIdx = {}
 	pairIdx = {}
 	for pid, pat in pats.iteritems():		
-		concDict = patientToTimelessConcepts(pat, conceptIdx)
+		(concDict, feats) = patientToTimelessConcepts(pat)
+		for f, desc in feats.iteritems():
+			if f not in featIdx:
+				featIdx[f] = desc
 		concs = len(concDict.keys())
 		prs = concs*(concs-1)/2
 		keyser = concDict.keys()
