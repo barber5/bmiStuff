@@ -92,11 +92,12 @@ def mineIt(num, patientFile, thrsh):
 	return freq
 
 def printFreq(freq, featIdx):
-	for k,v in freq.iteritems():		
-		print k		
+	for k,v in freq.iteritems():				
 		if len(k) != 2:
 			continue
-
+		print k
+		print featIdx[k[0]]
+		print featIdx[k[1]]
 		#print str(v)+'\t'+str(k[0])+'\t'+str(k[1])+'\t'+str(conce)
 
 if __name__ == "__main__":
