@@ -58,8 +58,8 @@ def getFromFile(num, fileName, rndSrc):
 
 
 def getEnrichments(data):
-	for p in data:
-		pprint.pprint(p)
+	for pid,pat in data.iteritems():
+		pprint.pprint(pat)
 
 
 if __name__ == "__main__":		
