@@ -101,7 +101,7 @@ def getEnrichments(data):
 				ingKey = ('prescription', i)
 				if ingKey not in nextPerson:
 					nextPerson[ingKey] = 0
-					featIdx[ingKey] = i
+					featIdx[ingKey] = getIngredient(i)
 				nextPerson[ingKey] += 1
 				
 		for feat, val in nextPerson.iteritems():
