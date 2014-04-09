@@ -7,7 +7,8 @@ sys.path.append(os.path.realpath('../fpmining'))
 sys.path.append(os.path.realpath('./fpmining'))
 
 from queryByCui import r, decomp, compIt
-from getTermByID import getLab
+from getTermByID import getTerm, getTermCui, getIngredients, getIngredient, getLab, getConcept
+
 
 def getRandoms(num):
 	res = r.hget('codes', 'random')
@@ -91,6 +92,18 @@ def getEnrichments(data):
 				nextPerson[labKey] = 0
 				featIdx[labKey] = getLab(l['component'])
 			nextPerson[labKey] += 1
+
+
+
+		for p in dd['prescriptions']:			
+			ings = getIngredients(p['ingr_set_id'])
+			for i in ings:				
+				ingKey = ('prescription', i)
+				if ingKey not in nextPerson:
+					nextPerson[ingKey] = 0
+					featIdx[ingKey] = i
+				nextPerson[ingKey] += 1
+				
 		for feat, val in nextPerson.iteritems():
 			if feat not in negCounts:
 				negCounts[feat] = 1
