@@ -78,7 +78,7 @@ def getEnrichments(data):
 				if cidKey not in nextPerson:
 					nextPerson[cidKey] = 0
 					featIdx[cidKey] = term['concept']
-				nextPerson[nextPerson] += 1
+				nextPerson[cidKey] += 1
 		for l in dd['labs']:
 			if 'ord_num' not in l or not l['ord_num'] or l['ord_num'] == '':
 				continue
