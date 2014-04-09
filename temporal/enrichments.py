@@ -7,6 +7,7 @@ sys.path.append(os.path.realpath('../fpmining'))
 sys.path.append(os.path.realpath('./fpmining'))
 
 from queryByCui import r, decomp, compIt
+from getTermByID import getLab
 
 def getRandoms(num):
 	res = r.hget('codes', 'random')
@@ -56,17 +57,62 @@ def getFromFile(num, fileName, rndSrc):
 			result[rn] = 0
 	return result
 
-
+# patients is pid -> {pid, src_type, labs -> [{age, , component, description, lid, line, ord, ord_num, proc, proc_cat, ref_high, ref_low, ref_norm, ref_unit, result_flag, result_inrange, src, timeoffset}], notes -> [{age, cpt, duration, icd9, nid, pid, src, src_type, timeoffset, year, terms -> [{cui, familyHistory, negated, nid, termid, tid}]}], prescriptions -> [{age, drug_description, ingr_set_id, order_status, pid, route, rxid, src, timeoffset}], visits -> [{age, cpt, duration, icd9, pid, src, src_type, timeoffset, year}] }
 def getEnrichments(data):
+	featIdx = {}
+	posCounts = {}
+	negCounts = {}
 	for pid, label in data.iteritems():		
 		resp = r.hget('pats', pid)
 		if resp == None:
 			continue
 		#print resp
-
 		dd = decomp(resp)
-		nextPerson = {'pid': pid}
-		print dd
+		nextPerson = {}
+		print >> sys.stderr, str(pid)+': '+str(label)
+		for n in dd['notes']:
+			for t in n['terms']:
+				cid = term['cid']
+				concept = term['concept']			
+				cidKey = ('cid', cid, term['negated'], term['familyHistory'])
+				if cidKey not in nextPerson:
+					nextPerson[cidKey] = 0
+					featIdx[cidKey] = term['concept']
+				nextPerson[nextPerson] += 1
+		for l in dd['labs']:
+			if 'ord_num' not in l or not l['ord_num'] or l['ord_num'] == '':
+				continue
+			if 'result_flag' not in l or not l['result_flag'] or l['result_flag'] == '':
+				val = 'normal'
+			else:
+				val = l['result_flag']
+			labKey = ('lab', l['proc'], l['component'], val)
+			if labKey not in nextPerson:
+				nextPerson[labKey] = 0
+				featIdx[labKey] = getLab(l['component'])
+			nextPerson[labKey] += 1
+		for feat, val in nextPerson.iteritems():
+			if feat not in negCounts:
+				negCounts[feat] = 1
+			if feat not in posCounts:
+				posCounts[feat] = 1
+			if label == 1:
+				posCounts[feat] += 1
+			if label == 0:
+				negCounts[feat] += 1
+	enrichments = {}
+	for feat, posCount in posCounts.iteritems():
+		negCount = negCounts[feat]
+		enr = float(posCount - negCount) / float(negCount)
+		enrichments[feat] = enr
+	return (enrichments, featIdx, posCounts, negCounts)
+
+def printEnrichments(enrichments, featIdx, posCounts, negCounts):
+	for feat, enr in enrichments.iteritems():
+		pc = posCounts[feat]
+		nc = negCounts[feat]
+		desc = featIdx[feat]
+		print str(feat)+'\t'+str(enr)+'\t'+str(pc)+'\t'+str(nc)+'\t'+str(desc)
 
 
 if __name__ == "__main__":		
@@ -74,7 +120,8 @@ if __name__ == "__main__":
 	rndSrc = 'cache'
 
 	data = getFromFile(int(sys.argv[2]), sys.argv[1], rndSrc)		
-	getEnrichments(data)
+	(enrichments, featIdx, posCounts, negCounts) = getEnrichments(data)
+	printEnrichments(enrichments, featIdx, posCounts, negCounts)
 	
 
 	
