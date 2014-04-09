@@ -58,8 +58,15 @@ def getFromFile(num, fileName, rndSrc):
 
 
 def getEnrichments(data):
-	for pid,pat in data.iteritems():
-		pprint.pprint(pat)
+	for pid, label in data.iteritems():		
+		resp = r.hget('pats', pid)
+		if resp == None:
+			continue
+		#print resp
+
+		dd = decomp(resp)
+		nextPerson = {'pid': pid}
+		print dd
 
 
 if __name__ == "__main__":		
