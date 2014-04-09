@@ -67,6 +67,7 @@ if __name__ == "__main__":
 	rndSrc = 'cache'
 
 	data = getFromFile(int(sys.argv[2]), sys.argv[1], rndSrc)		
+	getEnrichments(data)
 	
 
 	
