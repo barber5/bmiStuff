@@ -5,7 +5,7 @@ sys.path.append(os.path.realpath('../dataFetching'))
 sys.path.append(os.path.realpath('./dataFetching'))
 from getPatient import getPatient, getPatsForCode
 from freqPatterns import mineDict
-from getTermById import getLab
+from getTermByID import getLab
 
 
 def getFromFile(num, fileName):
