@@ -71,7 +71,7 @@ def getEnrichments(data):
 		nextPerson = {}
 		print >> sys.stderr, str(pid)+': '+str(label)
 		for n in dd['notes']:
-			for t in n['terms']:
+			for term in n['terms']:
 				cid = term['cid']
 				concept = term['concept']			
 				cidKey = ('cid', cid, term['negated'], term['familyHistory'])
