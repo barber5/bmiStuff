@@ -10,7 +10,11 @@ def loadFromFile(fileName):
 	result = {}
 	with open(fileName, 'r') as fi:
 		fi.readline()
+		i = 0
 		while True:
+			i += 1
+			if i%10000 == 0:
+				print >> sys.stderr, str(i) + ' lines read'
 			line = fi.readline().strip()
 			if line == '':
 				break
