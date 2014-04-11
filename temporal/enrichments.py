@@ -120,21 +120,22 @@ def getEnrichments(data):
 		enrichments[feat] = enr
 	return (enrichments, featIdx, posCounts, negCounts)
 
-def printEnrichments(enrichments, featIdx, posCounts, negCounts):
+def printEnrichments(enrichments, featIdx, posCounts, negCounts, cutoff):
 	for feat, enr in enrichments.iteritems():
 		pc = posCounts[feat]
 		nc = negCounts[feat]
 		desc = featIdx[feat]
-		print str(feat)+'\t'+str(enr)+'\t'+str(pc)+'\t'+str(nc)+'\t'+str(desc)
+		if enr > cutoff:
+			print str(feat)+'\t'+str(enr)+'\t'+str(pc)+'\t'+str(nc)+'\t'+str(desc)
 
 
 if __name__ == "__main__":		
-	print >> sys.stderr, 'usage: <patientFile> <dataSetSize>'		
+	print >> sys.stderr, 'usage: <patientFile> <dataSetSize> <enrichmentThreshold>'		
 	rndSrc = 'cache'
 
 	data = getFromFile(int(sys.argv[2]), sys.argv[1], rndSrc)		
 	(enrichments, featIdx, posCounts, negCounts) = getEnrichments(data)
-	printEnrichments(enrichments, featIdx, posCounts, negCounts)
+	printEnrichments(enrichments, featIdx, posCounts, negCounts, float(sys.argv[3]))
 	
 
 	
