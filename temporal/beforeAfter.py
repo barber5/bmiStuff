@@ -21,8 +21,7 @@ def beforeAndAfter(enrichments, codes, patients):
 			icd9sArr = icd9s.split(',')			
 			icd9sArr = [str(i) for i in icd9sArr]			
 			for code in codes:
-				if code in icd9sArr:					
-					print type(code)
+				if code in icd9sArr:										
 					if v['timeoffset'] < minOffset:
 						minOffset = v['timeoffset']
 		if minOffset < float('inf'):
