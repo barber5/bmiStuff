@@ -120,7 +120,7 @@ def printOffsets(featOffsets, enrichments):
 		print str(feat)+'\t'+str(enr)+'\t'+str(case)+'\t'+str(control)+'\t'+str(desc)+'\t'+str(sorted(offsets))
 
 if __name__ == "__main__":
-	print 'usage: <enrichmentsFile> <codeFile> <patientFile> <numPatients>'
+	print >> sys.stderr, 'usage: <enrichmentsFile> <codeFile> <patientFile> <numPatients>'
 	enr = getEnrichments(sys.argv[1])
 	codes = getCodes(sys.argv[2])
 	pats = getPatients(int(sys.argv[4]), sys.argv[3])
