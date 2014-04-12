@@ -19,6 +19,8 @@ def beforeAndAfter(enrichments, codes, patients):
 		minOffset = float('inf')
 		for v in resp['visits']:			
 			icd9s = v['icd9']
+			if icd9s == '':
+				continue
 			icd9sArr = icd9s.split(',')			
 			icd9sArr = [str(i) for i in icd9sArr]	
 			myCodes.extend(icd9sArr)		
