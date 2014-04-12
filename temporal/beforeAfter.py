@@ -122,7 +122,7 @@ def printOffsets(featOffsets, enrichments):
 		for ofs in offsets:
 			total += ofs
 		mean = float(total) / float(len(offsets))	
-	    stdTotal = 0
+		stdTotal = 0
 	    for ofs in offsets:
 	    	stdTotal += (ofs - mean)*(ofs-mean)
 	    stdDiv = float(stdTotal)/float(len(offsets))
