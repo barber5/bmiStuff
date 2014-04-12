@@ -15,10 +15,10 @@ from mineConcepts import getFromFile
 def beforeAndAfter(enrichments, codes, patients):
 	total = 0
 	featOffsets = {}
-	for pid, resp in patients.iteritems():
+	for pid, dd in patients.iteritems():
 		myCodes = []
 		minOffset = float('inf')
-		for v in resp['visits']:			
+		for v in dd['visits']:			
 			icd9s = v['icd9']
 			if icd9s == '':
 				continue
