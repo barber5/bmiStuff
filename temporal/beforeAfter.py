@@ -15,11 +15,13 @@ from mineConcepts import getFromFile
 def beforeAndAfter(enrichments, codes, patients):
 	total = 0
 	for pid, resp in patients.iteritems():
+		myCodes = []
 		minOffset = float('inf')
 		for v in resp['visits']:			
 			icd9s = v['icd9']
 			icd9sArr = icd9s.split(',')			
-			icd9sArr = [str(i) for i in icd9sArr]			
+			icd9sArr = [str(i) for i in icd9sArr]	
+			myCodes.extend(icd9sArr)		
 			for code in codes:
 				if code in icd9sArr:										
 					if v['timeoffset'] < minOffset:
@@ -27,6 +29,8 @@ def beforeAndAfter(enrichments, codes, patients):
 		if minOffset < float('inf'):
 			print minOffset
 			total += 1
+		else:
+			print myCodes
 
 	print total
 
