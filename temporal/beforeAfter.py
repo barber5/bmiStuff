@@ -73,7 +73,7 @@ def getEnrichments(enrFile):
 	enrichments = {}
 	with open(enrFile, 'r') as fi:
 		while True:
-			line = fi.readline()
+			line = fi.readline().strip()
 			if line == '':
 				break
 			lineArr = line.split('\t')
