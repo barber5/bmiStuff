@@ -9,9 +9,10 @@ sys.path.append(os.path.realpath('./fpmining'))
 from queryByCui import r, decomp, compIt
 from getTermByID import getTerm, getTermCui, getIngredients, getIngredient, getLab, getConcept
 from ast import literal_eval as make_tuple
+from mineConcepts import getFromFile
 
 # patients is pid -> {pid, src_type, labs -> [{age, , component, description, lid, line, ord, ord_num, proc, proc_cat, ref_high, ref_low, ref_norm, ref_unit, result_flag, result_inrange, src, timeoffset}], notes -> [{age, cpt, duration, icd9, nid, pid, src, src_type, timeoffset, year, terms -> [{cui, familyHistory, negated, nid, termid, tid}]}], prescriptions -> [{age, drug_description, ingr_set_id, order_status, pid, route, rxid, src, timeoffset}], visits -> [{age, cpt, duration, icd9, pid, src, src_type, timeoffset, year}] }
-def beforeAndAfter(enrichments, codes):
+def beforeAndAfter(enrichments, codes, patients):
 	for pid, resp in patients.iteritems():
 		minOffset = float('inf')
 		for v in resp['visits']:
@@ -58,8 +59,11 @@ def getCodes(codeFile):
 
 	return codes
 
+def getPatients(num, patFile):
+	return getFromFile(num, patFile)
+
 if __name__ == "__main__":
-	print 'usage: <enrichmentsFile> <numPatients> <codeFile>'
+	print 'usage: <enrichmentsFile> <codeFile> <patientFile> <numPatients>'
 	enr = getEnrichments(sys.argv[1])
 	codes = getCodes(sys.argv[2])
 	beforeAndAfter(enr, codes)
