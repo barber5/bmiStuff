@@ -57,7 +57,7 @@ def getCodes(codeFile):
 			line = fi.readline()
 			if line == '':
 				break
-			code = float(line.split(':')[1])
+			code = line.split(':')[1]
 			codes.append(code)
 
 	return codes
