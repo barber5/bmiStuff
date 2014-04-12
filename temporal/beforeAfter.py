@@ -17,6 +17,7 @@ def beforeAndAfter(enrichments, codes, patients):
 	featOffsets = {}
 	for pid, dd in patients.iteritems():
 		myCodes = []
+		myOffsets = {}
 		minOffset = float('inf')
 		for v in dd['visits']:			
 			icd9s = v['icd9']
@@ -38,10 +39,9 @@ def beforeAndAfter(enrichments, codes, patients):
 				concept = term['concept']			
 				cidKey = ('cid', cid, term['negated'], term['familyHistory'])				
 				if cidKey in enrichments:
-					if cidKey not in featOffsets:
-						featOffsets[cidKey] = []
-
-					featOffsets[cidKey].append(delt)
+					if cidKey not in myOffsets:
+						myOffsets[cidKey] = set([])
+					myOffsets[cidKey].add(delt)
 				
 		for l in dd['labs']:
 			if 'ord_num' not in l or not l['ord_num'] or l['ord_num'] == '':
@@ -53,9 +53,9 @@ def beforeAndAfter(enrichments, codes, patients):
 			delt = float(l['timeoffset']) - minOffset
 			labKey = ('lab', l['proc'], l['component'], val)			
 			if labKey in enrichments:
-				if labKey not in featOffsets:
-					featOffsets[labKey] = []
-				featOffsets[labKey].append(delt)
+				if labKey not in myOffsets:
+					myOffsets[labKey] = set([])
+				myOffsets[labKey].add(delt)
 
 		for p in dd['prescriptions']:	
 			delt = float(p['timeoffset']) - minOffset		
@@ -63,9 +63,14 @@ def beforeAndAfter(enrichments, codes, patients):
 			for i in ings:				
 				ingKey = ('prescription', i)				
 				if ingKey in enrichments:
-					if ingKey not in featOffsets:
-						featOffsets[ingKey] = []
-					featOffsets[ingKey].append(delt)
+					if ingKey not in myOffsets:
+						myOffsets[ingKey] = set([])
+					myOffsets[ingKey].add(delt)
+		for k, offsets in myOffsets.iteritems():
+			if k not in featOffsets:
+				featOffsets[k] = []
+			featOffsets[k].extend(offsets)
+
 	
 	return featOffsets
 
