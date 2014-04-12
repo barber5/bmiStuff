@@ -241,7 +241,7 @@ def getSingleTerms(nid, stride_db, term_db):
 
 
 def getSingleNotes(pid, stride_db, term_db, src_type=None):	
-	query = "SELECT pid, nid, src, src_type, age, timeoffset, year, icd9 FROM note where pid=%s"
+	query = "SELECT pid, nid, src, src_type, age, timeoffset, year FROM note where pid=%s"
 	repls = [int(pid)]
 	if src_type:			
 		query += " AND src_type=%s"
