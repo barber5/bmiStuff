@@ -8,6 +8,7 @@ sys.path.append(os.path.realpath('./fpmining'))
 
 from queryByCui import r, decomp, compIt
 from getTermByID import getTerm, getTermCui, getIngredients, getIngredient, getLab, getConcept
+from getPatient import getPatient
 
 
 def getRandoms(num):
@@ -66,7 +67,9 @@ def getEnrichments(data):
 	for pid, label in data.iteritems():		
 		resp = r.hget('pats', pid)
 		if resp == None:
-			continue
+			resp = getPatient(pid)
+			pstr = compIt(pat)
+			r.hset('pats', pid, pstr)
 		#print resp		
 		dd = decomp(resp)
 		nextPerson = {}
