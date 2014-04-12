@@ -47,6 +47,7 @@ def getFromFile(num, fileName, rndSrc):
 		result[next] = 1
 	if rndSrc == 'file':
 		while len(result) < num:
+			print >> sys.stderr, 'attempting to get '+str(num)+' from '+str(len(pidKeys)) + ' pids, got '+str(num/2)+' so far'
 			next = random.choice(pidKeys)
 			if pids[next] != 0:
 				continue
