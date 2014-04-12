@@ -13,6 +13,7 @@ from mineConcepts import getFromFile
 
 # patients is pid -> {pid, src_type, labs -> [{age, , component, description, lid, line, ord, ord_num, proc, proc_cat, ref_high, ref_low, ref_norm, ref_unit, result_flag, result_inrange, src, timeoffset}], notes -> [{age, cpt, duration, icd9, nid, pid, src, src_type, timeoffset, year, terms -> [{cui, familyHistory, negated, nid, termid, tid}]}], prescriptions -> [{age, drug_description, ingr_set_id, order_status, pid, route, rxid, src, timeoffset}], visits -> [{age, cpt, duration, icd9, pid, src, src_type, timeoffset, year}] }
 def beforeAndAfter(enrichments, codes, patients):
+	total = 0
 	for pid, resp in patients.iteritems():
 		minOffset = float('inf')
 		for v in resp['visits']:			
@@ -24,7 +25,11 @@ def beforeAndAfter(enrichments, codes, patients):
 					print type(code)
 					if v['timeoffset'] < minOffset:
 						minOffset = v['timeoffset']
-		print minOffset
+		if minOffset < float('inf'):
+			print minOffset
+			total += 1
+
+	print total
 
 def getEnrichments(enrFile):
 	enrichments = {}
