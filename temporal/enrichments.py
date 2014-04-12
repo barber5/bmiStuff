@@ -8,7 +8,7 @@ sys.path.append(os.path.realpath('./fpmining'))
 
 from queryByCui import r, decomp, compIt
 from getTermByID import getTerm, getTermCui, getIngredients, getIngredient, getLab, getConcept
-from getPatient import getPatient
+from vecForPatient import getVecForPid
 
 
 def getRandoms(num):
@@ -68,7 +68,7 @@ def getEnrichments(data):
 		resp = r.hget('pats', pid)
 		if resp == None:
 			print >> sys.stderr, 'sad story, have to go and fetch '+str(pid)+' manually'
-			resp = getPatient(pid)
+			resp = getVecForPid(pid)
 			print >> sys.stderr, 'got it'
 			pstr = compIt(pat)
 			r.hset('pats', pid, pstr)
