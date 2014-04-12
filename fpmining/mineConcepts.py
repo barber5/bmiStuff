@@ -21,7 +21,10 @@ def getFromFile(num, fileName):
 			if len(lineArr) > 2:
 				pidNeg = lineArr[2]
 				pids[pidNeg] = 0
-			pidPos = lineArr[1]			
+			if len(lineArr) > 1:
+				pidPos = lineArr[1]			
+			else:
+				pidPos = lineArr[0]
 			pids[pidPos] = 1
 	pidKeys = pids.keys()
 	while len(result) < num:
