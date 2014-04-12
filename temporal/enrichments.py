@@ -67,7 +67,9 @@ def getEnrichments(data):
 	for pid, label in data.iteritems():		
 		resp = r.hget('pats', pid)
 		if resp == None:
+			print >> sys.stderr, 'sad story, have to go and fetch '+str(pid)+' manually'
 			resp = getPatient(pid)
+			print >> sys.stderr, 'got it'
 			pstr = compIt(pat)
 			r.hset('pats', pid, pstr)
 		#print resp		
