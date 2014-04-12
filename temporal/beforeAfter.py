@@ -10,6 +10,7 @@ from queryByCui import r, decomp, compIt
 from getTermByID import getTerm, getTermCui, getIngredients, getIngredient, getLab, getConcept
 from ast import literal_eval as make_tuple
 from mineConcepts import getFromFile
+from math import sqrt
 
 # patients is pid -> {pid, src_type, labs -> [{age, , component, description, lid, line, ord, ord_num, proc, proc_cat, ref_high, ref_low, ref_norm, ref_unit, result_flag, result_inrange, src, timeoffset}], notes -> [{age, cpt, duration, icd9, nid, pid, src, src_type, timeoffset, year, terms -> [{cui, familyHistory, negated, nid, termid, tid}]}], prescriptions -> [{age, drug_description, ingr_set_id, order_status, pid, route, rxid, src, timeoffset}], visits -> [{age, cpt, duration, icd9, pid, src, src_type, timeoffset, year}] }
 def beforeAndAfter(enrichments, codes, patients):
@@ -116,8 +117,17 @@ def printOffsets(featOffsets, enrichments):
 		enr = enrichments[feat]['enrichment']
 		case = enrichments[feat]['case']
 		control = enrichments[feat]['control']
-		desc = enrichments[feat]['description']		
-		print str(feat)+'\t'+str(enr)+'\t'+str(case)+'\t'+str(control)+'\t'+str(desc)+'\t'+str(sorted(offsets))
+		desc = enrichments[feat]['description']	
+		total = 0
+		for ofs in offsets:
+			total += ofs
+		mean = float(total) / float(len(offsets))	
+	    stdTotal = 0
+	    for ofs in offsets:
+	    	stdTotal += (ofs - mean)*(ofs-mean)
+	    stdDiv = float(stdTotal)/float(len(offsets))
+	    stdd = sqrt(stdDiv)
+		print str(feat)+'\t'+str(enr)+'\t'+str(case)+'\t'+str(control)+'\t'+str(mean)+'\t'+str(stdd)+'\t'+str(desc)+'\t'+str(sorted(offsets))
 
 if __name__ == "__main__":
 	print >> sys.stderr, 'usage: <enrichmentsFile> <codeFile> <patientFile> <numPatients>'
