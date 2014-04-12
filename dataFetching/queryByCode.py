@@ -257,10 +257,7 @@ def getSingleNotes(pid, stride_db, term_db, src_type=None):
 			'src_type': row[3],
 			'age': row[4],
 			'timeoffset': row[5],
-			'year': row[6],
-			'duration': row[7],
-			'cpt': row[8],
-			'icd9': row[9],
+			'year': row[6],		
 			'terms': terms
 		}
 		result.append(nextNote)	
