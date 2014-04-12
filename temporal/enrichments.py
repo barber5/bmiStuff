@@ -29,15 +29,15 @@ def getFromFile(num, fileName, rndSrc):
 			line = fi.readline().strip()
 			if line == '':
 				break
-			lineArr = line.split(' ')
+			
 			#print lineArr
 			#pidNeg = lineArr[2]
-			pidPos = lineArr[0]			
+			pidPos = line
 			#pids[pidNeg] = 0
 			pids[pidPos] = 1
-	pidKeys = pids.keys()
-	print >> sys.stderr, 'attempting to get '+str(num)+' from '+str(len(pidKeys)) + ' pids'
+	pidKeys = pids.keys()	
 	while len(result) < num/2:
+		print >> sys.stderr, 'attempting to get '+str(num)+' from '+str(len(pidKeys)) + ' pids, got '+str(num/2)+' so far'
 		next = random.choice(pidKeys)
 		if pids[next] != 1:
 			continue
