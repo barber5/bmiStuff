@@ -152,7 +152,7 @@ if __name__ == "__main__":
 	data = getFromFile(int(sys.argv[2]), sys.argv[1], rndSrc)		
 	(enrichments, featIdx, posCounts, negCounts, patients) = getEnrichments(data)
 	beforeAndAfter(enrichments, featIdx, patients, [577.0, 577.1])
-	printEnrichments(enrichments, featIdx, posCounts, negCounts, float(sys.argv[3]))
+	#printEnrichments(enrichments, featIdx, posCounts, negCounts, float(sys.argv[3]))
 	
 
 	
