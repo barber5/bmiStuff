@@ -36,10 +36,7 @@ def beforeAndAfter(enrichments, codes, patients):
 			for term in n['terms']:
 				cid = term['cid']
 				concept = term['concept']			
-				cidKey = ('cid', cid, term['negated'], term['familyHistory'])
-				if cidKey not in nextPerson:
-					nextPerson[cidKey] = 0
-					featIdx[cidKey] = term['concept']
+				cidKey = ('cid', cid, term['negated'], term['familyHistory'])				
 				if cidKey in enrichments:
 					if cidKey not in featOffsets:
 						featOffsets[cidKey] = []
@@ -54,10 +51,7 @@ def beforeAndAfter(enrichments, codes, patients):
 			else:
 				val = l['result_flag']
 			delt = float(l['timeoffset']) - minOffset
-			labKey = ('lab', l['proc'], l['component'], val)
-			if labKey not in nextPerson:
-				nextPerson[labKey] = 0
-				featIdx[labKey] = getLab(l['component'])
+			labKey = ('lab', l['proc'], l['component'], val)			
 			if labKey in enrichments:
 				if labKey not in featOffsets:
 					featOffsets[labKey] = []
@@ -70,10 +64,7 @@ def beforeAndAfter(enrichments, codes, patients):
 			delt = float(p['timeoffset']) - minOffset		
 			ings = getIngredients(p['ingr_set_id'])
 			for i in ings:				
-				ingKey = ('prescription', i)
-				if ingKey not in nextPerson:
-					nextPerson[ingKey] = 0
-					featIdx[ingKey] = getIngredient(i)
+				ingKey = ('prescription', i)				
 				if ingKey in enrichments:
 					if ingKey not in featOffsets:
 						featOffsets[ingKey] = []
