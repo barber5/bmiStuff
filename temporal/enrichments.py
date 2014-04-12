@@ -62,14 +62,12 @@ def getFromFile(num, fileName, rndSrc):
 def getEnrichments(data):
 	featIdx = {}
 	posCounts = {}
-	negCounts = {}
-	patients = {}
+	negCounts = {}	
 	for pid, label in data.iteritems():		
 		resp = r.hget('pats', pid)
 		if resp == None:
 			continue
-		#print resp
-		patients[pid] = resp
+		#print resp		
 		dd = decomp(resp)
 		nextPerson = {}
 		print >> sys.stderr, str(pid)+': '+str(label)
@@ -120,21 +118,8 @@ def getEnrichments(data):
 		negCount = negCounts[feat]
 		enr = float(posCount - negCount) / float(negCount)
 		enrichments[feat] = enr
-	return (enrichments, featIdx, posCounts, negCounts, patients)
+	return (enrichments, featIdx, posCounts, negCounts)
 
-# patients is pid -> {pid, src_type, labs -> [{age, , component, description, lid, line, ord, ord_num, proc, proc_cat, ref_high, ref_low, ref_norm, ref_unit, result_flag, result_inrange, src, timeoffset}], notes -> [{age, cpt, duration, icd9, nid, pid, src, src_type, timeoffset, year, terms -> [{cui, familyHistory, negated, nid, termid, tid}]}], prescriptions -> [{age, drug_description, ingr_set_id, order_status, pid, route, rxid, src, timeoffset}], visits -> [{age, cpt, duration, icd9, pid, src, src_type, timeoffset, year}] }
-def beforeAndAfter(enrichments, featIdx, patients, codes):
-	for pid, resp in patients.iteritems():
-		minOffset = float('inf')
-		for v in resp['visits']:
-			icd9s = v['icd9']
-			icd9sArr = icd9s.split(',')
-			icd9sArr = [str(i) for i in icd9sArr]
-			for code in codes:
-				if code in icd9sArr:
-					if v['timeoffset'] < minOffset:
-						minOffset = v['timeoffset']
-		print minOffset
 
 def printEnrichments(enrichments, featIdx, posCounts, negCounts, cutoff):
 	for feat, enr in enrichments.iteritems():
@@ -150,9 +135,8 @@ if __name__ == "__main__":
 	rndSrc = 'cache'
 
 	data = getFromFile(int(sys.argv[2]), sys.argv[1], rndSrc)		
-	(enrichments, featIdx, posCounts, negCounts, patients) = getEnrichments(data)
-	beforeAndAfter(enrichments, featIdx, patients, [577.0, 577.1])
-	#printEnrichments(enrichments, featIdx, posCounts, negCounts, float(sys.argv[3]))
+	(enrichments, featIdx, posCounts, negCounts) = getEnrichments(data)
+	printEnrichments(enrichments, featIdx, posCounts, negCounts, float(sys.argv[3]))
 	
 
 	
