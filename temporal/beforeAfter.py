@@ -11,7 +11,7 @@ from getTermByID import getTerm, getTermCui, getIngredients, getIngredient, getL
 from ast import literal_eval as make_tuple
 
 # patients is pid -> {pid, src_type, labs -> [{age, , component, description, lid, line, ord, ord_num, proc, proc_cat, ref_high, ref_low, ref_norm, ref_unit, result_flag, result_inrange, src, timeoffset}], notes -> [{age, cpt, duration, icd9, nid, pid, src, src_type, timeoffset, year, terms -> [{cui, familyHistory, negated, nid, termid, tid}]}], prescriptions -> [{age, drug_description, ingr_set_id, order_status, pid, route, rxid, src, timeoffset}], visits -> [{age, cpt, duration, icd9, pid, src, src_type, timeoffset, year}] }
-def beforeAndAfter(enrichments, featIdx, patients, codes):
+def beforeAndAfter(enrichments, codes):
 	for pid, resp in patients.iteritems():
 		minOffset = float('inf')
 		for v in resp['visits']:
@@ -46,7 +46,19 @@ def getEnrichments(enrFile):
 			}
 	return enrichments
 
+def getCodes(codeFile):
+	codes = []
+	with open(codeFile) as fi:
+		while True:
+			line = fi.readline()
+			if line == '':
+				break
+			code = float(line.split(':')[1])
+			codes.append(code)
+
+	return codes
 
 if __name__ == "__main__":
 	print 'usage: <enrichmentsFile> <numPatients> <codeFile>'
 	getEnrichments(sys.argv[1])
+	getCodes(sys.argv[2])
