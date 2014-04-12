@@ -34,6 +34,7 @@ if __name__ == "__main__":
 	pids = []
 	for code in sys.argv[1:]:
 		pids.extend(getPids(code))
+	pids = sorted(pids)
 	pids = set(pids)
 	for pid in pids:
 		print pid
