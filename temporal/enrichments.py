@@ -31,7 +31,7 @@ def getFromFile(num, fileName, rndSrc):
 			lineArr = line.split(' ')
 			#print lineArr
 			#pidNeg = lineArr[2]
-			pidPos = lineArr[1]
+			pidPos = lineArr[0]
 			#pids[pidNeg] = 0
 			pids[pidPos] = 1
 	pidKeys = pids.keys()
