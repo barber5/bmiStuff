@@ -42,7 +42,7 @@ def beforeAndAfter(enrichments, codes, patients):
 						featOffsets[cidKey] = []
 
 					featOffsets[cidKey].append(delt)
-				nextPerson[cidKey] += 1
+				
 		for l in dd['labs']:
 			if 'ord_num' not in l or not l['ord_num'] or l['ord_num'] == '':
 				continue
@@ -56,7 +56,7 @@ def beforeAndAfter(enrichments, codes, patients):
 				if labKey not in featOffsets:
 					featOffsets[labKey] = []
 				featOffsets[labKey].append(delt)
-			nextPerson[labKey] += 1
+			
 
 
 
@@ -69,7 +69,7 @@ def beforeAndAfter(enrichments, codes, patients):
 					if ingKey not in featOffsets:
 						featOffsets[ingKey] = []
 					featOffsets[ingKey].append(delt)
-				nextPerson[ingKey] += 1
+				
 	
 	return featOffsets
 
