@@ -56,9 +56,6 @@ def beforeAndAfter(enrichments, codes, patients):
 				if labKey not in featOffsets:
 					featOffsets[labKey] = []
 				featOffsets[labKey].append(delt)
-			
-
-
 
 		for p in dd['prescriptions']:	
 			delt = float(p['timeoffset']) - minOffset		
@@ -69,7 +66,6 @@ def beforeAndAfter(enrichments, codes, patients):
 					if ingKey not in featOffsets:
 						featOffsets[ingKey] = []
 					featOffsets[ingKey].append(delt)
-				
 	
 	return featOffsets
 
@@ -110,9 +106,18 @@ def getCodes(codeFile):
 def getPatients(num, patFile):
 	return getFromFile(num, patFile)
 
+def printOffsets(featOffsets, enrichments):
+	for feat, offsets in featOffsets.iteritems():
+		enr = enrichments[feat]['enrichment']
+		case = enrichments[feat]['case']
+		control = enrichments[feat]['control']
+		desc = enrichments[feat]['description']
+		print str(feat)+'\t'+str(enr)+'\t'+str(case)+'\t'str(control)+'\t'str(desc)+'\t'+str(offsets)
+
 if __name__ == "__main__":
 	print 'usage: <enrichmentsFile> <codeFile> <patientFile> <numPatients>'
 	enr = getEnrichments(sys.argv[1])
 	codes = getCodes(sys.argv[2])
 	pats = getPatients(int(sys.argv[4]), sys.argv[3])
-	beforeAndAfter(enr, codes, pats)
+	foss = beforeAndAfter(enr, codes, pats)
+	printOffsets(foss, enr)
