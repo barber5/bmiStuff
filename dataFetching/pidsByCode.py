@@ -30,7 +30,7 @@ def getPids(icd9, src_type=None):
 
 
 if __name__ == "__main__":
-	print 'usage: <icd9Codes>'
+	print >> sys.stderr, 'usage: <icd9Codes>'
 	pids = []
 	for code in sys.argv[1:]:
 		pids.extend(getPids(code))
