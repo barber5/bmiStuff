@@ -30,6 +30,7 @@ def beforeAndAfter(enrichments, codes, patients):
 			print minOffset
 			total += 1
 		else:
+			myCodes = sorted(myCodes)
 			print myCodes
 
 	print total
