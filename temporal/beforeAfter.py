@@ -16,11 +16,13 @@ def beforeAndAfter(enrichments, codes, patients):
 	for pid, resp in patients.iteritems():
 		minOffset = float('inf')
 		for v in resp['visits']:
+			print v['icd9']
 			icd9s = v['icd9']
 			icd9sArr = icd9s.split(',')
 			icd9sArr = [str(i) for i in icd9sArr]
 			for code in codes:
-				if code in icd9sArr:
+				if code in icd9sArr:					
+					print type(code)
 					if v['timeoffset'] < minOffset:
 						minOffset = v['timeoffset']
 		print minOffset
