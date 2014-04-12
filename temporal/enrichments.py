@@ -32,11 +32,11 @@ def getFromFile(num, fileName, rndSrc):
 			lineArr = line.split(' ')
 			#print lineArr
 			#pidNeg = lineArr[2]
-			pidPos = lineArr[0]
-			print >> sys.stderr, str(pidPos)
+			pidPos = lineArr[0]			
 			#pids[pidNeg] = 0
 			pids[pidPos] = 1
 	pidKeys = pids.keys()
+	print >> sys.stderr, 'attempting to get '+str(num)+' from '+str(len(pidKeys)) + ' pids'
 	while len(result) < num/2:
 		next = random.choice(pidKeys)
 		if pids[next] != 1:
