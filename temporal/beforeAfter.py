@@ -41,7 +41,7 @@ def getEnrichments(enrFile):
 			enrichments[feat] = {
 				'enrichment': enr,
 				'case': caseCnt,
-				'control': control,
+				'control': controlCnt,
 				'description': desc
 			}
 	return enrichments
