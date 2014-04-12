@@ -8,6 +8,7 @@ sys.path.append(os.path.realpath('./fpmining'))
 
 from queryByCui import r, decomp, compIt
 from getTermByID import getTerm, getTermCui, getIngredients, getIngredient, getLab, getConcept
+from ast import literal_eval as make_tuple
 
 # patients is pid -> {pid, src_type, labs -> [{age, , component, description, lid, line, ord, ord_num, proc, proc_cat, ref_high, ref_low, ref_norm, ref_unit, result_flag, result_inrange, src, timeoffset}], notes -> [{age, cpt, duration, icd9, nid, pid, src, src_type, timeoffset, year, terms -> [{cui, familyHistory, negated, nid, termid, tid}]}], prescriptions -> [{age, drug_description, ingr_set_id, order_status, pid, route, rxid, src, timeoffset}], visits -> [{age, cpt, duration, icd9, pid, src, src_type, timeoffset, year}] }
 def beforeAndAfter(enrichments, featIdx, patients, codes):
@@ -23,5 +24,29 @@ def beforeAndAfter(enrichments, featIdx, patients, codes):
 						minOffset = v['timeoffset']
 		print minOffset
 
+def getEnrichments(enrFile):
+	enrichments = {}
+	with open(enrFile, 'r') as fi:
+		while True:
+			line = fi.readline()
+			if line == '':
+				break
+			lineArr = line.split('\t')
+			tupStr = lineArr[0]
+			enr = float(lineArr[1])
+			caseCnt = int(lineArr[2])
+			controlCnt = int(lineArr[3])
+			desc = lineArr[4]	
+			feat = make_tuple(tupStr)		
+			enrichments[feat] = {
+				'enrichment': enr,
+				'case': caseCnt,
+				'control': control,
+				'description': desc
+			}
+	return enrichments
+
+
 if __name__ == "__main__":
-	print 'hi'
+	print 'usage: <enrichmentsFile> <numPatients> <codeFile>'
+	getEnrichments(sys.argv[1])
