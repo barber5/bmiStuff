@@ -60,5 +60,6 @@ def getCodes(codeFile):
 
 if __name__ == "__main__":
 	print 'usage: <enrichmentsFile> <numPatients> <codeFile>'
-	getEnrichments(sys.argv[1])
-	getCodes(sys.argv[2])
+	enr = getEnrichments(sys.argv[1])
+	codes = getCodes(sys.argv[2])
+	beforeAndAfter(enr, codes)
