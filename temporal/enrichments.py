@@ -138,8 +138,8 @@ def printEnrichments(enrichments, featIdx, posCounts, negCounts, cutoff):
 if __name__ == "__main__":		
 	print >> sys.stderr, 'usage: <patientFile> <dataSetSize> <enrichmentThreshold>'		
 	rndSrc = 'cache'
-
-	data = getFromFile(int(sys.argv[2]), sys.argv[1], rndSrc)		
+	data = getFromFile(int(sys.argv[2]), sys.argv[1], rndSrc)	
+	print >> sys.stderr, 'got data'	
 	(enrichments, featIdx, posCounts, negCounts) = getEnrichments(data)
 	printEnrichments(enrichments, featIdx, posCounts, negCounts, float(sys.argv[3]))
 	
