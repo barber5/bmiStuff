@@ -70,7 +70,7 @@ def getEnrichments(data):
 			print >> sys.stderr, 'sad story, have to go and fetch '+str(pid)+' manually'
 			resp = getVecForPid(pid)
 			print >> sys.stderr, 'got it'
-			pstr = compIt(pat)
+			pstr = compIt(resp)
 			r.hset('pats', pid, pstr)
 		#print resp		
 		dd = decomp(resp)

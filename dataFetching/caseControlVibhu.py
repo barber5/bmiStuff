@@ -16,13 +16,10 @@ def getPidsFromFile(fName, lo, hi):
 		
 
 	for i in range(lo-1, hi+1):
-		line = lines[i]
-		lineArr = line.split(' ')
-		print lineArr
-		pid = lineArr[1]
+		line = lines[i]				
+		pid = line
 		getVecForPid(pid)
-		#pid = lineArr[2]
-		getVecForPid(pid)
+		#pid = lineArr[2]		
 
 
 
