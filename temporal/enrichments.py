@@ -41,9 +41,7 @@ def getFromFile(num, fileName, rndSrc):
 		next = random.choice(pidKeys)
 		if pids[next] != 1:
 			continue
-		resp = r.hget('pats', str(next))
-		if not resp:
-			continue
+		resp = r.hget('pats', str(next))		
 		result[next] = 1
 	if rndSrc == 'file':
 		while len(result) < num:
