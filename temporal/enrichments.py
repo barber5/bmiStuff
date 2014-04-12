@@ -33,6 +33,7 @@ def getFromFile(num, fileName, rndSrc):
 			#print lineArr
 			#pidNeg = lineArr[2]
 			pidPos = lineArr[0]
+			print >> sys.stderr, str(pidPos)
 			#pids[pidNeg] = 0
 			pids[pidPos] = 1
 	pidKeys = pids.keys()
