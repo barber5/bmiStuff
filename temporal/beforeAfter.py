@@ -29,13 +29,10 @@ def beforeAndAfter(enrichments, codes, patients):
 					if v['timeoffset'] < minOffset:
 						minOffset = v['timeoffset']
 		if minOffset < float('inf'):
-			print minOffset
-			total += 1
-		else:
-			myCodes = sorted(myCodes)
-			print myCodes
+			print >> sys.stderr, str(minOffset)
+			total += 1		
 
-	print total
+	print >> sys.stderr, str(total)
 
 def getEnrichments(enrFile):
 	enrichments = {}
