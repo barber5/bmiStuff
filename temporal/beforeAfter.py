@@ -112,7 +112,8 @@ def printOffsets(featOffsets, enrichments):
 		case = enrichments[feat]['case']
 		control = enrichments[feat]['control']
 		desc = enrichments[feat]['description']
-		print str(feat)+'\t'+str(enr)+'\t'+str(case)+'\t'+str(control)+'\t'+str(desc)+'\t'+str(','.join(offsets))
+		ofs = [str(s) for s in offsets]
+		print str(feat)+'\t'+str(enr)+'\t'+str(case)+'\t'+str(control)+'\t'+str(desc)+'\t'+str(','.join(ofs))
 
 if __name__ == "__main__":
 	print 'usage: <enrichmentsFile> <codeFile> <patientFile> <numPatients>'
