@@ -66,4 +66,5 @@ if __name__ == "__main__":
 	print 'usage: <enrichmentsFile> <codeFile> <patientFile> <numPatients>'
 	enr = getEnrichments(sys.argv[1])
 	codes = getCodes(sys.argv[2])
-	beforeAndAfter(enr, codes)
+	pats = getPatients(int(sys.argv[4]), sys.argv[3])
+	beforeAndAfter(enr, codes, pats)
