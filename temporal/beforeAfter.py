@@ -123,10 +123,10 @@ def printOffsets(featOffsets, enrichments):
 			total += ofs
 		mean = float(total) / float(len(offsets))	
 		stdTotal = 0
-	    for ofs in offsets:
-	    	stdTotal += (ofs - mean)*(ofs-mean)
-	    stdDiv = float(stdTotal)/float(len(offsets))
-	    stdd = sqrt(stdDiv)
+		for ofs in offsets:
+			stdTotal += (ofs - mean)*(ofs-mean)
+		stdDiv = float(stdTotal)/float(len(offsets))
+		stdd = sqrt(stdDiv)
 		print str(feat)+'\t'+str(enr)+'\t'+str(case)+'\t'+str(control)+'\t'+str(mean)+'\t'+str(stdd)+'\t'+str(desc)+'\t'+str(sorted(offsets))
 
 if __name__ == "__main__":
