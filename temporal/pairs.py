@@ -13,7 +13,7 @@ from mineConcepts import getFromFile
 from beforeAfter import getEnrichments, getPatients
 
 
-def getCounts(enriched, patients):	
+def getCounts(enrichments, patients):	
 	singletons = {}
 	pairs = {}
 	for pid, dd in patients.iteritems():											
