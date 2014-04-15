@@ -81,10 +81,13 @@ def getCounts(enrichments, patients):
 	return pairs
 	
 	
+def printPairs(prs):
+	for pr, data in prs.iteritems():
+		print str(pr)+'\t'+str(data['lift'])+'\t'+str(data['f1desc']+' + '+data['f2desc'])
 
 if __name__ == "__main__":
 	print >> sys.stderr, 'usage: <enrichmentsFile> <patientFile> <numPatients>'
 	enr = getEnrichments(sys.argv[1])
 	pats = getPatients(int(sys.argv[3]), sys.argv[2])
 	prs = getCounts(enr, pats)
-	pprint.pprint(prs)
+	printPairs(prs)
