@@ -321,10 +321,10 @@ def writeSinglePatientFile(pat, pid, code):
 	pstr = compIt(pat)
 	r.hset('pats', pid, pstr)	
 	#r.hset('codes', code, pid)
-	print 'persisted '+str(pid)
-	print 'value length was '+str(len(pstr))
+	print >> sys.stderr, 'persisted '+str(pid)
+	print >> sys.stderr, 'value length was '+str(len(pstr))
 	
-	print 'done'*10
+	print >> sys.stderr, 'done'*10
 	'''fi = open(filePrefix+str(pid)+'.pkl', 'wb')
 	pickle.dump(pat, fi)
 	fi.close()'''
