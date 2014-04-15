@@ -83,6 +83,6 @@ def getCounts(enriched, patients):
 if __name__ == "__main__":
 	print >> sys.stderr, 'usage: <enrichmentsFile> <patientFile> <numPatients>'
 	enr = getEnrichments(sys.argv[1])
-	pats = getPatients(int(sys.argv[4]), sys.argv[3])
+	pats = getPatients(int(sys.argv[3]), sys.argv[2])
 	prs = getCounts(enr, pats)
 	pprint.pprint(prs)
