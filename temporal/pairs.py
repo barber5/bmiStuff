@@ -50,7 +50,7 @@ def getCounts(enrichments, patients):
 					singletons[ingKey].add(pid)
 		
 	for i in range(len(singletons.keys())):
-		for j in range(i, len(singletons.keys())):
+		for j in range(i+1, len(singletons.keys())):
 			f1 = singletons.keys()[i]
 			f2 = singletons.keys()[j]
 			ps1 = singletons[f1]
