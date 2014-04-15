@@ -67,7 +67,9 @@ def getCounts(enrichments, patients):
 				pr = (f2, f1)
 			pairs[pr] = {
 				'f1': pr[0],
+				'f1desc': enrichments[pr[0]]['description'],
 				'f2': pr[1],
+				'f2desc': enrichments[pr[1]]['description'],
 				'count1': c1,
 				'count2': c2,
 				'intersection': c12and,
