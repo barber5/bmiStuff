@@ -55,10 +55,10 @@ def getCounts(enrichments, patients):
 			f2 = singletons.keys()[j]
 			ps1 = singletons[f1]
 			ps2 = singletons[f2]
-			c1 = len(ps1)
-			c2 = len(ps2)
-			c12and = len(ps1&ps2)
-			c12or = len(ps1|ps2)
+			c1 = float(len(ps1))/float(len(patients.keys()))
+			c2 = len(ps2)/float(len(patients.keys()))
+			c12and = len(ps1&ps2)/float(len(patients.keys()))
+			c12or = len(ps1|ps2)/float(len(patients.keys()))
 			c1only = c12and - c2
 			c2only = c12and - c1
 			if f1 < f2:
