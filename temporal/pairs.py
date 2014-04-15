@@ -59,8 +59,8 @@ def getCounts(enrichments, patients):
 			c2 = len(ps2)
 			c12and = len(ps1&ps2)
 			c12or = len(ps1|ps2)
-			c1only = len(c12and - c2)
-			c2only = len(c12and - c1)
+			c1only = c12and - c2
+			c2only = c12and - c1
 			if f1 < f2:
 				pr = (f1, f2)
 			else:
