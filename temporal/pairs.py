@@ -37,7 +37,7 @@ def getCounts(enriched, patients):
 			labKey = ('lab', l['proc'], l['component'], val)			
 			if labKey in enrichments:
 				if labKey not in singletons:
-						singletons[labKey] = set([])
+					singletons[labKey] = set([])
 					singletons[labKey].add(pid)
 
 		for p in dd['prescriptions']:				
