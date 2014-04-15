@@ -83,7 +83,7 @@ def getCounts(enrichments, patients):
 	
 def printPairs(prs):
 	for pr, data in prs.iteritems():
-		print str(pr)+'\t'+str(data['lift'])+'\t'+str(data['f1desc']+' + '+data['f2desc'])
+		print str(pr)+'\t'+str(data['lift'])+'\t'+str(data['intersection'])+'\t'+str(data['f1desc']+' + '+data['f2desc'])
 
 if __name__ == "__main__":
 	print >> sys.stderr, 'usage: <enrichmentsFile> <patientFile> <numPatients>'
