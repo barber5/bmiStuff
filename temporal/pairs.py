@@ -51,8 +51,8 @@ def getCounts(enrichments, patients):
 		
 	for i in range(len(singletons.keys())):
 		for j in range(i, len(singletons.keys())):
-			f1 = singletons.keys[i]
-			f2 = singletons.keys[j]
+			f1 = singletons.keys()[i]
+			f2 = singletons.keys()[j]
 			ps1 = singletons[f1]
 			ps2 = singletons[f2]
 			c1 = len(ps1)
