@@ -107,16 +107,30 @@ def getEdges(enrichments, patients):
 						f12f += 1
 					elif min2 < min2:
 						f21f += 1
+				lam = math.log(float(f12)/float(f21))
+				lf = math.log(float(f12f)/float(f21f))
+				if lam < 0:
+					first = f2
+					second = f1
+					count1 = c2
+					count2 = c1
+					lam = -lam
+					lf = -lf
+				else:
+					first = f1
+					second = f2
+					count1 = c1
+					count2 = c2
 				result[(f1, f2)] = {
 					'f1': f1,
 					'f1desc': enrichments[f1]['description'],
-					'f1freq': c1,
+					'f1freq': count1,
 					'f2': f2,
-					'f2freq': c2,
+					'f2freq': count2,
 					'intersection': float(c12and)/float(len(patients.keys())),
 					'f2desc': enrichments[f2]['description'],					
-					'lambda': math.log(float(f12)/float(f21)),
-					'lambdaFirst': math.log(float(f12f)/float(f21f)),
+					'lambda': lam,
+					'lambdaFirst': lf, 
 					'lift': math.log(float(c12and)/float(c1*c2))
 				}					
 	return result
