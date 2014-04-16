@@ -97,7 +97,7 @@ def getEdges(enr, pats):
 								f21 += 1
 				result[(f1, f2)] = {
 					'f1': f1,
-					'f1desc': enrichments[f1['description'],
+					'f1desc': enrichments[f1]['description'],
 					'f1freq': c1,
 					'f2': f2,
 					'f2freq': c2,
