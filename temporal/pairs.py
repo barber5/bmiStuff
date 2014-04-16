@@ -83,7 +83,7 @@ def getCounts(enrichments, patients):
 	
 def printPairs(prs):
 	for pr, data in prs.iteritems():
-		if data['intersection'] > .1 and data['lift'] > .5:
+		if data['intersection'] > .1 and data['lift'] > .05:
 			print str(pr)+'\t'+str(data['lift'])+'\t'+str(data['intersection'])+'\t'+str(data['f1desc']+' + '+data['f2desc'])
 
 if __name__ == "__main__":

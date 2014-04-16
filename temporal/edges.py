@@ -12,5 +12,6 @@ from ast import literal_eval as make_tuple
 from mineConcepts import getFromFile
 from beforeAfter import getEnrichments, getPatients
 
+
+
 if __name__ == "__main__":
-	print 'hi'
