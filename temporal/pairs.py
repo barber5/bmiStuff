@@ -57,8 +57,8 @@ def getCounts(enrichments, patients):
 			ps2 = singletons[f2]
 			c1 = float(len(ps1))/float(len(patients.keys()))
 			c2 = len(ps2)/float(len(patients.keys()))
-			c12and = len(ps1&ps2)/float(len(patients.keys()))
-			c12or = len(ps1|ps2)/float(len(patients.keys()))
+			c12and = len(ps1&ps2)
+			c12or = len(ps1|ps2)
 			c1only = c12and - c2
 			c2only = c12and - c1
 			if f1 < f2:
@@ -76,7 +76,7 @@ def getCounts(enrichments, patients):
 				'union': c12or,
 				'count1unique': c1only,
 				'count2unique': c2only,
-				'lift': float(c12and)/float(c1*c2)
+				'jaccard': float(c12and)/float(c12or)
 			}
 	return pairs
 	
@@ -84,7 +84,7 @@ def getCounts(enrichments, patients):
 def printPairs(prs):
 	for pr, data in prs.iteritems():
 		if data['intersection'] > .1 and data['lift'] > .05:
-			print str(pr)+'\t'+str(data['lift'])+'\t'+str(data['intersection'])+'\t'+str(data['f1desc']+' + '+data['f2desc'])
+			print str(pr)+'\t'+str(data['jaccard'])+'\t'+str(data['intersection'])+'\t'+str(data['f1desc']+' + '+data['f2desc'])
 
 if __name__ == "__main__":
 	print >> sys.stderr, 'usage: <enrichmentsFile> <patientFile> <numPatients>'
