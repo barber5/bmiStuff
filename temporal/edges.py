@@ -88,13 +88,25 @@ def getEdges(enrichments, patients):
 						both[pat][f2].append(offs)
 				f12 = 1
 				f21 = 1
+				f12f = 1
+				f21f = 1
 				for pat, feats in both.iteritems():
+					min1 = float('inf')
+					min2 = float('inf')
 					for o1 in feats[f1]:
+						if o1 < min1:
+							min1 = o1
 						for o2 in feats[f2]:
+							if o2 < min2:
+								min2 = 01
 							if o1 < o2:
 								f12 += 1
 							elif o1 > o2:
 								f21 += 1
+					if min1 < min2:
+						f12f += 1
+					elif min2 < min2:
+						f21f += 1
 				result[(f1, f2)] = {
 					'f1': f1,
 					'f1desc': enrichments[f1]['description'],
@@ -103,15 +115,16 @@ def getEdges(enrichments, patients):
 					'f2freq': c2,
 					'intersection': float(c12and)/float(len(patients.keys())),
 					'f2desc': enrichments[f2]['description'],					
-					'lambda': math.log(float(f12)/float(f21))
+					'lambda': math.log(float(f12)/float(f21)),
+					'lambdaFirst': math.log(float(f12f)/float(f21f))
 				}					
 	return result
 
 def printEdges(edges):
 	for pr, meta in edges.iteritems():
 		if meta['intersection'] > .2:
-			print str(meta['f1']) + '\t' + str(meta['f2']) + '\t' + str(meta['lambda']) + '\t' + str(meta['f1freq']) + '\t' + str(meta['f2freq']) + '\t' + str(meta['	intersection']) + '\t' + str(meta['f1desc']) + ' + '+str(meta['f2desc'])
-	print >> sys.stderr, '<f1> <f2> <lambda> <f1freq> <f2freq> <intersection> <f1desc+f2desc>'
+			print str(meta['f1']) + '\t' + str(meta['f2']) + '\t' + str(meta['lambda']) + '\t' + str(meta['lambdaFirst']) + '\t' + str(meta['f1freq']) + '\t' + str(meta['f2freq']) + '\t' + str(meta['	intersection']) + '\t' + str(meta['f1desc']) + ' + '+str(meta['f2desc'])
+	print >> sys.stderr, '<f1> <f2> <lambda> <lambdaFirst> <f1freq> <f2freq> <intersection> <f1desc+f2desc>'
 
 if __name__ == "__main__":
 	print >> sys.stderr, 'usage: <enrichmentsFile> <patientFile> <numPatients>'
