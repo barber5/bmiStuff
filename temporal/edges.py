@@ -61,8 +61,8 @@ def getEdges(enrichments, patients):
 			ps1 = set([d[0] for d in singletons[f1]])
 			ps2 = set([d[0] for d in singletons[f2]])
 			ps12 = ps1&ps2		
-			c1 = float(len(ps1))/float(len(pats.keys()))	
-			c2 = float(len(ps2))/float(len(pats.keys()))	
+			c1 = float(len(ps1))/float(len(patients.keys()))	
+			c2 = float(len(ps2))/float(len(patients.keys()))	
 			c12and = len(ps12)
 			both = {}
 			if c12and > 0:
