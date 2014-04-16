@@ -86,8 +86,8 @@ def getEdges(enrichments, patients):
 							}
 						offs = pr[1]
 						both[pat][f2].append(offs)
-				f12 = 0
-				f21 = 0
+				f12 = 1
+				f21 = 1
 				for pat, feats in both.iteritems():
 					for o1 in feats[f1]:
 						for o2 in feats[f2]:
