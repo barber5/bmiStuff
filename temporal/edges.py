@@ -131,5 +131,5 @@ if __name__ == "__main__":
 	print >> sys.stderr, 'usage: <enrichmentsFile> <patientFile> <numPatients> <intersectionCutoff>'
 	enr = getEnrichments(sys.argv[1])
 	pats = getPatients(int(sys.argv[3]), sys.argv[2])
-	edges = getEdges(enr, pats, float(sys.argv[4]))
-	printEdges(edges)
+	edges = getEdges(enr, pats)
+	printEdges(edges, float(sys.argv[4]))
