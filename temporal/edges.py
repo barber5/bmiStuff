@@ -101,7 +101,7 @@ def getEdges(enrichments, patients):
 					'f1freq': c1,
 					'f2': f2,
 					'f2freq': c2,
-					'intersection': c12and,
+					'intersection': float(c12and)/float(len(patients.keys())),
 					'f2desc': enrichments[f2]['description'],					
 					'lambda': math.log(float(f12)/float(f21))
 				}					
