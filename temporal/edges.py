@@ -62,12 +62,12 @@ def getEdges(enrichments, patients):
 			
 			ps2 = set([d[0] for d in singletons[f2]])
 			
-			ps12 = ps1&ps2		
-			if ps12 == ps1:
-				continue
+			ps12 = ps1&ps2							
 			c1 = float(len(ps1))/float(len(patients.keys()))	
 			c2 = float(len(ps2))/float(len(patients.keys()))	
-			c12and = len(ps12)
+			c12and = float(len(ps12)) / float(len(patients.keys()))			
+			if c12and == c1 and c1 < .1:
+				continue
 			both = {}
 			if c12and > 0:
 				for pr in singletons[f1]:
@@ -131,7 +131,7 @@ def getEdges(enrichments, patients):
 					'f1freq': count1,
 					'f2': f2,
 					'f2freq': count2,
-					'intersection': float(c12and)/float(len(patients.keys())),
+					'intersection': c12and,
 					'independent': c1*c2,
 					'f2desc': enrichments[f2]['description'],					
 					'lambda': lam,
@@ -142,7 +142,7 @@ def getEdges(enrichments, patients):
 
 def printEdges(edges, cutoff=.05):
 	for pr, meta in edges.iteritems():
-		if meta['intersection'] > cutoff and meta['intersection'] != meta['f1freq']:
+		if meta['intersection'] > cutoff:
 			print str(meta['f1']) + '\t' + str(meta['f2']) + '\t' + str(meta['lambda']) + '\t' + str(meta['lambdaFirst']) + '\t' + str(meta['lift']) + '\t' + str(meta['independent']) + '\t' + str(meta['f1freq']) + '\t' + str(meta['f2freq']) + '\t' + str(meta['intersection']) + '\t' + str(meta['f1desc']) + ' + '+str(meta['f2desc'])
 	print >> sys.stderr, '<f1> <f2> <lambda> <lambdaFirst> <lift> <f1freq*f2freq> <f1freq> <f2freq> <intersection> <f1desc+f2desc>'
 
