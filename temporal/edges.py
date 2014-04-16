@@ -132,7 +132,7 @@ def getEdges(enrichments, patients):
 					'f2desc': enrichments[f2]['description'],					
 					'lambda': lam,
 					'lambdaFirst': lf, 
-					'lift': math.log(float(c12and)/float(c1*c2))
+					'lift': math.log(float(c12and)/float(c1*c2)*((c1+c2)/2))
 				}					
 	return result
 
