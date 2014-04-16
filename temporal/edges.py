@@ -109,7 +109,7 @@ def getEdges(enrichments, patients):
 
 def printEdges(edges):
 	for pr, meta in edges.iteritems():
-		print str(meta['f1']) + '\t' + str(meta['f2']) + '\t' + str(meta['lambda']) + '\t' + str(meta['f1freq']) + '\t' + str(meta['f2freq']) + '\t' + str(meta['intersection']) + str(meta['f1desc']) + ' + '+str(meta['f2desc'])
+		print str(meta['f1']) + '\t' + str(meta['f2']) + '\t' + str(meta['lambda']) + '\t' + str(meta['f1freq']) + '\t' + str(meta['f2freq']) + '\t' + str(meta['intersection']) + '\t' + str(meta['f1desc']) + ' + '+str(meta['f2desc'])
 
 if __name__ == "__main__":
 	print >> sys.stderr, 'usage: <enrichmentsFile> <patientFile> <numPatients>'
