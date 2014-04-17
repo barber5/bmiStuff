@@ -144,6 +144,7 @@ def analyzeEdges(edges):
 	graph = {}
 	for pr, meta in edges.iteritems():
 		f1 = meta['f1']
+		f1 = (f1, meta['f1desc'])
 		if f1 not in graph:
 			graph[f1] = {
 				'in': {},
@@ -153,6 +154,7 @@ def analyzeEdges(edges):
 				'freq': meta['f1freq']
 			}
 		f2 = meta['f2']
+		f2 = (f2, meta['f2desc'])
 		if f2 not in graph:
 			graph[f2] = {
 				'in': {},
