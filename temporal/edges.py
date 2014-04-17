@@ -155,6 +155,8 @@ def analyzeEdges(edges):
 			}
 		f2 = meta['f2']
 		f2 = (f2, meta['f2desc'])
+		if meta['f1desc'] < .1 or meta['f2desc'] < .1:
+			continue
 		if f2 not in graph:
 			graph[f2] = {
 				'in': {},
