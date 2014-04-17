@@ -140,6 +140,43 @@ def getEdges(enrichments, patients):
 				}					
 	return result
 
+def analyzeEdges(edges):
+	graph = {}
+	for pr, meta in edges.iteritems():
+		f1 = meta['f1']
+		if f1 not in graph:
+			graph[f1] = {
+				'in': {},
+				'out': {},
+				'adjacent': {},
+				'desc': meta['f1desc'],
+				'freq': meta['f1freq']
+			}
+		f2 = meta['f2']
+		if f2 not in graph:
+			graph[f2] = {
+				'in': {},
+				'out': {},
+				'adjacent': {},
+				'desc': meta['f2desc'],
+				'freq': meta['f2freq']
+			}
+		if meta['lambdaFirst'] > 1:
+			graph[f1]['out'][f2] = {
+				'lambdaFirst': meta['lambdaFirst']
+			}
+			graph[f2]['in'][f1] = {
+				'lambdaFirst': meta['lambdaFirst']
+			}
+		else:
+			if meta['lift'] > 1:
+				graph[f1]['adjacent'][f2] = {
+					'lift': meta['lift']
+				}
+				graph[f2]['adjacent'][f1] = {
+					'lift': meta['lift']
+				}
+
 def printEdges(edges, cutoff=.05):
 	for pr, meta in edges.iteritems():
 		if meta['intersection'] > cutoff:
