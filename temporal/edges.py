@@ -176,6 +176,7 @@ def analyzeEdges(edges):
 				graph[f2]['adjacent'][f1] = {
 					'lift': meta['lift']
 				}
+	return graph
 
 def printEdges(edges, cutoff=.05):
 	for pr, meta in edges.iteritems():
@@ -188,4 +189,6 @@ if __name__ == "__main__":
 	enr = getEnrichments(sys.argv[1])
 	pats = getPatients(int(sys.argv[3]), sys.argv[2])
 	edges = getEdges(enr, pats)
-	printEdges(edges, float(sys.argv[4]))
+	#printEdges(edges, float(sys.argv[4]))
+	graph = analyzeEdges(edges)
+	pprint.pprint(graph)
