@@ -78,7 +78,7 @@ def getEnrichments(data):
 			for term in n['terms']:
 				cid = term['cid']
 				concept = term['concept']
-				if term['negated'] == 1:
+				if term['negated'] == 1 or term['familyHistory'] == 1:
 					continue			
 				cidKey = ('cid', cid, term['negated'], term['familyHistory'])
 				if cidKey not in nextPerson:
