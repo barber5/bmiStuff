@@ -176,13 +176,15 @@ def analyzeEdges(edges):
 				'lambda': meta['lambda']
 			}
 		else:
+			'''
 			if meta['lift'] > 1:
 				graph[f1]['adjacent'][f2] = {
 					'lift': meta['lift']
 				}
 				graph[f2]['adjacent'][f1] = {
 					'lift': meta['lift']
-				}
+				}'''
+			None
 	return graph
 
 def printEdges(edges, cutoff=.05):
