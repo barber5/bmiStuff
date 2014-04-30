@@ -67,12 +67,12 @@ with open('output/icd9.txt', 'r') as fi:
 		elif re.match(r'\D\d', code['code']) and len(code['code']) > 4:
 			newCode = code['code'][:4] + '.' + code['code'][4:]
 			code['code'] = newCode				
-		codeIdx[code['code']] = code['desc']
-		print >> sys.stderr, code
+		codeIdx[code['code']] = code['desc']		
 
 def getCode(code):
 	if code in codeIdx:
 		return codeIdx[code]
+	print >> sys.stderr, str(code)+': None'
 	return 'None'
 
 def getIngredients(ingr_set_id):

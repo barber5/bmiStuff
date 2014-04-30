@@ -117,8 +117,7 @@ def getEnrichments(data):
 				codeKey = ('code', code)
 				if codeKey not in nextPerson:
 					nextPerson[codeKey] = 0
-					desc = getCode(code)
-					print >> sys.stderr, str(code)+': '+str(desc)
+					desc = getCode(code)					
 					featIdx[codeKey] = getCode(code)
 				nextPerson[codeKey] += 1
 				
