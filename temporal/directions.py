@@ -51,6 +51,18 @@ def getEdges(enrichments, patients):
 					if ingKey not in singletons:
 						singletons[ingKey] = set([])
 					singletons[ingKey].add((pid, offs))
+		for v in dd['visits']:
+			code = v['icd9']
+			if code == '':
+				continue
+			offs = int(round(v['timeoffset']))
+			codeArr = code.split(',')
+			for code in codeArr:
+				codeKey = ('code', code)
+				if codeKey in enrichments:
+					if codeKey not in singletons:
+						singletons[codeKey] = set([])
+					singletons[codeKey].add((pid, offs))
 
 	result = {}
 		
