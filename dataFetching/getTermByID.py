@@ -53,10 +53,22 @@ with open('output/icd9.txt', 'r') as fi:
 			break
 		lineArr = line.split('\t')
 		
-		icd9 = lineArr[0]
-		desc = lineArr[1]
-		print >> sys.stderr, str(icd9)+': '+str(desc)
-		codeIdx[icd9] = desc
+		
+		code = {
+			'code': lineArr[0],
+			'desc': lineArr[1]
+		}
+		if re.match(r'V\d', code['code']):
+			newCode = code['code'][:3] + '.' + code['code'][3:]
+			code['code'] = newCode
+		elif re.match(r'\d+', code['code']) and len(code['code']) > 3:				
+			newCode = code['code'][:3] + '.' + code['code'][3:]		
+			code['code'] = newCode				
+		elif re.match(r'\D\d', code['code']) and len(code['code']) > 4:
+			newCode = code['code'][:4] + '.' + code['code'][4:]
+			code['code'] = newCode				
+		codeIdx[code['code']] = code['desc']
+		print >> sys.stderr, code
 
 def getCode(code):
 	if code in codeIdx:
