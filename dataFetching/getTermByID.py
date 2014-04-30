@@ -45,18 +45,21 @@ def getConcept(cid):
 		return None		
 	return rows[0][0]
 
+codeIdx = {}
+with open('output/icd9.txt', 'r') as fi:
+	while True:
+		line = fi.readline().strip()
+		if line == '':
+			break
+		lineArr = line.split('\t')
+		
+		icd9 = lineArr[0]
+		desc = lineArr[1]
+		codeIdx[icd9] = desc
+
 def getCode(code):
-	with open('output/icd9.txt', 'r') as fi:
-		while True:
-			line = fi.readline().strip()
-			if line == '':
-				break
-			lineArr = line.split('\t')
-			
-			icd9 = lineArr[0]
-			desc = lineArr[1]
-			if icd9 == code:
-				return desc					
+	if code in codeIdx:
+		return codeIdx[code]
 	return 'None'
 
 def getIngredients(ingr_set_id):
