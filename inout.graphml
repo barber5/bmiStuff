@@ -1,0 +1,1367 @@
+<?xml version="1.0" ?>
+<graphml>
+    <key attr.name="freq" attr.type="string" id="freq"/>
+    <key attr.name="label" attr.type="string" id="label"/>
+    <graph edgedefault="directed" id="">
+        <node id="(('cid', 7781, 0, 0), 'failure to thrive')">
+            <data key="freq">
+                0.24
+            </data>
+        </node>
+        <node id="(('cid', 1151739, 0, 0), 'thrive')">
+            <data key="freq">
+                0.12
+            </data>
+        </node>
+        <node id="(('cid', 247753, 0, 0), 'weight for height')">
+            <data key="freq">
+                0.1
+            </data>
+        </node>
+        <node id="(('cid', 103680, 0, 0), 'ammonia measurement')">
+            <data key="freq">
+                0.12
+            </data>
+        </node>
+        <node id="(('cid', 262722, 0, 0), 'earphones')">
+            <data key="freq">
+                0.32
+            </data>
+        </node>
+        <node id="(('code', '315.39'), 'Other developmental speech or language disorder')">
+            <data key="freq">
+                0.1
+            </data>
+        </node>
+        <node id="(('cid', 6665, 0, 0), 'echolalia')">
+            <data key="freq">
+                0.1
+            </data>
+        </node>
+        <node id="(('cid', 51240, 0, 0), 'valproate')">
+            <data key="freq">
+                0.1
+            </data>
+        </node>
+        <node id="(('cid', 147487, 0, 0), 'behavioral tic')">
+            <data key="freq">
+                0.12
+            </data>
+        </node>
+        <node id="(('cid', 350948, 0, 0), 'risperdal')">
+            <data key="freq">
+                0.1
+            </data>
+        </node>
+        <node id="(('cid', 13172, 0, 0), 'microcephaly')">
+            <data key="freq">
+                0.1
+            </data>
+        </node>
+        <node id="(('cid', 951897, 0, 0), 'picky eater')">
+            <data key="freq">
+                0.14
+            </data>
+        </node>
+        <node id="(('cid', 253352, 0, 0), 'video eeg')">
+            <data key="freq">
+                0.1
+            </data>
+        </node>
+        <node id="(('cid', 687, 0, 0), 'aggressive behavior')">
+            <data key="freq">
+                0.32
+            </data>
+        </node>
+        <node id="(('cid', 10623, 0, 0), 'immunoelectrophoresis')">
+            <data key="freq">
+                0.24
+            </data>
+        </node>
+        <node id="(('code', '345.10'), '&quot;Generalized convulsive epilepsy, without mention of intractable epilepsy&quot;')">
+            <data key="freq">
+                0.14
+            </data>
+        </node>
+        <node id="(('cid', 2001, 0, 0), 'autistic disorder')">
+            <data key="freq">
+                0.28
+            </data>
+        </node>
+        <node id="(('cid', 11687, 0, 0), 'language therapy')">
+            <data key="freq">
+                0.14
+            </data>
+        </node>
+        <node id="(('cid', 738877, 0, 0), 'autism spectrum disorders')">
+            <data key="freq">
+                0.12
+            </data>
+        </node>
+        <node id="(('code', '315.8'), 'Other specified delays in development')">
+            <data key="freq">
+                0.1
+            </data>
+        </node>
+        <node id="(('cid', 320278, 0, 0), 'global developmental delay')">
+            <data key="freq">
+                0.1
+            </data>
+        </node>
+        <node id="(('cid', 247805, 0, 0), 'finding of palmar crease')">
+            <data key="freq">
+                0.14
+            </data>
+        </node>
+        <node id="(('cid', 5864, 0, 0), 'developmental receptive language disorder')">
+            <data key="freq">
+                0.14
+            </data>
+        </node>
+        <node id="(('cid', 598149, 0, 0), 'attention deficit hyperactivity disorder')">
+            <data key="freq">
+                0.1
+            </data>
+        </node>
+        <node id="(('cid', 313179, 0, 0), 'preoccupation finding')">
+            <data key="freq">
+                0.1
+            </data>
+        </node>
+        <node id="(('cid', 102794, 0, 0), 'dna analysis')">
+            <data key="freq">
+                0.14
+            </data>
+        </node>
+        <node id="(('cid', 248187, 0, 0), 'engaged to be married')">
+            <data key="freq">
+                0.16
+            </data>
+        </node>
+        <node id="(('code', '783.40'), '&quot;Lack of normal physiological development, unspecified&quot;')">
+            <data key="freq">
+                0.14
+            </data>
+        </node>
+        <node id="(('cid', 102764, 0, 0), 'chromosome analysis')">
+            <data key="freq">
+                0.14
+            </data>
+        </node>
+        <node id="(('code', 'V79.3'), 'Screening for developmental handicaps in early childhood')">
+            <data key="freq">
+                0.1
+            </data>
+        </node>
+        <node id="(('code', '312.9'), 'Unspecified disturbance of conduct')">
+            <data key="freq">
+                0.2
+            </data>
+        </node>
+        <node id="(('cid', 163364, 0, 0), 'task veterinary proprietary drug and/or biological')">
+            <data key="freq">
+                0.42
+            </data>
+        </node>
+        <node id="(('cid', 461149, 0, 0), 'wide-based gait')">
+            <data key="freq">
+                0.1
+            </data>
+        </node>
+        <node id="(('code', '319'), 'Unspecified intellectual disabilities')">
+            <data key="freq">
+                0.14
+            </data>
+        </node>
+        <node id="(('code', 'V57.3'), 'Care involving speech-language therapy')">
+            <data key="freq">
+                0.12
+            </data>
+        </node>
+        <node id="(('cid', 1484, 0, 0), 'antiepileptic agents')">
+            <data key="freq">
+                0.2
+            </data>
+        </node>
+        <node id="(('code', '783.42'), 'Delayed milestones')">
+            <data key="freq">
+                0.12
+            </data>
+        </node>
+        <node id="(('cid', 247972, 0, 0), 'language spoken')">
+            <data key="freq">
+                0.4
+            </data>
+        </node>
+        <node id="(('cid', 327919, 0, 0), 'ability to communicate')">
+            <data key="freq">
+                0.1
+            </data>
+        </node>
+        <node id="(('cid', 158299, 0, 0), 'immunostimulating conjugate (antigen)')">
+            <data key="freq">
+                0.1
+            </data>
+        </node>
+        <node id="(('cid', 722986, 0, 0), 'poor eye contact')">
+            <data key="freq">
+                0.12
+            </data>
+        </node>
+        <node id="(('cid', 207011, 0, 0), 'organic acid')">
+            <data key="freq">
+                0.12
+            </data>
+        </node>
+        <node id="(('code', '783.41'), 'Failure to thrive')">
+            <data key="freq">
+                0.14
+            </data>
+        </node>
+        <node id="(('code', '345.11'), '&quot;Generalized convulsive epilepsy, with intractable epilepsy&quot;')">
+            <data key="freq">
+                0.1
+            </data>
+        </node>
+        <node id="(('cid', 5165, 0, 0), 'cribs')">
+            <data key="freq">
+                0.14
+            </data>
+        </node>
+        <node id="(('cid', 19309, 0, 0), 'social interaction')">
+            <data key="freq">
+                0.24
+            </data>
+        </node>
+        <node id="(('cid', 3953, 0, 0), 'developmental disabilities')">
+            <data key="freq">
+                0.2
+            </data>
+        </node>
+        <node id="(('cid', 21797, 0, 0), 'valproic acid')">
+            <data key="freq">
+                0.1
+            </data>
+        </node>
+        <node id="(('cid', 254424, 0, 0), 'dysmorphic features')">
+            <data key="freq">
+                0.14
+            </data>
+        </node>
+        <node id="(('cid', 304376, 0, 0), 'pervasive development disorder')">
+            <data key="freq">
+                0.22
+            </data>
+        </node>
+        <node id="(('code', 'V57.21'), 'Encounter for occupational therapy')">
+            <data key="freq">
+                0.24
+            </data>
+        </node>
+        <node id="(('cid', 1050, 0, 0), 'amino acids')">
+            <data key="freq">
+                0.12
+            </data>
+        </node>
+        <node id="(('code', '315.32'), 'Mixed receptive-expressive language disorder')">
+            <data key="freq">
+                0.1
+            </data>
+        </node>
+        <node id="(('code', '314.00'), 'Attention deficit disorder without mention of hyperactivity')">
+            <data key="freq">
+                0.24
+            </data>
+        </node>
+        <node id="(('cid', 111061, 0, 0), 'polydactyly, postaxial')">
+            <data key="freq">
+                0.12
+            </data>
+        </node>
+        <node id="(('cid', 11685, 0, 0), 'language disorders')">
+            <data key="freq">
+                0.1
+            </data>
+        </node>
+        <node id="(('cid', 512062, 0, 0), 'receptor activator of nuclear factor-kappa b')">
+            <data key="freq">
+                0.14
+            </data>
+        </node>
+        <node id="(('cid', 19551, 0, 0), 'speech therapy')">
+            <data key="freq">
+                0.4
+            </data>
+        </node>
+        <node id="(('cid', 54692, 0, 0), 'tympanostomy')">
+            <data key="freq">
+                0.14
+            </data>
+        </node>
+        <node id="(('cid', 7730, 0, 0), 'facial expression')">
+            <data key="freq">
+                0.1
+            </data>
+        </node>
+        <node id="(('cid', 461238, 0, 0), 'autistic behaviour')">
+            <data key="freq">
+                0.14
+            </data>
+        </node>
+        <node id="(('cid', 12895, 0, 0), 'mental retardation')">
+            <data key="freq">
+                0.16
+            </data>
+        </node>
+        <node id="(('cid', 246326, 0, 0), 'staring')">
+            <data key="freq">
+                0.14
+            </data>
+        </node>
+        <node id="(('cid', 352105, 0, 0), 'does hit (finding)')">
+            <data key="freq">
+                0.14
+            </data>
+        </node>
+        <node id="(('code', '742.9'), '&quot;Unspecified congenital anomaly of brain, spinal cord, and nervous system&quot;')">
+            <data key="freq">
+                0.1
+            </data>
+        </node>
+        <node id="(('cid', 5954, 0, 0), 'camurati-engelmann syndrome')">
+            <data key="freq">
+                0.28
+            </data>
+        </node>
+        <node id="(('code', '299.00'), '&quot;Autistic disorder, current or active state&quot;')">
+            <data key="freq">
+                0.62
+            </data>
+        </node>
+        <node id="(('cid', 401984, 0, 0), 'toilet trained (finding)')">
+            <data key="freq">
+                0.16
+            </data>
+        </node>
+        <node id="(('cid', 394084, 0, 0), 'preschool completion')">
+            <data key="freq">
+                0.14
+            </data>
+        </node>
+        <node id="(('cid', 247696, 0, 0), 'developmental delay (disorder)')">
+            <data key="freq">
+                0.32
+            </data>
+        </node>
+        <node id="(('cid', 121163, 0, 0), 'feeding difficulties')">
+            <data key="freq">
+                0.32
+            </data>
+        </node>
+        <node id="(('code', '314.01'), 'Attention deficit disorder with hyperactivity')">
+            <data key="freq">
+                0.14
+            </data>
+        </node>
+        <node id="(('code', '88.91'), 'None')">
+            <data key="freq">
+                0.14
+            </data>
+        </node>
+        <node id="(('cid', 122071, 0, 0), 'temper tantrum')">
+            <data key="freq">
+                0.18
+            </data>
+        </node>
+        <node id="(('code', '298.9'), 'Unspecified psychosis')">
+            <data key="freq">
+                0.4
+            </data>
+        </node>
+        <node id="(('cid', 72910, 0, 0), 'ear discharge')">
+            <data key="freq">
+                0.14
+            </data>
+        </node>
+        <node id="(('code', '315.9'), 'Unspecified delay in development')">
+            <data key="freq">
+                0.2
+            </data>
+        </node>
+        <node id="(('cid', 84573, 0, 0), 'covers (device)')">
+            <data key="freq">
+                0.12
+            </data>
+        </node>
+        <node id="(('cid', 412641, 0, 0), 'depakote')">
+            <data key="freq">
+                0.1
+            </data>
+        </node>
+        <node id="(('cid', 394013, 0, 0), 'genetic screening method')">
+            <data key="freq">
+                0.16
+            </data>
+        </node>
+        <node id="(('code', '299.80'), '&quot;Other specified pervasive developmental disorders, current or active state&quot;')">
+            <data key="freq">
+                0.12
+            </data>
+        </node>
+        <node id="(('cid', 250947, 0, 0), 'urine organic acid level (procedure)')">
+            <data key="freq">
+                0.16
+            </data>
+        </node>
+        <node id="(('code', '345.90'), '&quot;Epilepsy, unspecified, without mention of intractable epilepsy&quot;')">
+            <data key="freq">
+                0.18
+            </data>
+        </node>
+        <node id="(('cid', 2286, 0, 0), 'behavior therapy')">
+            <data key="freq">
+                0.14
+            </data>
+        </node>
+        <node id="(('cid', 6347, 0, 0), 'dna')">
+            <data key="freq">
+                0.16
+            </data>
+        </node>
+        <node id="(('cid', 1176253, 0, 0), 'cells counted')">
+            <data key="freq">
+                0.1
+            </data>
+        </node>
+        <node id="(('cid', 206397, 0, 0), 'acylcarnitine')">
+            <data key="freq">
+                0.14
+            </data>
+        </node>
+        <node id="(('cid', 326242, 0, 0), 'vocalization (finding)')">
+            <data key="freq">
+                0.2
+            </data>
+        </node>
+        <node id="(('cid', 1027464, 0, 0), 'sustain')">
+            <data key="freq">
+                0.1
+            </data>
+        </node>
+        <node id="(('cid', 247417, 0, 0), 'hyperactive behavior')">
+            <data key="freq">
+                0.24
+            </data>
+        </node>
+        <node id="(('cid', 276894, 0, 0), 'tympanic membrane mobility')">
+            <data key="freq">
+                0.14
+            </data>
+        </node>
+        <node id="(('cid', 69525, 0, 0), 'behavior management')">
+            <data key="freq">
+                0.26
+            </data>
+        </node>
+        <node id="(('cid', 247768, 0, 0), 'head size')">
+            <data key="freq">
+                0.1
+            </data>
+        </node>
+        <node id="(('cid', 879636, 0, 0), 'severe developmental delay')">
+            <data key="freq">
+                0.14
+            </data>
+        </node>
+        <node id="(('cid', 296682, 0, 0), 'tonic - clonic seizures')">
+            <data key="freq">
+                0.14
+            </data>
+        </node>
+        <node id="(('cid', 132973, 0, 0), 'problem behavior')">
+            <data key="freq">
+                0.2
+            </data>
+        </node>
+        <node id="(('cid', 872325, 0, 0), 'outbursts')">
+            <data key="freq">
+                0.14
+            </data>
+        </node>
+        <node id="(('cid', 125026, 0, 0), 'speech delay')">
+            <data key="freq">
+                0.14
+            </data>
+        </node>
+        <node id="(('cid', 7249, 0, 0), 'absence epilepsy')">
+            <data key="freq">
+                0.14
+            </data>
+        </node>
+        <node id="(('cid', 889656, 0, 0), 'speech and language delay')">
+            <data key="freq">
+                0.12
+            </data>
+        </node>
+        <node id="(('code', '794.02'), 'Nonspecific abnormal electroencephalogram [EEG]')">
+            <data key="freq">
+                0.14
+            </data>
+        </node>
+        <node id="(('cid', 21262, 0, 0), 'trisomy')">
+            <data key="freq">
+                0.14
+            </data>
+        </node>
+        <node id="(('cid', 11682, 0, 0), 'language delay')">
+            <data key="freq">
+                0.1
+            </data>
+        </node>
+        <node id="(('cid', 14647, 0, 0), 'oligonucleotide probes')">
+            <data key="freq">
+                0.1
+            </data>
+        </node>
+        <node id="(('cid', 353076, 0, 0), 'oligonucleotide arrays')">
+            <data key="freq">
+                0.24
+            </data>
+        </node>
+        <node id="(('code', '299.90'), '&quot;Unspecified pervasive developmental disorder, current or active state&quot;')">
+            <data key="freq">
+                0.2
+            </data>
+        </node>
+        <edge source="(('cid', 401984, 0, 0), 'toilet trained (finding)')" target="(('cid', 103680, 0, 0), 'ammonia measurement')"/>
+        <edge source="(('cid', 412641, 0, 0), 'depakote')" target="(('cid', 103680, 0, 0), 'ammonia measurement')"/>
+        <edge source="(('cid', 6347, 0, 0), 'dna')" target="(('cid', 103680, 0, 0), 'ammonia measurement')"/>
+        <edge source="(('code', 'V79.3'), 'Screening for developmental handicaps in early childhood')" target="(('cid', 103680, 0, 0), 'ammonia measurement')"/>
+        <edge source="(('cid', 11687, 0, 0), 'language therapy')" target="(('cid', 103680, 0, 0), 'ammonia measurement')"/>
+        <edge source="(('cid', 738877, 0, 0), 'autism spectrum disorders')" target="(('cid', 103680, 0, 0), 'ammonia measurement')"/>
+        <edge source="(('code', '345.90'), '&quot;Epilepsy, unspecified, without mention of intractable epilepsy&quot;')" target="(('cid', 103680, 0, 0), 'ammonia measurement')"/>
+        <edge source="(('code', '299.90'), '&quot;Unspecified pervasive developmental disorder, current or active state&quot;')" target="(('cid', 103680, 0, 0), 'ammonia measurement')"/>
+        <edge source="(('cid', 722986, 0, 0), 'poor eye contact')" target="(('cid', 103680, 0, 0), 'ammonia measurement')"/>
+        <edge source="(('cid', 122071, 0, 0), 'temper tantrum')" target="(('cid', 103680, 0, 0), 'ammonia measurement')"/>
+        <edge source="(('cid', 84573, 0, 0), 'covers (device)')" target="(('cid', 103680, 0, 0), 'ammonia measurement')"/>
+        <edge source="(('code', '299.00'), '&quot;Autistic disorder, current or active state&quot;')" target="(('cid', 103680, 0, 0), 'ammonia measurement')"/>
+        <edge source="(('cid', 19551, 0, 0), 'speech therapy')" target="(('cid', 103680, 0, 0), 'ammonia measurement')"/>
+        <edge source="(('cid', 247696, 0, 0), 'developmental delay (disorder)')" target="(('code', '315.39'), 'Other developmental speech or language disorder')"/>
+        <edge source="(('code', '783.42'), 'Delayed milestones')" target="(('code', '315.39'), 'Other developmental speech or language disorder')"/>
+        <edge source="(('code', '345.90'), '&quot;Epilepsy, unspecified, without mention of intractable epilepsy&quot;')" target="(('code', '315.39'), 'Other developmental speech or language disorder')"/>
+        <edge source="(('cid', 248187, 0, 0), 'engaged to be married')" target="(('code', '315.39'), 'Other developmental speech or language disorder')"/>
+        <edge source="(('code', '314.01'), 'Attention deficit disorder with hyperactivity')" target="(('code', '315.39'), 'Other developmental speech or language disorder')"/>
+        <edge source="(('code', '299.00'), '&quot;Autistic disorder, current or active state&quot;')" target="(('code', '315.39'), 'Other developmental speech or language disorder')"/>
+        <edge source="(('code', 'V79.3'), 'Screening for developmental handicaps in early childhood')" target="(('code', '315.39'), 'Other developmental speech or language disorder')"/>
+        <edge source="(('cid', 738877, 0, 0), 'autism spectrum disorders')" target="(('code', '315.39'), 'Other developmental speech or language disorder')"/>
+        <edge source="(('code', '299.90'), '&quot;Unspecified pervasive developmental disorder, current or active state&quot;')" target="(('code', '315.39'), 'Other developmental speech or language disorder')"/>
+        <edge source="(('cid', 12895, 0, 0), 'mental retardation')" target="(('code', '315.39'), 'Other developmental speech or language disorder')"/>
+        <edge source="(('cid', 6347, 0, 0), 'dna')" target="(('code', '315.39'), 'Other developmental speech or language disorder')"/>
+        <edge source="(('cid', 132973, 0, 0), 'problem behavior')" target="(('code', '315.39'), 'Other developmental speech or language disorder')"/>
+        <edge source="(('cid', 872325, 0, 0), 'outbursts')" target="(('cid', 6665, 0, 0), 'echolalia')"/>
+        <edge source="(('cid', 313179, 0, 0), 'preoccupation finding')" target="(('cid', 6665, 0, 0), 'echolalia')"/>
+        <edge source="(('cid', 394013, 0, 0), 'genetic screening method')" target="(('cid', 6665, 0, 0), 'echolalia')"/>
+        <edge source="(('code', 'V79.3'), 'Screening for developmental handicaps in early childhood')" target="(('cid', 6665, 0, 0), 'echolalia')"/>
+        <edge source="(('cid', 247768, 0, 0), 'head size')" target="(('cid', 6665, 0, 0), 'echolalia')"/>
+        <edge source="(('cid', 2286, 0, 0), 'behavior therapy')" target="(('cid', 6665, 0, 0), 'echolalia')"/>
+        <edge source="(('code', '314.01'), 'Attention deficit disorder with hyperactivity')" target="(('cid', 6665, 0, 0), 'echolalia')"/>
+        <edge source="(('cid', 722986, 0, 0), 'poor eye contact')" target="(('cid', 6665, 0, 0), 'echolalia')"/>
+        <edge source="(('code', '299.90'), '&quot;Unspecified pervasive developmental disorder, current or active state&quot;')" target="(('cid', 6665, 0, 0), 'echolalia')"/>
+        <edge source="(('code', '315.9'), 'Unspecified delay in development')" target="(('cid', 6665, 0, 0), 'echolalia')"/>
+        <edge source="(('cid', 10623, 0, 0), 'immunoelectrophoresis')" target="(('cid', 6665, 0, 0), 'echolalia')"/>
+        <edge source="(('cid', 132973, 0, 0), 'problem behavior')" target="(('cid', 6665, 0, 0), 'echolalia')"/>
+        <edge source="(('cid', 394013, 0, 0), 'genetic screening method')" target="(('cid', 350948, 0, 0), 'risperdal')"/>
+        <edge source="(('cid', 102764, 0, 0), 'chromosome analysis')" target="(('cid', 350948, 0, 0), 'risperdal')"/>
+        <edge source="(('code', 'V79.3'), 'Screening for developmental handicaps in early childhood')" target="(('cid', 350948, 0, 0), 'risperdal')"/>
+        <edge source="(('code', '315.9'), 'Unspecified delay in development')" target="(('cid', 350948, 0, 0), 'risperdal')"/>
+        <edge source="(('cid', 103680, 0, 0), 'ammonia measurement')" target="(('cid', 350948, 0, 0), 'risperdal')"/>
+        <edge source="(('cid', 246326, 0, 0), 'staring')" target="(('cid', 350948, 0, 0), 'risperdal')"/>
+        <edge source="(('code', '315.39'), 'Other developmental speech or language disorder')" target="(('cid', 350948, 0, 0), 'risperdal')"/>
+        <edge source="(('code', '319'), 'Unspecified intellectual disabilities')" target="(('cid', 350948, 0, 0), 'risperdal')"/>
+        <edge source="(('code', '345.90'), '&quot;Epilepsy, unspecified, without mention of intractable epilepsy&quot;')" target="(('cid', 350948, 0, 0), 'risperdal')"/>
+        <edge source="(('cid', 6347, 0, 0), 'dna')" target="(('cid', 350948, 0, 0), 'risperdal')"/>
+        <edge source="(('cid', 1050, 0, 0), 'amino acids')" target="(('cid', 350948, 0, 0), 'risperdal')"/>
+        <edge source="(('code', '783.40'), '&quot;Lack of normal physiological development, unspecified&quot;')" target="(('cid', 350948, 0, 0), 'risperdal')"/>
+        <edge source="(('cid', 207011, 0, 0), 'organic acid')" target="(('cid', 350948, 0, 0), 'risperdal')"/>
+        <edge source="(('cid', 247417, 0, 0), 'hyperactive behavior')" target="(('cid', 350948, 0, 0), 'risperdal')"/>
+        <edge source="(('cid', 3953, 0, 0), 'developmental disabilities')" target="(('cid', 350948, 0, 0), 'risperdal')"/>
+        <edge source="(('cid', 247768, 0, 0), 'head size')" target="(('cid', 350948, 0, 0), 'risperdal')"/>
+        <edge source="(('code', '299.90'), '&quot;Unspecified pervasive developmental disorder, current or active state&quot;')" target="(('cid', 350948, 0, 0), 'risperdal')"/>
+        <edge source="(('cid', 122071, 0, 0), 'temper tantrum')" target="(('cid', 350948, 0, 0), 'risperdal')"/>
+        <edge source="(('cid', 10623, 0, 0), 'immunoelectrophoresis')" target="(('cid', 350948, 0, 0), 'risperdal')"/>
+        <edge source="(('cid', 872325, 0, 0), 'outbursts')" target="(('cid', 350948, 0, 0), 'risperdal')"/>
+        <edge source="(('cid', 125026, 0, 0), 'speech delay')" target="(('cid', 350948, 0, 0), 'risperdal')"/>
+        <edge source="(('cid', 304376, 0, 0), 'pervasive development disorder')" target="(('cid', 350948, 0, 0), 'risperdal')"/>
+        <edge source="(('cid', 320278, 0, 0), 'global developmental delay')" target="(('cid', 350948, 0, 0), 'risperdal')"/>
+        <edge source="(('cid', 738877, 0, 0), 'autism spectrum disorders')" target="(('cid', 350948, 0, 0), 'risperdal')"/>
+        <edge source="(('cid', 11682, 0, 0), 'language delay')" target="(('cid', 350948, 0, 0), 'risperdal')"/>
+        <edge source="(('cid', 21797, 0, 0), 'valproic acid')" target="(('cid', 350948, 0, 0), 'risperdal')"/>
+        <edge source="(('code', '314.01'), 'Attention deficit disorder with hyperactivity')" target="(('cid', 350948, 0, 0), 'risperdal')"/>
+        <edge source="(('cid', 84573, 0, 0), 'covers (device)')" target="(('cid', 350948, 0, 0), 'risperdal')"/>
+        <edge source="(('cid', 19551, 0, 0), 'speech therapy')" target="(('cid', 350948, 0, 0), 'risperdal')"/>
+        <edge source="(('cid', 247696, 0, 0), 'developmental delay (disorder)')" target="(('cid', 10623, 0, 0), 'immunoelectrophoresis')"/>
+        <edge source="(('code', '783.42'), 'Delayed milestones')" target="(('cid', 10623, 0, 0), 'immunoelectrophoresis')"/>
+        <edge source="(('code', '345.90'), '&quot;Epilepsy, unspecified, without mention of intractable epilepsy&quot;')" target="(('cid', 10623, 0, 0), 'immunoelectrophoresis')"/>
+        <edge source="(('cid', 248187, 0, 0), 'engaged to be married')" target="(('cid', 10623, 0, 0), 'immunoelectrophoresis')"/>
+        <edge source="(('code', '299.00'), '&quot;Autistic disorder, current or active state&quot;')" target="(('cid', 10623, 0, 0), 'immunoelectrophoresis')"/>
+        <edge source="(('code', 'V79.3'), 'Screening for developmental handicaps in early childhood')" target="(('cid', 10623, 0, 0), 'immunoelectrophoresis')"/>
+        <edge source="(('cid', 6347, 0, 0), 'dna')" target="(('cid', 10623, 0, 0), 'immunoelectrophoresis')"/>
+        <edge source="(('cid', 11687, 0, 0), 'language therapy')" target="(('cid', 10623, 0, 0), 'immunoelectrophoresis')"/>
+        <edge source="(('cid', 738877, 0, 0), 'autism spectrum disorders')" target="(('cid', 10623, 0, 0), 'immunoelectrophoresis')"/>
+        <edge source="(('code', '299.90'), '&quot;Unspecified pervasive developmental disorder, current or active state&quot;')" target="(('cid', 10623, 0, 0), 'immunoelectrophoresis')"/>
+        <edge source="(('cid', 722986, 0, 0), 'poor eye contact')" target="(('cid', 10623, 0, 0), 'immunoelectrophoresis')"/>
+        <edge source="(('cid', 19551, 0, 0), 'speech therapy')" target="(('cid', 10623, 0, 0), 'immunoelectrophoresis')"/>
+        <edge source="(('cid', 84573, 0, 0), 'covers (device)')" target="(('cid', 10623, 0, 0), 'immunoelectrophoresis')"/>
+        <edge source="(('cid', 11685, 0, 0), 'language disorders')" target="(('cid', 10623, 0, 0), 'immunoelectrophoresis')"/>
+        <edge source="(('cid', 132973, 0, 0), 'problem behavior')" target="(('cid', 10623, 0, 0), 'immunoelectrophoresis')"/>
+        <edge source="(('code', '345.90'), '&quot;Epilepsy, unspecified, without mention of intractable epilepsy&quot;')" target="(('cid', 2001, 0, 0), 'autistic disorder')"/>
+        <edge source="(('cid', 412641, 0, 0), 'depakote')" target="(('cid', 2001, 0, 0), 'autistic disorder')"/>
+        <edge source="(('code', '315.39'), 'Other developmental speech or language disorder')" target="(('cid', 2001, 0, 0), 'autistic disorder')"/>
+        <edge source="(('cid', 6347, 0, 0), 'dna')" target="(('cid', 2001, 0, 0), 'autistic disorder')"/>
+        <edge source="(('code', 'V79.3'), 'Screening for developmental handicaps in early childhood')" target="(('cid', 2001, 0, 0), 'autistic disorder')"/>
+        <edge source="(('cid', 10623, 0, 0), 'immunoelectrophoresis')" target="(('cid', 2001, 0, 0), 'autistic disorder')"/>
+        <edge source="(('cid', 11687, 0, 0), 'language therapy')" target="(('cid', 2001, 0, 0), 'autistic disorder')"/>
+        <edge source="(('cid', 738877, 0, 0), 'autism spectrum disorders')" target="(('cid', 2001, 0, 0), 'autistic disorder')"/>
+        <edge source="(('cid', 1176253, 0, 0), 'cells counted')" target="(('cid', 2001, 0, 0), 'autistic disorder')"/>
+        <edge source="(('code', '314.01'), 'Attention deficit disorder with hyperactivity')" target="(('cid', 2001, 0, 0), 'autistic disorder')"/>
+        <edge source="(('cid', 103680, 0, 0), 'ammonia measurement')" target="(('cid', 2001, 0, 0), 'autistic disorder')"/>
+        <edge source="(('cid', 21797, 0, 0), 'valproic acid')" target="(('cid', 2001, 0, 0), 'autistic disorder')"/>
+        <edge source="(('code', '299.90'), '&quot;Unspecified pervasive developmental disorder, current or active state&quot;')" target="(('cid', 2001, 0, 0), 'autistic disorder')"/>
+        <edge source="(('cid', 122071, 0, 0), 'temper tantrum')" target="(('cid', 2001, 0, 0), 'autistic disorder')"/>
+        <edge source="(('cid', 132973, 0, 0), 'problem behavior')" target="(('cid', 2001, 0, 0), 'autistic disorder')"/>
+        <edge source="(('cid', 207011, 0, 0), 'organic acid')" target="(('cid', 2001, 0, 0), 'autistic disorder')"/>
+        <edge source="(('cid', 11685, 0, 0), 'language disorders')" target="(('cid', 2001, 0, 0), 'autistic disorder')"/>
+        <edge source="(('cid', 722986, 0, 0), 'poor eye contact')" target="(('cid', 2001, 0, 0), 'autistic disorder')"/>
+        <edge source="(('cid', 19551, 0, 0), 'speech therapy')" target="(('cid', 2001, 0, 0), 'autistic disorder')"/>
+        <edge source="(('cid', 84573, 0, 0), 'covers (device)')" target="(('cid', 11687, 0, 0), 'language therapy')"/>
+        <edge source="(('cid', 84573, 0, 0), 'covers (device)')" target="(('cid', 738877, 0, 0), 'autism spectrum disorders')"/>
+        <edge source="(('cid', 313179, 0, 0), 'preoccupation finding')" target="(('code', '315.8'), 'Other specified delays in development')"/>
+        <edge source="(('cid', 248187, 0, 0), 'engaged to be married')" target="(('code', '315.8'), 'Other specified delays in development')"/>
+        <edge source="(('cid', 394013, 0, 0), 'genetic screening method')" target="(('code', '315.8'), 'Other specified delays in development')"/>
+        <edge source="(('cid', 102764, 0, 0), 'chromosome analysis')" target="(('code', '315.8'), 'Other specified delays in development')"/>
+        <edge source="(('code', '299.80'), '&quot;Other specified pervasive developmental disorders, current or active state&quot;')" target="(('code', '315.8'), 'Other specified delays in development')"/>
+        <edge source="(('code', '315.39'), 'Other developmental speech or language disorder')" target="(('code', '315.8'), 'Other specified delays in development')"/>
+        <edge source="(('code', '319'), 'Unspecified intellectual disabilities')" target="(('code', '315.8'), 'Other specified delays in development')"/>
+        <edge source="(('code', '783.42'), 'Delayed milestones')" target="(('code', '315.8'), 'Other specified delays in development')"/>
+        <edge source="(('cid', 2286, 0, 0), 'behavior therapy')" target="(('code', '315.8'), 'Other specified delays in development')"/>
+        <edge source="(('code', '299.00'), '&quot;Autistic disorder, current or active state&quot;')" target="(('code', '315.8'), 'Other specified delays in development')"/>
+        <edge source="(('cid', 401984, 0, 0), 'toilet trained (finding)')" target="(('code', '315.8'), 'Other specified delays in development')"/>
+        <edge source="(('code', '783.40'), '&quot;Lack of normal physiological development, unspecified&quot;')" target="(('code', '315.8'), 'Other specified delays in development')"/>
+        <edge source="(('cid', 394084, 0, 0), 'preschool completion')" target="(('code', '315.8'), 'Other specified delays in development')"/>
+        <edge source="(('cid', 247696, 0, 0), 'developmental delay (disorder)')" target="(('code', '315.8'), 'Other specified delays in development')"/>
+        <edge source="(('cid', 247417, 0, 0), 'hyperactive behavior')" target="(('code', '315.8'), 'Other specified delays in development')"/>
+        <edge source="(('code', '299.90'), '&quot;Unspecified pervasive developmental disorder, current or active state&quot;')" target="(('code', '315.8'), 'Other specified delays in development')"/>
+        <edge source="(('cid', 122071, 0, 0), 'temper tantrum')" target="(('code', '315.8'), 'Other specified delays in development')"/>
+        <edge source="(('cid', 10623, 0, 0), 'immunoelectrophoresis')" target="(('code', '315.8'), 'Other specified delays in development')"/>
+        <edge source="(('cid', 132973, 0, 0), 'problem behavior')" target="(('code', '315.8'), 'Other specified delays in development')"/>
+        <edge source="(('cid', 872325, 0, 0), 'outbursts')" target="(('code', '315.8'), 'Other specified delays in development')"/>
+        <edge source="(('cid', 320278, 0, 0), 'global developmental delay')" target="(('code', '315.8'), 'Other specified delays in development')"/>
+        <edge source="(('cid', 11687, 0, 0), 'language therapy')" target="(('code', '315.8'), 'Other specified delays in development')"/>
+        <edge source="(('cid', 738877, 0, 0), 'autism spectrum disorders')" target="(('code', '315.8'), 'Other specified delays in development')"/>
+        <edge source="(('code', '315.32'), 'Mixed receptive-expressive language disorder')" target="(('code', '315.8'), 'Other specified delays in development')"/>
+        <edge source="(('cid', 21797, 0, 0), 'valproic acid')" target="(('code', '315.8'), 'Other specified delays in development')"/>
+        <edge source="(('cid', 11685, 0, 0), 'language disorders')" target="(('code', '315.8'), 'Other specified delays in development')"/>
+        <edge source="(('cid', 19551, 0, 0), 'speech therapy')" target="(('code', '315.8'), 'Other specified delays in development')"/>
+        <edge source="(('code', 'V79.3'), 'Screening for developmental handicaps in early childhood')" target="(('cid', 320278, 0, 0), 'global developmental delay')"/>
+        <edge source="(('cid', 7730, 0, 0), 'facial expression')" target="(('cid', 320278, 0, 0), 'global developmental delay')"/>
+        <edge source="(('cid', 103680, 0, 0), 'ammonia measurement')" target="(('cid', 320278, 0, 0), 'global developmental delay')"/>
+        <edge source="(('code', '315.39'), 'Other developmental speech or language disorder')" target="(('cid', 320278, 0, 0), 'global developmental delay')"/>
+        <edge source="(('code', '319'), 'Unspecified intellectual disabilities')" target="(('cid', 320278, 0, 0), 'global developmental delay')"/>
+        <edge source="(('code', '345.90'), '&quot;Epilepsy, unspecified, without mention of intractable epilepsy&quot;')" target="(('cid', 320278, 0, 0), 'global developmental delay')"/>
+        <edge source="(('cid', 2286, 0, 0), 'behavior therapy')" target="(('cid', 320278, 0, 0), 'global developmental delay')"/>
+        <edge source="(('cid', 1176253, 0, 0), 'cells counted')" target="(('cid', 320278, 0, 0), 'global developmental delay')"/>
+        <edge source="(('cid', 207011, 0, 0), 'organic acid')" target="(('cid', 320278, 0, 0), 'global developmental delay')"/>
+        <edge source="(('cid', 3953, 0, 0), 'developmental disabilities')" target="(('cid', 320278, 0, 0), 'global developmental delay')"/>
+        <edge source="(('cid', 247768, 0, 0), 'head size')" target="(('cid', 320278, 0, 0), 'global developmental delay')"/>
+        <edge source="(('code', '299.90'), '&quot;Unspecified pervasive developmental disorder, current or active state&quot;')" target="(('cid', 320278, 0, 0), 'global developmental delay')"/>
+        <edge source="(('cid', 10623, 0, 0), 'immunoelectrophoresis')" target="(('cid', 320278, 0, 0), 'global developmental delay')"/>
+        <edge source="(('cid', 132973, 0, 0), 'problem behavior')" target="(('cid', 320278, 0, 0), 'global developmental delay')"/>
+        <edge source="(('cid', 304376, 0, 0), 'pervasive development disorder')" target="(('cid', 320278, 0, 0), 'global developmental delay')"/>
+        <edge source="(('code', '315.9'), 'Unspecified delay in development')" target="(('cid', 320278, 0, 0), 'global developmental delay')"/>
+        <edge source="(('cid', 2001, 0, 0), 'autistic disorder')" target="(('cid', 320278, 0, 0), 'global developmental delay')"/>
+        <edge source="(('cid', 1050, 0, 0), 'amino acids')" target="(('cid', 320278, 0, 0), 'global developmental delay')"/>
+        <edge source="(('cid', 11682, 0, 0), 'language delay')" target="(('cid', 320278, 0, 0), 'global developmental delay')"/>
+        <edge source="(('cid', 21797, 0, 0), 'valproic acid')" target="(('cid', 320278, 0, 0), 'global developmental delay')"/>
+        <edge source="(('cid', 84573, 0, 0), 'covers (device)')" target="(('cid', 320278, 0, 0), 'global developmental delay')"/>
+        <edge source="(('cid', 19551, 0, 0), 'speech therapy')" target="(('cid', 320278, 0, 0), 'global developmental delay')"/>
+        <edge source="(('cid', 401984, 0, 0), 'toilet trained (finding)')" target="(('cid', 313179, 0, 0), 'preoccupation finding')"/>
+        <edge source="(('cid', 103680, 0, 0), 'ammonia measurement')" target="(('cid', 313179, 0, 0), 'preoccupation finding')"/>
+        <edge source="(('cid', 2286, 0, 0), 'behavior therapy')" target="(('cid', 313179, 0, 0), 'preoccupation finding')"/>
+        <edge source="(('cid', 6347, 0, 0), 'dna')" target="(('cid', 313179, 0, 0), 'preoccupation finding')"/>
+        <edge source="(('code', 'V79.3'), 'Screening for developmental handicaps in early childhood')" target="(('cid', 313179, 0, 0), 'preoccupation finding')"/>
+        <edge source="(('cid', 738877, 0, 0), 'autism spectrum disorders')" target="(('cid', 313179, 0, 0), 'preoccupation finding')"/>
+        <edge source="(('cid', 12895, 0, 0), 'mental retardation')" target="(('cid', 313179, 0, 0), 'preoccupation finding')"/>
+        <edge source="(('cid', 722986, 0, 0), 'poor eye contact')" target="(('cid', 313179, 0, 0), 'preoccupation finding')"/>
+        <edge source="(('cid', 207011, 0, 0), 'organic acid')" target="(('cid', 313179, 0, 0), 'preoccupation finding')"/>
+        <edge source="(('cid', 10623, 0, 0), 'immunoelectrophoresis')" target="(('cid', 313179, 0, 0), 'preoccupation finding')"/>
+        <edge source="(('cid', 19551, 0, 0), 'speech therapy')" target="(('cid', 313179, 0, 0), 'preoccupation finding')"/>
+        <edge source="(('cid', 11687, 0, 0), 'language therapy')" target="(('cid', 248187, 0, 0), 'engaged to be married')"/>
+        <edge source="(('cid', 84573, 0, 0), 'covers (device)')" target="(('cid', 248187, 0, 0), 'engaged to be married')"/>
+        <edge source="(('cid', 313179, 0, 0), 'preoccupation finding')" target="(('code', '783.40'), '&quot;Lack of normal physiological development, unspecified&quot;')"/>
+        <edge source="(('cid', 412641, 0, 0), 'depakote')" target="(('code', '783.40'), '&quot;Lack of normal physiological development, unspecified&quot;')"/>
+        <edge source="(('cid', 248187, 0, 0), 'engaged to be married')" target="(('code', '783.40'), '&quot;Lack of normal physiological development, unspecified&quot;')"/>
+        <edge source="(('cid', 394013, 0, 0), 'genetic screening method')" target="(('code', '783.40'), '&quot;Lack of normal physiological development, unspecified&quot;')"/>
+        <edge source="(('code', '299.80'), '&quot;Other specified pervasive developmental disorders, current or active state&quot;')" target="(('code', '783.40'), '&quot;Lack of normal physiological development, unspecified&quot;')"/>
+        <edge source="(('code', '783.42'), 'Delayed milestones')" target="(('code', '783.40'), '&quot;Lack of normal physiological development, unspecified&quot;')"/>
+        <edge source="(('code', '345.90'), '&quot;Epilepsy, unspecified, without mention of intractable epilepsy&quot;')" target="(('code', '783.40'), '&quot;Lack of normal physiological development, unspecified&quot;')"/>
+        <edge source="(('cid', 247972, 0, 0), 'language spoken')" target="(('code', '783.40'), '&quot;Lack of normal physiological development, unspecified&quot;')"/>
+        <edge source="(('cid', 6347, 0, 0), 'dna')" target="(('code', '783.40'), '&quot;Lack of normal physiological development, unspecified&quot;')"/>
+        <edge source="(('cid', 401984, 0, 0), 'toilet trained (finding)')" target="(('code', '783.40'), '&quot;Lack of normal physiological development, unspecified&quot;')"/>
+        <edge source="(('cid', 722986, 0, 0), 'poor eye contact')" target="(('code', '783.40'), '&quot;Lack of normal physiological development, unspecified&quot;')"/>
+        <edge source="(('cid', 1176253, 0, 0), 'cells counted')" target="(('code', '783.40'), '&quot;Lack of normal physiological development, unspecified&quot;')"/>
+        <edge source="(('cid', 247696, 0, 0), 'developmental delay (disorder)')" target="(('code', '783.40'), '&quot;Lack of normal physiological development, unspecified&quot;')"/>
+        <edge source="(('cid', 3953, 0, 0), 'developmental disabilities')" target="(('code', '783.40'), '&quot;Lack of normal physiological development, unspecified&quot;')"/>
+        <edge source="(('cid', 247768, 0, 0), 'head size')" target="(('code', '783.40'), '&quot;Lack of normal physiological development, unspecified&quot;')"/>
+        <edge source="(('code', '314.01'), 'Attention deficit disorder with hyperactivity')" target="(('code', '783.40'), '&quot;Lack of normal physiological development, unspecified&quot;')"/>
+        <edge source="(('cid', 7730, 0, 0), 'facial expression')" target="(('code', '783.40'), '&quot;Lack of normal physiological development, unspecified&quot;')"/>
+        <edge source="(('cid', 132973, 0, 0), 'problem behavior')" target="(('code', '783.40'), '&quot;Lack of normal physiological development, unspecified&quot;')"/>
+        <edge source="(('cid', 872325, 0, 0), 'outbursts')" target="(('code', '783.40'), '&quot;Lack of normal physiological development, unspecified&quot;')"/>
+        <edge source="(('cid', 304376, 0, 0), 'pervasive development disorder')" target="(('code', '783.40'), '&quot;Lack of normal physiological development, unspecified&quot;')"/>
+        <edge source="(('cid', 320278, 0, 0), 'global developmental delay')" target="(('code', '783.40'), '&quot;Lack of normal physiological development, unspecified&quot;')"/>
+        <edge source="(('cid', 2001, 0, 0), 'autistic disorder')" target="(('code', '783.40'), '&quot;Lack of normal physiological development, unspecified&quot;')"/>
+        <edge source="(('cid', 738877, 0, 0), 'autism spectrum disorders')" target="(('code', '783.40'), '&quot;Lack of normal physiological development, unspecified&quot;')"/>
+        <edge source="(('code', '315.32'), 'Mixed receptive-expressive language disorder')" target="(('code', '783.40'), '&quot;Lack of normal physiological development, unspecified&quot;')"/>
+        <edge source="(('code', '299.90'), '&quot;Unspecified pervasive developmental disorder, current or active state&quot;')" target="(('code', '783.40'), '&quot;Lack of normal physiological development, unspecified&quot;')"/>
+        <edge source="(('cid', 84573, 0, 0), 'covers (device)')" target="(('code', '783.40'), '&quot;Lack of normal physiological development, unspecified&quot;')"/>
+        <edge source="(('code', '299.00'), '&quot;Autistic disorder, current or active state&quot;')" target="(('code', '783.40'), '&quot;Lack of normal physiological development, unspecified&quot;')"/>
+        <edge source="(('cid', 412641, 0, 0), 'depakote')" target="(('cid', 102764, 0, 0), 'chromosome analysis')"/>
+        <edge source="(('cid', 248187, 0, 0), 'engaged to be married')" target="(('cid', 102764, 0, 0), 'chromosome analysis')"/>
+        <edge source="(('cid', 394013, 0, 0), 'genetic screening method')" target="(('cid', 102764, 0, 0), 'chromosome analysis')"/>
+        <edge source="(('code', 'V79.3'), 'Screening for developmental handicaps in early childhood')" target="(('cid', 102764, 0, 0), 'chromosome analysis')"/>
+        <edge source="(('cid', 7730, 0, 0), 'facial expression')" target="(('cid', 102764, 0, 0), 'chromosome analysis')"/>
+        <edge source="(('cid', 12895, 0, 0), 'mental retardation')" target="(('cid', 102764, 0, 0), 'chromosome analysis')"/>
+        <edge source="(('cid', 103680, 0, 0), 'ammonia measurement')" target="(('cid', 102764, 0, 0), 'chromosome analysis')"/>
+        <edge source="(('code', '315.39'), 'Other developmental speech or language disorder')" target="(('cid', 102764, 0, 0), 'chromosome analysis')"/>
+        <edge source="(('code', '783.42'), 'Delayed milestones')" target="(('cid', 102764, 0, 0), 'chromosome analysis')"/>
+        <edge source="(('code', '345.90'), '&quot;Epilepsy, unspecified, without mention of intractable epilepsy&quot;')" target="(('cid', 102764, 0, 0), 'chromosome analysis')"/>
+        <edge source="(('cid', 247972, 0, 0), 'language spoken')" target="(('cid', 102764, 0, 0), 'chromosome analysis')"/>
+        <edge source="(('cid', 6347, 0, 0), 'dna')" target="(('cid', 102764, 0, 0), 'chromosome analysis')"/>
+        <edge source="(('cid', 401984, 0, 0), 'toilet trained (finding)')" target="(('cid', 102764, 0, 0), 'chromosome analysis')"/>
+        <edge source="(('cid', 1050, 0, 0), 'amino acids')" target="(('cid', 102764, 0, 0), 'chromosome analysis')"/>
+        <edge source="(('code', '783.40'), '&quot;Lack of normal physiological development, unspecified&quot;')" target="(('cid', 102764, 0, 0), 'chromosome analysis')"/>
+        <edge source="(('code', '299.00'), '&quot;Autistic disorder, current or active state&quot;')" target="(('cid', 102764, 0, 0), 'chromosome analysis')"/>
+        <edge source="(('code', '315.9'), 'Unspecified delay in development')" target="(('cid', 102764, 0, 0), 'chromosome analysis')"/>
+        <edge source="(('cid', 247696, 0, 0), 'developmental delay (disorder)')" target="(('cid', 102764, 0, 0), 'chromosome analysis')"/>
+        <edge source="(('cid', 3953, 0, 0), 'developmental disabilities')" target="(('cid', 102764, 0, 0), 'chromosome analysis')"/>
+        <edge source="(('cid', 247768, 0, 0), 'head size')" target="(('cid', 102764, 0, 0), 'chromosome analysis')"/>
+        <edge source="(('code', '299.90'), '&quot;Unspecified pervasive developmental disorder, current or active state&quot;')" target="(('cid', 102764, 0, 0), 'chromosome analysis')"/>
+        <edge source="(('code', '299.80'), '&quot;Other specified pervasive developmental disorders, current or active state&quot;')" target="(('cid', 102764, 0, 0), 'chromosome analysis')"/>
+        <edge source="(('cid', 122071, 0, 0), 'temper tantrum')" target="(('cid', 102764, 0, 0), 'chromosome analysis')"/>
+        <edge source="(('cid', 10623, 0, 0), 'immunoelectrophoresis')" target="(('cid', 102764, 0, 0), 'chromosome analysis')"/>
+        <edge source="(('cid', 132973, 0, 0), 'problem behavior')" target="(('cid', 102764, 0, 0), 'chromosome analysis')"/>
+        <edge source="(('cid', 872325, 0, 0), 'outbursts')" target="(('cid', 102764, 0, 0), 'chromosome analysis')"/>
+        <edge source="(('cid', 304376, 0, 0), 'pervasive development disorder')" target="(('cid', 102764, 0, 0), 'chromosome analysis')"/>
+        <edge source="(('cid', 207011, 0, 0), 'organic acid')" target="(('cid', 102764, 0, 0), 'chromosome analysis')"/>
+        <edge source="(('cid', 2001, 0, 0), 'autistic disorder')" target="(('cid', 102764, 0, 0), 'chromosome analysis')"/>
+        <edge source="(('cid', 11687, 0, 0), 'language therapy')" target="(('cid', 102764, 0, 0), 'chromosome analysis')"/>
+        <edge source="(('cid', 738877, 0, 0), 'autism spectrum disorders')" target="(('cid', 102764, 0, 0), 'chromosome analysis')"/>
+        <edge source="(('code', '315.32'), 'Mixed receptive-expressive language disorder')" target="(('cid', 102764, 0, 0), 'chromosome analysis')"/>
+        <edge source="(('cid', 320278, 0, 0), 'global developmental delay')" target="(('cid', 102764, 0, 0), 'chromosome analysis')"/>
+        <edge source="(('cid', 21797, 0, 0), 'valproic acid')" target="(('cid', 102764, 0, 0), 'chromosome analysis')"/>
+        <edge source="(('cid', 11685, 0, 0), 'language disorders')" target="(('cid', 102764, 0, 0), 'chromosome analysis')"/>
+        <edge source="(('cid', 512062, 0, 0), 'receptor activator of nuclear factor-kappa b')" target="(('cid', 102764, 0, 0), 'chromosome analysis')"/>
+        <edge source="(('cid', 19551, 0, 0), 'speech therapy')" target="(('cid', 102764, 0, 0), 'chromosome analysis')"/>
+        <edge source="(('cid', 738877, 0, 0), 'autism spectrum disorders')" target="(('code', 'V79.3'), 'Screening for developmental handicaps in early childhood')"/>
+        <edge source="(('cid', 84573, 0, 0), 'covers (device)')" target="(('code', 'V79.3'), 'Screening for developmental handicaps in early childhood')"/>
+        <edge source="(('cid', 248187, 0, 0), 'engaged to be married')" target="(('code', 'V79.3'), 'Screening for developmental handicaps in early childhood')"/>
+        <edge source="(('cid', 722986, 0, 0), 'poor eye contact')" target="(('code', 'V79.3'), 'Screening for developmental handicaps in early childhood')"/>
+        <edge source="(('code', '783.40'), '&quot;Lack of normal physiological development, unspecified&quot;')" target="(('cid', 163364, 0, 0), 'task veterinary proprietary drug and/or biological')"/>
+        <edge source="(('code', 'V79.3'), 'Screening for developmental handicaps in early childhood')" target="(('cid', 163364, 0, 0), 'task veterinary proprietary drug and/or biological')"/>
+        <edge source="(('code', '299.80'), '&quot;Other specified pervasive developmental disorders, current or active state&quot;')" target="(('cid', 163364, 0, 0), 'task veterinary proprietary drug and/or biological')"/>
+        <edge source="(('code', '315.39'), 'Other developmental speech or language disorder')" target="(('cid', 163364, 0, 0), 'task veterinary proprietary drug and/or biological')"/>
+        <edge source="(('code', '783.42'), 'Delayed milestones')" target="(('cid', 163364, 0, 0), 'task veterinary proprietary drug and/or biological')"/>
+        <edge source="(('code', '345.90'), '&quot;Epilepsy, unspecified, without mention of intractable epilepsy&quot;')" target="(('cid', 163364, 0, 0), 'task veterinary proprietary drug and/or biological')"/>
+        <edge source="(('cid', 247972, 0, 0), 'language spoken')" target="(('cid', 163364, 0, 0), 'task veterinary proprietary drug and/or biological')"/>
+        <edge source="(('cid', 6665, 0, 0), 'echolalia')" target="(('cid', 163364, 0, 0), 'task veterinary proprietary drug and/or biological')"/>
+        <edge source="(('code', '299.00'), '&quot;Autistic disorder, current or active state&quot;')" target="(('cid', 163364, 0, 0), 'task veterinary proprietary drug and/or biological')"/>
+        <edge source="(('cid', 401984, 0, 0), 'toilet trained (finding)')" target="(('cid', 163364, 0, 0), 'task veterinary proprietary drug and/or biological')"/>
+        <edge source="(('cid', 394013, 0, 0), 'genetic screening method')" target="(('cid', 163364, 0, 0), 'task veterinary proprietary drug and/or biological')"/>
+        <edge source="(('cid', 394084, 0, 0), 'preschool completion')" target="(('cid', 163364, 0, 0), 'task veterinary proprietary drug and/or biological')"/>
+        <edge source="(('cid', 722986, 0, 0), 'poor eye contact')" target="(('cid', 163364, 0, 0), 'task veterinary proprietary drug and/or biological')"/>
+        <edge source="(('cid', 247696, 0, 0), 'developmental delay (disorder)')" target="(('cid', 163364, 0, 0), 'task veterinary proprietary drug and/or biological')"/>
+        <edge source="(('cid', 247417, 0, 0), 'hyperactive behavior')" target="(('cid', 163364, 0, 0), 'task veterinary proprietary drug and/or biological')"/>
+        <edge source="(('cid', 3953, 0, 0), 'developmental disabilities')" target="(('cid', 163364, 0, 0), 'task veterinary proprietary drug and/or biological')"/>
+        <edge source="(('code', '299.90'), '&quot;Unspecified pervasive developmental disorder, current or active state&quot;')" target="(('cid', 163364, 0, 0), 'task veterinary proprietary drug and/or biological')"/>
+        <edge source="(('cid', 7730, 0, 0), 'facial expression')" target="(('cid', 163364, 0, 0), 'task veterinary proprietary drug and/or biological')"/>
+        <edge source="(('cid', 122071, 0, 0), 'temper tantrum')" target="(('cid', 163364, 0, 0), 'task veterinary proprietary drug and/or biological')"/>
+        <edge source="(('cid', 10623, 0, 0), 'immunoelectrophoresis')" target="(('cid', 163364, 0, 0), 'task veterinary proprietary drug and/or biological')"/>
+        <edge source="(('cid', 132973, 0, 0), 'problem behavior')" target="(('cid', 163364, 0, 0), 'task veterinary proprietary drug and/or biological')"/>
+        <edge source="(('cid', 872325, 0, 0), 'outbursts')" target="(('cid', 163364, 0, 0), 'task veterinary proprietary drug and/or biological')"/>
+        <edge source="(('cid', 125026, 0, 0), 'speech delay')" target="(('cid', 163364, 0, 0), 'task veterinary proprietary drug and/or biological')"/>
+        <edge source="(('cid', 304376, 0, 0), 'pervasive development disorder')" target="(('cid', 163364, 0, 0), 'task veterinary proprietary drug and/or biological')"/>
+        <edge source="(('cid', 320278, 0, 0), 'global developmental delay')" target="(('cid', 163364, 0, 0), 'task veterinary proprietary drug and/or biological')"/>
+        <edge source="(('cid', 2001, 0, 0), 'autistic disorder')" target="(('cid', 163364, 0, 0), 'task veterinary proprietary drug and/or biological')"/>
+        <edge source="(('cid', 738877, 0, 0), 'autism spectrum disorders')" target="(('cid', 163364, 0, 0), 'task veterinary proprietary drug and/or biological')"/>
+        <edge source="(('code', '315.32'), 'Mixed receptive-expressive language disorder')" target="(('cid', 163364, 0, 0), 'task veterinary proprietary drug and/or biological')"/>
+        <edge source="(('code', '314.01'), 'Attention deficit disorder with hyperactivity')" target="(('cid', 163364, 0, 0), 'task veterinary proprietary drug and/or biological')"/>
+        <edge source="(('cid', 84573, 0, 0), 'covers (device)')" target="(('cid', 163364, 0, 0), 'task veterinary proprietary drug and/or biological')"/>
+        <edge source="(('cid', 11685, 0, 0), 'language disorders')" target="(('cid', 163364, 0, 0), 'task veterinary proprietary drug and/or biological')"/>
+        <edge source="(('cid', 512062, 0, 0), 'receptor activator of nuclear factor-kappa b')" target="(('cid', 163364, 0, 0), 'task veterinary proprietary drug and/or biological')"/>
+        <edge source="(('cid', 19551, 0, 0), 'speech therapy')" target="(('cid', 163364, 0, 0), 'task veterinary proprietary drug and/or biological')"/>
+        <edge source="(('cid', 247696, 0, 0), 'developmental delay (disorder)')" target="(('code', '319'), 'Unspecified intellectual disabilities')"/>
+        <edge source="(('cid', 412641, 0, 0), 'depakote')" target="(('code', '319'), 'Unspecified intellectual disabilities')"/>
+        <edge source="(('cid', 248187, 0, 0), 'engaged to be married')" target="(('code', '319'), 'Unspecified intellectual disabilities')"/>
+        <edge source="(('cid', 6347, 0, 0), 'dna')" target="(('code', '319'), 'Unspecified intellectual disabilities')"/>
+        <edge source="(('cid', 738877, 0, 0), 'autism spectrum disorders')" target="(('code', '319'), 'Unspecified intellectual disabilities')"/>
+        <edge source="(('code', '299.90'), '&quot;Unspecified pervasive developmental disorder, current or active state&quot;')" target="(('code', '319'), 'Unspecified intellectual disabilities')"/>
+        <edge source="(('cid', 12895, 0, 0), 'mental retardation')" target="(('code', '319'), 'Unspecified intellectual disabilities')"/>
+        <edge source="(('cid', 11685, 0, 0), 'language disorders')" target="(('code', '319'), 'Unspecified intellectual disabilities')"/>
+        <edge source="(('cid', 248187, 0, 0), 'engaged to be married')" target="(('code', '783.42'), 'Delayed milestones')"/>
+        <edge source="(('cid', 6347, 0, 0), 'dna')" target="(('code', '783.42'), 'Delayed milestones')"/>
+        <edge source="(('code', '314.01'), 'Attention deficit disorder with hyperactivity')" target="(('code', '783.42'), 'Delayed milestones')"/>
+        <edge source="(('code', '299.90'), '&quot;Unspecified pervasive developmental disorder, current or active state&quot;')" target="(('code', '783.42'), 'Delayed milestones')"/>
+        <edge source="(('cid', 84573, 0, 0), 'covers (device)')" target="(('code', '783.42'), 'Delayed milestones')"/>
+        <edge source="(('code', '299.00'), '&quot;Autistic disorder, current or active state&quot;')" target="(('code', '783.42'), 'Delayed milestones')"/>
+        <edge source="(('cid', 12895, 0, 0), 'mental retardation')" target="(('code', '783.42'), 'Delayed milestones')"/>
+        <edge source="(('cid', 313179, 0, 0), 'preoccupation finding')" target="(('cid', 247972, 0, 0), 'language spoken')"/>
+        <edge source="(('cid', 84573, 0, 0), 'covers (device)')" target="(('cid', 247972, 0, 0), 'language spoken')"/>
+        <edge source="(('cid', 103680, 0, 0), 'ammonia measurement')" target="(('cid', 247972, 0, 0), 'language spoken')"/>
+        <edge source="(('cid', 722986, 0, 0), 'poor eye contact')" target="(('cid', 247972, 0, 0), 'language spoken')"/>
+        <edge source="(('cid', 248187, 0, 0), 'engaged to be married')" target="(('cid', 247972, 0, 0), 'language spoken')"/>
+        <edge source="(('cid', 6665, 0, 0), 'echolalia')" target="(('cid', 247972, 0, 0), 'language spoken')"/>
+        <edge source="(('cid', 394013, 0, 0), 'genetic screening method')" target="(('cid', 247972, 0, 0), 'language spoken')"/>
+        <edge source="(('cid', 207011, 0, 0), 'organic acid')" target="(('cid', 247972, 0, 0), 'language spoken')"/>
+        <edge source="(('cid', 6347, 0, 0), 'dna')" target="(('cid', 247972, 0, 0), 'language spoken')"/>
+        <edge source="(('code', 'V79.3'), 'Screening for developmental handicaps in early childhood')" target="(('cid', 247972, 0, 0), 'language spoken')"/>
+        <edge source="(('cid', 7730, 0, 0), 'facial expression')" target="(('cid', 247972, 0, 0), 'language spoken')"/>
+        <edge source="(('cid', 10623, 0, 0), 'immunoelectrophoresis')" target="(('cid', 247972, 0, 0), 'language spoken')"/>
+        <edge source="(('cid', 2286, 0, 0), 'behavior therapy')" target="(('cid', 247972, 0, 0), 'language spoken')"/>
+        <edge source="(('cid', 1050, 0, 0), 'amino acids')" target="(('cid', 247972, 0, 0), 'language spoken')"/>
+        <edge source="(('code', '315.32'), 'Mixed receptive-expressive language disorder')" target="(('cid', 247972, 0, 0), 'language spoken')"/>
+        <edge source="(('cid', 1176253, 0, 0), 'cells counted')" target="(('cid', 247972, 0, 0), 'language spoken')"/>
+        <edge source="(('code', '315.39'), 'Other developmental speech or language disorder')" target="(('cid', 247972, 0, 0), 'language spoken')"/>
+        <edge source="(('code', '299.00'), '&quot;Autistic disorder, current or active state&quot;')" target="(('cid', 247972, 0, 0), 'language spoken')"/>
+        <edge source="(('cid', 512062, 0, 0), 'receptor activator of nuclear factor-kappa b')" target="(('cid', 247972, 0, 0), 'language spoken')"/>
+        <edge source="(('cid', 304376, 0, 0), 'pervasive development disorder')" target="(('cid', 247972, 0, 0), 'language spoken')"/>
+        <edge source="(('code', '299.00'), '&quot;Autistic disorder, current or active state&quot;')" target="(('cid', 207011, 0, 0), 'organic acid')"/>
+        <edge source="(('code', 'V79.3'), 'Screening for developmental handicaps in early childhood')" target="(('cid', 207011, 0, 0), 'organic acid')"/>
+        <edge source="(('cid', 11687, 0, 0), 'language therapy')" target="(('cid', 207011, 0, 0), 'organic acid')"/>
+        <edge source="(('cid', 738877, 0, 0), 'autism spectrum disorders')" target="(('cid', 207011, 0, 0), 'organic acid')"/>
+        <edge source="(('cid', 722986, 0, 0), 'poor eye contact')" target="(('cid', 207011, 0, 0), 'organic acid')"/>
+        <edge source="(('cid', 84573, 0, 0), 'covers (device)')" target="(('cid', 207011, 0, 0), 'organic acid')"/>
+        <edge source="(('cid', 6347, 0, 0), 'dna')" target="(('cid', 207011, 0, 0), 'organic acid')"/>
+        <edge source="(('cid', 313179, 0, 0), 'preoccupation finding')" target="(('cid', 19309, 0, 0), 'social interaction')"/>
+        <edge source="(('code', '783.40'), '&quot;Lack of normal physiological development, unspecified&quot;')" target="(('cid', 19309, 0, 0), 'social interaction')"/>
+        <edge source="(('code', 'V79.3'), 'Screening for developmental handicaps in early childhood')" target="(('cid', 19309, 0, 0), 'social interaction')"/>
+        <edge source="(('cid', 7730, 0, 0), 'facial expression')" target="(('cid', 19309, 0, 0), 'social interaction')"/>
+        <edge source="(('cid', 12895, 0, 0), 'mental retardation')" target="(('cid', 19309, 0, 0), 'social interaction')"/>
+        <edge source="(('code', '345.90'), '&quot;Epilepsy, unspecified, without mention of intractable epilepsy&quot;')" target="(('cid', 19309, 0, 0), 'social interaction')"/>
+        <edge source="(('cid', 6665, 0, 0), 'echolalia')" target="(('cid', 19309, 0, 0), 'social interaction')"/>
+        <edge source="(('cid', 2286, 0, 0), 'behavior therapy')" target="(('cid', 19309, 0, 0), 'social interaction')"/>
+        <edge source="(('code', '299.00'), '&quot;Autistic disorder, current or active state&quot;')" target="(('cid', 19309, 0, 0), 'social interaction')"/>
+        <edge source="(('cid', 394013, 0, 0), 'genetic screening method')" target="(('cid', 19309, 0, 0), 'social interaction')"/>
+        <edge source="(('cid', 394084, 0, 0), 'preschool completion')" target="(('cid', 19309, 0, 0), 'social interaction')"/>
+        <edge source="(('cid', 722986, 0, 0), 'poor eye contact')" target="(('cid', 19309, 0, 0), 'social interaction')"/>
+        <edge source="(('code', '315.8'), 'Other specified delays in development')" target="(('cid', 19309, 0, 0), 'social interaction')"/>
+        <edge source="(('code', '315.9'), 'Unspecified delay in development')" target="(('cid', 19309, 0, 0), 'social interaction')"/>
+        <edge source="(('cid', 247417, 0, 0), 'hyperactive behavior')" target="(('cid', 19309, 0, 0), 'social interaction')"/>
+        <edge source="(('cid', 3953, 0, 0), 'developmental disabilities')" target="(('cid', 19309, 0, 0), 'social interaction')"/>
+        <edge source="(('code', '299.90'), '&quot;Unspecified pervasive developmental disorder, current or active state&quot;')" target="(('cid', 19309, 0, 0), 'social interaction')"/>
+        <edge source="(('cid', 122071, 0, 0), 'temper tantrum')" target="(('cid', 19309, 0, 0), 'social interaction')"/>
+        <edge source="(('cid', 10623, 0, 0), 'immunoelectrophoresis')" target="(('cid', 19309, 0, 0), 'social interaction')"/>
+        <edge source="(('cid', 132973, 0, 0), 'problem behavior')" target="(('cid', 19309, 0, 0), 'social interaction')"/>
+        <edge source="(('cid', 872325, 0, 0), 'outbursts')" target="(('cid', 19309, 0, 0), 'social interaction')"/>
+        <edge source="(('cid', 125026, 0, 0), 'speech delay')" target="(('cid', 19309, 0, 0), 'social interaction')"/>
+        <edge source="(('cid', 320278, 0, 0), 'global developmental delay')" target="(('cid', 19309, 0, 0), 'social interaction')"/>
+        <edge source="(('cid', 738877, 0, 0), 'autism spectrum disorders')" target="(('cid', 19309, 0, 0), 'social interaction')"/>
+        <edge source="(('cid', 11682, 0, 0), 'language delay')" target="(('cid', 19309, 0, 0), 'social interaction')"/>
+        <edge source="(('code', '315.32'), 'Mixed receptive-expressive language disorder')" target="(('cid', 19309, 0, 0), 'social interaction')"/>
+        <edge source="(('code', '314.01'), 'Attention deficit disorder with hyperactivity')" target="(('cid', 19309, 0, 0), 'social interaction')"/>
+        <edge source="(('cid', 84573, 0, 0), 'covers (device)')" target="(('cid', 19309, 0, 0), 'social interaction')"/>
+        <edge source="(('cid', 872325, 0, 0), 'outbursts')" target="(('cid', 3953, 0, 0), 'developmental disabilities')"/>
+        <edge source="(('code', '783.42'), 'Delayed milestones')" target="(('cid', 3953, 0, 0), 'developmental disabilities')"/>
+        <edge source="(('code', '345.90'), '&quot;Epilepsy, unspecified, without mention of intractable epilepsy&quot;')" target="(('cid', 3953, 0, 0), 'developmental disabilities')"/>
+        <edge source="(('cid', 247972, 0, 0), 'language spoken')" target="(('cid', 3953, 0, 0), 'developmental disabilities')"/>
+        <edge source="(('cid', 248187, 0, 0), 'engaged to be married')" target="(('cid', 3953, 0, 0), 'developmental disabilities')"/>
+        <edge source="(('cid', 394013, 0, 0), 'genetic screening method')" target="(('cid', 3953, 0, 0), 'developmental disabilities')"/>
+        <edge source="(('cid', 207011, 0, 0), 'organic acid')" target="(('cid', 3953, 0, 0), 'developmental disabilities')"/>
+        <edge source="(('cid', 6347, 0, 0), 'dna')" target="(('cid', 3953, 0, 0), 'developmental disabilities')"/>
+        <edge source="(('code', '315.39'), 'Other developmental speech or language disorder')" target="(('cid', 3953, 0, 0), 'developmental disabilities')"/>
+        <edge source="(('code', '315.9'), 'Unspecified delay in development')" target="(('cid', 3953, 0, 0), 'developmental disabilities')"/>
+        <edge source="(('cid', 1050, 0, 0), 'amino acids')" target="(('cid', 3953, 0, 0), 'developmental disabilities')"/>
+        <edge source="(('code', '299.90'), '&quot;Unspecified pervasive developmental disorder, current or active state&quot;')" target="(('cid', 3953, 0, 0), 'developmental disabilities')"/>
+        <edge source="(('code', '315.32'), 'Mixed receptive-expressive language disorder')" target="(('cid', 3953, 0, 0), 'developmental disabilities')"/>
+        <edge source="(('cid', 1176253, 0, 0), 'cells counted')" target="(('cid', 3953, 0, 0), 'developmental disabilities')"/>
+        <edge source="(('cid', 84573, 0, 0), 'covers (device)')" target="(('cid', 3953, 0, 0), 'developmental disabilities')"/>
+        <edge source="(('cid', 10623, 0, 0), 'immunoelectrophoresis')" target="(('cid', 3953, 0, 0), 'developmental disabilities')"/>
+        <edge source="(('cid', 512062, 0, 0), 'receptor activator of nuclear factor-kappa b')" target="(('cid', 3953, 0, 0), 'developmental disabilities')"/>
+        <edge source="(('cid', 19551, 0, 0), 'speech therapy')" target="(('cid', 3953, 0, 0), 'developmental disabilities')"/>
+        <edge source="(('code', '345.90'), '&quot;Epilepsy, unspecified, without mention of intractable epilepsy&quot;')" target="(('cid', 21797, 0, 0), 'valproic acid')"/>
+        <edge source="(('cid', 412641, 0, 0), 'depakote')" target="(('cid', 21797, 0, 0), 'valproic acid')"/>
+        <edge source="(('code', '314.01'), 'Attention deficit disorder with hyperactivity')" target="(('cid', 21797, 0, 0), 'valproic acid')"/>
+        <edge source="(('code', '299.00'), '&quot;Autistic disorder, current or active state&quot;')" target="(('cid', 21797, 0, 0), 'valproic acid')"/>
+        <edge source="(('cid', 12895, 0, 0), 'mental retardation')" target="(('cid', 21797, 0, 0), 'valproic acid')"/>
+        <edge source="(('cid', 103680, 0, 0), 'ammonia measurement')" target="(('cid', 21797, 0, 0), 'valproic acid')"/>
+        <edge source="(('cid', 1176253, 0, 0), 'cells counted')" target="(('cid', 21797, 0, 0), 'valproic acid')"/>
+        <edge source="(('code', '299.90'), '&quot;Unspecified pervasive developmental disorder, current or active state&quot;')" target="(('cid', 21797, 0, 0), 'valproic acid')"/>
+        <edge source="(('cid', 122071, 0, 0), 'temper tantrum')" target="(('cid', 21797, 0, 0), 'valproic acid')"/>
+        <edge source="(('code', '319'), 'Unspecified intellectual disabilities')" target="(('cid', 21797, 0, 0), 'valproic acid')"/>
+        <edge source="(('cid', 132973, 0, 0), 'problem behavior')" target="(('cid', 21797, 0, 0), 'valproic acid')"/>
+        <edge source="(('code', '783.42'), 'Delayed milestones')" target="(('cid', 304376, 0, 0), 'pervasive development disorder')"/>
+        <edge source="(('code', '345.90'), '&quot;Epilepsy, unspecified, without mention of intractable epilepsy&quot;')" target="(('cid', 304376, 0, 0), 'pervasive development disorder')"/>
+        <edge source="(('cid', 248187, 0, 0), 'engaged to be married')" target="(('cid', 304376, 0, 0), 'pervasive development disorder')"/>
+        <edge source="(('cid', 207011, 0, 0), 'organic acid')" target="(('cid', 304376, 0, 0), 'pervasive development disorder')"/>
+        <edge source="(('cid', 6347, 0, 0), 'dna')" target="(('cid', 304376, 0, 0), 'pervasive development disorder')"/>
+        <edge source="(('cid', 11687, 0, 0), 'language therapy')" target="(('cid', 304376, 0, 0), 'pervasive development disorder')"/>
+        <edge source="(('code', '299.90'), '&quot;Unspecified pervasive developmental disorder, current or active state&quot;')" target="(('cid', 304376, 0, 0), 'pervasive development disorder')"/>
+        <edge source="(('code', '315.39'), 'Other developmental speech or language disorder')" target="(('cid', 304376, 0, 0), 'pervasive development disorder')"/>
+        <edge source="(('cid', 10623, 0, 0), 'immunoelectrophoresis')" target="(('cid', 304376, 0, 0), 'pervasive development disorder')"/>
+        <edge source="(('cid', 19551, 0, 0), 'speech therapy')" target="(('cid', 304376, 0, 0), 'pervasive development disorder')"/>
+        <edge source="(('cid', 247696, 0, 0), 'developmental delay (disorder)')" target="(('cid', 1050, 0, 0), 'amino acids')"/>
+        <edge source="(('cid', 313179, 0, 0), 'preoccupation finding')" target="(('cid', 1050, 0, 0), 'amino acids')"/>
+        <edge source="(('code', '345.90'), '&quot;Epilepsy, unspecified, without mention of intractable epilepsy&quot;')" target="(('cid', 1050, 0, 0), 'amino acids')"/>
+        <edge source="(('cid', 304376, 0, 0), 'pervasive development disorder')" target="(('cid', 1050, 0, 0), 'amino acids')"/>
+        <edge source="(('cid', 401984, 0, 0), 'toilet trained (finding)')" target="(('cid', 1050, 0, 0), 'amino acids')"/>
+        <edge source="(('cid', 6347, 0, 0), 'dna')" target="(('cid', 1050, 0, 0), 'amino acids')"/>
+        <edge source="(('code', 'V79.3'), 'Screening for developmental handicaps in early childhood')" target="(('cid', 1050, 0, 0), 'amino acids')"/>
+        <edge source="(('code', '299.00'), '&quot;Autistic disorder, current or active state&quot;')" target="(('cid', 1050, 0, 0), 'amino acids')"/>
+        <edge source="(('cid', 2001, 0, 0), 'autistic disorder')" target="(('cid', 1050, 0, 0), 'amino acids')"/>
+        <edge source="(('cid', 11687, 0, 0), 'language therapy')" target="(('cid', 1050, 0, 0), 'amino acids')"/>
+        <edge source="(('cid', 738877, 0, 0), 'autism spectrum disorders')" target="(('cid', 1050, 0, 0), 'amino acids')"/>
+        <edge source="(('code', '299.90'), '&quot;Unspecified pervasive developmental disorder, current or active state&quot;')" target="(('cid', 1050, 0, 0), 'amino acids')"/>
+        <edge source="(('cid', 722986, 0, 0), 'poor eye contact')" target="(('cid', 1050, 0, 0), 'amino acids')"/>
+        <edge source="(('cid', 122071, 0, 0), 'temper tantrum')" target="(('cid', 1050, 0, 0), 'amino acids')"/>
+        <edge source="(('cid', 19551, 0, 0), 'speech therapy')" target="(('cid', 1050, 0, 0), 'amino acids')"/>
+        <edge source="(('cid', 10623, 0, 0), 'immunoelectrophoresis')" target="(('cid', 1050, 0, 0), 'amino acids')"/>
+        <edge source="(('cid', 512062, 0, 0), 'receptor activator of nuclear factor-kappa b')" target="(('cid', 1050, 0, 0), 'amino acids')"/>
+        <edge source="(('cid', 132973, 0, 0), 'problem behavior')" target="(('cid', 1050, 0, 0), 'amino acids')"/>
+        <edge source="(('cid', 872325, 0, 0), 'outbursts')" target="(('code', '315.32'), 'Mixed receptive-expressive language disorder')"/>
+        <edge source="(('code', '783.42'), 'Delayed milestones')" target="(('code', '315.32'), 'Mixed receptive-expressive language disorder')"/>
+        <edge source="(('code', '345.90'), '&quot;Epilepsy, unspecified, without mention of intractable epilepsy&quot;')" target="(('code', '315.32'), 'Mixed receptive-expressive language disorder')"/>
+        <edge source="(('code', 'V79.3'), 'Screening for developmental handicaps in early childhood')" target="(('code', '315.32'), 'Mixed receptive-expressive language disorder')"/>
+        <edge source="(('cid', 304376, 0, 0), 'pervasive development disorder')" target="(('code', '315.32'), 'Mixed receptive-expressive language disorder')"/>
+        <edge source="(('cid', 313179, 0, 0), 'preoccupation finding')" target="(('code', '315.32'), 'Mixed receptive-expressive language disorder')"/>
+        <edge source="(('cid', 11687, 0, 0), 'language therapy')" target="(('code', '315.32'), 'Mixed receptive-expressive language disorder')"/>
+        <edge source="(('cid', 2286, 0, 0), 'behavior therapy')" target="(('code', '315.32'), 'Mixed receptive-expressive language disorder')"/>
+        <edge source="(('cid', 6347, 0, 0), 'dna')" target="(('code', '315.32'), 'Mixed receptive-expressive language disorder')"/>
+        <edge source="(('cid', 401984, 0, 0), 'toilet trained (finding)')" target="(('code', '315.32'), 'Mixed receptive-expressive language disorder')"/>
+        <edge source="(('cid', 247768, 0, 0), 'head size')" target="(('code', '315.32'), 'Mixed receptive-expressive language disorder')"/>
+        <edge source="(('code', '319'), 'Unspecified intellectual disabilities')" target="(('code', '315.32'), 'Mixed receptive-expressive language disorder')"/>
+        <edge source="(('cid', 394013, 0, 0), 'genetic screening method')" target="(('code', '315.32'), 'Mixed receptive-expressive language disorder')"/>
+        <edge source="(('cid', 738877, 0, 0), 'autism spectrum disorders')" target="(('code', '315.32'), 'Mixed receptive-expressive language disorder')"/>
+        <edge source="(('cid', 722986, 0, 0), 'poor eye contact')" target="(('code', '315.32'), 'Mixed receptive-expressive language disorder')"/>
+        <edge source="(('cid', 1176253, 0, 0), 'cells counted')" target="(('code', '315.32'), 'Mixed receptive-expressive language disorder')"/>
+        <edge source="(('cid', 19551, 0, 0), 'speech therapy')" target="(('code', '315.32'), 'Mixed receptive-expressive language disorder')"/>
+        <edge source="(('code', '315.39'), 'Other developmental speech or language disorder')" target="(('code', '315.32'), 'Mixed receptive-expressive language disorder')"/>
+        <edge source="(('cid', 11685, 0, 0), 'language disorders')" target="(('code', '315.32'), 'Mixed receptive-expressive language disorder')"/>
+        <edge source="(('cid', 132973, 0, 0), 'problem behavior')" target="(('code', '315.32'), 'Mixed receptive-expressive language disorder')"/>
+        <edge source="(('cid', 248187, 0, 0), 'engaged to be married')" target="(('cid', 11685, 0, 0), 'language disorders')"/>
+        <edge source="(('cid', 6347, 0, 0), 'dna')" target="(('cid', 11685, 0, 0), 'language disorders')"/>
+        <edge source="(('code', 'V79.3'), 'Screening for developmental handicaps in early childhood')" target="(('cid', 11685, 0, 0), 'language disorders')"/>
+        <edge source="(('cid', 738877, 0, 0), 'autism spectrum disorders')" target="(('cid', 11685, 0, 0), 'language disorders')"/>
+        <edge source="(('code', '314.01'), 'Attention deficit disorder with hyperactivity')" target="(('cid', 11685, 0, 0), 'language disorders')"/>
+        <edge source="(('cid', 722986, 0, 0), 'poor eye contact')" target="(('cid', 11685, 0, 0), 'language disorders')"/>
+        <edge source="(('cid', 84573, 0, 0), 'covers (device)')" target="(('cid', 11685, 0, 0), 'language disorders')"/>
+        <edge source="(('cid', 247696, 0, 0), 'developmental delay (disorder)')" target="(('cid', 512062, 0, 0), 'receptor activator of nuclear factor-kappa b')"/>
+        <edge source="(('cid', 304376, 0, 0), 'pervasive development disorder')" target="(('cid', 512062, 0, 0), 'receptor activator of nuclear factor-kappa b')"/>
+        <edge source="(('cid', 722986, 0, 0), 'poor eye contact')" target="(('cid', 512062, 0, 0), 'receptor activator of nuclear factor-kappa b')"/>
+        <edge source="(('cid', 2286, 0, 0), 'behavior therapy')" target="(('cid', 512062, 0, 0), 'receptor activator of nuclear factor-kappa b')"/>
+        <edge source="(('cid', 84573, 0, 0), 'covers (device)')" target="(('cid', 512062, 0, 0), 'receptor activator of nuclear factor-kappa b')"/>
+        <edge source="(('code', '299.00'), '&quot;Autistic disorder, current or active state&quot;')" target="(('cid', 512062, 0, 0), 'receptor activator of nuclear factor-kappa b')"/>
+        <edge source="(('code', 'V79.3'), 'Screening for developmental handicaps in early childhood')" target="(('cid', 512062, 0, 0), 'receptor activator of nuclear factor-kappa b')"/>
+        <edge source="(('cid', 11685, 0, 0), 'language disorders')" target="(('cid', 512062, 0, 0), 'receptor activator of nuclear factor-kappa b')"/>
+        <edge source="(('cid', 11687, 0, 0), 'language therapy')" target="(('cid', 512062, 0, 0), 'receptor activator of nuclear factor-kappa b')"/>
+        <edge source="(('code', '299.90'), '&quot;Unspecified pervasive developmental disorder, current or active state&quot;')" target="(('cid', 512062, 0, 0), 'receptor activator of nuclear factor-kappa b')"/>
+        <edge source="(('cid', 103680, 0, 0), 'ammonia measurement')" target="(('cid', 512062, 0, 0), 'receptor activator of nuclear factor-kappa b')"/>
+        <edge source="(('cid', 1176253, 0, 0), 'cells counted')" target="(('cid', 512062, 0, 0), 'receptor activator of nuclear factor-kappa b')"/>
+        <edge source="(('code', '314.01'), 'Attention deficit disorder with hyperactivity')" target="(('cid', 512062, 0, 0), 'receptor activator of nuclear factor-kappa b')"/>
+        <edge source="(('cid', 122071, 0, 0), 'temper tantrum')" target="(('cid', 512062, 0, 0), 'receptor activator of nuclear factor-kappa b')"/>
+        <edge source="(('cid', 19551, 0, 0), 'speech therapy')" target="(('cid', 512062, 0, 0), 'receptor activator of nuclear factor-kappa b')"/>
+        <edge source="(('cid', 207011, 0, 0), 'organic acid')" target="(('cid', 512062, 0, 0), 'receptor activator of nuclear factor-kappa b')"/>
+        <edge source="(('cid', 6347, 0, 0), 'dna')" target="(('cid', 512062, 0, 0), 'receptor activator of nuclear factor-kappa b')"/>
+        <edge source="(('cid', 10623, 0, 0), 'immunoelectrophoresis')" target="(('cid', 512062, 0, 0), 'receptor activator of nuclear factor-kappa b')"/>
+        <edge source="(('cid', 132973, 0, 0), 'problem behavior')" target="(('cid', 512062, 0, 0), 'receptor activator of nuclear factor-kappa b')"/>
+        <edge source="(('cid', 247696, 0, 0), 'developmental delay (disorder)')" target="(('cid', 19551, 0, 0), 'speech therapy')"/>
+        <edge source="(('code', '345.90'), '&quot;Epilepsy, unspecified, without mention of intractable epilepsy&quot;')" target="(('cid', 19551, 0, 0), 'speech therapy')"/>
+        <edge source="(('cid', 412641, 0, 0), 'depakote')" target="(('cid', 19551, 0, 0), 'speech therapy')"/>
+        <edge source="(('code', '299.00'), '&quot;Autistic disorder, current or active state&quot;')" target="(('cid', 19551, 0, 0), 'speech therapy')"/>
+        <edge source="(('cid', 738877, 0, 0), 'autism spectrum disorders')" target="(('cid', 19551, 0, 0), 'speech therapy')"/>
+        <edge source="(('code', '314.01'), 'Attention deficit disorder with hyperactivity')" target="(('cid', 19551, 0, 0), 'speech therapy')"/>
+        <edge source="(('cid', 722986, 0, 0), 'poor eye contact')" target="(('cid', 19551, 0, 0), 'speech therapy')"/>
+        <edge source="(('code', '299.90'), '&quot;Unspecified pervasive developmental disorder, current or active state&quot;')" target="(('cid', 19551, 0, 0), 'speech therapy')"/>
+        <edge source="(('cid', 207011, 0, 0), 'organic acid')" target="(('cid', 19551, 0, 0), 'speech therapy')"/>
+        <edge source="(('cid', 6347, 0, 0), 'dna')" target="(('cid', 19551, 0, 0), 'speech therapy')"/>
+        <edge source="(('cid', 872325, 0, 0), 'outbursts')" target="(('cid', 7730, 0, 0), 'facial expression')"/>
+        <edge source="(('cid', 313179, 0, 0), 'preoccupation finding')" target="(('cid', 7730, 0, 0), 'facial expression')"/>
+        <edge source="(('code', '345.90'), '&quot;Epilepsy, unspecified, without mention of intractable epilepsy&quot;')" target="(('cid', 7730, 0, 0), 'facial expression')"/>
+        <edge source="(('cid', 248187, 0, 0), 'engaged to be married')" target="(('cid', 7730, 0, 0), 'facial expression')"/>
+        <edge source="(('cid', 6665, 0, 0), 'echolalia')" target="(('cid', 7730, 0, 0), 'facial expression')"/>
+        <edge source="(('cid', 394013, 0, 0), 'genetic screening method')" target="(('cid', 7730, 0, 0), 'facial expression')"/>
+        <edge source="(('cid', 401984, 0, 0), 'toilet trained (finding)')" target="(('cid', 7730, 0, 0), 'facial expression')"/>
+        <edge source="(('cid', 6347, 0, 0), 'dna')" target="(('cid', 7730, 0, 0), 'facial expression')"/>
+        <edge source="(('code', 'V79.3'), 'Screening for developmental handicaps in early childhood')" target="(('cid', 7730, 0, 0), 'facial expression')"/>
+        <edge source="(('cid', 247768, 0, 0), 'head size')" target="(('cid', 7730, 0, 0), 'facial expression')"/>
+        <edge source="(('code', '319'), 'Unspecified intellectual disabilities')" target="(('cid', 7730, 0, 0), 'facial expression')"/>
+        <edge source="(('cid', 738877, 0, 0), 'autism spectrum disorders')" target="(('cid', 7730, 0, 0), 'facial expression')"/>
+        <edge source="(('code', '314.01'), 'Attention deficit disorder with hyperactivity')" target="(('cid', 7730, 0, 0), 'facial expression')"/>
+        <edge source="(('code', '315.32'), 'Mixed receptive-expressive language disorder')" target="(('cid', 7730, 0, 0), 'facial expression')"/>
+        <edge source="(('code', '299.90'), '&quot;Unspecified pervasive developmental disorder, current or active state&quot;')" target="(('cid', 7730, 0, 0), 'facial expression')"/>
+        <edge source="(('code', '315.39'), 'Other developmental speech or language disorder')" target="(('cid', 7730, 0, 0), 'facial expression')"/>
+        <edge source="(('cid', 11685, 0, 0), 'language disorders')" target="(('cid', 7730, 0, 0), 'facial expression')"/>
+        <edge source="(('cid', 19551, 0, 0), 'speech therapy')" target="(('cid', 7730, 0, 0), 'facial expression')"/>
+        <edge source="(('cid', 11687, 0, 0), 'language therapy')" target="(('cid', 12895, 0, 0), 'mental retardation')"/>
+        <edge source="(('cid', 738877, 0, 0), 'autism spectrum disorders')" target="(('cid', 12895, 0, 0), 'mental retardation')"/>
+        <edge source="(('cid', 84573, 0, 0), 'covers (device)')" target="(('cid', 12895, 0, 0), 'mental retardation')"/>
+        <edge source="(('cid', 872325, 0, 0), 'outbursts')" target="(('cid', 246326, 0, 0), 'staring')"/>
+        <edge source="(('code', '315.8'), 'Other specified delays in development')" target="(('cid', 246326, 0, 0), 'staring')"/>
+        <edge source="(('cid', 247417, 0, 0), 'hyperactive behavior')" target="(('cid', 246326, 0, 0), 'staring')"/>
+        <edge source="(('code', '345.90'), '&quot;Epilepsy, unspecified, without mention of intractable epilepsy&quot;')" target="(('cid', 246326, 0, 0), 'staring')"/>
+        <edge source="(('cid', 304376, 0, 0), 'pervasive development disorder')" target="(('cid', 246326, 0, 0), 'staring')"/>
+        <edge source="(('cid', 12895, 0, 0), 'mental retardation')" target="(('cid', 246326, 0, 0), 'staring')"/>
+        <edge source="(('cid', 247696, 0, 0), 'developmental delay (disorder)')" target="(('cid', 246326, 0, 0), 'staring')"/>
+        <edge source="(('cid', 3953, 0, 0), 'developmental disabilities')" target="(('cid', 246326, 0, 0), 'staring')"/>
+        <edge source="(('code', '299.80'), '&quot;Other specified pervasive developmental disorders, current or active state&quot;')" target="(('cid', 246326, 0, 0), 'staring')"/>
+        <edge source="(('code', '319'), 'Unspecified intellectual disabilities')" target="(('cid', 246326, 0, 0), 'staring')"/>
+        <edge source="(('cid', 1050, 0, 0), 'amino acids')" target="(('cid', 246326, 0, 0), 'staring')"/>
+        <edge source="(('code', '314.01'), 'Attention deficit disorder with hyperactivity')" target="(('cid', 246326, 0, 0), 'staring')"/>
+        <edge source="(('code', '299.90'), '&quot;Unspecified pervasive developmental disorder, current or active state&quot;')" target="(('cid', 246326, 0, 0), 'staring')"/>
+        <edge source="(('cid', 84573, 0, 0), 'covers (device)')" target="(('cid', 246326, 0, 0), 'staring')"/>
+        <edge source="(('cid', 10623, 0, 0), 'immunoelectrophoresis')" target="(('cid', 246326, 0, 0), 'staring')"/>
+        <edge source="(('cid', 132973, 0, 0), 'problem behavior')" target="(('cid', 246326, 0, 0), 'staring')"/>
+        <edge source="(('cid', 248187, 0, 0), 'engaged to be married')" target="(('code', '299.00'), '&quot;Autistic disorder, current or active state&quot;')"/>
+        <edge source="(('cid', 6347, 0, 0), 'dna')" target="(('code', '299.00'), '&quot;Autistic disorder, current or active state&quot;')"/>
+        <edge source="(('code', 'V79.3'), 'Screening for developmental handicaps in early childhood')" target="(('code', '299.00'), '&quot;Autistic disorder, current or active state&quot;')"/>
+        <edge source="(('cid', 11687, 0, 0), 'language therapy')" target="(('code', '299.00'), '&quot;Autistic disorder, current or active state&quot;')"/>
+        <edge source="(('cid', 738877, 0, 0), 'autism spectrum disorders')" target="(('code', '299.00'), '&quot;Autistic disorder, current or active state&quot;')"/>
+        <edge source="(('code', '314.01'), 'Attention deficit disorder with hyperactivity')" target="(('code', '299.00'), '&quot;Autistic disorder, current or active state&quot;')"/>
+        <edge source="(('cid', 722986, 0, 0), 'poor eye contact')" target="(('code', '299.00'), '&quot;Autistic disorder, current or active state&quot;')"/>
+        <edge source="(('cid', 11685, 0, 0), 'language disorders')" target="(('code', '299.00'), '&quot;Autistic disorder, current or active state&quot;')"/>
+        <edge source="(('cid', 248187, 0, 0), 'engaged to be married')" target="(('cid', 401984, 0, 0), 'toilet trained (finding)')"/>
+        <edge source="(('code', '299.00'), '&quot;Autistic disorder, current or active state&quot;')" target="(('cid', 401984, 0, 0), 'toilet trained (finding)')"/>
+        <edge source="(('code', 'V79.3'), 'Screening for developmental handicaps in early childhood')" target="(('cid', 401984, 0, 0), 'toilet trained (finding)')"/>
+        <edge source="(('cid', 738877, 0, 0), 'autism spectrum disorders')" target="(('cid', 401984, 0, 0), 'toilet trained (finding)')"/>
+        <edge source="(('cid', 12895, 0, 0), 'mental retardation')" target="(('cid', 401984, 0, 0), 'toilet trained (finding)')"/>
+        <edge source="(('code', '314.01'), 'Attention deficit disorder with hyperactivity')" target="(('cid', 401984, 0, 0), 'toilet trained (finding)')"/>
+        <edge source="(('cid', 207011, 0, 0), 'organic acid')" target="(('cid', 401984, 0, 0), 'toilet trained (finding)')"/>
+        <edge source="(('cid', 6347, 0, 0), 'dna')" target="(('cid', 401984, 0, 0), 'toilet trained (finding)')"/>
+        <edge source="(('cid', 394013, 0, 0), 'genetic screening method')" target="(('cid', 394084, 0, 0), 'preschool completion')"/>
+        <edge source="(('code', '345.90'), '&quot;Epilepsy, unspecified, without mention of intractable epilepsy&quot;')" target="(('cid', 394084, 0, 0), 'preschool completion')"/>
+        <edge source="(('cid', 248187, 0, 0), 'engaged to be married')" target="(('cid', 394084, 0, 0), 'preschool completion')"/>
+        <edge source="(('cid', 2286, 0, 0), 'behavior therapy')" target="(('cid', 394084, 0, 0), 'preschool completion')"/>
+        <edge source="(('cid', 320278, 0, 0), 'global developmental delay')" target="(('cid', 394084, 0, 0), 'preschool completion')"/>
+        <edge source="(('code', '299.00'), '&quot;Autistic disorder, current or active state&quot;')" target="(('cid', 394084, 0, 0), 'preschool completion')"/>
+        <edge source="(('cid', 247768, 0, 0), 'head size')" target="(('cid', 394084, 0, 0), 'preschool completion')"/>
+        <edge source="(('code', '299.80'), '&quot;Other specified pervasive developmental disorders, current or active state&quot;')" target="(('cid', 394084, 0, 0), 'preschool completion')"/>
+        <edge source="(('cid', 11687, 0, 0), 'language therapy')" target="(('cid', 394084, 0, 0), 'preschool completion')"/>
+        <edge source="(('cid', 11682, 0, 0), 'language delay')" target="(('cid', 394084, 0, 0), 'preschool completion')"/>
+        <edge source="(('cid', 722986, 0, 0), 'poor eye contact')" target="(('cid', 394084, 0, 0), 'preschool completion')"/>
+        <edge source="(('cid', 12895, 0, 0), 'mental retardation')" target="(('cid', 394084, 0, 0), 'preschool completion')"/>
+        <edge source="(('code', '299.90'), '&quot;Unspecified pervasive developmental disorder, current or active state&quot;')" target="(('cid', 394084, 0, 0), 'preschool completion')"/>
+        <edge source="(('code', '314.01'), 'Attention deficit disorder with hyperactivity')" target="(('cid', 394084, 0, 0), 'preschool completion')"/>
+        <edge source="(('code', '315.9'), 'Unspecified delay in development')" target="(('cid', 394084, 0, 0), 'preschool completion')"/>
+        <edge source="(('cid', 10623, 0, 0), 'immunoelectrophoresis')" target="(('cid', 394084, 0, 0), 'preschool completion')"/>
+        <edge source="(('cid', 132973, 0, 0), 'problem behavior')" target="(('cid', 394084, 0, 0), 'preschool completion')"/>
+        <edge source="(('cid', 412641, 0, 0), 'depakote')" target="(('cid', 247696, 0, 0), 'developmental delay (disorder)')"/>
+        <edge source="(('cid', 248187, 0, 0), 'engaged to be married')" target="(('cid', 247696, 0, 0), 'developmental delay (disorder)')"/>
+        <edge source="(('cid', 6347, 0, 0), 'dna')" target="(('cid', 247696, 0, 0), 'developmental delay (disorder)')"/>
+        <edge source="(('cid', 401984, 0, 0), 'toilet trained (finding)')" target="(('cid', 247696, 0, 0), 'developmental delay (disorder)')"/>
+        <edge source="(('cid', 738877, 0, 0), 'autism spectrum disorders')" target="(('cid', 247696, 0, 0), 'developmental delay (disorder)')"/>
+        <edge source="(('cid', 12895, 0, 0), 'mental retardation')" target="(('cid', 247696, 0, 0), 'developmental delay (disorder)')"/>
+        <edge source="(('cid', 722986, 0, 0), 'poor eye contact')" target="(('cid', 247696, 0, 0), 'developmental delay (disorder)')"/>
+        <edge source="(('cid', 207011, 0, 0), 'organic acid')" target="(('cid', 247696, 0, 0), 'developmental delay (disorder)')"/>
+        <edge source="(('cid', 11687, 0, 0), 'language therapy')" target="(('code', '314.01'), 'Attention deficit disorder with hyperactivity')"/>
+        <edge source="(('cid', 247696, 0, 0), 'developmental delay (disorder)')" target="(('cid', 122071, 0, 0), 'temper tantrum')"/>
+        <edge source="(('code', '345.90'), '&quot;Epilepsy, unspecified, without mention of intractable epilepsy&quot;')" target="(('cid', 122071, 0, 0), 'temper tantrum')"/>
+        <edge source="(('cid', 412641, 0, 0), 'depakote')" target="(('cid', 122071, 0, 0), 'temper tantrum')"/>
+        <edge source="(('cid', 207011, 0, 0), 'organic acid')" target="(('cid', 122071, 0, 0), 'temper tantrum')"/>
+        <edge source="(('cid', 6347, 0, 0), 'dna')" target="(('cid', 122071, 0, 0), 'temper tantrum')"/>
+        <edge source="(('code', '319'), 'Unspecified intellectual disabilities')" target="(('cid', 122071, 0, 0), 'temper tantrum')"/>
+        <edge source="(('cid', 11687, 0, 0), 'language therapy')" target="(('cid', 122071, 0, 0), 'temper tantrum')"/>
+        <edge source="(('cid', 738877, 0, 0), 'autism spectrum disorders')" target="(('cid', 122071, 0, 0), 'temper tantrum')"/>
+        <edge source="(('code', '299.90'), '&quot;Unspecified pervasive developmental disorder, current or active state&quot;')" target="(('cid', 122071, 0, 0), 'temper tantrum')"/>
+        <edge source="(('code', '314.01'), 'Attention deficit disorder with hyperactivity')" target="(('cid', 122071, 0, 0), 'temper tantrum')"/>
+        <edge source="(('cid', 84573, 0, 0), 'covers (device)')" target="(('cid', 122071, 0, 0), 'temper tantrum')"/>
+        <edge source="(('cid', 11685, 0, 0), 'language disorders')" target="(('cid', 122071, 0, 0), 'temper tantrum')"/>
+        <edge source="(('cid', 19551, 0, 0), 'speech therapy')" target="(('cid', 122071, 0, 0), 'temper tantrum')"/>
+        <edge source="(('code', 'V79.3'), 'Screening for developmental handicaps in early childhood')" target="(('code', '315.9'), 'Unspecified delay in development')"/>
+        <edge source="(('cid', 304376, 0, 0), 'pervasive development disorder')" target="(('code', '315.9'), 'Unspecified delay in development')"/>
+        <edge source="(('cid', 2286, 0, 0), 'behavior therapy')" target="(('code', '315.9'), 'Unspecified delay in development')"/>
+        <edge source="(('cid', 6347, 0, 0), 'dna')" target="(('code', '315.9'), 'Unspecified delay in development')"/>
+        <edge source="(('cid', 401984, 0, 0), 'toilet trained (finding)')" target="(('code', '315.9'), 'Unspecified delay in development')"/>
+        <edge source="(('cid', 2001, 0, 0), 'autistic disorder')" target="(('code', '315.9'), 'Unspecified delay in development')"/>
+        <edge source="(('cid', 1050, 0, 0), 'amino acids')" target="(('code', '315.9'), 'Unspecified delay in development')"/>
+        <edge source="(('cid', 10623, 0, 0), 'immunoelectrophoresis')" target="(('code', '315.9'), 'Unspecified delay in development')"/>
+        <edge source="(('cid', 11687, 0, 0), 'language therapy')" target="(('code', '315.9'), 'Unspecified delay in development')"/>
+        <edge source="(('cid', 738877, 0, 0), 'autism spectrum disorders')" target="(('code', '315.9'), 'Unspecified delay in development')"/>
+        <edge source="(('cid', 1176253, 0, 0), 'cells counted')" target="(('code', '315.9'), 'Unspecified delay in development')"/>
+        <edge source="(('code', '299.90'), '&quot;Unspecified pervasive developmental disorder, current or active state&quot;')" target="(('code', '315.9'), 'Unspecified delay in development')"/>
+        <edge source="(('cid', 103680, 0, 0), 'ammonia measurement')" target="(('code', '315.9'), 'Unspecified delay in development')"/>
+        <edge source="(('cid', 21797, 0, 0), 'valproic acid')" target="(('code', '315.9'), 'Unspecified delay in development')"/>
+        <edge source="(('cid', 12895, 0, 0), 'mental retardation')" target="(('code', '315.9'), 'Unspecified delay in development')"/>
+        <edge source="(('cid', 132973, 0, 0), 'problem behavior')" target="(('code', '315.9'), 'Unspecified delay in development')"/>
+        <edge source="(('cid', 207011, 0, 0), 'organic acid')" target="(('code', '315.9'), 'Unspecified delay in development')"/>
+        <edge source="(('cid', 11685, 0, 0), 'language disorders')" target="(('code', '315.9'), 'Unspecified delay in development')"/>
+        <edge source="(('cid', 512062, 0, 0), 'receptor activator of nuclear factor-kappa b')" target="(('code', '315.9'), 'Unspecified delay in development')"/>
+        <edge source="(('cid', 19551, 0, 0), 'speech therapy')" target="(('code', '315.9'), 'Unspecified delay in development')"/>
+        <edge source="(('cid', 722986, 0, 0), 'poor eye contact')" target="(('cid', 84573, 0, 0), 'covers (device)')"/>
+        <edge source="(('code', '299.00'), '&quot;Autistic disorder, current or active state&quot;')" target="(('cid', 412641, 0, 0), 'depakote')"/>
+        <edge source="(('cid', 12895, 0, 0), 'mental retardation')" target="(('cid', 412641, 0, 0), 'depakote')"/>
+        <edge source="(('cid', 313179, 0, 0), 'preoccupation finding')" target="(('cid', 394013, 0, 0), 'genetic screening method')"/>
+        <edge source="(('cid', 248187, 0, 0), 'engaged to be married')" target="(('cid', 394013, 0, 0), 'genetic screening method')"/>
+        <edge source="(('code', 'V79.3'), 'Screening for developmental handicaps in early childhood')" target="(('cid', 394013, 0, 0), 'genetic screening method')"/>
+        <edge source="(('cid', 12895, 0, 0), 'mental retardation')" target="(('cid', 394013, 0, 0), 'genetic screening method')"/>
+        <edge source="(('cid', 103680, 0, 0), 'ammonia measurement')" target="(('cid', 394013, 0, 0), 'genetic screening method')"/>
+        <edge source="(('code', '315.39'), 'Other developmental speech or language disorder')" target="(('cid', 394013, 0, 0), 'genetic screening method')"/>
+        <edge source="(('code', '319'), 'Unspecified intellectual disabilities')" target="(('cid', 394013, 0, 0), 'genetic screening method')"/>
+        <edge source="(('code', '345.90'), '&quot;Epilepsy, unspecified, without mention of intractable epilepsy&quot;')" target="(('cid', 394013, 0, 0), 'genetic screening method')"/>
+        <edge source="(('code', '299.00'), '&quot;Autistic disorder, current or active state&quot;')" target="(('cid', 394013, 0, 0), 'genetic screening method')"/>
+        <edge source="(('cid', 1176253, 0, 0), 'cells counted')" target="(('cid', 394013, 0, 0), 'genetic screening method')"/>
+        <edge source="(('cid', 207011, 0, 0), 'organic acid')" target="(('cid', 394013, 0, 0), 'genetic screening method')"/>
+        <edge source="(('cid', 247696, 0, 0), 'developmental delay (disorder)')" target="(('cid', 394013, 0, 0), 'genetic screening method')"/>
+        <edge source="(('code', '299.90'), '&quot;Unspecified pervasive developmental disorder, current or active state&quot;')" target="(('cid', 394013, 0, 0), 'genetic screening method')"/>
+        <edge source="(('cid', 122071, 0, 0), 'temper tantrum')" target="(('cid', 394013, 0, 0), 'genetic screening method')"/>
+        <edge source="(('cid', 10623, 0, 0), 'immunoelectrophoresis')" target="(('cid', 394013, 0, 0), 'genetic screening method')"/>
+        <edge source="(('cid', 132973, 0, 0), 'problem behavior')" target="(('cid', 394013, 0, 0), 'genetic screening method')"/>
+        <edge source="(('cid', 304376, 0, 0), 'pervasive development disorder')" target="(('cid', 394013, 0, 0), 'genetic screening method')"/>
+        <edge source="(('code', '315.9'), 'Unspecified delay in development')" target="(('cid', 394013, 0, 0), 'genetic screening method')"/>
+        <edge source="(('cid', 2001, 0, 0), 'autistic disorder')" target="(('cid', 394013, 0, 0), 'genetic screening method')"/>
+        <edge source="(('cid', 11687, 0, 0), 'language therapy')" target="(('cid', 394013, 0, 0), 'genetic screening method')"/>
+        <edge source="(('cid', 1050, 0, 0), 'amino acids')" target="(('cid', 394013, 0, 0), 'genetic screening method')"/>
+        <edge source="(('cid', 84573, 0, 0), 'covers (device)')" target="(('cid', 394013, 0, 0), 'genetic screening method')"/>
+        <edge source="(('cid', 11685, 0, 0), 'language disorders')" target="(('cid', 394013, 0, 0), 'genetic screening method')"/>
+        <edge source="(('cid', 512062, 0, 0), 'receptor activator of nuclear factor-kappa b')" target="(('cid', 394013, 0, 0), 'genetic screening method')"/>
+        <edge source="(('cid', 19551, 0, 0), 'speech therapy')" target="(('cid', 394013, 0, 0), 'genetic screening method')"/>
+        <edge source="(('cid', 313179, 0, 0), 'preoccupation finding')" target="(('code', '299.80'), '&quot;Other specified pervasive developmental disorders, current or active state&quot;')"/>
+        <edge source="(('cid', 248187, 0, 0), 'engaged to be married')" target="(('code', '299.80'), '&quot;Other specified pervasive developmental disorders, current or active state&quot;')"/>
+        <edge source="(('cid', 394013, 0, 0), 'genetic screening method')" target="(('code', '299.80'), '&quot;Other specified pervasive developmental disorders, current or active state&quot;')"/>
+        <edge source="(('code', 'V79.3'), 'Screening for developmental handicaps in early childhood')" target="(('code', '299.80'), '&quot;Other specified pervasive developmental disorders, current or active state&quot;')"/>
+        <edge source="(('cid', 103680, 0, 0), 'ammonia measurement')" target="(('code', '299.80'), '&quot;Other specified pervasive developmental disorders, current or active state&quot;')"/>
+        <edge source="(('code', '315.39'), 'Other developmental speech or language disorder')" target="(('code', '299.80'), '&quot;Other specified pervasive developmental disorders, current or active state&quot;')"/>
+        <edge source="(('code', '319'), 'Unspecified intellectual disabilities')" target="(('code', '299.80'), '&quot;Other specified pervasive developmental disorders, current or active state&quot;')"/>
+        <edge source="(('code', '345.90'), '&quot;Epilepsy, unspecified, without mention of intractable epilepsy&quot;')" target="(('code', '299.80'), '&quot;Other specified pervasive developmental disorders, current or active state&quot;')"/>
+        <edge source="(('cid', 6347, 0, 0), 'dna')" target="(('code', '299.80'), '&quot;Other specified pervasive developmental disorders, current or active state&quot;')"/>
+        <edge source="(('cid', 401984, 0, 0), 'toilet trained (finding)')" target="(('code', '299.80'), '&quot;Other specified pervasive developmental disorders, current or active state&quot;')"/>
+        <edge source="(('cid', 1050, 0, 0), 'amino acids')" target="(('code', '299.80'), '&quot;Other specified pervasive developmental disorders, current or active state&quot;')"/>
+        <edge source="(('cid', 722986, 0, 0), 'poor eye contact')" target="(('code', '299.80'), '&quot;Other specified pervasive developmental disorders, current or active state&quot;')"/>
+        <edge source="(('code', '315.9'), 'Unspecified delay in development')" target="(('code', '299.80'), '&quot;Other specified pervasive developmental disorders, current or active state&quot;')"/>
+        <edge source="(('cid', 247768, 0, 0), 'head size')" target="(('code', '299.80'), '&quot;Other specified pervasive developmental disorders, current or active state&quot;')"/>
+        <edge source="(('code', '299.90'), '&quot;Unspecified pervasive developmental disorder, current or active state&quot;')" target="(('code', '299.80'), '&quot;Other specified pervasive developmental disorders, current or active state&quot;')"/>
+        <edge source="(('cid', 10623, 0, 0), 'immunoelectrophoresis')" target="(('code', '299.80'), '&quot;Other specified pervasive developmental disorders, current or active state&quot;')"/>
+        <edge source="(('cid', 132973, 0, 0), 'problem behavior')" target="(('code', '299.80'), '&quot;Other specified pervasive developmental disorders, current or active state&quot;')"/>
+        <edge source="(('cid', 872325, 0, 0), 'outbursts')" target="(('code', '299.80'), '&quot;Other specified pervasive developmental disorders, current or active state&quot;')"/>
+        <edge source="(('cid', 207011, 0, 0), 'organic acid')" target="(('code', '299.80'), '&quot;Other specified pervasive developmental disorders, current or active state&quot;')"/>
+        <edge source="(('cid', 11687, 0, 0), 'language therapy')" target="(('code', '299.80'), '&quot;Other specified pervasive developmental disorders, current or active state&quot;')"/>
+        <edge source="(('cid', 738877, 0, 0), 'autism spectrum disorders')" target="(('code', '299.80'), '&quot;Other specified pervasive developmental disorders, current or active state&quot;')"/>
+        <edge source="(('code', '315.32'), 'Mixed receptive-expressive language disorder')" target="(('code', '299.80'), '&quot;Other specified pervasive developmental disorders, current or active state&quot;')"/>
+        <edge source="(('code', '314.01'), 'Attention deficit disorder with hyperactivity')" target="(('code', '299.80'), '&quot;Other specified pervasive developmental disorders, current or active state&quot;')"/>
+        <edge source="(('code', '299.00'), '&quot;Autistic disorder, current or active state&quot;')" target="(('code', '299.80'), '&quot;Other specified pervasive developmental disorders, current or active state&quot;')"/>
+        <edge source="(('cid', 19551, 0, 0), 'speech therapy')" target="(('code', '299.80'), '&quot;Other specified pervasive developmental disorders, current or active state&quot;')"/>
+        <edge source="(('cid', 247696, 0, 0), 'developmental delay (disorder)')" target="(('code', '345.90'), '&quot;Epilepsy, unspecified, without mention of intractable epilepsy&quot;')"/>
+        <edge source="(('code', 'V79.3'), 'Screening for developmental handicaps in early childhood')" target="(('code', '345.90'), '&quot;Epilepsy, unspecified, without mention of intractable epilepsy&quot;')"/>
+        <edge source="(('cid', 412641, 0, 0), 'depakote')" target="(('code', '345.90'), '&quot;Epilepsy, unspecified, without mention of intractable epilepsy&quot;')"/>
+        <edge source="(('code', '314.01'), 'Attention deficit disorder with hyperactivity')" target="(('code', '345.90'), '&quot;Epilepsy, unspecified, without mention of intractable epilepsy&quot;')"/>
+        <edge source="(('cid', 84573, 0, 0), 'covers (device)')" target="(('code', '345.90'), '&quot;Epilepsy, unspecified, without mention of intractable epilepsy&quot;')"/>
+        <edge source="(('cid', 6347, 0, 0), 'dna')" target="(('code', '345.90'), '&quot;Epilepsy, unspecified, without mention of intractable epilepsy&quot;')"/>
+        <edge source="(('cid', 401984, 0, 0), 'toilet trained (finding)')" target="(('code', '345.90'), '&quot;Epilepsy, unspecified, without mention of intractable epilepsy&quot;')"/>
+        <edge source="(('cid', 738877, 0, 0), 'autism spectrum disorders')" target="(('code', '345.90'), '&quot;Epilepsy, unspecified, without mention of intractable epilepsy&quot;')"/>
+        <edge source="(('code', '299.90'), '&quot;Unspecified pervasive developmental disorder, current or active state&quot;')" target="(('code', '345.90'), '&quot;Epilepsy, unspecified, without mention of intractable epilepsy&quot;')"/>
+        <edge source="(('cid', 722986, 0, 0), 'poor eye contact')" target="(('code', '345.90'), '&quot;Epilepsy, unspecified, without mention of intractable epilepsy&quot;')"/>
+        <edge source="(('cid', 12895, 0, 0), 'mental retardation')" target="(('code', '345.90'), '&quot;Epilepsy, unspecified, without mention of intractable epilepsy&quot;')"/>
+        <edge source="(('cid', 207011, 0, 0), 'organic acid')" target="(('code', '345.90'), '&quot;Epilepsy, unspecified, without mention of intractable epilepsy&quot;')"/>
+        <edge source="(('code', '299.00'), '&quot;Autistic disorder, current or active state&quot;')" target="(('code', '345.90'), '&quot;Epilepsy, unspecified, without mention of intractable epilepsy&quot;')"/>
+        <edge source="(('code', '345.90'), '&quot;Epilepsy, unspecified, without mention of intractable epilepsy&quot;')" target="(('cid', 2286, 0, 0), 'behavior therapy')"/>
+        <edge source="(('code', '299.00'), '&quot;Autistic disorder, current or active state&quot;')" target="(('cid', 2286, 0, 0), 'behavior therapy')"/>
+        <edge source="(('code', 'V79.3'), 'Screening for developmental handicaps in early childhood')" target="(('cid', 2286, 0, 0), 'behavior therapy')"/>
+        <edge source="(('code', '319'), 'Unspecified intellectual disabilities')" target="(('cid', 2286, 0, 0), 'behavior therapy')"/>
+        <edge source="(('cid', 738877, 0, 0), 'autism spectrum disorders')" target="(('cid', 2286, 0, 0), 'behavior therapy')"/>
+        <edge source="(('code', '299.90'), '&quot;Unspecified pervasive developmental disorder, current or active state&quot;')" target="(('cid', 2286, 0, 0), 'behavior therapy')"/>
+        <edge source="(('cid', 722986, 0, 0), 'poor eye contact')" target="(('cid', 2286, 0, 0), 'behavior therapy')"/>
+        <edge source="(('code', '314.01'), 'Attention deficit disorder with hyperactivity')" target="(('cid', 2286, 0, 0), 'behavior therapy')"/>
+        <edge source="(('cid', 84573, 0, 0), 'covers (device)')" target="(('cid', 2286, 0, 0), 'behavior therapy')"/>
+        <edge source="(('cid', 10623, 0, 0), 'immunoelectrophoresis')" target="(('cid', 2286, 0, 0), 'behavior therapy')"/>
+        <edge source="(('cid', 132973, 0, 0), 'problem behavior')" target="(('cid', 2286, 0, 0), 'behavior therapy')"/>
+        <edge source="(('cid', 11687, 0, 0), 'language therapy')" target="(('cid', 6347, 0, 0), 'dna')"/>
+        <edge source="(('cid', 738877, 0, 0), 'autism spectrum disorders')" target="(('cid', 6347, 0, 0), 'dna')"/>
+        <edge source="(('code', 'V79.3'), 'Screening for developmental handicaps in early childhood')" target="(('cid', 6347, 0, 0), 'dna')"/>
+        <edge source="(('cid', 248187, 0, 0), 'engaged to be married')" target="(('cid', 6347, 0, 0), 'dna')"/>
+        <edge source="(('cid', 247696, 0, 0), 'developmental delay (disorder)')" target="(('cid', 1176253, 0, 0), 'cells counted')"/>
+        <edge source="(('code', '783.42'), 'Delayed milestones')" target="(('cid', 1176253, 0, 0), 'cells counted')"/>
+        <edge source="(('cid', 412641, 0, 0), 'depakote')" target="(('cid', 1176253, 0, 0), 'cells counted')"/>
+        <edge source="(('cid', 248187, 0, 0), 'engaged to be married')" target="(('cid', 1176253, 0, 0), 'cells counted')"/>
+        <edge source="(('code', '299.00'), '&quot;Autistic disorder, current or active state&quot;')" target="(('cid', 1176253, 0, 0), 'cells counted')"/>
+        <edge source="(('cid', 11687, 0, 0), 'language therapy')" target="(('cid', 1176253, 0, 0), 'cells counted')"/>
+        <edge source="(('cid', 738877, 0, 0), 'autism spectrum disorders')" target="(('cid', 1176253, 0, 0), 'cells counted')"/>
+        <edge source="(('code', '299.90'), '&quot;Unspecified pervasive developmental disorder, current or active state&quot;')" target="(('cid', 1176253, 0, 0), 'cells counted')"/>
+        <edge source="(('cid', 122071, 0, 0), 'temper tantrum')" target="(('cid', 1176253, 0, 0), 'cells counted')"/>
+        <edge source="(('cid', 11685, 0, 0), 'language disorders')" target="(('cid', 1176253, 0, 0), 'cells counted')"/>
+        <edge source="(('cid', 132973, 0, 0), 'problem behavior')" target="(('cid', 1176253, 0, 0), 'cells counted')"/>
+        <edge source="(('cid', 313179, 0, 0), 'preoccupation finding')" target="(('cid', 247417, 0, 0), 'hyperactive behavior')"/>
+        <edge source="(('cid', 412641, 0, 0), 'depakote')" target="(('cid', 247417, 0, 0), 'hyperactive behavior')"/>
+        <edge source="(('cid', 248187, 0, 0), 'engaged to be married')" target="(('cid', 247417, 0, 0), 'hyperactive behavior')"/>
+        <edge source="(('code', '783.40'), '&quot;Lack of normal physiological development, unspecified&quot;')" target="(('cid', 247417, 0, 0), 'hyperactive behavior')"/>
+        <edge source="(('cid', 102764, 0, 0), 'chromosome analysis')" target="(('cid', 247417, 0, 0), 'hyperactive behavior')"/>
+        <edge source="(('code', 'V79.3'), 'Screening for developmental handicaps in early childhood')" target="(('cid', 247417, 0, 0), 'hyperactive behavior')"/>
+        <edge source="(('code', '299.80'), '&quot;Other specified pervasive developmental disorders, current or active state&quot;')" target="(('cid', 247417, 0, 0), 'hyperactive behavior')"/>
+        <edge source="(('cid', 12895, 0, 0), 'mental retardation')" target="(('cid', 247417, 0, 0), 'hyperactive behavior')"/>
+        <edge source="(('cid', 103680, 0, 0), 'ammonia measurement')" target="(('cid', 247417, 0, 0), 'hyperactive behavior')"/>
+        <edge source="(('code', '315.39'), 'Other developmental speech or language disorder')" target="(('cid', 247417, 0, 0), 'hyperactive behavior')"/>
+        <edge source="(('code', '319'), 'Unspecified intellectual disabilities')" target="(('cid', 247417, 0, 0), 'hyperactive behavior')"/>
+        <edge source="(('code', '783.42'), 'Delayed milestones')" target="(('cid', 247417, 0, 0), 'hyperactive behavior')"/>
+        <edge source="(('code', '345.90'), '&quot;Epilepsy, unspecified, without mention of intractable epilepsy&quot;')" target="(('cid', 247417, 0, 0), 'hyperactive behavior')"/>
+        <edge source="(('cid', 247972, 0, 0), 'language spoken')" target="(('cid', 247417, 0, 0), 'hyperactive behavior')"/>
+        <edge source="(('cid', 6665, 0, 0), 'echolalia')" target="(('cid', 247417, 0, 0), 'hyperactive behavior')"/>
+        <edge source="(('cid', 2286, 0, 0), 'behavior therapy')" target="(('cid', 247417, 0, 0), 'hyperactive behavior')"/>
+        <edge source="(('code', '299.00'), '&quot;Autistic disorder, current or active state&quot;')" target="(('cid', 247417, 0, 0), 'hyperactive behavior')"/>
+        <edge source="(('cid', 401984, 0, 0), 'toilet trained (finding)')" target="(('cid', 247417, 0, 0), 'hyperactive behavior')"/>
+        <edge source="(('cid', 394084, 0, 0), 'preschool completion')" target="(('cid', 247417, 0, 0), 'hyperactive behavior')"/>
+        <edge source="(('cid', 1176253, 0, 0), 'cells counted')" target="(('cid', 247417, 0, 0), 'hyperactive behavior')"/>
+        <edge source="(('code', '315.9'), 'Unspecified delay in development')" target="(('cid', 247417, 0, 0), 'hyperactive behavior')"/>
+        <edge source="(('cid', 247696, 0, 0), 'developmental delay (disorder)')" target="(('cid', 247417, 0, 0), 'hyperactive behavior')"/>
+        <edge source="(('cid', 207011, 0, 0), 'organic acid')" target="(('cid', 247417, 0, 0), 'hyperactive behavior')"/>
+        <edge source="(('cid', 3953, 0, 0), 'developmental disabilities')" target="(('cid', 247417, 0, 0), 'hyperactive behavior')"/>
+        <edge source="(('cid', 247768, 0, 0), 'head size')" target="(('cid', 247417, 0, 0), 'hyperactive behavior')"/>
+        <edge source="(('code', '299.90'), '&quot;Unspecified pervasive developmental disorder, current or active state&quot;')" target="(('cid', 247417, 0, 0), 'hyperactive behavior')"/>
+        <edge source="(('cid', 122071, 0, 0), 'temper tantrum')" target="(('cid', 247417, 0, 0), 'hyperactive behavior')"/>
+        <edge source="(('cid', 10623, 0, 0), 'immunoelectrophoresis')" target="(('cid', 247417, 0, 0), 'hyperactive behavior')"/>
+        <edge source="(('cid', 132973, 0, 0), 'problem behavior')" target="(('cid', 247417, 0, 0), 'hyperactive behavior')"/>
+        <edge source="(('cid', 304376, 0, 0), 'pervasive development disorder')" target="(('cid', 247417, 0, 0), 'hyperactive behavior')"/>
+        <edge source="(('cid', 320278, 0, 0), 'global developmental delay')" target="(('cid', 247417, 0, 0), 'hyperactive behavior')"/>
+        <edge source="(('cid', 2001, 0, 0), 'autistic disorder')" target="(('cid', 247417, 0, 0), 'hyperactive behavior')"/>
+        <edge source="(('cid', 11687, 0, 0), 'language therapy')" target="(('cid', 247417, 0, 0), 'hyperactive behavior')"/>
+        <edge source="(('cid', 1050, 0, 0), 'amino acids')" target="(('cid', 247417, 0, 0), 'hyperactive behavior')"/>
+        <edge source="(('cid', 11682, 0, 0), 'language delay')" target="(('cid', 247417, 0, 0), 'hyperactive behavior')"/>
+        <edge source="(('code', '315.32'), 'Mixed receptive-expressive language disorder')" target="(('cid', 247417, 0, 0), 'hyperactive behavior')"/>
+        <edge source="(('cid', 21797, 0, 0), 'valproic acid')" target="(('cid', 247417, 0, 0), 'hyperactive behavior')"/>
+        <edge source="(('cid', 84573, 0, 0), 'covers (device)')" target="(('cid', 247417, 0, 0), 'hyperactive behavior')"/>
+        <edge source="(('cid', 11685, 0, 0), 'language disorders')" target="(('cid', 247417, 0, 0), 'hyperactive behavior')"/>
+        <edge source="(('cid', 512062, 0, 0), 'receptor activator of nuclear factor-kappa b')" target="(('cid', 247417, 0, 0), 'hyperactive behavior')"/>
+        <edge source="(('cid', 19551, 0, 0), 'speech therapy')" target="(('cid', 247417, 0, 0), 'hyperactive behavior')"/>
+        <edge source="(('cid', 313179, 0, 0), 'preoccupation finding')" target="(('cid', 247768, 0, 0), 'head size')"/>
+        <edge source="(('cid', 394013, 0, 0), 'genetic screening method')" target="(('cid', 247768, 0, 0), 'head size')"/>
+        <edge source="(('code', 'V79.3'), 'Screening for developmental handicaps in early childhood')" target="(('cid', 247768, 0, 0), 'head size')"/>
+        <edge source="(('cid', 103680, 0, 0), 'ammonia measurement')" target="(('cid', 247768, 0, 0), 'head size')"/>
+        <edge source="(('code', '783.42'), 'Delayed milestones')" target="(('cid', 247768, 0, 0), 'head size')"/>
+        <edge source="(('cid', 2286, 0, 0), 'behavior therapy')" target="(('cid', 247768, 0, 0), 'head size')"/>
+        <edge source="(('cid', 6347, 0, 0), 'dna')" target="(('cid', 247768, 0, 0), 'head size')"/>
+        <edge source="(('cid', 1050, 0, 0), 'amino acids')" target="(('cid', 247768, 0, 0), 'head size')"/>
+        <edge source="(('cid', 722986, 0, 0), 'poor eye contact')" target="(('cid', 247768, 0, 0), 'head size')"/>
+        <edge source="(('code', '315.9'), 'Unspecified delay in development')" target="(('cid', 247768, 0, 0), 'head size')"/>
+        <edge source="(('cid', 247696, 0, 0), 'developmental delay (disorder)')" target="(('cid', 247768, 0, 0), 'head size')"/>
+        <edge source="(('code', '299.90'), '&quot;Unspecified pervasive developmental disorder, current or active state&quot;')" target="(('cid', 247768, 0, 0), 'head size')"/>
+        <edge source="(('cid', 122071, 0, 0), 'temper tantrum')" target="(('cid', 247768, 0, 0), 'head size')"/>
+        <edge source="(('cid', 10623, 0, 0), 'immunoelectrophoresis')" target="(('cid', 247768, 0, 0), 'head size')"/>
+        <edge source="(('cid', 132973, 0, 0), 'problem behavior')" target="(('cid', 247768, 0, 0), 'head size')"/>
+        <edge source="(('cid', 872325, 0, 0), 'outbursts')" target="(('cid', 247768, 0, 0), 'head size')"/>
+        <edge source="(('cid', 207011, 0, 0), 'organic acid')" target="(('cid', 247768, 0, 0), 'head size')"/>
+        <edge source="(('cid', 11687, 0, 0), 'language therapy')" target="(('cid', 247768, 0, 0), 'head size')"/>
+        <edge source="(('cid', 738877, 0, 0), 'autism spectrum disorders')" target="(('cid', 247768, 0, 0), 'head size')"/>
+        <edge source="(('code', '314.01'), 'Attention deficit disorder with hyperactivity')" target="(('cid', 247768, 0, 0), 'head size')"/>
+        <edge source="(('cid', 84573, 0, 0), 'covers (device)')" target="(('cid', 247768, 0, 0), 'head size')"/>
+        <edge source="(('cid', 11685, 0, 0), 'language disorders')" target="(('cid', 247768, 0, 0), 'head size')"/>
+        <edge source="(('code', '783.42'), 'Delayed milestones')" target="(('cid', 132973, 0, 0), 'problem behavior')"/>
+        <edge source="(('code', '345.90'), '&quot;Epilepsy, unspecified, without mention of intractable epilepsy&quot;')" target="(('cid', 132973, 0, 0), 'problem behavior')"/>
+        <edge source="(('cid', 248187, 0, 0), 'engaged to be married')" target="(('cid', 132973, 0, 0), 'problem behavior')"/>
+        <edge source="(('cid', 6347, 0, 0), 'dna')" target="(('cid', 132973, 0, 0), 'problem behavior')"/>
+        <edge source="(('cid', 401984, 0, 0), 'toilet trained (finding)')" target="(('cid', 132973, 0, 0), 'problem behavior')"/>
+        <edge source="(('code', '319'), 'Unspecified intellectual disabilities')" target="(('cid', 132973, 0, 0), 'problem behavior')"/>
+        <edge source="(('cid', 11687, 0, 0), 'language therapy')" target="(('cid', 132973, 0, 0), 'problem behavior')"/>
+        <edge source="(('cid', 738877, 0, 0), 'autism spectrum disorders')" target="(('cid', 132973, 0, 0), 'problem behavior')"/>
+        <edge source="(('code', '299.90'), '&quot;Unspecified pervasive developmental disorder, current or active state&quot;')" target="(('cid', 132973, 0, 0), 'problem behavior')"/>
+        <edge source="(('cid', 103680, 0, 0), 'ammonia measurement')" target="(('cid', 132973, 0, 0), 'problem behavior')"/>
+        <edge source="(('code', '314.01'), 'Attention deficit disorder with hyperactivity')" target="(('cid', 132973, 0, 0), 'problem behavior')"/>
+        <edge source="(('cid', 122071, 0, 0), 'temper tantrum')" target="(('cid', 132973, 0, 0), 'problem behavior')"/>
+        <edge source="(('cid', 19551, 0, 0), 'speech therapy')" target="(('cid', 132973, 0, 0), 'problem behavior')"/>
+        <edge source="(('cid', 207011, 0, 0), 'organic acid')" target="(('cid', 132973, 0, 0), 'problem behavior')"/>
+        <edge source="(('cid', 11685, 0, 0), 'language disorders')" target="(('cid', 132973, 0, 0), 'problem behavior')"/>
+        <edge source="(('cid', 12895, 0, 0), 'mental retardation')" target="(('cid', 132973, 0, 0), 'problem behavior')"/>
+        <edge source="(('cid', 313179, 0, 0), 'preoccupation finding')" target="(('cid', 872325, 0, 0), 'outbursts')"/>
+        <edge source="(('code', '345.90'), '&quot;Epilepsy, unspecified, without mention of intractable epilepsy&quot;')" target="(('cid', 872325, 0, 0), 'outbursts')"/>
+        <edge source="(('cid', 304376, 0, 0), 'pervasive development disorder')" target="(('cid', 872325, 0, 0), 'outbursts')"/>
+        <edge source="(('cid', 248187, 0, 0), 'engaged to be married')" target="(('cid', 872325, 0, 0), 'outbursts')"/>
+        <edge source="(('cid', 2286, 0, 0), 'behavior therapy')" target="(('cid', 872325, 0, 0), 'outbursts')"/>
+        <edge source="(('code', '315.9'), 'Unspecified delay in development')" target="(('cid', 872325, 0, 0), 'outbursts')"/>
+        <edge source="(('code', '299.00'), '&quot;Autistic disorder, current or active state&quot;')" target="(('cid', 872325, 0, 0), 'outbursts')"/>
+        <edge source="(('code', 'V79.3'), 'Screening for developmental handicaps in early childhood')" target="(('cid', 872325, 0, 0), 'outbursts')"/>
+        <edge source="(('cid', 2001, 0, 0), 'autistic disorder')" target="(('cid', 872325, 0, 0), 'outbursts')"/>
+        <edge source="(('cid', 401984, 0, 0), 'toilet trained (finding)')" target="(('cid', 872325, 0, 0), 'outbursts')"/>
+        <edge source="(('cid', 12895, 0, 0), 'mental retardation')" target="(('cid', 872325, 0, 0), 'outbursts')"/>
+        <edge source="(('cid', 722986, 0, 0), 'poor eye contact')" target="(('cid', 872325, 0, 0), 'outbursts')"/>
+        <edge source="(('cid', 21797, 0, 0), 'valproic acid')" target="(('cid', 872325, 0, 0), 'outbursts')"/>
+        <edge source="(('cid', 122071, 0, 0), 'temper tantrum')" target="(('cid', 872325, 0, 0), 'outbursts')"/>
+        <edge source="(('cid', 132973, 0, 0), 'problem behavior')" target="(('cid', 872325, 0, 0), 'outbursts')"/>
+        <edge source="(('cid', 84573, 0, 0), 'covers (device)')" target="(('cid', 872325, 0, 0), 'outbursts')"/>
+        <edge source="(('code', '319'), 'Unspecified intellectual disabilities')" target="(('cid', 872325, 0, 0), 'outbursts')"/>
+        <edge source="(('cid', 512062, 0, 0), 'receptor activator of nuclear factor-kappa b')" target="(('cid', 872325, 0, 0), 'outbursts')"/>
+        <edge source="(('cid', 19551, 0, 0), 'speech therapy')" target="(('cid', 872325, 0, 0), 'outbursts')"/>
+        <edge source="(('cid', 313179, 0, 0), 'preoccupation finding')" target="(('cid', 125026, 0, 0), 'speech delay')"/>
+        <edge source="(('cid', 248187, 0, 0), 'engaged to be married')" target="(('cid', 125026, 0, 0), 'speech delay')"/>
+        <edge source="(('cid', 394013, 0, 0), 'genetic screening method')" target="(('cid', 125026, 0, 0), 'speech delay')"/>
+        <edge source="(('code', 'V79.3'), 'Screening for developmental handicaps in early childhood')" target="(('cid', 125026, 0, 0), 'speech delay')"/>
+        <edge source="(('code', '299.80'), '&quot;Other specified pervasive developmental disorders, current or active state&quot;')" target="(('cid', 125026, 0, 0), 'speech delay')"/>
+        <edge source="(('cid', 12895, 0, 0), 'mental retardation')" target="(('cid', 125026, 0, 0), 'speech delay')"/>
+        <edge source="(('cid', 103680, 0, 0), 'ammonia measurement')" target="(('cid', 125026, 0, 0), 'speech delay')"/>
+        <edge source="(('code', '783.42'), 'Delayed milestones')" target="(('cid', 125026, 0, 0), 'speech delay')"/>
+        <edge source="(('code', '345.90'), '&quot;Epilepsy, unspecified, without mention of intractable epilepsy&quot;')" target="(('cid', 125026, 0, 0), 'speech delay')"/>
+        <edge source="(('cid', 247972, 0, 0), 'language spoken')" target="(('cid', 125026, 0, 0), 'speech delay')"/>
+        <edge source="(('cid', 6665, 0, 0), 'echolalia')" target="(('cid', 125026, 0, 0), 'speech delay')"/>
+        <edge source="(('cid', 6347, 0, 0), 'dna')" target="(('cid', 125026, 0, 0), 'speech delay')"/>
+        <edge source="(('cid', 401984, 0, 0), 'toilet trained (finding)')" target="(('cid', 125026, 0, 0), 'speech delay')"/>
+        <edge source="(('cid', 1050, 0, 0), 'amino acids')" target="(('cid', 125026, 0, 0), 'speech delay')"/>
+        <edge source="(('code', '783.40'), '&quot;Lack of normal physiological development, unspecified&quot;')" target="(('cid', 125026, 0, 0), 'speech delay')"/>
+        <edge source="(('cid', 11682, 0, 0), 'language delay')" target="(('cid', 125026, 0, 0), 'speech delay')"/>
+        <edge source="(('cid', 207011, 0, 0), 'organic acid')" target="(('cid', 125026, 0, 0), 'speech delay')"/>
+        <edge source="(('cid', 247696, 0, 0), 'developmental delay (disorder)')" target="(('cid', 125026, 0, 0), 'speech delay')"/>
+        <edge source="(('cid', 247417, 0, 0), 'hyperactive behavior')" target="(('cid', 125026, 0, 0), 'speech delay')"/>
+        <edge source="(('cid', 3953, 0, 0), 'developmental disabilities')" target="(('cid', 125026, 0, 0), 'speech delay')"/>
+        <edge source="(('code', '299.90'), '&quot;Unspecified pervasive developmental disorder, current or active state&quot;')" target="(('cid', 125026, 0, 0), 'speech delay')"/>
+        <edge source="(('cid', 7730, 0, 0), 'facial expression')" target="(('cid', 125026, 0, 0), 'speech delay')"/>
+        <edge source="(('cid', 132973, 0, 0), 'problem behavior')" target="(('cid', 125026, 0, 0), 'speech delay')"/>
+        <edge source="(('cid', 872325, 0, 0), 'outbursts')" target="(('cid', 125026, 0, 0), 'speech delay')"/>
+        <edge source="(('cid', 304376, 0, 0), 'pervasive development disorder')" target="(('cid', 125026, 0, 0), 'speech delay')"/>
+        <edge source="(('cid', 320278, 0, 0), 'global developmental delay')" target="(('cid', 125026, 0, 0), 'speech delay')"/>
+        <edge source="(('cid', 2001, 0, 0), 'autistic disorder')" target="(('cid', 125026, 0, 0), 'speech delay')"/>
+        <edge source="(('cid', 738877, 0, 0), 'autism spectrum disorders')" target="(('cid', 125026, 0, 0), 'speech delay')"/>
+        <edge source="(('code', '315.8'), 'Other specified delays in development')" target="(('cid', 125026, 0, 0), 'speech delay')"/>
+        <edge source="(('code', '315.32'), 'Mixed receptive-expressive language disorder')" target="(('cid', 125026, 0, 0), 'speech delay')"/>
+        <edge source="(('code', '314.01'), 'Attention deficit disorder with hyperactivity')" target="(('cid', 125026, 0, 0), 'speech delay')"/>
+        <edge source="(('cid', 19551, 0, 0), 'speech therapy')" target="(('cid', 125026, 0, 0), 'speech delay')"/>
+        <edge source="(('code', '299.00'), '&quot;Autistic disorder, current or active state&quot;')" target="(('cid', 125026, 0, 0), 'speech delay')"/>
+        <edge source="(('cid', 512062, 0, 0), 'receptor activator of nuclear factor-kappa b')" target="(('cid', 125026, 0, 0), 'speech delay')"/>
+        <edge source="(('code', '315.9'), 'Unspecified delay in development')" target="(('cid', 125026, 0, 0), 'speech delay')"/>
+        <edge source="(('cid', 313179, 0, 0), 'preoccupation finding')" target="(('cid', 11682, 0, 0), 'language delay')"/>
+        <edge source="(('cid', 394013, 0, 0), 'genetic screening method')" target="(('cid', 11682, 0, 0), 'language delay')"/>
+        <edge source="(('cid', 7730, 0, 0), 'facial expression')" target="(('cid', 11682, 0, 0), 'language delay')"/>
+        <edge source="(('code', '315.39'), 'Other developmental speech or language disorder')" target="(('cid', 11682, 0, 0), 'language delay')"/>
+        <edge source="(('code', '345.90'), '&quot;Epilepsy, unspecified, without mention of intractable epilepsy&quot;')" target="(('cid', 11682, 0, 0), 'language delay')"/>
+        <edge source="(('cid', 247972, 0, 0), 'language spoken')" target="(('cid', 11682, 0, 0), 'language delay')"/>
+        <edge source="(('cid', 6665, 0, 0), 'echolalia')" target="(('cid', 11682, 0, 0), 'language delay')"/>
+        <edge source="(('cid', 2286, 0, 0), 'behavior therapy')" target="(('cid', 11682, 0, 0), 'language delay')"/>
+        <edge source="(('code', '299.00'), '&quot;Autistic disorder, current or active state&quot;')" target="(('cid', 11682, 0, 0), 'language delay')"/>
+        <edge source="(('cid', 401984, 0, 0), 'toilet trained (finding)')" target="(('cid', 11682, 0, 0), 'language delay')"/>
+        <edge source="(('cid', 722986, 0, 0), 'poor eye contact')" target="(('cid', 11682, 0, 0), 'language delay')"/>
+        <edge source="(('cid', 1176253, 0, 0), 'cells counted')" target="(('cid', 11682, 0, 0), 'language delay')"/>
+        <edge source="(('code', '315.9'), 'Unspecified delay in development')" target="(('cid', 11682, 0, 0), 'language delay')"/>
+        <edge source="(('cid', 247696, 0, 0), 'developmental delay (disorder)')" target="(('cid', 11682, 0, 0), 'language delay')"/>
+        <edge source="(('cid', 3953, 0, 0), 'developmental disabilities')" target="(('cid', 11682, 0, 0), 'language delay')"/>
+        <edge source="(('cid', 247768, 0, 0), 'head size')" target="(('cid', 11682, 0, 0), 'language delay')"/>
+        <edge source="(('code', '314.01'), 'Attention deficit disorder with hyperactivity')" target="(('cid', 11682, 0, 0), 'language delay')"/>
+        <edge source="(('code', '299.80'), '&quot;Other specified pervasive developmental disorders, current or active state&quot;')" target="(('cid', 11682, 0, 0), 'language delay')"/>
+        <edge source="(('cid', 122071, 0, 0), 'temper tantrum')" target="(('cid', 11682, 0, 0), 'language delay')"/>
+        <edge source="(('cid', 132973, 0, 0), 'problem behavior')" target="(('cid', 11682, 0, 0), 'language delay')"/>
+        <edge source="(('cid', 872325, 0, 0), 'outbursts')" target="(('cid', 11682, 0, 0), 'language delay')"/>
+        <edge source="(('cid', 304376, 0, 0), 'pervasive development disorder')" target="(('cid', 11682, 0, 0), 'language delay')"/>
+        <edge source="(('cid', 2001, 0, 0), 'autistic disorder')" target="(('cid', 11682, 0, 0), 'language delay')"/>
+        <edge source="(('cid', 11685, 0, 0), 'language disorders')" target="(('cid', 11682, 0, 0), 'language delay')"/>
+        <edge source="(('cid', 738877, 0, 0), 'autism spectrum disorders')" target="(('cid', 11682, 0, 0), 'language delay')"/>
+        <edge source="(('code', '315.32'), 'Mixed receptive-expressive language disorder')" target="(('cid', 11682, 0, 0), 'language delay')"/>
+        <edge source="(('code', '299.90'), '&quot;Unspecified pervasive developmental disorder, current or active state&quot;')" target="(('cid', 11682, 0, 0), 'language delay')"/>
+        <edge source="(('cid', 84573, 0, 0), 'covers (device)')" target="(('cid', 11682, 0, 0), 'language delay')"/>
+        <edge source="(('cid', 6347, 0, 0), 'dna')" target="(('cid', 11682, 0, 0), 'language delay')"/>
+        <edge source="(('cid', 512062, 0, 0), 'receptor activator of nuclear factor-kappa b')" target="(('cid', 11682, 0, 0), 'language delay')"/>
+        <edge source="(('cid', 19551, 0, 0), 'speech therapy')" target="(('cid', 11682, 0, 0), 'language delay')"/>
+        <edge source="(('cid', 247696, 0, 0), 'developmental delay (disorder)')" target="(('code', '299.90'), '&quot;Unspecified pervasive developmental disorder, current or active state&quot;')"/>
+        <edge source="(('code', 'V79.3'), 'Screening for developmental handicaps in early childhood')" target="(('code', '299.90'), '&quot;Unspecified pervasive developmental disorder, current or active state&quot;')"/>
+        <edge source="(('cid', 412641, 0, 0), 'depakote')" target="(('code', '299.90'), '&quot;Unspecified pervasive developmental disorder, current or active state&quot;')"/>
+        <edge source="(('cid', 248187, 0, 0), 'engaged to be married')" target="(('code', '299.90'), '&quot;Unspecified pervasive developmental disorder, current or active state&quot;')"/>
+        <edge source="(('cid', 84573, 0, 0), 'covers (device)')" target="(('code', '299.90'), '&quot;Unspecified pervasive developmental disorder, current or active state&quot;')"/>
+        <edge source="(('code', '299.00'), '&quot;Autistic disorder, current or active state&quot;')" target="(('code', '299.90'), '&quot;Unspecified pervasive developmental disorder, current or active state&quot;')"/>
+        <edge source="(('cid', 401984, 0, 0), 'toilet trained (finding)')" target="(('code', '299.90'), '&quot;Unspecified pervasive developmental disorder, current or active state&quot;')"/>
+        <edge source="(('cid', 11687, 0, 0), 'language therapy')" target="(('code', '299.90'), '&quot;Unspecified pervasive developmental disorder, current or active state&quot;')"/>
+        <edge source="(('cid', 738877, 0, 0), 'autism spectrum disorders')" target="(('code', '299.90'), '&quot;Unspecified pervasive developmental disorder, current or active state&quot;')"/>
+        <edge source="(('code', '314.01'), 'Attention deficit disorder with hyperactivity')" target="(('code', '299.90'), '&quot;Unspecified pervasive developmental disorder, current or active state&quot;')"/>
+        <edge source="(('cid', 722986, 0, 0), 'poor eye contact')" target="(('code', '299.90'), '&quot;Unspecified pervasive developmental disorder, current or active state&quot;')"/>
+        <edge source="(('cid', 12895, 0, 0), 'mental retardation')" target="(('code', '299.90'), '&quot;Unspecified pervasive developmental disorder, current or active state&quot;')"/>
+        <edge source="(('cid', 207011, 0, 0), 'organic acid')" target="(('code', '299.90'), '&quot;Unspecified pervasive developmental disorder, current or active state&quot;')"/>
+        <edge source="(('cid', 11685, 0, 0), 'language disorders')" target="(('code', '299.90'), '&quot;Unspecified pervasive developmental disorder, current or active state&quot;')"/>
+    </graph>
+</graphml>
