@@ -205,7 +205,7 @@ def analyzeEdges(edges):
 			None
 	return graph
 
-def toGraphML(graphDict):
+def inOutGraph(graphDict):
 	g = Graph()
 	nDict = {}
 	for node, meta in graphDict.iteritems():
@@ -216,9 +216,24 @@ def toGraphML(graphDict):
 		n = nDict[node]			
 		for node2 in meta['in']:
 			n2 = nDict[node2]
-			g.add_edge(n2, n)
+			g.add_edge(n2, n, directed=True)
 	parser = GraphMLParser()
-	parser.write(g, "myGraph.graphml")
+	parser.write(g, "inout.graphml")
+
+def adjacenciesGraph(graphDict):
+	g = Graph()
+	nDict = {}
+	for node, meta in graphDict.iteritems():
+		n = g.add_node(node)			
+		n['freq'] = meta['freq']
+		nDict[node] = n
+	for node, meta in graphDict.iteritems():
+		n = nDict[node]			
+		for node2 in meta['adjacent']:
+			n2 = nDict[node2]
+			g.add_edge(n2, n, directed=True)
+	parser = GraphMLParser()
+	parser.write(g, "adj.graphml")
 
 def printEdges(edges, cutoff=.05):
 	for pr, meta in edges.iteritems():
@@ -233,4 +248,4 @@ if __name__ == "__main__":
 	edges = getEdges(enr, pats)
 	#printEdges(edges, float(sys.argv[4]))
 	graph = analyzeEdges(edges)
-	toGraphML(graph)
+	inOutGraph(graph)
