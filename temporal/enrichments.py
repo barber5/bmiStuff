@@ -110,12 +110,15 @@ def getEnrichments(data):
 				nextPerson[ingKey] += 1
 		for v in dd['visits']:
 			code = v['icd9']
-			print >> sys.stderr, code
-			codeKey = ('code', code)
-			if codeKey not in nextPerson:
-				nextPerson[codeKey] = 0
-				featIdx[codeKey] = getCode(code)
-			nextPerson[codeKey] += 1
+			codeArr = code.split(',')
+			for code in codeArr:
+				codeKey = ('code', code)
+				if codeKey not in nextPerson:
+					nextPerson[codeKey] = 0
+					desc = getCode(code)
+					print >> sys.stderr, desc
+					featIdx[codeKey] = getCode(code)
+				nextPerson[codeKey] += 1
 				
 		for feat, val in nextPerson.iteritems():
 			if feat not in negCounts:
