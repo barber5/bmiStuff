@@ -108,7 +108,7 @@ def getEnrichments(data):
 					nextPerson[ingKey] = 0
 					featIdx[ingKey] = getIngredient(i)
 				nextPerson[ingKey] += 1
-		for v in dd['prescriptions']:
+		for v in dd['visits']:
 			code = v['icd9']
 			codeKey = ('code', code)
 			if codeKey not in nextPerson:
