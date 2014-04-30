@@ -1,5 +1,5 @@
 from db import *
-import sys, pprint
+import sys, pprint, re
 
 
 (term_db, stride_db) = getDbs()
