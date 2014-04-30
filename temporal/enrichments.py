@@ -7,7 +7,7 @@ sys.path.append(os.path.realpath('../fpmining'))
 sys.path.append(os.path.realpath('./fpmining'))
 
 from queryByCui import r, decomp, compIt
-from getTermByID import getTerm, getTermCui, getIngredients, getIngredient, getLab, getConcept
+from getTermByID import getTerm, getTermCui, getIngredients, getIngredient, getLab, getConcept, getCode
 from vecForPatient import getVecForPid
 
 
