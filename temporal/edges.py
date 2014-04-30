@@ -215,6 +215,8 @@ def inOutGraph(graphDict):
 		n['freq'] = meta['freq']
 		nDict[node] = n
 	for node, meta in graphDict.iteritems():
+		if node not in nDict:
+			continue
 		n = nDict[node]			
 		for node2 in meta['in']:
 			n2 = nDict[node2]
