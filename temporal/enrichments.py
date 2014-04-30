@@ -110,6 +110,7 @@ def getEnrichments(data):
 				nextPerson[ingKey] += 1
 		for v in dd['visits']:
 			code = v['icd9']
+			print >> sys.stderr, code
 			codeKey = ('code', code)
 			if codeKey not in nextPerson:
 				nextPerson[codeKey] = 0
