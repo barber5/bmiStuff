@@ -176,14 +176,14 @@ def analyzeEdges(edges):
 				'lambda': meta['lambda']
 			}
 		else:
-			'''
-			if meta['lift'] > 1:
+			
+			if meta['lift'] > 2:
 				graph[f1]['adjacent'][f2] = {
 					'lift': meta['lift']
 				}
 				graph[f2]['adjacent'][f1] = {
 					'lift': meta['lift']
-				}'''
+				}
 			None
 	return graph
 
