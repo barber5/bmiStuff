@@ -46,7 +46,7 @@ def getConcept(cid):
 	return rows[0][0]
 
 def getCode(code):
-	with open('/output/icd9.txt', 'r') as fi:
+	with open('output/icd9.txt', 'r') as fi:
 		while True:
 			line = fi.readline().strip()
 			if line == '':
