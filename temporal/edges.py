@@ -186,7 +186,7 @@ def analyzeEdges(edges):
 				'desc': meta['f2desc'],
 				'freq': meta['f2freq']
 			}
-		if meta['lambda'] > .5:
+		if meta['lambda'] > 1:
 			graph[f1]['out'][f2] = {
 				'lambda': meta['lambda']
 			}
