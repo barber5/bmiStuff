@@ -11,6 +11,11 @@ from getTermByID import getTerm, getTermCui, getIngredients, getIngredient, getL
 from ast import literal_eval as make_tuple
 from mineConcepts import getFromFile
 from beforeAfter import getEnrichments, getPatients
+from pygraphml.GraphMLParser import *
+from pygraphml.Graph import *
+from pygraphml.Node import *
+from pygraphml.Edge import *
+
 
 
 # patients is pid -> {pid, src_type, labs -> [{age, , component, description, lid, line, ord, ord_num, proc, proc_cat, ref_high, ref_low, ref_norm, ref_unit, result_flag, result_inrange, src, timeoffset}], notes -> [{age, cpt, duration, icd9, nid, pid, src, src_type, timeoffset, year, terms -> [{cui, familyHistory, negated, nid, termid, tid}]}], prescriptions -> [{age, drug_description, ingr_set_id, order_status, pid, route, rxid, src, timeoffset}], visits -> [{age, cpt, duration, icd9, pid, src, src_type, timeoffset, year}] }
@@ -189,7 +194,7 @@ def analyzeEdges(edges):
 				'lambda': meta['lambda']
 			}
 		else:
-			
+
 			if meta['lift'] > 2:
 				graph[f1]['adjacent'][f2] = {
 					'lift': meta['lift']
@@ -199,6 +204,21 @@ def analyzeEdges(edges):
 				}
 			None
 	return graph
+
+def toGraphML(graphDict):
+	g = Graph()
+	nDict = {}
+	for node, meta in graphDict.iteritems():
+		n = g.add_node(node)			
+		n['freq'] = meta['freq']
+		nDict[node] = n
+	for node, meta in graphDict.iteritems():
+		n = nDict[node]			
+		for node2 in meta['in']:
+			n2 = nDict[node2]
+			g.add_edge(n2, n)
+	parser = GraphMLParser()
+	parser.write(g, "myGraph.graphml")
 
 def printEdges(edges, cutoff=.05):
 	for pr, meta in edges.iteritems():
@@ -213,4 +233,4 @@ if __name__ == "__main__":
 	edges = getEdges(enr, pats)
 	#printEdges(edges, float(sys.argv[4]))
 	graph = analyzeEdges(edges)
-	pprint.pprint(graph)
+	toGraphML(graph)
