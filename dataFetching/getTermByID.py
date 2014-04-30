@@ -45,6 +45,20 @@ def getConcept(cid):
 		return None		
 	return rows[0][0]
 
+def getCode(code):
+	with open('/output/icd9.txt', 'r') as fi:
+		while True:
+			line = fi.readline().strip()
+			if line == '':
+				break
+			lineArr = line.split('\t')
+			
+			icd9 = lineArr[0]
+			desc = lineArr[1]
+			if icd9 == code:
+				return desc					
+	return 'None'
+
 def getIngredients(ingr_set_id):
 	query = "SELECT rxcui from ingredient where ingr_set_id=%s"
 	rows = tryQuery(stride_db, query, [ingr_set_id])
