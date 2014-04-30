@@ -110,6 +110,8 @@ def getEnrichments(data):
 				nextPerson[ingKey] += 1
 		for v in dd['visits']:
 			code = v['icd9']
+			if code == '':
+				continue
 			codeArr = code.split(',')
 			for code in codeArr:
 				codeKey = ('code', code)
