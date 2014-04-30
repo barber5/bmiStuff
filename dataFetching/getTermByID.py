@@ -55,6 +55,7 @@ with open('output/icd9.txt', 'r') as fi:
 		
 		icd9 = lineArr[0]
 		desc = lineArr[1]
+		print >> sys.stderr, str(icd9)+': '+str(desc)
 		codeIdx[icd9] = desc
 
 def getCode(code):
