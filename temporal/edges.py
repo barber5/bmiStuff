@@ -158,7 +158,7 @@ def getEdges(enrichments, patients):
 					'f1': f1,
 					'f1desc': enrichments[f1]['description'],
 					'f1enrich': enrichments[f1]['enr'],
-					'f2enrich': enrichments[f2]['enr']
+					'f2enrich': enrichments[f2]['enr'],
 					'f1freq': count1,
 					'f2': f2,
 					'f2freq': count2,
