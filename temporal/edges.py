@@ -139,8 +139,8 @@ def getEdges(enrichments, patients):
 					elif min2 < min2:
 						f21f += 1
 				avgOffset = float(totalOffset)/float(len(both.keys()))
-				lam = math.log(float(f12)/float(f21))
-				lf = math.log(float(f12f)/float(f21f))
+				lam = math.log(float(f12)/float(f21), 2.0)
+				lf = math.log(float(f12f)/float(f21f), 2.0)
 				if lf < 0:
 					first = f2
 					second = f1
@@ -168,7 +168,7 @@ def getEdges(enrichments, patients):
 					'lambda': lam,
 					'lambdaFirst': lf, 
 					'avgOffset': avgOffset,
-					'lift': math.log(float(c12and)/float(c1*c2))
+					'lift': math.log(float(c12and)/float(c1*c2), 2.0)
 				}					
 	return result
 
