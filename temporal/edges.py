@@ -184,25 +184,27 @@ def analyzeEdges(edges, intersectionCutoff=.05, cutoff=.1):
 		f2 = str((f2, meta['f2desc']))
 		if meta['f2freq'] < cutoff:
 			continue
-
+		if f1 not in graph:
+			graph[f1] = {
+				'in': {},
+				'out': {},
+				'adjacent': {},
+				'desc': meta['f1desc'],
+				'freq': meta['f1freq'],
+				'enrichment': meta['f1enrich']
+			}
+		if f2 not in graph:
+			graph[f2] = {
+				'in': {},
+				'out': {},
+				'adjacent': {},
+				'desc': meta['f2desc'],
+				'freq': meta['f2freq'],
+				'enrichment': meta['f2enrich']
+			}
 		
 		if meta['lift'] > 1 and meta['intersection'] > intersectionCutoff:
-			if f1 not in graph:
-				graph[f1] = {
-					'in': {},
-					'out': {},
-					'adjacent': {},
-					'desc': meta['f1desc'],
-					'freq': meta['f1freq']
-				}
-			if f2 not in graph:
-				graph[f2] = {
-					'in': {},
-					'out': {},
-					'adjacent': {},
-					'desc': meta['f2desc'],
-					'freq': meta['f2freq']
-				}
+			
 			graph[f1]['out'][f2] = {
 				'lambda': meta['lambda'],
 				'lambdaFirst': meta['lambdaFirst'],

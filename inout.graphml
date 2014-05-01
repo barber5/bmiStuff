@@ -7,94 +7,19 @@
     <key attr.name="lambdaFirst" attr.type="string" id="lambdaFirst"/>
     <key attr.name="lambda" attr.type="string" id="lambda"/>
     <graph edgedefault="directed" id="">
-        <node id="(('cid', 103680, 0, 0), 'ammonia measurement')">
+        <node id="(('cid', 14648, 0, 0), 'oligonucleotides')">
             <data key="freq">
-                0.275
-            </data>
-        </node>
-        <node id="(('cid', 13050, 0, 0), 'methotrexate')">
-            <data key="freq">
-                0.15
-            </data>
-        </node>
-        <node id="(('cid', 323010, 0, 0), 'able to sit')">
-            <data key="freq">
-                0.15
-            </data>
-        </node>
-        <node id="(('cid', 2621, 0, 0), 'birth history')">
-            <data key="freq">
-                0.25
-            </data>
-        </node>
-        <node id="(('cid', 18861, 0, 0), 'seizures')">
-            <data key="freq">
-                0.15
+                0.225
             </data>
         </node>
         <node id="(('cid', 6347, 0, 0), 'dna')">
             <data key="freq">
-                0.125
+                0.225
             </data>
         </node>
-        <node id="(('cid', 1050, 0, 0), 'amino acids')">
-            <data key="freq">
-                0.25
-            </data>
-        </node>
-        <node id="(('cid', 328586, 0, 0), 'vaginal delivery (finding)')">
-            <data key="freq">
-                0.25
-            </data>
-        </node>
-        <node id="(('cid', 247417, 0, 0), 'hyperactive behavior')">
-            <data key="freq">
-                0.275
-            </data>
-        </node>
-        <node id="(('cid', 84573, 0, 0), 'covers (device)')">
-            <data key="freq">
-                0.125
-            </data>
-        </node>
-        <node id="(('cid', 17388, 0, 0), 'psychological tests (procedure)')">
-            <data key="freq">
-                0.275
-            </data>
-        </node>
-        <node id="(('cid', 1975, 0, 0), 'audiometry')">
-            <data key="freq">
-                0.15
-            </data>
-        </node>
-        <node id="(('cid', 124863, 0, 0), 'form of muscle')">
-            <data key="freq">
-                0.275
-            </data>
-        </node>
-        <node id="(('cid', 9751, 0, 0), 'hereditary diseases')">
-            <data key="freq">
-                0.15
-            </data>
-        </node>
-        <node id="(('cid', 125026, 0, 0), 'speech delay')">
+        <node id="(('cid', 6665, 0, 0), 'echolalia')">
             <data key="freq">
                 0.175
-            </data>
-        </node>
-        <node id="(('cid', 1027464, 0, 0), 'sustain')">
-            <data key="freq">
-                0.175
-            </data>
-        </node>
-        <node id="(('cid', 401803, 0, 0), 'infection of ear')">
-            <data key="freq">
-                0.275
-            </data>
-        </node>
-        <node id="(('cid', 207011, 0, 0), 'organic acid')">
-            <data key="freq">
-                0.15
             </data>
         </node>
         <node id="(('code', '315.39'), 'Other developmental speech or language disorder')">
@@ -102,249 +27,219 @@
                 0.175
             </data>
         </node>
-        <node id="(('code', '315.8'), 'Other specified delays in development')">
-            <data key="freq">
-                0.2
-            </data>
-        </node>
-        <node id="(('cid', 158299, 0, 0), 'immunostimulating conjugate (antigen)')">
-            <data key="freq">
-                0.125
-            </data>
-        </node>
-        <node id="(('cid', 14648, 0, 0), 'oligonucleotides')">
-            <data key="freq">
-                0.125
-            </data>
-        </node>
-        <node id="(('cid', 10021, 0, 0), 'hodgkin disease')">
-            <data key="freq">
-                0.15
-            </data>
-        </node>
-        <node id="(('cid', 512062, 0, 0), 'receptor activator of nuclear factor-kappa b')">
-            <data key="freq">
-                0.175
-            </data>
-        </node>
-        <node id="(('cid', 598149, 0, 0), 'attention deficit hyperactivity disorder')">
-            <data key="freq">
-                0.125
-            </data>
-        </node>
-        <node id="(('cid', 9461, 0, 0), 'hearing tests')">
-            <data key="freq">
-                0.275
-            </data>
-        </node>
-        <node id="(('cid', 394085, 0, 0), 'kindergarten completion')">
-            <data key="freq">
-                0.275
-            </data>
-        </node>
-        <node id="(('cid', 7730, 0, 0), 'facial expression')">
-            <data key="freq">
-                0.15
-            </data>
-        </node>
-        <node id="(('cid', 247727, 0, 0), 'height / growth measure')">
-            <data key="freq">
-                0.15
-            </data>
-        </node>
-        <node id="(('cid', 102764, 0, 0), 'chromosome analysis')">
+        <node id="(('code', '783.40'), '&quot;Lack of normal physiological development, unspecified&quot;')">
             <data key="freq">
                 0.25
             </data>
         </node>
-        <node id="(('cid', 13608, 0, 0), 'muscle hypertonia')">
+        <node id="(('cid', 328586, 0, 0), 'vaginal delivery (finding)')">
             <data key="freq">
-                0.3
+                0.125
             </data>
         </node>
-        <node id="(('cid', 11682, 0, 0), 'language delay')">
+        <node id="(('cid', 247417, 0, 0), 'hyperactive behavior')">
             <data key="freq">
-                0.275
+                0.125
             </data>
         </node>
-        <node id="(('cid', 720080, 0, 0), 'gene deletion abnormality')">
+        <node id="(('cid', 14647, 0, 0), 'oligonucleotide probes')">
             <data key="freq">
                 0.175
             </data>
         </node>
-        <node id="(('cid', 722986, 0, 0), 'poor eye contact')">
+        <node id="(('cid', 122071, 0, 0), 'temper tantrum')">
+            <data key="freq">
+                0.2
+            </data>
+        </node>
+        <node id="(('cid', 125206, 0, 0), 'hypotonicity')">
+            <data key="freq">
+                0.15
+            </data>
+        </node>
+        <node id="(('cid', 1975, 0, 0), 'audiometry')">
+            <data key="freq">
+                0.2
+            </data>
+        </node>
+        <node id="(('cid', 124863, 0, 0), 'form of muscle')">
+            <data key="freq">
+                0.2
+            </data>
+        </node>
+        <node id="(('cid', 323010, 0, 0), 'able to sit')">
+            <data key="freq">
+                0.125
+            </data>
+        </node>
+        <node id="(('cid', 207011, 0, 0), 'organic acid')">
+            <data key="freq">
+                0.225
+            </data>
+        </node>
+        <node id="(('cid', 125026, 0, 0), 'speech delay')">
+            <data key="freq">
+                0.175
+            </data>
+        </node>
+        <node id="(('cid', 401803, 0, 0), 'infection of ear')">
+            <data key="freq">
+                0.175
+            </data>
+        </node>
+        <node id="(('cid', 5954, 0, 0), 'camurati-engelmann syndrome')">
+            <data key="freq">
+                0.225
+            </data>
+        </node>
+        <node id="(('cid', 8343, 0, 0), 'formication')">
+            <data key="freq">
+                0.15
+            </data>
+        </node>
+        <node id="(('cid', 132973, 0, 0), 'problem behavior')">
+            <data key="freq">
+                0.35
+            </data>
+        </node>
+        <node id="(('cid', 326242, 0, 0), 'vocalization (finding)')">
+            <data key="freq">
+                0.225
+            </data>
+        </node>
+        <node id="(('cid', 1288, 0, 0), 'aneuploidy')">
+            <data key="freq">
+                0.175
+            </data>
+        </node>
+        <node id="(('cid', 15237, 0, 0), 'otitis media')">
+            <data key="freq">
+                0.3
+            </data>
+        </node>
+        <node id="(('cid', 21262, 0, 0), 'trisomy')">
+            <data key="freq">
+                0.175
+            </data>
+        </node>
+        <node id="(('cid', 103680, 0, 0), 'ammonia measurement')">
+            <data key="freq">
+                0.3
+            </data>
+        </node>
+        <node id="(('cid', 1178247, 0, 0), 'finding related to focusing')">
+            <data key="freq">
+                0.175
+            </data>
+        </node>
+        <node id="(('cid', 53873, 0, 0), 'tympanometry')">
+            <data key="freq">
+                0.175
+            </data>
+        </node>
+        <node id="(('cid', 163364, 0, 0), 'task veterinary proprietary drug and/or biological')">
+            <data key="freq">
+                0.125
+            </data>
+        </node>
+        <node id="(('cid', 7730, 0, 0), 'facial expression')">
+            <data key="freq">
+                0.25
+            </data>
+        </node>
+        <node id="(('cid', 102764, 0, 0), 'chromosome analysis')">
+            <data key="freq">
+                0.275
+            </data>
+        </node>
+        <node id="(('cid', 1046828, 0, 0), 'clinical significance')">
+            <data key="freq">
+                0.175
+            </data>
+        </node>
+        <node id="(('cid', 11682, 0, 0), 'language delay')">
+            <data key="freq">
+                0.325
+            </data>
+        </node>
+        <node id="(('code', '315.4'), 'Developmental coordination disorder')">
+            <data key="freq">
+                0.15
+            </data>
+        </node>
+        <node id="(('cid', 951897, 0, 0), 'picky eater')">
+            <data key="freq">
+                0.175
+            </data>
+        </node>
+        <node id="(('cid', 353076, 0, 0), 'oligonucleotide arrays')">
             <data key="freq">
                 0.2
             </data>
         </node>
         <node id="(('cid', 830045, 0, 0), 'molecular genetic abnormality')">
             <data key="freq">
-                0.125
-            </data>
-        </node>
-        <node id="(('cid', 3620, 0, 0), 'ccc brand of chlormequat')">
-            <data key="freq">
                 0.175
             </data>
         </node>
-        <node id="(('cid', 400561, 0, 0), 'blood carnitine measurement')">
-            <data key="freq">
-                0.175
-            </data>
-        </node>
-        <node id="(('cid', 419781, 0, 0), 'apgar')">
+        <node id="(('code', '315.31'), 'Expressive language disorder')">
             <data key="freq">
                 0.25
             </data>
         </node>
-        <node id="(('cid', 163364, 0, 0), 'task veterinary proprietary drug and/or biological')">
+        <node id="(('cid', 17388, 0, 0), 'psychological tests (procedure)')">
             <data key="freq">
-                0.175
+                0.35
             </data>
         </node>
-        <node id="(('code', '783.40'), '&quot;Lack of normal physiological development, unspecified&quot;')">
+        <node id="(('cid', 84573, 0, 0), 'covers (device)')">
             <data key="freq">
                 0.275
             </data>
         </node>
-        <node id="(('code', 'V20.2'), 'Routine infant or child health check')">
-            <data key="freq">
-                0.15
-            </data>
-        </node>
-        <node id="(('cid', 1176253, 0, 0), 'cells counted')">
-            <data key="freq">
-                0.25
-            </data>
-        </node>
-        <node id="(('cid', 15237, 0, 0), 'otitis media')">
-            <data key="freq">
-                0.125
-            </data>
-        </node>
-        <node id="(('cid', 316690, 0, 0), 'gaze')">
-            <data key="freq">
-                0.3
-            </data>
-        </node>
-        <node id="(('code', '315.32'), 'Mixed receptive-expressive language disorder')">
-            <data key="freq">
-                0.175
-            </data>
-        </node>
-        <node id="(('cid', 211773, 0, 0), 'lactate')">
-            <data key="freq">
-                0.175
-            </data>
-        </node>
-        <node id="(('cid', 304376, 0, 0), 'pervasive development disorder')">
+        <node id="(('cid', 6836, 0, 0), 'electroencephalography')">
             <data key="freq">
                 0.325
             </data>
         </node>
-        <node id="(('cid', 19309, 0, 0), 'social interaction')">
+        <node id="(('code', 'V20.2'), 'Routine infant or child health check')">
             <data key="freq">
-                0.275
-            </data>
-        </node>
-        <node id="(('cid', 158572, 0, 0), 'pyruvate measurement')">
-            <data key="freq">
-                0.175
-            </data>
-        </node>
-        <node id="(('cid', 123046, 0, 0), 'hearing normal')">
-            <data key="freq">
-                0.15
-            </data>
-        </node>
-        <node id="(('cid', 352693, 0, 0), 'does play')">
-            <data key="freq">
-                0.2
-            </data>
-        </node>
-        <node id="(('cid', 393896, 0, 0), 'reinforcement surgical repair')">
-            <data key="freq">
-                0.15
-            </data>
-        </node>
-        <node id="(('cid', 698111, 0, 0), 'normal delivery')">
-            <data key="freq">
-                0.175
-            </data>
-        </node>
-        <node id="(('cid', 103876, 0, 0), 'lactic acid measurement')">
-            <data key="freq">
-                0.175
-            </data>
-        </node>
-        <node id="(('cid', 53731, 0, 0), 'agitation')">
-            <data key="freq">
-                0.2
-            </data>
-        </node>
-        <node id="(('cid', 347817, 0, 0), 'measurement of serum amino acid level')">
-            <data key="freq">
-                0.25
-            </data>
-        </node>
-        <node id="(('cid', 102265, 0, 0), 'audiological evaluation')">
-            <data key="freq">
-                0.275
-            </data>
-        </node>
-        <node id="(('cid', 191727, 0, 0), 'fish-eye disease')">
-            <data key="freq">
-                0.275
-            </data>
-        </node>
-        <node id="(('cid', 394013, 0, 0), 'genetic screening method')">
-            <data key="freq">
-                0.3
-            </data>
-        </node>
-        <node id="(('cid', 882249, 0, 0), 'no seizures')">
-            <data key="freq">
-                0.2
-            </data>
-        </node>
-        <node id="(('cid', 311642, 0, 0), 'does turn (finding)')">
-            <data key="freq">
-                0.15
+                0.225
             </data>
         </node>
         <node id="(('cid', 21517, 0, 0), 'attention deficit disorder')">
             <data key="freq">
-                0.125
+                0.3
             </data>
         </node>
-        <node id="(('cid', 3953, 0, 0), 'developmental disabilities')">
+        <node id="(('cid', 1176253, 0, 0), 'cells counted')">
             <data key="freq">
-                0.275
+                0.225
             </data>
         </node>
-        <node id="(('cid', 2286, 0, 0), 'behavior therapy')">
+        <node id="(('cid', 313179, 0, 0), 'preoccupation finding')">
+            <data key="freq">
+                0.225
+            </data>
+        </node>
+        <node id="(('code', '315.32'), 'Mixed receptive-expressive language disorder')">
+            <data key="freq">
+                0.25
+            </data>
+        </node>
+        <node id="(('code', '299.90'), '&quot;Unspecified pervasive developmental disorder, current or active state&quot;')">
             <data key="freq">
                 0.2
             </data>
         </node>
-        <node id="(('cid', 88606, 0, 0), 'banding procedure')">
+        <node id="(('cid', 304376, 0, 0), 'pervasive development disorder')">
             <data key="freq">
-                0.15
+                0.25
             </data>
         </node>
-        <node id="(('cid', 247805, 0, 0), 'finding of palmar crease')">
+        <node id="(('cid', 182956, 0, 0), 'abnormal shape')">
             <data key="freq">
-                0.125
-            </data>
-        </node>
-        <node id="(('code', '314.01'), 'Attention deficit disorder with hyperactivity')">
-            <data key="freq">
-                0.125
-            </data>
-        </node>
-        <node id="(('cid', 456136, 0, 0), 'emotional')">
-            <data key="freq">
-                0.15
+                0.2
             </data>
         </node>
         <node id="(('cid', 250947, 0, 0), 'urine organic acid level (procedure)')">
@@ -352,992 +247,164 @@
                 0.2
             </data>
         </node>
-        <edge directed="false" source="(('cid', 207011, 0, 0), 'organic acid')" target="(('cid', 103680, 0, 0), 'ammonia measurement')">
+        <node id="(('cid', 141650, 0, 0), 'disorder of middle ear')">
+            <data key="freq">
+                0.3
+            </data>
+        </node>
+        <node id="(('cid', 530353, 0, 0), 'cake dose form')">
+            <data key="freq">
+                0.2
+            </data>
+        </node>
+        <node id="(('cid', 123046, 0, 0), 'hearing normal')">
+            <data key="freq">
+                0.2
+            </data>
+        </node>
+        <node id="(('cid', 10021, 0, 0), 'hodgkin disease')">
+            <data key="freq">
+                0.15
+            </data>
+        </node>
+        <node id="(('cid', 393896, 0, 0), 'reinforcement surgical repair')">
+            <data key="freq">
+                0.15
+            </data>
+        </node>
+        <node id="(('cid', 529768, 0, 0), 'bead dosage form')">
+            <data key="freq">
+                0.25
+            </data>
+        </node>
+        <node id="(('cid', 1050, 0, 0), 'amino acids')">
+            <data key="freq">
+                0.3
+            </data>
+        </node>
+        <node id="(('cid', 698111, 0, 0), 'normal delivery')">
+            <data key="freq">
+                0.2
+            </data>
+        </node>
+        <node id="(('cid', 247768, 0, 0), 'head size')">
+            <data key="freq">
+                0.175
+            </data>
+        </node>
+        <node id="(('cid', 247972, 0, 0), 'language spoken')">
+            <data key="freq">
+                0.225
+            </data>
+        </node>
+        <node id="(('cid', 248187, 0, 0), 'engaged to be married')">
+            <data key="freq">
+                0.125
+            </data>
+        </node>
+        <node id="(('cid', 401821, 0, 0), 'does carry')">
+            <data key="freq">
+                0.15
+            </data>
+        </node>
+        <node id="(('cid', 311642, 0, 0), 'does turn (finding)')">
+            <data key="freq">
+                0.25
+            </data>
+        </node>
+        <node id="(('code', '783.42'), 'Delayed milestones')">
+            <data key="freq">
+                0.2
+            </data>
+        </node>
+        <node id="(('cid', 3953, 0, 0), 'developmental disabilities')">
+            <data key="freq">
+                0.2
+            </data>
+        </node>
+        <node id="(('cid', 88606, 0, 0), 'banding procedure')">
+            <data key="freq">
+                0.175
+            </data>
+        </node>
+        <node id="(('cid', 880321, 0, 0), 'motor delay')">
+            <data key="freq">
+                0.2
+            </data>
+        </node>
+        <node id="(('cid', 3620, 0, 0), 'ccc brand of chlormequat')">
+            <data key="freq">
+                0.275
+            </data>
+        </node>
+        <node id="(('cid', 192945, 0, 0), 'visual reinforcement audiometry')">
+            <data key="freq">
+                0.125
+            </data>
+        </node>
+        <node id="(('code', 'V57.21'), 'Encounter for occupational therapy')">
+            <data key="freq">
+                0.125
+            </data>
+        </node>
+        <node id="(('cid', 390228, 0, 0), 'nos2a protein, human')">
+            <data key="freq">
+                0.15
+            </data>
+        </node>
+        <node id="(('cid', 13609, 0, 0), 'muscle hypotonia')">
+            <data key="freq">
+                0.2
+            </data>
+        </node>
+        <edge directed="false" source="(('cid', 6347, 0, 0), 'dna')" target="(('cid', 14648, 0, 0), 'oligonucleotides')">
             <data key="avgOffset">
-                52.2
+                349.428571429
             </data>
             <data key="lift">
-                1.56064774826
+                1.03966975303
             </data>
             <data key="lambdaFirst">
-                1.38629436112
+                0.69314718056
+            </data>
+            <data key="lambda">
+                0.69314718056
+            </data>
+        </edge>
+        <edge directed="false" source="(('cid', 14647, 0, 0), 'oligonucleotide probes')" target="(('cid', 14648, 0, 0), 'oligonucleotides')">
+            <data key="avgOffset">
+                0.0
+            </data>
+            <data key="lift">
+                1.49165487678
+            </data>
+            <data key="lambdaFirst">
+                0.0
             </data>
             <data key="lambda">
                 0.0
             </data>
         </edge>
-        <edge directed="false" source="(('code', '315.8'), 'Other specified delays in development')" target="(('cid', 103680, 0, 0), 'ammonia measurement')">
+        <edge directed="false" source="(('cid', 84573, 0, 0), 'covers (device)')" target="(('cid', 14648, 0, 0), 'oligonucleotides')">
             <data key="avgOffset">
-                -143.0
+                0.0
             </data>
             <data key="lift">
-                1.40649706844
+                1.2403404485
             </data>
             <data key="lambdaFirst">
-                -1.09861228867
+                0.0
             </data>
             <data key="lambda">
-                0.965080896044
+                0.0
             </data>
         </edge>
-        <edge directed="false" source="(('cid', 158572, 0, 0), 'pyruvate measurement')" target="(('cid', 103680, 0, 0), 'ammonia measurement')">
+        <edge directed="false" source="(('cid', 122071, 0, 0), 'temper tantrum')" target="(('cid', 14648, 0, 0), 'oligonucleotides')">
             <data key="avgOffset">
-                52.0
-            </data>
-            <data key="lift">
-                1.40649706844
-            </data>
-            <data key="lambdaFirst">
-                1.09861228867
-            </data>
-            <data key="lambda">
-                1.94591014906
-            </data>
-        </edge>
-        <edge directed="false" source="(('cid', 102764, 0, 0), 'chromosome analysis')" target="(('cid', 13050, 0, 0), 'methotrexate')">
-            <data key="avgOffset">
-                12.2
-            </data>
-            <data key="lift">
-                1.20397280433
-            </data>
-            <data key="lambdaFirst">
-                0.69314718056
-            </data>
-            <data key="lambda">
-                0.69314718056
-            </data>
-        </edge>
-        <edge directed="false" source="(('cid', 394013, 0, 0), 'genetic screening method')" target="(('cid', 18861, 0, 0), 'seizures')">
-            <data key="avgOffset">
-                178.0
+                633.2
             </data>
             <data key="lift">
                 1.02165124753
-            </data>
-            <data key="lambdaFirst">
-                -0.0
-            </data>
-            <data key="lambda">
-                0.0800427076735
-            </data>
-        </edge>
-        <edge directed="false" source="(('cid', 1050, 0, 0), 'amino acids')" target="(('cid', 6347, 0, 0), 'dna')">
-            <data key="avgOffset">
-                -27.8
-            </data>
-            <data key="lift">
-                1.38629436112
-            </data>
-            <data key="lambdaFirst">
-                0.69314718056
-            </data>
-            <data key="lambda">
-                0.11122563511
-            </data>
-        </edge>
-        <edge directed="false" source="(('cid', 103680, 0, 0), 'ammonia measurement')" target="(('cid', 1050, 0, 0), 'amino acids')">
-            <data key="avgOffset">
-                -37.1428571429
-            </data>
-            <data key="lift">
-                1.38629436112
-            </data>
-            <data key="lambdaFirst">
-                0.0
-            </data>
-            <data key="lambda">
-                0.182321556794
-            </data>
-        </edge>
-        <edge directed="false" source="(('cid', 250947, 0, 0), 'urine organic acid level (procedure)')" target="(('cid', 1050, 0, 0), 'amino acids')">
-            <data key="avgOffset">
-                -0.0
-            </data>
-            <data key="lift">
-                1.38629436112
-            </data>
-            <data key="lambdaFirst">
-                -0.0
-            </data>
-            <data key="lambda">
-                0.133531392625
-            </data>
-        </edge>
-        <edge directed="false" source="(('cid', 720080, 0, 0), 'gene deletion abnormality')" target="(('cid', 1050, 0, 0), 'amino acids')">
-            <data key="avgOffset">
-                281.833333333
-            </data>
-            <data key="lift">
-                1.23214368129
-            </data>
-            <data key="lambdaFirst">
-                1.09861228867
-            </data>
-            <data key="lambda">
-                0.336472236621
-            </data>
-        </edge>
-        <edge directed="false" source="(('cid', 158572, 0, 0), 'pyruvate measurement')" target="(('cid', 1050, 0, 0), 'amino acids')">
-            <data key="avgOffset">
-                0.0
-            </data>
-            <data key="lift">
-                1.38629436112
-            </data>
-            <data key="lambdaFirst">
-                0.0
-            </data>
-            <data key="lambda">
-                1.50407739678
-            </data>
-        </edge>
-        <edge directed="false" source="(('cid', 207011, 0, 0), 'organic acid')" target="(('cid', 1050, 0, 0), 'amino acids')">
-            <data key="avgOffset">
-                0.166666666667
-            </data>
-            <data key="lift">
-                1.38629436112
-            </data>
-            <data key="lambdaFirst">
-                0.69314718056
-            </data>
-            <data key="lambda">
-                0.0
-            </data>
-        </edge>
-        <edge directed="false" source="(('code', '315.8'), 'Other specified delays in development')" target="(('cid', 1050, 0, 0), 'amino acids')">
-            <data key="avgOffset">
-                -91.0
-            </data>
-            <data key="lift">
-                1.0498221245
-            </data>
-            <data key="lambdaFirst">
-                -1.09861228867
-            </data>
-            <data key="lambda">
-                2.51769647261
-            </data>
-        </edge>
-        <edge directed="false" source="(('cid', 400561, 0, 0), 'blood carnitine measurement')" target="(('cid', 1050, 0, 0), 'amino acids')">
-            <data key="avgOffset">
-                43.3333333333
-            </data>
-            <data key="lift">
-                1.23214368129
-            </data>
-            <data key="lambdaFirst">
-                -0.0
-            </data>
-            <data key="lambda">
-                0.287682072452
-            </data>
-        </edge>
-        <edge directed="false" source="(('cid', 698111, 0, 0), 'normal delivery')" target="(('cid', 328586, 0, 0), 'vaginal delivery (finding)')">
-            <data key="avgOffset">
-                0.0
-            </data>
-            <data key="lift">
-                1.23214368129
-            </data>
-            <data key="lambdaFirst">
-                0.0
-            </data>
-            <data key="lambda">
-                0.0
-            </data>
-        </edge>
-        <edge directed="false" source="(('cid', 1176253, 0, 0), 'cells counted')" target="(('cid', 328586, 0, 0), 'vaginal delivery (finding)')">
-            <data key="avgOffset">
-                1.4
-            </data>
-            <data key="lift">
-                1.20397280433
-            </data>
-            <data key="lambdaFirst">
-                -0.0
-            </data>
-            <data key="lambda">
-                0.69314718056
-            </data>
-        </edge>
-        <edge directed="false" source="(('cid', 13050, 0, 0), 'methotrexate')" target="(('cid', 328586, 0, 0), 'vaginal delivery (finding)')">
-            <data key="avgOffset">
-                13.6
-            </data>
-            <data key="lift">
-                1.20397280433
-            </data>
-            <data key="lambdaFirst">
-                -0.0
-            </data>
-            <data key="lambda">
-                0.69314718056
-            </data>
-        </edge>
-        <edge directed="false" source="(('cid', 21517, 0, 0), 'attention deficit disorder')" target="(('cid', 247417, 0, 0), 'hyperactive behavior')">
-            <data key="avgOffset">
-                73.0
-            </data>
-            <data key="lift">
-                1.29098418132
-            </data>
-            <data key="lambdaFirst">
-                1.09861228867
-            </data>
-            <data key="lambda">
-                0.00842997616046
-            </data>
-        </edge>
-        <edge directed="false" source="(('cid', 830045, 0, 0), 'molecular genetic abnormality')" target="(('cid', 84573, 0, 0), 'covers (device)')">
-            <data key="avgOffset">
-                32.0
-            </data>
-            <data key="lift">
-                2.07944154168
-            </data>
-            <data key="lambdaFirst">
-                1.09861228867
-            </data>
-            <data key="lambda">
-                1.09861228867
-            </data>
-        </edge>
-        <edge directed="false" source="(('cid', 394085, 0, 0), 'kindergarten completion')" target="(('cid', 17388, 0, 0), 'psychological tests (procedure)')">
-            <data key="avgOffset">
-                300.6
-            </data>
-            <data key="lift">
-                1.29098418132
-            </data>
-            <data key="lambdaFirst">
-                -0.69314718056
-            </data>
-            <data key="lambda">
-                0.69314718056
-            </data>
-        </edge>
-        <edge directed="false" source="(('cid', 393896, 0, 0), 'reinforcement surgical repair')" target="(('cid', 1975, 0, 0), 'audiometry')">
-            <data key="avgOffset">
-                79.6
-            </data>
-            <data key="lift">
-                1.71479842809
-            </data>
-            <data key="lambdaFirst">
-                -0.0
-            </data>
-            <data key="lambda">
-                0.223143551314
-            </data>
-        </edge>
-        <edge directed="false" source="(('cid', 722986, 0, 0), 'poor eye contact')" target="(('cid', 124863, 0, 0), 'form of muscle')">
-            <data key="avgOffset">
-                440.4
-            </data>
-            <data key="lift">
-                1.13943428319
-            </data>
-            <data key="lambdaFirst">
-                -0.69314718056
-            </data>
-            <data key="lambda">
-                0.510825623766
-            </data>
-        </edge>
-        <edge directed="false" source="(('cid', 103680, 0, 0), 'ammonia measurement')" target="(('cid', 125026, 0, 0), 'speech delay')">
-            <data key="avgOffset">
-                267.333333333
-            </data>
-            <data key="lift">
-                1.13683350149
-            </data>
-            <data key="lambdaFirst">
-                -0.69314718056
-            </data>
-            <data key="lambda">
-                1.20397280433
-            </data>
-        </edge>
-        <edge directed="false" source="(('cid', 207011, 0, 0), 'organic acid')" target="(('cid', 125026, 0, 0), 'speech delay')">
-            <data key="avgOffset">
-                268.6
-            </data>
-            <data key="lift">
-                1.10866262452
-            </data>
-            <data key="lambdaFirst">
-                -0.69314718056
-            </data>
-            <data key="lambda">
-                0.60613580357
-            </data>
-        </edge>
-        <edge directed="false" source="(('code', '315.8'), 'Other specified delays in development')" target="(('cid', 125026, 0, 0), 'speech delay')">
-            <data key="avgOffset">
-                -187.5
-            </data>
-            <data key="lift">
-                1.13683350149
-            </data>
-            <data key="lambdaFirst">
-                0.69314718056
-            </data>
-            <data key="lambda">
-                0.0
-            </data>
-        </edge>
-        <edge directed="false" source="(('cid', 124863, 0, 0), 'form of muscle')" target="(('cid', 125026, 0, 0), 'speech delay')">
-            <data key="avgOffset">
-                437.5
-            </data>
-            <data key="lift">
-                1.00330210886
-            </data>
-            <data key="lambdaFirst">
-                -1.09861228867
-            </data>
-            <data key="lambda">
-                0.287682072452
-            </data>
-        </edge>
-        <edge directed="false" source="(('cid', 2621, 0, 0), 'birth history')" target="(('cid', 1027464, 0, 0), 'sustain')">
-            <data key="avgOffset">
-                38.6
-            </data>
-            <data key="lift">
-                1.0498221245
-            </data>
-            <data key="lambdaFirst">
-                1.38629436112
-            </data>
-            <data key="lambda">
-                1.32175583998
-            </data>
-        </edge>
-        <edge directed="false" source="(('cid', 19309, 0, 0), 'social interaction')" target="(('cid', 1027464, 0, 0), 'sustain')">
-            <data key="avgOffset">
-                65.3333333333
-            </data>
-            <data key="lift">
-                1.13683350149
-            </data>
-            <data key="lambdaFirst">
-                1.38629436112
-            </data>
-            <data key="lambda">
-                1.54044504095
-            </data>
-        </edge>
-        <edge directed="false" source="(('cid', 456136, 0, 0), 'emotional')" target="(('cid', 1027464, 0, 0), 'sustain')">
-            <data key="avgOffset">
-                236.0
-            </data>
-            <data key="lift">
-                1.23214368129
-            </data>
-            <data key="lambdaFirst">
-                1.60943791243
-            </data>
-            <data key="lambda">
-                0.200670695462
-            </data>
-        </edge>
-        <edge directed="false" source="(('cid', 19309, 0, 0), 'social interaction')" target="(('code', '315.39'), 'Other developmental speech or language disorder')">
-            <data key="avgOffset">
-                230.5
-            </data>
-            <data key="lift">
-                1.00330210886
-            </data>
-            <data key="lambdaFirst">
-                1.38629436112
-            </data>
-            <data key="lambda">
-                0.559615787935
-            </data>
-        </edge>
-        <edge directed="false" source="(('cid', 207011, 0, 0), 'organic acid')" target="(('code', '315.8'), 'Other specified delays in development')">
-            <data key="avgOffset">
-                -90.8
-            </data>
-            <data key="lift">
-                1.56064774826
-            </data>
-            <data key="lambdaFirst">
-                1.09861228867
-            </data>
-            <data key="lambda">
-                1.89085037187
-            </data>
-        </edge>
-        <edge directed="false" source="(('cid', 2621, 0, 0), 'birth history')" target="(('code', '315.8'), 'Other specified delays in development')">
-            <data key="avgOffset">
-                355.0
-            </data>
-            <data key="lift">
-                1.0498221245
-            </data>
-            <data key="lambdaFirst">
-                1.60943791243
-            </data>
-            <data key="lambda">
-                2.15948424935
-            </data>
-        </edge>
-        <edge directed="false" source="(('cid', 316690, 0, 0), 'gaze')" target="(('cid', 158299, 0, 0), 'immunostimulating conjugate (antigen)')">
-            <data key="avgOffset">
-                122.0
-            </data>
-            <data key="lift">
-                1.20397280433
-            </data>
-            <data key="lambdaFirst">
-                0.69314718056
-            </data>
-            <data key="lambda">
-                0.69314718056
-            </data>
-        </edge>
-        <edge directed="false" source="(('cid', 191727, 0, 0), 'fish-eye disease')" target="(('cid', 14648, 0, 0), 'oligonucleotides')">
-            <data key="avgOffset">
-                1085.8
-            </data>
-            <data key="lift">
-                1.89711998489
-            </data>
-            <data key="lambdaFirst">
-                1.38629436112
-            </data>
-            <data key="lambda">
-                1.67397643357
-            </data>
-        </edge>
-        <edge directed="false" source="(('cid', 1975, 0, 0), 'audiometry')" target="(('cid', 10021, 0, 0), 'hodgkin disease')">
-            <data key="avgOffset">
-                -101.166666667
-            </data>
-            <data key="lift">
-                1.89711998489
-            </data>
-            <data key="lambdaFirst">
-                0.69314718056
-            </data>
-            <data key="lambda">
-                0.105360515658
-            </data>
-        </edge>
-        <edge directed="false" source="(('cid', 9461, 0, 0), 'hearing tests')" target="(('cid', 10021, 0, 0), 'hodgkin disease')">
-            <data key="avgOffset">
-                107.0
-            </data>
-            <data key="lift">
-                1.29098418132
-            </data>
-            <data key="lambdaFirst">
-                1.38629436112
-            </data>
-            <data key="lambda">
-                0.498991166119
-            </data>
-        </edge>
-        <edge directed="false" source="(('cid', 393896, 0, 0), 'reinforcement surgical repair')" target="(('cid', 10021, 0, 0), 'hodgkin disease')">
-            <data key="avgOffset">
-                25.4
-            </data>
-            <data key="lift">
-                1.71479842809
-            </data>
-            <data key="lambdaFirst">
-                -0.0
-            </data>
-            <data key="lambda">
-                0.223143551314
-            </data>
-        </edge>
-        <edge directed="false" source="(('cid', 21517, 0, 0), 'attention deficit disorder')" target="(('cid', 598149, 0, 0), 'attention deficit hyperactivity disorder')">
-            <data key="avgOffset">
-                59.0
-            </data>
-            <data key="lift">
-                1.74296930506
-            </data>
-            <data key="lambdaFirst">
-                -1.09861228867
-            </data>
-            <data key="lambda">
-                0.386290966967
-            </data>
-        </edge>
-        <edge directed="false" source="(('cid', 393896, 0, 0), 'reinforcement surgical repair')" target="(('cid', 9461, 0, 0), 'hearing tests')">
-            <data key="avgOffset">
-                280.4
-            </data>
-            <data key="lift">
-                1.10866262452
-            </data>
-            <data key="lambdaFirst">
-                -0.69314718056
-            </data>
-            <data key="lambda">
-                1.0498221245
-            </data>
-        </edge>
-        <edge directed="false" source="(('cid', 1975, 0, 0), 'audiometry')" target="(('cid', 9461, 0, 0), 'hearing tests')">
-            <data key="avgOffset">
-                208.166666667
-            </data>
-            <data key="lift">
-                1.29098418132
-            </data>
-            <data key="lambdaFirst">
-                -0.69314718056
-            </data>
-            <data key="lambda">
-                0.559615787935
-            </data>
-        </edge>
-        <edge directed="false" source="(('code', 'V20.2'), 'Routine infant or child health check')" target="(('cid', 394085, 0, 0), 'kindergarten completion')">
-            <data key="avgOffset">
-                -166.2
-            </data>
-            <data key="lift">
-                1.10866262452
-            </data>
-            <data key="lambdaFirst">
-                1.38629436112
-            </data>
-            <data key="lambda">
-                1.66500776359
-            </data>
-        </edge>
-        <edge directed="false" source="(('cid', 191727, 0, 0), 'fish-eye disease')" target="(('cid', 7730, 0, 0), 'facial expression')">
-            <data key="avgOffset">
-                -399.4
-            </data>
-            <data key="lift">
-                1.10866262452
-            </data>
-            <data key="lambdaFirst">
-                -1.09861228867
-            </data>
-            <data key="lambda">
-                0.0526437334854
-            </data>
-        </edge>
-        <edge directed="false" source="(('cid', 316690, 0, 0), 'gaze')" target="(('cid', 247727, 0, 0), 'height / growth measure')">
-            <data key="avgOffset">
-                -69.6
-            </data>
-            <data key="lift">
-                1.02165124753
-            </data>
-            <data key="lambdaFirst">
-                0.69314718056
-            </data>
-            <data key="lambda">
-                0.336472236621
-            </data>
-        </edge>
-        <edge directed="false" source="(('cid', 18861, 0, 0), 'seizures')" target="(('cid', 13608, 0, 0), 'muscle hypertonia')">
-            <data key="avgOffset">
-                281.8
-            </data>
-            <data key="lift">
-                1.20397280433
-            </data>
-            <data key="lambdaFirst">
-                -0.0
-            </data>
-            <data key="lambda">
-                2.04769284337
-            </data>
-        </edge>
-        <edge directed="false" source="(('code', '315.39'), 'Other developmental speech or language disorder')" target="(('cid', 11682, 0, 0), 'language delay')">
-            <data key="avgOffset">
-                427.0
-            </data>
-            <data key="lift">
-                1.27296567581
-            </data>
-            <data key="lambdaFirst">
-                -1.09861228867
-            </data>
-            <data key="lambda">
-                0.74721440183
-            </data>
-        </edge>
-        <edge directed="false" source="(('cid', 19309, 0, 0), 'social interaction')" target="(('cid', 11682, 0, 0), 'language delay')">
-            <data key="avgOffset">
-                91.5
-            </data>
-            <data key="lift">
-                1.13683350149
-            </data>
-            <data key="lambdaFirst">
-                -0.69314718056
-            </data>
-            <data key="lambda">
-                0.69314718056
-            </data>
-        </edge>
-        <edge directed="false" source="(('cid', 316690, 0, 0), 'gaze')" target="(('cid', 11682, 0, 0), 'language delay')">
-            <data key="avgOffset">
-                -5.85714285714
-            </data>
-            <data key="lift">
-                1.20397280433
-            </data>
-            <data key="lambdaFirst">
-                -1.09861228867
-            </data>
-            <data key="lambda">
-                0.318453731119
-            </data>
-        </edge>
-        <edge directed="false" source="(('cid', 103680, 0, 0), 'ammonia measurement')" target="(('cid', 720080, 0, 0), 'gene deletion abnormality')">
-            <data key="avgOffset">
-                390.2
-            </data>
-            <data key="lift">
-                1.40649706844
-            </data>
-            <data key="lambdaFirst">
-                -0.69314718056
-            </data>
-            <data key="lambda">
-                0.559615787935
-            </data>
-        </edge>
-        <edge directed="false" source="(('cid', 400561, 0, 0), 'blood carnitine measurement')" target="(('cid', 720080, 0, 0), 'gene deletion abnormality')">
-            <data key="avgOffset">
-                236.4
-            </data>
-            <data key="lift">
-                1.40649706844
-            </data>
-            <data key="lambdaFirst">
-                -0.69314718056
-            </data>
-            <data key="lambda">
-                0.810930216216
-            </data>
-        </edge>
-        <edge directed="false" source="(('code', '315.32'), 'Mixed receptive-expressive language disorder')" target="(('cid', 3620, 0, 0), 'ccc brand of chlormequat')">
-            <data key="avgOffset">
-                129.166666667
-            </data>
-            <data key="lift">
-                1.58881862523
-            </data>
-            <data key="lambdaFirst">
-                -1.09861228867
-            </data>
-            <data key="lambda">
-                0.916290731874
-            </data>
-        </edge>
-        <edge directed="false" source="(('cid', 512062, 0, 0), 'receptor activator of nuclear factor-kappa b')" target="(('cid', 3620, 0, 0), 'ccc brand of chlormequat')">
-            <data key="avgOffset">
-                167.6
-            </data>
-            <data key="lift">
-                1.40649706844
-            </data>
-            <data key="lambdaFirst">
-                -0.0
-            </data>
-            <data key="lambda">
-                0.336472236621
-            </data>
-        </edge>
-        <edge directed="false" source="(('cid', 103680, 0, 0), 'ammonia measurement')" target="(('cid', 400561, 0, 0), 'blood carnitine measurement')">
-            <data key="avgOffset">
-                0.0
-            </data>
-            <data key="lift">
-                1.40649706844
-            </data>
-            <data key="lambdaFirst">
-                0.0
-            </data>
-            <data key="lambda">
-                0.451985123743
-            </data>
-        </edge>
-        <edge directed="false" source="(('cid', 456136, 0, 0), 'emotional')" target="(('cid', 419781, 0, 0), 'apgar')">
-            <data key="avgOffset">
-                257.8
-            </data>
-            <data key="lift">
-                1.38629436112
-            </data>
-            <data key="lambdaFirst">
-                -0.69314718056
-            </data>
-            <data key="lambda">
-                0.0800427076735
-            </data>
-        </edge>
-        <edge directed="false" source="(('cid', 1027464, 0, 0), 'sustain')" target="(('cid', 163364, 0, 0), 'task veterinary proprietary drug and/or biological')">
-            <data key="avgOffset">
-                77.8
-            </data>
-            <data key="lift">
-                1.0498221245
-            </data>
-            <data key="lambdaFirst">
-                -0.69314718056
-            </data>
-            <data key="lambda">
-                0.336472236621
-            </data>
-        </edge>
-        <edge directed="false" source="(('cid', 9751, 0, 0), 'hereditary diseases')" target="(('code', '783.40'), '&quot;Lack of normal physiological development, unspecified&quot;')">
-            <data key="avgOffset">
-                404.4
-            </data>
-            <data key="lift">
-                1.10866262452
-            </data>
-            <data key="lambdaFirst">
-                1.38629436112
-            </data>
-            <data key="lambda">
-                0.847297860387
-            </data>
-        </edge>
-        <edge directed="false" source="(('code', '315.8'), 'Other specified delays in development')" target="(('code', '783.40'), '&quot;Lack of normal physiological development, unspecified&quot;')">
-            <data key="avgOffset">
-                -205.166666667
-            </data>
-            <data key="lift">
-                1.13683350149
-            </data>
-            <data key="lambdaFirst">
-                1.09861228867
-            </data>
-            <data key="lambda">
-                0.0645385211376
-            </data>
-        </edge>
-        <edge directed="false" source="(('cid', 102764, 0, 0), 'chromosome analysis')" target="(('cid', 1176253, 0, 0), 'cells counted')">
-            <data key="avgOffset">
-                0.0
-            </data>
-            <data key="lift">
-                1.38629436112
-            </data>
-            <data key="lambdaFirst">
-                0.0
-            </data>
-            <data key="lambda">
-                0.0
-            </data>
-        </edge>
-        <edge directed="false" source="(('cid', 13050, 0, 0), 'methotrexate')" target="(('cid', 1176253, 0, 0), 'cells counted')">
-            <data key="avgOffset">
-                12.2
-            </data>
-            <data key="lift">
-                1.71479842809
-            </data>
-            <data key="lambdaFirst">
-                -0.0
-            </data>
-            <data key="lambda">
-                0.69314718056
-            </data>
-        </edge>
-        <edge directed="false" source="(('cid', 401803, 0, 0), 'infection of ear')" target="(('cid', 15237, 0, 0), 'otitis media')">
-            <data key="avgOffset">
-                94.0
-            </data>
-            <data key="lift">
-                1.29098418132
-            </data>
-            <data key="lambdaFirst">
-                0.69314718056
-            </data>
-            <data key="lambda">
-                0.068992871487
-            </data>
-        </edge>
-        <edge directed="false" source="(('cid', 163364, 0, 0), 'task veterinary proprietary drug and/or biological')" target="(('code', '315.32'), 'Mixed receptive-expressive language disorder')">
-            <data key="avgOffset">
-                21.4
-            </data>
-            <data key="lift">
-                1.0498221245
-            </data>
-            <data key="lambdaFirst">
-                1.09861228867
-            </data>
-            <data key="lambda">
-                0.810930216216
-            </data>
-        </edge>
-        <edge directed="false" source="(('cid', 512062, 0, 0), 'receptor activator of nuclear factor-kappa b')" target="(('code', '315.32'), 'Mixed receptive-expressive language disorder')">
-            <data key="avgOffset">
-                -7.2
-            </data>
-            <data key="lift">
-                1.40649706844
-            </data>
-            <data key="lambdaFirst">
-                0.69314718056
-            </data>
-            <data key="lambda">
-                0.847297860387
-            </data>
-        </edge>
-        <edge directed="false" source="(('cid', 19309, 0, 0), 'social interaction')" target="(('code', '315.32'), 'Mixed receptive-expressive language disorder')">
-            <data key="avgOffset">
-                -54.8333333333
-            </data>
-            <data key="lift">
-                1.13683350149
-            </data>
-            <data key="lambdaFirst">
-                0.69314718056
-            </data>
-            <data key="lambda">
-                0.374693449441
-            </data>
-        </edge>
-        <edge directed="false" source="(('cid', 103680, 0, 0), 'ammonia measurement')" target="(('cid', 211773, 0, 0), 'lactate')">
-            <data key="avgOffset">
-                52.0
-            </data>
-            <data key="lift">
-                1.27296567581
-            </data>
-            <data key="lambdaFirst">
-                -0.0
-            </data>
-            <data key="lambda">
-                0.847297860387
-            </data>
-        </edge>
-        <edge directed="false" source="(('cid', 1050, 0, 0), 'amino acids')" target="(('cid', 211773, 0, 0), 'lactate')">
-            <data key="avgOffset">
-                -0.0
-            </data>
-            <data key="lift">
-                1.09861228867
-            </data>
-            <data key="lambdaFirst">
-                -0.0
-            </data>
-            <data key="lambda">
-                1.02961941718
-            </data>
-        </edge>
-        <edge directed="false" source="(('code', '315.8'), 'Other specified delays in development')" target="(('cid', 211773, 0, 0), 'lactate')">
-            <data key="avgOffset">
-                152.0
-            </data>
-            <data key="lift">
-                1.45528723261
-            </data>
-            <data key="lambdaFirst">
-                -1.09861228867
-            </data>
-            <data key="lambda">
-                1.6582280766
-            </data>
-        </edge>
-        <edge directed="false" source="(('cid', 250947, 0, 0), 'urine organic acid level (procedure)')" target="(('cid', 211773, 0, 0), 'lactate')">
-            <data key="avgOffset">
-                -0.0
-            </data>
-            <data key="lift">
-                1.60943791243
-            </data>
-            <data key="lambdaFirst">
-                -0.0
-            </data>
-            <data key="lambda">
-                0.955511445027
-            </data>
-        </edge>
-        <edge directed="false" source="(('cid', 207011, 0, 0), 'organic acid')" target="(('cid', 211773, 0, 0), 'lactate')">
-            <data key="avgOffset">
-                -0.166666666667
-            </data>
-            <data key="lift">
-                1.60943791243
-            </data>
-            <data key="lambdaFirst">
-                -0.69314718056
-            </data>
-            <data key="lambda">
-                0.847297860387
-            </data>
-        </edge>
-        <edge directed="false" source="(('cid', 102265, 0, 0), 'audiological evaluation')" target="(('cid', 19309, 0, 0), 'social interaction')">
-            <data key="avgOffset">
-                -117.0
-            </data>
-            <data key="lift">
-                1.10866262452
-            </data>
-            <data key="lambdaFirst">
-                -1.09861228867
-            </data>
-            <data key="lambda">
-                0.182321556794
-            </data>
-        </edge>
-        <edge directed="false" source="(('code', '783.40'), '&quot;Lack of normal physiological development, unspecified&quot;')" target="(('cid', 123046, 0, 0), 'hearing normal')">
-            <data key="avgOffset">
-                281.0
-            </data>
-            <data key="lift">
-                1.10866262452
-            </data>
-            <data key="lambdaFirst">
-                -0.69314718056
-            </data>
-            <data key="lambda">
-                1.2527629685
-            </data>
-        </edge>
-        <edge directed="false" source="(('cid', 10021, 0, 0), 'hodgkin disease')" target="(('cid', 123046, 0, 0), 'hearing normal')">
-            <data key="avgOffset">
-                82.8
-            </data>
-            <data key="lift">
-                1.71479842809
-            </data>
-            <data key="lambdaFirst">
-                1.38629436112
-            </data>
-            <data key="lambda">
-                0.348306694268
-            </data>
-        </edge>
-        <edge directed="false" source="(('cid', 9461, 0, 0), 'hearing tests')" target="(('cid', 123046, 0, 0), 'hearing normal')">
-            <data key="avgOffset">
-                41.3333333333
-            </data>
-            <data key="lift">
-                1.29098418132
-            </data>
-            <data key="lambdaFirst">
-                1.38629436112
-            </data>
-            <data key="lambda">
-                0.793230639117
-            </data>
-        </edge>
-        <edge directed="false" source="(('cid', 1975, 0, 0), 'audiometry')" target="(('cid', 123046, 0, 0), 'hearing normal')">
-            <data key="avgOffset">
-                -38.6
-            </data>
-            <data key="lift">
-                1.71479842809
             </data>
             <data key="lambdaFirst">
                 1.09861228867
@@ -1346,79 +413,163 @@
                 0.405465108108
             </data>
         </edge>
-        <edge directed="false" source="(('cid', 19309, 0, 0), 'social interaction')" target="(('cid', 352693, 0, 0), 'does play')">
+        <edge directed="false" source="(('cid', 21262, 0, 0), 'trisomy')" target="(('cid', 14648, 0, 0), 'oligonucleotides')">
             <data key="avgOffset">
-                -35.0
+                0.0
             </data>
             <data key="lift">
-                1.00330210886
+                1.49165487678
+            </data>
+            <data key="lambdaFirst">
+                0.0
+            </data>
+            <data key="lambda">
+                0.0
+            </data>
+        </edge>
+        <edge directed="false" source="(('cid', 1046828, 0, 0), 'clinical significance')" target="(('cid', 14648, 0, 0), 'oligonucleotides')">
+            <data key="avgOffset">
+                -0.0
+            </data>
+            <data key="lift">
+                1.49165487678
+            </data>
+            <data key="lambdaFirst">
+                -0.0
+            </data>
+            <data key="lambda">
+                0.69314718056
+            </data>
+        </edge>
+        <edge directed="false" source="(('cid', 353076, 0, 0), 'oligonucleotide arrays')" target="(('cid', 14648, 0, 0), 'oligonucleotides')">
+            <data key="avgOffset">
+                0.0
+            </data>
+            <data key="lift">
+                1.49165487678
+            </data>
+            <data key="lambdaFirst">
+                0.0
+            </data>
+            <data key="lambda">
+                0.0
+            </data>
+        </edge>
+        <edge directed="false" source="(('cid', 830045, 0, 0), 'molecular genetic abnormality')" target="(('cid', 14648, 0, 0), 'oligonucleotides')">
+            <data key="avgOffset">
+                171.0
+            </data>
+            <data key="lift">
+                1.49165487678
             </data>
             <data key="lambdaFirst">
                 0.69314718056
             </data>
             <data key="lambda">
-                0.223143551314
+                0.69314718056
             </data>
         </edge>
-        <edge directed="false" source="(('cid', 124863, 0, 0), 'form of muscle')" target="(('cid', 352693, 0, 0), 'does play')">
+        <edge directed="false" source="(('cid', 84573, 0, 0), 'covers (device)')" target="(('cid', 6347, 0, 0), 'dna')">
             <data key="avgOffset">
-                552.4
+                349.428571429
             </data>
             <data key="lift">
-                1.13943428319
+                1.03966975303
             </data>
             <data key="lambdaFirst">
-                -1.09861228867
+                -0.0
             </data>
             <data key="lambda">
-                0.451985123743
+                0.69314718056
             </data>
         </edge>
-        <edge directed="false" source="(('cid', 1050, 0, 0), 'amino acids')" target="(('cid', 103876, 0, 0), 'lactic acid measurement')">
+        <edge directed="false" source="(('cid', 14647, 0, 0), 'oligonucleotide probes')" target="(('cid', 6347, 0, 0), 'dna')">
             <data key="avgOffset">
-                67.6666666667
+                349.428571429
             </data>
             <data key="lift">
-                1.23214368129
+                1.29098418132
             </data>
             <data key="lambdaFirst">
-                1.38629436112
+                -0.0
             </data>
             <data key="lambda">
-                0.485507815782
+                0.69314718056
             </data>
         </edge>
-        <edge directed="false" source="(('cid', 103680, 0, 0), 'ammonia measurement')" target="(('cid', 103876, 0, 0), 'lactic acid measurement')">
+        <edge directed="false" source="(('cid', 21262, 0, 0), 'trisomy')" target="(('cid', 6347, 0, 0), 'dna')">
             <data key="avgOffset">
-                29.2
+                349.428571429
             </data>
             <data key="lift">
-                1.40649706844
+                1.29098418132
+            </data>
+            <data key="lambdaFirst">
+                -0.0
+            </data>
+            <data key="lambda">
+                0.69314718056
+            </data>
+        </edge>
+        <edge directed="false" source="(('cid', 1046828, 0, 0), 'clinical significance')" target="(('cid', 6347, 0, 0), 'dna')">
+            <data key="avgOffset">
+                349.428571429
+            </data>
+            <data key="lift">
+                1.29098418132
+            </data>
+            <data key="lambdaFirst">
+                -0.0
+            </data>
+            <data key="lambda">
+                1.09861228867
+            </data>
+        </edge>
+        <edge directed="false" source="(('cid', 353076, 0, 0), 'oligonucleotide arrays')" target="(('cid', 6347, 0, 0), 'dna')">
+            <data key="avgOffset">
+                349.428571429
+            </data>
+            <data key="lift">
+                1.15745278869
+            </data>
+            <data key="lambdaFirst">
+                -0.0
+            </data>
+            <data key="lambda">
+                0.69314718056
+            </data>
+        </edge>
+        <edge directed="false" source="(('cid', 830045, 0, 0), 'molecular genetic abnormality')" target="(('cid', 6347, 0, 0), 'dna')">
+            <data key="avgOffset">
+                -178.428571429
+            </data>
+            <data key="lift">
+                1.29098418132
             </data>
             <data key="lambdaFirst">
                 0.69314718056
             </data>
             <data key="lambda">
-                0.336472236621
+                0.0
             </data>
         </edge>
-        <edge directed="false" source="(('cid', 158572, 0, 0), 'pyruvate measurement')" target="(('cid', 103876, 0, 0), 'lactic acid measurement')">
+        <edge directed="false" source="(('cid', 1975, 0, 0), 'audiometry')" target="(('cid', 6665, 0, 0), 'echolalia')">
             <data key="avgOffset">
-                67.6666666667
+                174.8
             </data>
             <data key="lift">
-                1.58881862523
+                1.27296567581
             </data>
             <data key="lambdaFirst">
-                1.38629436112
+                1.09861228867
             </data>
             <data key="lambda">
-                1.94591014906
+                0.69314718056
             </data>
         </edge>
-        <edge directed="false" source="(('cid', 722986, 0, 0), 'poor eye contact')" target="(('cid', 53731, 0, 0), 'agitation')">
+        <edge directed="false" source="(('code', '783.42'), 'Delayed milestones')" target="(('code', '315.39'), 'Other developmental speech or language disorder')">
             <data key="avgOffset">
-                199.2
+                49.0
             </data>
             <data key="lift">
                 1.02165124753
@@ -1427,38 +578,108 @@
                 -1.09861228867
             </data>
             <data key="lambda">
-                0.117783035656
+                1.44691898294
             </data>
         </edge>
-        <edge directed="false" source="(('cid', 323010, 0, 0), 'able to sit')" target="(('cid', 53731, 0, 0), 'agitation')">
+        <edge directed="false" source="(('cid', 182956, 0, 0), 'abnormal shape')" target="(('code', '315.39'), 'Other developmental speech or language disorder')">
             <data key="avgOffset">
-                572.8
+                249.2
             </data>
             <data key="lift">
-                1.30933331998
-            </data>
-            <data key="lambdaFirst">
-                1.60943791243
-            </data>
-            <data key="lambda">
-                1.74919985481
-            </data>
-        </edge>
-        <edge directed="false" source="(('cid', 1050, 0, 0), 'amino acids')" target="(('cid', 347817, 0, 0), 'measurement of serum amino acid level')">
-            <data key="avgOffset">
-                -0.0
-            </data>
-            <data key="lift">
-                1.38629436112
+                1.02165124753
             </data>
             <data key="lambdaFirst">
                 -0.0
             </data>
             <data key="lambda">
-                1.2527629685
+                1.29928298413
             </data>
         </edge>
-        <edge directed="false" source="(('cid', 158572, 0, 0), 'pyruvate measurement')" target="(('cid', 347817, 0, 0), 'measurement of serum amino acid level')">
+        <edge directed="false" source="(('cid', 1975, 0, 0), 'audiometry')" target="(('code', '315.39'), 'Other developmental speech or language disorder')">
+            <data key="avgOffset">
+                55.6
+            </data>
+            <data key="lift">
+                1.02165124753
+            </data>
+            <data key="lambdaFirst">
+                -0.0
+            </data>
+            <data key="lambda">
+                1.09861228867
+            </data>
+        </edge>
+        <edge directed="false" source="(('code', 'V20.2'), 'Routine infant or child health check')" target="(('code', '315.39'), 'Other developmental speech or language disorder')">
+            <data key="avgOffset">
+                -345.8
+            </data>
+            <data key="lift">
+                1.15518264016
+            </data>
+            <data key="lambdaFirst">
+                -1.38629436112
+            </data>
+            <data key="lambda">
+                0.405465108108
+            </data>
+        </edge>
+        <edge directed="false" source="(('code', '315.4'), 'Developmental coordination disorder')" target="(('code', '783.40'), '&quot;Lack of normal physiological development, unspecified&quot;')">
+            <data key="avgOffset">
+                631.0
+            </data>
+            <data key="lift">
+                1.20397280433
+            </data>
+            <data key="lambdaFirst">
+                -0.69314718056
+            </data>
+            <data key="lambda">
+                0.773189888233
+            </data>
+        </edge>
+        <edge directed="false" source="(('cid', 132973, 0, 0), 'problem behavior')" target="(('cid', 328586, 0, 0), 'vaginal delivery (finding)')">
+            <data key="avgOffset">
+                234.0
+            </data>
+            <data key="lift">
+                1.0498221245
+            </data>
+            <data key="lambdaFirst">
+                -0.69314718056
+            </data>
+            <data key="lambda">
+                0.69314718056
+            </data>
+        </edge>
+        <edge directed="false" source="(('cid', 21517, 0, 0), 'attention deficit disorder')" target="(('cid', 247417, 0, 0), 'hyperactive behavior')">
+            <data key="avgOffset">
+                -0.0
+            </data>
+            <data key="lift">
+                1.20397280433
+            </data>
+            <data key="lambdaFirst">
+                -0.0
+            </data>
+            <data key="lambda">
+                0.104442663368
+            </data>
+        </edge>
+        <edge directed="false" source="(('cid', 102764, 0, 0), 'chromosome analysis')" target="(('cid', 14647, 0, 0), 'oligonucleotide probes')">
+            <data key="avgOffset">
+                407.166666667
+            </data>
+            <data key="lift">
+                1.13683350149
+            </data>
+            <data key="lambdaFirst">
+                0.69314718056
+            </data>
+            <data key="lambda">
+                0.0
+            </data>
+        </edge>
+        <edge directed="false" source="(('cid', 21262, 0, 0), 'trisomy')" target="(('cid', 14647, 0, 0), 'oligonucleotide probes')">
             <data key="avgOffset">
                 0.0
             </data>
@@ -1469,26 +690,138 @@
                 0.0
             </data>
             <data key="lambda">
-                1.38629436112
+                0.0
             </data>
         </edge>
-        <edge directed="false" source="(('cid', 722986, 0, 0), 'poor eye contact')" target="(('cid', 882249, 0, 0), 'no seizures')">
+        <edge directed="false" source="(('cid', 13609, 0, 0), 'muscle hypotonia')" target="(('cid', 125206, 0, 0), 'hypotonicity')">
             <data key="avgOffset">
-                284.2
+                171.2
+            </data>
+            <data key="lift">
+                1.42711635564
+            </data>
+            <data key="lambdaFirst">
+                1.60943791243
+            </data>
+            <data key="lambda">
+                0.0953101798043
+            </data>
+        </edge>
+        <edge directed="false" source="(('cid', 182956, 0, 0), 'abnormal shape')" target="(('cid', 1975, 0, 0), 'audiometry')">
+            <data key="avgOffset">
+                -138.285714286
+            </data>
+            <data key="lift">
+                1.47590651981
+            </data>
+            <data key="lambdaFirst">
+                0.0
+            </data>
+            <data key="lambda">
+                0.451985123743
+            </data>
+        </edge>
+        <edge directed="false" source="(('cid', 122071, 0, 0), 'temper tantrum')" target="(('cid', 1975, 0, 0), 'audiometry')">
+            <data key="avgOffset">
+                132.0
+            </data>
+            <data key="lift">
+                1.13943428319
+            </data>
+            <data key="lambdaFirst">
+                -1.09861228867
+            </data>
+            <data key="lambda">
+                0.510825623766
+            </data>
+        </edge>
+        <edge directed="false" source="(('cid', 393896, 0, 0), 'reinforcement surgical repair')" target="(('cid', 1975, 0, 0), 'audiometry')">
+            <data key="avgOffset">
+                9.6
+            </data>
+            <data key="lift">
+                1.42711635564
+            </data>
+            <data key="lambdaFirst">
+                0.69314718056
+            </data>
+            <data key="lambda">
+                0.068992871487
+            </data>
+        </edge>
+        <edge directed="false" source="(('cid', 247768, 0, 0), 'head size')" target="(('cid', 124863, 0, 0), 'form of muscle')">
+            <data key="avgOffset">
+                521.2
             </data>
             <data key="lift">
                 1.27296567581
             </data>
             <data key="lambdaFirst">
+                1.38629436112
+            </data>
+            <data key="lambda">
+                0.451985123743
+            </data>
+        </edge>
+        <edge directed="false" source="(('cid', 248187, 0, 0), 'engaged to be married')" target="(('cid', 323010, 0, 0), 'able to sit')">
+            <data key="avgOffset">
+                303.0
+            </data>
+            <data key="lift">
+                1.12393009665
+            </data>
+            <data key="lambdaFirst">
+                -0.69314718056
+            </data>
+            <data key="lambda">
+                0.470003629246
+            </data>
+        </edge>
+        <edge directed="false" source="(('cid', 123046, 0, 0), 'hearing normal')" target="(('cid', 125026, 0, 0), 'speech delay')">
+            <data key="avgOffset">
+                25.875
+            </data>
+            <data key="lift">
+                1.16315080981
+            </data>
+            <data key="lambdaFirst">
+                -0.69314718056
+            </data>
+            <data key="lambda">
+                1.09861228867
+            </data>
+        </edge>
+        <edge directed="false" source="(('code', '315.31'), 'Expressive language disorder')" target="(('cid', 125026, 0, 0), 'speech delay')">
+            <data key="avgOffset">
+                142.2
+            </data>
+            <data key="lift">
+                1.0498221245
+            </data>
+            <data key="lambdaFirst">
                 -0.0
             </data>
             <data key="lambda">
-                0.241162056817
+                1.09861228867
             </data>
         </edge>
-        <edge directed="false" source="(('cid', 456136, 0, 0), 'emotional')" target="(('cid', 311642, 0, 0), 'does turn (finding)')">
+        <edge directed="false" source="(('code', 'V20.2'), 'Routine infant or child health check')" target="(('cid', 401803, 0, 0), 'infection of ear')">
             <data key="avgOffset">
-                -322.0
+                -467.833333333
+            </data>
+            <data key="lift">
+                1.0498221245
+            </data>
+            <data key="lambdaFirst">
+                -1.38629436112
+            </data>
+            <data key="lambda">
+                0.510825623766
+            </data>
+        </edge>
+        <edge directed="false" source="(('code', '299.90'), '&quot;Unspecified pervasive developmental disorder, current or active state&quot;')" target="(('cid', 5954, 0, 0), 'camurati-engelmann syndrome')">
+            <data key="avgOffset">
+                282.333333333
             </data>
             <data key="lift">
                 1.20397280433
@@ -1497,12 +830,754 @@
                 -1.09861228867
             </data>
             <data key="lambda">
-                0.117783035656
+                0.73396917508
             </data>
         </edge>
-        <edge directed="false" source="(('cid', 316690, 0, 0), 'gaze')" target="(('cid', 311642, 0, 0), 'does turn (finding)')">
+        <edge directed="false" source="(('cid', 323010, 0, 0), 'able to sit')" target="(('cid', 326242, 0, 0), 'vocalization (finding)')">
             <data key="avgOffset">
-                8.8
+                32.6
+            </data>
+            <data key="lift">
+                1.49165487678
+            </data>
+            <data key="lambdaFirst">
+                0.69314718056
+            </data>
+            <data key="lambda">
+                0.788457360364
+            </data>
+        </edge>
+        <edge directed="false" source="(('cid', 14648, 0, 0), 'oligonucleotides')" target="(('cid', 1288, 0, 0), 'aneuploidy')">
+            <data key="avgOffset">
+                0.0
+            </data>
+            <data key="lift">
+                1.49165487678
+            </data>
+            <data key="lambdaFirst">
+                0.0
+            </data>
+            <data key="lambda">
+                0.0
+            </data>
+        </edge>
+        <edge directed="false" source="(('cid', 6347, 0, 0), 'dna')" target="(('cid', 1288, 0, 0), 'aneuploidy')">
+            <data key="avgOffset">
+                349.428571429
+            </data>
+            <data key="lift">
+                1.29098418132
+            </data>
+            <data key="lambdaFirst">
+                0.69314718056
+            </data>
+            <data key="lambda">
+                0.69314718056
+            </data>
+        </edge>
+        <edge directed="false" source="(('cid', 84573, 0, 0), 'covers (device)')" target="(('cid', 1288, 0, 0), 'aneuploidy')">
+            <data key="avgOffset">
+                0.0
+            </data>
+            <data key="lift">
+                1.49165487678
+            </data>
+            <data key="lambdaFirst">
+                0.0
+            </data>
+            <data key="lambda">
+                0.0
+            </data>
+        </edge>
+        <edge directed="false" source="(('cid', 102764, 0, 0), 'chromosome analysis')" target="(('cid', 1288, 0, 0), 'aneuploidy')">
+            <data key="avgOffset">
+                407.166666667
+            </data>
+            <data key="lift">
+                1.13683350149
+            </data>
+            <data key="lambdaFirst">
+                0.69314718056
+            </data>
+            <data key="lambda">
+                0.0
+            </data>
+        </edge>
+        <edge directed="false" source="(('cid', 14647, 0, 0), 'oligonucleotide probes')" target="(('cid', 1288, 0, 0), 'aneuploidy')">
+            <data key="avgOffset">
+                0.0
+            </data>
+            <data key="lift">
+                1.74296930506
+            </data>
+            <data key="lambdaFirst">
+                0.0
+            </data>
+            <data key="lambda">
+                0.0
+            </data>
+        </edge>
+        <edge directed="false" source="(('cid', 21262, 0, 0), 'trisomy')" target="(('cid', 1288, 0, 0), 'aneuploidy')">
+            <data key="avgOffset">
+                0.0
+            </data>
+            <data key="lift">
+                1.74296930506
+            </data>
+            <data key="lambdaFirst">
+                0.0
+            </data>
+            <data key="lambda">
+                0.0
+            </data>
+        </edge>
+        <edge directed="false" source="(('cid', 1176253, 0, 0), 'cells counted')" target="(('cid', 1288, 0, 0), 'aneuploidy')">
+            <data key="avgOffset">
+                0.6
+            </data>
+            <data key="lift">
+                1.15518264016
+            </data>
+            <data key="lambdaFirst">
+                -0.0
+            </data>
+            <data key="lambda">
+                0.69314718056
+            </data>
+        </edge>
+        <edge directed="false" source="(('cid', 88606, 0, 0), 'banding procedure')" target="(('cid', 1288, 0, 0), 'aneuploidy')">
+            <data key="avgOffset">
+                0.6
+            </data>
+            <data key="lift">
+                1.15518264016
+            </data>
+            <data key="lambdaFirst">
+                -0.0
+            </data>
+            <data key="lambda">
+                0.69314718056
+            </data>
+        </edge>
+        <edge directed="false" source="(('cid', 1046828, 0, 0), 'clinical significance')" target="(('cid', 1288, 0, 0), 'aneuploidy')">
+            <data key="avgOffset">
+                -0.0
+            </data>
+            <data key="lift">
+                1.74296930506
+            </data>
+            <data key="lambdaFirst">
+                -0.0
+            </data>
+            <data key="lambda">
+                0.69314718056
+            </data>
+        </edge>
+        <edge directed="false" source="(('cid', 353076, 0, 0), 'oligonucleotide arrays')" target="(('cid', 1288, 0, 0), 'aneuploidy')">
+            <data key="avgOffset">
+                0.0
+            </data>
+            <data key="lift">
+                1.60943791243
+            </data>
+            <data key="lambdaFirst">
+                0.0
+            </data>
+            <data key="lambda">
+                0.0
+            </data>
+        </edge>
+        <edge directed="false" source="(('cid', 830045, 0, 0), 'molecular genetic abnormality')" target="(('cid', 1288, 0, 0), 'aneuploidy')">
+            <data key="avgOffset">
+                171.0
+            </data>
+            <data key="lift">
+                1.74296930506
+            </data>
+            <data key="lambdaFirst">
+                0.69314718056
+            </data>
+            <data key="lambda">
+                0.69314718056
+            </data>
+        </edge>
+        <edge directed="false" source="(('cid', 401803, 0, 0), 'infection of ear')" target="(('cid', 15237, 0, 0), 'otitis media')">
+            <data key="avgOffset">
+                -0.0
+            </data>
+            <data key="lift">
+                1.20397280433
+            </data>
+            <data key="lambdaFirst">
+                -0.0
+            </data>
+            <data key="lambda">
+                0.325422400435
+            </data>
+        </edge>
+        <edge directed="false" source="(('cid', 182956, 0, 0), 'abnormal shape')" target="(('cid', 53873, 0, 0), 'tympanometry')">
+            <data key="avgOffset">
+                0.0
+            </data>
+            <data key="lift">
+                1.60943791243
+            </data>
+            <data key="lambdaFirst">
+                0.0
+            </data>
+            <data key="lambda">
+                0.875468737354
+            </data>
+        </edge>
+        <edge directed="false" source="(('cid', 1975, 0, 0), 'audiometry')" target="(('cid', 53873, 0, 0), 'tympanometry')">
+            <data key="avgOffset">
+                0.0
+            </data>
+            <data key="lift">
+                1.45528723261
+            </data>
+            <data key="lambdaFirst">
+                0.0
+            </data>
+            <data key="lambda">
+                0.068992871487
+            </data>
+        </edge>
+        <edge directed="false" source="(('cid', 311642, 0, 0), 'does turn (finding)')" target="(('cid', 53873, 0, 0), 'tympanometry')">
+            <data key="avgOffset">
+                -82.6
+            </data>
+            <data key="lift">
+                1.0498221245
+            </data>
+            <data key="lambdaFirst">
+                -1.60943791243
+            </data>
+            <data key="lambda">
+                0.325422400435
+            </data>
+        </edge>
+        <edge directed="false" source="(('cid', 17388, 0, 0), 'psychological tests (procedure)')" target="(('cid', 163364, 0, 0), 'task veterinary proprietary drug and/or biological')">
+            <data key="avgOffset">
+                9.2
+            </data>
+            <data key="lift">
+                1.0498221245
+            </data>
+            <data key="lambdaFirst">
+                -0.0
+            </data>
+            <data key="lambda">
+                0.69314718056
+            </data>
+        </edge>
+        <edge directed="false" source="(('cid', 1178247, 0, 0), 'finding related to focusing')" target="(('cid', 7730, 0, 0), 'facial expression')">
+            <data key="avgOffset">
+                517.8
+            </data>
+            <data key="lift">
+                1.0498221245
+            </data>
+            <data key="lambdaFirst">
+                1.38629436112
+            </data>
+            <data key="lambda">
+                0.287682072452
+            </data>
+        </edge>
+        <edge directed="false" source="(('cid', 21262, 0, 0), 'trisomy')" target="(('cid', 102764, 0, 0), 'chromosome analysis')">
+            <data key="avgOffset">
+                -407.166666667
+            </data>
+            <data key="lift">
+                1.13683350149
+            </data>
+            <data key="lambdaFirst">
+                0.69314718056
+            </data>
+            <data key="lambda">
+                0.0
+            </data>
+        </edge>
+        <edge directed="false" source="(('cid', 14647, 0, 0), 'oligonucleotide probes')" target="(('cid', 1046828, 0, 0), 'clinical significance')">
+            <data key="avgOffset">
+                0.0
+            </data>
+            <data key="lift">
+                1.74296930506
+            </data>
+            <data key="lambdaFirst">
+                0.0
+            </data>
+            <data key="lambda">
+                0.69314718056
+            </data>
+        </edge>
+        <edge directed="false" source="(('cid', 102764, 0, 0), 'chromosome analysis')" target="(('cid', 1046828, 0, 0), 'clinical significance')">
+            <data key="avgOffset">
+                407.166666667
+            </data>
+            <data key="lift">
+                1.13683350149
+            </data>
+            <data key="lambdaFirst">
+                0.69314718056
+            </data>
+            <data key="lambda">
+                0.405465108108
+            </data>
+        </edge>
+        <edge directed="false" source="(('cid', 353076, 0, 0), 'oligonucleotide arrays')" target="(('cid', 1046828, 0, 0), 'clinical significance')">
+            <data key="avgOffset">
+                0.0
+            </data>
+            <data key="lift">
+                1.60943791243
+            </data>
+            <data key="lambdaFirst">
+                0.0
+            </data>
+            <data key="lambda">
+                0.69314718056
+            </data>
+        </edge>
+        <edge directed="false" source="(('cid', 21262, 0, 0), 'trisomy')" target="(('cid', 1046828, 0, 0), 'clinical significance')">
+            <data key="avgOffset">
+                0.0
+            </data>
+            <data key="lift">
+                1.74296930506
+            </data>
+            <data key="lambdaFirst">
+                0.0
+            </data>
+            <data key="lambda">
+                0.69314718056
+            </data>
+        </edge>
+        <edge directed="false" source="(('cid', 192945, 0, 0), 'visual reinforcement audiometry')" target="(('cid', 11682, 0, 0), 'language delay')">
+            <data key="avgOffset">
+                62.8
+            </data>
+            <data key="lift">
+                1.12393009665
+            </data>
+            <data key="lambdaFirst">
+                1.09861228867
+            </data>
+            <data key="lambda">
+                0.223143551314
+            </data>
+        </edge>
+        <edge directed="false" source="(('cid', 102764, 0, 0), 'chromosome analysis')" target="(('code', '315.4'), 'Developmental coordination disorder')">
+            <data key="avgOffset">
+                492.2
+            </data>
+            <data key="lift">
+                1.10866262452
+            </data>
+            <data key="lambdaFirst">
+                1.09861228867
+            </data>
+            <data key="lambda">
+                0.0
+            </data>
+        </edge>
+        <edge directed="false" source="(('cid', 102764, 0, 0), 'chromosome analysis')" target="(('cid', 353076, 0, 0), 'oligonucleotide arrays')">
+            <data key="avgOffset">
+                407.166666667
+            </data>
+            <data key="lift">
+                1.00330210886
+            </data>
+            <data key="lambdaFirst">
+                0.69314718056
+            </data>
+            <data key="lambda">
+                0.0
+            </data>
+        </edge>
+        <edge directed="false" source="(('cid', 14647, 0, 0), 'oligonucleotide probes')" target="(('cid', 353076, 0, 0), 'oligonucleotide arrays')">
+            <data key="avgOffset">
+                0.0
+            </data>
+            <data key="lift">
+                1.60943791243
+            </data>
+            <data key="lambdaFirst">
+                0.0
+            </data>
+            <data key="lambda">
+                0.0
+            </data>
+        </edge>
+        <edge directed="false" source="(('cid', 122071, 0, 0), 'temper tantrum')" target="(('cid', 353076, 0, 0), 'oligonucleotide arrays')">
+            <data key="avgOffset">
+                633.2
+            </data>
+            <data key="lift">
+                1.13943428319
+            </data>
+            <data key="lambdaFirst">
+                1.09861228867
+            </data>
+            <data key="lambda">
+                0.405465108108
+            </data>
+        </edge>
+        <edge directed="false" source="(('cid', 21262, 0, 0), 'trisomy')" target="(('cid', 353076, 0, 0), 'oligonucleotide arrays')">
+            <data key="avgOffset">
+                0.0
+            </data>
+            <data key="lift">
+                1.60943791243
+            </data>
+            <data key="lambdaFirst">
+                0.0
+            </data>
+            <data key="lambda">
+                0.0
+            </data>
+        </edge>
+        <edge directed="false" source="(('cid', 102764, 0, 0), 'chromosome analysis')" target="(('cid', 830045, 0, 0), 'molecular genetic abnormality')">
+            <data key="avgOffset">
+                -207.666666667
+            </data>
+            <data key="lift">
+                1.13683350149
+            </data>
+            <data key="lambdaFirst">
+                -0.69314718056
+            </data>
+            <data key="lambda">
+                0.405465108108
+            </data>
+        </edge>
+        <edge directed="false" source="(('cid', 14647, 0, 0), 'oligonucleotide probes')" target="(('cid', 830045, 0, 0), 'molecular genetic abnormality')">
+            <data key="avgOffset">
+                171.0
+            </data>
+            <data key="lift">
+                1.74296930506
+            </data>
+            <data key="lambdaFirst">
+                -0.0
+            </data>
+            <data key="lambda">
+                0.69314718056
+            </data>
+        </edge>
+        <edge directed="false" source="(('cid', 353076, 0, 0), 'oligonucleotide arrays')" target="(('cid', 830045, 0, 0), 'molecular genetic abnormality')">
+            <data key="avgOffset">
+                171.0
+            </data>
+            <data key="lift">
+                1.60943791243
+            </data>
+            <data key="lambdaFirst">
+                -0.0
+            </data>
+            <data key="lambda">
+                0.69314718056
+            </data>
+        </edge>
+        <edge directed="false" source="(('cid', 1046828, 0, 0), 'clinical significance')" target="(('cid', 830045, 0, 0), 'molecular genetic abnormality')">
+            <data key="avgOffset">
+                171.0
+            </data>
+            <data key="lift">
+                1.74296930506
+            </data>
+            <data key="lambdaFirst">
+                -0.0
+            </data>
+            <data key="lambda">
+                1.09861228867
+            </data>
+        </edge>
+        <edge directed="false" source="(('cid', 21262, 0, 0), 'trisomy')" target="(('cid', 830045, 0, 0), 'molecular genetic abnormality')">
+            <data key="avgOffset">
+                171.0
+            </data>
+            <data key="lift">
+                1.74296930506
+            </data>
+            <data key="lambdaFirst">
+                -0.0
+            </data>
+            <data key="lambda">
+                0.69314718056
+            </data>
+        </edge>
+        <edge directed="false" source="(('cid', 353076, 0, 0), 'oligonucleotide arrays')" target="(('cid', 84573, 0, 0), 'covers (device)')">
+            <data key="avgOffset">
+                0.0
+            </data>
+            <data key="lift">
+                1.35812348415
+            </data>
+            <data key="lambdaFirst">
+                0.0
+            </data>
+            <data key="lambda">
+                0.0
+            </data>
+        </edge>
+        <edge directed="false" source="(('cid', 14647, 0, 0), 'oligonucleotide probes')" target="(('cid', 84573, 0, 0), 'covers (device)')">
+            <data key="avgOffset">
+                0.0
+            </data>
+            <data key="lift">
+                1.49165487678
+            </data>
+            <data key="lambdaFirst">
+                0.0
+            </data>
+            <data key="lambda">
+                0.0
+            </data>
+        </edge>
+        <edge directed="false" source="(('cid', 1046828, 0, 0), 'clinical significance')" target="(('cid', 84573, 0, 0), 'covers (device)')">
+            <data key="avgOffset">
+                -0.0
+            </data>
+            <data key="lift">
+                1.49165487678
+            </data>
+            <data key="lambdaFirst">
+                -0.0
+            </data>
+            <data key="lambda">
+                0.69314718056
+            </data>
+        </edge>
+        <edge directed="false" source="(('cid', 830045, 0, 0), 'molecular genetic abnormality')" target="(('cid', 84573, 0, 0), 'covers (device)')">
+            <data key="avgOffset">
+                171.0
+            </data>
+            <data key="lift">
+                1.49165487678
+            </data>
+            <data key="lambdaFirst">
+                0.69314718056
+            </data>
+            <data key="lambda">
+                0.69314718056
+            </data>
+        </edge>
+        <edge directed="false" source="(('cid', 21262, 0, 0), 'trisomy')" target="(('cid', 84573, 0, 0), 'covers (device)')">
+            <data key="avgOffset">
+                0.0
+            </data>
+            <data key="lift">
+                1.49165487678
+            </data>
+            <data key="lambdaFirst">
+                0.0
+            </data>
+            <data key="lambda">
+                0.0
+            </data>
+        </edge>
+        <edge directed="false" source="(('cid', 103680, 0, 0), 'ammonia measurement')" target="(('cid', 6836, 0, 0), 'electroencephalography')">
+            <data key="avgOffset">
+                -33.2
+            </data>
+            <data key="lift">
+                1.12393009665
+            </data>
+            <data key="lambdaFirst">
+                0.0
+            </data>
+            <data key="lambda">
+                0.597837000756
+            </data>
+        </edge>
+        <edge directed="false" source="(('cid', 102764, 0, 0), 'chromosome analysis')" target="(('cid', 1176253, 0, 0), 'cells counted')">
+            <data key="avgOffset">
+                0.0
+            </data>
+            <data key="lift">
+                1.29098418132
+            </data>
+            <data key="lambdaFirst">
+                0.0
+            </data>
+            <data key="lambda">
+                0.0
+            </data>
+        </edge>
+        <edge directed="false" source="(('cid', 14647, 0, 0), 'oligonucleotide probes')" target="(('cid', 1176253, 0, 0), 'cells counted')">
+            <data key="avgOffset">
+                0.6
+            </data>
+            <data key="lift">
+                1.15518264016
+            </data>
+            <data key="lambdaFirst">
+                0.69314718056
+            </data>
+            <data key="lambda">
+                0.69314718056
+            </data>
+        </edge>
+        <edge directed="false" source="(('cid', 21262, 0, 0), 'trisomy')" target="(('cid', 1176253, 0, 0), 'cells counted')">
+            <data key="avgOffset">
+                0.6
+            </data>
+            <data key="lift">
+                1.15518264016
+            </data>
+            <data key="lambdaFirst">
+                0.69314718056
+            </data>
+            <data key="lambda">
+                0.69314718056
+            </data>
+        </edge>
+        <edge directed="false" source="(('cid', 1046828, 0, 0), 'clinical significance')" target="(('cid', 1176253, 0, 0), 'cells counted')">
+            <data key="avgOffset">
+                0.6
+            </data>
+            <data key="lift">
+                1.15518264016
+            </data>
+            <data key="lambdaFirst">
+                0.69314718056
+            </data>
+            <data key="lambda">
+                0.0
+            </data>
+        </edge>
+        <edge directed="false" source="(('cid', 353076, 0, 0), 'oligonucleotide arrays')" target="(('cid', 1176253, 0, 0), 'cells counted')">
+            <data key="avgOffset">
+                0.6
+            </data>
+            <data key="lift">
+                1.02165124753
+            </data>
+            <data key="lambdaFirst">
+                0.69314718056
+            </data>
+            <data key="lambda">
+                0.69314718056
+            </data>
+        </edge>
+        <edge directed="false" source="(('cid', 830045, 0, 0), 'molecular genetic abnormality')" target="(('cid', 1176253, 0, 0), 'cells counted')">
+            <data key="avgOffset">
+                240.0
+            </data>
+            <data key="lift">
+                1.15518264016
+            </data>
+            <data key="lambdaFirst">
+                0.69314718056
+            </data>
+            <data key="lambda">
+                1.09861228867
+            </data>
+        </edge>
+        <edge directed="false" source="(('cid', 951897, 0, 0), 'picky eater')" target="(('cid', 313179, 0, 0), 'preoccupation finding')">
+            <data key="avgOffset">
+                90.0
+            </data>
+            <data key="lift">
+                1.15518264016
+            </data>
+            <data key="lambdaFirst">
+                -0.0
+            </data>
+            <data key="lambda">
+                1.38629436112
+            </data>
+        </edge>
+        <edge directed="false" source="(('cid', 323010, 0, 0), 'able to sit')" target="(('code', '315.32'), 'Mixed receptive-expressive language disorder')">
+            <data key="avgOffset">
+                674.0
+            </data>
+            <data key="lift">
+                1.38629436112
+            </data>
+            <data key="lambdaFirst">
+                1.38629436112
+            </data>
+            <data key="lambda">
+                2.7080502011
+            </data>
+        </edge>
+        <edge directed="false" source="(('code', 'V20.2'), 'Routine infant or child health check')" target="(('code', '315.32'), 'Mixed receptive-expressive language disorder')">
+            <data key="avgOffset">
+                1122.0
+            </data>
+            <data key="lift">
+                1.0498221245
+            </data>
+            <data key="lambdaFirst">
+                1.60943791243
+            </data>
+            <data key="lambda">
+                1.67397643357
+            </data>
+        </edge>
+        <edge directed="false" source="(('cid', 311642, 0, 0), 'does turn (finding)')" target="(('code', '315.32'), 'Mixed receptive-expressive language disorder')">
+            <data key="avgOffset">
+                628.714285714
+            </data>
+            <data key="lift">
+                1.02961941718
+            </data>
+            <data key="lambdaFirst">
+                1.60943791243
+            </data>
+            <data key="lambda">
+                0.810930216216
+            </data>
+        </edge>
+        <edge directed="false" source="(('cid', 3620, 0, 0), 'ccc brand of chlormequat')" target="(('code', '315.32'), 'Mixed receptive-expressive language disorder')">
+            <data key="avgOffset">
+                351.888888889
+            </data>
+            <data key="lift">
+                1.18562366566
+            </data>
+            <data key="lambdaFirst">
+                1.38629436112
+            </data>
+            <data key="lambda">
+                1.01160091168
+            </data>
+        </edge>
+        <edge directed="false" source="(('cid', 8343, 0, 0), 'formication')" target="(('code', '315.32'), 'Mixed receptive-expressive language disorder')">
+            <data key="avgOffset">
+                503.5
+            </data>
+            <data key="lift">
+                1.38629436112
+            </data>
+            <data key="lambdaFirst">
+                1.38629436112
+            </data>
+            <data key="lambda">
+                1.50407739678
+            </data>
+        </edge>
+        <edge directed="false" source="(('code', '315.31'), 'Expressive language disorder')" target="(('code', '315.32'), 'Mixed receptive-expressive language disorder')">
+            <data key="avgOffset">
+                -51.4
+            </data>
+            <data key="lift">
+                1.0498221245
+            </data>
+            <data key="lambdaFirst">
+                0.69314718056
+            </data>
+            <data key="lambda">
+                0.0
+            </data>
+        </edge>
+        <edge directed="false" source="(('cid', 304376, 0, 0), 'pervasive development disorder')" target="(('code', '299.90'), '&quot;Unspecified pervasive developmental disorder, current or active state&quot;')">
+            <data key="avgOffset">
+                263.2
             </data>
             <data key="lift">
                 1.02165124753
@@ -1511,32 +1586,354 @@
                 1.09861228867
             </data>
             <data key="lambda">
-                1.09861228867
+                0.241162056817
             </data>
         </edge>
-        <edge directed="false" source="(('code', '783.40'), '&quot;Lack of normal physiological development, unspecified&quot;')" target="(('cid', 3953, 0, 0), 'developmental disabilities')">
+        <edge directed="false" source="(('cid', 122071, 0, 0), 'temper tantrum')" target="(('cid', 182956, 0, 0), 'abnormal shape')">
             <data key="avgOffset">
-                766.0
+                18.0
             </data>
             <data key="lift">
-                1.00330210886
+                1.13943428319
+            </data>
+            <data key="lambdaFirst">
+                1.38629436112
+            </data>
+            <data key="lambda">
+                0.223143551314
+            </data>
+        </edge>
+        <edge directed="false" source="(('cid', 207011, 0, 0), 'organic acid')" target="(('cid', 250947, 0, 0), 'urine organic acid level (procedure)')">
+            <data key="avgOffset">
+                9.375
+            </data>
+            <data key="lift">
+                1.49165487678
+            </data>
+            <data key="lambdaFirst">
+                0.69314718056
+            </data>
+            <data key="lambda">
+                0.0
+            </data>
+        </edge>
+        <edge directed="false" source="(('cid', 401803, 0, 0), 'infection of ear')" target="(('cid', 141650, 0, 0), 'disorder of middle ear')">
+            <data key="avgOffset">
+                28.4
+            </data>
+            <data key="lift">
+                1.02165124753
+            </data>
+            <data key="lambdaFirst">
+                -0.69314718056
+            </data>
+            <data key="lambda">
+                0.441832752279
+            </data>
+        </edge>
+        <edge directed="false" source="(('cid', 401821, 0, 0), 'does carry')" target="(('cid', 530353, 0, 0), 'cake dose form')">
+            <data key="avgOffset">
+                267.6
+            </data>
+            <data key="lift">
+                1.42711635564
+            </data>
+            <data key="lambdaFirst">
+                -0.69314718056
+            </data>
+            <data key="lambda">
+                0.69314718056
+            </data>
+        </edge>
+        <edge directed="false" source="(('cid', 10021, 0, 0), 'hodgkin disease')" target="(('cid', 123046, 0, 0), 'hearing normal')">
+            <data key="avgOffset">
+                86.8
+            </data>
+            <data key="lift">
+                1.20397280433
+            </data>
+            <data key="lambdaFirst">
+                0.69314718056
+            </data>
+            <data key="lambda">
+                0.287682072452
+            </data>
+        </edge>
+        <edge directed="false" source="(('cid', 182956, 0, 0), 'abnormal shape')" target="(('cid', 123046, 0, 0), 'hearing normal')">
+            <data key="avgOffset">
+                89.0
+            </data>
+            <data key="lift">
+                1.09861228867
+            </data>
+            <data key="lambdaFirst">
+                -0.69314718056
+            </data>
+            <data key="lambda">
+                0.251314428281
+            </data>
+        </edge>
+        <edge directed="false" source="(('cid', 1975, 0, 0), 'audiometry')" target="(('cid', 123046, 0, 0), 'hearing normal')">
+            <data key="avgOffset">
+                62.0
+            </data>
+            <data key="lift">
+                1.2527629685
+            </data>
+            <data key="lambdaFirst">
+                0.69314718056
+            </data>
+            <data key="lambda">
+                0.510825623766
+            </data>
+        </edge>
+        <edge directed="false" source="(('cid', 53873, 0, 0), 'tympanometry')" target="(('cid', 123046, 0, 0), 'hearing normal')">
+            <data key="avgOffset">
+                86.8
+            </data>
+            <data key="lift">
+                1.0498221245
+            </data>
+            <data key="lambdaFirst">
+                0.69314718056
+            </data>
+            <data key="lambda">
+                0.405465108108
+            </data>
+        </edge>
+        <edge directed="false" source="(('cid', 401803, 0, 0), 'infection of ear')" target="(('cid', 10021, 0, 0), 'hodgkin disease')">
+            <data key="avgOffset">
+                38.8
+            </data>
+            <data key="lift">
+                1.02165124753
+            </data>
+            <data key="lambdaFirst">
+                1.38629436112
+            </data>
+            <data key="lambda">
+                2.07944154168
+            </data>
+        </edge>
+        <edge directed="false" source="(('cid', 182956, 0, 0), 'abnormal shape')" target="(('cid', 10021, 0, 0), 'hodgkin disease')">
+            <data key="avgOffset">
+                0.0
+            </data>
+            <data key="lift">
+                1.60943791243
+            </data>
+            <data key="lambdaFirst">
+                0.0
+            </data>
+            <data key="lambda">
+                0.788457360364
+            </data>
+        </edge>
+        <edge directed="false" source="(('cid', 1975, 0, 0), 'audiometry')" target="(('cid', 10021, 0, 0), 'hodgkin disease')">
+            <data key="avgOffset">
+                0.0
+            </data>
+            <data key="lift">
+                1.60943791243
+            </data>
+            <data key="lambdaFirst">
+                0.0
+            </data>
+            <data key="lambda">
+                0.241162056817
+            </data>
+        </edge>
+        <edge directed="false" source="(('cid', 53873, 0, 0), 'tympanometry')" target="(('cid', 10021, 0, 0), 'hodgkin disease')">
+            <data key="avgOffset">
+                0.0
+            </data>
+            <data key="lift">
+                1.74296930506
+            </data>
+            <data key="lambdaFirst">
+                0.0
+            </data>
+            <data key="lambda">
+                0.154150679827
+            </data>
+        </edge>
+        <edge directed="false" source="(('code', '783.40'), '&quot;Lack of normal physiological development, unspecified&quot;')" target="(('cid', 529768, 0, 0), 'bead dosage form')">
+            <data key="avgOffset">
+                271.4
+            </data>
+            <data key="lift">
+                1.38629436112
             </data>
             <data key="lambdaFirst">
                 -1.09861228867
             </data>
             <data key="lambda">
-                0.826678573184
+                1.8458266905
             </data>
         </edge>
-        <edge directed="false" source="(('cid', 19309, 0, 0), 'social interaction')" target="(('cid', 2286, 0, 0), 'behavior therapy')">
+        <edge directed="false" source="(('cid', 103680, 0, 0), 'ammonia measurement')" target="(('cid', 1050, 0, 0), 'amino acids')">
             <data key="avgOffset">
-                492.333333333
+                68.2
             </data>
             <data key="lift">
-                1.00330210886
+                1.20397280433
+            </data>
+            <data key="lambdaFirst">
+                -0.0
+            </data>
+            <data key="lambda">
+                0.287682072452
+            </data>
+        </edge>
+        <edge directed="false" source="(('cid', 207011, 0, 0), 'organic acid')" target="(('cid', 1050, 0, 0), 'amino acids')">
+            <data key="avgOffset">
+                0.0
+            </data>
+            <data key="lift">
+                1.20397280433
+            </data>
+            <data key="lambdaFirst">
+                0.0
+            </data>
+            <data key="lambda">
+                0.154150679827
+            </data>
+        </edge>
+        <edge directed="false" source="(('cid', 250947, 0, 0), 'urine organic acid level (procedure)')" target="(('cid', 1050, 0, 0), 'amino acids')">
+            <data key="avgOffset">
+                -9.375
+            </data>
+            <data key="lift">
+                1.20397280433
+            </data>
+            <data key="lambdaFirst">
+                0.0
+            </data>
+            <data key="lambda">
+                0.0
+            </data>
+        </edge>
+        <edge directed="false" source="(('cid', 124863, 0, 0), 'form of muscle')" target="(('cid', 698111, 0, 0), 'normal delivery')">
+            <data key="avgOffset">
+                474.0
+            </data>
+            <data key="lift">
+                1.02165124753
+            </data>
+            <data key="lambdaFirst">
+                -0.69314718056
+            </data>
+            <data key="lambda">
+                0.405465108108
+            </data>
+        </edge>
+        <edge directed="false" source="(('cid', 951897, 0, 0), 'picky eater')" target="(('cid', 247972, 0, 0), 'language spoken')">
+            <data key="avgOffset">
+                -8.6
+            </data>
+            <data key="lift">
+                1.02165124753
+            </data>
+            <data key="lambdaFirst">
+                -0.69314718056
+            </data>
+            <data key="lambda">
+                0.405465108108
+            </data>
+        </edge>
+        <edge directed="false" source="(('cid', 323010, 0, 0), 'able to sit')" target="(('cid', 311642, 0, 0), 'does turn (finding)')">
+            <data key="avgOffset">
+                -186.6
+            </data>
+            <data key="lift">
+                1.38629436112
+            </data>
+            <data key="lambdaFirst">
+                0.0
+            </data>
+            <data key="lambda">
+                0.336472236621
+            </data>
+        </edge>
+        <edge directed="false" source="(('cid', 182956, 0, 0), 'abnormal shape')" target="(('cid', 311642, 0, 0), 'does turn (finding)')">
+            <data key="avgOffset">
+                -146.833333333
+            </data>
+            <data key="lift">
+                1.09861228867
+            </data>
+            <data key="lambdaFirst">
+                0.69314718056
+            </data>
+            <data key="lambda">
+                0.0
+            </data>
+        </edge>
+        <edge directed="false" source="(('code', 'V20.2'), 'Routine infant or child health check')" target="(('cid', 311642, 0, 0), 'does turn (finding)')">
+            <data key="avgOffset">
+                -328.166666667
+            </data>
+            <data key="lift">
+                1.23214368129
+            </data>
+            <data key="lambdaFirst">
+                -1.09861228867
+            </data>
+            <data key="lambda">
+                0.0645385211376
+            </data>
+        </edge>
+        <edge directed="false" source="(('code', '783.40'), '&quot;Lack of normal physiological development, unspecified&quot;')" target="(('code', '783.42'), 'Delayed milestones')">
+            <data key="avgOffset">
+                128.0
+            </data>
+            <data key="lift">
+                1.09861228867
+            </data>
+            <data key="lambdaFirst">
+                1.60943791243
+            </data>
+            <data key="lambda">
+                1.34992671695
+            </data>
+        </edge>
+        <edge directed="false" source="(('cid', 1975, 0, 0), 'audiometry')" target="(('code', '783.42'), 'Delayed milestones')">
+            <data key="avgOffset">
+                23.2
+            </data>
+            <data key="lift">
+                1.13943428319
             </data>
             <data key="lambdaFirst">
                 1.38629436112
+            </data>
+            <data key="lambda">
+                1.2527629685
+            </data>
+        </edge>
+        <edge directed="false" source="(('cid', 304376, 0, 0), 'pervasive development disorder')" target="(('cid', 3953, 0, 0), 'developmental disabilities')">
+            <data key="avgOffset">
+                16.0
+            </data>
+            <data key="lift">
+                1.2527629685
+            </data>
+            <data key="lambdaFirst">
+                -0.0
+            </data>
+            <data key="lambda">
+                0.169076330044
+            </data>
+        </edge>
+        <edge directed="false" source="(('cid', 14647, 0, 0), 'oligonucleotide probes')" target="(('cid', 88606, 0, 0), 'banding procedure')">
+            <data key="avgOffset">
+                0.6
+            </data>
+            <data key="lift">
+                1.15518264016
+            </data>
+            <data key="lambdaFirst">
+                0.69314718056
             </data>
             <data key="lambda">
                 0.69314718056
@@ -1547,27 +1944,13 @@
                 0.0
             </data>
             <data key="lift">
-                1.38629436112
+                1.29098418132
             </data>
             <data key="lambdaFirst">
                 0.0
             </data>
             <data key="lambda">
                 0.0
-            </data>
-        </edge>
-        <edge directed="false" source="(('cid', 13050, 0, 0), 'methotrexate')" target="(('cid', 88606, 0, 0), 'banding procedure')">
-            <data key="avgOffset">
-                12.2
-            </data>
-            <data key="lift">
-                1.71479842809
-            </data>
-            <data key="lambdaFirst">
-                -0.0
-            </data>
-            <data key="lambda">
-                0.69314718056
             </data>
         </edge>
         <edge directed="false" source="(('cid', 1176253, 0, 0), 'cells counted')" target="(('cid', 88606, 0, 0), 'banding procedure')">
@@ -1575,7 +1958,7 @@
                 0.0
             </data>
             <data key="lift">
-                1.89711998489
+                1.49165487678
             </data>
             <data key="lambdaFirst">
                 0.0
@@ -1584,12 +1967,12 @@
                 0.0
             </data>
         </edge>
-        <edge directed="false" source="(('cid', 328586, 0, 0), 'vaginal delivery (finding)')" target="(('cid', 88606, 0, 0), 'banding procedure')">
+        <edge directed="false" source="(('cid', 21262, 0, 0), 'trisomy')" target="(('cid', 88606, 0, 0), 'banding procedure')">
             <data key="avgOffset">
-                1.4
+                0.6
             </data>
             <data key="lift">
-                1.20397280433
+                1.15518264016
             </data>
             <data key="lambdaFirst">
                 0.69314718056
@@ -1598,88 +1981,200 @@
                 0.69314718056
             </data>
         </edge>
-        <edge directed="false" source="(('code', '783.40'), '&quot;Lack of normal physiological development, unspecified&quot;')" target="(('cid', 247805, 0, 0), 'finding of palmar crease')">
+        <edge directed="false" source="(('cid', 1046828, 0, 0), 'clinical significance')" target="(('cid', 88606, 0, 0), 'banding procedure')">
             <data key="avgOffset">
-                384.8
+                0.6
             </data>
             <data key="lift">
-                1.29098418132
+                1.15518264016
             </data>
             <data key="lambdaFirst">
+                0.69314718056
+            </data>
+            <data key="lambda">
+                0.0
+            </data>
+        </edge>
+        <edge directed="false" source="(('cid', 353076, 0, 0), 'oligonucleotide arrays')" target="(('cid', 88606, 0, 0), 'banding procedure')">
+            <data key="avgOffset">
+                0.6
+            </data>
+            <data key="lift">
+                1.02165124753
+            </data>
+            <data key="lambdaFirst">
+                0.69314718056
+            </data>
+            <data key="lambda">
+                0.69314718056
+            </data>
+        </edge>
+        <edge directed="false" source="(('cid', 830045, 0, 0), 'molecular genetic abnormality')" target="(('cid', 88606, 0, 0), 'banding procedure')">
+            <data key="avgOffset">
+                240.0
+            </data>
+            <data key="lift">
+                1.15518264016
+            </data>
+            <data key="lambdaFirst">
+                0.69314718056
+            </data>
+            <data key="lambda">
                 1.09861228867
             </data>
-            <data key="lambda">
-                0.405465108108
-            </data>
         </edge>
-        <edge directed="false" source="(('cid', 304376, 0, 0), 'pervasive development disorder')" target="(('cid', 247805, 0, 0), 'finding of palmar crease')">
+        <edge directed="false" source="(('cid', 13609, 0, 0), 'muscle hypotonia')" target="(('cid', 880321, 0, 0), 'motor delay')">
             <data key="avgOffset">
-                306.4
+                -204.0
             </data>
             <data key="lift">
-                1.12393009665
+                1.42711635564
             </data>
             <data key="lambdaFirst">
-                1.09861228867
+                -1.38629436112
             </data>
             <data key="lambda">
-                0.0
+                0.84189244182
             </data>
         </edge>
-        <edge directed="false" source="(('cid', 2621, 0, 0), 'birth history')" target="(('cid', 247805, 0, 0), 'finding of palmar crease')">
+        <edge directed="false" source="(('code', '315.4'), 'Developmental coordination disorder')" target="(('cid', 3620, 0, 0), 'ccc brand of chlormequat')">
             <data key="avgOffset">
-                825.6
+                747.0
             </data>
             <data key="lift">
-                1.38629436112
-            </data>
-            <data key="lambdaFirst">
-                1.38629436112
-            </data>
-            <data key="lambda">
-                0.405465108108
-            </data>
-        </edge>
-        <edge directed="false" source="(('cid', 247417, 0, 0), 'hyperactive behavior')" target="(('code', '314.01'), 'Attention deficit disorder with hyperactivity')">
-            <data key="avgOffset">
-                944.8
-            </data>
-            <data key="lift">
-                1.29098418132
-            </data>
-            <data key="lambdaFirst">
-                1.60943791243
-            </data>
-            <data key="lambda">
-                0.0454623740768
-            </data>
-        </edge>
-        <edge directed="false" source="(('cid', 207011, 0, 0), 'organic acid')" target="(('cid', 250947, 0, 0), 'urine organic acid level (procedure)')">
-            <data key="avgOffset">
-                0.2
-            </data>
-            <data key="lift">
-                1.89711998489
-            </data>
-            <data key="lambdaFirst">
-                0.69314718056
-            </data>
-            <data key="lambda">
-                0.133531392625
-            </data>
-        </edge>
-        <edge directed="false" source="(('cid', 304376, 0, 0), 'pervasive development disorder')" target="(('cid', 250947, 0, 0), 'urine organic acid level (procedure)')">
-            <data key="avgOffset">
-                118.0
-            </data>
-            <data key="lift">
-                1.12393009665
+                1.10866262452
             </data>
             <data key="lambdaFirst">
                 -1.09861228867
             </data>
             <data key="lambda">
-                0.154150679827
+                0.69314718056
+            </data>
+        </edge>
+        <edge directed="false" source="(('code', 'V57.21'), 'Encounter for occupational therapy')" target="(('cid', 3620, 0, 0), 'ccc brand of chlormequat')">
+            <data key="avgOffset">
+                -508.0
+            </data>
+            <data key="lift">
+                1.29098418132
+            </data>
+            <data key="lambdaFirst">
+                1.09861228867
+            </data>
+            <data key="lambda">
+                0.538996500733
+            </data>
+        </edge>
+        <edge directed="false" source="(('code', 'V20.2'), 'Routine infant or child health check')" target="(('cid', 3620, 0, 0), 'ccc brand of chlormequat')">
+            <data key="avgOffset">
+                -289.833333333
+            </data>
+            <data key="lift">
+                1.13683350149
+            </data>
+            <data key="lambdaFirst">
+                -1.38629436112
+            </data>
+            <data key="lambda">
+                0.387765531009
+            </data>
+        </edge>
+        <edge directed="false" source="(('cid', 529768, 0, 0), 'bead dosage form')" target="(('cid', 3620, 0, 0), 'ccc brand of chlormequat')">
+            <data key="avgOffset">
+                -131.6
+            </data>
+            <data key="lift">
+                1.29098418132
+            </data>
+            <data key="lambdaFirst">
+                0.69314718056
+            </data>
+            <data key="lambda">
+                0.875468737354
+            </data>
+        </edge>
+        <edge directed="false" source="(('cid', 8343, 0, 0), 'formication')" target="(('cid', 3620, 0, 0), 'ccc brand of chlormequat')">
+            <data key="avgOffset">
+                11.1666666667
+            </data>
+            <data key="lift">
+                1.29098418132
+            </data>
+            <data key="lambdaFirst">
+                0.69314718056
+            </data>
+            <data key="lambda">
+                0.223143551314
+            </data>
+        </edge>
+        <edge directed="false" source="(('cid', 1975, 0, 0), 'audiometry')" target="(('cid', 192945, 0, 0), 'visual reinforcement audiometry')">
+            <data key="avgOffset">
+                0.0
+            </data>
+            <data key="lift">
+                1.60943791243
+            </data>
+            <data key="lambdaFirst">
+                0.0
+            </data>
+            <data key="lambda">
+                0.0
+            </data>
+        </edge>
+        <edge directed="false" source="(('cid', 393896, 0, 0), 'reinforcement surgical repair')" target="(('cid', 192945, 0, 0), 'visual reinforcement audiometry')">
+            <data key="avgOffset">
+                9.6
+            </data>
+            <data key="lift">
+                1.89711998489
+            </data>
+            <data key="lambdaFirst">
+                0.69314718056
+            </data>
+            <data key="lambda">
+                0.068992871487
+            </data>
+        </edge>
+        <edge directed="false" source="(('code', '783.40'), '&quot;Lack of normal physiological development, unspecified&quot;')" target="(('code', 'V57.21'), 'Encounter for occupational therapy')">
+            <data key="avgOffset">
+                -326.6
+            </data>
+            <data key="lift">
+                1.38629436112
+            </data>
+            <data key="lambdaFirst">
+                -1.09861228867
+            </data>
+            <data key="lambda">
+                0.526093095897
+            </data>
+        </edge>
+        <edge directed="false" source="(('cid', 5954, 0, 0), 'camurati-engelmann syndrome')" target="(('cid', 390228, 0, 0), 'nos2a protein, human')">
+            <data key="avgOffset">
+                32.2
+            </data>
+            <data key="lift">
+                1.42711635564
+            </data>
+            <data key="lambdaFirst">
+                0.69314718056
+            </data>
+            <data key="lambda">
+                0.505548566665
+            </data>
+        </edge>
+        <edge directed="false" source="(('code', '299.90'), '&quot;Unspecified pervasive developmental disorder, current or active state&quot;')" target="(('cid', 390228, 0, 0), 'nos2a protein, human')">
+            <data key="avgOffset">
+                362.6
+            </data>
+            <data key="lift">
+                1.30933331998
+            </data>
+            <data key="lambdaFirst">
+                -0.69314718056
+            </data>
+            <data key="lambda">
+                0.69314718056
             </data>
         </edge>
     </graph>
