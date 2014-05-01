@@ -112,7 +112,10 @@ def getEdges(enrichments, patients):
 				f21 = 1
 				f12f = 1
 				f21f = 1
-				for pat, feats in both.iteritems():
+				totalOffset = 0.0
+				totalPats = 0.0
+				for pat, feats in both.iteritems():		
+				    # find the first occurence of f1 and f2 for this patient			
 					min1 = float('inf')
 					min2 = float('inf')
 					for o1 in feats[f1]:
@@ -125,10 +128,17 @@ def getEdges(enrichments, patients):
 								f12 += 1
 							elif o1 > o2:
 								f21 += 1
+					if min1 == float('inf') or min2 == float('inf'):
+						continue
+					else:
+						totalPats += 1
+					totalOffset += min2 - min1
 					if min1 < min2:
 						f12f += 1
+
 					elif min2 < min2:
 						f21f += 1
+				avgOffset = float(totalOffset)/float(len(both.keys()))
 				lam = math.log(float(f12)/float(f21))
 				lf = math.log(float(f12f)/float(f21f))
 				if lam < 0:
@@ -138,6 +148,7 @@ def getEdges(enrichments, patients):
 					count2 = c1
 					lam = -lam
 					lf = -lf
+					avgOffset = -avgOffset
 				else:
 					first = f1
 					second = f2
@@ -154,6 +165,7 @@ def getEdges(enrichments, patients):
 					'f2desc': enrichments[f2]['description'],					
 					'lambda': lam,
 					'lambdaFirst': lf, 
+					'avgOffset': avgOffset,
 					'lift': math.log(float(c12and)/float(c1*c2))
 				}					
 	return result
