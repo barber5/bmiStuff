@@ -72,7 +72,7 @@ with open('output/icd9.txt', 'r') as fi:
 def getCode(code):
 	if code in codeIdx:
 		return codeIdx[code]
-	print >> sys.stderr, str(code)+': None'
+	#print >> sys.stderr, str(code)+': None'
 	return 'None'
 
 def getIngredients(ingr_set_id):
