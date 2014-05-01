@@ -202,12 +202,14 @@ def analyzeEdges(edges):
 			graph[f1]['out'][f2] = {
 				'lambda': meta['lambda'],
 				'lambdaFirst': meta['lambdaFirst'],
-				'lift': meta['lift']
+				'lift': meta['lift'],
+				'avgOffset': meta['avgOffset']
 			}
 			graph[f2]['in'][f1] = {
 				'lambda': meta['lambda'],
 				'lambdaFirst': meta['lambdaFirst'],
-				'lift': meta['lift']
+				'lift': meta['lift'],
+				'avgOffset': meta['avgOffset']
 			}
 		else:
 
