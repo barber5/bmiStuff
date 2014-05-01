@@ -32,7 +32,7 @@ def getFromFile(num, fileName):
 		if pids[next] != 1:
 			continue
 		print >> sys.stderr, 'grabbing pid: '+str(next)
-		resp = getPatient(next)
+		resp = getPatient(next, cahceOnly=True)
 		if not resp:
 			continue
 		resp['label'] = 1
