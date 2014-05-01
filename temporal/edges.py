@@ -234,7 +234,8 @@ def inOutGraph(graphDict):
 			e = g.add_edge(n2, n, directed=False)
 			e['lift'] = edgeMeta['lift']
 			e['lambda'] = edgeMeta['lambda']
-			e['lambdaFirst'] = edgeMeta['lambdaFirst']			
+			e['lambdaFirst'] = edgeMeta['lambdaFirst']		
+			e['avgOffset'] = edgeMeta['avgOffset']	
 	parser = GraphMLParser()
 	parser.write(g, "inout.graphml")
 
