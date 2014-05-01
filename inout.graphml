@@ -1,11 +1,11 @@
 <?xml version="1.0" ?>
 <graphml>
-    <key attr.name="freq" attr.type="string" id="freq"/>
+    <key attr.name="freq" attr.type="double" id="freq"/>
     <key attr.name="label" attr.type="string" id="label"/>
-    <key attr.name="avgOffset" attr.type="string" id="avgOffset"/>
-    <key attr.name="lift" attr.type="string" id="lift"/>
-    <key attr.name="lambdaFirst" attr.type="string" id="lambdaFirst"/>
-    <key attr.name="lambda" attr.type="string" id="lambda"/>
+    <key attr.name="avgOffset" attr.type="double" id="avgOffset"/>
+    <key attr.name="lift" attr.type="double" id="lift"/>
+    <key attr.name="lambdaFirst" attr.type="double" id="lambdaFirst"/>
+    <key attr.name="lambda" attr.type="double" id="lambda"/>
     <graph edgedefault="directed" id="">
         <node id="(('cid', 103680, 0, 0), 'ammonia measurement')">
             <data key="freq">

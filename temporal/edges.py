@@ -204,25 +204,38 @@ def analyzeEdges(edges, intersectionCutoff=.05, cutoff=.1):
 			}
 		
 		if meta['lift'] > 1 and meta['intersection'] > intersectionCutoff:
-			
-			graph[f1]['out'][f2] = {
-				'lambda': meta['lambda'],
-				'lambdaFirst': meta['lambdaFirst'],
-				'lift': meta['lift'],
-				'avgOffset': meta['avgOffset']
-			}
-			graph[f2]['in'][f1] = {
-				'lambda': meta['lambda'],
-				'lambdaFirst': meta['lambdaFirst'],
-				'lift': meta['lift'],
-				'avgOffset': meta['avgOffset']
-			}
+			if meta['lambdaFirst'] > 0:
+				graph[f1]['out'][f2] = {
+					'lambda': meta['lambda'],
+					'lambdaFirst': meta['lambdaFirst'],
+					'lift': meta['lift'],
+					'avgOffset': meta['avgOffset']
+				}
+				graph[f2]['in'][f1] = {
+					'lambda': meta['lambda'],
+					'lambdaFirst': meta['lambdaFirst'],
+					'lift': meta['lift'],
+					'avgOffset': meta['avgOffset']
+				}
+			else:
+				graph[f2]['out'][f1] = {
+					'lambda': meta['lambda'],
+					'lambdaFirst': meta['lambdaFirst'],
+					'lift': meta['lift'],
+					'avgOffset': meta['avgOffset']
+				}
+				graph[f1]['in'][f2] = {
+					'lambda': meta['lambda'],
+					'lambdaFirst': meta['lambdaFirst'],
+					'lift': meta['lift'],
+					'avgOffset': meta['avgOffset']
+				}
 	
 	with open('graphy.json', 'w') as fi:
 		fi.write(json.dumps(graph))
 	return graph
 
-def inOutGraph(graphDict):
+def inOutGraph(graphDict, gFile):
 	g = Graph()
 	nDict = {}
 	for node, meta in graphDict.iteritems():
@@ -244,7 +257,7 @@ def inOutGraph(graphDict):
 			e['lambdaFirst'] = edgeMeta['lambdaFirst']		
 			e['avgOffset'] = edgeMeta['avgOffset']	
 	parser = GraphMLParser()
-	parser.write(g, "inout.graphml")
+	parser.write(g, gFile)
 
 def adjacenciesGraph(graphDict):
 	g = Graph()
@@ -271,10 +284,10 @@ def printEdges(edges, cutoff=.05):
 	print >> sys.stderr, '<f1> <f2> <lambda> <lambdaFirst> <lift> <f1freq*f2freq> <f1freq> <f2freq> <intersection> <f1desc+f2desc>'
 
 if __name__ == "__main__":
-	print >> sys.stderr, 'usage: <enrichmentsFile> <patientFile> <numPatients> <intersectionCutoff> <individualFrequencyCutoff>'
+	print >> sys.stderr, 'usage: <enrichmentsFile> <patientFile> <numPatients> <intersectionCutoff> <individualFrequencyCutoff> <graphFile>'
 	enr = getEnrichments(sys.argv[1])
 	pats = getPatients(int(sys.argv[3]), sys.argv[2])
 	edges = getEdges(enr, pats)
 	printEdges(edges, float(sys.argv[4]))
 	graph = analyzeEdges(edges, float(sys.argv[4]), float(sys.argv[5]))
-	inOutGraph(graph)
+	inOutGraph(graph, sys.argv[6])
