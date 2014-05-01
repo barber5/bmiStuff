@@ -220,7 +220,8 @@ def inOutGraph(graphDict):
 		n = nDict[node]			
 		for node2 in meta['in']:
 			n2 = nDict[node2]
-			g.add_edge(n2, n, directed=True)
+			e = g.add_edge(n2, n, directed=True)
+			print e.get_attributes()
 	parser = GraphMLParser()
 	parser.write(g, "inout.graphml")
 
