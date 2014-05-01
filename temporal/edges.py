@@ -170,12 +170,12 @@ def getEdges(enrichments, patients):
 				}					
 	return result
 
-def analyzeEdges(edges):
+def analyzeEdges(edges, cutoff):
 	graph = {}
 	for pr, meta in edges.iteritems():
 		f1 = meta['f1']
 		f1 = (f1, meta['f1desc'])
-		if meta['f1freq'] < .1:
+		if meta['f1freq'] < cutoff:
 			continue
 		if f1 not in graph:
 			graph[f1] = {
@@ -187,7 +187,7 @@ def analyzeEdges(edges):
 			}
 		f2 = meta['f2']
 		f2 = (f2, meta['f2desc'])
-		if meta['f2freq'] < .1:
+		if meta['f2freq'] < cutoff:
 			continue
 
 		if f2 not in graph:
@@ -271,10 +271,10 @@ def printEdges(edges, cutoff=.05):
 	print >> sys.stderr, '<f1> <f2> <lambda> <lambdaFirst> <lift> <f1freq*f2freq> <f1freq> <f2freq> <intersection> <f1desc+f2desc>'
 
 if __name__ == "__main__":
-	print >> sys.stderr, 'usage: <enrichmentsFile> <patientFile> <numPatients> <intersectionCutoff>'
+	print >> sys.stderr, 'usage: <enrichmentsFile> <patientFile> <numPatients> <intersectionCutoff> <individualFrequencyCutoff>'
 	enr = getEnrichments(sys.argv[1])
 	pats = getPatients(int(sys.argv[3]), sys.argv[2])
 	edges = getEdges(enr, pats)
 	#printEdges(edges, float(sys.argv[4]))
-	graph = analyzeEdges(edges)
+	graph = analyzeEdges(edges, float(sys.argv[5]))
 	inOutGraph(graph)
