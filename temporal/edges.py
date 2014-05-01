@@ -278,4 +278,4 @@ if __name__ == "__main__":
 	edges = getEdges(enr, pats)
 	#printEdges(edges, float(sys.argv[4]))
 	graph = analyzeEdges(edges, float(sys.argv[5]))
-	#inOutGraph(graph)
+	inOutGraph(graph)
