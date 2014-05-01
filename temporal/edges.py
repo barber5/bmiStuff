@@ -170,7 +170,7 @@ def getEdges(enrichments, patients):
 				}					
 	return result
 
-def analyzeEdges(edges, intersectionCutoff=.05, cutoff):
+def analyzeEdges(edges, intersectionCutoff=.05, cutoff=.1):
 	graph = {}
 	for pr, meta in edges.iteritems():
 		f1 = meta['f1']
