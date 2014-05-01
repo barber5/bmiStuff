@@ -188,10 +188,14 @@ def analyzeEdges(edges):
 			}
 		if meta['lambda'] > 1:
 			graph[f1]['out'][f2] = {
-				'lambda': meta['lambda']
+				'lambda': meta['lambda'],
+				'lambdaFirst': meta['lambdaFirst'],
+				'lift': meta['lift']
 			}
 			graph[f2]['in'][f1] = {
-				'lambda': meta['lambda']
+				'lambda': meta['lambda'],
+				'lambdaFirst': meta['lambdaFirst'],
+				'lift': meta['lift']
 			}
 		else:
 
