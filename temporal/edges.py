@@ -120,7 +120,7 @@ def getEdges(enrichments, patients):
 							min1 = o1
 						for o2 in feats[f2]:
 							if o2 < min2:
-								min2 = 01
+								min2 = o2
 							if o1 < o2:
 								f12 += 1
 							elif o1 > o2:
