@@ -220,6 +220,7 @@ def inOutGraph(graphDict):
 			continue
 		n = nDict[node]			
 		for node2, edgeMeta in meta['in'].iteritems():
+			print edgeMeta
 			n2 = nDict[node2]
 			e = g.add_edge(n2, n, directed=True)
 			e['lift'] = edgeMeta['lift']
