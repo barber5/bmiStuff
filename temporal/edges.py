@@ -174,7 +174,7 @@ def analyzeEdges(edges, cutoff):
 	graph = {}
 	for pr, meta in edges.iteritems():
 		f1 = meta['f1']
-		f1 = (f1, meta['f1desc'])
+		f1 = str((f1, meta['f1desc']))
 		if meta['f1freq'] < cutoff:
 			continue
 		if f1 not in graph:
@@ -186,7 +186,7 @@ def analyzeEdges(edges, cutoff):
 				'freq': meta['f1freq']
 			}
 		f2 = meta['f2']
-		f2 = (f2, meta['f2desc'])
+		f2 = str((f2, meta['f2desc']))
 		if meta['f2freq'] < cutoff:
 			continue
 
