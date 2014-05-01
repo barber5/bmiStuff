@@ -211,8 +211,9 @@ def inOutGraph(graphDict):
 	for node, meta in graphDict.iteritems():
 		if len(meta['out']) == 0 and len(meta['in']) == 0:
 			continue
-		n = g.add_node(node)			
+		n = g.add_node(node[0])			
 		n['freq'] = meta['freq']
+		n['desc'] = node[1]
 		nDict[node] = n
 	for node, meta in graphDict.iteritems():
 		if node not in nDict:
@@ -221,6 +222,9 @@ def inOutGraph(graphDict):
 		for node2 in meta['in']:
 			n2 = nDict[node2]
 			e = g.add_edge(n2, n, directed=True)
+			e['lift'] = meta['lift']
+			e['lambda'] = meta['lambda']
+			e['lambdaFirst'] = meta['lambdaFirst']
 			print e			
 	parser = GraphMLParser()
 	parser.write(g, "inout.graphml")
