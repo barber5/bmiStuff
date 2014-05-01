@@ -198,7 +198,7 @@ def analyzeEdges(edges, cutoff):
 				'desc': meta['f2desc'],
 				'freq': meta['f2freq']
 			}
-		if meta['lambda'] > 1:
+		if meta['lift'] > 1:
 			graph[f1]['out'][f2] = {
 				'lambda': meta['lambda'],
 				'lambdaFirst': meta['lambdaFirst'],
@@ -211,15 +211,7 @@ def analyzeEdges(edges, cutoff):
 				'lift': meta['lift'],
 				'avgOffset': meta['avgOffset']
 			}
-		else:
-
-			if meta['lift'] > 2:
-				graph[f1]['adjacent'][f2] = {
-					'lift': meta['lift']
-				}
-				graph[f2]['adjacent'][f1] = {
-					'lift': meta['lift']
-				}
+	
 	with open('graphy.json', 'w') as fi:
 		fi.write(json.dumps(graph))
 	return graph
@@ -239,7 +231,7 @@ def inOutGraph(graphDict):
 		n = nDict[node]			
 		for node2, edgeMeta in meta['in'].iteritems():			
 			n2 = nDict[node2]
-			e = g.add_edge(n2, n, directed=True)
+			e = g.add_edge(n2, n, directed=False)
 			e['lift'] = edgeMeta['lift']
 			e['lambda'] = edgeMeta['lambda']
 			e['lambdaFirst'] = edgeMeta['lambdaFirst']			

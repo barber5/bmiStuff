@@ -1,7 +1,6 @@
 <?xml version="1.0" ?>
 <graphml>
     <key attr.name="freq" attr.type="string" id="freq"/>
-    <key attr.name="desc" attr.type="string" id="desc"/>
     <key attr.name="label" attr.type="string" id="label"/>
     <key attr.name="lift" attr.type="string" id="lift"/>
     <key attr.name="lambdaFirst" attr.type="string" id="lambdaFirst"/>
@@ -9,1271 +8,137 @@
     <graph edgedefault="directed" id="">
         <node id="(('code', '783.40'), '&quot;Lack of normal physiological development, unspecified&quot;')">
             <data key="freq">
-                0.22
-            </data>
-            <data key="desc">
-                (
+                0.2
             </data>
         </node>
-        <node id="(('code', '345.90'), '&quot;Epilepsy, unspecified, without mention of intractable epilepsy&quot;')">
+        <node id="(('cid', 102764, 0, 0), 'chromosome analysis')">
             <data key="freq">
-                0.22
-            </data>
-            <data key="desc">
-                (
+                0.46
             </data>
         </node>
         <node id="(('cid', 394084, 0, 0), 'preschool completion')">
             <data key="freq">
-                0.34
-            </data>
-            <data key="desc">
-                (
+                0.3
             </data>
         </node>
         <node id="(('cid', 650162, 0, 0), 'occupational therapy regime')">
             <data key="freq">
-                0.4
-            </data>
-            <data key="desc">
-                (
+                0.24
             </data>
         </node>
         <node id="(('code', '783.42'), 'Delayed milestones')">
             <data key="freq">
-                0.22
+                0.2
             </data>
-            <data key="desc">
-                (
+        </node>
+        <node id="(('cid', 394013, 0, 0), 'genetic screening method')">
+            <data key="freq">
+                0.24
             </data>
         </node>
         <node id="(('cid', 11687, 0, 0), 'language therapy')">
             <data key="freq">
-                0.2
-            </data>
-            <data key="desc">
-                (
+                0.22
             </data>
         </node>
         <node id="(('cid', 2001, 0, 0), 'autistic disorder')">
             <data key="freq">
                 0.7
             </data>
-            <data key="desc">
-                (
-            </data>
-        </node>
-        <node id="(('cid', 7730, 0, 0), 'facial expression')">
-            <data key="freq">
-                0.3
-            </data>
-            <data key="desc">
-                (
-            </data>
         </node>
         <node id="(('cid', 6836, 0, 0), 'electroencephalography')">
             <data key="freq">
-                0.32
+                0.24
             </data>
-            <data key="desc">
-                (
+        </node>
+        <node id="(('code', '315.32'), 'Mixed receptive-expressive language disorder')">
+            <data key="freq">
+                0.22
             </data>
         </node>
         <node id="(('cid', 19309, 0, 0), 'social interaction')">
             <data key="freq">
-                0.28
-            </data>
-            <data key="desc">
-                (
-            </data>
-        </node>
-        <node id="(('cid', 393896, 0, 0), 'reinforcement surgical repair')">
-            <data key="freq">
-                0.2
-            </data>
-            <data key="desc">
-                (
-            </data>
-        </node>
-        <node id="(('cid', 13609, 0, 0), 'muscle hypotonia')">
-            <data key="freq">
-                0.2
-            </data>
-            <data key="desc">
-                (
+                0.26
             </data>
         </node>
         <node id="(('cid', 401984, 0, 0), 'toilet trained (finding)')">
             <data key="freq">
                 0.26
             </data>
-            <data key="desc">
-                (
-            </data>
         </node>
         <node id="(('code', '315.9'), 'Unspecified delay in development')">
             <data key="freq">
-                0.28
-            </data>
-            <data key="desc">
-                (
+                0.26
             </data>
         </node>
         <node id="(('cid', 10623, 0, 0), 'immunoelectrophoresis')">
             <data key="freq">
-                0.2
-            </data>
-            <data key="desc">
-                (
+                0.28
             </data>
         </node>
         <node id="(('cid', 19551, 0, 0), 'speech therapy')">
             <data key="freq">
                 0.48
             </data>
-            <data key="desc">
-                (
-            </data>
         </node>
-        <node id="(('code', '315.39'), 'Other developmental speech or language disorder')">
+        <node id="(('cid', 13609, 0, 0), 'muscle hypotonia')">
             <data key="freq">
-                0.26
-            </data>
-            <data key="desc">
-                (
+                0.2
             </data>
         </node>
         <node id="(('cid', 163364, 0, 0), 'task veterinary proprietary drug and/or biological')">
             <data key="freq">
-                0.24
-            </data>
-            <data key="desc">
-                (
+                0.22
             </data>
         </node>
         <node id="(('cid', 125026, 0, 0), 'speech delay')">
             <data key="freq">
-                0.22
-            </data>
-            <data key="desc">
-                (
-            </data>
-        </node>
-        <node id="(('code', '315.8'), 'Other specified delays in development')">
-            <data key="freq">
-                0.2
-            </data>
-            <data key="desc">
-                (
+                0.26
             </data>
         </node>
         <node id="(('code', '299.00'), '&quot;Autistic disorder, current or active state&quot;')">
             <data key="freq">
-                0.86
-            </data>
-            <data key="desc">
-                (
+                0.78
             </data>
         </node>
         <node id="(('cid', 11682, 0, 0), 'language delay')">
             <data key="freq">
-                0.36
-            </data>
-            <data key="desc">
-                (
+                0.28
             </data>
         </node>
         <node id="(('cid', 247696, 0, 0), 'developmental delay (disorder)')">
             <data key="freq">
-                0.42
+                0.46
             </data>
-            <data key="desc">
-                (
+        </node>
+        <node id="(('code', '299.90'), '&quot;Unspecified pervasive developmental disorder, current or active state&quot;')">
+            <data key="freq">
+                0.26
             </data>
         </node>
         <node id="(('cid', 304376, 0, 0), 'pervasive development disorder')">
             <data key="freq">
-                0.22
-            </data>
-            <data key="desc">
-                (
+                0.2
             </data>
         </node>
         <node id="(('cid', 123046, 0, 0), 'hearing normal')">
             <data key="freq">
-                0.22
-            </data>
-            <data key="desc">
-                (
+                0.26
             </data>
         </node>
         <node id="(('cid', 738877, 0, 0), 'autism spectrum disorders')">
             <data key="freq">
-                0.28
-            </data>
-            <data key="desc">
-                (
+                0.2
             </data>
         </node>
-        <edge source="(('code', '783.42'), 'Delayed milestones')" target="(('code', '783.40'), '&quot;Lack of normal physiological development, unspecified&quot;')">
-            <data key="lift">
-                0.725670372266
+        <node id="(('cid', 3953, 0, 0), 'developmental disabilities')">
+            <data key="freq">
+                0.24
             </data>
-            <data key="lambdaFirst">
-                -1.09861228867
-            </data>
-            <data key="lambda">
-                1.44238382777
-            </data>
-        </edge>
-        <edge source="(('code', '345.90'), '&quot;Epilepsy, unspecified, without mention of intractable epilepsy&quot;')" target="(('code', '783.40'), '&quot;Lack of normal physiological development, unspecified&quot;')">
-            <data key="lift">
-                -0.190620359609
-            </data>
-            <data key="lambdaFirst">
-                -0.0
-            </data>
-            <data key="lambda">
-                1.24745791627
-            </data>
-        </edge>
+        </node>
         <edge source="(('cid', 738877, 0, 0), 'autism spectrum disorders')" target="(('code', '783.40'), '&quot;Lack of normal physiological development, unspecified&quot;')">
             <data key="lift">
-                -0.0263173083174
-            </data>
-            <data key="lambdaFirst">
-                0.69314718056
-            </data>
-            <data key="lambda">
-                1.70474809224
-            </data>
-        </edge>
-        <edge source="(('cid', 10623, 0, 0), 'immunoelectrophoresis')" target="(('code', '783.40'), '&quot;Lack of normal physiological development, unspecified&quot;')">
-            <data key="lift">
-                0.533298479618
-            </data>
-            <data key="lambdaFirst">
-                -0.0
-            </data>
-            <data key="lambda">
-                2.82137888641
-            </data>
-        </edge>
-        <edge source="(('cid', 401984, 0, 0), 'toilet trained (finding)')" target="(('code', '345.90'), '&quot;Epilepsy, unspecified, without mention of intractable epilepsy&quot;')">
-            <data key="lift">
-                0.0477906638363
-            </data>
-            <data key="lambdaFirst">
-                0.69314718056
-            </data>
-            <data key="lambda">
-                1.99243016469
-            </data>
-        </edge>
-        <edge source="(('code', '345.90'), '&quot;Epilepsy, unspecified, without mention of intractable epilepsy&quot;')" target="(('cid', 394084, 0, 0), 'preschool completion')">
-            <data key="lift">
-                0.0672087496935
-            </data>
-            <data key="lambdaFirst">
-                -0.0
-            </data>
-            <data key="lambda">
-                3.45526460293
-            </data>
-        </edge>
-        <edge source="(('code', '315.39'), 'Other developmental speech or language disorder')" target="(('cid', 394084, 0, 0), 'preschool completion')">
-            <data key="lift">
-                0.305619773138
-            </data>
-            <data key="lambdaFirst">
-                -0.69314718056
-            </data>
-            <data key="lambda">
-                2.04475598369
-            </data>
-        </edge>
-        <edge source="(('cid', 10623, 0, 0), 'immunoelectrophoresis')" target="(('cid', 394084, 0, 0), 'preschool completion')">
-            <data key="lift">
-                0.945278268747
-            </data>
-            <data key="lambdaFirst">
-                -0.0
-            </data>
-            <data key="lambda">
-                2.83321334406
-            </data>
-        </edge>
-        <edge source="(('code', '299.00'), '&quot;Autistic disorder, current or active state&quot;')" target="(('cid', 394084, 0, 0), 'preschool completion')">
-            <data key="lift">
-                0.0256597467806
-            </data>
-            <data key="lambdaFirst">
-                -1.38629436112
-            </data>
-            <data key="lambda">
-                1.0445450674
-            </data>
-        </edge>
-        <edge source="(('cid', 247696, 0, 0), 'developmental delay (disorder)')" target="(('cid', 394084, 0, 0), 'preschool completion')">
-            <data key="lift">
-                0.231511800985
-            </data>
-            <data key="lambdaFirst">
-                -1.79175946923
-            </data>
-            <data key="lambda">
-                1.52395876733
-            </data>
-        </edge>
-        <edge source="(('code', '783.42'), 'Delayed milestones')" target="(('cid', 394084, 0, 0), 'preschool completion')">
-            <data key="lift">
-                0.626824537629
-            </data>
-            <data key="lambdaFirst">
-                -0.69314718056
-            </data>
-            <data key="lambda">
-                1.74296930506
-            </data>
-        </edge>
-        <edge source="(('cid', 123046, 0, 0), 'hearing normal')" target="(('cid', 394084, 0, 0), 'preschool completion')">
-            <data key="lift">
-                0.290352301008
-            </data>
-            <data key="lambdaFirst">
-                -1.09861228867
-            </data>
-            <data key="lambda">
-                1.22722966649
-            </data>
-        </edge>
-        <edge source="(('code', '315.9'), 'Unspecified delay in development')" target="(('cid', 394084, 0, 0), 'preschool completion')">
-            <data key="lift">
-                -0.173953307123
-            </data>
-            <data key="lambdaFirst">
-                -1.38629436112
-            </data>
-            <data key="lambda">
-                1.10712297834
-            </data>
-        </edge>
-        <edge source="(('code', '345.90'), '&quot;Epilepsy, unspecified, without mention of intractable epilepsy&quot;')" target="(('cid', 650162, 0, 0), 'occupational therapy regime')">
-            <data key="lift">
                 0.310154928304
-            </data>
-            <data key="lambdaFirst">
-                -0.69314718056
-            </data>
-            <data key="lambda">
-                1.88551443877
-            </data>
-        </edge>
-        <edge source="(('cid', 738877, 0, 0), 'autism spectrum disorders')" target="(('cid', 650162, 0, 0), 'occupational therapy regime')">
-            <data key="lift">
-                -0.113328685307
-            </data>
-            <data key="lambdaFirst">
-                0.69314718056
-            </data>
-            <data key="lambda">
-                1.38629436112
-            </data>
-        </edge>
-        <edge source="(('code', '315.39'), 'Other developmental speech or language disorder')" target="(('cid', 650162, 0, 0), 'occupational therapy regime')">
-            <data key="lift">
-                0.143100843641
-            </data>
-            <data key="lambdaFirst">
-                -1.09861228867
-            </data>
-            <data key="lambda">
-                1.6873994539
-            </data>
-        </edge>
-        <edge source="(('cid', 10623, 0, 0), 'immunoelectrophoresis')" target="(('cid', 650162, 0, 0), 'occupational therapy regime')">
-            <data key="lift">
-                0.446287102628
-            </data>
-            <data key="lambdaFirst">
-                -0.69314718056
-            </data>
-            <data key="lambda">
-                2.22462355152
-            </data>
-        </edge>
-        <edge source="(('code', '783.40'), '&quot;Lack of normal physiological development, unspecified&quot;')" target="(('cid', 650162, 0, 0), 'occupational therapy regime')">
-            <data key="lift">
-                0.715620036412
-            </data>
-            <data key="lambdaFirst">
-                -1.09861228867
-            </data>
-            <data key="lambda">
-                1.01637419043
-            </data>
-        </edge>
-        <edge source="(('cid', 247696, 0, 0), 'developmental delay (disorder)')" target="(('cid', 650162, 0, 0), 'occupational therapy regime')">
-            <data key="lift">
-                0.510825623766
-            </data>
-            <data key="lambdaFirst">
-                -2.30258509299
-            </data>
-            <data key="lambda">
-                1.55384689703
-            </data>
-        </edge>
-        <edge source="(('code', '783.42'), 'Delayed milestones')" target="(('cid', 650162, 0, 0), 'occupational therapy regime')">
-            <data key="lift">
-                0.597837000756
-            </data>
-            <data key="lambdaFirst">
-                -1.09861228867
-            </data>
-            <data key="lambda">
-                1.57059807912
-            </data>
-        </edge>
-        <edge source="(('code', '315.8'), 'Other specified delays in development')" target="(('cid', 650162, 0, 0), 'occupational therapy regime')">
-            <data key="lift">
-                0.223143551314
-            </data>
-            <data key="lambdaFirst">
-                -1.38629436112
-            </data>
-            <data key="lambda">
-                2.40612577193
-            </data>
-        </edge>
-        <edge source="(('cid', 401984, 0, 0), 'toilet trained (finding)')" target="(('cid', 650162, 0, 0), 'occupational therapy regime')">
-            <data key="lift">
-                0.297251523468
-            </data>
-            <data key="lambdaFirst">
-                -0.69314718056
-            </data>
-            <data key="lambda">
-                1.04596855518
-            </data>
-        </edge>
-        <edge source="(('cid', 123046, 0, 0), 'hearing normal')" target="(('cid', 650162, 0, 0), 'occupational therapy regime')">
-            <data key="lift">
-                0.12783337151
-            </data>
-            <data key="lambdaFirst">
-                -0.69314718056
-            </data>
-            <data key="lambda">
-                1.40609698842
-            </data>
-        </edge>
-        <edge source="(('code', '315.9'), 'Unspecified delay in development')" target="(('cid', 650162, 0, 0), 'occupational therapy regime')">
-            <data key="lift">
-                0.579818495253
-            </data>
-            <data key="lambdaFirst">
-                -1.60943791243
-            </data>
-            <data key="lambda">
-                1.55161834155
-            </data>
-        </edge>
-        <edge source="(('cid', 19551, 0, 0), 'speech therapy')" target="(('code', '783.42'), 'Delayed milestones')">
-            <data key="lift">
-                0.415515443962
-            </data>
-            <data key="lambdaFirst">
-                1.79175946923
-            </data>
-            <data key="lambda">
-                1.06726175878
-            </data>
-        </edge>
-        <edge source="(('code', '783.42'), 'Delayed milestones')" target="(('cid', 7730, 0, 0), 'facial expression')">
-            <data key="lift">
-                0.597837000756
-            </data>
-            <data key="lambdaFirst">
-                -0.69314718056
-            </data>
-            <data key="lambda">
-                2.01490302054
-            </data>
-        </edge>
-        <edge source="(('code', '345.90'), '&quot;Epilepsy, unspecified, without mention of intractable epilepsy&quot;')" target="(('cid', 7730, 0, 0), 'facial expression')">
-            <data key="lift">
-                0.192371892647
-            </data>
-            <data key="lambdaFirst">
-                -0.69314718056
-            </data>
-            <data key="lambda">
-                1.52349548263
-            </data>
-        </edge>
-        <edge source="(('cid', 123046, 0, 0), 'hearing normal')" target="(('cid', 7730, 0, 0), 'facial expression')">
-            <data key="lift">
-                0.415515443962
-            </data>
-            <data key="lambdaFirst">
-                -1.09861228867
-            </data>
-            <data key="lambda">
-                1.34992671695
-            </data>
-        </edge>
-        <edge source="(('code', '315.39'), 'Other developmental speech or language disorder')" target="(('cid', 7730, 0, 0), 'facial expression')">
-            <data key="lift">
-                0.430782916092
-            </data>
-            <data key="lambdaFirst">
-                -1.09861228867
-            </data>
-            <data key="lambda">
-                1.16643488501
-            </data>
-        </edge>
-        <edge source="(('cid', 10623, 0, 0), 'immunoelectrophoresis')" target="(('cid', 7730, 0, 0), 'facial expression')">
-            <data key="lift">
-                0.73396917508
-            </data>
-            <data key="lambdaFirst">
-                -0.0
-            </data>
-            <data key="lambda">
-                1.99243016469
-            </data>
-        </edge>
-        <edge source="(('code', '345.90'), '&quot;Epilepsy, unspecified, without mention of intractable epilepsy&quot;')" target="(('cid', 6836, 0, 0), 'electroencephalography')">
-            <data key="lift">
-                1.13943428319
-            </data>
-            <data key="lambdaFirst">
-                -1.09861228867
-            </data>
-            <data key="lambda">
-                1.55059741241
-            </data>
-        </edge>
-        <edge source="(('cid', 738877, 0, 0), 'autism spectrum disorders')" target="(('cid', 6836, 0, 0), 'electroencephalography')">
-            <data key="lift">
-                0.109814866007
-            </data>
-            <data key="lambdaFirst">
-                -0.69314718056
-            </data>
-            <data key="lambda">
-                1.48160454092
-            </data>
-        </edge>
-        <edge source="(('code', '315.39'), 'Other developmental speech or language disorder')" target="(('cid', 6836, 0, 0), 'electroencephalography')">
-            <data key="lift">
-                -0.0392207131533
-            </data>
-            <data key="lambdaFirst">
-                -0.69314718056
-            </data>
-            <data key="lambda">
-                2.03688192726
-            </data>
-        </edge>
-        <edge source="(('cid', 10623, 0, 0), 'immunoelectrophoresis')" target="(('cid', 6836, 0, 0), 'electroencephalography')">
-            <data key="lift">
-                -0.246860077932
-            </data>
-            <data key="lambdaFirst">
-                -0.0
-            </data>
-            <data key="lambda">
-                1.35454566281
-            </data>
-        </edge>
-        <edge source="(('code', '783.40'), '&quot;Lack of normal physiological development, unspecified&quot;')" target="(('cid', 6836, 0, 0), 'electroencephalography')">
-            <data key="lift">
-                0.350976922824
-            </data>
-            <data key="lambdaFirst">
-                -1.38629436112
-            </data>
-            <data key="lambda">
-                1.18876338566
-            </data>
-        </edge>
-        <edge source="(('code', '783.42'), 'Delayed milestones')" target="(('cid', 6836, 0, 0), 'electroencephalography')">
-            <data key="lift">
-                0.350976922824
-            </data>
-            <data key="lambdaFirst">
-                -0.69314718056
-            </data>
-            <data key="lambda">
-                1.8458266905
-            </data>
-        </edge>
-        <edge source="(('cid', 304376, 0, 0), 'pervasive development disorder')" target="(('cid', 6836, 0, 0), 'electroencephalography')">
-            <data key="lift">
-                0.350976922824
-            </data>
-            <data key="lambdaFirst">
-                -0.0
-            </data>
-            <data key="lambda">
-                2.01490302054
-            </data>
-        </edge>
-        <edge source="(('cid', 19309, 0, 0), 'social interaction')" target="(('cid', 6836, 0, 0), 'electroencephalography')">
-            <data key="lift">
-                -0.0237165266173
-            </data>
-            <data key="lambdaFirst">
-                0.0
-            </data>
-            <data key="lambda">
-                1.09861228867
-            </data>
-        </edge>
-        <edge source="(('cid', 394084, 0, 0), 'preschool completion')" target="(('cid', 6836, 0, 0), 'electroencephalography')">
-            <data key="lift">
-                -0.0843411484338
-            </data>
-            <data key="lambdaFirst">
-                1.60943791243
-            </data>
-            <data key="lambda">
-                1.24432409985
-            </data>
-        </edge>
-        <edge source="(('cid', 123046, 0, 0), 'hearing normal')" target="(('cid', 6836, 0, 0), 'electroencephalography')">
-            <data key="lift">
-                -0.159848700942
-            </data>
-            <data key="lambdaFirst">
-                -0.69314718056
-            </data>
-            <data key="lambda">
-                1.86698289047
-            </data>
-        </edge>
-        <edge source="(('cid', 13609, 0, 0), 'muscle hypotonia')" target="(('cid', 6836, 0, 0), 'electroencephalography')">
-            <data key="lift">
-                0.223143551314
-            </data>
-            <data key="lambdaFirst">
-                1.09861228867
-            </data>
-            <data key="lambda">
-                1.43074612369
-            </data>
-        </edge>
-        <edge source="(('code', '315.8'), 'Other specified delays in development')" target="(('cid', 6836, 0, 0), 'electroencephalography')">
-            <data key="lift">
-                0.223143551314
-            </data>
-            <data key="lambdaFirst">
-                -1.09861228867
-            </data>
-            <data key="lambda">
-                1.74046617484
-            </data>
-        </edge>
-        <edge source="(('cid', 401984, 0, 0), 'toilet trained (finding)')" target="(('cid', 19309, 0, 0), 'social interaction')">
-            <data key="lift">
-                0.366244394955
-            </data>
-            <data key="lambdaFirst">
-                1.38629436112
-            </data>
-            <data key="lambda">
-                1.2527629685
-            </data>
-        </edge>
-        <edge source="(('code', '345.90'), '&quot;Epilepsy, unspecified, without mention of intractable epilepsy&quot;')" target="(('cid', 393896, 0, 0), 'reinforcement surgical repair')">
-            <data key="lift">
-                -0.788457360364
-            </data>
-            <data key="lambdaFirst">
-                -0.0
-            </data>
-            <data key="lambda">
-                2.04769284337
-            </data>
-        </edge>
-        <edge source="(('cid', 738877, 0, 0), 'autism spectrum disorders')" target="(('cid', 393896, 0, 0), 'reinforcement surgical repair')">
-            <data key="lift">
-                -0.336472236621
-            </data>
-            <data key="lambdaFirst">
-                -0.0
-            </data>
-            <data key="lambda">
-                1.60943791243
-            </data>
-        </edge>
-        <edge source="(('code', '315.39'), 'Other developmental speech or language disorder')" target="(('cid', 393896, 0, 0), 'reinforcement surgical repair')">
-            <data key="lift">
-                0.653926467407
-            </data>
-            <data key="lambdaFirst">
-                -0.0
-            </data>
-            <data key="lambda">
-                1.2527629685
-            </data>
-        </edge>
-        <edge source="(('cid', 10623, 0, 0), 'immunoelectrophoresis')" target="(('cid', 393896, 0, 0), 'reinforcement surgical repair')">
-            <data key="lift">
-                0.446287102628
-            </data>
-            <data key="lambdaFirst">
-                -0.0
-            </data>
-            <data key="lambda">
-                2.44234703537
-            </data>
-        </edge>
-        <edge source="(('cid', 6836, 0, 0), 'electroencephalography')" target="(('cid', 393896, 0, 0), 'reinforcement surgical repair')">
-            <data key="lift">
-                -0.470003629246
-            </data>
-            <data key="lambdaFirst">
-                -0.0
-            </data>
-            <data key="lambda">
-                1.09861228867
-            </data>
-        </edge>
-        <edge source="(('code', '783.40'), '&quot;Lack of normal physiological development, unspecified&quot;')" target="(('cid', 393896, 0, 0), 'reinforcement surgical repair')">
-            <data key="lift">
-                0.82098055207
-            </data>
-            <data key="lambdaFirst">
-                -0.69314718056
-            </data>
-            <data key="lambda">
-                1.13401421572
-            </data>
-        </edge>
-        <edge source="(('cid', 163364, 0, 0), 'task veterinary proprietary drug and/or biological')" target="(('cid', 393896, 0, 0), 'reinforcement surgical repair')">
-            <data key="lift">
-                0.510825623766
-            </data>
-            <data key="lambdaFirst">
-                -0.0
-            </data>
-            <data key="lambda">
-                2.48490664979
-            </data>
-        </edge>
-        <edge source="(('code', '299.00'), '&quot;Autistic disorder, current or active state&quot;')" target="(('cid', 393896, 0, 0), 'reinforcement surgical repair')">
-            <data key="lift">
-                0.0454623740768
-            </data>
-            <data key="lambdaFirst">
-                -0.0
-            </data>
-            <data key="lambda">
-                1.38629436112
-            </data>
-        </edge>
-        <edge source="(('cid', 304376, 0, 0), 'pervasive development disorder')" target="(('cid', 393896, 0, 0), 'reinforcement surgical repair')">
-            <data key="lift">
-                -0.788457360364
-            </data>
-            <data key="lambdaFirst">
-                -0.0
-            </data>
-            <data key="lambda">
-                1.38629436112
-            </data>
-        </edge>
-        <edge source="(('cid', 247696, 0, 0), 'developmental delay (disorder)')" target="(('cid', 393896, 0, 0), 'reinforcement surgical repair')">
-            <data key="lift">
-                0.174353387145
-            </data>
-            <data key="lambdaFirst">
-                -1.09861228867
-            </data>
-            <data key="lambda">
-                1.16033786843
-            </data>
-        </edge>
-        <edge source="(('code', '783.42'), 'Delayed milestones')" target="(('cid', 393896, 0, 0), 'reinforcement surgical repair')">
-            <data key="lift">
-                0.82098055207
-            </data>
-            <data key="lambdaFirst">
-                -0.69314718056
-            </data>
-            <data key="lambda">
-                1.53147637096
-            </data>
-        </edge>
-        <edge source="(('cid', 125026, 0, 0), 'speech delay')" target="(('cid', 393896, 0, 0), 'reinforcement surgical repair')">
-            <data key="lift">
-                0.223143551314
-            </data>
-            <data key="lambdaFirst">
-                -0.69314718056
-            </data>
-            <data key="lambda">
-                1.60943791243
-            </data>
-        </edge>
-        <edge source="(('cid', 19309, 0, 0), 'social interaction')" target="(('cid', 393896, 0, 0), 'reinforcement surgical repair')">
-            <data key="lift">
-                0.223143551314
-            </data>
-            <data key="lambdaFirst">
-                -0.0
-            </data>
-            <data key="lambda">
-                1.60943791243
-            </data>
-        </edge>
-        <edge source="(('cid', 123046, 0, 0), 'hearing normal')" target="(('cid', 393896, 0, 0), 'reinforcement surgical repair')">
-            <data key="lift">
-                0.82098055207
-            </data>
-            <data key="lambdaFirst">
-                -0.69314718056
-            </data>
-            <data key="lambda">
-                1.60251746959
-            </data>
-        </edge>
-        <edge source="(('cid', 401984, 0, 0), 'toilet trained (finding)')" target="(('cid', 393896, 0, 0), 'reinforcement surgical repair')">
-            <data key="lift">
-                0.430782916092
-            </data>
-            <data key="lambdaFirst">
-                -0.69314718056
-            </data>
-            <data key="lambda">
-                1.44691898294
-            </data>
-        </edge>
-        <edge source="(('cid', 2001, 0, 0), 'autistic disorder')" target="(('cid', 393896, 0, 0), 'reinforcement surgical repair')">
-            <data key="lift">
-                -0.336472236621
-            </data>
-            <data key="lambdaFirst">
-                -0.69314718056
-            </data>
-            <data key="lambda">
-                2.27359755612
-            </data>
-        </edge>
-        <edge source="(('code', '315.8'), 'Other specified delays in development')" target="(('cid', 393896, 0, 0), 'reinforcement surgical repair')">
-            <data key="lift">
-                -0.69314718056
-            </data>
-            <data key="lambdaFirst">
-                -0.0
-            </data>
-            <data key="lambda">
-                2.03688192726
-            </data>
-        </edge>
-        <edge source="(('code', '345.90'), '&quot;Epilepsy, unspecified, without mention of intractable epilepsy&quot;')" target="(('cid', 13609, 0, 0), 'muscle hypotonia')">
-            <data key="lift">
-                0.310154928304
-            </data>
-            <data key="lambdaFirst">
-                -0.69314718056
-            </data>
-            <data key="lambda">
-                2.82665594351
-            </data>
-        </edge>
-        <edge source="(('cid', 738877, 0, 0), 'autism spectrum disorders')" target="(('cid', 13609, 0, 0), 'muscle hypotonia')">
-            <data key="lift">
-                -1.02961941718
-            </data>
-            <data key="lambdaFirst">
-                -0.0
-            </data>
-            <data key="lambda">
-                1.60943791243
-            </data>
-        </edge>
-        <edge source="(('code', '315.39'), 'Other developmental speech or language disorder')" target="(('cid', 13609, 0, 0), 'muscle hypotonia')">
-            <data key="lift">
-                0.143100843641
-            </data>
-            <data key="lambdaFirst">
-                -0.69314718056
-            </data>
-            <data key="lambda">
-                1.70869287053
-            </data>
-        </edge>
-        <edge source="(('cid', 10623, 0, 0), 'immunoelectrophoresis')" target="(('cid', 13609, 0, 0), 'muscle hypotonia')">
-            <data key="lift">
-                -0.0645385211376
-            </data>
-            <data key="lambdaFirst">
-                -0.0
-            </data>
-            <data key="lambda">
-                2.80336038091
-            </data>
-        </edge>
-        <edge source="(('code', '783.40'), '&quot;Lack of normal physiological development, unspecified&quot;')" target="(('cid', 13609, 0, 0), 'muscle hypotonia')">
-            <data key="lift">
-                0.82098055207
-            </data>
-            <data key="lambdaFirst">
-                -1.09861228867
-            </data>
-            <data key="lambda">
-                1.53882034522
-            </data>
-        </edge>
-        <edge source="(('code', '299.00'), '&quot;Autistic disorder, current or active state&quot;')" target="(('cid', 13609, 0, 0), 'muscle hypotonia')">
-            <data key="lift">
-                0.150822889735
-            </data>
-            <data key="lambdaFirst">
-                -1.09861228867
-            </data>
-            <data key="lambda">
-                1.14862270924
-            </data>
-        </edge>
-        <edge source="(('cid', 7730, 0, 0), 'facial expression')" target="(('cid', 13609, 0, 0), 'muscle hypotonia')">
-            <data key="lift">
-                0.287682072452
-            </data>
-            <data key="lambdaFirst">
-                -0.0
-            </data>
-            <data key="lambda">
-                1.29098418132
-            </data>
-        </edge>
-        <edge source="(('cid', 247696, 0, 0), 'developmental delay (disorder)')" target="(('cid', 13609, 0, 0), 'muscle hypotonia')">
-            <data key="lift">
-                0.174353387145
-            </data>
-            <data key="lambdaFirst">
-                -1.09861228867
-            </data>
-            <data key="lambda">
-                1.59382368463
-            </data>
-        </edge>
-        <edge source="(('cid', 19551, 0, 0), 'speech therapy')" target="(('cid', 13609, 0, 0), 'muscle hypotonia')">
-            <data key="lift">
-                0.223143551314
-            </data>
-            <data key="lambdaFirst">
-                -0.69314718056
-            </data>
-            <data key="lambda">
-                1.38962215121
-            </data>
-        </edge>
-        <edge source="(('cid', 304376, 0, 0), 'pervasive development disorder')" target="(('cid', 13609, 0, 0), 'muscle hypotonia')">
-            <data key="lift">
-                -0.0953101798043
-            </data>
-            <data key="lambdaFirst">
-                -0.0
-            </data>
-            <data key="lambda">
-                1.09861228867
-            </data>
-        </edge>
-        <edge source="(('cid', 19309, 0, 0), 'social interaction')" target="(('cid', 13609, 0, 0), 'muscle hypotonia')">
-            <data key="lift">
-                0.223143551314
-            </data>
-            <data key="lambdaFirst">
-                -0.0
-            </data>
-            <data key="lambda">
-                1.60943791243
-            </data>
-        </edge>
-        <edge source="(('code', '783.42'), 'Delayed milestones')" target="(('cid', 13609, 0, 0), 'muscle hypotonia')">
-            <data key="lift">
-                0.310154928304
-            </data>
-            <data key="lambdaFirst">
-                -0.69314718056
-            </data>
-            <data key="lambda">
-                2.00533356953
-            </data>
-        </edge>
-        <edge source="(('cid', 123046, 0, 0), 'hearing normal')" target="(('cid', 13609, 0, 0), 'muscle hypotonia')">
-            <data key="lift">
-                -0.0953101798043
-            </data>
-            <data key="lambdaFirst">
-                -0.0
-            </data>
-            <data key="lambda">
-                2.6820747147
-            </data>
-        </edge>
-        <edge source="(('cid', 401984, 0, 0), 'toilet trained (finding)')" target="(('cid', 13609, 0, 0), 'muscle hypotonia')">
-            <data key="lift">
-                0.143100843641
-            </data>
-            <data key="lambdaFirst">
-                -0.0
-            </data>
-            <data key="lambda">
-                2.51230562398
-            </data>
-        </edge>
-        <edge source="(('code', '315.9'), 'Unspecified delay in development')" target="(('cid', 13609, 0, 0), 'muscle hypotonia')">
-            <data key="lift">
-                0.579818495253
-            </data>
-            <data key="lambdaFirst">
-                -1.60943791243
-            </data>
-            <data key="lambda">
-                1.35180818505
-            </data>
-        </edge>
-        <edge source="(('cid', 19309, 0, 0), 'social interaction')" target="(('code', '315.9'), 'Unspecified delay in development')">
-            <data key="lift">
-                -0.401010757759
-            </data>
-            <data key="lambdaFirst">
-                -0.0
-            </data>
-            <data key="lambda">
-                1.09861228867
-            </data>
-        </edge>
-        <edge source="(('cid', 11687, 0, 0), 'language therapy')" target="(('cid', 10623, 0, 0), 'immunoelectrophoresis')">
-            <data key="lift">
-                0.916290731874
-            </data>
-            <data key="lambdaFirst">
-                1.94591014906
-            </data>
-            <data key="lambda">
-                1.67397643357
-            </data>
-        </edge>
-        <edge source="(('cid', 19551, 0, 0), 'speech therapy')" target="(('cid', 10623, 0, 0), 'immunoelectrophoresis')">
-            <data key="lift">
-                0.526329810302
-            </data>
-            <data key="lambdaFirst">
-                2.19722457734
-            </data>
-            <data key="lambda">
-                1.69995191997
-            </data>
-        </edge>
-        <edge source="(('cid', 401984, 0, 0), 'toilet trained (finding)')" target="(('cid', 10623, 0, 0), 'immunoelectrophoresis')">
-            <data key="lift">
-                0.520395074782
-            </data>
-            <data key="lambdaFirst">
-                1.79175946923
-            </data>
-            <data key="lambda">
-                2.63905732962
-            </data>
-        </edge>
-        <edge source="(('cid', 19309, 0, 0), 'social interaction')" target="(('cid', 10623, 0, 0), 'immunoelectrophoresis')">
-            <data key="lift">
-                0.764740833747
-            </data>
-            <data key="lambdaFirst">
-                1.79175946923
-            </data>
-            <data key="lambda">
-                2.19722457734
-            </data>
-        </edge>
-        <edge source="(('cid', 247696, 0, 0), 'developmental delay (disorder)')" target="(('cid', 10623, 0, 0), 'immunoelectrophoresis')">
-            <data key="lift">
-                0.174353387145
-            </data>
-            <data key="lambdaFirst">
-                2.07944154168
-            </data>
-            <data key="lambda">
-                1.44807172082
-            </data>
-        </edge>
-        <edge source="(('code', '783.42'), 'Delayed milestones')" target="(('code', '315.39'), 'Other developmental speech or language disorder')">
-            <data key="lift">
-                0.895088524224
-            </data>
-            <data key="lambdaFirst">
-                -0.69314718056
-            </data>
-            <data key="lambda">
-                1.28093384546
-            </data>
-        </edge>
-        <edge source="(('cid', 401984, 0, 0), 'toilet trained (finding)')" target="(('code', '315.39'), 'Other developmental speech or language disorder')">
-            <data key="lift">
-                0.391562202939
-            </data>
-            <data key="lambdaFirst">
-                1.09861228867
-            </data>
-            <data key="lambda">
-                1.88706964903
-            </data>
-        </edge>
-        <edge source="(('cid', 10623, 0, 0), 'immunoelectrophoresis')" target="(('code', '315.39'), 'Other developmental speech or language disorder')">
-            <data key="lift">
-                0.183922838161
-            </data>
-            <data key="lambdaFirst">
-                -0.0
-            </data>
-            <data key="lambda">
-                2.50552593699
-            </data>
-        </edge>
-        <edge source="(('cid', 13609, 0, 0), 'muscle hypotonia')" target="(('cid', 163364, 0, 0), 'task veterinary proprietary drug and/or biological')">
-            <data key="lift">
-                0.223143551314
-            </data>
-            <data key="lambdaFirst">
-                1.38629436112
-            </data>
-            <data key="lambda">
-                3.18841661738
-            </data>
-        </edge>
-        <edge source="(('code', '315.39'), 'Other developmental speech or language disorder')" target="(('cid', 163364, 0, 0), 'task veterinary proprietary drug and/or biological')">
-            <data key="lift">
-                0.248461359298
-            </data>
-            <data key="lambdaFirst">
-                1.09861228867
-            </data>
-            <data key="lambda">
-                1.75949860701
-            </data>
-        </edge>
-        <edge source="(('cid', 6836, 0, 0), 'electroencephalography')" target="(('cid', 163364, 0, 0), 'task veterinary proprietary drug and/or biological')">
-            <data key="lift">
-                0.0408219945203
-            </data>
-            <data key="lambdaFirst">
-                1.38629436112
-            </data>
-            <data key="lambda">
-                2.51567830845
-            </data>
-        </edge>
-        <edge source="(('code', '783.40'), '&quot;Lack of normal physiological development, unspecified&quot;')" target="(('cid', 163364, 0, 0), 'task veterinary proprietary drug and/or biological')">
-            <data key="lift">
-                0.415515443962
-            </data>
-            <data key="lambdaFirst">
-                0.69314718056
-            </data>
-            <data key="lambda">
-                1.53147637096
-            </data>
-        </edge>
-        <edge source="(('cid', 650162, 0, 0), 'occupational therapy regime')" target="(('cid', 163364, 0, 0), 'task veterinary proprietary drug and/or biological')">
-            <data key="lift">
-                0.377294231141
-            </data>
-            <data key="lambdaFirst">
-                1.60943791243
-            </data>
-            <data key="lambda">
-                1.60943791243
-            </data>
-        </edge>
-        <edge source="(('cid', 7730, 0, 0), 'facial expression')" target="(('cid', 163364, 0, 0), 'task veterinary proprietary drug and/or biological')">
-            <data key="lift">
-                0.798507696218
-            </data>
-            <data key="lambdaFirst">
-                0.69314718056
-            </data>
-            <data key="lambda">
-                1.60943791243
-            </data>
-        </edge>
-        <edge source="(('cid', 247696, 0, 0), 'developmental delay (disorder)')" target="(('cid', 163364, 0, 0), 'task veterinary proprietary drug and/or biological')">
-            <data key="lift">
-                0.174353387145
-            </data>
-            <data key="lambdaFirst">
-                1.60943791243
-            </data>
-            <data key="lambda">
-                1.0267865541
-            </data>
-        </edge>
-        <edge source="(('cid', 19551, 0, 0), 'speech therapy')" target="(('cid', 163364, 0, 0), 'task veterinary proprietary drug and/or biological')">
-            <data key="lift">
-                0.73396917508
-            </data>
-            <data key="lambdaFirst">
-                1.60943791243
-            </data>
-            <data key="lambda">
-                1.10691109148
-            </data>
-        </edge>
-        <edge source="(('cid', 394084, 0, 0), 'preschool completion')" target="(('cid', 163364, 0, 0), 'task veterinary proprietary drug and/or biological')">
-            <data key="lift">
-                0.896488104578
-            </data>
-            <data key="lambdaFirst">
-                1.60943791243
-            </data>
-            <data key="lambda">
-                1.51145750407
-            </data>
-        </edge>
-        <edge source="(('cid', 401984, 0, 0), 'toilet trained (finding)')" target="(('cid', 163364, 0, 0), 'task veterinary proprietary drug and/or biological')">
-            <data key="lift">
-                0.471604910613
-            </data>
-            <data key="lambdaFirst">
-                1.38629436112
-            </data>
-            <data key="lambda">
-                1.83258146375
-            </data>
-        </edge>
-        <edge source="(('code', '783.40'), '&quot;Lack of normal physiological development, unspecified&quot;')" target="(('cid', 125026, 0, 0), 'speech delay')">
-            <data key="lift">
-                0.687449159445
-            </data>
-            <data key="lambdaFirst">
-                1.38629436112
-            </data>
-            <data key="lambda">
-                1.02961941718
-            </data>
-        </edge>
-        <edge source="(('cid', 304376, 0, 0), 'pervasive development disorder')" target="(('cid', 125026, 0, 0), 'speech delay')">
-            <data key="lift">
-                0.350976922824
-            </data>
-            <data key="lambdaFirst">
-                -1.09861228867
-            </data>
-            <data key="lambda">
-                1.44691898294
-            </data>
-        </edge>
-        <edge source="(('cid', 10623, 0, 0), 'immunoelectrophoresis')" target="(('cid', 125026, 0, 0), 'speech delay')">
-            <data key="lift">
-                0.446287102628
             </data>
             <data key="lambdaFirst">
                 -0.0
@@ -1282,75 +147,317 @@
                 1.8718021769
             </data>
         </edge>
-        <edge source="(('cid', 13609, 0, 0), 'muscle hypotonia')" target="(('code', '315.8'), 'Other specified delays in development')">
+        <edge source="(('cid', 10623, 0, 0), 'immunoelectrophoresis')" target="(('code', '783.40'), '&quot;Lack of normal physiological development, unspecified&quot;')">
             <data key="lift">
-                -2.22044604925e-16
+                0.484508315449
             </data>
             <data key="lambdaFirst">
-                0.69314718056
+                -1.09861228867
             </data>
             <data key="lambda">
-                2.16496371512
+                2.02814824729
             </data>
         </edge>
-        <edge source="(('cid', 10623, 0, 0), 'immunoelectrophoresis')" target="(('code', '315.8'), 'Other specified delays in development')">
+        <edge source="(('code', '299.00'), '&quot;Autistic disorder, current or active state&quot;')" target="(('code', '783.40'), '&quot;Lack of normal physiological development, unspecified&quot;')">
             <data key="lift">
-                0.223143551314
+                0.153151179494
+            </data>
+            <data key="lambdaFirst">
+                -1.09861228867
+            </data>
+            <data key="lambda">
+                1.12601126286
+            </data>
+        </edge>
+        <edge source="(('cid', 19551, 0, 0), 'speech therapy')" target="(('code', '783.40'), '&quot;Lack of normal physiological development, unspecified&quot;')">
+            <data key="lift">
+                0.533298479618
+            </data>
+            <data key="lambdaFirst">
+                -1.60943791243
+            </data>
+            <data key="lambda">
+                1.11803037453
+            </data>
+        </edge>
+        <edge source="(('cid', 19309, 0, 0), 'social interaction')" target="(('code', '783.40'), '&quot;Lack of normal physiological development, unspecified&quot;')">
+            <data key="lift">
+                0.0100503358535
             </data>
             <data key="lambdaFirst">
                 -0.69314718056
             </data>
             <data key="lambda">
-                1.04145387483
+                1.29928298413
             </data>
         </edge>
-        <edge source="(('cid', 7730, 0, 0), 'facial expression')" target="(('code', '315.8'), 'Other specified delays in development')">
+        <edge source="(('cid', 123046, 0, 0), 'hearing normal')" target="(('code', '783.40'), '&quot;Lack of normal physiological development, unspecified&quot;')">
+            <data key="lift">
+                0.558616287602
+            </data>
+            <data key="lambdaFirst">
+                -0.69314718056
+            </data>
+            <data key="lambda">
+                1.14209740061
+            </data>
+        </edge>
+        <edge source="(('cid', 11682, 0, 0), 'language delay')" target="(('code', '783.40'), '&quot;Lack of normal physiological development, unspecified&quot;')">
+            <data key="lift">
+                0.666829872243
+            </data>
+            <data key="lambdaFirst">
+                -1.38629436112
+            </data>
+            <data key="lambda">
+                1.1451323043
+            </data>
+        </edge>
+        <edge source="(('cid', 10623, 0, 0), 'immunoelectrophoresis')" target="(('cid', 102764, 0, 0), 'chromosome analysis')">
+            <data key="lift">
+                0.916290731874
+            </data>
+            <data key="lambdaFirst">
+                -0.0
+            </data>
+            <data key="lambda">
+                1.70474809224
+            </data>
+        </edge>
+        <edge source="(('cid', 6836, 0, 0), 'electroencephalography')" target="(('cid', 102764, 0, 0), 'chromosome analysis')">
+            <data key="lift">
+                -0.182321556794
+            </data>
+            <data key="lambdaFirst">
+                -0.0
+            </data>
+            <data key="lambda">
+                1.38629436112
+            </data>
+        </edge>
+        <edge source="(('cid', 163364, 0, 0), 'task veterinary proprietary drug and/or biological')" target="(('cid', 102764, 0, 0), 'chromosome analysis')">
+            <data key="lift">
+                0.310154928304
+            </data>
+            <data key="lambdaFirst">
+                -0.0
+            </data>
+            <data key="lambda">
+                1.79175946923
+            </data>
+        </edge>
+        <edge source="(('code', '299.00'), '&quot;Autistic disorder, current or active state&quot;')" target="(('cid', 102764, 0, 0), 'chromosome analysis')">
+            <data key="lift">
+                0.248461359298
+            </data>
+            <data key="lambdaFirst">
+                -1.09861228867
+            </data>
+            <data key="lambda">
+                1.75785791755
+            </data>
+        </edge>
+        <edge source="(('code', '315.32'), 'Mixed receptive-expressive language disorder')" target="(('cid', 102764, 0, 0), 'chromosome analysis')">
+            <data key="lift">
+                0.597837000756
+            </data>
+            <data key="lambdaFirst">
+                -0.69314718056
+            </data>
+            <data key="lambda">
+                1.38629436112
+            </data>
+        </edge>
+        <edge source="(('cid', 3953, 0, 0), 'developmental disabilities')" target="(('cid', 102764, 0, 0), 'chromosome analysis')">
             <data key="lift">
                 0.510825623766
             </data>
             <data key="lambdaFirst">
-                1.38629436112
+                -0.69314718056
+            </data>
+            <data key="lambda">
+                2.1202635362
+            </data>
+        </edge>
+        <edge source="(('cid', 394084, 0, 0), 'preschool completion')" target="(('cid', 102764, 0, 0), 'chromosome analysis')">
+            <data key="lift">
+                0.847297860387
+            </data>
+            <data key="lambdaFirst">
+                -0.69314718056
+            </data>
+            <data key="lambda">
+                1.43508452529
+            </data>
+        </edge>
+        <edge source="(('cid', 401984, 0, 0), 'toilet trained (finding)')" target="(('cid', 102764, 0, 0), 'chromosome analysis')">
+            <data key="lift">
+                -0.262364264467
+            </data>
+            <data key="lambdaFirst">
+                -0.0
+            </data>
+            <data key="lambda">
+                1.60943791243
+            </data>
+        </edge>
+        <edge source="(('cid', 2001, 0, 0), 'autistic disorder')" target="(('cid', 102764, 0, 0), 'chromosome analysis')">
+            <data key="lift">
+                0.356674943939
+            </data>
+            <data key="lambdaFirst">
+                -1.09861228867
             </data>
             <data key="lambda">
                 1.54044504095
             </data>
         </edge>
-        <edge source="(('cid', 11682, 0, 0), 'language delay')" target="(('code', '315.8'), 'Other specified delays in development')">
+        <edge source="(('code', '315.9'), 'Unspecified delay in development')" target="(('cid', 102764, 0, 0), 'chromosome analysis')">
             <data key="lift">
-                0.105360515658
+                0.836248024201
+            </data>
+            <data key="lambdaFirst">
+                -0.69314718056
+            </data>
+            <data key="lambda">
+                2.22462355152
+            </data>
+        </edge>
+        <edge source="(('code', '783.40'), '&quot;Lack of normal physiological development, unspecified&quot;')" target="(('cid', 394084, 0, 0), 'preschool completion')">
+            <data key="lift">
+                0.192371892647
+            </data>
+            <data key="lambdaFirst">
+                1.38629436112
+            </data>
+            <data key="lambda">
+                1.56218502758
+            </data>
+        </edge>
+        <edge source="(('cid', 11682, 0, 0), 'language delay')" target="(('cid', 394084, 0, 0), 'preschool completion')">
+            <data key="lift">
+                0.510825623766
             </data>
             <data key="lambdaFirst">
                 1.09861228867
             </data>
             <data key="lambda">
-                1.21639532432
+                1.3437347467
             </data>
         </edge>
-        <edge source="(('cid', 394084, 0, 0), 'preschool completion')" target="(('code', '315.8'), 'Other specified delays in development')">
+        <edge source="(('cid', 10623, 0, 0), 'immunoelectrophoresis')" target="(('cid', 394084, 0, 0), 'preschool completion')">
             <data key="lift">
-                -0.125163142954
+                0.644357016391
+            </data>
+            <data key="lambdaFirst">
+                -0.0
+            </data>
+            <data key="lambda">
+                1.48160454092
+            </data>
+        </edge>
+        <edge source="(('code', '783.42'), 'Delayed milestones')" target="(('cid', 650162, 0, 0), 'occupational therapy regime')">
+            <data key="lift">
+                0.174353387145
+            </data>
+            <data key="lambdaFirst">
+                1.38629436112
+            </data>
+            <data key="lambda">
+                1.60943791243
+            </data>
+        </edge>
+        <edge source="(('cid', 11687, 0, 0), 'language therapy')" target="(('cid', 650162, 0, 0), 'occupational therapy regime')">
+            <data key="lift">
+                0.644357016391
             </data>
             <data key="lambdaFirst">
                 1.09861228867
             </data>
             <data key="lambda">
-                2.36712361413
+                1.0704414117
             </data>
         </edge>
-        <edge source="(('cid', 401984, 0, 0), 'toilet trained (finding)')" target="(('code', '315.8'), 'Other specified delays in development')">
+        <edge source="(('cid', 247696, 0, 0), 'developmental delay (disorder)')" target="(('cid', 650162, 0, 0), 'occupational therapy regime')">
             <data key="lift">
-                0.653926467407
+                0.371063681391
+            </data>
+            <data key="lambdaFirst">
+                -2.19722457734
+            </data>
+            <data key="lambda">
+                1.09171570961
+            </data>
+        </edge>
+        <edge source="(('code', '315.32'), 'Mixed receptive-expressive language disorder')" target="(('cid', 650162, 0, 0), 'occupational therapy regime')">
+            <data key="lift">
+                0.261364764134
+            </data>
+            <data key="lambdaFirst">
+                1.79175946923
+            </data>
+            <data key="lambda">
+                1.05209227303
+            </data>
+        </edge>
+        <edge source="(('cid', 3953, 0, 0), 'developmental disabilities')" target="(('cid', 650162, 0, 0), 'occupational therapy regime')">
+            <data key="lift">
+                0.462035459597
+            </data>
+            <data key="lambdaFirst">
+                -1.09861228867
+            </data>
+            <data key="lambda">
+                1.26113121817
+            </data>
+        </edge>
+        <edge source="(('cid', 11682, 0, 0), 'language delay')" target="(('cid', 650162, 0, 0), 'occupational therapy regime')">
+            <data key="lift">
+                0.425667815426
             </data>
             <data key="lambdaFirst">
                 1.60943791243
             </data>
             <data key="lambda">
-                2.07944154168
+                1.58412010445
             </data>
         </edge>
-        <edge source="(('cid', 19309, 0, 0), 'social interaction')" target="(('code', '315.8'), 'Other specified delays in development')">
+        <edge source="(('code', '299.90'), '&quot;Unspecified pervasive developmental disorder, current or active state&quot;')" target="(('cid', 650162, 0, 0), 'occupational therapy regime')">
             <data key="lift">
-                -0.470003629246
+                0.248461359298
+            </data>
+            <data key="lambdaFirst">
+                1.38629436112
+            </data>
+            <data key="lambda">
+                1.8718021769
+            </data>
+        </edge>
+        <edge source="(('cid', 123046, 0, 0), 'hearing normal')" target="(('cid', 650162, 0, 0), 'occupational therapy regime')">
+            <data key="lift">
+                0.0943106794712
+            </data>
+            <data key="lambdaFirst">
+                1.79175946923
+            </data>
+            <data key="lambda">
+                1.17865499634
+            </data>
+        </edge>
+        <edge source="(('code', '315.9'), 'Unspecified delay in development')" target="(('cid', 650162, 0, 0), 'occupational therapy regime')">
+            <data key="lift">
+                0.248461359298
+            </data>
+            <data key="lambdaFirst">
+                -1.60943791243
+            </data>
+            <data key="lambda">
+                1.09861228867
+            </data>
+        </edge>
+        <edge source="(('code', '299.90'), '&quot;Unspecified pervasive developmental disorder, current or active state&quot;')" target="(('code', '783.42'), 'Delayed milestones')">
+            <data key="lift">
+                0.143100843641
             </data>
             <data key="lambdaFirst">
                 -0.0
@@ -1359,18 +466,359 @@
                 1.09861228867
             </data>
         </edge>
-        <edge source="(('code', '783.42'), 'Delayed milestones')" target="(('cid', 11682, 0, 0), 'language delay')">
+        <edge source="(('code', '299.90'), '&quot;Unspecified pervasive developmental disorder, current or active state&quot;')" target="(('cid', 394013, 0, 0), 'genetic screening method')">
             <data key="lift">
-                0.82098055207
+                -0.0392207131533
             </data>
             <data key="lambdaFirst">
-                -1.38629436112
+                -0.0
             </data>
             <data key="lambda">
-                1.0704414117
+                1.09861228867
             </data>
         </edge>
-        <edge source="(('code', '345.90'), '&quot;Epilepsy, unspecified, without mention of intractable epilepsy&quot;')" target="(('cid', 11682, 0, 0), 'language delay')">
+        <edge source="(('cid', 304376, 0, 0), 'pervasive development disorder')" target="(('cid', 394013, 0, 0), 'genetic screening method')">
+            <data key="lift">
+                0.510825623766
+            </data>
+            <data key="lambdaFirst">
+                -0.69314718056
+            </data>
+            <data key="lambda">
+                1.2527629685
+            </data>
+        </edge>
+        <edge source="(('cid', 10623, 0, 0), 'immunoelectrophoresis')" target="(('cid', 394013, 0, 0), 'genetic screening method')">
+            <data key="lift">
+                0.579818495253
+            </data>
+            <data key="lambdaFirst">
+                -0.0
+            </data>
+            <data key="lambda">
+                1.38629436112
+            </data>
+        </edge>
+        <edge source="(('code', '783.40'), '&quot;Lack of normal physiological development, unspecified&quot;')" target="(('cid', 2001, 0, 0), 'autistic disorder')">
+            <data key="lift">
+                0.156004248477
+            </data>
+            <data key="lambdaFirst">
+                1.79175946923
+            </data>
+            <data key="lambda">
+                1.38629436112
+            </data>
+        </edge>
+        <edge source="(('cid', 11682, 0, 0), 'language delay')" target="(('cid', 2001, 0, 0), 'autistic disorder')">
+            <data key="lift">
+                0.202524264111
+            </data>
+            <data key="lambdaFirst">
+                1.79175946923
+            </data>
+            <data key="lambda">
+                1.2527629685
+            </data>
+        </edge>
+        <edge source="(('cid', 3953, 0, 0), 'developmental disabilities')" target="(('cid', 6836, 0, 0), 'electroencephalography')">
+            <data key="lift">
+                -0.364643113588
+            </data>
+            <data key="lambdaFirst">
+                1.09861228867
+            </data>
+            <data key="lambda">
+                3.52636052462
+            </data>
+        </edge>
+        <edge source="(('code', '783.40'), '&quot;Lack of normal physiological development, unspecified&quot;')" target="(('cid', 6836, 0, 0), 'electroencephalography')">
+            <data key="lift">
+                0.415515443962
+            </data>
+            <data key="lambdaFirst">
+                1.38629436112
+            </data>
+            <data key="lambda">
+                1.28093384546
+            </data>
+        </edge>
+        <edge source="(('cid', 394013, 0, 0), 'genetic screening method')" target="(('cid', 6836, 0, 0), 'electroencephalography')">
+            <data key="lift">
+                0.0408219945203
+            </data>
+            <data key="lambdaFirst">
+                -0.0
+            </data>
+            <data key="lambda">
+                1.38629436112
+            </data>
+        </edge>
+        <edge source="(('cid', 19551, 0, 0), 'speech therapy')" target="(('cid', 6836, 0, 0), 'electroencephalography')">
+            <data key="lift">
+                -0.364643113588
+            </data>
+            <data key="lambdaFirst">
+                1.60943791243
+            </data>
+            <data key="lambda">
+                1.02165124753
+            </data>
+        </edge>
+        <edge source="(('code', '299.90'), '&quot;Unspecified pervasive developmental disorder, current or active state&quot;')" target="(('cid', 6836, 0, 0), 'electroencephalography')">
+            <data key="lift">
+                -0.0392207131533
+            </data>
+            <data key="lambdaFirst">
+                1.38629436112
+            </data>
+            <data key="lambda">
+                3.61091791264
+            </data>
+        </edge>
+        <edge source="(('cid', 304376, 0, 0), 'pervasive development disorder')" target="(('cid', 6836, 0, 0), 'electroencephalography')">
+            <data key="lift">
+                -0.182321556794
+            </data>
+            <data key="lambdaFirst">
+                1.09861228867
+            </data>
+            <data key="lambda">
+                2.94443897917
+            </data>
+        </edge>
+        <edge source="(('cid', 11682, 0, 0), 'language delay')" target="(('cid', 6836, 0, 0), 'electroencephalography')">
+            <data key="lift">
+                -0.113328685307
+            </data>
+            <data key="lambdaFirst">
+                1.09861228867
+            </data>
+            <data key="lambda">
+                1.60943791243
+            </data>
+        </edge>
+        <edge source="(('cid', 11687, 0, 0), 'language therapy')" target="(('cid', 6836, 0, 0), 'electroencephalography')">
+            <data key="lift">
+                -0.182321556794
+            </data>
+            <data key="lambdaFirst">
+                0.69314718056
+            </data>
+            <data key="lambda">
+                1.38629436112
+            </data>
+        </edge>
+        <edge source="(('code', '315.9'), 'Unspecified delay in development')" target="(('cid', 6836, 0, 0), 'electroencephalography')">
+            <data key="lift">
+                0.653926467407
+            </data>
+            <data key="lambdaFirst">
+                1.79175946923
+            </data>
+            <data key="lambda">
+                1.8458266905
+            </data>
+        </edge>
+        <edge source="(('code', '783.40'), '&quot;Lack of normal physiological development, unspecified&quot;')" target="(('code', '315.32'), 'Mixed receptive-expressive language disorder')">
+            <data key="lift">
+                0.725670372266
+            </data>
+            <data key="lambdaFirst">
+                1.38629436112
+            </data>
+            <data key="lambda">
+                1.16760516016
+            </data>
+        </edge>
+        <edge source="(('cid', 11682, 0, 0), 'language delay')" target="(('code', '315.32'), 'Mixed receptive-expressive language disorder')">
+            <data key="lift">
+                0.484508315449
+            </data>
+            <data key="lambdaFirst">
+                1.09861228867
+            </data>
+            <data key="lambda">
+                1.29098418132
+            </data>
+        </edge>
+        <edge source="(('cid', 394013, 0, 0), 'genetic screening method')" target="(('code', '315.32'), 'Mixed receptive-expressive language disorder')">
+            <data key="lift">
+                0.638658995276
+            </data>
+            <data key="lambdaFirst">
+                -0.0
+            </data>
+            <data key="lambda">
+                1.60943791243
+            </data>
+        </edge>
+        <edge source="(('cid', 10623, 0, 0), 'immunoelectrophoresis')" target="(('code', '315.32'), 'Mixed receptive-expressive language disorder')">
+            <data key="lift">
+                0.484508315449
+            </data>
+            <data key="lambdaFirst">
+                -0.0
+            </data>
+            <data key="lambda">
+                1.01160091168
+            </data>
+        </edge>
+        <edge source="(('cid', 19309, 0, 0), 'social interaction')" target="(('code', '315.32'), 'Mixed receptive-expressive language disorder')">
+            <data key="lift">
+                0.703197516413
+            </data>
+            <data key="lambdaFirst">
+                -0.69314718056
+            </data>
+            <data key="lambda">
+                1.34992671695
+            </data>
+        </edge>
+        <edge source="(('cid', 19551, 0, 0), 'speech therapy')" target="(('cid', 19309, 0, 0), 'social interaction')">
+            <data key="lift">
+                0.482654746799
+            </data>
+            <data key="lambdaFirst">
+                2.30258509299
+            </data>
+            <data key="lambda">
+                1.04145387483
+            </data>
+        </edge>
+        <edge source="(('code', '783.42'), 'Delayed milestones')" target="(('cid', 19309, 0, 0), 'social interaction')">
+            <data key="lift">
+                0.664976303593
+            </data>
+            <data key="lambdaFirst">
+                1.79175946923
+            </data>
+            <data key="lambda">
+                1.09861228867
+            </data>
+        </edge>
+        <edge source="(('cid', 11687, 0, 0), 'language therapy')" target="(('code', '315.9'), 'Unspecified delay in development')">
+            <data key="lift">
+                0.430782916092
+            </data>
+            <data key="lambdaFirst">
+                1.09861228867
+            </data>
+            <data key="lambda">
+                1.09861228867
+            </data>
+        </edge>
+        <edge source="(('code', '299.90'), '&quot;Unspecified pervasive developmental disorder, current or active state&quot;')" target="(('code', '315.9'), 'Unspecified delay in development')">
+            <data key="lift">
+                0.168418651625
+            </data>
+            <data key="lambdaFirst">
+                1.38629436112
+            </data>
+            <data key="lambda">
+                1.16315080981
+            </data>
+        </edge>
+        <edge source="(('cid', 123046, 0, 0), 'hearing normal')" target="(('code', '315.9'), 'Unspecified delay in development')">
+            <data key="lift">
+                0.168418651625
+            </data>
+            <data key="lambdaFirst">
+                1.09861228867
+            </data>
+            <data key="lambda">
+                1.09861228867
+            </data>
+        </edge>
+        <edge source="(('cid', 19309, 0, 0), 'social interaction')" target="(('code', '315.9'), 'Unspecified delay in development')">
+            <data key="lift">
+                0.0661398025045
+            </data>
+            <data key="lambdaFirst">
+                -0.0
+            </data>
+            <data key="lambda">
+                1.50407739678
+            </data>
+        </edge>
+        <edge source="(('cid', 10623, 0, 0), 'immunoelectrophoresis')" target="(('code', '315.9'), 'Unspecified delay in development')">
+            <data key="lift">
+                0.317454230785
+            </data>
+            <data key="lambdaFirst">
+                -0.69314718056
+            </data>
+            <data key="lambda">
+                1.67397643357
+            </data>
+        </edge>
+        <edge source="(('cid', 19551, 0, 0), 'speech therapy')" target="(('cid', 10623, 0, 0), 'immunoelectrophoresis')">
+            <data key="lift">
+                0.292136422801
+            </data>
+            <data key="lambdaFirst">
+                2.19722457734
+            </data>
+            <data key="lambda">
+                1.06635142645
+            </data>
+        </edge>
+        <edge source="(('cid', 247696, 0, 0), 'developmental delay (disorder)')" target="(('cid', 10623, 0, 0), 'immunoelectrophoresis')">
+            <data key="lift">
+                0.216913001564
+            </data>
+            <data key="lambdaFirst">
+                1.94591014906
+            </data>
+            <data key="lambda">
+                1.73460105539
+            </data>
+        </edge>
+        <edge source="(('code', '783.42'), 'Delayed milestones')" target="(('cid', 10623, 0, 0), 'immunoelectrophoresis')">
+            <data key="lift">
+                1.0498221245
+            </data>
+            <data key="lambdaFirst">
+                1.60943791243
+            </data>
+            <data key="lambda">
+                1.55814461805
+            </data>
+        </edge>
+        <edge source="(('cid', 11687, 0, 0), 'language therapy')" target="(('cid', 10623, 0, 0), 'immunoelectrophoresis')">
+            <data key="lift">
+                0.762140052047
+            </data>
+            <data key="lambdaFirst">
+                1.38629436112
+            </data>
+            <data key="lambda">
+                2.3978952728
+            </data>
+        </edge>
+        <edge source="(('code', '299.90'), '&quot;Unspecified pervasive developmental disorder, current or active state&quot;')" target="(('cid', 10623, 0, 0), 'immunoelectrophoresis')">
+            <data key="lift">
+                -0.193371392981
+            </data>
+            <data key="lambdaFirst">
+                -0.0
+            </data>
+            <data key="lambda">
+                1.60943791243
+            </data>
+        </edge>
+        <edge source="(('cid', 13609, 0, 0), 'muscle hypotonia')" target="(('cid', 10623, 0, 0), 'immunoelectrophoresis')">
+            <data key="lift">
+                0.579818495253
+            </data>
+            <data key="lambdaFirst">
+                1.60943791243
+            </data>
+            <data key="lambda">
+                2.01490302054
+            </data>
+        </edge>
+        <edge source="(('cid', 3953, 0, 0), 'developmental disabilities')" target="(('cid', 163364, 0, 0), 'task veterinary proprietary drug and/or biological')">
             <data key="lift">
                 -0.277631736598
             </data>
@@ -1378,34 +826,199 @@
                 -0.0
             </data>
             <data key="lambda">
-                1.64865862559
+                1.46633706879
             </data>
         </edge>
-        <edge source="(('code', '315.39'), 'Other developmental speech or language disorder')" target="(('cid', 11682, 0, 0), 'language delay')">
+        <edge source="(('cid', 304376, 0, 0), 'pervasive development disorder')" target="(('cid', 163364, 0, 0), 'task veterinary proprietary drug and/or biological')">
             <data key="lift">
-                0.53614343175
+                0.310154928304
+            </data>
+            <data key="lambdaFirst">
+                -0.69314718056
+            </data>
+            <data key="lambda">
+                1.2527629685
+            </data>
+        </edge>
+        <edge source="(('cid', 11682, 0, 0), 'language delay')" target="(('cid', 163364, 0, 0), 'task veterinary proprietary drug and/or biological')">
+            <data key="lift">
+                0.484508315449
+            </data>
+            <data key="lambdaFirst">
+                1.09861228867
+            </data>
+            <data key="lambda">
+                1.79175946923
+            </data>
+        </edge>
+        <edge source="(('cid', 10623, 0, 0), 'immunoelectrophoresis')" target="(('cid', 163364, 0, 0), 'task veterinary proprietary drug and/or biological')">
+            <data key="lift">
+                0.261364764134
             </data>
             <data key="lambdaFirst">
                 -1.09861228867
             </data>
             <data key="lambda">
-                1.02961941718
+                1.38629436112
             </data>
         </edge>
-        <edge source="(('cid', 10623, 0, 0), 'immunoelectrophoresis')" target="(('cid', 11682, 0, 0), 'language delay')">
+        <edge source="(('code', '783.40'), '&quot;Lack of normal physiological development, unspecified&quot;')" target="(('cid', 125026, 0, 0), 'speech delay')">
             <data key="lift">
-                0.73396917508
+                0.740937844396
+            </data>
+            <data key="lambdaFirst">
+                1.60943791243
+            </data>
+            <data key="lambda">
+                1.35454566281
+            </data>
+        </edge>
+        <edge source="(('code', '299.00'), '&quot;Autistic disorder, current or active state&quot;')" target="(('cid', 125026, 0, 0), 'speech delay')">
+            <data key="lift">
+                -0.119263420827
+            </data>
+            <data key="lambdaFirst">
+                -1.38629436112
+            </data>
+            <data key="lambda">
+                1.07755887947
+            </data>
+        </edge>
+        <edge source="(('cid', 3953, 0, 0), 'developmental disabilities')" target="(('cid', 125026, 0, 0), 'speech delay')">
+            <data key="lift">
+                0.248461359298
+            </data>
+            <data key="lambdaFirst">
+                -0.69314718056
+            </data>
+            <data key="lambda">
+                1.46633706879
+            </data>
+        </edge>
+        <edge source="(('cid', 304376, 0, 0), 'pervasive development disorder')" target="(('cid', 125026, 0, 0), 'speech delay')">
+            <data key="lift">
+                0.143100843641
             </data>
             <data key="lambdaFirst">
                 -0.0
             </data>
             <data key="lambda">
-                1.90954250488
+                1.94591014906
             </data>
         </edge>
-        <edge source="(('cid', 11687, 0, 0), 'language therapy')" target="(('cid', 304376, 0, 0), 'pervasive development disorder')">
+        <edge source="(('cid', 11682, 0, 0), 'language delay')" target="(('cid', 125026, 0, 0), 'speech delay')">
             <data key="lift">
-                0.310154928304
+                0.787457860031
+            </data>
+            <data key="lambdaFirst">
+                1.38629436112
+            </data>
+            <data key="lambda">
+                1.18562366566
+            </data>
+        </edge>
+        <edge source="(('code', '299.90'), '&quot;Unspecified pervasive developmental disorder, current or active state&quot;')" target="(('cid', 125026, 0, 0), 'speech delay')">
+            <data key="lift">
+                0.391562202939
+            </data>
+            <data key="lambdaFirst">
+                -0.0
+            </data>
+            <data key="lambda">
+                1.70474809224
+            </data>
+        </edge>
+        <edge source="(('cid', 13609, 0, 0), 'muscle hypotonia')" target="(('cid', 125026, 0, 0), 'speech delay')">
+            <data key="lift">
+                0.653926467407
+            </data>
+            <data key="lambdaFirst">
+                1.60943791243
+            </data>
+            <data key="lambda">
+                1.02961941718
+            </data>
+        </edge>
+        <edge source="(('cid', 11687, 0, 0), 'language therapy')" target="(('code', '299.00'), '&quot;Autistic disorder, current or active state&quot;')">
+            <data key="lift">
+                0.143100843641
+            </data>
+            <data key="lambdaFirst">
+                2.07944154168
+            </data>
+            <data key="lambda">
+                1.23969088693
+            </data>
+        </edge>
+        <edge source="(('cid', 738877, 0, 0), 'autism spectrum disorders')" target="(('cid', 11682, 0, 0), 'language delay')">
+            <data key="lift">
+                0.762140052047
+            </data>
+            <data key="lambdaFirst">
+                -1.09861228867
+            </data>
+            <data key="lambda">
+                1.09861228867
+            </data>
+        </edge>
+        <edge source="(('cid', 10623, 0, 0), 'immunoelectrophoresis')" target="(('cid', 11682, 0, 0), 'language delay')">
+            <data key="lift">
+                0.579818495253
+            </data>
+            <data key="lambdaFirst">
+                -0.69314718056
+            </data>
+            <data key="lambda">
+                1.38629436112
+            </data>
+        </edge>
+        <edge source="(('code', '299.00'), '&quot;Autistic disorder, current or active state&quot;')" target="(('cid', 11682, 0, 0), 'language delay')">
+            <data key="lift">
+                0.0943106794712
+            </data>
+            <data key="lambdaFirst">
+                -1.38629436112
+            </data>
+            <data key="lambda">
+                1.76928661338
+            </data>
+        </edge>
+        <edge source="(('cid', 19309, 0, 0), 'social interaction')" target="(('cid', 11682, 0, 0), 'language delay')">
+            <data key="lift">
+                0.579818495253
+            </data>
+            <data key="lambdaFirst">
+                -1.38629436112
+            </data>
+            <data key="lambda">
+                1.17865499634
+            </data>
+        </edge>
+        <edge source="(('cid', 401984, 0, 0), 'toilet trained (finding)')" target="(('cid', 11682, 0, 0), 'language delay')">
+            <data key="lift">
+                0.0943106794712
+            </data>
+            <data key="lambdaFirst">
+                -0.69314718056
+            </data>
+            <data key="lambda">
+                1.09861228867
+            </data>
+        </edge>
+        <edge source="(('code', '315.9'), 'Unspecified delay in development')" target="(('cid', 11682, 0, 0), 'language delay')">
+            <data key="lift">
+                -0.193371392981
+            </data>
+            <data key="lambdaFirst">
+                -0.69314718056
+            </data>
+            <data key="lambda">
+                2.01490302054
+            </data>
+        </edge>
+        <edge source="(('cid', 11687, 0, 0), 'language therapy')" target="(('code', '299.90'), '&quot;Unspecified pervasive developmental disorder, current or active state&quot;')">
+            <data key="lift">
+                0.143100843641
             </data>
             <data key="lambdaFirst">
                 0.69314718056
@@ -1414,9 +1027,251 @@
                 1.09861228867
             </data>
         </edge>
+        <edge source="(('code', '299.00'), '&quot;Autistic disorder, current or active state&quot;')" target="(('code', '299.90'), '&quot;Unspecified pervasive developmental disorder, current or active state&quot;')">
+            <data key="lift">
+                -0.524728528935
+            </data>
+            <data key="lambdaFirst">
+                -1.09861228867
+            </data>
+            <data key="lambda">
+                1.70474809224
+            </data>
+        </edge>
+        <edge source="(('cid', 247696, 0, 0), 'developmental delay (disorder)')" target="(('code', '299.90'), '&quot;Unspecified pervasive developmental disorder, current or active state&quot;')">
+            <data key="lift">
+                0.291020973717
+            </data>
+            <data key="lambdaFirst">
+                -1.38629436112
+            </data>
+            <data key="lambda">
+                2.00746804205
+            </data>
+        </edge>
+        <edge source="(('code', '783.42'), 'Delayed milestones')" target="(('cid', 304376, 0, 0), 'pervasive development disorder')">
+            <data key="lift">
+                -2.22044604925e-16
+            </data>
+            <data key="lambdaFirst">
+                0.69314718056
+            </data>
+            <data key="lambda">
+                1.94591014906
+            </data>
+        </edge>
+        <edge source="(('cid', 19551, 0, 0), 'speech therapy')" target="(('cid', 304376, 0, 0), 'pervasive development disorder')">
+            <data key="lift">
+                0.510825623766
+            </data>
+            <data key="lambdaFirst">
+                1.60943791243
+            </data>
+            <data key="lambda">
+                1.30833281965
+            </data>
+        </edge>
+        <edge source="(('code', '299.90'), '&quot;Unspecified pervasive developmental disorder, current or active state&quot;')" target="(('cid', 304376, 0, 0), 'pervasive development disorder')">
+            <data key="lift">
+                0.836248024201
+            </data>
+            <data key="lambdaFirst">
+                0.69314718056
+            </data>
+            <data key="lambda">
+                1.60943791243
+            </data>
+        </edge>
+        <edge source="(('cid', 19309, 0, 0), 'social interaction')" target="(('cid', 304376, 0, 0), 'pervasive development disorder')">
+            <data key="lift">
+                0.664976303593
+            </data>
+            <data key="lambdaFirst">
+                0.0
+            </data>
+            <data key="lambda">
+                1.09861228867
+            </data>
+        </edge>
+        <edge source="(('cid', 11687, 0, 0), 'language therapy')" target="(('cid', 304376, 0, 0), 'pervasive development disorder')">
+            <data key="lift">
+                -2.22044604925e-16
+            </data>
+            <data key="lambdaFirst">
+                0.69314718056
+            </data>
+            <data key="lambda">
+                2.25129179861
+            </data>
+        </edge>
         <edge source="(('cid', 401984, 0, 0), 'toilet trained (finding)')" target="(('cid', 304376, 0, 0), 'pervasive development disorder')">
             <data key="lift">
-                -0.357674444272
+                0.653926467407
+            </data>
+            <data key="lambdaFirst">
+                0.69314718056
+            </data>
+            <data key="lambda">
+                1.38629436112
+            </data>
+        </edge>
+        <edge source="(('cid', 304376, 0, 0), 'pervasive development disorder')" target="(('cid', 123046, 0, 0), 'hearing normal')">
+            <data key="lift">
+                0.430782916092
+            </data>
+            <data key="lambdaFirst">
+                -0.69314718056
+            </data>
+            <data key="lambda">
+                1.50407739678
+            </data>
+        </edge>
+        <edge source="(('cid', 10623, 0, 0), 'immunoelectrophoresis')" target="(('cid', 123046, 0, 0), 'hearing normal')">
+            <data key="lift">
+                0.653926467407
+            </data>
+            <data key="lambdaFirst">
+                -1.09861228867
+            </data>
+            <data key="lambda">
+                1.35454566281
+            </data>
+        </edge>
+        <edge source="(('cid', 13609, 0, 0), 'muscle hypotonia')" target="(('cid', 738877, 0, 0), 'autism spectrum disorders')">
+            <data key="lift">
+                -2.22044604925e-16
+            </data>
+            <data key="lambdaFirst">
+                1.09861228867
+            </data>
+            <data key="lambda">
+                1.38629436112
+            </data>
+        </edge>
+        <edge source="(('cid', 247696, 0, 0), 'developmental delay (disorder)')" target="(('cid', 738877, 0, 0), 'autism spectrum disorders')">
+            <data key="lift">
+                0.0833816089391
+            </data>
+            <data key="lambdaFirst">
+                1.38629436112
+            </data>
+            <data key="lambda">
+                2.3978952728
+            </data>
+        </edge>
+        <edge source="(('cid', 304376, 0, 0), 'pervasive development disorder')" target="(('cid', 738877, 0, 0), 'autism spectrum disorders')">
+            <data key="lift">
+                0.405465108108
+            </data>
+            <data key="lambdaFirst">
+                -0.0
+            </data>
+            <data key="lambda">
+                1.09861228867
+            </data>
+        </edge>
+        <edge source="(('cid', 11687, 0, 0), 'language therapy')" target="(('cid', 738877, 0, 0), 'autism spectrum disorders')">
+            <data key="lift">
+                0.405465108108
+            </data>
+            <data key="lambdaFirst">
+                1.09861228867
+            </data>
+            <data key="lambda">
+                1.38629436112
+            </data>
+        </edge>
+        <edge source="(('cid', 123046, 0, 0), 'hearing normal')" target="(('cid', 738877, 0, 0), 'autism spectrum disorders')">
+            <data key="lift">
+                0.653926467407
+            </data>
+            <data key="lambdaFirst">
+                1.60943791243
+            </data>
+            <data key="lambda">
+                1.20397280433
+            </data>
+        </edge>
+        <edge source="(('cid', 401984, 0, 0), 'toilet trained (finding)')" target="(('cid', 738877, 0, 0), 'autism spectrum disorders')">
+            <data key="lift">
+                -0.955511445027
+            </data>
+            <data key="lambdaFirst">
+                0.0
+            </data>
+            <data key="lambda">
+                1.09861228867
+            </data>
+        </edge>
+        <edge source="(('code', '315.9'), 'Unspecified delay in development')" target="(('cid', 738877, 0, 0), 'autism spectrum disorders')">
+            <data key="lift">
+                -0.955511445027
+            </data>
+            <data key="lambdaFirst">
+                0.69314718056
+            </data>
+            <data key="lambda">
+                1.09861228867
+            </data>
+        </edge>
+        <edge source="(('cid', 738877, 0, 0), 'autism spectrum disorders')" target="(('cid', 3953, 0, 0), 'developmental disabilities')">
+            <data key="lift">
+                -0.182321556794
+            </data>
+            <data key="lambdaFirst">
+                -0.0
+            </data>
+            <data key="lambda">
+                1.09861228867
+            </data>
+        </edge>
+        <edge source="(('cid', 10623, 0, 0), 'immunoelectrophoresis')" target="(('cid', 3953, 0, 0), 'developmental disabilities')">
+            <data key="lift">
+                -0.113328685307
+            </data>
+            <data key="lambdaFirst">
+                -0.0
+            </data>
+            <data key="lambda">
+                1.38629436112
+            </data>
+        </edge>
+        <edge source="(('cid', 13609, 0, 0), 'muscle hypotonia')" target="(('cid', 3953, 0, 0), 'developmental disabilities')">
+            <data key="lift">
+                0.223143551314
+            </data>
+            <data key="lambdaFirst">
+                0.69314718056
+            </data>
+            <data key="lambda">
+                1.60943791243
+            </data>
+        </edge>
+        <edge source="(('code', '299.90'), '&quot;Unspecified pervasive developmental disorder, current or active state&quot;')" target="(('cid', 3953, 0, 0), 'developmental disabilities')">
+            <data key="lift">
+                0.808077147234
+            </data>
+            <data key="lambdaFirst">
+                1.09861228867
+            </data>
+            <data key="lambda">
+                1.73460105539
+            </data>
+        </edge>
+        <edge source="(('cid', 19309, 0, 0), 'social interaction')" target="(('cid', 3953, 0, 0), 'developmental disabilities')">
+            <data key="lift">
+                0.328504066972
+            </data>
+            <data key="lambdaFirst">
+                0.0
+            </data>
+            <data key="lambda">
+                1.09861228867
+            </data>
+        </edge>
+        <edge source="(('cid', 11687, 0, 0), 'language therapy')" target="(('cid', 3953, 0, 0), 'developmental disabilities')">
+            <data key="lift">
+                0.223143551314
             </data>
             <data key="lambdaFirst">
                 0.69314718056
@@ -1425,125 +1280,15 @@
                 1.50407739678
             </data>
         </edge>
-        <edge source="(('code', '315.39'), 'Other developmental speech or language disorder')" target="(('cid', 304376, 0, 0), 'pervasive development disorder')">
+        <edge source="(('cid', 401984, 0, 0), 'toilet trained (finding)')" target="(('cid', 3953, 0, 0), 'developmental disabilities')">
             <data key="lift">
-                0.558616287602
+                0.471604910613
             </data>
             <data key="lambdaFirst">
-                1.09861228867
+                0.69314718056
             </data>
             <data key="lambda">
                 1.38629436112
-            </data>
-        </edge>
-        <edge source="(('cid', 10623, 0, 0), 'immunoelectrophoresis')" target="(('cid', 304376, 0, 0), 'pervasive development disorder')">
-            <data key="lift">
-                -0.159848700942
-            </data>
-            <data key="lambdaFirst">
-                -0.0
-            </data>
-            <data key="lambda">
-                1.60943791243
-            </data>
-        </edge>
-        <edge source="(('code', '315.9'), 'Unspecified delay in development')" target="(('cid', 304376, 0, 0), 'pervasive development disorder')">
-            <data key="lift">
-                0.261364764134
-            </data>
-            <data key="lambdaFirst">
-                1.38629436112
-            </data>
-            <data key="lambda">
-                3.63758615973
-            </data>
-        </edge>
-        <edge source="(('cid', 10623, 0, 0), 'immunoelectrophoresis')" target="(('cid', 123046, 0, 0), 'hearing normal')">
-            <data key="lift">
-                0.533298479618
-            </data>
-            <data key="lambdaFirst">
-                -0.0
-            </data>
-            <data key="lambda">
-                1.00063188031
-            </data>
-        </edge>
-        <edge source="(('code', '345.90'), '&quot;Epilepsy, unspecified, without mention of intractable epilepsy&quot;')" target="(('cid', 738877, 0, 0), 'autism spectrum disorders')">
-            <data key="lift">
-                -0.0263173083174
-            </data>
-            <data key="lambdaFirst">
-                -0.0
-            </data>
-            <data key="lambda">
-                2.07944154168
-            </data>
-        </edge>
-        <edge source="(('cid', 10623, 0, 0), 'immunoelectrophoresis')" target="(('cid', 738877, 0, 0), 'autism spectrum disorders')">
-            <data key="lift">
-                0.446287102628
-            </data>
-            <data key="lambdaFirst">
-                -0.0
-            </data>
-            <data key="lambda">
-                1.94591014906
-            </data>
-        </edge>
-        <edge source="(('cid', 7730, 0, 0), 'facial expression')" target="(('cid', 738877, 0, 0), 'autism spectrum disorders')">
-            <data key="lift">
-                0.644357016391
-            </data>
-            <data key="lambdaFirst">
-                -0.69314718056
-            </data>
-            <data key="lambda">
-                1.09861228867
-            </data>
-        </edge>
-        <edge source="(('cid', 247696, 0, 0), 'developmental delay (disorder)')" target="(('cid', 738877, 0, 0), 'autism spectrum disorders')">
-            <data key="lift">
-                0.307884779769
-            </data>
-            <data key="lambdaFirst">
-                1.60943791243
-            </data>
-            <data key="lambda">
-                2.05838813248
-            </data>
-        </edge>
-        <edge source="(('code', '783.42'), 'Delayed milestones')" target="(('cid', 738877, 0, 0), 'autism spectrum disorders')">
-            <data key="lift">
-                0.484508315449
-            </data>
-            <data key="lambdaFirst">
-                -0.0
-            </data>
-            <data key="lambda">
-                1.94591014906
-            </data>
-        </edge>
-        <edge source="(('cid', 401984, 0, 0), 'toilet trained (finding)')" target="(('cid', 738877, 0, 0), 'autism spectrum disorders')">
-            <data key="lift">
-                0.499775787579
-            </data>
-            <data key="lambdaFirst">
-                1.60943791243
-            </data>
-            <data key="lambda">
-                1.98100146887
-            </data>
-        </edge>
-        <edge source="(('code', '315.9'), 'Unspecified delay in development')" target="(('cid', 738877, 0, 0), 'autism spectrum disorders')">
-            <data key="lift">
-                0.425667815426
-            </data>
-            <data key="lambdaFirst">
-                1.09861228867
-            </data>
-            <data key="lambda">
-                1.68175857401
             </data>
         </edge>
     </graph>
