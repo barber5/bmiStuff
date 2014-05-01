@@ -230,7 +230,7 @@ def inOutGraph(graphDict):
 	for node, meta in graphDict.iteritems():
 		if len(meta['out']) == 0 and len(meta['in']) == 0:
 			continue
-		n = g.add_node(node[0])			
+		n = g.add_node(node)			
 		n['freq'] = meta['freq']
 		n['desc'] = node[1]
 		nDict[node] = n
