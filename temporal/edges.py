@@ -223,8 +223,7 @@ def inOutGraph(graphDict):
 		if node not in nDict:
 			continue
 		n = nDict[node]			
-		for node2, edgeMeta in meta['in'].iteritems():
-			print edgeMeta
+		for node2, edgeMeta in meta['in'].iteritems():			
 			n2 = nDict[node2]
 			e = g.add_edge(n2, n, directed=True)
 			e['lift'] = edgeMeta['lift']
@@ -244,7 +243,10 @@ def adjacenciesGraph(graphDict):
 		n = nDict[node]			
 		for node2 in meta['adjacent']:
 			n2 = nDict[node2]
-			g.add_edge(n2, n, directed=True)
+			e = g.add_edge(n2, n, directed=False)
+			e['lift'] = edgeMeta['lift']
+			e['lambda'] = edgeMeta['lambda']
+			e['lambdaFirst'] = edgeMeta['lambdaFirst']			
 	parser = GraphMLParser()
 	parser.write(g, "adj.graphml")
 
