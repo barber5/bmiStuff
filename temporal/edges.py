@@ -220,7 +220,8 @@ def analyzeEdges(edges, cutoff):
 				graph[f2]['adjacent'][f1] = {
 					'lift': meta['lift']
 				}
-			None
+	with open('graphy.json', 'w') as fi:
+		fi.write(json.dumps(graph))
 	return graph
 
 def inOutGraph(graphDict):
@@ -277,4 +278,4 @@ if __name__ == "__main__":
 	edges = getEdges(enr, pats)
 	#printEdges(edges, float(sys.argv[4]))
 	graph = analyzeEdges(edges, float(sys.argv[5]))
-	inOutGraph(graph)
+	#inOutGraph(graph)
