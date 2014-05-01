@@ -209,13 +209,15 @@ def analyzeEdges(edges, intersectionCutoff=.05, cutoff=.1):
 					'lambda': meta['lambda'],
 					'lambdaFirst': meta['lambdaFirst'],
 					'lift': meta['lift'],
-					'avgOffset': meta['avgOffset']
+					'avgOffset': meta['avgOffset'],
+					'intersection': meta['intersection']
 				}
 				graph[f2]['in'][f1] = {
 					'lambda': meta['lambda'],
 					'lambdaFirst': meta['lambdaFirst'],
 					'lift': meta['lift'],
 					'avgOffset': meta['avgOffset']
+					'intersection': meta['intersection']
 				}
 			else:
 				graph[f2]['out'][f1] = {
@@ -256,6 +258,7 @@ def inOutGraph(graphDict, gFile):
 			e['lambda'] = edgeMeta['lambda']
 			e['lambdaFirst'] = edgeMeta['lambdaFirst']		
 			e['avgOffset'] = edgeMeta['avgOffset']	
+			e['intersection'] = edgeMeta['intersection']
 	parser = GraphMLParser()
 	parser.write(g, gFile)
 
