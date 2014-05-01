@@ -141,7 +141,7 @@ def getEdges(enrichments, patients):
 				avgOffset = float(totalOffset)/float(len(both.keys()))
 				lam = math.log(float(f12)/float(f21))
 				lf = math.log(float(f12f)/float(f21f))
-				if lam < 0:
+				if lf < 0:
 					first = f2
 					second = f1
 					count1 = c2
@@ -154,17 +154,17 @@ def getEdges(enrichments, patients):
 					second = f2
 					count1 = c1
 					count2 = c2
-				result[(f1, f2)] = {
-					'f1': f1,
-					'f1desc': enrichments[f1]['description'],
-					'f1enrich': enrichments[f1]['enrichment'],
-					'f2enrich': enrichments[f2]['enrichment'],
+				result[(first, second)] = {
+					'f1': first,
+					'f1desc': enrichments[first]['description'],
+					'f1enrich': enrichments[first]['enrichment'],
+					'f2enrich': enrichments[second]['enrichment'],
 					'f1freq': count1,
-					'f2': f2,
+					'f2': second,
 					'f2freq': count2,
 					'intersection': c12and,
 					'independent': c1*c2,
-					'f2desc': enrichments[f2]['description'],					
+					'f2desc': enrichments[second]['description'],					
 					'lambda': lam,
 					'lambdaFirst': lf, 
 					'avgOffset': avgOffset,
