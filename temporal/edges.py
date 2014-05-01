@@ -219,16 +219,16 @@ def analyzeEdges(edges, intersectionCutoff=.05, cutoff=.1):
 				}
 			else:
 				graph[f2]['out'][f1] = {
-					'lambda': meta['lambda'],
-					'lambdaFirst': meta['lambdaFirst'],
+					'lambda': -meta['lambda'],
+					'lambdaFirst': -meta['lambdaFirst'],
 					'lift': meta['lift'],
-					'avgOffset': meta['avgOffset']
+					'avgOffset': -meta['avgOffset']
 				}
 				graph[f1]['in'][f2] = {
-					'lambda': meta['lambda'],
-					'lambdaFirst': meta['lambdaFirst'],
+					'lambda': -meta['lambda'],
+					'lambdaFirst': -meta['lambdaFirst'],
 					'lift': meta['lift'],
-					'avgOffset': meta['avgOffset']
+					'avgOffset': -meta['avgOffset']
 				}
 	
 	with open('graphy.json', 'w') as fi:
