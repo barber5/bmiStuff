@@ -22,7 +22,8 @@ from pygraphml.Edge import *
 def getEdges(enrichments, patients):
 	singletons = {}
 	pairs = {}
-	for pid, dd in patients.iteritems():											
+	for pid, dd in patients.iteritems():	
+		print >> sys.stderr, 'edging pid: '+str(pid)										
 		for n in dd['notes']:			
 			for term in n['terms']:
 				offs = int(round(n['timeoffset']))
@@ -71,7 +72,7 @@ def getEdges(enrichments, patients):
 					singletons[codeKey].add((pid, offs))
 
 	result = {}
-		
+	print >> sys.stderr, 'getting pairs from singletons: '+str(len(singletons.keys()))
 	for i in range(len(singletons.keys())):
 		for j in range(i+1, len(singletons.keys())):
 			f1 = singletons.keys()[i]
@@ -291,7 +292,9 @@ if __name__ == "__main__":
 	print >> sys.stderr, 'usage: <enrichmentsFile> <patientFile> <numPatients> <intersectionCutoff> <individualFrequencyCutoff> <graphFile>'
 	enr = getEnrichments(sys.argv[1])
 	pats = getPatients(int(sys.argv[3]), sys.argv[2])
+	print >> sys.stderr, 'getting edges'
 	edges = getEdges(enr, pats)
-	printEdges(edges, float(sys.argv[4]))
+	print >> sys.stderr, 'got edges'
+	#printEdges(edges, float(sys.argv[4]))
 	graph = analyzeEdges(edges, float(sys.argv[4]), float(sys.argv[5]))
 	inOutGraph(graph, sys.argv[6])
