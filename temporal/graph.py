@@ -139,6 +139,8 @@ def edgesFromFile(edgeFile):
 if __name__ == "__main__":
 	print >> sys.stderr, 'usage <edgeFile> <outFile>'
 	edges = edgesFromFile(sys.argv[1])
+	print >> sys.stderr, 'got edges'
 	graph = analyzeEdges(edges)
+	print >> sys.stderr, 'constructed graph'
 	inOutGraph(graph, sys.argv[2])
 
