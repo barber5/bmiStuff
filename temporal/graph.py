@@ -93,7 +93,7 @@ def analyzeEdges(edges, intersectionCutoff=.05, cutoff=.01, lift=1.0):
 				'enrichment': meta['f2enrich']
 			}
 		
-		if meta['lift'] > lift and meta['intersection'] > intersectionCutoff:
+		if (meta['lift'] > lift or meta['lift'] < -lift) and meta['intersection'] > intersectionCutoff:
 			if meta['lambdaFirst'] > 0:
 				graph[f1]['out'][f2] = {
 					'lambda': meta['lambda'],
