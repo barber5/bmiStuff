@@ -42,7 +42,7 @@ def inOutGraph(graphDict, gFile):
 	parser.write(g, gFile)
 
 
-def analyzeEdges(edges, intersectionCutoff=.05, cutoff=.01):
+def analyzeEdges(edges, intersectionCutoff=.05, cutoff=.01, lift=1.0):
 	graph = {}
 	for pr, meta in edges.iteritems():
 		f1 = meta['f1']
@@ -73,7 +73,7 @@ def analyzeEdges(edges, intersectionCutoff=.05, cutoff=.01):
 				'enrichment': meta['f2enrich']
 			}
 		
-		if meta['lift'] > 1 and meta['intersection'] > intersectionCutoff:
+		if meta['lift'] > lift and meta['intersection'] > intersectionCutoff:
 			if meta['lambdaFirst'] > 0:
 				graph[f1]['out'][f2] = {
 					'lambda': meta['lambda'],
@@ -139,10 +139,10 @@ def edgesFromFile(edgeFile):
 	return edges
 
 if __name__ == "__main__":
-	print >> sys.stderr, 'usage <edgeFile> <outFile> <intersectionCutoff> <singleFreqCutoff>'
+	print >> sys.stderr, 'usage <edgeFile> <outFile> <intersectionCutoff> <singleFreqCutoff> <lift>'
 	edges = edgesFromFile(sys.argv[1])
 	print >> sys.stderr, 'got edges'
-	graph = analyzeEdges(edges, float(sys.argv[3]), float(sys.argv[4]))
+	graph = analyzeEdges(edges, float(sys.argv[3]), float(sys.argv[4]), float(sys.argv[5]))
 	print >> sys.stderr, 'constructed graph'
 	inOutGraph(graph, sys.argv[2])
 
