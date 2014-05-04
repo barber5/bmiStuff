@@ -40,7 +40,7 @@ def inOutGraph(graphDict, gFile):
 			e['intersection'] = edgeMeta['intersection']
 	parser = GraphMLParser()
 	parser.write(g, 'tmp/'+gFile)
-	with open(gFile, 'w') as fi
+	with open(gFile, 'w') as fi:
 		with open('tmp/'+gFile, 'r') as fi2:
 			while True:
 				line = fi2.readline()
