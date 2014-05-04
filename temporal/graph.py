@@ -119,6 +119,8 @@ def edgesFromFile(edgeFile):
 			lineArr = line.split('\t')
 			pr = (lineArr[0],  lineArr[1])
 			edges[pr] = {
+				'f1': lineArr[0],
+				'f2': lineArr[1],
 				'lambda': lineArr[2],
 				'lambdaFirst': lineArr[3],
 				'lift': lineArr[4],
