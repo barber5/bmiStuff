@@ -137,10 +137,10 @@ def edgesFromFile(edgeFile):
 	return edges
 
 if __name__ == "__main__":
-	print >> sys.stderr, 'usage <edgeFile> <outFile>'
+	print >> sys.stderr, 'usage <edgeFile> <outFile> <intersectionCutoff> <singleFreqCutoff>'
 	edges = edgesFromFile(sys.argv[1])
 	print >> sys.stderr, 'got edges'
-	graph = analyzeEdges(edges)
+	graph = analyzeEdges(edges, float(sys.argv[3]), float(sys.argv[4]))
 	print >> sys.stderr, 'constructed graph'
 	inOutGraph(graph, sys.argv[2])
 
