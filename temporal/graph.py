@@ -117,10 +117,12 @@ def edgesFromFile(edgeFile):
 				break
 			
 			lineArr = line.split('\t')
-			pr = (lineArr[0],  lineArr[1])
+			tp1 = make_tuple(lineArr[0])
+			tp2 = make_tuple(lineArr[1])
+			pr = (tp1, tp2)
 			edges[pr] = {
-				'f1': lineArr[0],
-				'f2': lineArr[1],
+				'f1': tp1,
+				'f2': tp2,
 				'lambda': lineArr[2],
 				'lambdaFirst': lineArr[3],
 				'lift': lineArr[4],
