@@ -39,7 +39,30 @@ def inOutGraph(graphDict, gFile):
 			e['avgOffset'] = edgeMeta['avgOffset']	
 			e['intersection'] = edgeMeta['intersection']
 	parser = GraphMLParser()
-	parser.write(g, gFile)
+	parser.write(g, 'tmp/'+gFile)
+	with open(gFile, 'w') as fi
+		with open('tmp/'+gFile, 'r') as fi2:
+			while True:
+				line = fi2.readline()
+				if line == '':
+					break
+				if line.find('attr.name="freq"') != -1:
+					fi.write('    <key attr.name="freq" attr.type="double" id="freq"/>\n')
+				elif line.find('attr.name="enrichment"') != -1:
+					fi.write('    <key attr.name="enrichment" attr.type="double" id="enrichment"/>\n')
+				elif line.find('attr.name="avgOffset"') != -1:
+					fi.write('    <key attr.name="avgOffset" attr.type="double" id="avgOffset"/>\n')
+				elif line.find('attr.name="intersection"') != -1:
+					fi.write('    <key attr.name="intersection" attr.type="double" id="intersection"/>\n')
+				elif line.find('attr.name="lift"') != -1:
+					fi.write('    <key attr.name="lift" attr.type="double" id="lift"/>\n')
+				elif line.find('attr.name="lambdaFirst"') != -1:
+					fi.write('    <key attr.name="lambdaFirst" attr.type="double" id="lambdaFirst"/>\n')
+				elif line.find('attr.name="lambda"') != -1:
+					fi.write('    <key attr.name="lambda" attr.type="double" id="lambda"/>\n')
+				else:
+					fi.write(line)
+
 
 
 def analyzeEdges(edges, intersectionCutoff=.05, cutoff=.01, lift=1.0):
