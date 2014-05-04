@@ -115,7 +115,7 @@ def edgesFromFile(edgeFile):
 			line = fi.readline().strip()
 			if line == '':
 				break
-			print line
+			
 			lineArr = line.split('\t')
 			pr = (lineArr[0],  lineArr[1])
 			edges[pr] = {
