@@ -109,12 +109,28 @@ def analyzeEdges(edges, intersectionCutoff=.05, cutoff=.01):
 
 
 def edgesFromFile(edgeFile):
+	edges = {}
 	with open(edgeFile, 'r') as fi:
 		while True:
 			line = fi.readline()
 			if line == '':
 				break
 			print line
+			lineArr = line.split('\t')
+			pr = (lineArr[0],  lineArr[1])
+			edges[pr] = {
+				'lambda': lineArr[2],
+				'lambdaFirst': lineArr[3],
+				'lift': lineArr[4],
+				'independent': lineArr[5],
+				'f1freq': lineArr[6],
+				'f2freq': lineArr[7],
+				'intersection': lineArr[8],
+				'avgOffset': lineArr[9],
+				'f1desc': lineArr[10],
+				'f2desc': lineArr[11]
+			}
+	return edges
 
 if __name__ == "__main__":
 	print >> sys.stderr, 'usage <edgeFile> <outFile>'
