@@ -173,7 +173,7 @@ def getEdges(enrichments, patients):
 				}					
 	return result
 
-def analyzeEdges(edges, intersectionCutoff=.05, cutoff=.1):
+def analyzeEdges(edges, intersectionCutoff=.05, cutoff=.01):
 	graph = {}
 	for pr, meta in edges.iteritems():
 		f1 = meta['f1']
@@ -241,9 +241,7 @@ def analyzeEdges(edges, intersectionCutoff=.05, cutoff=.1):
 def inOutGraph(graphDict, gFile):
 	g = Graph()
 	nDict = {}
-	for node, meta in graphDict.iteritems():
-		if len(meta['out']) == 0 and len(meta['in']) == 0:
-			continue
+	for node, meta in graphDict.iteritems():		
 		n = g.add_node(node[0][0]+': '+node[1])			
 		n['freq'] = meta['freq']
 		n['type'] = node[0][0]
