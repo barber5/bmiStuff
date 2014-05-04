@@ -173,126 +173,21 @@ def getEdges(enrichments, patients):
 				}					
 	return result
 
-def analyzeEdges(edges, intersectionCutoff=.05, cutoff=.01):
-	graph = {}
-	for pr, meta in edges.iteritems():
-		f1 = meta['f1']
-		f1 = (f1, meta['f1desc'])
-		if meta['f1freq'] < cutoff:
-			continue
-		
-		f2 = meta['f2']
-		f2 = (f2, meta['f2desc'])
-		if meta['f2freq'] < cutoff:
-			continue
-		if f1 not in graph:
-			graph[f1] = {
-				'in': {},
-				'out': {},
-				'adjacent': {},
-				'desc': meta['f1desc'],
-				'freq': meta['f1freq'],
-				'enrichment': meta['f1enrich']
-			}
-		if f2 not in graph:
-			graph[f2] = {
-				'in': {},
-				'out': {},
-				'adjacent': {},
-				'desc': meta['f2desc'],
-				'freq': meta['f2freq'],
-				'enrichment': meta['f2enrich']
-			}
-		
-		if meta['lift'] > 1 and meta['intersection'] > intersectionCutoff:
-			if meta['lambdaFirst'] > 0:
-				graph[f1]['out'][f2] = {
-					'lambda': meta['lambda'],
-					'lambdaFirst': meta['lambdaFirst'],
-					'lift': meta['lift'],
-					'avgOffset': meta['avgOffset'],
-					'intersection': meta['intersection']
-				}
-				graph[f2]['in'][f1] = {
-					'lambda': meta['lambda'],
-					'lambdaFirst': meta['lambdaFirst'],
-					'lift': meta['lift'],
-					'avgOffset': meta['avgOffset'],
-					'intersection': meta['intersection']
-				}
-			else:
-				graph[f2]['out'][f1] = {
-					'lambda': -meta['lambda'],
-					'lambdaFirst': -meta['lambdaFirst'],
-					'lift': meta['lift'],
-					'avgOffset': -meta['avgOffset'],
-					'intersection': meta['intersection']					
-				}
-				graph[f1]['in'][f2] = {
-					'lambda': -meta['lambda'],
-					'lambdaFirst': -meta['lambdaFirst'],
-					'lift': meta['lift'],
-					'avgOffset': -meta['avgOffset'],
-					'intersection': meta['intersection']
-				}
-		
-	return graph
 
-def inOutGraph(graphDict, gFile):
-	g = Graph()
-	nDict = {}
-	for node, meta in graphDict.iteritems():		
-		n = g.add_node(node[0][0]+': '+node[1])			
-		n['freq'] = meta['freq']
-		n['type'] = node[0][0]
-		n['enrichment'] = meta['enrichment']		
-		nDict[node] = n
-	for node, meta in graphDict.iteritems():
-		if node not in nDict:
-			continue
-		n = nDict[node]			
-		for node2, edgeMeta in meta['in'].iteritems():			
-			n2 = nDict[node2]
-			e = g.add_edge(n2, n, directed=True)
-			e['lift'] = edgeMeta['lift']
-			e['lambda'] = edgeMeta['lambda']
-			e['lambdaFirst'] = edgeMeta['lambdaFirst']		
-			e['avgOffset'] = edgeMeta['avgOffset']	
-			e['intersection'] = edgeMeta['intersection']
-	parser = GraphMLParser()
-	parser.write(g, gFile)
 
-def adjacenciesGraph(graphDict):
-	g = Graph()
-	nDict = {}
-	for node, meta in graphDict.iteritems():
-		n = g.add_node(node)			
-		n['freq'] = meta['freq']
-		nDict[node] = n
-	for node, meta in graphDict.iteritems():
-		n = nDict[node]			
-		for node2 in meta['adjacent']:
-			n2 = nDict[node2]
-			e = g.add_edge(n2, n, directed=False)
-			e['lift'] = edgeMeta['lift']
-			e['lambda'] = edgeMeta['lambda']
-			e['lambdaFirst'] = edgeMeta['lambdaFirst']			
-	parser = GraphMLParser()
-	parser.write(g, "adj.graphml")
 
-def printEdges(edges, cutoff=.05):
+def printEdges(edges, cutoff=.01):
 	for pr, meta in edges.iteritems():
 		if meta['intersection'] > cutoff:
 			print str(meta['f1']) + '\t' + str(meta['f2']) + '\t' + str(meta['lambda']) + '\t' + str(meta['lambdaFirst']) + '\t' + str(meta['lift']) + '\t' + str(meta['independent']) + '\t' + str(meta['f1freq']) + '\t' + str(meta['f2freq']) + '\t' + str(meta['intersection']) + '\t' + str(meta['f1desc']) + ' + '+str(meta['f2desc'])
 	print >> sys.stderr, '<f1> <f2> <lambda> <lambdaFirst> <lift> <f1freq*f2freq> <f1freq> <f2freq> <intersection> <f1desc+f2desc>'
 
 if __name__ == "__main__":
-	print >> sys.stderr, 'usage: <enrichmentsFile> <patientFile> <numPatients> <intersectionCutoff> <individualFrequencyCutoff> <graphFile>'
+	print >> sys.stderr, 'usage: <enrichmentsFile> <patientFile> <numPatients>'
 	enr = getEnrichments(sys.argv[1])
 	pats = getPatients(int(sys.argv[3]), sys.argv[2])
 	print >> sys.stderr, 'getting edges'
 	edges = getEdges(enr, pats)
 	print >> sys.stderr, 'got edges'
-	#printEdges(edges, float(sys.argv[4]))
-	graph = analyzeEdges(edges, float(sys.argv[4]), float(sys.argv[5]))
-	inOutGraph(graph, sys.argv[6])
+	printEdges(edges)
+	
