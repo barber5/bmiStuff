@@ -18,7 +18,7 @@ def inOutGraph(graphDict, gFile):
 	g = Graph()
 	nDict = {}
 	for node, meta in graphDict.iteritems():		
-		n = g.add_node(node[0][0]+':'str(node[0][1])+' '+node[1])			
+		n = g.add_node(node[0][0]+':'+str(node[0][1])+' '+node[1])			
 		n['freq'] = meta['freq']
 		n['type'] = node[0][0]
 		n['enrichment'] = meta['enrichment']		
