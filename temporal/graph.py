@@ -129,8 +129,10 @@ def edgesFromFile(edgeFile):
 				'f2freq': lineArr[7],
 				'intersection': lineArr[8],
 				'avgOffset': lineArr[9],
-				'f1desc': lineArr[10],
-				'f2desc': lineArr[11]
+				'f1enrich': lineArr[10],
+				'f2enrich': lineArr[11],
+				'f1desc': lineArr[12],
+				'f2desc': lineArr[13]
 			}
 	return edges
 
