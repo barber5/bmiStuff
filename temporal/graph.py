@@ -112,7 +112,7 @@ def edgesFromFile(edgeFile):
 	edges = {}
 	with open(edgeFile, 'r') as fi:
 		while True:
-			line = fi.readline()
+			line = fi.readline().strip()
 			if line == '':
 				break
 			print line
