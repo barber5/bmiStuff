@@ -39,7 +39,7 @@ def predict(testData, ignoreFile, featurefile, diagTerms, featSets, cfierIn, fea
 		model = pickle.load(fi)
 	with open(featurizerIn, 'rb') as fi:
 		featurizer = pickle.load(fi)
-	testVect = vectorizePids(testData, diagTerms, includeCid=True, includeTerm=False)		
+	testVect = vectorizePids(testData, diagTerms, includeCid=includeCid, includeTerm=includeTerm)		
 	pprint.pprint(testVect)
 	testArray = featurizer.transform(testVect).toarray()	
 	tn = 0
