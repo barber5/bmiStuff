@@ -372,6 +372,7 @@ def getIgnoreCodes(ignoreFile):
 	return result
 
 def runCfier(trainData, testData, ignoreFile, featurefile, diagTerms, featSets, cfierOut, featurizerOut):	
+	print testData
 	ignore = getIgnoreCodes(ignoreFile)
 	print >> sys.stderr, 'ignoring: '+str(ignore)
 	includeCid=False
