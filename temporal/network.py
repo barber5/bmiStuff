@@ -124,7 +124,7 @@ def getWeightedGraph(graph):
 	
 	for f,meta in graph.iteritems():			
 		for f2 in meta['out']:
-			result.add_weighted_edge((str(f), str(f2)), meta['lift'])
+			result.add_weighted_edges_from([(str(f), str(f2)), meta['lift']])
 
 if __name__ == "__main__":
 	print >> sys.stderr, 'usage <edgeFile> <intersectionCutoff> <singleFreqCutoff> <lift> <confidence cutoff>'
