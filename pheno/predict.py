@@ -5,7 +5,7 @@ sys.path.append(os.path.realpath('../tempClustering'))
 sys.path.append(os.path.realpath('./tempClustering'))
 sys.path.append(os.path.realpath('../dataFetching'))
 sys.path.append(os.path.realpath('./dataFetching'))
-from cfier import vectorizePids
+from cfier import vectorizePids, getFromFile
 from sklearn.feature_extraction import DictVectorizer as FH
 from sklearn.ensemble import RandomForestClassifier as rfc
 
