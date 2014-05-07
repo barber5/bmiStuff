@@ -451,7 +451,7 @@ def getFromFile(num, fileName, rndSrc):
 			if len(lineArr) > 2:
 				pidNeg = lineArr[2]
 				pids[pidNeg] = 0
-			pidPos = lineArr[1]
+			pidPos = lineArr[0]
 			
 			pids[pidPos] = 1
 	pidKeys = pids.keys()
