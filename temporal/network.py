@@ -118,7 +118,7 @@ def edgesFromFile(edgeFile):
 	return edges
 	
 def getWeightedGraph(graph):
-	result=nx.DiGraph()
+	result=nx.Graph()
 	for f, meta in graph.iteritems():
 		result.add_node(str(f), desc=meta['desc'], freq=meta['freq'], enrichment=meta['enrichment'])
 	
