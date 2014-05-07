@@ -19,6 +19,22 @@ meta = {
 
 
 def predict(testData, ignoreFile, featurefile, diagTerms, featSets, cfierIn, featurizerIn):
+	ignore = getIgnoreCodes(ignoreFile)
+	includeCid=False
+	includeLab=False
+	includeTerm=False
+	includeCode=False
+	includePrescription=False	
+	if 'labs' in featSets:
+		includeLab=True
+	if 'meds' in featSets:
+		includePrescription=True
+	if 'terms' in featSets:
+		includeTerm=True
+	if 'codes' in featSets:
+		includeCode=True
+	if 'cids' in featSets:
+		includeCid=True
 	with open(cfierIn, 'rb') as fi:
 		model = pickle.load(fi)
 	with open(featurizerIn, 'rb') as fi:
