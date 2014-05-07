@@ -133,7 +133,7 @@ def getWeightedGraph(graph):
 			parts[m] = []
 		parts[m].append(p)
 		
-	pprint.pprint(parts)
+	return partition
 
 if __name__ == "__main__":
 	print >> sys.stderr, 'usage <edgeFile> <intersectionCutoff> <singleFreqCutoff> <lift> <confidence cutoff>'

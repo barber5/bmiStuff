@@ -12,16 +12,21 @@ from pygraphml.GraphMLParser import *
 from pygraphml.Graph import *
 from pygraphml.Node import *
 from pygraphml.Edge import *
+from network import getWeightedGraph
 
 
-def inOutGraph(graphDict, gFile):
+def inOutGraph(graphDict, wg, gFile):
 	g = Graph()
 	nDict = {}
 	for node, meta in graphDict.iteritems():		
-		n = g.add_node(node[0][0]+':'+str(node[0][1])+' '+node[1])			
+		n = g.add_node(str(node))			
 		n['freq'] = meta['freq']
 		n['type'] = node[0][0]
-		n['enrichment'] = meta['enrichment']		
+		n['enrichment'] = meta['enrichment']	
+		if str(node) in wg:
+			n['community'] = wg[str(node)]
+		else:
+			n['community'] = -1
 		nDict[node] = n
 	for node, meta in graphDict.iteritems():
 		if node not in nDict:
@@ -282,8 +287,9 @@ if __name__ == "__main__":
 	edges = edgesFromFile(sys.argv[1])
 	print >> sys.stderr, 'got edges'
 	graph = analyzeEdges(edges, float(sys.argv[3]), float(sys.argv[4]), float(sys.argv[5]), float(sys.argv[6]))
+	wg = getWeightedGraph(graph)
 	print >> sys.stderr, 'constructed graph'	
 	removeTriangles(graph)
 	
-	inOutGraph(graph, sys.argv[2])
+	inOutGraph(graph, wg, sys.argv[2])
 
