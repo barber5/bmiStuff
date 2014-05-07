@@ -5,7 +5,7 @@ sys.path.append(os.path.realpath('../dataFetching'))
 sys.path.append(os.path.realpath('./dataFetching'))
 sys.path.append(os.path.realpath('../fpmining'))
 sys.path.append(os.path.realpath('./fpmining'))
-
+import community
 
 from ast import literal_eval as make_tuple
 import networkx as nx
@@ -125,6 +125,8 @@ def getWeightedGraph(graph):
 	for f,meta in graph.iteritems():			
 		for f2, edgeMeta in meta['out'].iteritems():
 			result.add_weighted_edges_from([(str(f), str(f2), edgeMeta['lift'])])
+	partition = community.best_partition(result)
+
 
 if __name__ == "__main__":
 	print >> sys.stderr, 'usage <edgeFile> <intersectionCutoff> <singleFreqCutoff> <lift> <confidence cutoff>'
