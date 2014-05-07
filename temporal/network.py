@@ -120,7 +120,7 @@ def edgesFromFile(edgeFile):
 def getWeightedGraph(graph):
 	result=nx.Graph()
 	for f, meta in graph.iteritems():
-		print f
+		result.add_node(str(f), desc=meta['desc', freq=meta['freq'], enrichment=meta['enrichment']])
 
 if __name__ == "__main__":
 	print >> sys.stderr, 'usage <edgeFile> <intersectionCutoff> <singleFreqCutoff> <lift> <confidence cutoff>'
