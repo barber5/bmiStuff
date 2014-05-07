@@ -448,9 +448,11 @@ def getFromFile(num, fileName, rndSrc):
 				break
 			lineArr = line.split(' ')
 			#print lineArr
-			pidNeg = lineArr[2]
+			if len(lineArr) > 2:
+				pidNeg = lineArr[2]
+				pids[pidNeg] = 0
 			pidPos = lineArr[1]
-			pids[pidNeg] = 0
+			
 			pids[pidPos] = 1
 	pidKeys = pids.keys()
 	while len(result) < num/2:
