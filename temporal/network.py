@@ -123,6 +123,7 @@ def getWeightedGraph(graph):
 		result.add_node(str(f), desc=meta['desc'], freq=meta['freq'], enrichment=meta['enrichment'])
 	
 	for f,meta in graph.iteritems():
+		print f
 		for f2 in meta['out']:
 			print f2
 
