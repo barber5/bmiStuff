@@ -81,8 +81,11 @@ if __name__ == "__main__":
 	dt = None
 	if '-dt' in sys.argv:
 		dt = sys.argv[6:]
+	testData = {}
+	for d,lab in data.iteritems():
+		testData[d] = 0
 
-	predict(data, sys.argv[3], sys.argv[4], dt, sys.argv[7:], sys.argv[5], sys.argv[6])
+	predict(testData, sys.argv[3], sys.argv[4], dt, sys.argv[7:], sys.argv[5], sys.argv[6])
 	
 	
 
