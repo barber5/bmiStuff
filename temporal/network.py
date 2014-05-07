@@ -126,10 +126,12 @@ def getWeightedGraph(graph):
 		for f2, edgeMeta in meta['out'].iteritems():
 			result.add_weighted_edges_from([(str(f), str(f2), edgeMeta['lift'])])
 	partition = community.best_partition(result)
+	parts = {}
 	for p, m in partition.iteritems():
-		print 'part'
-		print p
-		print m
+		if m not in parts:
+			parts[m] = []
+		parts[m].append(p)
+		
 
 
 if __name__ == "__main__":
