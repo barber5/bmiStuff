@@ -123,8 +123,8 @@ def getWeightedGraph(graph):
 		result.add_node(str(f), desc=meta['desc'], freq=meta['freq'], enrichment=meta['enrichment'])
 	
 	for f,meta in graph.iteritems():			
-		for f2 in meta['out']:
-			result.add_weighted_edges_from([(str(f), str(f2)), meta['lift']])
+		for f2, edgeMeta in meta['out'].iteritems():
+			result.add_weighted_edges_from([(str(f), str(f2)), edgeMeta['lift']])
 
 if __name__ == "__main__":
 	print >> sys.stderr, 'usage <edgeFile> <intersectionCutoff> <singleFreqCutoff> <lift> <confidence cutoff>'
