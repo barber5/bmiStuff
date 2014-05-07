@@ -485,9 +485,8 @@ def getFromFile(num, fileName, rndSrc):
 
 
 if __name__ == "__main__":	
-	if len(sys.argv) < 8:
-		print 'usage: <dataFile> <samples> <testProportion> <ignoreFile> <featureOutputFile> <classifierOut> <featurizerOut> <diagTerm> <[featureSets] labs|meds|terms|codes|cids>'
-		sys.exit(1)
+	
+	print 'usage: <dataFile> <samples> <testProportion> <ignoreFile> <featureOutputFile> <classifierOut> <featurizerOut> <diagTerm> <[featureSets] labs|meds|terms|codes|cids>'
 	test = {}
 	train = {}
 	rndSrc = 'file'
