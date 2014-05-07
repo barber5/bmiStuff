@@ -121,9 +121,10 @@ def getWeightedGraph(graph):
 	result=nx.Graph()
 	for f, meta in graph.iteritems():
 		result.add_node(str(f), desc=meta['desc'], freq=meta['freq'], enrichment=meta['enrichment'])
-    for f,meta in graph.iteritems():
-    	for f2 in meta['out']:
-    		print f2
+	
+	for f,meta in graph.iteritems():
+		for f2 in meta['out']:
+			print f2
 
 if __name__ == "__main__":
 	print >> sys.stderr, 'usage <edgeFile> <intersectionCutoff> <singleFreqCutoff> <lift> <confidence cutoff>'
