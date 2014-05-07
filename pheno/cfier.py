@@ -1,4 +1,4 @@
-import sys,os, pprint, json, random, pprint
+import sys,os, pprint, json, random, pprint, pickle
 from sklearn import cross_validation
 from math import sqrt
 sys.path.append(os.path.realpath('../tempClustering'))
@@ -371,7 +371,7 @@ def getIgnoreCodes(ignoreFile):
 			result.add(line)
 	return result
 
-def runCfier(trainData, testData, ignoreFile, featurefile, diagTerms, featSets):	
+def runCfier(trainData, testData, ignoreFile, featurefile, diagTerms, featSets, cfierOut, featurizerOut):	
 	ignore = getIgnoreCodes(ignoreFile)
 	print >> sys.stderr, 'ignoring: '+str(ignore)
 	includeCid=False
@@ -391,6 +391,10 @@ def runCfier(trainData, testData, ignoreFile, featurefile, diagTerms, featSets):
 		includeCid=True
 
 	(model, featurizer) = trainModel(trainData, diagTerms, featureFilter=ignore, includeLab=includeLab, includeCode=includeCode, includeTerm=includeTerm, includePrescription=includePrescription, includeCid=includeCid)	
+	with open(cfierOut, 'wb') as fi:
+		pickle.dump(model, fi)
+	with open(featurizerOut, 'wb') as fi:
+		pickle.dump(model, fi)
 	testVect = vectorizePids(testData, diagTerms, includeCid=includeCid, includeTerm=includeTerm)		
 	testArray = featurizer.transform(testVect).toarray()	
 	tn = 0
@@ -481,7 +485,7 @@ def getFromFile(num, fileName, rndSrc):
 
 if __name__ == "__main__":	
 	if len(sys.argv) < 8:
-		print 'usage: <dataFile> <samples> <testProportion> <ignoreFile> <featureOutputFile> <diagTerm> <[featureSets] labs|meds|terms|codes|cids>'
+		print 'usage: <dataFile> <samples> <testProportion> <ignoreFile> <featureOutputFile> <classifierOut> <featurizerOut> <diagTerm> <[featureSets] labs|meds|terms|codes|cids>'
 		sys.exit(1)
 	test = {}
 	train = {}
@@ -502,7 +506,7 @@ if __name__ == "__main__":
 		train[f] = y_train[i]
 	for i,f in enumerate(X_test):
 		test[f] = y_test[i]
-	runCfier(train, test, sys.argv[4], sys.argv[5], dt, sys.argv[6:])
+	runCfier(train, test, sys.argv[4], sys.argv[5], dt, sys.argv[8:], sys.argv[6], sys.argv[7])
 
 	
 
