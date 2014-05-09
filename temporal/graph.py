@@ -15,10 +15,12 @@ from pygraphml.Edge import *
 from network import getWeightedGraph
 
 
-def inOutGraph(graphDict, wg, gFile):
+def inOutGraph(graphDict, wg, gFile, singleton):
 	g = Graph()
 	nDict = {}
-	for node, meta in graphDict.iteritems():		
+	for node, meta in graphDict.iteritems():	
+		if not singleton and len(meta['out']) == 0:
+			continue	
 		n = g.add_node(str(node))			
 		n['freq'] = meta['freq']
 		n['type'] = node[0][0]
@@ -283,13 +285,18 @@ def removeTriangles(graph):
 	
 
 if __name__ == "__main__":
-	print >> sys.stderr, 'usage <edgeFile> <outFile> <intersectionCutoff> <singleFreqCutoff> <lift> <confidence cutoff>'
+	print >> sys.stderr, 'usage <edgeFile> <outFile> <intersectionCutoff> <singleFreqCutoff> <lift> <confidence cutoff> (optional -sing to include singleton nodes)'
 	edges = edgesFromFile(sys.argv[1])
+	if '-sing' in sys.argv:
+		singleton = True
+	else:
+		singleton = False
+
 	print >> sys.stderr, 'got edges'
-	graph = analyzeEdges(edges, float(sys.argv[3]), float(sys.argv[4]), float(sys.argv[5]), float(sys.argv[6]))
+	graph = analyzeEdges(edges, float(sys.argv[3]), float(sys.argv[4]), float(sys.argv[5]), float(sys.argv[6]), singleton)
 	wg = getWeightedGraph(graph)
 	print >> sys.stderr, 'constructed graph'	
 	removeTriangles(graph)
 	
-	inOutGraph(graph, wg, sys.argv[2])
+	inOutGraph(graph, wg, sys.argv[2], singleton)
 
