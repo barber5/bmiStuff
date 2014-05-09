@@ -293,7 +293,7 @@ if __name__ == "__main__":
 		singleton = False
 
 	print >> sys.stderr, 'got edges'
-	graph = analyzeEdges(edges, float(sys.argv[3]), float(sys.argv[4]), float(sys.argv[5]), float(sys.argv[6]), singleton)
+	graph = analyzeEdges(edges, float(sys.argv[3]), float(sys.argv[4]), float(sys.argv[5]), float(sys.argv[6]))
 	wg = getWeightedGraph(graph)
 	print >> sys.stderr, 'constructed graph'	
 	removeTriangles(graph)
