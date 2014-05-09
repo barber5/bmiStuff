@@ -18,9 +18,7 @@ from network import getWeightedGraph
 def inOutGraph(graphDict, wg, gFile, singleton):
 	g = Graph()
 	nDict = {}
-	for node, meta in graphDict.iteritems():	
-		if not singleton and len(meta['out']) == 0:
-			continue	
+	for node, meta in graphDict.iteritems():			
 		n = g.add_node(str(node))			
 		n['freq'] = meta['freq']
 		n['type'] = node[0][0]
@@ -34,7 +32,8 @@ def inOutGraph(graphDict, wg, gFile, singleton):
 		if node not in nDict:
 			continue
 		n = nDict[node]			
-		for node2, edgeMeta in meta['out'].iteritems():			
+		for node2, edgeMeta in meta['out'].iteritems():					
+
 			n2 = nDict[node2]
 			e = g.add_edge(n, n2, directed=True)
 			e['lift'] = edgeMeta['lift']
