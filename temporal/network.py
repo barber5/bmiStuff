@@ -133,7 +133,7 @@ def getWeightedGraph(graph):
 	for p, m in partition.iteritems():
 		print p
 		print m
-		if m not in parts:
+		if m not in partCounts:
 			partCounts[m] = 0
 			partList[m] = []
 		partCounts[m] += 1
