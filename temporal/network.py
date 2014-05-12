@@ -139,7 +139,7 @@ def getWeightedGraph(graph):
 		partCounts[m] += 1
 		partList[m].append(p)
 
-	sorted_x = sorted(partCounts.iteritems(), key=operator.itemgetter(1))
+	sorted_x = reversed(sorted(partCounts.iteritems(), key=operator.itemgetter(1)))
 	for x in sorted_x:
 		print x
 
