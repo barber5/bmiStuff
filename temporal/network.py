@@ -1,4 +1,4 @@
-import sys,os, pprint, json, random, pprint, math, time
+import sys,os, pprint, json, random, pprint, math, time, operator
 sys.path.append(os.path.realpath('../tempClustering'))
 sys.path.append(os.path.realpath('./tempClustering'))
 sys.path.append(os.path.realpath('../dataFetching'))
@@ -128,11 +128,21 @@ def getWeightedGraph(graph):
 			result.add_weighted_edges_from([(str(f), str(f2), edgeMeta['lift'])])
 	partition = community.best_partition(result)
 	parts = {}
+	partCounts = {}
+	partList = {}
 	for p, m in partition.iteritems():
 		if m not in parts:
-			parts[m] = []
-		parts[m].append(p)
-		
+			partCounts[m] = 0
+			partList[m] = []
+		partCounts[m] += 1
+		partList[m].append(p)
+
+	sorted_x = sorted(partCounts.iteritems(), key=operator.itemgetter(1))
+	for x in sorted_x:
+		print x
+
+
+
 	return partition
 
 if __name__ == "__main__":
