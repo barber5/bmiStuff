@@ -140,12 +140,19 @@ def getWeightedGraph(graph):
 		partList[m].append(p)
 
 	sorted_x = reversed(sorted(partCounts.iteritems(), key=operator.itemgetter(1)))
-	for x in sorted_x:
-		print x
+	partMaps = {}
+	for i, x in enumerate(sorted_x):
+		comm = x[0]
+		partMaps[comm] = i
+
+	for p, m in partition.iteritems():
+		comm = partMaps[m]
+		if comm not in parts:
+			parts[comm] = []
+		parts[comm].append(p)
 
 
-
-	return partition
+	return parts
 
 if __name__ == "__main__":
 	print >> sys.stderr, 'usage <edgeFile> <intersectionCutoff> <singleFreqCutoff> <lift> <confidence cutoff>'
