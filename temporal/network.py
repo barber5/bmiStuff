@@ -145,9 +145,7 @@ def getWeightedGraph(graph):
 
 	for p, m in partition.iteritems():
 		comm = partMaps[m]
-		if comm not in parts:
-			parts[comm] = []
-		parts[comm].append(p)
+		parts[p] = comm
 
 
 	return parts
