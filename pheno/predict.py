@@ -19,6 +19,7 @@ meta = {
 
 
 def predict(testData, ignoreFile, featurefile, diagTerms, featSets, cfierIn, featurizerIn):
+	print 'heres my test data'
 	print testData
 	print 'featurizer file: '+str(featurizerIn)
 	ignore = getIgnoreCodes(ignoreFile)
@@ -41,7 +42,8 @@ def predict(testData, ignoreFile, featurefile, diagTerms, featSets, cfierIn, fea
 		model = pickle.load(fi)
 	with open(featurizerIn, 'rb') as fi:
 		featurizer = pickle.load(fi)
-	testVect = vectorizePids(testData, diagTerms, includeCid=includeCid, includeTerm=includeTerm)		
+	testVect = vectorizePids(testData, diagTerms, includeCid=includeCid, includeTerm=includeTerm)	
+	print 'heres my test vect'	
 	pprint.pprint(testVect)
 	testArray = featurizer.transform(testVect).toarray()	
 	tn = 0
