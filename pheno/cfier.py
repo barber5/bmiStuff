@@ -396,7 +396,7 @@ def runCfier(trainData, testData, ignoreFile, featurefile, diagTerms, featSets, 
 	with open(cfierOut, 'wb') as fi:
 		pickle.dump(model, fi)
 	with open(featurizerOut, 'wb') as fi:
-		pickle.dump(model, fi)
+		pickle.dump(featurizer, fi)
 	testVect = vectorizePids(testData, diagTerms, includeCid=includeCid, includeTerm=includeTerm)
 	print 'heres my test vect, dude'	
 	pprint.pprint(testVect)	
