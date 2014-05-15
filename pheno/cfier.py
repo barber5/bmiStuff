@@ -463,6 +463,7 @@ def getFromFile(num, fileName, rndSrc):
 	pidKeys = pids.keys()
 	while len(result) < num/2:
 		next = random.choice(pidKeys)
+		print >> sys.stderr, str(next)
 		if pids[next] != 1:
 			continue
 		resp = r.hget('pats', str(next))
