@@ -20,6 +20,7 @@ meta = {
 
 def predict(testData, ignoreFile, featurefile, diagTerms, featSets, cfierIn, featurizerIn):
 	print testData
+	print 'featurizer file: '+str(featurizerIn)
 	ignore = getIgnoreCodes(ignoreFile)
 	includeCid=False
 	includeLab=False
