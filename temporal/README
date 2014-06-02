@@ -1,0 +1,16 @@
+enrichments.py 
+Takes as input a file containing pids for a cohort, a dataset size (will sample size/2 from the cohort and size/2 at random), and an enrichment threshold
+Will output <feature> <enrichment> <positiveCount> <negativeCount> <description>
+
+pairs.py
+Takes as input the output of enrichments.py, a file containing pids for a cohort, and the number of patients to sample from this cohort
+Outputs <featurePair> <lift> <proportion of patients with both featuers> <feat1Description> <feat2Description>
+Lift is calculated as <proportion patients with both>/(<proportion patients with f1>*<proportion patients with f2>)
+
+beforeAfter.py 
+Takes as input the output of enrichments.py, a file containing the codes used to determine a cohort, a file containing pids, number of patients to sample
+Outputs <feature> <enrichment> <number postiive> <number of negatives> <mean of time offsets> <stddev of time offsets> <description> <vector of time offsets>
+
+edges.py
+The idea here is to look at enriched feature pairs i and j and output the pairs where there is a clear directionality.  It would be interesting to use this to build a graph to do community detection on.
+
