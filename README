@@ -1,0 +1,6 @@
+dataFetching/ contains some code for interacting with the database and persisting to the Redis cache
+fpmining/ is some frequent pattern mining code for conditions/labs/meds/etc
+pheno/ is the phenotype classifier code
+posteriors/ is some code for looking at enrichment of Cuis/labs/meds/etc
+tempClusters/ is some early code that can be ignored, implements some of the cluster flow stuff from an earlier talk
+temporal/ is code for generating graphs to describe natural history of disease
