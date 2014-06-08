@@ -3,6 +3,8 @@ from db import *
 import sys,pprint
 (term_db, stride_db) = getDbs()
 
+
+# get all the pids who have a term in the list of terms
 def getPatientsForTerms(terms):
 	patients = {}
 	for t in terms:

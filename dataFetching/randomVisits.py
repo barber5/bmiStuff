@@ -11,7 +11,7 @@ def getRandomVisits(num):
 		pids.append(pid)
 		getVecForPid(pid, 'random')
 	r.hset('codes', 'random', compIt(json.dumps(pids)))
-
+# get and cache a number of random visits (for control groups)
 if __name__ == "__main__":
 	getRandomVisits(int(sys.argv[1]))
 	

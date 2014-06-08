@@ -1,5 +1,8 @@
 import MySQLdb, time
 
+
+# abstraction for dealing with our DB
+
 def getDbs():
     with open('/home/barber5/.my.cnf', 'r') as f:
         while True:
