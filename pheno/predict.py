@@ -56,7 +56,7 @@ def predict(testData, ignoreFile, featurefile, diagTerms, featSets, cfierIn, fea
 
 if __name__ == "__main__":
 	print >> sys.stderr, 'usage <dataFile> <number of samples> <ignoreFile> <featureOutputFile> <classifierIn> <featurizerIn> labs|meds|terms|cids|codes'	
-	data = getFromFile(int(sys.argv[2]), sys.argv[1], 'cache')		
+	data = getFromFile(int(sys.argv[2]), sys.argv[1], 'none')		
 	dt = None
 	if '-dt' in sys.argv:
 		dt = sys.argv[6:]

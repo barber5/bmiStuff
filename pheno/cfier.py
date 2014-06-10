@@ -463,7 +463,11 @@ def getFromFile(num, fileName, rndSrc):
 			
 			pids[pidPos] = 1
 	pidKeys = pids.keys()
-	while len(result) < num/2:
+	if rndSrc == 'none':
+		required = num
+	else:
+		required = num/2
+	while len(result) < required:
 		next = random.choice(pidKeys)
 		print >> sys.stderr, str(len(result) + 1) + ' of '+str(num/2)
 		if pids[next] != 1:
@@ -483,9 +487,10 @@ def getFromFile(num, fileName, rndSrc):
 				continue
 			result[next] = 0
 	else:
-		rnds = getRandoms(num/2)
-		for rn in rnds:
-			result[rn] = 0
+		if rndSrc != 'none':
+			rnds = getRandoms(num/2)
+			for rn in rnds:
+				result[rn] = 0
 	return result
 
 
