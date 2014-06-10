@@ -79,11 +79,11 @@ def getFeatName(metaDict, presentation=False):
 # patients is pid -> {pid, src_type, labs -> [{age, , component, description, lid, line, ord, ord_num, proc, proc_cat, ref_high, ref_low, ref_norm, ref_unit, result_flag, result_inrange, src, timeoffset}], notes -> [{age, cpt, duration, icd9, nid, pid, src, src_type, timeoffset, year, terms -> [{cui, familyHistory, negated, nid, termid, tid}]}], prescriptions -> [{age, drug_description, ingr_set_id, order_status, pid, route, rxid, src, timeoffset}], visits -> [{age, cpt, duration, icd9, pid, src, src_type, timeoffset, year}] }
 def vectorizePids(data, diagTerms={}, includeCid=False, includeLab=True, includeTerm=True, includeCode=True, includePrescription=True, featureFilter={}, timeSlices=None):
 	patients = []	
-	print 'diagnosis terms for timeoffset: '+str(diagTerms)
-	print 'stop terms: '+str(stop_terms)
+	print  >> sys.stderr, 'diagnosis terms for timeoffset: '+str(diagTerms)
+	print >> sys.stderr,  'stop terms: '+str(stop_terms)
 	filterNegs = {}
 	for pid, label in data.iteritems():		
-		print pid				
+		print >> sys.stderr,  pid				
 		#print pid
 		resp = r.hget('pats', pid)
 		if resp == None:
@@ -101,7 +101,7 @@ def vectorizePids(data, diagTerms={}, includeCid=False, includeLab=True, include
 			for n in dd['notes']:
 				for t in n['terms']:
 					if not t['grp']:
-						print 'no group'
+						print >> sys.stderr,  'no group'
 					if int(t['tid']) in stop_terms:
 						continue
 					if str(t['tid']) in diagTerms and int(t['negated']) == 0 and int(t['familyHistory']) == 0:					
@@ -125,7 +125,7 @@ def vectorizePids(data, diagTerms={}, includeCid=False, includeLab=True, include
 					if int(t['tid']) in stop_terms:
 						continue
 					if diagTerms and str(t['term']) in diagTerms and label == 0:
-						print 'bad negative!'
+						print >> sys.stderr,  'bad negative!'
 						filterNegs[pid] = True
 
 					feat = getFeatName({'type': 'term', 'term': t}, presentation)
@@ -318,12 +318,12 @@ def trainModel(trainData, diagTerm=None, featureFilter={},includeCid=False, incl
 	fh = FH()
 	trainArray = fh.fit_transform(newTrain).toarray()	
 	try:
-		print 'feature dimensions n_samples x n_features'
-		print trainArray.shape
+		print >> sys.stderr,  'feature dimensions n_samples x n_features'
+		print >> sys.stderr,  trainArray.shape
 	except Exception as e:
 		None
 	n_estimators = int(round(sqrt(trainArray.shape[1])))*2
-	print 'n_estimators: '+str(n_estimators)
+	print >> sys.stderr,  'n_estimators: '+str(n_estimators)
 	tree = rfc(n_estimators=n_estimators, n_jobs=10)		
 	tree.fit(trainArray, trainData.values())	
 	return (tree, fh)
@@ -372,8 +372,8 @@ def getIgnoreCodes(ignoreFile):
 	return result
 
 def runCfier(trainData, testData, ignoreFile, featurefile, diagTerms, featSets, cfierOut, featurizerOut):	
-	print 'heres my test data, dude'
-	print testData
+	print >> sys.stderr,  'heres my test data, dude'
+	print >> sys.stderr,  testData
 	ignore = getIgnoreCodes(ignoreFile)
 	print >> sys.stderr, 'ignoring: '+str(ignore)
 	includeCid=False
@@ -398,8 +398,7 @@ def runCfier(trainData, testData, ignoreFile, featurefile, diagTerms, featSets, 
 	with open(featurizerOut, 'wb') as fi:
 		pickle.dump(featurizer, fi)
 	testVect = vectorizePids(testData, diagTerms, includeCid=includeCid, includeTerm=includeTerm)
-	print 'heres my test vect, dude'	
-	pprint.pprint(testVect)	
+	
 	testArray = featurizer.transform(testVect).toarray()	
 	tn = 0
 	fn = 0
@@ -460,15 +459,13 @@ def getFromFile(num, fileName, rndSrc):
 				pids[pidNeg] = 0
 			pidPos = int(lineArr[0])			
 			pids[pidPos] = 1
-	pidKeys = pids.keys()
-	print >> sys.stderr, str(len(pidKeys)) +' positive examples available'
+	pidKeys = pids.keys()	
 	if rndSrc == 'none':
 		required = num
 	else:
 		required = num/2
 	while len(result) < required:
 		next = random.choice(pidKeys)
-		print next
 		print >> sys.stderr, str(len(result)) + ' of '+str(required)
 		print >> sys.stderr, str(len(pidKeys)) +' positive examples available'
 		if pids[next] != 1:
@@ -477,8 +474,7 @@ def getFromFile(num, fileName, rndSrc):
 		if not resp:
 			continue
 		result[next] = 1
-		pprint.pprint(result)
-		pprint.pprint(pidKeys)
+
 	if rndSrc == 'file':
 		while len(result) < num:
 			print >> sys.stderr, str(len(result) + 1) + ' of '+str(num)
@@ -498,7 +494,7 @@ def getFromFile(num, fileName, rndSrc):
 
 
 if __name__ == "__main__":		
-	print 'usage: <dataFile> <samples> <testProportion> <ignoreFile> <featureOutputFile> <classifierOut> <featurizerOut> <diagTerm> <[featureSets] labs|meds|terms|codes|cids>'
+	print >> sys.stderr, 'usage: <dataFile> <samples> <testProportion> <ignoreFile> <featureOutputFile> <classifierOut> <featurizerOut> <diagTerm> <[featureSets] labs|meds|terms|codes|cids>'
 	test = {}
 	train = {}
 	rndSrc = 'file'
