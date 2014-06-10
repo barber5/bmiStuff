@@ -121,8 +121,7 @@ def vectorizePids(data, diagTerms={}, includeCid=False, includeLab=True, include
 					presentation = False
 				else:
 					presentation = False
-				for t in n['terms']:
-					print t
+				for t in n['terms']:					
 					if int(t['tid']) in stop_terms:
 						continue
 					if diagTerms and str(t['term']) in diagTerms and label == 0:
