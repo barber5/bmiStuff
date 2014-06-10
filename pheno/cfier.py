@@ -448,8 +448,7 @@ def getRandoms(num):
 def getFromFile(num, fileName, rndSrc):
 	pids = {}
 	result = {}
-	with open(fileName, 'r') as fi:
-		fi.readline()
+	with open(fileName, 'r') as fi:		
 		while True:
 			line = fi.readline().strip()
 			if line == '':
@@ -459,8 +458,7 @@ def getFromFile(num, fileName, rndSrc):
 			if len(lineArr) > 2:
 				pidNeg = lineArr[2]
 				pids[pidNeg] = 0
-			pidPos = int(lineArr[0])
-			
+			pidPos = int(lineArr[0])			
 			pids[pidPos] = 1
 	pidKeys = pids.keys()
 	print >> sys.stderr, str(len(pidKeys)) +' positive examples available'
