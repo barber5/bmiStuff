@@ -476,6 +476,7 @@ def getFromFile(num, fileName, rndSrc):
 		if not resp:
 			continue
 		result[next] = 1
+		pprint.pprint(result)
 	if rndSrc == 'file':
 		while len(result) < num:
 			print >> sys.stderr, str(len(result) + 1) + ' of '+str(num)
