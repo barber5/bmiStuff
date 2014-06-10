@@ -125,7 +125,7 @@ def vectorizePids(data, diagTerms={}, includeCid=False, includeLab=True, include
 					print t
 					if int(t['tid']) in stop_terms:
 						continue
-					if str(t['term']) in diagTerms and label == 0:
+					if diagTerms and str(t['term']) in diagTerms and label == 0:
 						print 'bad negative!'
 						filterNegs[pid] = True
 
