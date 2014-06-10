@@ -50,7 +50,7 @@ def predict(testData, ignoreFile, featurefile, diagTerms, featSets, cfierIn, fea
 		
 		l = testData[testData.keys()[i]]
 		pred = model.predict(tv)[0]
-		print str(testData.keys()[i]+'\t'+str(pred)		
+		print str(testData.keys()[i])+'\t'+str(pred)		
 	fimp = featurizer.inverse_transform(model.feature_importances_)	
 	writeFeatureImportance(fimp[0], featurefile)
 
