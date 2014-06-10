@@ -469,7 +469,7 @@ def getFromFile(num, fileName, rndSrc):
 		required = num/2
 	while len(result) < required:
 		next = random.choice(pidKeys)
-		print >> sys.stderr, str(len(result) + 1) + ' of '+str(num/2)
+		print >> sys.stderr, str(len(result) + 1) + ' of '+str(required)
 		if pids[next] != 1:
 			continue
 		resp = r.hget('pats', str(next))
