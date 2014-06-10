@@ -51,7 +51,7 @@ def predict(testData, ignoreFile, featurefile, diagTerms, featSets, cfierIn, fea
 	tp = 0
 	fp = 0
 	for i, tv in enumerate(testArray):	
-		print testData.keys()[i]		
+		print 'pid: '+str(testData.keys()[i])
 		l = testData[testData.keys()[i]]
 		pred = model.predict(tv)[0]
 		print 'prediction: '+str(pred)
