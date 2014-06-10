@@ -463,6 +463,7 @@ def getFromFile(num, fileName, rndSrc):
 			
 			pids[pidPos] = 1
 	pidKeys = pids.keys()
+	print >> sys.stderr, str(len(pidKeys)) +' positive examples available'
 	if rndSrc == 'none':
 		required = num
 	else:
