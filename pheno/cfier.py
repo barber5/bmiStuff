@@ -468,6 +468,7 @@ def getFromFile(num, fileName, rndSrc):
 		required = num/2
 	while len(result) < required:
 		next = random.choice(pidKeys)
+		print next
 		print >> sys.stderr, str(len(result)) + ' of '+str(required)
 		print >> sys.stderr, str(len(pidKeys)) +' positive examples available'
 		if pids[next] != 1:
