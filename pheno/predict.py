@@ -44,12 +44,13 @@ def predict(testData, ignoreFile, featurefile, diagTerms, featSets, cfierIn, fea
 		featurizer = pickle.load(fi)
 	testVect = vectorizePids(testData, diagTerms, includeCid=includeCid, includeTerm=includeTerm)	
 	#pprint.pprint(testVect)
-	testArray = featurizer.transform(testVect).toarray()		
+	testArray = featurizer.transform(testVect).toarray()	
+	print 'pid\tprediction'	
 	for i, tv in enumerate(testArray):	
-		print 'pid: '+str(testData.keys()[i])
+		
 		l = testData[testData.keys()[i]]
 		pred = model.predict(tv)[0]
-		print 'prediction: '+str(pred)		
+		print str(testData.keys()[i]+'\t'+str(pred)		
 	fimp = featurizer.inverse_transform(model.feature_importances_)	
 	writeFeatureImportance(fimp[0], featurefile)
 
