@@ -45,37 +45,12 @@ def predict(testData, ignoreFile, featurefile, diagTerms, featSets, cfierIn, fea
 	testVect = vectorizePids(testData, diagTerms, includeCid=includeCid, includeTerm=includeTerm)	
 	print 'heres my test vect'	
 	pprint.pprint(testVect)
-	testArray = featurizer.transform(testVect).toarray()	
-	tn = 0
-	fn = 0
-	tp = 0
-	fp = 0
+	testArray = featurizer.transform(testVect).toarray()		
 	for i, tv in enumerate(testArray):	
 		print 'pid: '+str(testData.keys()[i])
 		l = testData[testData.keys()[i]]
 		pred = model.predict(tv)[0]
-		print 'prediction: '+str(pred)
-		print 'actual: '+str(l)
-		if pred == l:
-			if pred == 0:
-				tn += 1
-			else:
-				tp += 1
-		else:
-			miss = featurizer.inverse_transform(tv)			
-			print 'missed!'
-			print 'probabilities: '+str(model.predict_proba(tv))										
-			if pred == 0:
-				fn += 1
-			else:
-				fp += 1
-	print 'tn: '+str(tn)
-	print 'tp: '+str(tp)
-	print 'fn: '+str(fn)
-	print 'fp: '+str(fp)
-	print 'acc: '+str(float(tp+tn)/float(tp+tn+fn+fp))
-	if tp + fp > 0:
-		print 'ppv: '+str(float(tp)/float(tp+fp))
+		print 'prediction: '+str(pred)		
 	fimp = featurizer.inverse_transform(model.feature_importances_)	
 	writeFeatureImportance(fimp[0], featurefile)
 
@@ -88,8 +63,7 @@ if __name__ == "__main__":
 		dt = sys.argv[6:]
 	testData = {}
 	for d,lab in data.iteritems():
-		if lab != 0:
-			testData[d] = 1
+		testData[d] = 1
 
 	predict(data, sys.argv[3], sys.argv[4], dt, sys.argv[7:], sys.argv[5], sys.argv[6])
 	
